@@ -15,4 +15,4 @@ Please review the following resources before lecture:
 
 ## Homework
 
-TODO(anthonymays): Add details.
+TODO(anthonymays): Add details
