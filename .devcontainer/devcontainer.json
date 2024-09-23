@@ -1,0 +1,41 @@
+{
+	"name": "Debian",
+  	"image": "mcr.microsoft.com/devcontainers/base:bullseye",
+	"features": {
+		"ghcr.io/devcontainers/features/dotnet:2": {},
+		"ghcr.io/devcontainers/features/java:1": {
+			"installGradle": true,
+			"installMaven": true,
+			"version": "17",
+			"jdkDistro": "ms",
+			"gradleVersion": "latest",
+			"mavenVersion": "latest"
+		},
+		"ghcr.io/devcontainers/features/node:1": {},
+		"ghcr.io/devcontainers/features/python:1": {},
+		"ghcr.io/devcontainers-contrib/features/ts-node:1": {},
+		"ghcr.io/devcontainers/features/sshd:1": {},
+		"ghcr.io/warrenbuckley/codespace-features/sqlite:1": {}
+	},
+	"portsAttributes": {
+	  "80": {
+		"requireLocalPort": true,
+		"elevateIfNeeded": true
+	  }
+	},
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"vscjava.vscode-gradle",
+				"Oracle.oracle-java",
+				"esbenp.prettier-vscode",
+				"donjayamanne.python-extension-pack",
+				"ms-vscode.vscode-typescript-next",
+				"ms-dotnettools.csdevkit",
+				"ritwickdey.LiveServer",
+				"mechatroner.rainbow-csv",
+				"alexcvzz.vscode-sqlite"
+			]
+		}
+	}
+}
