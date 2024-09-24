@@ -1,6 +1,6 @@
 # Mya.README 
 *I’m HS graduate learning to adult in this world - starting with improving my skills. 
-I’ve been with code differently as a jr developer intern since 2020!Coding isn't completely new but I still need to refresh my memory. <br> I'll figure it out*  ദ്ദി(˵ •̀ ᴗ - ˵ ) ✧
+I’ve been with code differently as a jr developer intern since 2020! Coding isn't completely new but I still need to refresh my memory. <br> I'll figure it out*  ദ്ദി(˵ •̀ ᴗ - ˵ ) ✧
 
 <a href="https://images.app.goo.gl/ww5Jn4V8C5KFxpaC9"><img src="img/banner.png" height="200px" width="100%"/></a>
 
@@ -28,8 +28,8 @@ A reminder as well, please don't worry or apologize about reaching out - that's 
 * Outside coding experience on toyhou.se
 * early bird ➜ Not on purpose, and no I don't drink coffee.
 
-        ┆ 𝙻𝚒𝚔𝚎𝚜:: nintendo (e.g. tomodachi life, animal crossing) , drawing, designing my code 
-        ┆ 𝙳𝚒𝚜𝚕𝚒𝚔𝚎𝚜:: miscommunication, missing out on work ᴖ̈
+        ┆ 𝙻𝚒𝚔𝚎𝚜:: nintendo (e.g. tomodachi life, animal crossing) , drawing, designing my code, meeting others 
+        ┆ 𝙳𝚒𝚜𝚕𝚒𝚔𝚎𝚜:: missing out on info, overthinking only to end up finding a much easier solution ᴖ̈
 
 
 ###### // readme inspired by [Kaeti's repo][kaeti-repo]
