@@ -13,7 +13,7 @@
   
 * I prefer to give and receive feedback through email
 * During weekdays I try to check my email every hour from 9am to 9pm unless I am preoccupied with more important work.
-* On weekends I usually check my emails three times a day from 9am to 3pm, once in the morning, at noon, and in the afternoon..
+* On weekends I usually check my emails three times a day from 9am to 3pm, once in the morning, at noon, and in the afternoon.
   
 
 ### Facts That Aren't Really Fun:
