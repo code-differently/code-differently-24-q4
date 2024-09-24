@@ -1,3 +1,5 @@
+# Getting to Know LJ McWilliams
+
 ## Introduction
 
 I have lived in Delaware my entire life and have always had a love for tech. In middle school I developed a passion for creating digital art and that love grew throughout high school. When it
@@ -28,3 +30,4 @@ I describe my learing style as a mix between visual and "trial by fire". Being a
 I am very much a night owl. I like the idea of being able to partake in deep learning during peacful hours. I like to throw on some Bossa Nova jazz or some Native American flute music and dial into whatever I am doing. Despite this preference, I still do enjoy working during the day as it better allows for collaborations and Q `n' A's.
 
 <img src="images/images.jpeg">
+<img src="images/learning-by-doing-aprender-haciendo.jpg" width="300">
