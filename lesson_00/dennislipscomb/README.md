@@ -1,7 +1,7 @@
 
 ## The README About Nothing 😎
 
-Dennis is a born creative at heart. His creative journey started with attending The Art Institute of Philadelphia as an audio engineer and pivoting into creating music, writing music and publshing a book of spokenword entiiled HeARTwork.
+Dennis is a born creative at heart. His creative journey started with attending The Art Institute of Philadelphia as an audio engineer and pivoting into creating music, writing music and publishing a book of spokenword entitled HeARTwork.
 
 ## The Motivation 🙏🏽
 
@@ -15,7 +15,9 @@ How I like to start my day
 
  ## The Connection 🔗
 
-I don't have a personal prefence with communication. If you have a direct way to reach me, use which ever works best for you. Phone calls, text, email, morse code ect. Anytime of day, if im awake or not busy I'll respond asap, scouts honor.
+I don't have a personal prefence with communication. If you have a direct way to reach me, use which ever works best for you. 
+
+Phone calls, text, e-mail, morse code ect. Anytime of day, if im awake or not busy I'll respond asap, scouts honor.
 
 ## The Learning Style 👀 
 
@@ -28,11 +30,11 @@ I don't have a personal prefence with communication. If you have a direct way to
 
 I prefer to receive direct feedback in a 1-on-1 setting. Don't hold any punches. Brute honesty motivates me. I may not like you in the moment but I'll appreciate it later.
 
-On the otherhand, I tend to be soft when giving feedback. I'm very politically correct and try to protect feelings.
+On the otherhand, I tend to be soft when giving feedback. I can be very politically correct and try to protect feelings while still getting the point across. 
 
 ## The Favorite Things 🤌🏽
 * Chicken Wings 🍗
-* Autum 🍁
+* Autumn 🍁
 * Sneakers 👟
 * Writing Music/Poetry 🎤
 * Running 🏃🏽‍♂️
