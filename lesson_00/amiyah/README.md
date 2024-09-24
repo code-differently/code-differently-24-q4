@@ -8,8 +8,7 @@ const Mya = class SoftwareEngineer {
 };
 
 // Intrested in bringing ideas to life within a web browser.
-// Growing up, I always found it intresting on how websites were made and the way it ends up
-//quick, responsive, and accesssible to everyone. 
+// Learning how websites become quick, responsive, and accesssible to everyone. 
 ```
 
 <a href="https://images.app.goo.gl/ww5Jn4V8C5KFxpaC9"><img src="img/banner.png" height="200px" width="100%"/></a>
