@@ -3,6 +3,9 @@
 ## A Bit Of Information About Me
 Curently my age is 22 years young, I was born and grew up in Delaware all my life, never really left unless it was to Maryland to visit family, however joining the military changed that for me. I graduated from glasgow high school during covid of 2020, and when I got my diploma it was similar to that of a drive thru unfortunately. This will be my first time ever coding so this will be a challenge but nothing I can't overcome.
 
+## Communication preferences
+Typically in person is best, however if you need to contact me next would be by email, or give me a call, usually the afternoon or anytime after 10 am would be a great time but by 8 pm i will get to you tomoorow.
+
 ##  The Way I Learn
 Everyone learns in many different ways, the way I learn is by hands on work, also depending on the type of information i can be visual, however i best find is the hands on. For me to keep it retained is by being repetitive with it since I will have to do it many many times to understand, but once the information starts to click i'm like a machine.
 
@@ -24,3 +27,4 @@ My MOS is 12 W, MOS is basically my job which is a carpentry and masonry special
 1. Milkshakes
 1. When people stare
 
+<img src="images/images.jpeg">
