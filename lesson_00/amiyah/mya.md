@@ -4,7 +4,7 @@ I’ve been with code differently as a jr developer intern since 2020! I’m rat
 especially being out into the real world. <br>
 The reason I joined the adult program was to update and improve my skills and web development*
 
-[<img src="path/to/image.png">]([https://link-to-your-URL/](https://images.app.goo.gl/ww5Jn4V8C5KFxpaC9))
+<img src="plesson_00/amiyah/img/banner_README.png">]([http://example.com/](https://images.app.goo.gl/ww5Jn4V8C5KFxpaC9))
 
 ### ☴ My work hours
 9AM-6PM .ᐟ.ᐟ However you will most likely catch me outside of those hours if you need any help. 
