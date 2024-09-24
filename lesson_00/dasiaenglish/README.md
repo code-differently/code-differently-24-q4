@@ -11,9 +11,13 @@ Hello everyone! I am excited to be in this program and further my education in t
 ## Current jobs 
 
 1. First State Gymnastics
-2. M.O.T All Stars 
-3. Odessa High School Cheer Coach 
-4. Private Lessons (Personal business)
+    * Insructor/Front Desk
+1. M.O.T All Stars 
+    * Coaching a Mini level 1 prep Team
+1. Odessa High School Cheer Coach 
+    * JV Cheer Team
+1. Private Lessons (Personal business)
+    * Tumbling, stretching, and Jump 1-on-1's
 
 ## Support 
 
@@ -21,7 +25,7 @@ I am a hands-on-learner. I also learn from constructive feedback. I like to know
 
 ## Contact me 
 
-I am available from 9am-9pm. But the best time will be 9am-12pm
+I am available from 9am-9pm. The best time is before 12pm
 
 ## Goals for the coming Year
 
