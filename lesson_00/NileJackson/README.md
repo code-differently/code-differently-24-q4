@@ -14,7 +14,6 @@ I'm not a fan of the following;
 * the new york subway system 
 * excessively cold winters. 
 
-I'm not a fan of the following; artichokes, english breakfast tea, the new york subway system, and excessively cold winters.
 
 ## Hobbies
 
@@ -26,24 +25,20 @@ In my free time I enjoy
  * lounging/napping with my dogs pico and lulu
  * My working/learning style: Myers briggs says I'm an INTP. It usually takes me some time to open up to new people; peers/coworkers, but after that I'm pretty much an open book. I'm a visual learner who values repition. Professionally, I'm not sure what my style is, but I'm working on that.
 
-My circadian rhythm: I'm a night owl, but I'd like to change that, as most of my nights tend to spill into days. This is also a work in progress.
+## My circadian rhythm: 
+I'm a night owl, but I'd like to change that, as most of my nights tend to spill into days. This is also a work in progress.
 
-Why I value programming: I'm sure this will change over time, but for now I'll say I value programming because it's empowering; I went to middle/high school for fine art because I loved making "something from nothing", and the idea of making a program stirs up that same feeling.
+## Why I value programming: 
+I'm sure this will change over time, but for now I'll say I value programming because it's empowering; I went to middle/high school for fine art because I loved making "something from nothing", and the idea of making a program stirs up that same feeling.
 
-Moving forward: I look forward to learning github, git, and docker because I don't enjoy feeling confused. I also hope I can make myself an asset to the other members of my cohort because that would mean that I have a clue as to what's going on. My main goal here at code differently is to gain programming skills, get better at problem solving, build relationships, and get a job so I can get paid to learn.
+## Moving forward: 
+I look forward to learning github, git, and docker because I don't enjoy feeling confused. I also hope I can make myself an asset to the other members of my cohort because that would mean that I have a clue as to what's going on. My main goal here at code differently is to gain programming skills, get better at problem solving, build relationships, and get a job so I can get paid to learn.
 
 Cool Pictures
 
 ## Cool Pictures
-<img src="images/9EF95C30-DC31-4EB6-B776-B4E87D76032B_4_5005_c.jpeg">
+<img src="images/headphones.jpeg">
 
-<img src="images/895CB64D-550A-4511-9599-F1E9AE4AF083_4_5005_c.jpeg">
+<img src="images/manga.jpeg">
 
-### Purpose
-Main project repo for the Code Differently 2024 Q4 cohort. Read the [syllabus](/syllabus/) for more information about the class. Use the lesson folders to find and submit homework assignments.
 
-### Preview
-1. Install VS Code and Docker. You can references the [instructions here][dev-container-instructions], if needed.
-1. Click the `Dev Containers` button above to automatically clone and open the project in a new dev container.
-   
-[dev-container-instructions]: https://aka.ms/vscode-remote/containers/getting-started
