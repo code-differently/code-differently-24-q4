@@ -11,4 +11,8 @@
     "[javascriptreact]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
+    "cSpell.words": [
+        "NDA's",
+        "Springboot"
+    ],
 }
