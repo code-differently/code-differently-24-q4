@@ -26,3 +26,5 @@ I describe my learing style as a mix between visual and "trial by fire". Being a
 ## Best Working Time of Day
 
 I am very much a night owl. I like the idea of being able to partake in deep learning during peacful hours. I like to throw on some Bossa Nova jazz or some Native American flute music and dial into whatever I am doing. Despite this preference, I still do enjoy working during the day as it better allows for collaborations and Q `n' A's.
+
+<img src="images/images.jpeg">
