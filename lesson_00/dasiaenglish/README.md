@@ -7,7 +7,7 @@ Hello everyone! I am excited to be in this program and further my education in t
 ## 2024 Game Day Champions (6peat)
 
 <img src= "images/Celebration.JPG" height=400/> 
-
+<img src= >
 ## Current jobs 
 
 1. First State Gymnastics
@@ -30,6 +30,14 @@ I am available from 9am-9pm. The best time is before 12pm
 ## Goals for the coming Year
 
 Finding my career job in Tech. I also would like my cheerleading team to be undefeated. 
+
+## Important to know 
+
+* When I am doing work I rather not get interrupted because I will lose my train of thought. I would appreciate if people would wait until I am finished to talk to me. 
+* Time management is big for me 
+* I have to be organized in order for me to be my most productive self
+
+
 
 # What will get me talking 
 
