@@ -21,7 +21,7 @@ Hello everyone! I am excited to be in this program and further my education in t
 
 ## Support 
 
-I am a hands-on-learner. I also learn from constructive feedback. I like to know when I am wrong. Mainly because I love to make myself better. I also like to get credit when my credit is due.
+I am a hands-on-learner. I also learn from constructive feedback. I like to know when I am wrong. Mainly because I want to continuously make myself better. I also like to get credit when my credit is due.
 
 ## Contact me 
 
