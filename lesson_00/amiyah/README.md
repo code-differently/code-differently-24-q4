@@ -38,6 +38,7 @@ Private message through google chat works perfectly. Email works too as a follow
 > I'm the type of person that if you ask me a question and I don't know the answer, I'm gonna tell you that I don't know. But I bet you what, I know how to find the answer and I will find the answer. <br> - Will smith
 
 
-###### // readme inspired by [Kaeti's repo][kaeti-repo]
+###### // readme inspired by [Kaeti's repo][kaeti-repo] , code snippet inspired by [Thai Brega]
 
 [kaeti-repo]: https://github.com/kaeti/personal-readme
+[Thai brega]: https://github.com/Thaiane/Thaiane
