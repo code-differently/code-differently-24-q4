@@ -9,6 +9,7 @@ I have been swimming since I was 5 years old. In my free time I like to play soc
 I like traveling as well!
 
 ## Fun Facts
+* I can swim in the sea!
 
 
 
