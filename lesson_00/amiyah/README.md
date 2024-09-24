@@ -28,8 +28,9 @@ Private message through google chat works perfectly. Email works too as a follow
 * Photos + design ideas
 
 ## Extra  ⓘ
-  ✦ procreate artist ↓ <br>
-  ###### I like to combine this with my coding  work! In case you find me with my ipad, that's why. 
+* ✦ procreate artist ↓ <br>
+    - I like to combine my art and code together!
+        - In case you find me with my ipad, that's why 
 * visual learner <br>
 * Jr Developer HS Intern for 4 years with Code Differently (youth program)
 * No, I don't drink coffee. ~~Hot chocolate is my go to~~
