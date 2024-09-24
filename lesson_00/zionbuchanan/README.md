@@ -20,7 +20,14 @@ Here are some things I need that would help me be a productive engineer:
 - I work another job on weekends so I try to get majority or my tasks completed during the week day. 
 
 ## Support
-I'm open to making connections via LinkedIn.com/in/zionbuchanan/ 
+ 
+- Disclaimer: I'm someone that has been diagnosed with ADD, so at times I have difficulty dealing with multiple things at once. I tend to focus on solving 1 thing for long periods of time. 
+
+- I'm eager to make the most out of this program, so receiving constructive feedback on how I can improve and excel my learning as a future programmer/software developer is needed.
+-  I want to build my network and learn how to optimize LinkedIn to my advantage. 
+    
+        LinkedIn.com/in/zionbuchanan/
+
 
 ## Fun Facts
 - I sing on the church choir
