@@ -7,37 +7,32 @@ Zion Buchanan is a first-generation college graduate with a degree in Organizati
 
 Here are some things I need that would help me be a productive engineer:
  
-- Spending time in prayer, Connecting with God.
-- Work/Life Balance: Family/Friends, Going to church, vacation.
-- Small breaks throughout the day to prevent burn out.
-- A consistent routine/schedule that allows me to recharge: lifting weights, playing basketball/pickleball/swimming.
-- Home cooked meals: Rosemary Braised Lamb chops or garlic butter Salmon, with asparagus or brussel sprouts, and a baked sweet potato/oven roasted potatoes.
-- A salary of $90k/year salary with opportunities for growth.
+- I work best with open-minded people who I can bounce off ideas and strategize with.
+- I value a healthy work/life balance
+- A consistent routine helps me stay organized in completing tasks.
+- Small breaks throughout the day helps prevent me from burning out. 
+- I like to socialize and do activities that foster a positive work culture/community.
 
-## Installation Instructions
-- Best time to reach me is between 9am to 5pm. 
-- Email is the best method of communication for me, otherwise contacting me via phone.
-- I work another job on weekends so I try to get majority or my tasks completed during the week day. 
+## Contact 
+- The best time to reach me is between 9am to 5pm.
 
 ## Support
- 
-- Disclaimer: I'm someone that has been diagnosed with ADD, so at times I have difficulty dealing with multiple things at once. I tend to focus on solving 1 thing for long periods of time. 
 
-- I'm eager to make the most out of this program, so receiving constructive feedback on how I can improve and excel my learning as a future programmer/software developer is needed.
--  I want to build my network and learn how to optimize LinkedIn to my advantage. 
-    
-        LinkedIn.com/in/zionbuchanan/
+- I'm a hands-on learner. I accept and appreciate constructive feedback that will help me grow. I am constantly finding new ways on how I can improve. Whenever I have difficulty getting started with tasks, I try my best to ask for guidance and tips on how to do so. Sometimes that can be hard for me becuase I don't want to slow others down.
 
+## Goals
+- I aim to gain skills in software development so that I can land a career in the tech industry.
+- I want to craft and master my skillset so that I can be a valuable source in helping others. 
+- I aim to generate wealth so that I can provide for my family and afford the lifestyle that I desire to live.
+- I want to make progress in my fitness, staying in shape and maintaining great health. 
 
-## Fun Facts
-- I sing on the church choir
-- I enjoy cooking and trying delicous foods
-- I aspire to travel the world and vlog my experiences. 
-- My favorite color is green
+## Fun Facts About Me
+- I find enjoyment in cooking, sports, singing or playing music, and being around my family/friends.
+- The photos in my gallery were all taken when I had studied abroad for a month in Trinidad and Tobago over the winter.
+- I like visiting new places and trying delicous foods.
 
 ## Photo Gallery
 <img src="Images/unnamed-3.jpg">
 <img src="Images/unnamed-5.jpg">
 <img src="Images/unnamed-6.jpg">
-<img src="Images/unnamed-2.jpg">
 
