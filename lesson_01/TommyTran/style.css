@@ -1,0 +1,16 @@
+.line {
+    border-bottom: 1px solid lightgray;
+
+}
+body{
+    padding-left: 20px;
+    width: 75%;
+    font-family: sans-serif;
+   color: white;
+   background-color: black;
+}
+
+li{
+    font-size: 14px;
+
+}
