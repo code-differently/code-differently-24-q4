@@ -8,7 +8,7 @@ I start my work day between Monday-Friday by waking up at 7am. Once I am up, I g
 ## What’s the best way to communicate with me?
 I will be mainly be communicating for work through my email: jjcapparell244@gmail.com
 
-If I don’t respond, try: my phone number: (562) 343-4349
+If I don’t respond, try my phone number on file
 
 ## I'd love to help you with making the code make sense
 I try my best to explain every idea presented in my code and will make an explaination to easily understand it.
