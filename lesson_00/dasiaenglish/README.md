@@ -7,9 +7,8 @@ Hello everyone! I am excited to be in this program and further my education in t
 ## 2024 Game Day Champions (6peat)
 
 <img src= "images/Celebration.JPG" height=400/> 
-<img src= >
-## Current jobs 
 
+## Current jobs 
 1. First State Gymnastics
     * Insructor/Front Desk
 1. M.O.T All Stars 
