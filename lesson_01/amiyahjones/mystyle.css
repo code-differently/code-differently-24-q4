@@ -1,21 +1,15 @@
-html{
-    /* background-color: rgb(14, 19, 25); */
-    background-color: #0d1117;
-}
-
 h1{
     margin-bottom: 0px;
 }
 
 body{
+    background-color: #0d1117;
     color: white;
     font-family: system-ui;
     line-height: 1.5;
 }
 
 .mainContainer{
-    /* display: flex; */
-   /* max-width: fit-content; */
    border: #212b32 solid 2px;
    margin: auto;
    width: 50%;
@@ -24,7 +18,6 @@ body{
 
 
 code{
-    /* background-color: rgb(54, 56, 76); */
     font-size: 105%;
     
 }
@@ -38,12 +31,12 @@ code{
 
 .Intro{
     background-color: rgb(21, 30, 39);
-    /* padding: 100px; */
     border-radius: 2px;
     padding: 20px;
     margin-bottom: 15px;
-    overflow-x: auto;
+    overflow-x: auto; 
     overflow-y: hidden;
+    white-space: nowrap;
 }
 
 .tip-box{
@@ -74,7 +67,6 @@ hr{
     height: 1px; 
     border:0; 
     border-top: 1px solid #212b32; 
-    /* margin: 1em 0; padding: 0;  */
     margin: 10px;
 }
 
