@@ -29,7 +29,6 @@ I hope that I learn all I need to know for Git Hub and Java, in order to collabe
 If I am ahead in a project we are working on, I like to help explain to others how I got to the point I made it to. I like explaining in full detail so others can concieve that type of result later as well.
 
 ### Other things you might want to know:
-*Some optional ideas below. Delete and/or add whatever you like.*
 
 * My favorite pass time is playing games on my PC with my friends on Discord
 * I live with my older brother, my girlfriend, and my cat Skye
