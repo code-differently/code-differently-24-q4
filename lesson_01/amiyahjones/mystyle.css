@@ -1,0 +1,105 @@
+body{
+    background-color: #0d1117;
+    color: white;
+    font-family: system-ui;
+    line-height: 1.5;
+}
+
+.mainContainer{
+   border: #212b32 solid 1px;
+   margin: auto;
+   width: 50%;
+   padding: 40px;
+}
+
+h1 , .tip-box p{
+    margin-bottom: 0px;
+}
+
+/* Horizontal rule (line) */
+hr{
+    display:block; 
+    height: 1px; 
+    border:0; 
+    border-top: 1px solid #212b32; 
+    margin: 10px;
+}
+
+/* Code Introduction */
+.Intro{
+    background-color: rgb(21, 30, 39);
+    border-radius: 2px;
+    margin-bottom: 15px;
+    overflow-x: auto; 
+    overflow-y: hidden;
+    white-space: nowrap;
+    font-size: 105%;
+    padding: 0px 20px 20px 20px;
+}
+
+.Intro::-webkit-scrollbar{ 
+    width: 12px;
+}
+
+.Intro::-webkit-scrollbar-track{
+    background: #2b2b2b; 
+    border-radius: 10px;
+}
+
+.Intro::-webkit-scrollbar-thumb{ 
+    background-color: #555;
+    border-radius: 10px;
+    border: 2px solid #2b2b2b;
+}
+
+.Intro::-webkit-scrollbar-thumb:hover{
+    background-color: #888;
+}
+
+
+/* 9pm-5pm code */
+.mini-code{
+    background-color: rgb(23, 33, 44);
+    border-radius: 2px;
+    padding: 3px;
+    margin-right: 10px;
+    font-size: 105%;
+}
+
+/* 'Tip' Section */
+.tip-box{
+    border-left: 4px solid green;
+    padding: 15px;
+    max-width: 600px;
+    margin-bottom: 10px;
+}
+
+#extra{
+    margin-bottom: 0%;
+}
+
+/* Quote Area */
+.quote-box{
+    border-left: 4px solid #3c4043;
+    margin-bottom: 10px;
+    color: #8b949e;
+}
+
+.quote-box p{
+    margin-left: 10px;
+}
+
+/* Bottom credits */
+#credits{
+    color: #8b949e;
+    font-size: 0.9em;
+    font-weight: 500;
+}
+
+#credits a{
+    color:rgb(76, 145, 242);
+}
+
+#credits a:link{
+    text-decoration: none;
+}
