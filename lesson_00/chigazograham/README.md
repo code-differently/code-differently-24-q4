@@ -27,3 +27,5 @@
 1. **My favorite baked good:** Croissants
 1. **My coffee order:** French Vanilla Hazelnut Iced Coffee Regular Cream & Sugar
 
+![Isolated.png](images/GSF_Speaker.jpeg)
+![Isolated.png](images/GSF_Comp.jpeg)
