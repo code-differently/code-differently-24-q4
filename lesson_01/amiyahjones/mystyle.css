@@ -39,6 +39,10 @@ code{
     white-space: nowrap;
 }
 
+.intro::-webkit-scrollbar{
+    width: 20px;
+}
+
 .tip-box{
     border-left: 4px solid green;
     padding: 15px;
@@ -91,7 +95,7 @@ hr{
 }
 
 #credits a{
-    color:rgb(77, 145, 240);
+    color:rgb(76, 145, 242);
 }
 
 #credits a:link{
