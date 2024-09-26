@@ -30,4 +30,4 @@ I learn best in a social setting as I can bounce ideas across other people and r
 ### Contact Information
 <p>Email:   Best form of contact for me. I try to respond as soon as possible.</p>
 <p>Phone: I can be reached here for urgent information. If I am not available please leave a voice message</p>
-<p>Github:  https://github.com/txtran224</p>
+<p>Github:  https://github.com/txtran224</p> 
