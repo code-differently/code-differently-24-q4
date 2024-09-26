@@ -1,7 +1,7 @@
 # David Smith README.md
 
 ##  Introduction
-When i was younger I spent most of my life playing video games I was fascinated by creating a world in a game that could be whatever I wanted, something to look at and share with the world being able to say I made that. I came from a very poor area and am putting in the work to better my life for myself and my future family.
+When I was younger I spent most of my life playing video games I was fascinated by creating a world in a game that could be whatever I wanted, something to look at and share with the world being able to say I made that. I came from a very poor area and am putting in the work to better my life for myself and my future family.
 
 ##  Previous Coding Experience
  <ul>
@@ -22,13 +22,13 @@ When i was younger I spent most of my life playing video games I was fascinated 
 ## Past work
 * 4 years at Code Differently I worked in the Youth Employment Program for the better part of 4 years, learning a variety of different coding languages and using multiple different frameworks.
 
-* 3, 8 week internships at JPMorgan Chase & Co. I would expand on the projects I've worked on unfortunately because of NDA's I cannot elaborate upon this but I used several in house frameworks and platforms including cloud platform, creating servers and api's used within the firm.
+* Three, 8 week internships at JPMorgan Chase & Co. I would expand on the projects I've worked on unfortunately because of NDA's I cannot elaborate upon this but I used several in house frameworks and platforms including cloud platform, creating servers and api's used within the firm.
  
 ##  The Way I Learn
-I am a very hands on person I dislike lectures but I understand why they're important because you're learning from someone elses experience and saving time rather than having to go through the experience yourself.
+I am a very hands on person. I dislike lectures but I understand why they're important because you're learning from someone elses experience and saving time rather than having to go through the experience yourself.
 
 ### Likes
-* Cars; I currently drive a 2015 BMW 428 XI with a dual turbo charged engine makes about 500 HP and 770+ lbs of torque
+* Cars; I currently drive a 2015 BMW 428 XI with a dual turbo charged engine makes about 500 HP and 770+ lbs of torque.
 ### <img src=images/20240908_172706.jpg width=50% height=50%>
 
 ### <img src=images/20240908_172719.jpg width=50% height=50%>
