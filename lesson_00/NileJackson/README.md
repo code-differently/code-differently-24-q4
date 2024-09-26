@@ -2,17 +2,17 @@
 
 ## Introduction
 
-Hi, my name is Nile Jackson. I started learning javascript about a month ago, and I'm about two weeks into my journey with java; I'm new. I decided to learn programming because of my fascination with digital audio workstation plugins, I plan on building my own in due time. Before code differently, I worked primarily in juvenile detention; this wasn't fulfilling so a little over a year ago I rented a room in brooklyn New York and began an audio engineering internship at a place called Jungle studios. After two months at jungle and several odd jobs I landed my first "gig" as the sound guy at a local bar called skytown. I continued working small gigs for a few months and traveling back to delaware 3 times a week to do carpentry work with a long time friend of mine. Eventually I decided that this life style wasn't sustainable, so after another four month internship at Manhattan Beach studios, I did some research and discovered code differently.
+Hi, my name is Nile Jackson. I started learning JavaScript about a month ago, and I'm about two weeks into my journey with Java; I'm new. I decided to learn programming because of my fascination with digital audio workstation plugins, I plan on building my own in due time. Before Code Differently, I worked primarily in juvenile detention; this wasn't fulfilling so a little over a year ago I rented a room in Brooklyn New York and began an audio engineering internship at a place called Jungle studios. After two months at Jungle and several odd jobs I landed my first "gig" as the sound guy at a local bar called Skytown. I continued working small gigs for a few months and traveling back to delaware 3 times a week to do carpentry work with a long time friend of mine. Eventually I decided that this life style wasn't sustainable, so after another four month internship at Manhattan Beach studios, I did some research and discovered Code Differently.
 
 ## Likes
 
-I enjoy cooking because I'm an eight year vegan who misses the dishes I grew up on, namely jamaican food; I spend a lot of down time in the kitchen trying to "veganize" things. Other than food, I love to read, I hated books as a kid but four/five years ago I moved to Iowa to play(school) football at a small private college called William Penn, I wasn't a fan of Iowa or the school so I began using the library as a place to escape. I also like my two dogs, Pico(a pitbull/great dane mix) & LuLu(a small mut of some sort).
+I enjoy cooking because I'm an eight year vegan who misses the dishes I grew up on, namely Jamaican food; I spend a lot of down time in the kitchen trying to "veganize" things. Other than food, I love to read, I hated books as a kid but four/five years ago I moved to Iowa to play(school) football at a small private college called William Penn, I wasn't a fan of Iowa or the school so I began using the library as a place to escape. I also like my two dogs, Pico(a Pitbull/Great dane mix) & LuLu(a small mut of some sort).
 ## Dislikes
 I'm not a fan of the following; 
-* artichokes 
-* english breakfast tea 
-* the new york subway system 
-* excessively cold winters. 
+* Artichokes 
+* English breakfast tea 
+* The New York subway system 
+* Excessively cold winters. 
 
 
 ## Hobbies
@@ -21,7 +21,7 @@ In my free time I enjoy
 
  * Various forms of exercise (force of habit from a life of sport)
  * reading ( right now I'm reading a book called cosmos and psyche by richard tarnas)
- * anime/manga (fav anime: berserk, fav manga: sakamoto days)
+ * anime/manga (fav anime: Berserk, fav manga: Sakamoto days)
  * lounging/napping with my dogs pico and lulu
  * My working/learning style: Myers briggs says I'm an INTP. It usually takes me some time to open up to new people; peers/coworkers, but after that I'm pretty much an open book. I'm a visual learner who values repition. Professionally, I'm not sure what my style is, but I'm working on that.
 
