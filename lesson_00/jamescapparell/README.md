@@ -14,7 +14,7 @@ If I don’t respond, try my phone number on file
 I try my best to explain every idea presented in my code and will make an explaination to easily understand it.
 
 ## What makes me grumpy?
-I am the grumpiest when I amtrying to understand something that I am learning. If I feel like I am just not getting it, I tend to get quiet and try to force my way into figuring it out.
+I am the grumpiest when I am trying to understand something that I am learning. If I feel like I am just not getting it, I tend to get quiet and try to force my way into figuring it out.
 	
 ## How do I like to give feedback?
 If I were to give you feedback, I think it is much easier in person. I like to first ask if you need any help with anything they are currently working on. After I am on the same page I will show what my works like and expalin how I got to where I am at and explain my thought process.
