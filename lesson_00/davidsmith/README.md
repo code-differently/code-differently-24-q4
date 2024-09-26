@@ -29,10 +29,10 @@ I am a very hands on person I dislike lectures but I understand why they're impo
 
 ### Likes
 * Cars; I currently drive a 2015 BMW 428 XI with a dual turbo charged engine makes about 500 HP and 770+ lbs of torque
-### <img src="/Users/davidsmith/Documents/code-differently-24-q4/lesson_00/davidsmith/images/20240908_172706.jpg" width=50% height=50%>
+### <img src=images/20240908_172706.jpg width=50% height=50%>
 
-### <img src=/Users/davidsmith/Documents/code-differently-24-q4/lesson_00/davidsmith/images/20240908_172719.jpg width=50% height=50%>
+### <img src=images/20240908_172719.jpg width=50% height=50%>
 
-### <img src="/Users/davidsmith/Documents/code-differently-24-q4/lesson_00/davidsmith/images/20240908_172728.jpg" width=50% height=50%>
+### <img src=images/20240908_172728.jpg width=50% height=50%>
 
 * Coding; I've been coding for the better part of 7 years and worked within software engineering for 4 of those trying to turn my passion into a job I enjoy.
