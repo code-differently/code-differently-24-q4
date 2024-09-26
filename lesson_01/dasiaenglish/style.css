@@ -19,36 +19,6 @@ h2, h1, h3{
 
 }
 
-h2 {
-    margin-top: 20px;
-}
-/*
-h1, h2 {
-    padding-bottom: .2em;
-    margin-bottom: .2rem;
-    border-bottom: 1px solid #d1d9e0b3;
-    font-weight: 550;
-    
-}
-
-h2 {
-    font-size: 2em;
-}
-h3 {
-    padding-bottom: .4em;
-    margin-bottom: 1rem;
-    border-bottom: 1px solid #d1d9e0b3;
-    font-size: 1.5em ;
-    font-weight: 550;
-}
-h4 {
-    padding-bottom: .2em;
-    border-bottom: 1px solid #d1d9e0b3;
-    font-weight: 550;
-    font-size: .90em;
-    width: 1053px;
-}
-    */
 .container {
     margin: auto;
     border: 1px solid #d1d9e0b3;
@@ -76,10 +46,4 @@ h4 {
     margin: 0;
     font-size: 14px;
 }
-
-p, ol{
-    color: #1f2328;
-    /* padding-bottom: ; */
-    
-} 
 
