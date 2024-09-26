@@ -10,7 +10,7 @@ body{
 }
 
 .mainContainer{
-   border: #212b32 solid 2px;
+   border: #212b32 solid 1px;
    margin: auto;
    width: 50%;
    padding: 40px;
@@ -39,8 +39,25 @@ code{
     white-space: nowrap;
 }
 
-.intro::-webkit-scrollbar{
-    width: 20px;
+/* 'Webkit' browsers like chrome and safari! */
+
+.Intro::-webkit-scrollbar{
+    width: 12px;
+}
+
+.Intro::-webkit-scrollbar-track{
+    background: #2b2b2b; /*Dark background for 'track' = the background of the scroll bar*/
+    border-radius: 10px;
+}
+
+.Intro::-webkit-scrollbar-thumb{ /* The official scroll part*/
+    background-color: #555;
+    border-radius: 10px;
+    border: 2px solid #2b2b2b;
+}
+
+.Intro::-webkit-scrollbar-thumb:hover{
+    background-color: #888;
 }
 
 .tip-box{
@@ -48,18 +65,6 @@ code{
     padding: 15px;
     max-width: 600px;
     margin-bottom: 10px;
-}
-
-.icon{
-    font-size: 24px;
-    margin-right: 10px;
-    color: rgb(18, 192, 18);
-}
-
-.tip{
-    font-weight: bold;
-    color: rgb(18, 192, 18);
-    margin-right: 10px;
 }
 
 .tip-box p{
