@@ -1,34 +1,14 @@
-# Carroll Dwight Blue Jr README
+## Homework
 
-## Introduction
+- [ ] Convert personal README [to HTML](#personal-readme-html-edition).
+- [ ] Do pre-work for [lesson 02](/lesson_02/).
 
-Dwight is a widowed father of 2 (12 - son and 15 - daughter) with 10 years experence in hardware technical support and 10 years emergency medical services experence. Dwight was married to Nancy for 17 years before her unexpected passing on August 7th, 2021. Dwight is currently unemployed and concentrating on raising his two kids.
+### Personal README (HTML Edition)
 
-## Prerequisites
+For this assignment, you are tasked with making a pixel-perfect version of your README file as rendered in GitHub MARKDOWN. You will be assessed by how well your HTML version matches the MARKDOWN version. There are several tools that you can use to complete this assignment, including using LLMs like Chat GPT and Gemini or tools that mimic the markdown-to-html conversion.
 
-Here are some of the things I need to be a productive person and father.
+I'd highly recommend that you research CSS stylesheets and use them to make your work easier and consistent. If you want to know what styles GitHub uses to render your markdown files, you can use browser debugger tools to inspect the HTML and see what colors, font sizes, and attributes are used for the markdown version.
 
-* Dr. Pepper cabinated beverage.
-* A good morning from current significant other.
-* 80s hair band / country music / musicals soundtracks that are upbeat.
-* Favorite foods include Lasagna, Pepperoni Pizza and hamburger Mac and Cheese.
+### Submitting your files
 
-## Installation Instructions
-
-1. To contact feel free to text or call and leave a message do to being extremely busy schedule.
-2. I'm am fairly function, just add morning medications.
-3. My day prior to starting class, was basic house cleaning including loading / unloading dishwasher, wash / dry / fold / put away cloths.
-
-## Support
-
-* You can find me on LinkedIn, Twitter, and Instagram if you want to reach out. 
-
-## Fun Facts
-
-* I used the original IBM PC in high school.
-* My first programming language was BASIC, which I learned at the age of 16. I placed 2nd in a national competition for organization formally known as Office Education Association.
-* I have been married twice, first married was from June 9th, 1990 to December 2nd, 1999.
-
-## Photo Gallery
-<a href = "https://x.com/cdbluejr/status/1838603335156298160/photo/1"><img src="images/GYQH_VxWMAASLTI.jpeg" height=400 /></a>
-<a href = "https://x.com/cdbluejr/status/1520458945290252290/photo/1"><img src="images/GYQMlwYW8AAFgoG.jpeg" height=400 /></a>
+You will use the same process you used in [Lesson 00](/lesson_00/) in order to submit your work. **Please submit your files in a sub-folder created under this folder (lesson_01).** Remember to craft a good pull request (PR) title and description detailing the work you're submitting.
