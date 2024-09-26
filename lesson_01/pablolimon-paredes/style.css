@@ -4,4 +4,13 @@
 body{
     margin: 0 15%;
     font-family: sans-serif;
+    
+}
+
+p {
+    line-height: 1.6;
+}
+
+li {
+    line-height: 1.6;
 }
