@@ -28,6 +28,6 @@ I learn best in a social setting as I can bounce ideas across other people and r
 <img src= "Images/pancakes.jpg"  style="width:500px; height:500px;"/>
 
 ### Contact Information
-<p>Email:  txtran224@gmail.com</p>
-<p>Phone:  302-373-0412</p>
-<p>Github: https://github.com/txtran224</p>
+<p>Email:   Best form of contact for me. I try to respond as soon as possible.</p>
+<p>Phone: I can be reached here for urgent information. If I am not available please leave a voice message</p>
+<p>Github:  https://github.com/txtran224</p>
