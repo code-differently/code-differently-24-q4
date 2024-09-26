@@ -26,7 +26,7 @@ Here are some of the things I need to be a productive person and father.
 ## Fun Facts
 
 * I used the original IBM PC in high school.
-* My first programming language was BASIC, which I learned at the age of 16. I placed 2nd in a national competition for organization formally know as Office Education Association.
+* My first programming language was BASIC, which I learned at the age of 16. I placed 2nd in a national competition for organization formally known as Office Education Association.
 * I have been married twice, first married was from June 9th, 1990 to December 2nd, 1999.
 
 ## Photo Gallery
