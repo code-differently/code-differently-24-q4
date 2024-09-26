@@ -1,8 +1,4 @@
-h1{
-    margin-bottom: 0px;
-}
-
-body{
+*{
     background-color: #0d1117;
     color: white;
     font-family: system-ui;
@@ -16,19 +12,20 @@ body{
    padding: 40px;
 }
 
-
-code{
-    font-size: 105%;
-    
+h1 , .tip-box p{
+    margin-bottom: 0px;
 }
 
-.mini-code{
-    background-color: rgb(23, 33, 44);
-    border-radius: 2px;
-    padding: 3px;
-    margin-right: 10px;
+/* Horizontal rule (line) */
+hr{
+    display:block; 
+    height: 1px; 
+    border:0; 
+    border-top: 1px solid #212b32; 
+    margin: 10px;
 }
 
+/* Code Introduction */
 .Intro{
     background-color: rgb(21, 30, 39);
     border-radius: 2px;
@@ -37,20 +34,19 @@ code{
     overflow-x: auto; 
     overflow-y: hidden;
     white-space: nowrap;
+    font-size: 105%;
 }
 
-
-
-.Intro::-webkit-scrollbar{ /* 'Webkit' browsers like chrome and safari! */
+.Intro::-webkit-scrollbar{ 
     width: 12px;
 }
 
 .Intro::-webkit-scrollbar-track{
-    background: #2b2b2b; /*Dark background for 'track' = the background of the scroll bar*/
+    background: #2b2b2b; 
     border-radius: 10px;
 }
 
-.Intro::-webkit-scrollbar-thumb{ /* The official scroll part*/
+.Intro::-webkit-scrollbar-thumb{ 
     background-color: #555;
     border-radius: 10px;
     border: 2px solid #2b2b2b;
@@ -60,6 +56,17 @@ code{
     background-color: #888;
 }
 
+
+/* 9pm-5pm code */
+.mini-code{
+    background-color: rgb(23, 33, 44);
+    border-radius: 2px;
+    padding: 3px;
+    margin-right: 10px;
+    font-size: 105%;
+}
+
+/* 'Tip' Section */
 .tip-box{
     border-left: 4px solid green;
     padding: 15px;
@@ -67,18 +74,11 @@ code{
     margin-bottom: 10px;
 }
 
-.tip-box p{
-    margin: 0;
+#extra{
+    margin-bottom: 0%;
 }
 
-hr{
-    display:block; 
-    height: 1px; 
-    border:0; 
-    border-top: 1px solid #212b32; 
-    margin: 10px;
-}
-
+/* Quote Area */
 .quote-box{
     border-left: 4px solid #3c4043;
     margin-bottom: 10px;
@@ -89,10 +89,7 @@ hr{
     margin-left: 10px;
 }
 
-#extra{
-    margin-bottom: 0%;
-}
-
+/* Bottom credits */
 #credits{
     color: #8b949e;
     font-size: 0.9em;
