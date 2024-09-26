@@ -1,0 +1,7 @@
+.line{
+    border-bottom: 1px solid lightgrey;
+}
+body{
+    margin: 0 15%;
+    font-family: sans-serif;
+}
