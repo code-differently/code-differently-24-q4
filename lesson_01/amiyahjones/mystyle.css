@@ -39,9 +39,9 @@ code{
     white-space: nowrap;
 }
 
-/* 'Webkit' browsers like chrome and safari! */
 
-.Intro::-webkit-scrollbar{
+
+.Intro::-webkit-scrollbar{ /* 'Webkit' browsers like chrome and safari! */
     width: 12px;
 }
 
