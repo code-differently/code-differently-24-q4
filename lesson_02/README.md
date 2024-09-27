@@ -21,9 +21,10 @@ For this assignment, you will complete a quiz by modifying a TypeScript applicat
 
 1. Make sure to sync your fork to pull in the latest changes.
 2. Open the project in **VS Code** and make sure to select `Reopen in Container` when prompted.
-3. Navigate to the [quiz][lesson-2-quiz-dir] directory and make sure you can install and run the program:
+3. Navigate to the [quiz][lesson-2-quiz-dir] directory and install the required dependencies.
 ```bash
 cd lesson_02/quiz
+npm install --prefix ../../lib/typescript/codedifferently-instructional
 npm install
 npm start
 ```
