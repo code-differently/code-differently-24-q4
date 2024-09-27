@@ -1,30 +1,32 @@
 import * as bcrypt from 'bcrypt';
-import { Injectable } from '@nestjs/common';
-import { ConfigService } from '@nestjs/config';
 import { QuizQuestion } from './quiz_question.js';
 import { AnswerChoice, MultipleChoiceQuizQuestion } from './multiple_choice_quiz_question.js';
+import YAML from 'yaml';
+import fs from 'fs';
 
 interface QuestionConfig {
   prompt: string;
   choices?: Map<AnswerChoice, string>;
 }
 
-@Injectable()
 export class QuizConfig {
   private answersByProvider: Map<string, string[]> = new Map();
   private questionsByProvider: Map<string, QuizQuestion[]> = new Map();
   private quizTaker: string = '';
 
-  constructor(private configService: ConfigService) {
-    this.loadConfig();
+  constructor(path: string) {
+    this.loadConfig(path);
   }
 
-  private loadConfig() {
-    const answers = this.configService.get<Record<string, string[]>>('quiz.answers');
-    const questions = this.configService.get<Record<string, QuestionConfig[]>>('quiz.questions');
+  private loadConfig(configPath: string) {
+    const file = fs.readFileSync(configPath, 'utf8');
+    const config = YAML.parse(file);
+    
+    const answers = config.quiz.answers;
+    const questions = config.quiz.questions;
 
     if (answers) {
-      this.answersByProvider = new Map(Object.entries(answers));
+      this.setAnswers(new Map(Object.entries(answers)));
     }
 
     if (questions) {
@@ -33,6 +35,10 @@ export class QuizConfig {
   }
 
   public setAnswers(answersByProvider: Map<string, string[]>) {
+    answersByProvider.forEach((answers, provider) => {
+      // Replace bcrypt's $2y$ with $2b$ to make it compatible with bcryptjs.
+      answersByProvider.set(provider, answers.map((answer) => answer.replace('$2y$', '$2b$')));
+    });
     this.answersByProvider = answersByProvider;
   }
 
@@ -65,7 +71,7 @@ export class QuizConfig {
         return new MultipleChoiceQuizQuestion(
           index,
           config.prompt,
-          config.choices,
+          new Map(Object.entries(config.choices)) as Map<AnswerChoice, string>,
           AnswerChoice.UNANSWERED);
         
       }
