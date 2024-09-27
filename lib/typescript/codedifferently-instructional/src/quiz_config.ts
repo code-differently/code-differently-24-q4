@@ -1,10 +1,9 @@
 import * as bcrypt from 'bcrypt';
-import { Injectable } from '@nestjs/common';
-import { ConfigService } from '@nestjs/config';
 import { QuizQuestion } from './quiz_question.js';
 import { AnswerChoice, MultipleChoiceQuizQuestion } from './multiple_choice_quiz_question.js';
 import YAML from 'yaml';
 import fs from 'fs';
+import path from 'path';
 
 interface QuestionConfig {
   prompt: string;
@@ -20,8 +19,8 @@ export class QuizConfig {
     this.loadConfig(path);
   }
 
-  private loadConfig(path: string) {
-    const file = fs.readFileSync(path, 'utf8');
+  private loadConfig(configPath: string) {
+    const file = fs.readFileSync(path.resolve(__dirname, configPath), 'utf8');
     const config = YAML.parse(file);
     
     const answers = config.quiz.answers;

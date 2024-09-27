@@ -1,10 +1,10 @@
 {
   "name": "lesson_02",
   "version": "1.0.0",
-  "main": "./build/index.js",
+  "main": "./build/lesson2.js",
   "type": "module",
   "scripts": {
-    "start": "node build/index.js",
+    "start": "node build/lesson2.js",
     "test": "node --experimental-vm-modules node_modules/.bin/jest",
     "compile": "tsc -p tsconfig.build.json",
     "prepare": "npm run compile",
@@ -13,6 +13,7 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@alfonso-presa/soft-assert": "^0.6.0",
     "@eslint/js": "^9.11.1",
     "@types/eslint__js": "^8.42.3",
     "@types/jest": "^29.5.13",

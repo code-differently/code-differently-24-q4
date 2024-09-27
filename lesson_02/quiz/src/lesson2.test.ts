@@ -3,13 +3,14 @@ import {
   QuizQuestion,
   AnswerChoice,
 } from "codedifferently-instructional";
-import { Lesson2 } from "./index.js";
-import { beforeEach, afterEach, describe, it, expect } from "@jest/globals";
+import { Lesson2 } from "./lesson2.js";
+import { beforeEach, describe, it, expect } from "@jest/globals";
+import { proxy, flush } from "@alfonso-presa/soft-assert";
+
+const softExpect = proxy(expect);
 
 describe("Lesson2Test", () => {
-  let quizConfig: QuizConfig = new QuizConfig(
-    "/workspaces/code-differently-24-q4/lesson_02/quiz/src/answers.yaml",
-  );
+  let quizConfig: QuizConfig = new QuizConfig("quiz.yaml");
   let quizQuestions: QuizQuestion[];
 
   const EXPECTED_NUMBER_OF_QUESTIONS = 11;
@@ -49,14 +50,10 @@ describe("Lesson2Test", () => {
       const actualAnswer = question.getAnswer();
 
       // Check that the question was answered.
-      expect(actualAnswer).not.toBe(AnswerChoice.UNANSWERED);
+      softExpect(actualAnswer).not.toBe(AnswerChoice.UNANSWERED);
 
       // Check that the answer is correct.
-      console.log(
-        "Checking answer for question: ",
-        question.getQuestionNumber(),
-      );
-      expect(
+      softExpect(
         await quizConfig.checkAnswer(
           "default",
           question.getQuestionNumber(),
@@ -64,5 +61,7 @@ describe("Lesson2Test", () => {
         ),
       ).toBe(true);
     }
+
+    flush();
   });
 });
