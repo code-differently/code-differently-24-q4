@@ -35,7 +35,7 @@ jobs:
       working-directory: ./lib/typescript/codedifferently-instructional
       run: npm ci
 
-    - name: Build Lesson 02 with Gradle Wrapper
+    - name: Build Lesson 02 with Node.js
       working-directory: ./lesson_02/quiz
       run: npm ci
       run: npm run test

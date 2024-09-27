@@ -39,5 +39,6 @@ jobs:
     - name: Build Shared Lib with Node.js
       working-directory: ./lib/typescript/codedifferently-instructional
       run: npm ci
+      run: npm run test
 
 
