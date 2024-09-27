@@ -3,25 +3,29 @@ import { Injectable } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
 import { QuizQuestion } from './quiz_question.js';
 import { AnswerChoice, MultipleChoiceQuizQuestion } from './multiple_choice_quiz_question.js';
+import YAML from 'yaml';
+import fs from 'fs';
 
 interface QuestionConfig {
   prompt: string;
   choices?: Map<AnswerChoice, string>;
 }
 
-@Injectable()
 export class QuizConfig {
   private answersByProvider: Map<string, string[]> = new Map();
   private questionsByProvider: Map<string, QuizQuestion[]> = new Map();
   private quizTaker: string = '';
 
-  constructor(private configService: ConfigService) {
-    this.loadConfig();
+  constructor(path: string) {
+    this.loadConfig(path);
   }
 
-  private loadConfig() {
-    const answers = this.configService.get<Record<string, string[]>>('quiz.answers');
-    const questions = this.configService.get<Record<string, QuestionConfig[]>>('quiz.questions');
+  private loadConfig(path: string) {
+    const file = fs.readFileSync(path, 'utf8');
+    const config = YAML.parse(file);
+    
+    const answers = config.quiz.answers;
+    const questions = config.quiz.questions;
 
     if (answers) {
       this.answersByProvider = new Map(Object.entries(answers));
@@ -81,7 +85,7 @@ export class QuizConfig {
     if (!answers) {
       throw new Error(`No answers found for provider: ${provider}`);
     }
-    return bcrypt.compare(actualAnswer, answers[questionNumber]);
+    return bcrypt.compare(actualAnswer, answers[questionNumber].replace('$2y$', '$2b$'));
   }
 
   public size(provider: string): number {
