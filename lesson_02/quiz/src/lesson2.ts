@@ -190,3 +190,4 @@ export class Lesson2 {
 if (!process.env.JEST_WORKER_ID) {
   new Lesson2().run();
 }
+
