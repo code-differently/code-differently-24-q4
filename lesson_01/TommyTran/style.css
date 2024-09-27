@@ -1,7 +1,5 @@
 .line {
-
-       border-bottom: 1px solid lightgray;
-
+    border-bottom: 2px solid lightgray;
 }
 .md-heading h1{
     padding-block: 30px;
