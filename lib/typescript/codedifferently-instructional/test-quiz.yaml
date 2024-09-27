@@ -1,0 +1,132 @@
+quiz:
+  questions:
+    default:
+    - prompt: "What is 2 + 2?"
+      choices:
+        A: "4"
+        B: "5"
+        C: "6"
+        D: "7"
+
+    - prompt: "Which shape has 3 sides?"
+      choices:
+        A: "Triangle"
+        B: "Square"
+        C: "Circle"
+        D: "Rectangle"
+
+    - prompt: "What is 5 - 3?"
+      choices:
+        A: "1"
+        B: "2"
+        C: "3"
+        D: "4"
+
+    - prompt: "How many days are there in a week?"
+      choices:
+        A: "5"
+        B: "6"
+        C: "7"
+        D: "8"
+
+    - prompt: "What is the value of a dime?"
+      choices:
+        A: "5 cents"
+        B: "10 cents"
+        C: "25 cents"
+        D: "50 cents"
+
+    - prompt: "What is 3 x 3?"
+      choices:
+        A: "6"
+        B: "9"
+        C: "12"
+        D: "15"
+
+    - prompt: "Which number is even?"
+      choices:
+        A: "3"
+        B: "5"
+        C: "8"
+        D: "9"
+
+    - prompt: "What is the next number after 7?"
+      choices:
+        A: "6"
+        B: "7"
+        C: "8"
+        D: "9"
+
+    - prompt: "How many months are there in a year?"
+      choices:
+        A: "10"
+        B: "11"
+        C: "12"
+        D: "13"
+
+    - prompt: "What is the value of a quarter?"
+      choices:
+        A: "10 cents"
+        B: "15 cents"
+        C: "20 cents"
+        D: "25 cents"
+
+    - prompt: "What is 10 - 4?"
+      choices:
+        A: "4"
+        B: "5"
+        C: "6"
+        D: "7"
+
+    - prompt: "Which shape has 4 equal sides?"
+      choices:
+        A: "Triangle"
+        B: "Square"
+        C: "Rectangle"
+        D: "Circle"
+
+    - prompt: "What is 4 x 2?"
+      choices:
+        A: "6"
+        B: "7"
+        C: "8"
+        D: "9"
+
+    - prompt: "How many hours are there in a day?"
+      choices:
+        A: "12"
+        B: "24"
+        C: "36"
+        D: "48"
+
+    - prompt: "What is 7 + 3?"
+      choices:
+        A: "9"
+        B: "10"
+        C: "11"
+        D: "12"
+
+    - prompt: "Which number is odd?"
+      choices:
+        A: "2"
+        B: "4"
+        C: "6"
+        D: "7"
+  answers:
+    default:
+    - $2b$12$DE91d/ai25EQYlViiX8xTeg1MW08YqRBH0m1uNKjAcdcDdMxCAXBm #0
+    - $2b$12$cJ7TJ7wQ8FWcmlaxmoPwque7c9QAgQplyFAISdIF18oknzpxKoGbW #1
+    - $2y$10$d8NOiK.Ap5SFOobtH3idfeDBo1IVRkcjm1Xfy2.dMGV66HEbychIi #2
+    - $2b$12$Ss0nOgINGdp1Qj1CWLDxSOKqJsqAS0/dKWe20VYeo6hNUhhLyKHza #3
+    - $2b$12$IU.qbOwzICXmUT0OgEmi..tmj2Flodj0N1fUmIvJLUz1Cu57CP8g2 #4
+    - $2b$12$DhftST1ZFFNSq1kDVybpf.yPgfZrKzS1MpH9GlAct2dYEPR7Rrf4i #5
+    - $2b$12$MYHQFabBzVCHBP0HXjOJcOwRKtM86MeVdowEcc/pQx/OX9A/K6FU2 #6
+    - $2b$12$pgTBhYg1B/e7TuTs7H7ET.pAchLHkNK4dYeqKqXr5jixe0HW2NX.K #7
+    - $2b$12$ZNncczeS64qLl/sayRB7Guxi4N9t6HyrI1eXQ9pOzZVKURh5/7pnq #8
+    - $2b$12$4K338dQ4gp5oHOi..pYHk.EZR8vW4b0X9ioGJ2SjaCekX0Dba6uEK #9
+    - $2b$12$pWoTj.HpFqlMTK5HkiPpiuRDbN3Bzk/ssokUavepwH.j7fY4lr/MC #10
+    - $2b$12$TymowOaWJvFan93pX3F73.fZMBQBqUEu7UkrJu6tu694CiPEndaEq #11
+    - $2y$10$/Q3S78sq0V6fA2MmZKtvFe60k0Ws0FgouT2qUepSjPvO.TeVu/bvm #12
+    - $2y$10$g.FzJ/Z1uDeJIZG5PUgCvOGHZJrpMuTWQvep9pNryUxJlwCejNp4y #13
+    - $2y$10$Fl4.94T9hDINifNrTMt..OBy/t.OPTWprEEQtfE.dmovYLtbw0mva #14
+    - $2y$10$J5AOoOQ0PDaTORgN1UHF9.4CtX47RsZWV2v/jjO7/8lozS99oJ/Mq #15
