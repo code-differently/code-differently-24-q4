@@ -6,7 +6,7 @@ import {
 } from "codedifferently-instructional";
 
 export class Lesson2 {
-  static run(): void {
+  run(): void {
     const quizQuestions = Lesson2.makeQuizQuestions();
     if (!quizQuestions) throw new Error("Quiz questions cannot be null");
     const printer = new QuizPrinter();
@@ -188,5 +188,5 @@ export class Lesson2 {
 }
 
 if (!process.env.JEST_WORKER_ID) {
-  Lesson2.run();
+  new Lesson2().run();
 }

@@ -26,10 +26,9 @@ describe("Lesson2Test", () => {
   });
 
   const getQuestions = () => {
-    const questions = Lesson2.makeQuizQuestions().sort(
+    quizQuestions = Lesson2.makeQuizQuestions().sort(
       (a, b) => a.getQuestionNumber() - b.getQuestionNumber(),
     );
-    quizQuestions = questions;
   };
 
   it("checkQuizQuestions_areAssembledCorrectly", () => {
