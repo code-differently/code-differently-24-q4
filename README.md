@@ -1,7 +1,7 @@
 # Code Differently 2024 Q4 Cohort
 
-[![Open in Dev Containers](https://img.shields.io/static/v1?label=Dev%20Containers&message=Open&color=blue&logo=visualstudiocode)](https://vscode.dev/redirect?url=vscode://ms-vscode-remote.remote-containers/cloneInVolume?url=https://github.com/code-differently/code-differently-24-q1)
-[![Check Push](https://github.com/code-differently/code-differently-24-q1/actions/workflows/check_push.yml/badge.svg)](https://github.com/code-differently/code-differently-24-q1/actions/workflows/check_push.yml)
+[![Open in Dev Containers](https://img.shields.io/static/v1?label=Dev%20Containers&message=Open&color=blue&logo=visualstudiocode)](https://vscode.dev/redirect?url=vscode://ms-vscode-remote.remote-containers/cloneInVolume?url=https://github.com/code-differently/code-differently-24-q4)
+[![Check Push](https://github.com/code-differently/code-differently-24-q4/actions/workflows/check_push.yml/badge.svg)](https://github.com/code-differently/code-differently-24-q4/actions/workflows/check_push.yml)
 
 ### Purpose
 Main project repo for the Code Differently 2024 Q4 cohort. Read the [syllabus](/syllabus/) for more information about the class. Use the lesson folders to find and submit homework assignments.
