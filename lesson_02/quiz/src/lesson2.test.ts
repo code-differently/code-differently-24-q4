@@ -6,11 +6,17 @@ import {
 import { Lesson2 } from "./lesson2.js";
 import { beforeEach, describe, it, expect } from "@jest/globals";
 import { proxy, flush } from "@alfonso-presa/soft-assert";
+import { fileURLToPath } from "url";
+import path from "path";
 
+const __filename = fileURLToPath(import.meta.url); // get the resolved path to the file
+const __dirname = path.dirname(__filename); // get the name of the directory
 const softExpect = proxy(expect);
 
 describe("Lesson2Test", () => {
-  let quizConfig: QuizConfig = new QuizConfig("quiz.yaml");
+  const quizConfig: QuizConfig = new QuizConfig(
+    path.resolve(__dirname, "../quiz.yaml"),
+  );
   let quizQuestions: QuizQuestion[];
 
   const EXPECTED_NUMBER_OF_QUESTIONS = 11;

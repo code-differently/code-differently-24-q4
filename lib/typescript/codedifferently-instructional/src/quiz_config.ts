@@ -3,7 +3,6 @@ import { QuizQuestion } from './quiz_question.js';
 import { AnswerChoice, MultipleChoiceQuizQuestion } from './multiple_choice_quiz_question.js';
 import YAML from 'yaml';
 import fs from 'fs';
-import path from 'path';
 
 interface QuestionConfig {
   prompt: string;
@@ -20,7 +19,7 @@ export class QuizConfig {
   }
 
   private loadConfig(configPath: string) {
-    const file = fs.readFileSync(path.resolve(__dirname, configPath), 'utf8');
+    const file = fs.readFileSync(configPath, 'utf8');
     const config = YAML.parse(file);
     
     const answers = config.quiz.answers;
