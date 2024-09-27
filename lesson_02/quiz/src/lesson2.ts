@@ -182,7 +182,7 @@ export class Lesson2 {
         [AnswerChoice.C, "⌘ + Q"],
         [AnswerChoice.D, '⌘ + S, then type "terminal"'],
       ]),
-      AnswerChoice.C, // Replace `UNANSWERED` with the correct answer.
+      AnswerChoice.UNANSWERED, // Replace `UNANSWERED` with the correct answer.
     );
   }
 }
