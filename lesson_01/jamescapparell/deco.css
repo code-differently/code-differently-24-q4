@@ -1,9 +1,13 @@
 body { 
     font-family: Arial, sans-serif;
     line-height: 1.6;
-    background-color:rgba(0, 0, 0, 0);
+    
     padding-left: 2em;
+    padding-right: 2em;
+    
 }
+/* Dark Mode styles */
+
 h1, h2{
     margin-bottom: -.25em;
 }
