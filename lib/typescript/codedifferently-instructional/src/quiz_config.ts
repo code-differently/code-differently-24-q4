@@ -35,9 +35,9 @@ export class QuizConfig {
   }
 
   public setAnswers(answersByProvider: Map<string, string[]>) {
-    answersByProvider.entries().forEach(([key, answers]) => {
+    answersByProvider.forEach((answers, provider) => {
       // Replace bcrypt's $2y$ with $2b$ to make it compatible with bcryptjs.
-      answersByProvider.set(key, answers.map((answer) => answer.replace('$2y$', '$2b$')));
+      answersByProvider.set(provider, answers.map((answer) => answer.replace('$2y$', '$2b$')));
     });
     this.answersByProvider = answersByProvider;
   }
@@ -71,7 +71,7 @@ export class QuizConfig {
         return new MultipleChoiceQuizQuestion(
           index,
           config.prompt,
-          config.choices,
+          new Map(Object.entries(config.choices)) as Map<AnswerChoice, string>,
           AnswerChoice.UNANSWERED);
         
       }
