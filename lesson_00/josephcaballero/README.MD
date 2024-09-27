@@ -23,5 +23,5 @@
     * I was born in Hawaii
     
 <img src = "images/hawaii.jpg"/>
-<img src = "lesson_00/josephcaballero/images/Mike-tyson-signed-photo-60232.webp">
+<img src = "images/Mike-tyson-signed-photo-60232.webp">
 
