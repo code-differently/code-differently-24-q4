@@ -36,7 +36,11 @@
 				"ritwickdey.LiveServer",
 				"mechatroner.rainbow-csv",
 				"alexcvzz.vscode-sqlite"
-			]
+			],
+            "settings": {
+                "terminal.integrated.defaultProfile.linux": "zsh",
+                "terminal.integrated.profiles.linux": { "zsh": { "path": "/bin/zsh" } }
+            }
 		}
 	}
 }
