@@ -1,12 +1,18 @@
 body
 {
-  margin-top: 20px;
-  margin-left: 40px;
-  margin-right: 40px;
+  margin-top: 30px;
+  margin-left: 150px;
+  margin-right: 150px;
+}
+
+.p1 {
+  font-family: Verdana, sans serif, Calibri system-ui;
+  font-size: 16px; 
+  line-height: 1.5;
 }
 
 .p2 {
-  font-family: system-ui;
+  font-family: Verdana, sans serif, Calibri system-ui;
   font-size: 16px; 
   line-height: 1.5;
 }
