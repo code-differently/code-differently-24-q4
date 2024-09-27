@@ -6,8 +6,9 @@ body {
     padding-right: 2em;
     
 }
-/* Dark Mode styles */
-
+:root {
+    color-scheme: dark light;
+}
 h1, h2{
     margin-bottom: -.25em;
 }
