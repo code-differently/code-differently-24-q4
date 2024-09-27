@@ -1,10 +1,9 @@
-name: Check Push
+name: Check Lesson 02 Pull Request
 
 on:
-  push:
+  pull_request:
     branches: [ "main" ]
     paths:
-      - "lib/**"
       - "lesson_02/quiz/**"
 
 jobs:
@@ -32,13 +31,11 @@ jobs:
       with:
         node-version: '20.x'
 
-    - name: Build Shared Lib with Gradle Wrapper
-      working-directory: ./lib/java/codedifferently-instructional
-      run: ./gradlew check
-
     - name: Build Shared Lib with Node.js
       working-directory: ./lib/typescript/codedifferently-instructional
       run: npm ci
+
+    - name: Build Lesson 02 with Node.js
+      working-directory: ./lesson_02/quiz
+      run: npm ci
       run: npm run test
-
-
