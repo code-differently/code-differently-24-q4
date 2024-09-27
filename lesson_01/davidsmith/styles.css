@@ -1,18 +1,15 @@
+html{
+    font-family:Segoe UI, SegoeUI, Arial, sans-serif;
+    
+}
+
 body {
   color:#f0f6fc;
-  background-color:#0d1117;
-    
+  background-color:#161b22;
+  margin: 0 3%;
 
 }
-hr {
+
+h1,h2,h3{
     margin: 0;
-    margin-bottom: 16px;
-}
-h1 {
-    margin: 0;
-    margin-top: 24;
-}
-h2 {
-    margin: 0;
-    
 }
