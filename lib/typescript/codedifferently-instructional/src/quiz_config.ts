@@ -26,7 +26,7 @@ export class QuizConfig {
     const questions = config.quiz.questions;
 
     if (answers) {
-      this.answersByProvider = new Map(Object.entries(answers));
+      this.setAnswers(new Map(Object.entries(answers)));
     }
 
     if (questions) {
@@ -35,6 +35,10 @@ export class QuizConfig {
   }
 
   public setAnswers(answersByProvider: Map<string, string[]>) {
+    answersByProvider.entries().forEach(([key, answers]) => {
+      // Replace bcrypt's $2y$ with $2b$ to make it compatible with bcryptjs.
+      answersByProvider.set(key, answers.map((answer) => answer.replace('$2y$', '$2b$')));
+    });
     this.answersByProvider = answersByProvider;
   }
 
@@ -83,7 +87,7 @@ export class QuizConfig {
     if (!answers) {
       throw new Error(`No answers found for provider: ${provider}`);
     }
-    return bcrypt.compare(actualAnswer, answers[questionNumber].replace('$2y$', '$2b$'));
+    return bcrypt.compare(actualAnswer, answers[questionNumber]);
   }
 
   public size(provider: string): number {
