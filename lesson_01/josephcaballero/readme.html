@@ -44,19 +44,20 @@ function copyToClipboard5() {
 
 <style>
     html{
-        width: max-content;
+        width: 1147px;
+        padding: 10px;
+        align-items: right;
     }
     body{
         background-color: #0d1116;
         color: white;
-        width:min-content;
-        padding: 32px;
-        margin: auto;
+        padding: 51px;
         border-color: var(--borderColor-default, var(--color-border-default, #30363d));
         border-width: 1px;
         border-style: solid;
         border-radius: 6px;
-        width: 500px;
+        width: 85%;
+        
         
     }
     h1{
@@ -70,8 +71,7 @@ function copyToClipboard5() {
     h2{
         font-size: 1.5em;
         border-bottom:1px solid #3d444db3;
-        padding-bottom: .0em;
-        margin-bottom: 3%;
+        padding-bottom: -10px;
     }
     pre{
         height: 50px;
@@ -96,39 +96,42 @@ function copyToClipboard5() {
         list-style-type:"\2736";
 
     }
+    
     #flex{
         display: flex;
         justify-content: left;
         flex-direction: column;
+        padding-top: 15px;
+
     }
     ol{
         background-color: #151b23;
-        padding-top: 3%;
-        padding-bottom: 3%;
-    }
-    #mike{
-
-    }
-    #hawaii{
-        padding: 3px;
-        padding-bottom: 10px;
     }
    .copy{
     fill: #9198a1; 
-    margin-left: 500px;
+    margin-left: 950px;
     position: absolute;
     cursor: pointer;
     padding: 3px;
+    background-color: #151b23;
+    height: 75px;
+    width: 20px;
 }
+
 .copy:hover{
     background:#262c36;
-    
+}
+.headers{
+    display: flex;
+    flex-direction: row;
     
 }
 .anchor{
     fill: #0d1116;
     position: absolute;
-    left: 5px;
+    left: 50px;    
+    position: absolute;
+    margin-top: 1%;
 }
 .anchor:hover{
     fill: #f0f6fc;
@@ -173,18 +176,33 @@ h1:hover + #user-content-joseph-caballero{
     overflow: visible !important;
     vertical-align: text-bottom;
 }
+.fix{
+    display: flex;
+    flex-direction: row;
+    background-color: #151b23;
+
+}
+#sizechange{
+    height: 50px;
+    overflow-y: hidden;
+}
+#sizechange div{
+    height: 40px;
+}
 </style>
+    <div class="headers">
         <h1 id="h">Joseph Caballero</h1>
         <a id="user-content-joseph-caballero" class="anchor" aria-label="Permalink: Joseph Caballero" href="#h"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a>
-
-    <div>
+    </div>
+    <div class="headers">
         <h2 id="f">Introduction</h2>
         <a id="user-content-introduction" class="anchor" aria-label="Permalink: Introduction" href="#f"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a>
 
     </div>
-    <div class="divcolor">
+    <div id="sizechange" class="divcolor">
         <pre id="text1">My name is Joseph Caballero, I started coding two years ago and always had an interest since my introduction to it. I was born in Hawaii and grew up primarily in New Jersey before moving to Delaware when I was about 9 or 10 years old.</pre>
        <div onclick="copyToClipboard()" class="copy">
+        <div>
         <clipboard-copy data-copy-feedback="Copy" value="My name is Joseph Caballero, I started coding two years ago and always had an interest since my introduction to it. I was born in Hawaii and grew up primarily in New Jersey before moving to Delaware when I was about 9 or 10 years old." tabindex="0"></clipboard-copy>
       <svg height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" >
     <path  id="change1" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 0 1 0 1.5h-1.5a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-1.5a.75.75 0 0 1 1.5 0v1.5A1.75 1.75 0 0 1 9.25 16h-7.5A1.75 1.75 0 0 1 0 14.25Z"></path><path 
@@ -194,7 +212,8 @@ h1:hover + #user-content-joseph-caballero{
     </clipboard-copy>
     </div>
     </div>
-    <div>
+    </div>
+    <div class="headers">
         <h2 id="s">Interests and Hobbys</h2>
         <a id="user-content-interests-and-hobbys" class="anchor" aria-label="Permalink: Interests and Hobbys" href="#s"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a>
     </div>
@@ -213,7 +232,7 @@ My favorite boxers are (in no particular order) Mike Tyson , Marvin Hagler , Sug
     </clipboard-copy>
     </div>
     </div>
-    <div>
+    <div class="headers">
         <h2 id="t">Dislikes</h2>
         <a id="user-content-dislikes" class="anchor" aria-label="Permalink: Dislikes" href="#t"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a>
     </div>
@@ -232,7 +251,7 @@ I do not like traffic or anything that would delay me
     </clipboard-copy>
     </div>
     </div>
-    <div>
+    <div class="headers">
         <h2 id="fth">Contact</h2>
         <a id="user-content-contact" class="anchor" aria-label="Permalink: Contact" href="#fth"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a>
     </div>
@@ -250,9 +269,11 @@ Even though i do not have a preference if it is not urgent then email would be b
     </clipboard-copy>
     </div>
     </div>
-    <div>
+    <div class="headers">
         <h2 id="ffth">Fun Facts</h2>
         <a id="user-content-fun-facts" class="anchor" aria-label="Permalink: Fun Facts" href="#ffth"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a>
+    </div class="headers">
+        <div class="fix">
         <div onclick="copyToClipboard5()" class="copy">
         <clipboard-copy aria-label="Copied!" class="ClipboardButton btn btn-invisible js-clipboard-copy m-2 p-0 d-flex flex-justify-center flex-items-center" data-copy-feedback="Copied!" data-tooltip-direction="w" value="My name is Joseph Caballero, I started coding two years ago and always had an interest since my introduction to it. I was born in Hawaii and grew up primarily in New Jersey before moving to Delaware when I was about 9 or 10 years old." tabindex="0" role="button"></clipboard-copy>
       <svg height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-copy js-clipboard-copy-icon">
@@ -273,12 +294,13 @@ Even though i do not have a preference if it is not urgent then email would be b
                 I was born in Hawaii
             </li>
         </ol>
-        
-    </div>
+        </div>
+    
     <div id = "flex">
     <a target="_blank" rel="noopener noreferrer" href="https://content.r9cdn.net/rimg/dimg/29/40/3f4ec996-city-28070-16c96b74d6d.jpg?width=1366&height=768&xhint=3379&yhint=2867&crop=true">
-        <img id="#hawaii" src="images/hawaii.jpg" style="max-width: 100%;"/>
+        <img id="hawaii" src="images/hawaii.jpg" style="max-width: 100%;"/>
     </a>
+    <br/>
     <a target="_blank" rel="noopener noreferrer" href="https://static.wikia.nocookie.net/boxing/images/d/d1/Mike-tyson-signed-photo-60232.jpg/revision/latest?cb=20180507192144">
         <img id="mike" src="images/Mike-tyson-signed-photo-60232.webp" style="max-width: 100%;"/>
     </a>
