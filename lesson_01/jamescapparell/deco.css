@@ -1,0 +1,14 @@
+body { 
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    
+    padding-left: 2em;
+    padding-right: 2em;
+    
+}
+:root {
+    color-scheme: dark light;
+}
+h1, h2{
+    margin-bottom: -.25em;
+}
