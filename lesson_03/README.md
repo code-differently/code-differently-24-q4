@@ -40,19 +40,21 @@ npm start
 ```
 4. Make at least three questions for your quiz and _leave them unanswered_.
 5. To provide answers, you will need to update the [quiz.yaml][test-config-file] file in the test directory. You can copy the example in the file to get started, but you must provide your own answers. To generate an encrypted answer, use [bcrypt.online](https://bcrypt.online).
-6. Before attempting to submit your quiz, make sure to run the formatter on the code and run the tests to ensure that you've updated things correctly. These commands must be run from the [quiz][quiz-folder] sub-folder just like the previous assignment:
+6. Lastly, you'll need to modify the [quizzes.module.ts][quizzes-module] file to include your quiz.
+7. Before attempting to submit your quiz, make sure to run the formatter on the code and run the tests to ensure that you've updated things correctly. These commands must be run from the [quiz][quiz-folder] sub-folder just like the previous assignment:
 ```bash
 npm run lint
 npm run test
 ```
-7. Once everything passes, submit a PR.
+8. Once everything passes, submit a PR.
 
 **Note: If you want to check that you've encoded your answers correctly, you can update you quiz with the real answers and then run the tests using the command below. 
 ```bash
-RUN_SKIPPED=true npm run test
+PROVIDER_NAME=<Your provider name here> npm run test
 ```
 
 [quizzes-folder]: ./quiz/src/quizzes/
 [quiz-folder]: ./quiz/
 [quiz-example]: ./quiz/src/quizzes/anthony_mays_quiz.ts
 [test-config-file]: ./quiz/quiz.yaml
+[quizzes-module]: ./quiz/src/quizzes/quizzes.module.ts

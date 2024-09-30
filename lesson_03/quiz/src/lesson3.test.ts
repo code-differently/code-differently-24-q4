@@ -14,7 +14,6 @@ import { Quizzes } from './quizzes/quizzes.module.js';
 const __filename = fileURLToPath(import.meta.url); // get the resolved path to the file
 const __dirname = path.dirname(__filename); // get the name of the directory
 const softExpect = proxy(expect);
-const maybeIt = process.env.RUN_SKIPPED ? it : it.skip;
 
 describe('Lesson3Test', () => {
   let moduleFixture: TestingModule;
@@ -75,8 +74,20 @@ describe('Lesson3Test', () => {
     }
   });
 
+  const maybeIt = process.env.PROVIDER_NAME ? it : it.skip;
+
   maybeIt('checks for correct answers', async () => {
+    const targetProviderName =
+      process.env.PROVIDER_NAME?.toLowerCase().trim() || '';
+
+    if (!quizQuestionsByProvider.has(targetProviderName)) {
+      throw new Error(`Unknown provider name: ${targetProviderName}`);
+    }
+
     for (const [providerName, questions] of quizQuestionsByProvider) {
+      if (providerName !== process.env.PROVIDER_NAME?.toLowerCase().trim()) {
+        continue;
+      }
       for (const question of questions) {
         const actualAnswer = question.getAnswer();
         softExpect(actualAnswer).not.toBe(AnswerChoice.UNANSWERED);
