@@ -14,6 +14,7 @@ export class KimberleeHaldaneQuiz implements QuizQuestionProvider {
     return [
       KimberleeHaldaneQuiz.makeQuestion0(),
       KimberleeHaldaneQuiz.makeQuestion1(),
+      KimberleeHaldaneQuiz.makeQuestion2(),
     ];
   }
 
