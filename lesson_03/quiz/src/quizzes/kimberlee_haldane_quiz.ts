@@ -33,7 +33,7 @@ export class KimberleeHaldaneQuiz implements QuizQuestionProvider {
   }
 
   private static makeQuestion1(): QuizQuestion {
-    return new QuizQuestion(
+    return new MultipleChoiceQuizQuestion(
       1,
       'Why do we use IDEs?',
       new Map<AnswerChoice, string>([
@@ -47,7 +47,7 @@ export class KimberleeHaldaneQuiz implements QuizQuestionProvider {
   }
 
   private static makeQuestion2(): QuizQuestion {
-    return new QuizQuestion(
+    return new MultipleChoiceQuizQuestion(
       2,
       'In the vscode terminal, what command is used to verify that you created a branch?',
       new Map<AnswerChoice, string>([
