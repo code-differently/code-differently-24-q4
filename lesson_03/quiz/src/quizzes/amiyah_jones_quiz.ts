@@ -49,15 +49,9 @@ export class AmiyahJonesQuiz implements QuizQuestionProvider {
   private static makeQuestion2(): QuizQuestion {
     return new MultipleChoiceQuizQuestion(
       2,
-      'Which computer part houses everything?',
-      new Map<AnswerChoice, string>([
-        [AnswerChoice.A, 'Hard drive'],
-        [AnswerChoice.B, 'Case'],
-        [AnswerChoice.C, 'CPU'],
-        [AnswerChoice.D, 'Power supply'],
-      ]),
-      AnswerChoice.UNANSWERED,
-    ); // Replace `UNANSWERED` with the correct answer.
+      'What is a computer?',
+      'A machine that automatically transforms input into output.',
+    ); // Provide an answer.
   }
 }
 
