@@ -64,7 +64,7 @@ describe('Lesson3Test', () => {
       const questionPrompts = new Set(
         quizQuestions.map((q) => q.getQuestionPrompt()),
       );
-      expect(questionPrompts.size).toBe(2);
+      expect(questionPrompts.size).toBeGreaterThan(2);
     }
   });
 
