@@ -39,7 +39,7 @@ export class Lesson2 {
         [AnswerChoice.C, "To delete unnecessary files"],
         [AnswerChoice.D, "To run code more efficiently"],
       ]),
-      AnswerChoice.A, // Replace `UNANSWERED` with the correct answer.
+      AnswerChoice.B, // Replace `UNANSWERED` with the correct answer.
     );
   }
 
