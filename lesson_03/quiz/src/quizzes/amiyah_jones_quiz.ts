@@ -38,4 +38,20 @@ export class AmiyahJonesQuiz implements QuizQuestionProvider {
       'A machine that automatically transforms input into output.',
     ); // Provide an answer.
   }
+
+  private static makeQuestion2(): QuizQuestion {
+    return new QuizQuestion(
+      1,
+      'What is a computer?',
+      'A machine that automatically transforms input into output.',
+    ); // Provide an answer.
+  }
+
+  private static makeQuestion3(): QuizQuestion {
+    return new QuizQuestion(
+      1,
+      'What is a computer?',
+      'A machine that automatically transforms input into output.',
+    ); // Provide an answer.
+  }
 }
