@@ -1,7 +1,7 @@
-import { Module } from "@nestjs/common";
-import { AnthonyMaysQuiz } from "./anthony_mays_quiz.js";
+import { Module } from '@nestjs/common';
+import { AnthonyMaysQuiz } from './anthony_mays_quiz.js';
 
-export const Quizzes = Symbol.for("Quizzes");
+export const Quizzes = Symbol.for('Quizzes');
 
 @Module({
   providers: [

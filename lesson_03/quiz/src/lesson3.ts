@@ -1,8 +1,8 @@
-import { INestApplicationContext } from "@nestjs/common";
-import { NestFactory } from "@nestjs/core";
-import { QuizPrinter, QuizQuestion } from "codedifferently-instructional";
-import { AppModule } from "./app.module.js";
-import { Quizzes } from "./quizzes/quizzes.module.js";
+import { INestApplicationContext } from '@nestjs/common';
+import { NestFactory } from '@nestjs/core';
+import { QuizPrinter, QuizQuestion } from 'codedifferently-instructional';
+import { AppModule } from './app.module.js';
+import { Quizzes } from './quizzes/quizzes.module.js';
 
 async function bootstrap() {
   const app = await NestFactory.createApplicationContext(AppModule);
@@ -14,7 +14,7 @@ function run(app: INestApplicationContext) {
   const quizzes = app.get(Quizzes);
 
   for (const quiz of quizzes) {
-    console.log("\nQuestions by " + quiz.getProviderName() + ":");
+    console.log('\nQuestions by ' + quiz.getProviderName() + ':');
     printQuiz(quiz.makeQuizQuestions());
   }
 }

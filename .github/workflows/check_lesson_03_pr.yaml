@@ -25,7 +25,7 @@ jobs:
       working-directory: ./lib/typescript/codedifferently-instructional
       run: npm ci
 
-    - name: Build Lesson 02 with Node.js
+    - name: Build Lesson 03 with Node.js
       working-directory: ./lesson_03/quiz
       run: |
         npm run lint

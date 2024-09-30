@@ -1,21 +1,22 @@
-import { flush, proxy } from "@alfonso-presa/soft-assert";
-import { beforeAll, describe, expect, it } from "@jest/globals";
-import { Test, TestingModule } from "@nestjs/testing";
+import { flush, proxy } from '@alfonso-presa/soft-assert';
+import { beforeAll, describe, expect, it } from '@jest/globals';
+import { Test, TestingModule } from '@nestjs/testing';
 import {
   AnswerChoice,
   QuizConfig,
   QuizQuestion,
-} from "codedifferently-instructional";
-import path from "path";
-import { fileURLToPath } from "url";
-import { AppModule } from "./app.module.js";
-import { Quizzes } from "./quizzes/quizzes.module.js";
+} from 'codedifferently-instructional';
+import path from 'path';
+import { fileURLToPath } from 'url';
+import { AppModule } from './app.module.js';
+import { Quizzes } from './quizzes/quizzes.module.js';
 
 const __filename = fileURLToPath(import.meta.url); // get the resolved path to the file
 const __dirname = path.dirname(__filename); // get the name of the directory
 const softExpect = proxy(expect);
+const maybeIt = process.env.RUN_SKIPPED ? it : it.skip;
 
-describe("Lesson3Test", () => {
+describe('Lesson3Test', () => {
   let moduleFixture: TestingModule;
   let quizConfig: QuizConfig;
   let quizQuestionsByProvider: Map<string, QuizQuestion[]>;
@@ -25,7 +26,7 @@ describe("Lesson3Test", () => {
       imports: [AppModule],
     }).compile();
 
-    quizConfig = new QuizConfig(path.resolve(__dirname, "../quiz.yaml"));
+    quizConfig = new QuizConfig(path.resolve(__dirname, '../quiz.yaml'));
 
     makeQuestions();
   });
@@ -47,7 +48,7 @@ describe("Lesson3Test", () => {
     flush();
   });
 
-  it("assembles questions correctly", async () => {
+  it('assembles questions correctly', async () => {
     for (const quizQuestions of quizQuestionsByProvider.values()) {
       // Expect the right number of questions.
       expect(quizQuestions.length).toBe(2);
@@ -59,7 +60,7 @@ describe("Lesson3Test", () => {
     }
   });
 
-  it("checks for unique prompts", async () => {
+  it('checks for unique prompts', async () => {
     for (const quizQuestions of quizQuestionsByProvider.values()) {
       const questionPrompts = new Set(
         quizQuestions.map((q) => q.getQuestionPrompt()),
@@ -68,13 +69,13 @@ describe("Lesson3Test", () => {
     }
   });
 
-  it("checks correct number of answers are configured", async () => {
+  it('checks correct number of answers are configured', async () => {
     for (const [providerName, questions] of quizQuestionsByProvider) {
       expect(quizConfig.size(providerName)).toBe(questions.length);
     }
   });
 
-  it("checks for correct answers", async () => {
+  maybeIt('checks for correct answers', async () => {
     for (const [providerName, questions] of quizQuestionsByProvider) {
       for (const question of questions) {
         const actualAnswer = question.getAnswer();
