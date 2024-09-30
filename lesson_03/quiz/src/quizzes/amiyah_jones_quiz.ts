@@ -17,37 +17,32 @@ export class AmiyahJonesQuiz implements QuizQuestionProvider {
   private static makeQuestion0(): QuizQuestion {
     return new MultipleChoiceQuizQuestion(
       0,
-      'What is a multiple choice question?',
+      'What two computer parts get mixed up often?',
       new Map<AnswerChoice, string>([
-        [AnswerChoice.A, 'A question about agency'],
-        [AnswerChoice.B, 'The hardest kind of quiz question there is'],
-        [
-          AnswerChoice.C,
-          'A question that can be answered using one or more provided choices',
-        ],
-        [AnswerChoice.D, 'Whatever you want it to be!'],
+        [AnswerChoice.A, 'Power supply and mother board'],
+        [AnswerChoice.B, 'Graphics card and ram'],
+        [AnswerChoice.C, 'Ram and hard drive'],
+        [AnswerChoice.D, 'None, all of them are different'],
       ]),
       AnswerChoice.UNANSWERED,
     ); // Replace `UNANSWERED` with the correct answer.
   }
 
   private static makeQuestion1(): QuizQuestion {
-    return new QuizQuestion(
+    return new MultipleChoiceQuizQuestion(
       1,
-      'What is a computer?',
-      'A machine that automatically transforms input into output.',
-    ); // Provide an answer.
+      'Which computer part figures out how everything is supposed to look on your screen?',
+      new Map<AnswerChoice, string>([
+        [AnswerChoice.A, 'Graphics card'],
+        [AnswerChoice.B, 'CPU'],
+        [AnswerChoice.C, 'mother board'],
+        [AnswerChoice.D, 'mother board'],
+      ]),
+      AnswerChoice.UNANSWERED,
+    ); // Replace `UNANSWERED` with the correct answer.
   }
 
   private static makeQuestion2(): QuizQuestion {
-    return new QuizQuestion(
-      1,
-      'What is a computer?',
-      'A machine that automatically transforms input into output.',
-    ); // Provide an answer.
-  }
-
-  private static makeQuestion3(): QuizQuestion {
     return new QuizQuestion(
       1,
       'What is a computer?',
