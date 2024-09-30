@@ -1,0 +1,18 @@
+body {
+    font-family: sans-serif;
+    padding: 20px; 
+    line-height: 1.8;
+}
+h1 {
+    font-size: 40px;
+    margin-top: 0;
+    border-bottom-style: inset;
+}
+h2 {
+    border-bottom-style: inset;
+}
+.pic {
+    font-size: 25px;
+    border-bottom-style: inset;
+    margin-top: auto;
+}
