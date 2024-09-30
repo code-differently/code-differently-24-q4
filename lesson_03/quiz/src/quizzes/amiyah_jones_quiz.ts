@@ -11,7 +11,11 @@ export class AmiyahJonesQuiz implements QuizQuestionProvider {
   }
 
   makeQuizQuestions(): QuizQuestion[] {
-    return [AmiyahJonesQuiz.makeQuestion0(), AmiyahJonesQuiz.makeQuestion1()];
+    return [
+      AmiyahJonesQuiz.makeQuestion0(),
+      AmiyahJonesQuiz.makeQuestion1(),
+      AmiyahJonesQuiz.makeQuestion2(),
+    ];
   }
 
   private static makeQuestion0(): QuizQuestion {
@@ -22,7 +26,7 @@ export class AmiyahJonesQuiz implements QuizQuestionProvider {
         [AnswerChoice.A, 'Power supply and mother board'],
         [AnswerChoice.B, 'Graphics card and ram'],
         [AnswerChoice.C, 'Ram and hard drive'],
-        [AnswerChoice.D, 'None, all of them are different'],
+        [AnswerChoice.D, 'None of them get mixed up'],
       ]),
       AnswerChoice.UNANSWERED,
     ); // Replace `UNANSWERED` with the correct answer.
@@ -47,10 +51,10 @@ export class AmiyahJonesQuiz implements QuizQuestionProvider {
       2,
       'Which computer part houses everything?',
       new Map<AnswerChoice, string>([
-        [AnswerChoice.A, 'CPU'],
-        [AnswerChoice.B, 'Hard drive'],
-        [AnswerChoice.C, 'Case'],
-        [AnswerChoice.D, 'Power Supply'],
+        [AnswerChoice.A, 'Hard drive'],
+        [AnswerChoice.B, 'Case'],
+        [AnswerChoice.C, 'CPU'],
+        [AnswerChoice.D, 'Power supply'],
       ]),
       AnswerChoice.UNANSWERED,
     ); // Replace `UNANSWERED` with the correct answer.
