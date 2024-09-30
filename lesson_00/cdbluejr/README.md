@@ -26,12 +26,9 @@ Here are some of the things I need to be a productive person and father.
 ## Fun Facts
 
 * I used the original IBM PC in high school.
-
 * My first programming language was BASIC, which I learned at the age of 16. I placed 2nd in a national competition for organization formally know as Office Education Association.
-
 * I have been married twice, first married was from June 9th, 1990 to December 2nd, 1999.
 
 ## Photo Gallery
 <a href = "https://x.com/cdbluejr/status/1838603335156298160/photo/1"><img src="images/GYQH_VxWMAASLTI.jpeg" height=400 /></a>
 <a href = "https://x.com/cdbluejr/status/1520458945290252290/photo/1"><img src="images/GYQMlwYW8AAFgoG.jpeg" height=400 /></a>
-
