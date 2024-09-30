@@ -32,7 +32,7 @@ npm install
 npm start
 ```
 2. You will create a quiz file in the [quizzes folder][quizzes-folder]. You should model yours after the example provided in [anthony_mays_quiz.ts][quiz-example]. Note that the name of the file you create should match the name of the class in the file.
-3. Make sure to provide a unique provider name for your questions provider. You'll need this name to provide answers in step 4.
+3. Make sure to provide a unique provider name for your questions provider. You'll need this name to provide answers in step 5.
 ```typescript
   getProviderName(): string {
     return '<your unique name goes here>';
@@ -41,10 +41,9 @@ npm start
 4. Make at least three questions for your quiz and _leave them unanswered_.
 5. To provide answers, you will need to update the [quiz.yaml][test-config-file] file in the test directory. You can copy the example in the file to get started, but you must provide your own answers. To generate an encrypted answer, use [bcrypt.online](https://bcrypt.online).
 6. Lastly, you'll need to modify the [quizzes.module.ts][quizzes-module] file to include your quiz.
-7. Before attempting to submit your quiz, make sure to run the formatter on the code and run the tests to ensure that you've updated things correctly. These commands must be run from the [quiz][quiz-folder] sub-folder just like the previous assignment:
+7. Before attempting to submit your quiz, make sure to run the linter on the code and run the tests to ensure that you've updated things correctly. The commands must be run from the [quiz][quiz-folder] sub-folder just like the previous assignment:
 ```bash
-npm run lint
-npm run test
+npm run check
 ```
 8. Once everything passes, submit a PR.
 

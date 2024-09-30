@@ -12,7 +12,8 @@
     "compile": "tsc -p tsconfig.build.json",
     "prepare": "npm run compile",
     "pretest": "npm run compile",
-    "prestart": "npm run compile"
+    "prestart": "npm run compile",
+    "check": "npm run lint && npm run test"
   },
   "author": "",
   "license": "ISC",
