@@ -6,6 +6,7 @@ on:
     paths:
       - "lib/**"
       - "lesson_02/quiz/**"
+      - "lesson_03/quiz/**"
 
 jobs:
   build:
@@ -41,5 +42,18 @@ jobs:
       run: |
         npm ci
         npm run test
+
+    - name: Build Lesson 02 with Node.js
+      working-directory: ./lesson_02/quiz
+      run: |
+        npm ci
+        node run compile
+
+    - name: Build Lesson 03 with Node.js
+      working-directory: ./lesson_03/quiz
+      run: |
+        npm ci
+        npm run compile
+        npm run lint
 
 
