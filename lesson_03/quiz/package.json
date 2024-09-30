@@ -5,8 +5,8 @@
   "type": "module",
   "scripts": {
     "start": "node build/lesson3.js",
-    "dev": "tsc-watch --noClear -p ./tsconfig.json --onSuccess \"node ./build/lesson3.js\"",
-    "test": "node --experimental-vm-modules node_modules/.bin/jest",
+    "dev": "tsc-watch --noClear -p ./tsconfig.build.json --onSuccess \"node ./build/lesson3.js\"",
+    "test": "node --experimental-vm-modules node_modules/.bin/jest --watch",
     "compile": "tsc -p tsconfig.build.json",
     "prepare": "npm run compile",
     "pretest": "npm run compile",

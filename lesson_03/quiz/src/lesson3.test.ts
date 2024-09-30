@@ -69,7 +69,7 @@ describe("Lesson3Test", () => {
     }
   });
 
-  it("checks for answered questions", async () => {
+  it("checks correct number of answers are configured", async () => {
     for (const [providerName, questions] of quizQuestionsByProvider) {
       expect(quizConfig.size(providerName)).toBe(questions.length);
     }
