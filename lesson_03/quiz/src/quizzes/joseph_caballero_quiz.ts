@@ -14,6 +14,7 @@ export class JosephCaballeroQuiz implements QuizQuestionProvider {
     return [
       JosephCaballeroQuiz.makeQuestion0(),
       JosephCaballeroQuiz.makeQuestion1(),
+      JosephCaballeroQuiz.makeQuestion2(),
     ];
   }
 
@@ -30,12 +31,25 @@ export class JosephCaballeroQuiz implements QuizQuestionProvider {
         [AnswerChoice.C, 'An animal'],
         [AnswerChoice.D, 'Whatever you want it to be!'],
       ]),
-      AnswerChoice.UNANSWERED,
+      AnswerChoice.B,
     ); // Replace `UNANSWERED` with the correct answer | B.
   }
 
   private static makeQuestion1(): QuizQuestion {
-    return new QuizQuestion(1, 'What is the styling language for HTML?', '');
+    return new QuizQuestion(1, 'What is the styling language for HTML?', 'CSS');
     // Provide an answer.
+  }
+  private static makeQuestion2(): QuizQuestion {
+    return new MultipleChoiceQuizQuestion(
+      2,
+      'What does CSS stand for ?',
+      new Map<AnswerChoice, string>([
+        [AnswerChoice.A, 'Computing Style Software'],
+        [AnswerChoice.B, 'Cascading Style Sheets'],
+        [AnswerChoice.C, 'Circle Stuff and Stuff'],
+        [AnswerChoice.D, 'Whatever you want it to be!'],
+      ]),
+      AnswerChoice.B,
+    ); // Replace `UNANSWERED` with the correct answer | B.
   }
 }
