@@ -1,16 +1,15 @@
+import { flush, proxy } from "@alfonso-presa/soft-assert";
+import { beforeAll, describe, expect, it } from "@jest/globals";
+import { Test, TestingModule } from "@nestjs/testing";
 import {
+  AnswerChoice,
   QuizConfig,
   QuizQuestion,
-  AnswerChoice,
 } from "codedifferently-instructional";
-import { Test, TestingModule } from "@nestjs/testing";
-import { beforeAll, describe, it, expect } from "@jest/globals";
-import { proxy, flush } from "@alfonso-presa/soft-assert";
-import { AppModule } from "./app.module.js";
-import { INestApplication } from "@nestjs/common";
-import { Quizzes } from "./quizzes/quizzes.module.js";
 import path from "path";
 import { fileURLToPath } from "url";
+import { AppModule } from "./app.module.js";
+import { Quizzes } from "./quizzes/quizzes.module.js";
 
 const __filename = fileURLToPath(import.meta.url); // get the resolved path to the file
 const __dirname = path.dirname(__filename); // get the name of the directory
