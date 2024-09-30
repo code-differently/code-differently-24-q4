@@ -5,10 +5,12 @@
   "type": "module",
   "scripts": {
     "start": "node build/lesson3.js",
+    "dev": "tsc-watch --noClear -p ./tsconfig.json --onSuccess \"node ./build/lesson3.js\"",
     "test": "node --experimental-vm-modules node_modules/.bin/jest",
     "compile": "tsc -p tsconfig.build.json",
     "prepare": "npm run compile",
-    "pretest": "npm run compile"
+    "pretest": "npm run compile",
+    "prestart": "npm run compile"
   },
   "author": "",
   "license": "ISC",
@@ -26,6 +28,7 @@
     "prettier": "3.3.3",
     "ts-jest": "^29.2.5",
     "ts-node": "^10.9.2",
+    "tsc-watch": "^6.2.0",
     "typescript": "^5.6.2",
     "typescript-eslint": "^8.7.0"
   },
