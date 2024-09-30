@@ -35,18 +35,24 @@ export class AmiyahJonesQuiz implements QuizQuestionProvider {
       new Map<AnswerChoice, string>([
         [AnswerChoice.A, 'Graphics card'],
         [AnswerChoice.B, 'CPU'],
-        [AnswerChoice.C, 'mother board'],
-        [AnswerChoice.D, 'mother board'],
+        [AnswerChoice.C, 'Mother board'],
+        [AnswerChoice.D, 'Ram'],
       ]),
       AnswerChoice.UNANSWERED,
     ); // Replace `UNANSWERED` with the correct answer.
   }
 
   private static makeQuestion2(): QuizQuestion {
-    return new QuizQuestion(
+    return new MultipleChoiceQuizQuestion(
       2,
-      'What is a computer?',
-      'A machine that automatically transforms input into output.',
-    ); // Provide an answer.
+      'Which computer part houses everything?',
+      new Map<AnswerChoice, string>([
+        [AnswerChoice.A, 'CPU'],
+        [AnswerChoice.B, 'Hard drive'],
+        [AnswerChoice.C, 'Case'],
+        [AnswerChoice.D, 'Power Supply'],
+      ]),
+      AnswerChoice.UNANSWERED,
+    ); // Replace `UNANSWERED` with the correct answer.
   }
 }
