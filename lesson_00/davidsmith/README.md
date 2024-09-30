@@ -28,7 +28,7 @@ When I was younger I spent most of my life playing video games I was fascinated 
 I am a very hands on person. I dislike lectures but I understand why they're important because you're learning from someone elses experience and saving time rather than having to go through the experience yourself.
 
 ### Likes
-* Cars; I currently drive a 2015 BMW 428 XI with a dual turbo charged engine makes about 500 HP and 770+ lbs of torque.
+* Cars; I currently drive a 2015 BMW 428 XI with a dual turbo charged engine makes about 500 HP and 770+ lbs of torque
 ### <img src=images/20240908_172706.jpg width=50% height=50%>
 
 ### <img src=images/20240908_172719.jpg width=50% height=50%>
