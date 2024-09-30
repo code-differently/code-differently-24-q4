@@ -31,12 +31,12 @@ export class JosephCaballeroQuiz implements QuizQuestionProvider {
         [AnswerChoice.C, 'An animal'],
         [AnswerChoice.D, 'Whatever you want it to be!'],
       ]),
-      AnswerChoice.B,
-    ); // Replace `UNANSWERED` with the correct answer | B.
+      AnswerChoice.UNANSWERED,
+    ); // Replace `UNANSWERED` with the correct answer .
   }
 
   private static makeQuestion1(): QuizQuestion {
-    return new QuizQuestion(1, 'What is the styling language for HTML?', 'CSS');
+    return new QuizQuestion(1, 'What is the styling language for HTML?', '');
     // Provide an answer.
   }
   private static makeQuestion2(): QuizQuestion {
@@ -49,7 +49,7 @@ export class JosephCaballeroQuiz implements QuizQuestionProvider {
         [AnswerChoice.C, 'Circle Stuff and Stuff'],
         [AnswerChoice.D, 'Whatever you want it to be!'],
       ]),
-      AnswerChoice.B,
-    ); // Replace `UNANSWERED` with the correct answer | B.
+      AnswerChoice.UNANSWERED,
+    ); // Replace `UNANSWERED` with the correct answer.
   }
 }
