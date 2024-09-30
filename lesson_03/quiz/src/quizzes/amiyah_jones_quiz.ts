@@ -44,7 +44,7 @@ export class AmiyahJonesQuiz implements QuizQuestionProvider {
 
   private static makeQuestion2(): QuizQuestion {
     return new QuizQuestion(
-      1,
+      2,
       'What is a computer?',
       'A machine that automatically transforms input into output.',
     ); // Provide an answer.
