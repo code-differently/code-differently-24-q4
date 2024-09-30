@@ -114,8 +114,12 @@ function copyToClipboard5() {
     cursor: pointer;
     padding: 3px;
     background-color: #151b23;
-    height: 75px;
+    height: 20px;
     width: 20px;
+    background: transparent;
+}
+#copyedit{
+    top: 194px;
 }
 
 .copy:hover{
@@ -187,7 +191,7 @@ h1:hover + #user-content-joseph-caballero{
     overflow-y: hidden;
 }
 #sizechange div{
-    height: 40px;
+    height: 16px;
 }
 </style>
     <div class="headers">
@@ -201,7 +205,7 @@ h1:hover + #user-content-joseph-caballero{
     </div>
     <div id="sizechange" class="divcolor">
         <pre id="text1">My name is Joseph Caballero, I started coding two years ago and always had an interest since my introduction to it. I was born in Hawaii and grew up primarily in New Jersey before moving to Delaware when I was about 9 or 10 years old.</pre>
-       <div onclick="copyToClipboard()" class="copy">
+       <div onclick="copyToClipboard()" id="copyedit"class="copy">
         <div>
         <clipboard-copy data-copy-feedback="Copy" value="My name is Joseph Caballero, I started coding two years ago and always had an interest since my introduction to it. I was born in Hawaii and grew up primarily in New Jersey before moving to Delaware when I was about 9 or 10 years old." tabindex="0"></clipboard-copy>
       <svg height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" >
