@@ -24,6 +24,7 @@ const QUIZ_PROVIDERS = [
   DasiaEnglishQuiz,
   ChigazoGrahamsQuiz,
   AmiyahJonesQuiz,
+  LjMcwilliamsQuiz,
   XavierCruzQuiz,
   LjMcwilliamsQuiz,
 ];
