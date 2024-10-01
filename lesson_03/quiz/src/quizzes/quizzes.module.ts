@@ -1,9 +1,9 @@
 import { Module } from '@nestjs/common';
-import { angelicaCquiz } from './angelica_castillo_quiz.js';
+import { AngelicaCQuiz } from './angelica_c_quiz.js';
 import { AnotherQuiz } from './another_quiz.js';
-import { OyeyemiJimohQuiz } from './oyeyemi_jimoh_quiz.js';
 import { AnthonyMaysQuiz } from './anthony_mays_quiz.js';
 import { JosephCaballeroQuiz } from './joseph_caballero_quiz.js';
+import { OyeyemiJimohQuiz } from './oyeyemi_jimoh_quiz.js';
 import { YafiahAbdullahQuiz } from './yafiah_abdullah_quiz.js';
 export const Quizzes = Symbol.for('Quizzes');
 
@@ -14,7 +14,7 @@ const QUIZ_PROVIDERS = [
   YafiahAbdullahQuiz,
   AnotherQuiz,
   JosephCaballeroQuiz,
-  angelicaCquiz,
+  AngelicaCQuiz,
   OyeyemiJimohQuiz,
 ];
 
