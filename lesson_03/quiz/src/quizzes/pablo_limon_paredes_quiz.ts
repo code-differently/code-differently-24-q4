@@ -21,28 +21,28 @@ export class PabloLimonParedesQuiz implements QuizQuestionProvider {
   private static makeQuestion0(): QuizQuestion {
     return new MultipleChoiceQuizQuestion(
       0,
-      'What does git checkout -b branch command do?',
+      'What does "git checkout -b branch" command do?',
       new Map<AnswerChoice, string>([
         [AnswerChoice.A, 'Creates a pull request'],
         [AnswerChoice.B, 'Creates a new branch and switches you to it'],
         [AnswerChoice.C, 'To move to another branch'],
         [AnswerChoice.D, 'Delete a branch'],
       ]),
-      AnswerChoice.B,
+      AnswerChoice.UNANSWERED,
     ); // Replace `UNANSWERED` with the correct answer.
   }
 
   private static makeQuestion1(): QuizQuestion {
     return new MultipleChoiceQuizQuestion(
       1,
-      'What does the man git command do?',
+      'What does the "man git" command do?',
       new Map<AnswerChoice, string>([
         [AnswerChoice.A, 'Create a new directory'],
         [AnswerChoice.B, 'Shows history of commands'],
         [AnswerChoice.C, 'Get to main branch'],
         [AnswerChoice.D, 'Access the manual for git'],
       ]),
-      AnswerChoice.D,
+      AnswerChoice.UNANSWERED,
     ); // Replace `UNANSWERED` with the correct answer.
   }
   private static makeQuestion2(): QuizQuestion {
@@ -55,7 +55,7 @@ export class PabloLimonParedesQuiz implements QuizQuestionProvider {
         [AnswerChoice.C, 'command + shift + P'],
         [AnswerChoice.D, 'command + T'],
       ]),
-      AnswerChoice.A,
+      AnswerChoice.UNANSWERED,
     ); // Replace `UNANSWERED` with the correct answer.
   }
 }
