@@ -19,8 +19,7 @@ const QUIZ_PROVIDERS = [
   JosephCaballeroQuiz,
   OyeyemiJimohQuiz,
   DasiaEnglishQuiz,
-  ChigazoGrahamsQuiz
-];
+  ChigazoGrahamsQuiz,
   ChigazoGrahamsQuiz,
   AmiyahJonesQuiz
 ];
