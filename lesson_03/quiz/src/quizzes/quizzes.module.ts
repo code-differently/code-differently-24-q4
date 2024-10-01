@@ -21,6 +21,7 @@ const QUIZ_PROVIDERS = [
   AnotherQuiz,
   JosephCaballeroQuiz,
   OyeyemiJimohQuiz,
+  DasiaEnglishQuiz,
   ChigazoGrahamsQuiz,
   AmiyahJonesQuiz,
   LjMcwilliamsQuiz,
