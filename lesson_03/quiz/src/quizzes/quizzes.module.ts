@@ -21,10 +21,10 @@ const QUIZ_PROVIDERS = [
   JosephCaballeroQuiz,
   AngelicaCQuiz,
   OyeyemiJimohQuiz,
+  PabloLimonParedesQuiz,
   DasiaEnglishQuiz,
   ChigazoGrahamsQuiz,
   AmiyahJonesQuiz,
-  PabloLimonParedesQuiz,
 ];
 
 @Module({
