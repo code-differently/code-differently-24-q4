@@ -47,7 +47,7 @@ jobs:
       working-directory: ./lesson_02/quiz
       run: |
         npm ci
-        node run compile
+        npm run compile
 
     - name: Build Lesson 03 with Node.js
       working-directory: ./lesson_03/quiz
