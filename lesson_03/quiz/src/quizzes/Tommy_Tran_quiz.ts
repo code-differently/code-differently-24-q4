@@ -28,7 +28,7 @@ export class TommyTranQuiz implements QuizQuestionProvider {
         [AnswerChoice.C, 'Beijing'],
         [AnswerChoice.D, 'Bangkok'],
       ]),
-      AnswerChoice.B,
+      AnswerChoice.UNANSWERED,
     ); // Replace `UNANSWERED` with the correct answer.
   }
 
@@ -42,7 +42,7 @@ export class TommyTranQuiz implements QuizQuestionProvider {
         [AnswerChoice.C, 'Mars'],
         [AnswerChoice.D, 'Saturn'],
       ]),
-      AnswerChoice.C,
+      AnswerChoice.UNANSWERED,
     ); // Replace `UNANSWERED` with the correct answer.
   }
 
@@ -56,7 +56,7 @@ export class TommyTranQuiz implements QuizQuestionProvider {
         [AnswerChoice.C, 'Jane Austen'],
         [AnswerChoice.D, 'Mark Twain'],
       ]),
-      AnswerChoice.B,
+      AnswerChoice.UNANSWERED,
     ); // Replace `UNANSWERED` with the correct answer.
   }
 }
