@@ -20,6 +20,7 @@ const QUIZ_PROVIDERS = [
   YafiahAbdullahQuiz,
   AnotherQuiz,
   JosephCaballeroQuiz,
+  AngelicaCQuiz,
   OyeyemiJimohQuiz,
   DasiaEnglishQuiz,
   ChigazoGrahamsQuiz,
