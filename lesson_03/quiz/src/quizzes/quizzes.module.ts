@@ -18,7 +18,8 @@ const QUIZ_PROVIDERS = [
   JosephCaballeroQuiz,
   OyeyemiJimohQuiz,
   ChigazoGrahamsQuiz,
-  AmiyahJonesQuiz
+  AmiyahJonesQuiz,
+  XavierCruzQuiz
 ];
 
 @Module({
