@@ -52,6 +52,22 @@ npm run check
 PROVIDER_NAME=<Your provider name here> npm run test
 ```
 
+### Dealing with merge conflicts
+
+Since everyone needs to modify the same files for this assignment, you will most certainly encounter merge conflicts. To resolve this, here are the steps:
+
+1. Sync the main branch of your fork and ensure that it is up-to-date.
+2. Use `git checkout main` and `git pull` to get the latest updates pulled down to your computer.
+3. Checkout your feature branch (e.g. `git checkout feature/lesson_03`).
+4. Run `git rebase main` on your feature branch to pull in the latest changes and deal with merge conflicts.
+5. Use the *Source Control* view in VS Code to identify files with conflicts. Click to open them and use the *Merge Editor* to resolve conflicts.
+6. Stage and commit the changed files.
+7. Repeat steps 5-6 until the rebase is complete.
+
+An alternative approach is to open the PR and manually edit the conflicting files to work out any issues. This may be easier for some of you, but it can also be tricky to do if you don't know what you're doing.
+
+Check out [this YouTube video](https://www.youtube.com/watch?v=OXtdxHTh2oY) for a quick explaination of what's going on. 
+
 [quizzes-folder]: ./quiz/src/quizzes/
 [quiz-folder]: ./quiz/
 [quiz-example]: ./quiz/src/quizzes/anthony_mays_quiz.ts
