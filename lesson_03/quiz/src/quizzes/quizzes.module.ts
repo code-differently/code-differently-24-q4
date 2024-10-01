@@ -14,7 +14,6 @@ import { YafiahAbdullahQuiz } from './yafiah_abdullah_quiz.js';
 export const Quizzes = Symbol.for('Quizzes');
 
 // Add your quiz provider here.
-
 const QUIZ_PROVIDERS = [
   AnthonyMaysQuiz,
   YafiahAbdullahQuiz,
