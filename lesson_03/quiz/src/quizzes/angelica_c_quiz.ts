@@ -11,7 +11,11 @@ export class AngelicaCQuiz implements QuizQuestionProvider {
   }
 
   makeQuizQuestions(): QuizQuestion[] {
-    return [AngelicaCQuiz.makeQuestion0(), AngelicaCQuiz.makeQuestion1(), AngelicaCQuiz.makeQuestion2()];
+    return [
+      AngelicaCQuiz.makeQuestion0(), 
+      AngelicaCQuiz.makeQuestion1(), 
+      AngelicaCQuiz.makeQuestion2(),
+    ];
   }
 
   private static makeQuestion0(): QuizQuestion {
@@ -21,10 +25,7 @@ export class AngelicaCQuiz implements QuizQuestionProvider {
       new Map<AnswerChoice, string>([
         [AnswerChoice.A, 'Central Processing Unit'],
         [AnswerChoice.B, 'Central Program Unit'],
-        [
-          AnswerChoice.C,
-          'Center Program Unit',
-        ],
+        [AnswerChoice.C,'Center Program Unit'],
         [AnswerChoice.D, 'Whatever you want it to be!'],
       ]),
       AnswerChoice.UNANSWERED,
@@ -37,10 +38,7 @@ export class AngelicaCQuiz implements QuizQuestionProvider {
       new Map<AnswerChoice, string>([
         [AnswerChoice.A, 'RAM'],
         [AnswerChoice.B, 'CPU'],
-        [
-          AnswerChoice.C,
-          'CASE',
-        ],
+        [AnswerChoice.C,'CASE'],
         [AnswerChoice.D, 'HARD DRIVE'],
       ]),
       AnswerChoice.UNANSWERED,
@@ -53,10 +51,7 @@ export class AngelicaCQuiz implements QuizQuestionProvider {
       new Map<AnswerChoice, string>([
         [AnswerChoice.A, 'Mother board'],
         [AnswerChoice.B, 'Hard drive'],
-        [
-          AnswerChoice.C,
-          'Power supply',
-        ],
+        [AnswerChoice.C,'Power supply'],
         [AnswerChoice.D, 'Computer'],
       ]),
       AnswerChoice.UNANSWERED,
