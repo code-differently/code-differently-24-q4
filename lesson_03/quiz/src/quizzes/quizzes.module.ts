@@ -7,13 +7,11 @@ import { ChigazoGrahamsQuiz } from './chigazo_graham_quiz.js';
 import { DasiaEnglishQuiz } from './dasia_english_quiz.js';
 import { JosephCaballeroQuiz } from './joseph_caballero_quiz.js';
 import { OyeyemiJimohQuiz } from './oyeyemi_jimoh_quiz.js';
-import { TommyTranQuiz } from './Tommy_Tran_quiz.js';
 import { YafiahAbdullahQuiz } from './yafiah_abdullah_quiz.js';
 
 export const Quizzes = Symbol.for('Quizzes');
 
 // Add your quiz provider here.
-
 const QUIZ_PROVIDERS = [
   AnthonyMaysQuiz,
   YafiahAbdullahQuiz,
@@ -24,7 +22,6 @@ const QUIZ_PROVIDERS = [
   DasiaEnglishQuiz,
   ChigazoGrahamsQuiz,
   AmiyahJonesQuiz,
-  TommyTranQuiz,
 ];
 
 @Module({
