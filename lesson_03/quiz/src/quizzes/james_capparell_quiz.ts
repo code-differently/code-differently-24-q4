@@ -28,7 +28,7 @@ export class JamesCapparellQuiz implements QuizQuestionProvider {
         [AnswerChoice.C, 'New Castle County'],
         [AnswerChoice.D, 'Lancaster County'],
       ]),
-      AnswerChoice.UNANSWERED,
+      AnswerChoice.C,
     ); // Replace `UNANSWERED` with the correct answer.
   }
   private static makeQuestion1(): QuizQuestion {
@@ -41,7 +41,7 @@ export class JamesCapparellQuiz implements QuizQuestionProvider {
         [AnswerChoice.C, 'Mega Man'],
         [AnswerChoice.D, 'Pikachu'],
       ]),
-      AnswerChoice.UNANSWERED,
+      AnswerChoice.A,
     ); // Replace `UNANSWERED` with the correct answer.
   }
 
@@ -49,7 +49,7 @@ export class JamesCapparellQuiz implements QuizQuestionProvider {
     return new QuizQuestion(
       2,
       'Type the full answer while filling in the blanks! A _____ that transforms ____ data into ____ data using automatically executed, pre-programmed ____.',
-      'A _____ that transforms ____ data into ____ data using automatically executed, pre-programmed ____.',
+      'A computer is a machine that transforms input data to output data using automatically executed, pre-programmed instructions.',
     ); // Provide an answer.
   }
 }
