@@ -7,7 +7,7 @@ import {
 
 export class DasiaEnglishQuiz implements QuizQuestionProvider {
   getProviderName(): string {
-    return 'Dasiaenglish';
+    return 'dasiaenglish';
   }
 
   makeQuizQuestions(): QuizQuestion[] {
