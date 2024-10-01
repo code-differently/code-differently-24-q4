@@ -20,7 +20,6 @@ const QUIZ_PROVIDERS = [
   OyeyemiJimohQuiz,
   DasiaEnglishQuiz,
   ChigazoGrahamsQuiz,
-  ChigazoGrahamsQuiz,
   AmiyahJonesQuiz
 ];
 
