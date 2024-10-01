@@ -16,7 +16,7 @@ const QUIZ_PROVIDERS = [
   AnotherQuiz,
   JosephCaballeroQuiz,
   OyeyemiJimohQuiz,
-, ChigazoGrahamsQuiz];
+  ChigazoGrahamsQuiz];
 
 @Module({
   providers: [
