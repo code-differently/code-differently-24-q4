@@ -1,6 +1,4 @@
 import { Module } from '@nestjs/common';
-import { AmiyahJonesQuiz } from './amiyah_jones_quiz.js';
-import { AngelicaCQuiz } from './angelica_c_quiz.js';
 import { AnotherQuiz } from './another_quiz.js';
 import { AnthonyMaysQuiz } from './anthony_mays_quiz.js';
 import { ChigazoGrahamsQuiz } from './chigazo_graham_quiz.js';
@@ -24,34 +22,8 @@ const QUIZ_PROVIDERS = [
   DasiaEnglishQuiz,
   ChigazoGrahamsQuiz,
   AmiyahJonesQuiz,
-  XavierCruzQuiz,
-];
-
-@Module({
-  providers: [
-    ...QUIZ_PROVIDERS,
-    {
-      provide: Quizzes,
-      useFactory: (...args) => [...args],
-      inject: QUIZ_PROVIDERS,
-    },
-  ],
-})
-export class QuizzesModule {}
-
-export const Quizzes = Symbol.for('Quizzes');
-
-// Add your quiz provider here.
-
-const QUIZ_PROVIDERS = [
-  AnthonyMaysQuiz,
-  YafiahAbdullahQuiz,
-  AnotherQuiz,
-  JosephCaballeroQuiz,
-  OyeyemiJimohQuiz,
-  ChigazoGrahamsQuiz,
-  AmiyahJonesQuiz,
   LjMcwilliamsQuiz,
+  XavierCruzQuiz,
 ];
 
 @Module({
