@@ -7,7 +7,7 @@ import {
 
 export class PabloLimonParedesQuiz implements QuizQuestionProvider {
   getProviderName(): string {
-    return 'PabloLimonParedes';
+    return 'pablolimonparedes';
   }
 
   makeQuizQuestions(): QuizQuestion[] {
@@ -34,7 +34,7 @@ export class PabloLimonParedesQuiz implements QuizQuestionProvider {
 
   private static makeQuestion1(): QuizQuestion {
     return new MultipleChoiceQuizQuestion(
-      0,
+      1,
       'What does the man git command do?',
       new Map<AnswerChoice, string>([
         [AnswerChoice.A, 'Create a new directory'],
@@ -47,7 +47,7 @@ export class PabloLimonParedesQuiz implements QuizQuestionProvider {
   }
   private static makeQuestion2(): QuizQuestion {
     return new MultipleChoiceQuizQuestion(
-      0,
+      2,
       'How do you clear up your terminal if your screen is cramped?',
       new Map<AnswerChoice, string>([
         [AnswerChoice.A, 'command + k'],
