@@ -11,50 +11,52 @@ export class ChigazoGrahamsQuiz implements QuizQuestionProvider {
   }
 
   makeQuizQuestions(): QuizQuestion[] {
-    return [ChigazoGrahamsQuiz.makeQuestion1(), ChigazoGrahamsQuiz.makeQuestion2, ChigazoGrahamsQuiz.makeQuestion3()];
+    return [
+      ChigazoGrahamsQuiz.makeQuestion0(),
+      ChigazoGrahamsQuiz.makeQuestion1(),
+      ChigazoGrahamsQuiz.makeQuestion2(),
+    ];
   }
 
-  private static makeQuestion1(): QuizQuestion {
+  private static makeQuestion0(): QuizQuestion {
     return new MultipleChoiceQuizQuestion(
-      1,
-      'What is the sign for Modulo?',
+      0,
+      'What is the sign for modulo?',
       new Map<AnswerChoice, string>([
         [AnswerChoice.A, '^'],
         [AnswerChoice.B, '*'],
-        [AnswerChoice.C,'%',],
+        [AnswerChoice.C, '%'],
         [AnswerChoice.D, '//'],
       ]),
       AnswerChoice.UNANSWERED,
     ); // Provide an answer. | AnswerChoice.C, '%'
   }
 
-  private static makeQuestion2(): QuizQuestion {
-    return new QuizQuestion(
-      2,
-      'Who is are big three in hip hop?',
-      'A machine that automatically transforms input into output.',
+  private static makeQuestion1(): QuizQuestion {
+    return new MultipleChoiceQuizQuestion(
+      1,
+      'Who are hip hops big three',
       new Map<AnswerChoice, string>([
         [AnswerChoice.A, 'Kendrick Lamar, J. Cole, and Drake'],
         [AnswerChoice.B, 'Tupac, Biggie, and Nas'],
-        [AnswerChoice.C, 'Kanye West, Eminem, and Lil Wayne',],
+        [AnswerChoice.C, 'Kanye West, Eminem, and Lil Wayne'],
         [AnswerChoice.D, 'K. Dot'],
       ]),
       AnswerChoice.UNANSWERED,
-    ); // Provide an answer. | AnswerChoice.D, 'K. Dot'
+    ); // Provide an answer. | AnswerChoice.C, '%'
   }
 
-    private static makeQuestion3(): QuizQuestion {
+  private static makeQuestion2(): QuizQuestion {
     return new MultipleChoiceQuizQuestion(
-      3,
+      2,
       'what is the answer to life, the universe, and everything else?',
       new Map<AnswerChoice, string>([
         [AnswerChoice.A, '42'],
         [AnswerChoice.B, 'Jesus'],
-        [AnswerChoice.C,'N/A'],
+        [AnswerChoice.C, 'N/A'],
         [AnswerChoice.D, 'Whatever you want it to be!'],
       ]),
       AnswerChoice.UNANSWERED,
     ); // Provide an answer. | AnswerChoice.A, '42'
   }
-  
 }
