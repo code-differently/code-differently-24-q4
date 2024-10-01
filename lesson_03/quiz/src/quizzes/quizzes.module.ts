@@ -25,6 +25,32 @@ const QUIZ_PROVIDERS = [
   ChigazoGrahamsQuiz,
   AmiyahJonesQuiz,
   XavierCruzQuiz,
+];
+
+@Module({
+  providers: [
+    ...QUIZ_PROVIDERS,
+    {
+      provide: Quizzes,
+      useFactory: (...args) => [...args],
+      inject: QUIZ_PROVIDERS,
+    },
+  ],
+})
+export class QuizzesModule {}
+
+export const Quizzes = Symbol.for('Quizzes');
+
+// Add your quiz provider here.
+
+const QUIZ_PROVIDERS = [
+  AnthonyMaysQuiz,
+  YafiahAbdullahQuiz,
+  AnotherQuiz,
+  JosephCaballeroQuiz,
+  OyeyemiJimohQuiz,
+  ChigazoGrahamsQuiz,
+  AmiyahJonesQuiz,
   LjMcwilliamsQuiz,
 ];
 
