@@ -7,7 +7,7 @@ import {
 
 export class PabloLimonParedesQuiz implements QuizQuestionProvider {
   getProviderName(): string {
-    return 'pablolimonparedes';
+    return 'PabloLimonParedes';
   }
 
   makeQuizQuestions(): QuizQuestion[] {
