@@ -28,7 +28,7 @@ export class KimberleeHaldaneQuiz implements QuizQuestionProvider {
         [AnswerChoice.C, 'cd'],
         [AnswerChoice.D, 'mkdir'],
       ]),
-      AnswerChoice.A,
+      AnswerChoice.UNANSWERED,
     ); // Replace `UNANSWERED` with the correct answer.
   }
 
@@ -42,7 +42,7 @@ export class KimberleeHaldaneQuiz implements QuizQuestionProvider {
         [AnswerChoice.C, 'editing and refactoring code'],
         [AnswerChoice.D, 'all of the above'],
       ]),
-      AnswerChoice.C,
+      AnswerChoice.UNANSWERED,
     ); // Replace `UNANSWERED` with the correct answer.
   }
 
@@ -56,7 +56,7 @@ export class KimberleeHaldaneQuiz implements QuizQuestionProvider {
         [AnswerChoice.C, 'git checkout -b new_feature'],
         [AnswerChoice.D, 'git remote -v'],
       ]),
-      AnswerChoice.A,
+      AnswerChoice.UNANSWERED,
     ); // Replace `UNANSWERED` with the correct answer.
   }
 }
