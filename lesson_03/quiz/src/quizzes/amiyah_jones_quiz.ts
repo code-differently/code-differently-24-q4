@@ -28,7 +28,7 @@ export class AmiyahJonesQuiz implements QuizQuestionProvider {
         [AnswerChoice.C, 'Ram and hard drive'],
         [AnswerChoice.D, 'None of them get mixed up'],
       ]),
-      AnswerChoice.C,
+      AnswerChoice.UNANSWERED,
     ); // Replace `UNANSWERED` with the correct answer.
   }
 
@@ -42,7 +42,7 @@ export class AmiyahJonesQuiz implements QuizQuestionProvider {
         [AnswerChoice.C, 'Mother board'],
         [AnswerChoice.D, 'Ram'],
       ]),
-      AnswerChoice.A,
+      AnswerChoice.UNANSWERED,
     ); // Replace `UNANSWERED` with the correct answer.
   }
 
@@ -56,7 +56,7 @@ export class AmiyahJonesQuiz implements QuizQuestionProvider {
         [AnswerChoice.C, 'CPU'],
         [AnswerChoice.D, 'Power supply'],
       ]),
-      AnswerChoice.B,
+      AnswerChoice.UNANSWERED,
     ); // Replace `UNANSWERED` with the correct answer.
   }
 }
