@@ -7,7 +7,7 @@ import {
 
 export class PabloLimonParedesQuiz implements QuizQuestionProvider {
   getProviderName(): string {
-    return 'pablolimonparedes';
+    return 'PabloLimonParedes';
   }
 
   makeQuizQuestions(): QuizQuestion[] {
@@ -28,7 +28,7 @@ export class PabloLimonParedesQuiz implements QuizQuestionProvider {
         [AnswerChoice.C, 'To move to another branch'],
         [AnswerChoice.D, 'Delete a branch'],
       ]),
-      AnswerChoice.UNANSWERED,
+      AnswerChoice.B,
     ); // Replace `UNANSWERED` with the correct answer.
   }
 
@@ -42,7 +42,7 @@ export class PabloLimonParedesQuiz implements QuizQuestionProvider {
         [AnswerChoice.C, 'Get to main branch'],
         [AnswerChoice.D, 'Access the manual for git'],
       ]),
-      AnswerChoice.UNANSWERED,
+      AnswerChoice.D,
     ); // Replace `UNANSWERED` with the correct answer.
   }
   private static makeQuestion2(): QuizQuestion {
@@ -55,7 +55,7 @@ export class PabloLimonParedesQuiz implements QuizQuestionProvider {
         [AnswerChoice.C, 'command + shift + P'],
         [AnswerChoice.D, 'command + T'],
       ]),
-      AnswerChoice.UNANSWERED,
+      AnswerChoice.A,
     ); // Replace `UNANSWERED` with the correct answer.
   }
 }
