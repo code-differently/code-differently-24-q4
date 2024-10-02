@@ -5,16 +5,16 @@ import {
   QuizQuestionProvider,
 } from 'codedifferently-instructional';
 
-export class zionbuchananQuiz implements QuizQuestionProvider {
+export class ZionBuchananQuiz implements QuizQuestionProvider {
   getProviderName(): string {
     return 'zionbuchanan';
   }
 
   makeQuizQuestions(): QuizQuestion[] {
     return [
-      zionbuchananQuiz.makeQuestion0(),
-      zionbuchananQuiz.makeQuestion1(),
-      zionbuchananQuiz.makeQuestion2(),
+      ZionBuchananQuiz.makeQuestion0(),
+      ZionBuchananQuiz.makeQuestion1(),
+      ZionBuchananQuiz.makeQuestion2(),
     ];
   }
 
