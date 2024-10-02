@@ -28,7 +28,7 @@ export class HummadTanweerQuiz implements QuizQuestionProvider {
         [AnswerChoice.C, 'Koska Kawaguchi'],
         [AnswerChoice.D, 'Junio C. Hamano'],
       ]),
-      AnswerChoice.A,
+      AnswerChoice.UNANSWERED,
     ); // Replace `UNANSWERED` with the correct answer.
   }
 
@@ -39,13 +39,10 @@ export class HummadTanweerQuiz implements QuizQuestionProvider {
       new Map<AnswerChoice, string>([
         [AnswerChoice.A, 'GIT add'],
         [AnswerChoice.B, 'GIT push'],
-        [
-          AnswerChoice.C,
-          'GIT upload',
-        ],
+        [AnswerChoice.C, 'GIT upload'],
         [AnswerChoice.D, 'GIT status'],
       ]),
-      AnswerChoice.B,
+      AnswerChoice.UNANSWERED,
     ); // Replace `UNANSWERED` with the correct answer.
   }
 
@@ -56,13 +53,10 @@ export class HummadTanweerQuiz implements QuizQuestionProvider {
       new Map<AnswerChoice, string>([
         [AnswerChoice.A, 'GIT diff'],
         [AnswerChoice.B, 'GIT commit'],
-        [
-          AnswerChoice.C,
-          'GIT status',
-        ],
+        [AnswerChoice.C, 'GIT status'],
         [AnswerChoice.D, 'GIT check'],
       ]),
-      AnswerChoice.C,
+      AnswerChoice.UNANSWERED,
     ); // Replace `UNANSWERED` with the correct answer.
   }
 }
