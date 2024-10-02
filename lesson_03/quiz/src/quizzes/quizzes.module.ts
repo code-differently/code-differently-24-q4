@@ -9,6 +9,7 @@ import { JamesCapparellQuiz } from './james_capparell_quiz.js';
 import { JosephCaballeroQuiz } from './joseph_caballero_quiz.js';
 import { OyeyemiJimohQuiz } from './oyeyemi_jimoh_quiz.js';
 import { ShawnDunsmoreQuiz } from './shawn_dunsmore_quiz.js';
+import { TommyTranQuiz } from './tommy.tran.quiz.js';
 import { XavierCruzQuiz } from './xavier_cruz_quiz.js';
 import { YafiahAbdullahQuiz } from './yafiah_abdullah_quiz.js';
 import { ZionBuchananQuiz } from './zion_buchanan_quiz.js';
@@ -30,6 +31,7 @@ const QUIZ_PROVIDERS = [
   AmiyahJonesQuiz,
   XavierCruzQuiz,
   ZionBuchananQuiz,
+  TommyTranQuiz,
 ];
 
 @Module({
