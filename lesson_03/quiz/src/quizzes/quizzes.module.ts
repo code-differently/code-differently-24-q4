@@ -28,7 +28,6 @@ const QUIZ_PROVIDERS = [
   JosephCaballeroQuiz,
   AngelicaCQuiz,
   OyeyemiJimohQuiz,
-  HummadTanweerQuiz,
   ShawnDunsmoreQuiz,
   DasiaEnglishQuiz,
   ChigazoGrahamsQuiz,
