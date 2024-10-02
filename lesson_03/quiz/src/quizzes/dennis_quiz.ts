@@ -34,7 +34,7 @@ export class DennisQuiz implements QuizQuestionProvider {
 
   private static makeQuestion1(): QuizQuestion {
     return new MultipleChoiceQuizQuestion(
-      0,
+      1,
       'what does "git branch -m" do?',
       new Map<AnswerChoice, string>([
         [AnswerChoice.A, 'change name of branch'],
@@ -48,7 +48,7 @@ export class DennisQuiz implements QuizQuestionProvider {
 
   private static makeQuestion2(): QuizQuestion {
     return new MultipleChoiceQuizQuestion(
-      0,
+      2,
       'Which is not an IDE?',
       new Map<AnswerChoice, string>([
         [AnswerChoice.A, 'VS Code'],
