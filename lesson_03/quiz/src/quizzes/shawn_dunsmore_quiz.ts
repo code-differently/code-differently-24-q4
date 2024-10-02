@@ -21,7 +21,7 @@ export class ShawnDunsmoreQuiz implements QuizQuestionProvider {
   private static makeQuestion0(): QuizQuestion {
     return new MultipleChoiceQuizQuestion(
       0,
-      'What is Davids Favorite?',
+      'What is Davids Favorite Color?',
       new Map<AnswerChoice, string>([
         [AnswerChoice.A, 'Idc'],
         [AnswerChoice.B, 'Blue'],
@@ -33,11 +33,17 @@ export class ShawnDunsmoreQuiz implements QuizQuestionProvider {
   }
 
   private static makeQuestion1(): QuizQuestion {
-    return new QuizQuestion(
+    return new MultipleChoiceQuizQuestion(
       1,
       'What is Jordan famous for?',
-      'Pickle ball champion',
-    ); // Provide an answer.
+      new Map<AnswerChoice, string>([
+        [AnswerChoice.A, 'Photography'],
+        [AnswerChoice.B, 'Being short'],
+        [AnswerChoice.C, 'Pickleball'],
+        [AnswerChoice.D, 'Trampoline Dunking.'],
+      ]),
+      AnswerChoice.UNANSWERED,
+    ); // Replace `UNANSWERED` with the correct answer.
   }
 
   private static makeQuestion2(): QuizQuestion {
