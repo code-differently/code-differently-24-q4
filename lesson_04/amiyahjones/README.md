@@ -2,13 +2,13 @@
 ``` javascript
 
 function isPrime(num) {
-  var copycat = num * 1;
   if (num % 1 == copycat && num % copycat == 1) {
     return true;
   } else {
       return false;
   }
 }
+console.log(isPrime(2));
 
 // If the number is a prime , return true. Else = false
 ```
