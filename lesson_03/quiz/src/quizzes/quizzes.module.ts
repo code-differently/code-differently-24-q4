@@ -7,7 +7,7 @@ import { ChigazoGrahamsQuiz } from './chigazo_graham_quiz.js';
 import { DasiaEnglishQuiz } from './dasia_english_quiz.js';
 import { JosephCaballeroQuiz } from './joseph_caballero_quiz.js';
 import { OyeyemiJimohQuiz } from './oyeyemi_jimoh_quiz.js';
-import { TommyTranQuiz } from './Tommy_Tran_quiz.js';
+import { TommyTranQuiz } from './tommy_tran_quiz.js';
 import { XavierCruzQuiz } from './xavier_cruz_quiz.js';
 import { YafiahAbdullahQuiz } from './yafiah_abdullah_quiz.js';
 
