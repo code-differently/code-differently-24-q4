@@ -14,6 +14,8 @@ import { ShawnDunsmoreQuiz } from './shawn_dunsmore_quiz.js';
 import { TommyTranQuiz } from './tommy.tran.quiz.js';
 import { XavierCruzQuiz } from './xavier_cruz_quiz.js';
 import { YafiahAbdullahQuiz } from './yafiah_abdullah_quiz.js';
+import { HummadTanweerQuiz } from './hummad_tanweer_quiz.js';
+import { AmiyahJonesQuiz } from './amiyah_jones_quiz.js';
 import { ZionBuchananQuiz } from './zion_buchanan_quiz.js';
 import { HummadTanweerQuiz } from './hummad_tanweer_quiz.js';
 
@@ -28,6 +30,7 @@ const QUIZ_PROVIDERS = [
   JosephCaballeroQuiz,
   AngelicaCQuiz,
   OyeyemiJimohQuiz,
+  HummadTanweerQuiz,
   ShawnDunsmoreQuiz,
   DasiaEnglishQuiz,
   ChigazoGrahamsQuiz,
