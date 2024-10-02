@@ -2,13 +2,18 @@
 ``` javascript
 
 function isPrime(num) {
-  if (num % 1 == copycat && num % copycat == 1) {
-    return true;
-  } else {
-      return false;
+  if (num < 2) {
+    return false; // Numbers less than 2 are not prime
   }
+
+  for (let i = 2; i < num; i++) {
+    if (num % i === 0) {
+      return false; 
+    }
+  }
+  
+  return true; 
 }
-console.log(isPrime(2));
 
 // If the number is a prime , return true. Else = false
 ```
