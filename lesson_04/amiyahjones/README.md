@@ -21,7 +21,7 @@ console.log(isPrime(1)); //false
 ```
 
 ## React
-``` react
+``` jsx
 // src/App.js
 
 import React, { useState } from 'react';
@@ -81,13 +81,9 @@ export default App;
 
 ## Explanation 
 
-My Javascript implementation checks if a number is prime by doing the following:
-1. if the number is less than 2 , it returns ```false``` since prime numbers have to be greater than 1.
-2. Then, it looks at every number starting from 2 up to one less than your number (i = the number you enter to check with) to see if any of these can divide your number just fine (without any remainders / leftovers) 
-3. If it finds any number that divides evenly, it returns ```false```
-4. If it doesn't find any number that can divide it, the function returns ```true```.
+My JavaScript function checks if a number is prime by first returning `false` if the number is less than 2, since prime numbers are greater than 1. Then, it tests every number from 2 up to one less than the given number to see if any of them can divide it without leaving a remainder. If it finds one that can divide it evenly, it returns `false` ; if not, it returns `true`, meaning the number is prime.
 
-Now for my React implementation, it is definelty a LOT. It's basically code to make an app where you can type any number into a box and click a button. It goes through the same steps as javascript, checking if the number is prime by looking at all the numbers below it to see if any can divide it evenly. If it finds one, it tells you that the number is not prime. If it doesn’t find any, it says the number is prime. It also lets you know if you didn’t type in a valid number. So it's like a bonus!
+Now for my React implementation, it is definelty a LOT. But it's an app that checks if a number is prime, which means it can only be divided evenly by 1 and itself (as a reminder). You type a number into a box and click a button, and the app looks to see if any smaller numbers can divide it evenly. If it finds one, it says the number is not prime; if not, it says it is prime. It also gives a message if you enter an invalid number. So it's like a bonus!
 
 
 
