@@ -51,7 +51,7 @@ function App() {
   const handleSubmit = (e) => {
     const num = parseInt(number, 10); // Convert input to a number (since usually it's a string when typing your answer)
     if (!isNaN(num)) { // Check if input is a prime number
-      setResult(isPrime(num) ? `${num} is a prime number.` : `${num} is not a prime number.`);
+      setResult(isPrime(num) ? `${num} is a prime number.` : `${num} is not a prime number.`); 
     } else {
       setResult('Please enter a valid number.'); // Error message for invalid input
     }
@@ -87,4 +87,7 @@ My Javascript implementation checks if a number is prime by doing the following:
 3. If it finds any number that divides evenly, it returns ```false```
 4. If it doesn't find any number that can divide it, the function returns ```true```.
 
-Now for my React implementation, the second humongus lines of code is definelty a LOT. However I've been told it's similar to javascript but easier - where everything is in one spot to create your 'app'. In this case, you can type any number into a box and click a button. 
+Now for my React implementation, it is definelty a LOT. It's basically code to make an app where you can type any number into a box and click a button. It goes through the same steps as javascript, checking if the number is prime by looking at all the numbers below it to see if any can divide it evenly. If it finds one, it tells you that the number is not prime. If it doesn’t find any, it says the number is prime. It also lets you know if you didn’t type in a valid number. So it's like a bonus!
+
+
+
