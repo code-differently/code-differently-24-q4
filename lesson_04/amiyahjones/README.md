@@ -19,59 +19,15 @@ console.log(isPrime(5)); //true
 console.log(isPrime(1)); //false
 
 ```
-## HTML 
-``` html
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Manual Prime Number Checker</title>
-</head>
-<body>
-    <h1>Prime Number Checker</h1>
-    <form action="#" method="post">
-        <label for="numberInput">Enter a number:</label>
-        <input type="number" id="numberInput" name="numberInput" placeholder="Enter a number" required />
-        <input type="submit" value="Check" />
-    </form>
+## Ruby  
+``` ruby
+number_guess_ = 90
 
-    <h2>List of Prime Numbers:</h2>
-    <ul>
-        <li>2</li>
-        <li>3</li>
-        <li>5</li>
-        <li>7</li>
-        <li>11</li>
-        <li>13</li>
-        <li>17</li>
-        <li>19</li>
-        <li>23</li>
-        <li>29</li>
-        <li>31</li>
-        <li>37</li>
-        <li>41</li>
-        <li>43</li>
-        <li>47</li>
-        <li>53</li>
-        <li>59</li>
-        <li>61</li>
-        <li>67</li>
-        <li>71</li>
-        <li>73</li>
-        <li>79</li>
-        <li>83</li>
-        <li>89</li>
-        <li>97</li>
-    </ul>
-
-    <h2>Result:</h2>
-    <p>
-        <!-- You can manually state whether a number is prime here based on user input -->
-        To see if a number is prime, check the list above after submitting!
-    </p>
-</body>
-</html>
+if number_guess_ <= 1
+  puts "Not a prime number"
+if number_guess == 2
+  puts 
+else 
 
 ```
 
