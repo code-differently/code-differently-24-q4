@@ -18,10 +18,13 @@ function isPrime(num) {
 console.log(isPrime(5)); //true
 console.log(isPrime(1)); //false
 
-// If the number is a prime , return true. Else = false
 ```
 
 
 ## Explanation 
 
-My Javascript implementation uses a for loop to determine whether the number is prime. A prime number can only be divided by itself and 1 without any remainders. It has a single 'if' argument on whether the number is prime based on the whether the results are exactly as expected of a prime number. If not, then the 'else' statement will return false since it's outside of those few numbers. 
+My Javascript implementation checks if a number is prime by doing the following:
+1. if the number is less than 2 , it returns ```false``` since prime numbers have to be greater than 1.
+2. Then, it looks at every number starting from 2 up to one less than your number (i = the number you enter to check with) to see if any of these can divide your number just fine (without any remainders / leftovers) 
+3. If it finds any number that divides evenly, it returns ```false```
+4. If it doesn't find any number that can divide it, the function returns ```true```.
