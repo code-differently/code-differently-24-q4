@@ -76,3 +76,9 @@ Output: if (7 <= 1) return false // Result: 7 is not less than or equal to 1
         for (int i = 3; i * i <= 7; i += 2) // Result: i starts at 3, 3 * 3 <= 7, 9 <= 7, false 
         return true // Result: No factors found
 Print Result: Since isPrime(7) returned true: 7 is a prime number.
+```
+
+
+## Explanation/ Thought Process
+
+I chose to use the programming languages Java and C++. I chose Java because I have been introduced to it before through Codio and have an introductory level understanding of some concepts. I chose C++ because after understanding what a prime number is and its uses, I found that it is a crucial part of cryptography. The difficulty of factoring large prime numbers makes it ideal for creating secure encryption algorithms. Due to its high performance, controll over memory management, and ability to optimize code for speed, especially for complex algorithms and time sensitive situations, C++ has the title of being the one of the best programming languages for creating encryption algorithms. // 
