@@ -58,3 +58,20 @@ findPrimeNumberJS();
 
 ### JavaScript Explanation: ###
 In this JavaScript function, findPrimeNumberJS, we use a for loop to iterate over the numbers from 2 to 100. The isPrime variable initially assumes that each number is prime. For each number num, we check if it is divisible by any number from 2 to the square root of num. If the number is divisible, it is marked as not prime by setting isPrime to false, and we break out of the inner loop to save time. If the number remains prime after the check, it is printed to the console. The square root check ensures we minimize the number of iterations for efficiency.
+
+## Similarities and Differences Between Python and JavaScript Prime Number Functions ##
+
+### Similarities
+
+* Logic (Using Square Roots to Check Primes): Both functions in Python and JavaScript use the same fundamental logic to determine if a number is prime. By checking divisors only up to the square root of the number, we can efficiently reduce the number of checks. This optimization works in both languages because if a number has a divisor greater than its square root, it must also have a corresponding smaller divisor, which would have been checked already.
+
+* Looping Structure: Both functions use a for loop to iterate over potential divisors, starting from 2. While the exact syntax differs, the purpose is the same—to test whether the number is divisible by any number within this range. If no divisor is found, the number is prime.
+
+
+### Differences:
+
+* Syntax: Python uses range() to generate numbers in a loop, while JavaScript directly declares the loop variable and sets its conditions. Python also uses indentation to define code blocks, while JavaScript uses curly braces {}.
+
+* Case Sensitivity: Python commonly uses snake_case for function and variable names (e.g., is_prime), while JavaScript typically uses camelCase (e.g., isPrime).
+
+* Variable Declarations: In Python, variables are declared by simply assigning a value to them (e.g., num = 5). In JavaScript, variables must be explicitly declared using let, const, or var (e.g., let num = 5).
