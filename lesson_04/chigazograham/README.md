@@ -66,3 +66,5 @@ The Ruby implementation uses a function named `isPrime` that also takes a single
    - Ruby can return true or false without a return statement.  In contrast Python requires a return statement or will return with `None`.
    - Ruby has to be closed in `end` after loops or an error will appear and the code won't run. Python, on the other hand doesn't need anything and will return with `None` instead of an error if not given further instructions.
    - The syntax for calling functions and printing to the console/output is different. Python uses `print()`, while Ruby uses `puts()`.
+
+<!-- Used code from geeksforgeeks.org to assist in creating assignment -->
