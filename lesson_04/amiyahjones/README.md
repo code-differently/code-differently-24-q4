@@ -23,11 +23,58 @@ console.log(isPrime(1)); //false
 ## React
 ``` react
 // src/App.js
+
 import React, { useState } from 'react';
-import './App.css';
 
-//
+function isPrime(num) {
+  if (num < 2) {
+    return false; // same thing from JS
+  }
 
+  for (let i = 2; i < num; i++) {
+    if (num % i === 0) {
+      return false; 
+    }
+  }
+  
+  return true; 
+}
+
+function App() {
+  const [guesses, setGuesses] = useState([]); //stores the guesses made by the user
+  const [result, setResult] = useState(''); //stores message whether its a prime number or not
+};
+ const handleChange = (e) => {
+    setNumber(e.target.value); // Update the number state when the user changes their "input"
+  };
+
+  const handleSubmit = (e) => {
+    const num = parseInt(number, 10); // Convert input to a number (since usually it's a string when typing your answer)
+    if (!isNaN(num)) { // Check if input is a prime number
+      setResult(isPrime(num) ? `${num} is a prime number.` : `${num} is not a prime number.`);
+    } else {
+      setResult('Please enter a valid number.'); // Error message for invalid input
+    }
+  };
+
+  return (
+    <div>
+      <h1>Prime Number Checker</h1>
+      <form onSubmit={handleSubmit}>
+        <input 
+          type="number" 
+          value={number} 
+          onChange={handleChange} 
+          placeholder="Enter a number" 
+        />
+        <button type="submit">Check</button>
+      </form>
+      {result && <p>{result}</p>} {/* Display the result if it exists */}
+    </div>
+  );
+}
+
+export default App;
 
 ```
 
@@ -39,3 +86,5 @@ My Javascript implementation checks if a number is prime by doing the following:
 2. Then, it looks at every number starting from 2 up to one less than your number (i = the number you enter to check with) to see if any of these can divide your number just fine (without any remainders / leftovers) 
 3. If it finds any number that divides evenly, it returns ```false```
 4. If it doesn't find any number that can divide it, the function returns ```true```.
+
+Now for my React implementation, the second humongus lines of code is definelty a LOT. However I've been told it's similar to javascript but easier - where everything is in one spot to create your 'app'. In this case, you can type any number into a box and click a button. 
