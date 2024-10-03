@@ -1,15 +1,17 @@
 package com.codedifferently.instructional.quiz;
 
-import at.favre.lib.crypto.bcrypt.BCrypt;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.dataformat.yaml.YAMLFactory;
-import com.fasterxml.jackson.dataformat.yaml.YAMLGenerator.Feature;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.dataformat.yaml.YAMLFactory;
+import com.fasterxml.jackson.dataformat.yaml.YAMLGenerator.Feature;
+
+import at.favre.lib.crypto.bcrypt.BCrypt;
 
 public class QuizAnswerKeyGenerator {
   private final QuizPrompter prompter;
