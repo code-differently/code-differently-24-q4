@@ -20,6 +20,7 @@ console.log(isPrime(1)); //false
 
 ```
 ## Ruby  
+###### Tutorial used : https://www.youtube.com/watch?v=33pLqGvk-PM
 ``` ruby
 def prime?(n)
 # '2..n-1' checks all the numbers from 2 up to less than 'n'.
@@ -33,7 +34,6 @@ p prime? 5 # prints 'true'
 p prime? 6 # prints 'false'
 p prime? 7 # also 'true'
 ```
-
 
 
 ## Explanation 
