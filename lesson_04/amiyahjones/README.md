@@ -15,6 +15,9 @@ function isPrime(num) {
   return true; 
 }
 
+console.log(isPrime(5));
+console.log(isPrime(1));
+
 // If the number is a prime , return true. Else = false
 ```
 
