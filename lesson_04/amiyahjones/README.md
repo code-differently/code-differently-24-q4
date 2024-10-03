@@ -20,6 +20,17 @@ console.log(isPrime(1)); //false
 
 ```
 
+## React
+``` react
+// src/App.js
+import React, { useState } from 'react';
+import './App.css';
+
+//
+
+
+```
+
 
 ## Explanation 
 
