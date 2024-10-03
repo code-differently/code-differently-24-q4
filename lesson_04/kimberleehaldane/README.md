@@ -1,0 +1,78 @@
+## Java Implementation
+
+```java
+if (n <= 1) {
+    System.out.println(n + " is not a prime number.");
+} else if (n == 2) {
+    System.out.println(n + " is a prime number.");
+} else if (n % 2 == 0) {
+    System.out.println(n + " is not a prime number.");
+//ChatGPT helped me to complete the code from this point.// 
+} else { 
+    boolean isPrime= true;
+    for (int i = 3; i <= Math.sqrt(n); i += 2) {
+        if (n % i == 0) {
+            isPrime = false;
+            break;
+        }
+    }
+    if (isPrim) {
+        System.out.println(n + " is a prime number.");
+    } else { 
+        System.out.println(n + " is not a prime number.");
+    }
+}
+
+# Example Usage:
+Input: n = 7
+Output: if (7 <= 1) // Result: No, 7 is not less than or equal to 1
+        else if (7 == 2) // Result: No, 7 is not equal to 2
+        else if (7 % 2 == 0) // Result: No, 7 mod 2=1, 7 is not even
+        else 
+            boolean isPrime = true // Initialize a boolean variable to true to check for odd factors
+        for (int i = 3; i <= Math.sqrt(7; i += 2) // Result: √7 ≈ 2.645, 3<=2.645, Answer: No, so isPrime is true
+        Print Result: 7 is a prime number.
+```
+
+## C++ Implementation
+
+```c++
+// C++ code created and explained with the help of ChatGPT and Google Search
+bool isPrime(int number) {
+    // Handle special cases
+    if (number <= 1) return false; // 0 and 1 are not prime numbers
+    if (number <= 3) return true; // 2 and 3 are prime numbers
+
+    // Check for even numbers greater than 2
+    if (number % 2 == 0) return false;
+
+    // Check for factors from 3 to the square root of the number
+    for (int i = 3; i * i <= number; i += 2) {
+        if (number % == 0) return false; // Found a factor
+    }
+
+    return true; // No factors found, number is prime
+}
+
+int main() {
+    int num;
+    std::cout << "Enter a number: ";
+    std::cin >> num;
+
+    if (isPrime(num)) {
+        std::cout << num << " is a prime number." << std::endl;
+    } else {
+        std::cout << num << " is not a prime number." << std::endl;
+    }
+
+    return 0;
+}
+ 
+# Example Usage:
+Input: isPrime(7)
+Output: if (7 <= 1) return false // Result: 7 is not less than or equal to 1
+        if (7 <= 3) return true // Result: 7 is greater than 3
+        if (7 % 2 == 0) return false // Result: 7%2=1
+        for (int i = 3; i * i <= 7; i += 2) // Result: i starts at 3, 3 * 3 <= 7, 9 <= 7, false 
+        return true // Result: No factors found
+Print Result: Since isPrime(7) returned true: 7 is a prime number.
