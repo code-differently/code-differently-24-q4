@@ -22,7 +22,7 @@ console.log(isPrime(1)); //false
 ## Ruby  
 ``` ruby
 def prime?(n)
-# now check all the numbers from 2 up to less than 'n'.
+# '2..n-1' checks all the numbers from 2 up to less than 'n'.
 # 'none' -> sees if none of these numbers can divide 'n' evenly.
   (2..n-1).none? {|divisor| n % divisor == 0}
 # If none of these numbers divide 'n' without a remainder,
@@ -42,6 +42,9 @@ My JavaScript implementation uses a function named ```isPrime``` that checks if 
 
 The ruby implementation has a function named ```prime?``` that also looks at all the numbers from 2 up to one less than the number given. Same rules apply: If none of those numbers can divide it evenly, then it prints ```true```. For example, it tells us if 5 and 7 are prime (they are!) and if 6 is prime (it’s not!).
 
-
+### Differences
+1. Instead of ```function``` used to define what your function is in javascript, Ruby use ```def```
+2. Ruby is much more simple - where tthe ```if``` and ```else``` statement is simply in one line
+3. Ruby simply 'prints' the result of its functions rather than ```console.log();``` 
 
 
