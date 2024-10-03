@@ -14,3 +14,7 @@ First I declared 3 variables to use to test my function a,b, and c. I then assig
 
 2. ** Variables
    - In javascript you can declare a variablle using let and achieve a more broader scope of defined objects whereas in Java you have to be more specific with the data type as an int,double,string,etc.
+
+3. ** Testing
+   - to run the java you would name the file with a .java at the end and type "java [filename.java]" to run the program
+   - to run the javascrip you would name the file with a .js at the end and type node [filename.js] to run the program
