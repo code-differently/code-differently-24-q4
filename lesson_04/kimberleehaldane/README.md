@@ -87,25 +87,25 @@ I chose to use the programming languages Java and C++. I chose Java because I ha
 
 ### Implementation
 
-**The Java implementation determines if a number is a prime number by**:
+The Java implementation determines if a number is a prime number by:
 <br>
-1. Understanding what a prime number is (a number that is greater than 1 and is only divisible by 1 and itself), then setting up the logic.
+- Understanding what a prime number is (a number that is greater than 1 and is only divisible by 1 and itself), then setting up the logic.
 <br>
-2. Use a boolean variable `isPrime` in an if/else conditional statement. If `isPrime` returns false, n is not a prime number. If `isPrime` returns true, n is a prime number.
-
-**The C++ implementation determines if a number is a prime number by**:
+- Use a boolean variable `isPrime` in an if/else conditional statement. If `isPrime` returns false, n is not a prime number. If `isPrime` returns true, n is a prime number.
 <br>
-1. Using a conditional statement within a function.
+The C++ implementation determines if a number is a prime number by:
 <br>
-2. The `main` function takes user input and uses the `isPrime` function to determine if a number is a prime number. If `isPrime` returns true, n is a prime number. If `isPrime` returns false, n is not a prime number.
-
+- Using a conditional statement within a function.
+<br>
+- The `main` function takes user input and uses the `isPrime` function to determine if a number is a prime number. If `isPrime` returns true, n is a prime number. If `isPrime` returns false, n is not a prime number.
+<br>
 ### Similarities
 
-1. Both programming languages used conditional statements with true/false values to determine if a number is a prime number.
+- Both programming languages used conditional statements with true/false values to determine if a number is a prime number.
 <br>
-2. Similar syntax: `isPrime`
+- Similar syntax: `isPrime`
 <br>
-3. Similar code operation: Start with special cases `n<=1, n<=3`, then check for even numbers greater than 2, loop to check factors before coming to the output.
+- Similar code operation: Start with special cases `n<=1, n<=3`, then check for even numbers greater than 2, loop to check factors before coming to the output.
 
 ### Differences
 
