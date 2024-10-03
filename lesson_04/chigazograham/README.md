@@ -61,8 +61,8 @@ The Ruby implementation uses a function named `isPrime` that also takes a single
 
 1. **Syntax**: 
    - Python uses `True` and `False` for boolean values, while Ruby uses `true` and `false`.
-   - The formatting for `if` statements are also different between the two. In Python, `if` statements have the inital statement and then on the next line the command to run if the variable falls under the `if` statement. In Ruby the formating is completely different, the command comes first and after that the `if` statement comes in on the same line
+   - The formatting for `if` statements are also different between the two. In Python, `if` statements have the initial statement and then on the next line the command to run if the variable falls under the `if` statement. In Ruby the formatting is completely different, the command comes first and after that the `if` statement comes in on the same line
    - In Python, a colon(`:`) is used to close function statements, whereas in Ruby there is nothing closing the function statements.
-   - Ruby can run return true or false without a return statement.  In contrast Python requires a return statement or will return with `None`.
-   - Ruby has to be closed in `end` after loops or an error will appear and the code wont run. Python, on the other hand doesnt need anything and will return with `None` instead of an error if not given further instructions.
+   - Ruby can return true or false without a return statement.  In contrast Python requires a return statement or will return with `None`.
+   - Ruby has to be closed in `end` after loops or an error will appear and the code won't run. Python, on the other hand doesn't need anything and will return with `None` instead of an error if not given further instructions.
    - The syntax for calling functions and printing to the console/output is different. Python uses `print()`, while Ruby uses `puts()`.
