@@ -114,5 +114,5 @@ The C++ implementation determines if a number is a prime number by:
 - C++ uses a `main` function to take user input during the output process, while in Java it is assumed that the `isPrime` starts off as true until proved false.
 
 2. **Function Calls**:
-- The syntax for printing to the the console/output is different. Java uses `System.out.println()`, while C++ uses `std::cout << "insert string" << std::endl;`.
+- The syntax for printing to the console/output is different. Java uses `System.out.println()`, while C++ uses `std::cout << "insert string" << std::endl;`.
 `(Source: ChatGPT, Google Search, Codio notes)`
