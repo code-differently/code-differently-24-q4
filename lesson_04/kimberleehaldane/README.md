@@ -88,23 +88,23 @@ I chose to use the programming languages Java and C++. I chose Java because I ha
 ### Implementation
 
 The Java implementation determines if a number is a prime number by:
-<br>
+
 - Understanding what a prime number is (a number that is greater than 1 and is only divisible by 1 and itself), then setting up the logic.
-<br>
+
 - Use a boolean variable `isPrime` in an if/else conditional statement. If `isPrime` returns false, n is not a prime number. If `isPrime` returns true, n is a prime number.
-<br>
+
 The C++ implementation determines if a number is a prime number by:
-<br>
+
 - Using a conditional statement within a function.
-<br>
+
 - The `main` function takes user input and uses the `isPrime` function to determine if a number is a prime number. If `isPrime` returns true, n is a prime number. If `isPrime` returns false, n is not a prime number.
-<br>
+
 ### Similarities
 
 - Both programming languages used conditional statements with true/false values to determine if a number is a prime number.
-<br>
+
 - Similar syntax: `isPrime`
-<br>
+
 - Similar code operation: Start with special cases `n<=1, n<=3`, then check for even numbers greater than 2, loop to check factors before coming to the output.
 
 ### Differences
@@ -115,4 +115,4 @@ The C++ implementation determines if a number is a prime number by:
 
 2. **Function Calls**:
 - The syntax for printing to the the console/output is different. Java uses `System.out.println()`, while C++ uses `std::cout << "insert string" << std::endl;`.
-(Source: ChatGPT, Google Search, Codio notes)
+`(Source: ChatGPT, Google Search, Codio notes)`
