@@ -39,3 +39,4 @@ def is_prime(number):
 * Both languages use `math.sqrt` equally to find the square root of the number. (well if you wanna be technical "java" has it start with a capital M but come on man.)
 
 * In both methods Java and Python still use if statements to make choices in the code.
+"Used Ai to give me code prompts of python and java"
