@@ -7,6 +7,8 @@ import { ChelseaOgbonniaQuiz } from './chelsea_ogbonnia_quiz.js';
 import { ChigazoGrahamsQuiz } from './chigazo_graham_quiz.js';
 import { DasiaEnglishQuiz } from './dasia_english_quiz.js';
 import { DavidSmithQuiz } from './david_smith_quiz.js';
+import { DennisQuiz } from './dennis_quiz.js';
+import { HummadTanweerQuiz } from './hummad_tanweer_quiz.js';
 import { JamesCapparellQuiz } from './james_capparell_quiz.js';
 import { JosephCaballeroQuiz } from './joseph_caballero_quiz.js';
 import { KimberleeHaldaneQuiz } from './kimberlee_haldane_quiz.js';
@@ -41,6 +43,8 @@ const QUIZ_PROVIDERS = [
   ZionBuchananQuiz,
   ChelseaOgbonniaQuiz,
   TommyTranQuiz,
+  DennisQuiz,
+  HummadTanweerQuiz,
   PabloLimonParedesQuiz,
 ];
 
