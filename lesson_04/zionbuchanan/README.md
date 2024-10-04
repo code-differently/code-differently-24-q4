@@ -65,8 +65,8 @@ public class PrimeChecker {
 }
 ```
 ## Explanation
-For JavaScript, I created a fuction that would determine whether a number is prime or not. If a number is less than or equal to 1, then the output of the function would determine the number to be false. This is due to the fact that any number less than or equal to 1 is not a prime number. Any number that is greater than 1 would simply return the output of the function to be true or false, depending on if it is or isn't a prime number. I then included a variable that would mathematically verify if any given number has any divisors others than the number 1 and itself. If the number is divisible by i, then it's not prime. It would only be prime if there were no divisors found.
+For JavaScript, I created a fuction using chatgpt that would determine whether a number is prime or not. If a number is less than or equal to 1, then the output of the function would determine the number to be false. This is due to the fact that any number less than or equal to 1 is not a prime number. Any number that is greater than 1 would simply return the output of the function to be true or false, depending on if it is or isn't a prime number. I then included a variable that would mathematically verify if any given number has any divisors others than the number 1 and itself. If the number is divisible by i, then it's not prime. It would only be prime if there were no divisors found.
 
-For Java, it was a similar process, but with more structure. 
+For Java, it was a similar process, but with more structure in the data types. I also used chat gpt to help me understand this process as well.
 ## Differences
 In regards to the syntax and structure, Java was more strict with its rules while JavaScript was more loose. In other words, Java had a 11pm curfew while JavaScript could go out and come back at whatever time it pleases. The data type in Java required explicit commands whereas JavaScript had more leniency towards its data types.
