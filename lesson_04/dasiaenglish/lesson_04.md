@@ -1,13 +1,6 @@
 ```Javascript
 #Javascript
 
-const readline = require(`readline`);
-
-const rl =readline.createInterface({
-    input: process.stdin,
-    output: process.stdout
-});
-
 function findPrimes(numberToCheck) { // A machine that helps find prime numbers
 
     if (numberToCheck <=1){
@@ -30,15 +23,16 @@ function findPrimes(numberToCheck) { // A machine that helps find prime numbers
         }
 } //closing the loop of if it is a prime number or not 
 
-rl.question(`Enter a number to check if it\'s prime:`, (input)=>{
-    let number = parseInt(input);
+const input = process.argv[2]; // telling the computer to save the 3rd thing you type
 
-    if (isNaN(number)) {
-        console.log("Please enter a valid number.");
+let number = parseInt(input); // if it types a word the computer does the math and makes it a number
+
+    if (isNaN(number)) { // make sure you type a number 
+        console.log("Please enter a valid number."); // letting the user know you have to type a number 
     } else {
-        console.log(findPrimes(number));
+        console.log(findPrimes(number)); //now the computer can check if it is prime or not
     }
-});
+
 // credit from Coding with John youtube video https://www.youtube.com/watch?v=I9-3drnfyp0 and Chatgpt for a explanation of things I still might have been confused about 
 ```
 
