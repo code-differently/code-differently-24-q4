@@ -26,3 +26,5 @@ Java and Python have notable similarities in their function structures, as seen 
 
 ## Differences
 Java and Python differ significantly in syntax and structure, as seen in the `isPrime` method and the `is_prime` function. Java is a statically typed language, requiring explicit type declarations, such as `int n`, whereas Python is dynamically typed, allowing variables to be defined without a type. Additionally, Java uses the `Math.sqrt` method to calculate the square root, while Python employs the expression `n**0.5`. The for-loop syntax also varies: Java uses a traditional for-loop with an initializer, while Python utilizes the `range` function. These differences illustrate the distinct design philosophies and readability approaches of each language.
+
+(AI used to rewrite README took my original copy and ran it through to make each fit 100 words)
