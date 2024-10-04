@@ -6,6 +6,7 @@ import { AnthonyMaysQuiz } from './anthony_mays_quiz.js';
 import { ChelseaOgbonniaQuiz } from './chelsea_ogbonnia_quiz.js';
 import { ChigazoGrahamsQuiz } from './chigazo_graham_quiz.js';
 import { DasiaEnglishQuiz } from './dasia_english_quiz.js';
+import { DennisQuiz } from './dennis_quiz.js';
 import { HummadTanweerQuiz } from './hummad_tanweer_quiz.js';
 import { JamesCapparellQuiz } from './james_capparell_quiz.js';
 import { JosephCaballeroQuiz } from './joseph_caballero_quiz.js';
@@ -21,7 +22,7 @@ import { ZionBuchananQuiz } from './zion_buchanan_quiz.js';
 
 export const Quizzes = Symbol.for('Quizzes');
 
-// Add your quiz provider here.
+// Add your quiz provider here.;
 const QUIZ_PROVIDERS = [
   AnthonyMaysQuiz,
   YafiahAbdullahQuiz,
@@ -40,6 +41,7 @@ const QUIZ_PROVIDERS = [
   ZionBuchananQuiz,
   ChelseaOgbonniaQuiz,
   TommyTranQuiz,
+  DennisQuiz,
   HummadTanweerQuiz,
   PabloLimonParedesQuiz,
 ];
