@@ -8,7 +8,9 @@
     "test": "node --experimental-vm-modules node_modules/.bin/jest",
     "compile": "tsc -p tsconfig.build.json",
     "prepare": "npm run compile",
-    "pretest": "npm run compile"
+    "pretest": "npm run compile",
+    "lint": "eslint \"{src,test}/**/*.{ts,tsx}\"",
+    "check": "npm run lint && npm run test"
   },
   "author": "",
   "license": "ISC",
