@@ -1,0 +1,25 @@
+# Lesson 04: How to Be A Great Software Engineer
+```java
+
+      System.out.println(checkForPrime(12)); 
+    }
+    
+      //Start--Java program to illustrate whether the number 11 is prime or not
+    static boolean checkForPrime (int n){
+    int count = 0; 
+    int i = 1;
+    while(i <= n ) {
+        if(n % i == 0){
+            count = count + 1;
+        } 
+        i = i + 1 ;
+    }
+    if(count == 2) 
+        return true;
+    else
+      return false;
+    
+    } 
+}
+```
+## Above is a brief java while loop; in this loop the 'driver' is the boolean keyword, the class name 'checkForPrime' and the class declaration static (as well as public/void; not included in example). In the method section of this example, the variable n, or 12 is the argument. The count function is triggered when the remainder of n divided by some iteration of integers within the program is 0. 
