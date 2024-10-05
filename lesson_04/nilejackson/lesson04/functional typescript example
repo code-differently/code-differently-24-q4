@@ -1,0 +1,10 @@
+function isPrime(num: 7); Boolean; {
+let i = 7;
+} if(i % i <= 0);
+  return true; {
+    else
+  }
+  return false;
+
+  <console className="out println"></console>```
+  

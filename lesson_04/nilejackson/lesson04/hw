@@ -1,10 +1,10 @@
-# Lesson 04: How to Be A Great Software Engineer
+# Lesson 04: Example 1
 ```java
 
       System.out.println(checkForPrime(12)); 
     }
     
-      //Start--Java program to illustrate whether the number 11 is prime or not
+      //Start--Java program to illustrate whether the number 12 is prime or not
     static boolean checkForPrime (int n){
     int count = 0; 
     int i = 1;
@@ -22,4 +22,54 @@
     } 
 }
 ```
-## Above is a brief java while loop; in this loop the 'driver' is the boolean keyword, the class name 'checkForPrime' and the class declaration static (as well as public/void; not included in example). In the method section of this example, the variable n, or 12 is the argument. The count function is triggered when the remainder of n divided by some iteration of integers within the program is 0. 
+## Above is a brief java while loop; in this loop the 'driver' is the keyword boolean, the class name 'checkForPrime' and the class declaration static (as well as public/void; not included in example). In the method section of this example, the variable n, or 12 is the argument. The count function is triggered when the remainder of n divided by some iteration of integers within the program is 0. The parameter for the arguments conclusion is set with the logical if statement where the final count should be no more than two, as a prime number only has two factors; 1 and itself. The final output for this example is 'false'.
+
+## Lesson 04: Example 2
+```typescript
+
+
+
+// typescript example
+function isPrime(num: 7); Boolean; {
+let i = 7;
+} if(i % i <= 0);
+  return true; {
+    else
+  }
+  return false;
+
+  <console className="out println"></console>```
+```
+## Above is a simple if else statement using typescript, the integer 7 serves as the argument in this instance. The function is conditional, thanks to the keyword boolean, which lets us the know that the final output will be a true/false value. The premise is as follows; if the remainder of the variable i is less than or equal to zero, return the value true, else, return the value false. The Javascript "console.log" is nested in html to call the final output,which I think is insteresting. The final output for this example is 'true'.
+
+## Similarities/Differences
+
+* Both functions are boolean in nature, and both utilize conditional logic.
+* One uses a 'count' function with the literal use of the word count, while the other uses two parison symbols to trigger a similar result. 
+* Both functions utilize the modulo operator as well. 
+
+## Note
+* I do not fully understand either function; I had help with both examples;
+* Yemi helped me correct correct the syntax for my java function after I showed him the idea for the logic behind the function I sketched out in my notebook. This was the original idea-- int n = 11 {
+    int count = o;
+} int i = 1; //skip line
+
+while(i <= n)  {
+    if(n % 0 == 0)-->count = count + 1;
+} i = i + 1;
+if(count == 2)-->return true;
+else
+return false;
+//skip line
+system.out.println(boolean checkprime(int n));
+* For the second example I used chatgpt, but only to correct my sysntax--which was grossly incorrect. This was my initial idea for the function after reading a couple examples of typescript conditionals(if/else statements, & for for/while loops);
+--let I: number; 7--->while(n: number = 1 || i)
+//skip line
+if (i % n <= 0) {
+    let count = count + 1
+} n = n +1;
+    if(count == 2); return true
+else
+    return false
+
+     
