@@ -1,7 +1,7 @@
 1. User Story: Customizing Sims
     - Title: Enhanced Sim Life Control
     - As a player,
-    - I want to have more input and control over my Sim's career, and life choices.
+    - I want to have more input and control over my Sim's career and life choices
     - So that I can build Sim worlds reflecting my own creativity and preferences.
 
     Acceptance Criteria:
