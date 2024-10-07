@@ -6,9 +6,11 @@ export class ExpressionCalculator {
     //PEMDAS order -> expected : //((a + b) * c) / d^e
 
     // Caculate addition with an add function '(a + b)'
-
+      function Add(a,b){
+       let addition = a + b;
+      }; 
     // caculate multiplication '(add * c)' and  'd^e' so d * (e times)
-
+      
     // caculate division with divide function which is different variables of the multiplication values '(add * c)' and  'd^e' so d * (e times)
 
     return 0;
