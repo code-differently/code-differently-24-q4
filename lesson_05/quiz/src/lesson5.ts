@@ -80,7 +80,7 @@ export class Lesson5 {
         [AnswerChoice.C, "<span>"],
         [AnswerChoice.D, "<br>"],
       ]),
-      AnswerChoice.A,
+      AnswerChoice.B,
     );
   }
 
