@@ -164,7 +164,7 @@ export class Lesson5 {
         [AnswerChoice.C, "<stylesheet link='styles.css'>"],
         [AnswerChoice.D, "<css href='styles.css'>"],
       ]),
-      AnswerChoice.A,
+      AnswerChoice.UNANSWERED,
     );
   }
 }
