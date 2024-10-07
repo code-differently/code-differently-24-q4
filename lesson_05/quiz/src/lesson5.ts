@@ -155,6 +155,7 @@ export class Lesson5 {
   }
 
   private static makeQuestion9(): QuizQuestion {
+    // db
     return new MultipleChoiceQuizQuestion(
       9,
       "How do you link an external CSS file to an HTML document?",
