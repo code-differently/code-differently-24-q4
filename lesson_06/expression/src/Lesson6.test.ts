@@ -1,5 +1,5 @@
+import type { Calculator } from "./calculator.js";
 import { ExpressionCalculator } from "./expression_calculator.js";
-import type { ICalculator } from "./icalculator.js";
 
 describe("Lesson6Test", () => {
   let calculator: ExpressionCalculator;
@@ -26,7 +26,7 @@ describe("Lesson6Test", () => {
 
   test("testAdd_works", () => {
     // Act
-    const result = (calculator as ICalculator).add(1, 2);
+    const result = (calculator as Calculator).add(1, 2);
 
     // Assert
     expect(result).toBe(3);
@@ -34,7 +34,7 @@ describe("Lesson6Test", () => {
 
   test("testMultiply_works", () => {
     // Act
-    const result = (calculator as ICalculator).multiply(1, 2);
+    const result = (calculator as Calculator).multiply(1, 2);
 
     // Assert
     expect(result).toBe(2);
@@ -42,7 +42,7 @@ describe("Lesson6Test", () => {
 
   test("testDivide_works", () => {
     // Act
-    const result = (calculator as ICalculator).divide(1, 2);
+    const result = (calculator as Calculator).divide(1, 2);
 
     // Assert
     expect(result).toBeCloseTo(0.5);
@@ -50,7 +50,7 @@ describe("Lesson6Test", () => {
 
   test("testPow_works", () => {
     // Act
-    const result = (calculator as ICalculator).pow(2, 3);
+    const result = (calculator as Calculator).pow(2, 3);
 
     // Assert
     expect(result).toBe(8);
