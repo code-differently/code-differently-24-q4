@@ -1,3 +1,4 @@
+import type { ICalculator } from "./ICalculator.js";
 import { ExpressionCalculator } from "./Lesson6.js";
 
 describe("Lesson6Test", () => {
@@ -55,11 +56,3 @@ describe("Lesson6Test", () => {
     expect(result).toBe(8);
   });
 });
-
-interface ICalculator {
-  calculate(a: number, b: number, c: number, d: number, e: number): number;
-  add(a: number, b: number): number;
-  multiply(a: number, b: number): number;
-  divide(a: number, b: number): number;
-  pow(base: number, exponent: number): number;
-}
