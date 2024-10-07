@@ -1,5 +1,5 @@
-import type { ICalculator } from "./ICalculator.js";
-import { ExpressionCalculator } from "./Lesson6.js";
+import { ExpressionCalculator } from "./expression_calculator.js";
+import type { ICalculator } from "./icalculator.js";
 
 describe("Lesson6Test", () => {
   let calculator: ExpressionCalculator;
