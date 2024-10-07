@@ -3,7 +3,11 @@ export class ExpressionCalculator {
   calculate(a: number, b: number, c: number, d: number, e: number): number {
     // Implement your code here to return the correct value.
 
-    return this.divide(this.multiply(this.add(a, b), c), this.pow(d, e));
+    const ab = this.add(a, b);
+    const abc = this.multiply(ab, c);
+    const de = this.pow(d, e);
+    const answer = this.divide(abc, de);
+    return answer;
   }
 
   add(a: number, b: number): number {
@@ -22,7 +26,6 @@ export class ExpressionCalculator {
     return Math.pow(base, exponent);
   }
 }
-
 /*      onst add = a + b;
         const multiply = add * c;
         const divide = multiply / this.pow(d, e);*/
