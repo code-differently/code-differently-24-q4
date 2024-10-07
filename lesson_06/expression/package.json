@@ -5,6 +5,7 @@
   "type": "module",
   "scripts": {
     "start": "node build/lesson6.js",
+    "dev": "nodemon --watch 'src/**/*.ts' --ext 'ts,json' --ignore 'src/**/*.test.ts' --exec 'ts-node' src/lesson6.ts",
     "test": "node --experimental-vm-modules node_modules/.bin/jest",
     "compile": "tsc -p tsconfig.build.json",
     "prepare": "npm run compile",
@@ -24,6 +25,7 @@
     "eslint": "^9.11.1",
     "eslint-config-prettier": "^9.1.0",
     "jest": "^29.7.0",
+    "nodemon": "^3.1.7",
     "prettier": "3.3.3",
     "ts-jest": "^29.2.5",
     "ts-node": "^10.9.2",
