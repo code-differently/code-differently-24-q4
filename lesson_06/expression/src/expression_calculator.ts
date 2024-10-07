@@ -2,7 +2,7 @@ export class ExpressionCalculator {
   /** Returns the calculation of ((a + b) * c) / d^e */
   calculate(a: number, b: number, c: number, d: number, e: number): number {
     // Implement your code here to return the correct value.
-        let Sum = this.add(a, b)
+    let Sum = this.add(a, b)
     /* First step of PEMDAS in equation (Parenthesis)*/
     let Product = this.multiply(Sum, c)
     /* Second step of PEMDAS in equation (Parenthesis)*/
