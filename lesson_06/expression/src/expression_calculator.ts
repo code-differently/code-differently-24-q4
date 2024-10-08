@@ -7,11 +7,11 @@ export class ExpressionCalculator {
     // Caculate addition with an add function '(a + b)'
       const originalSum =  you.add(a,b);
     // caculate multiplication '(add * c)' and  'd^e' so d * (e times)
-      const multiply = you.multiply(originalSum, c)
+      const SumMultiply = you.multiply(originalSum, c)
     // caculate division with divide function which is different variables of the multiplication values '(add * c)' and  'd^e' so d * (e times)
-      const lastOne = you.divide(multiply, d^e)
-      
-    return 0;
+      const FinalResult = you.divide(SumMultiply, d ^ e);
+
+    return FinalResult;
   }
 
   add(x: number , y: number){
