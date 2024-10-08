@@ -7,10 +7,10 @@ export class ExpressionCalculator {
   pow(base: number, exponent: number): number {
     return Math.pow(base, exponent);
   }
-  add(num1: number, num2: number): number {
-    return num1 + num2;
+  add(x: number, y: number): number {
+    return x + y;
   }
-  mult(numA: number, numB: number): number {
-    return numA * numB;
+  mult(X: number, Y: number): number {
+    return X * Y;
   }
 }
