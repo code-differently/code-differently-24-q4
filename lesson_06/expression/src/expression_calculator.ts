@@ -6,15 +6,18 @@ export class ExpressionCalculator {
   }
   pow(base: number, exponent: number): number
   {
-    return Math.pow(base, exponent);
+    const power = Math.pow(base, exponent);
+    return power;
   }
   add(num1: number, num2: number): number
   {
-    return (num1 + num2);
+    const adding = num1 + num2
+    return adding;
   }
   mult(numA: number, numB: number): number
   {
-    return (numA*numB)
+    const multiply = numA * numB;
+    return multiply
   }
 }
 //divide(multiply(add(a, b), c), pow(d, e))
