@@ -5,11 +5,11 @@ export class ExpressionCalculator {
 
     //PEMDAS order -> expected : //((a + b) * c) / d^e
     // Caculate addition with an add function '(a + b)'
-      const originalSum =  you.add(a,b);
+      const originalSum =  this.add(a,b);
     // caculate multiplication '(add * c)' and  'd^e' so d * (e times)
-      const SumMultiply = you.multiply(originalSum, c)
+      const SumMultiply = this.multiply(originalSum, c)
     // caculate division with divide function which is different variables of the multiplication values '(add * c)' and  'd^e' so d * (e times)
-      const FinalResult = you.divide(SumMultiply, d ^ e);
+      const FinalResult = this.divide(SumMultiply, d ^ e);
 
     return FinalResult;
   }
