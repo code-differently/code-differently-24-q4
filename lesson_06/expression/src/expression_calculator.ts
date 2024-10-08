@@ -7,9 +7,10 @@ export class ExpressionCalculator {
     // Caculate addition with an add function '(a + b)'
       const originalSum =  this.add(a,b);
     // caculate multiplication '(add * c)' and  'd^e' so d * (e times)
-      const SumMultiply = this.multiply(originalSum, c)
+      const MultiplyMySum = this.multiply(originalSum, c)
     // caculate division with divide function which is different variables of the multiplication values '(add * c)' and  'd^e' so d * (e times)
-      const FinalResult = this.divide(SumMultiply, d ^ e);
+      const FinalResult = this.divide(MultiplyMySum, d ^ e);
+    // needs caculate something...
 
     return FinalResult;
   }
