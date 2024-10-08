@@ -1,6 +1,6 @@
 export class ExpressionCalculator {
   /** Returns the calculation of ((a + b) * c) / d^e */
-  calculate(a: 1, b: 7, c: 6, d: 4, e: 2): number {
+  calculate(a: number, b: number, c: number, d: number, e: number): number {
     
     return (this.mult(this.add(a, b), c) / this.pow(d, e));
   }
