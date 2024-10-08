@@ -2,7 +2,11 @@ export class ExpressionCalculator {
   /** Returns the calculation of ((a + b) * c) / d^e */
   calculate(a: number, b: number, c: number, d: number, e: number): number {
     // Implement your code here to return the correct value.
-    return this.divide(this.multiply(this.add(a, b), c), this.pow(d, e));
+    const sum = this.add(a, b);
+    const product = this.multiply(sum, c);
+    const exp = this.pow(d, e);
+    const quotient = this.divide(product, exp);
+    return quotient;
   }
 
   pow(base: number, exponent: number): number {
