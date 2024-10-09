@@ -3,8 +3,8 @@ export class ExpressionCalculator {
   calculate(a: number, b: number, c: number, d: number, e: number): number {
     const P = this.add(a, b);
     const E = this.pow(d, e);
-    const M = this.mult(P, c);
-    const D = this.div(M, E);
+    const M = this.multiply(P, c);
+    const D = this.divide(M, E);
     return D;
     //const expression = this.mult(this.add(a, b), c) / this.pow(d, e);
     //return expression;
@@ -18,11 +18,11 @@ export class ExpressionCalculator {
     const addition = x + y;
     return addition;
   }
-  mult(X: number, Y: number): number {
+  multiply(X: number, Y: number): number {
     const multiply = X * Y;
     return multiply;
   }
-  div(x: number, y: number): number {
+  divide(x: number, y: number): number {
     const divide = x / y;
     return divide;
   }
