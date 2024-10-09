@@ -2,15 +2,15 @@ export class ExpressionCalculator {
   /** Returns the calculation of ((a + b) * c) / d^e */
   calculate(a: number, b: number, c: number, d: number, e: number): number {
     // Implement your code here to return the correct value.
-    let Sum = this.add(a, b)
+    const Sum = this.add(a, b)
     /* First step of PEMDAS in equation (Parenthesis)*/
-    let Product = this.multiply(Sum, c)
+    const Product = this.multiply(Sum, c)
     /* Second step of PEMDAS in equation (Parenthesis)*/
-    let Power = Math.pow(d, e)
+    const Power = Math.pow(d, e)
     /* Third step of PEMDAS in equation (Exponent)*/
-    let Quotient = this.divide(Product, Power)
+    const Quotient = this.divide(Product, Power)
      /* Fourth and final step of PEMDAS in equation [Multiplication/Division(left to right)]*/
-    let Result = Quotient
+    const Result = Quotient
     /* Defines final result */
     return Result;
     /* prints final result*/ 
