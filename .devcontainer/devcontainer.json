@@ -35,7 +35,9 @@
 				"ms-dotnettools.csdevkit",
 				"ritwickdey.LiveServer",
 				"mechatroner.rainbow-csv",
-				"alexcvzz.vscode-sqlite"
+				"alexcvzz.vscode-sqlite",
+				"Orta.vscode-jest",
+				"firsttris.vscode-jest-runner"
 			],
             "settings": {
                 "terminal.integrated.defaultProfile.linux": "zsh",
