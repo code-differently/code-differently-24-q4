@@ -23,7 +23,9 @@ export function compareStrings(a: string, b: string): number {
   const distance = computeLexicographicDistance(a, b);
 
   // TODO(you): Finish this method.
-
+  if (distance > 0){
+    return 1;
+  }
   return 0;
 }
 
