@@ -73,6 +73,11 @@ export function convertGpaToLetterGrade(gpa: number): string {
  * @return The factorial of n.
  */
 export function computeFactorial(n: number): number {
+  if (n < 0){
+    return -1
+  } else if (n === 0){
+    retrun 1;
+  } 
   return 0;
 }
 
