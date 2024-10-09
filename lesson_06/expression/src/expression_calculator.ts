@@ -3,9 +3,9 @@ export class ExpressionCalculator {
   calculate(a: number, b: number, c: number, d: number, e: number): number {
     // Implement your code here to return the correct value.
     const sum = this.add(a, b);
-    const pro = this.mul(sum, c);
+    const pro = this.multiply(sum, c);
     const expo = this.pow(d, e);
-    const quo = this.div(pro, expo);
+    const quo = this.divide(pro, expo);
 
     return quo;
   }
@@ -14,11 +14,11 @@ export class ExpressionCalculator {
     const result = a + b;
     return result;
   }
-  mul(a: number, b: number): number {
+  multiply(a: number, b: number): number {
     const prod = a * b;
     return prod;
   }
-  div(a: number, b: number): number {
+  divide(a: number, b: number): number {
     const quot = a / b;
     return quot;
   }
