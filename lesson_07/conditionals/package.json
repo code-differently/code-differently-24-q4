@@ -10,7 +10,8 @@
     "prepare": "npm run compile",
     "pretest": "npm run compile",
     "lint": "eslint \"{src,test}/**/*.{ts,tsx}\"",
-    "check": "npm run lint && npm run test"
+    "check": "npm run lint && npm run test",
+    "fix": "prettier . --write"
   },
   "author": "",
   "license": "ISC",
