@@ -4,7 +4,6 @@ export class ExpressionCalculator {
     const sum = this.add(a, b);
     const product = this.mult(sum, c);
     const expo = this.pow(d, e);
-    const result = this.div(product, expo);
     // Implement your code here to return the correct value.
     return this.div(product, expo);
   }
