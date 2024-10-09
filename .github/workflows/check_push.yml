@@ -62,4 +62,10 @@ jobs:
         npm ci
         npm run compile
 
+    - name: Build Lesson 07 with Node.js
+      working-directory: ./lesson_07/conditionals
+      run: |
+        npm ci
+        npm run compile
+
 
