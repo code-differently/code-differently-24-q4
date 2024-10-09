@@ -90,7 +90,7 @@ export function binarySearch(
     return -1;
   }
 
-  const pivotIndex = (start + end) / 2; // The index in the middle of the array.
+  const pivotIndex = Math.floor((start + end) / 2); // The index in the middle of the array.
 
   // TODO(you): Finish implementing this algorithm
 
