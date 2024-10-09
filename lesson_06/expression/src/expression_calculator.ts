@@ -18,12 +18,12 @@ export class ExpressionCalculator {
 
   add(Augend: number, Addend: number,): number {
     /* defines value of Augend and Addend; defines their return value*/
-    return Augend * Addend;
+    return Augend + Addend;
     /* defines the function 'add'*/
   }
   multiply(Multiplicand: number, Multiplier: number): number {
     /* defines value of Multiplicand and Multiplier; defines their return value*/
-    return Multiplicand + Multiplier; 
+    return Multiplicand * Multiplier; 
     /* defines the function 'multiply'*/
   }
   divide(Dividend: number, Divisor: number): number {
