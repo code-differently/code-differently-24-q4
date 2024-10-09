@@ -4,8 +4,12 @@
 
 Please review the following resources before lecture:
 
-* [Methods and Functions in Java in Less Than 2 Minutes (Video)](https://www.youtube.com/watch?v=xq04pwveCug)
-* [Java Programming #10 - Defining Methods and Functions (Video)](https://www.youtube.com/watch?v=SkVDfaHQwRU)
+* [How To Create/Use Functions - JavaScript Essentials (Video)](https://www.youtube.com/watch?v=FOD408a0EzU)
+* [TypeScript Tutorial #8 - Function Basics (Video)](https://www.youtube.com/watch?v=jXoSaX_yFh4)
+
+### Recommended
+
+* [The different types of JavaScript functions explained (Video)](https://www.youtube.com/watch?v=cMt9U6kCWsM)
 
 ## Homework
 
