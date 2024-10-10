@@ -7,6 +7,9 @@ import { computeLexicographicDistance } from "./util.js";
  * @return True if the age corresponds to a voting age and false otherwise.
  */
 export function canVote(age: number): boolean {
+  if (age >= 18) {
+    return true;
+  }
   return false;
 }
 
@@ -22,6 +25,12 @@ export function compareStrings(a: string, b: string): number {
   // if it is greater, and 0 if the strings are equal.
   const distance = computeLexicographicDistance(a, b);
 
+  if (distance < 0) {
+    // instructions say 'distance will be A NUMBER less than 0 ' not quite exactly -1
+    return -1;
+  }
+
+  return distance; // instructions clearly state will be 0 if a === b and 1 if a > b which is what we want
   // TODO(you): Finish this method.
 
   return 0;
@@ -37,7 +46,35 @@ export function compareStrings(a: string, b: string): number {
  * @return The letter grade ("A+", "A", "A-", "B+", etc.).
  */
 export function convertGpaToLetterGrade(gpa: number): string {
-  return "F";
+  switch (
+    true // better way to do this. want to use the equivilent of a Java Map (XavierCruz5106)
+  ) {
+    case gpa >= 1.0 && gpa < 1.3:
+      return "D";
+    case gpa >= 1.3 && gpa < 1.7:
+      return "D+";
+    case gpa >= 1.7 && gpa < 2.0:
+      return "C-";
+    case gpa >= 2.0 && gpa < 2.3:
+      return "C";
+    case gpa >= 2.3 && gpa < 2.7:
+      return "C+";
+    case gpa >= 2.7 && gpa < 3.0:
+      return "B-";
+    case gpa >= 3.0 && gpa < 3.3:
+      return "B";
+    case gpa >= 3.3 && gpa < 3.7:
+      return "B+";
+    case gpa >= 3.7 && gpa < 3.9:
+      return "A-";
+    case gpa === 3.9:
+      return "A";
+    case gpa === 4.0:
+      return "A+";
+
+    default:
+      return "F";
+  }
 }
 
 /**
@@ -47,7 +84,12 @@ export function convertGpaToLetterGrade(gpa: number): string {
  * @return The factorial of n.
  */
 export function computeFactorial(n: number): number {
-  return 0;
+  let total = 1;
+  for (let i = 2; i <= n; i++) {
+    total *= i;
+  }
+
+  return total;
 }
 
 /**
@@ -57,7 +99,11 @@ export function computeFactorial(n: number): number {
  * @return The sum of all the values.
  */
 export function addNumbers(values: number[]): number {
-  return 0;
+  let sum = 0;
+  for (const value in values) {
+    sum += Number(value);
+  }
+  return sum;
 }
 
 /**
@@ -67,6 +113,14 @@ export function addNumbers(values: number[]): number {
  * @return An array containing the first `n` Fibonacci values.
  */
 export function getFirstNFibonacciNumbers(n: number): number[] {
+  const nums = [];
+  let prev = 0;
+  for (let i = 1; i < n; i++) {
+    const next = i + prev;
+    prev = i;
+
+    console.log(next);
+  }
   return [];
 }
 
