@@ -136,7 +136,7 @@ export function getFirstNFibonacciNumbers(n: number): number[] {
  * @return The index of the value if found in the array and -1 otherwise.
  */
 export function binarySearch(
-values: number[], start: number, end: number, value: number, value: number,
+values: number[], start: number, end: number, value: number,
 ): number {
   if (end < start) {
     // The range is not valid so just return -1.
@@ -151,7 +151,7 @@ values: number[], start: number, end: number, value: number, value: number,
   } else if (values[pivotIndex] > value) {
     return binarySearch(values, start, pivotIndex - 1, value);
   } else {
-    return binarySearch(values, start, pivotIndex + 1, end, value);
+    return binarySearch(values, start, pivotIndex + 1, end);
     }
     // If values[pivotIndex] is equal to value then return `pivotIndex`.
     // Else if values[pivotIndex] is greater than the value, then
