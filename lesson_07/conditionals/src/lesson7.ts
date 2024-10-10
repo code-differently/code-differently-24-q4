@@ -7,6 +7,9 @@ import { computeLexicographicDistance } from "./util.js";
  * @return True if the age corresponds to a voting age and false otherwise.
  */
 export function canVote(age: number): boolean {
+  if (age >= 18){
+    return true;
+  }
   return false;
 }
 
@@ -23,7 +26,11 @@ export function compareStrings(a: string, b: string): number {
   const distance = computeLexicographicDistance(a, b);
 
   // TODO(you): Finish this method.
-
+  if (distance < 0) {
+    return -1;
+  } else if (distance > 0) {
+    return 1;
+  }
   return 0;
 }
 
@@ -37,6 +44,27 @@ export function compareStrings(a: string, b: string): number {
  * @return The letter grade ("A+", "A", "A-", "B+", etc.).
  */
 export function convertGpaToLetterGrade(gpa: number): string {
+  if (gpa >= 4.0) {
+    return "A";
+  } else if (gpa >= 3.7) {
+    return "A-";
+  } else if (gpa >= 3.3) {
+    return "B+";
+  } else if (gpa >= 3.0) {
+    return "B";
+  } else if (gpa >= 2.7) {
+    return "B-";
+  } else if (gpa >= 2.3) {
+    return "C+";
+  } else if (gpa >= 2.0) {
+    return "C";
+  } else if (gpa >= 1.7) {
+    return "C-";
+  } else if (gpa >= 1.3) {
+    return "D+";
+  } else if (gpa >= 1.0) {
+    return "D";
+  }
   return "F";
 }
 
@@ -47,7 +75,17 @@ export function convertGpaToLetterGrade(gpa: number): string {
  * @return The factorial of n.
  */
 export function computeFactorial(n: number): number {
-  return 0;
+  if (n < 0){
+    return -1;
+  } else if (n === 0){
+    return 1;
+  } 
+
+  let factorial = 1;
+  for (let i = 1; i <= n; i++){
+    factorial *= i;
+  }
+  return factorial;
 }
 
 /**
@@ -57,7 +95,12 @@ export function computeFactorial(n: number): number {
  * @return The sum of all the values.
  */
 export function addNumbers(values: number[]): number {
-  return 0;
+  let sum = 0;
+  for (const value of values) {
+    sum += value;
+  }
+
+  return sum;
 }
 
 /**
@@ -67,7 +110,20 @@ export function addNumbers(values: number[]): number {
  * @return An array containing the first `n` Fibonacci values.
  */
 export function getFirstNFibonacciNumbers(n: number): number[] {
-  return [];
+  const fibonacciNumbers: number[] = new Array(n); //New empty array with a list of n
+
+    for (let i = 0; i < n; i++) {
+      if (i === 0){
+        fibonacciNumbers[i] = 1; //1st number is 1
+      } else if (i === 1){
+          fibonacciNumbers[i] = 1; //2nd number is also 1
+      } else {
+        fibonacciNumbers[i] = fibonacciNumbers[i - 1] + fibonacciNumbers[i - 2];
+        // current number = (previous number) + (number before that)
+      }
+    }
+
+  return fibonacciNumbers;
 }
 
 /**
@@ -80,10 +136,7 @@ export function getFirstNFibonacciNumbers(n: number): number[] {
  * @return The index of the value if found in the array and -1 otherwise.
  */
 export function binarySearch(
-  values: number[],
-  start: number,
-  end: number,
-  value: number,
+values: number[], start: number, end: number, value: number,
 ): number {
   if (end < start) {
     // The range is not valid so just return -1.
@@ -93,10 +146,16 @@ export function binarySearch(
   const pivotIndex = Math.floor((start + end) / 2); // The index in the middle of the array.
 
   // TODO(you): Finish implementing this algorithm
-
-  // If values[pivotIndex] is equal to value then return `pivotIndex`.
-  // Else if values[pivotIndex] is greater than the value, then
-  // call `binarySearch(values, start, pivotIndex - 1, value)` and return its value;
-  // Else call `binarySearch(values, pivotIndex + 1, end, value)` and return its value.
-  return -1;
+  if (values[pivotIndex] === value) {
+    return pivotIndex;
+  } else if (values[pivotIndex] > value) {
+    return binarySearch(values, start, pivotIndex - 1, value);
+  } else {
+    return binarySearch(values, pivotIndex + 1, end, value);
+    }
+    // If values[pivotIndex] is equal to value then return `pivotIndex`.
+    // Else if values[pivotIndex] is greater than the value, then
+    // call `binarySearch(values, start, pivotIndex - 1, value)` and return its value;
+    // Else call `binarySearch(values, pivotIndex + 1, end, value)` and return its value.
+    return -1;
 }
