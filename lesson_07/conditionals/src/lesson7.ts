@@ -76,7 +76,7 @@ export function convertGpaToLetterGrade(gpa: number): string {
  */
 export function computeFactorial(n: number): number {
   if (n < 0){
-    return -1
+    return -1;
   } else if (n === 0){
     return 1;
   } 
@@ -99,7 +99,7 @@ export function addNumbers(values: number[]): number {
   for (const value of values) {
     sum += value;
   }
-  
+
   return sum;
 }
 
@@ -110,10 +110,20 @@ export function addNumbers(values: number[]): number {
  * @return An array containing the first `n` Fibonacci values.
  */
 export function getFirstNFibonacciNumbers(n: number): number[] {
-    for (let i = 0; i < 9; i++) {
-      console.log(n);
+  const fibonacciNumbers: number[] = new Array(n); //New empty array with a list of n
+
+    for (let i = 0; i < n; i++) {
+      if (i === 0){
+        fibonacciNumbers[i] = 1; //1st number is 1
+      } else if (i === 1){
+          fibonacciNumbers[i] = 1; //2nd number is also 1
+      } else {
+        fibonacciNumbers[i] = fibonacciNumbers[i - 1] + fibonacciNumbers[i - 2];
+        // current number = (previous number) + (number before that)
+      }
     }
-  return [];
+
+  return fibonacciNumbers;
 }
 
 /**
