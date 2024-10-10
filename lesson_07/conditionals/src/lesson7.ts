@@ -95,10 +95,12 @@ export function computeFactorial(n: number): number {
  * @return The sum of all the values.
  */
 export function addNumbers(values: number[]): number {
-  for (let i = 0; i < 9; i++){
-    console.log(values);
+  let sum = 0;
+  for (const value of values) {
+    sum += value;
   }
-  return 0;
+  
+  return sum;
 }
 
 /**
