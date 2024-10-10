@@ -27,9 +27,9 @@ export function compareStrings(a: string, b: string): number {
 
   // TODO(you): Finish this method.
   if (distance < 0) {
-    return 1;
-  } else if (distance > 0) {
     return -1;
+  } else if (distance > 0) {
+    return 1;
   }
   return 0;
 }
