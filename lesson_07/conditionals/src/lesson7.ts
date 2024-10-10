@@ -151,7 +151,7 @@ values: number[], start: number, end: number, value: number,
   } else if (values[pivotIndex] > value) {
     return binarySearch(values, start, pivotIndex - 1, value);
   } else {
-    return binarySearch(values, start, pivotIndex + 1, end);
+    return binarySearch(values, pivotIndex + 1, end, value);
     }
     // If values[pivotIndex] is equal to value then return `pivotIndex`.
     // Else if values[pivotIndex] is greater than the value, then
