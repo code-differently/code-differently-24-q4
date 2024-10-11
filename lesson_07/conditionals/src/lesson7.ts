@@ -115,10 +115,11 @@ export function convertGpaToLetterGrade(gpa: number): string {
  * @return The factorial of n.
  */
 export function computeFactorial(n: number): number {
-  let fact = 0
+  let fact = 0;
   if (n>0){
-    fact = 1
-    for (let i=n; i>=0; i--){
+    fact = 1;
+    const numbers = Array.from({ length: n }, (_, index) => index + 1);
+    for (const i of numbers) {
       fact *= i;
     }
     return fact;
@@ -151,6 +152,7 @@ export function addNumbers(values: number[]): number {
  */
 export function getFirstNFibonacciNumbers(n: number): number[] {
   const list: number[] = [];
+  const indices = Array.from({ length: n - 1 }, (_, index) => index + 2);
   if (n>=1){
     list.push(0);
   }
@@ -158,8 +160,8 @@ export function getFirstNFibonacciNumbers(n: number): number[] {
     list.push(1);
   }
   if (n>=3){
-    for (let i=2; i<=n; i++){
-      list[i] = list[i-1] + list[i-2];
+    for (const i of indices) {
+      list[i] = list[i - 1] + list[i - 2];
     }
   }
   return list;
