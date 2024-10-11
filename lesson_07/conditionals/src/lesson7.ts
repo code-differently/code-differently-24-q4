@@ -150,7 +150,7 @@ export function addNumbers(values: number[]): number {
  * @return An array containing the first `n` Fibonacci values.
  */
 export function getFirstNFibonacciNumbers(n: number): number[] {
-  let list: number[] = [];
+  const list: number[] = [];
   if (n>=1){
     list.push(0);
   }
