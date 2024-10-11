@@ -7,9 +7,13 @@ import { computeLexicographicDistance } from "./util.js";
  * @return True if the age corresponds to a voting age and false otherwise.
  */
 export function canVote(age: number): boolean {
-  return false;
-}
 
+  if( age >= 18 ){
+    return true;
+  } else {
+    return false;
+  }
+}
 /**
  * Compares two strings lexicographically.
  *
@@ -24,7 +28,13 @@ export function compareStrings(a: string, b: string): number {
 
   // TODO(you): Finish this method.
 
-  return 0;
+  if(a < b){
+    return -1;
+  } if(a > b){
+    return 1;
+  }else{
+    return 0;
+  }
 }
 
 /**
@@ -37,7 +47,31 @@ export function compareStrings(a: string, b: string): number {
  * @return The letter grade ("A+", "A", "A-", "B+", etc.).
  */
 export function convertGpaToLetterGrade(gpa: number): string {
-  return "F";
+  if(gpa >= 97){
+    return "A+"
+  }if(gpa >= 93){
+     return "A"
+  }if(gpa >= 90){
+     return "A-"
+  }if(gpa >= 87){
+     return "B+"
+  }if(gpa >= 83){
+     return "B"
+  }if(gpa >= 80){
+      return "B-"
+  }if(gpa >= 77){
+     return "C+"
+  }if(gpa >= 73){  
+    return "C"
+  }if(gpa >= 70){
+    return "C-";
+  }if(gpa >= 67){
+    return "D+";
+  }if(gpa >= 65){
+    return "D-";
+  }else{
+    return "F"
+  }
 }
 
 /**
@@ -47,7 +81,11 @@ export function convertGpaToLetterGrade(gpa: number): string {
  * @return The factorial of n.
  */
 export function computeFactorial(n: number): number {
-  return 0;
+  let totalValue = 1
+  for(let i = 1; n >= i; i++){
+  totalValue *= i
+  }
+  return totalValue;
 }
 
 /**
@@ -57,7 +95,11 @@ export function computeFactorial(n: number): number {
  * @return The sum of all the values.
  */
 export function addNumbers(values: number[]): number {
-  return 0;
+  let sum = 0
+  for(let i = 0; i < values.length; i++){
+    sum += values[i];
+  }
+  return sum;
 }
 
 /**
@@ -67,7 +109,17 @@ export function addNumbers(values: number[]): number {
  * @return An array containing the first `n` Fibonacci values.
  */
 export function getFirstNFibonacciNumbers(n: number): number[] {
-  return [];
+  let array = [n]
+
+  if(n <= 0){
+    return array;
+  }
+  
+  for(let i = 2; i < n; i++){
+    let cont = array[i - 1] + array[i - 2];
+    array.push(cont)
+  }
+  return array;
 }
 
 /**
@@ -93,10 +145,15 @@ export function binarySearch(
   const pivotIndex = Math.floor((start + end) / 2); // The index in the middle of the array.
 
   // TODO(you): Finish implementing this algorithm
-
+  if (values[pivotIndex] === value){
+    return pivotIndex;
+  } if (values[pivotIndex] < value){
+    return binarySearch(values, start, pivotIndex - 1, value);
+  } else { 
+    return binarySearch(values, pivotIndex - 1, end, value);
+  }
   // If values[pivotIndex] is equal to value then return `pivotIndex`.
   // Else if values[pivotIndex] is greater than the value, then
   // call `binarySearch(values, start, pivotIndex - 1, value)` and return its value;
   // Else call `binarySearch(values, pivotIndex + 1, end, value)` and return its value.
-  return -1;
 }
