@@ -7,10 +7,11 @@ import { computeLexicographicDistance } from "./util.js";
  * @return True if the age corresponds to a voting age and false otherwise.
  */
 export function canVote(age: number): boolean {
-  if (age >= 18){
-    return true;
-  }
-  return false;
+  return age >= 18;
+  // if (age >= 18){
+  //   return true;
+  // }
+  // return false;
 }
 
 /**
