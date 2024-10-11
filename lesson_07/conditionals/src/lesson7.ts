@@ -7,7 +7,11 @@ import { computeLexicographicDistance } from "./util.js";
  * @return True if the age corresponds to a voting age and false otherwise.
  */
 export function canVote(age: number): boolean {
-  return false;
+  if (age >= 18) {
+    return true;
+  } else {
+    return false;
+  }
 }
 
 /**
@@ -18,13 +22,19 @@ export function canVote(age: number): boolean {
  * @return -1 if a is less than b, 1 if a is greater than b, and 0 otherwise.
  */
 export function compareStrings(a: string, b: string): number {
-  // The distance will be a number less than 0 if string `a` is lexicographically less than `b`, 1
-  // if it is greater, and 0 if the strings are equal.
   const distance = computeLexicographicDistance(a, b);
 
-  // TODO(you): Finish this method.
+  if (a > b) {
+    return -1;
+  } else if (b > a) {
+    return 1;
+  } else {
+    return 0;
+  }
+  // The distance will be a number less than 0 if string `a` is lexicographically less than `b`, 1
+  // if it is greater, and 0 if the strings are equal.
 
-  return 0;
+  // TODO(you): Finish this method.
 }
 
 /**
@@ -37,7 +47,31 @@ export function compareStrings(a: string, b: string): number {
  * @return The letter grade ("A+", "A", "A-", "B+", etc.).
  */
 export function convertGpaToLetterGrade(gpa: number): string {
-  return "F";
+  if (gpa < 0 || gpa > 4.0) {
+    return "Invaild GPA";
+  } else if (gpa <= 0.9) {
+    return "F";
+  } else if (gpa < 1.25 && gpa >= 1.0) {
+    return "D";
+  } else if (gpa < 1.75 && gpa >= 1.25) {
+    return "D+";
+  } else if (gpa < 2.0 && gpa >= 1.75) {
+    return "C-";
+  } else if (gpa < 2.3 && gpa >= 2.0) {
+    return "C";
+  } else if (gpa < 2.7 && gpa >= 2.3) {
+    return "C+";
+  } else if (gpa < 3.0 && gpa >= 2.7) {
+    return "B-";
+  } else if (gpa < 3.3 && gpa >= 3.0) {
+    return "B";
+  } else if (gpa < 3.7 && gpa >= 3.3) {
+    return "B+";
+  } else if (gpa < 4.0 && gpa >= 3.7) {
+    return "A";
+  } else {
+    return "A+";
+  }
 }
 
 /**
@@ -47,9 +81,12 @@ export function convertGpaToLetterGrade(gpa: number): string {
  * @return The factorial of n.
  */
 export function computeFactorial(n: number): number {
-  return 0;
+  let sum = 1;
+  for (let i = 1; 1<=n; i++) {
+    sum = sum *= i;
+  }
+  return sum;
 }
-
 /**
  * Adds all of the provided values and returns the sum.
  *
