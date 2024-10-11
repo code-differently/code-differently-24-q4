@@ -50,7 +50,7 @@ export function convertGpaToLetterGrade(gpa: number): string {
   
   if(gpa >= 4.0){
     return "A+"
-  }else if(gpa >= 4.0){
+  }else if(gpa >= 3.9){
      return "A"
   }else if(gpa >= 3.7){
      return "A-"
@@ -66,7 +66,7 @@ export function convertGpaToLetterGrade(gpa: number): string {
     return "C"
   }else if(gpa >= 1.7){
     return "C-";
-  }else if(gpa >= 1.3){
+  }else if(gpa > 1.3){
     return "D+";
   }else if(gpa >= 1.0){
     return "D";
@@ -116,8 +116,8 @@ export function addNumbers(values: number[]): number {
  */
 export function getFirstNFibonacciNumbers(n: number): number[] {
   
-  const array = [1,1]
-  
+  const array = [1, 1]
+
   if (n <= 0){
     return [];
   }else if(n === 1){
