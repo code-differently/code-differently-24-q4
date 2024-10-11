@@ -28,9 +28,9 @@ export function compareStrings(a: string, b: string): number {
 
   // TODO(you): Finish this method.
 
-  if(a < b){
+  if(distance < 0){
     return -1;
-  } if(a > b){
+  } if(distance > 0){
     return 1;
   }else{
     return 0;
@@ -95,10 +95,13 @@ export function computeFactorial(n: number): number {
  * @return The sum of all the values.
  */
 export function addNumbers(values: number[]): number {
-  let sum = 0
-  for(let i = 0; i < values.length; i++){
-    sum += values[i];
+  
+  let sum = 0;
+
+  for(const i of values){
+    sum += i;
   }
+
   return sum;
 }
 
@@ -109,14 +112,14 @@ export function addNumbers(values: number[]): number {
  * @return An array containing the first `n` Fibonacci values.
  */
 export function getFirstNFibonacciNumbers(n: number): number[] {
-  let array = [n]
+  const array = [n]
 
   if(n <= 0){
     return array;
   }
   
   for(let i = 2; i < n; i++){
-    let cont = array[i - 1] + array[i - 2];
+    const cont = array[i - 1] + array[i - 2];
     array.push(cont)
   }
   return array;
