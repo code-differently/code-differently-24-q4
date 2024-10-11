@@ -2,15 +2,18 @@ import {
   AnswerChoice,
   MultipleChoiceQuizQuestion,
   QuizPrinter,
+  QuizQuestion,
 } from "codedifferently-instructional";
+
 export class Lesson5 {
-  run() {
+  run(): void {
     const quizQuestions = Lesson5.makeQuizQuestions();
     if (!quizQuestions) throw new Error("Quiz questions cannot be null");
     const printer = new QuizPrinter();
     printer.printQuiz(quizQuestions);
   }
-  static makeQuizQuestions() {
+
+  static makeQuizQuestions(): QuizQuestion[] {
     return [
       Lesson5.makeQuestion0(),
       Lesson5.makeQuestion1(),
@@ -24,7 +27,8 @@ export class Lesson5 {
       Lesson5.makeQuestion9(),
     ];
   }
-  static makeQuestion0() {
+
+  private static makeQuestion0(): QuizQuestion {
     return new MultipleChoiceQuizQuestion(
       0,
       "What is the purpose of the <h1> tag in HTML?",
@@ -34,10 +38,11 @@ export class Lesson5 {
         [AnswerChoice.C, "To insert an image"],
         [AnswerChoice.D, "To create a paragraph"],
       ]),
-      AnswerChoice.B,
+      AnswerChoice.UNANSWERED,
     );
   }
-  static makeQuestion1() {
+
+  private static makeQuestion1(): QuizQuestion {
     return new MultipleChoiceQuizQuestion(
       1,
       "Which attribute is used to specify alternative text for an image in HTML?",
@@ -47,10 +52,11 @@ export class Lesson5 {
         [AnswerChoice.C, "alt"],
         [AnswerChoice.D, "href"],
       ]),
-      AnswerChoice.C,
+      AnswerChoice.UNANSWERED,
     );
   }
-  static makeQuestion2() {
+
+  private static makeQuestion2(): QuizQuestion {
     return new MultipleChoiceQuizQuestion(
       2,
       "Which HTML tag is used to create a hyperlink?",
@@ -60,10 +66,11 @@ export class Lesson5 {
         [AnswerChoice.C, "<div>"],
         [AnswerChoice.D, "<link>"],
       ]),
-      AnswerChoice.B,
+      AnswerChoice.UNANSWERED,
     );
   }
-  static makeQuestion3() {
+
+  private static makeQuestion3(): QuizQuestion {
     return new MultipleChoiceQuizQuestion(
       3,
       "Which of the following is a semantic HTML tag?",
@@ -73,10 +80,11 @@ export class Lesson5 {
         [AnswerChoice.C, "<span>"],
         [AnswerChoice.D, "<br>"],
       ]),
-      AnswerChoice.B,
+      AnswerChoice.UNANSWERED,
     );
   }
-  static makeQuestion4() {
+
+  private static makeQuestion4(): QuizQuestion {
     return new MultipleChoiceQuizQuestion(
       4,
       "What does CSS stand for?",
@@ -86,10 +94,11 @@ export class Lesson5 {
         [AnswerChoice.C, "Computer Style Sheets"],
         [AnswerChoice.D, "Cascading System Sheets"],
       ]),
-      AnswerChoice.B,
+      AnswerChoice.UNANSWERED,
     );
   }
-  static makeQuestion5() {
+
+  private static makeQuestion5(): QuizQuestion {
     return new MultipleChoiceQuizQuestion(
       5,
       "Which CSS property is used to change the text color?",
@@ -99,10 +108,11 @@ export class Lesson5 {
         [AnswerChoice.C, "text-color"],
         [AnswerChoice.D, "background-color"],
       ]),
-      AnswerChoice.B,
+      AnswerChoice.UNANSWERED,
     );
   }
-  static makeQuestion6() {
+
+  private static makeQuestion6(): QuizQuestion {
     return new MultipleChoiceQuizQuestion(
       6,
       "How do you add a comment in CSS?",
@@ -112,10 +122,11 @@ export class Lesson5 {
         [AnswerChoice.C, "/* this is a comment */"],
         [AnswerChoice.D, "<!-- this is a comment -->"],
       ]),
-      AnswerChoice.C,
+      AnswerChoice.UNANSWERED,
     );
   }
-  static makeQuestion7() {
+
+  private static makeQuestion7(): QuizQuestion {
     return new MultipleChoiceQuizQuestion(
       7,
       "Which CSS property controls the size of text?",
@@ -125,10 +136,11 @@ export class Lesson5 {
         [AnswerChoice.C, "text-size"],
         [AnswerChoice.D, "text-style"],
       ]),
-      AnswerChoice.B,
+      AnswerChoice.UNANSWERED,
     );
   }
-  static makeQuestion8() {
+
+  private static makeQuestion8(): QuizQuestion {
     return new MultipleChoiceQuizQuestion(
       8,
       "What is the default display value for `<div>` in CSS?",
@@ -138,10 +150,11 @@ export class Lesson5 {
         [AnswerChoice.C, "inline-block"],
         [AnswerChoice.D, "none"],
       ]),
-      AnswerChoice.B,
+      AnswerChoice.UNANSWERED,
     );
   }
-  static makeQuestion9() {
+
+  private static makeQuestion9(): QuizQuestion {
     return new MultipleChoiceQuizQuestion(
       9,
       "How do you link an external CSS file to an HTML document?",
@@ -151,11 +164,11 @@ export class Lesson5 {
         [AnswerChoice.C, "<stylesheet link='styles.css'>"],
         [AnswerChoice.D, "<css href='styles.css'>"],
       ]),
-      AnswerChoice.A,
+      AnswerChoice.UNANSWERED,
     );
   }
 }
+
 if (!process.env.JEST_WORKER_ID) {
   new Lesson5().run();
 }
-//# sourceMappingURL=lesson5.js.map
