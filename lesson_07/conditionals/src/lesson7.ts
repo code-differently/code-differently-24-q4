@@ -7,7 +7,11 @@ import { computeLexicographicDistance } from "./util.js";
  * @return True if the age corresponds to a voting age and false otherwise.
  */
 export function canVote(age: number): boolean {
-  return false;
+  if (age >= 18) {
+    return true;
+  } else {
+    return false;
+  }
 }
 
 /**
@@ -23,10 +27,12 @@ export function compareStrings(a: string, b: string): number {
   const distance = computeLexicographicDistance(a, b);
 
   // TODO(you): Finish this method.
+  if (distance < 0) {
+    return -1;
+  }
 
-  return 0;
+  return distance;
 }
-
 /**
  * Converts a GPA on the 4.0 scale to the corresponding letter grade using the college board
  * scale. See
@@ -37,17 +43,46 @@ export function compareStrings(a: string, b: string): number {
  * @return The letter grade ("A+", "A", "A-", "B+", etc.).
  */
 export function convertGpaToLetterGrade(gpa: number): string {
-  return "F";
+  if (gpa == 4.0) {
+    return "A";
+  } else if (gpa > 4.0) {
+    return "A";
+  } else if (gpa <= 3.99 && gpa >= 3.7) {
+    return "A-";
+  } else if (gpa <= 3.69 && gpa >= 3.3) {
+    return "B+";
+  } else if (gpa <= 3.29 && gpa >= 3.0) {
+    return "B";
+  } else if (gpa <= 2.99 && gpa >= 2.7) {
+    return "B-";
+  } else if (gpa <= 2.69 && gpa >= 2.3) {
+    return "C+";
+  } else if (gpa <= 2.29 && gpa >= 2.0) {
+    return "C";
+  } else if (gpa <= 1.99 && gpa >= 1.7) {
+    return "C-";
+  } else if (gpa <= 1.69 && gpa >= 1.3) {
+    return "D+";
+  } else if (gpa <= 1.29 && gpa >= 1.0) {
+    return "D";
+  } else {
+    return "F";
+  }
 }
 
-/**
- * Computes the factorial of the given value of `n`.
+/**km
+ * computes the factorial of the given value of `n`.
  *
  * @param n The value for which to compute the factorial.
  * @return The factorial of n.
  */
 export function computeFactorial(n: number): number {
-  return 0;
+  let product = 1;
+  for (let i = 1; 1 <= n; i++) {
+    product *= i;
+  }
+
+  return product;
 }
 
 /**
@@ -57,7 +92,12 @@ export function computeFactorial(n: number): number {
  * @return The sum of all the values.
  */
 export function addNumbers(values: number[]): number {
-  return 0;
+  let sum = 0; //initialize variable
+
+  for (const value of values) {
+    sum += value; //adds value to each
+  }
+  return sum;
 }
 
 /**
