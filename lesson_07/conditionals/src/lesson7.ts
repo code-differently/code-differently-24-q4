@@ -7,6 +7,9 @@ import { computeLexicographicDistance } from "./util.js";
  * @return True if the age corresponds to a voting age and false otherwise.
  */
 export function canVote(age: number): boolean {
+  if (age >= 18) {
+    return true;
+  }
   return false;
 }
 
@@ -18,10 +21,19 @@ export function canVote(age: number): boolean {
  * @return -1 if a is less than b, 1 if a is greater than b, and 0 otherwise.
  */
 export function compareStrings(a: string, b: string): number {
+  if (a > b) {
+    return 1;
+  }
+  if (a < b) { 
+    return -1; 
+  }
+  if (a=b) { 
+    return 0;
+  }
   // The distance will be a number less than 0 if string `a` is lexicographically less than `b`, 1
   // if it is greater, and 0 if the strings are equal.
   const distance = computeLexicographicDistance(a, b);
-
+  
   // TODO(you): Finish this method.
 
   return 0;
@@ -47,6 +59,8 @@ export function convertGpaToLetterGrade(gpa: number): string {
  * @return The factorial of n.
  */
 export function computeFactorial(n: number): number {
+  let product=1
+  for()
   return 0;
 }
 
