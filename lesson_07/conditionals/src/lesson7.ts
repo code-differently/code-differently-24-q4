@@ -7,7 +7,10 @@ import { computeLexicographicDistance } from "./util.js";
  * @return True if the age corresponds to a voting age and false otherwise.
  */
 export function canVote(age: number): boolean {
-  return false;
+  if (age < 18) return false;
+  if (age >= 18) return true;
+
+  return true;
 }
 
 /**
@@ -23,8 +26,11 @@ export function compareStrings(a: string, b: string): number {
   const distance = computeLexicographicDistance(a, b);
 
   // TODO(you): Finish this method.
+  if (distance < 0) {
+    return -1;
+  }
 
-  return 0;
+  return distance;
 }
 
 /**
@@ -37,6 +43,18 @@ export function compareStrings(a: string, b: string): number {
  * @return The letter grade ("A+", "A", "A-", "B+", etc.).
  */
 export function convertGpaToLetterGrade(gpa: number): string {
+  if (gpa > 4.0) return "A+";
+  if (gpa >= 3.7) return "A";
+  if (gpa >= 3.3) return "A-";
+  if (gpa >= 3.0) return "B+";
+  if (gpa >= 2.7) return "B";
+  if (gpa >= 2.3) return "B-";
+  if (gpa >= 2.0) return "C+";
+  if (gpa >= 1.7) return "C";
+  if (gpa >= 1.3) return "C-";
+  if (gpa >= 1.0) return "D+";
+  if (gpa >= 0.0) return "D";
+
   return "F";
 }
 
@@ -47,7 +65,12 @@ export function convertGpaToLetterGrade(gpa: number): string {
  * @return The factorial of n.
  */
 export function computeFactorial(n: number): number {
-  return 0;
+  if (n === 1 || n === 0) return 1;
+
+  let nums = 1;
+  for (let i = 2; i <= n; i++) nums *= i;
+
+  return nums;
 }
 
 /**
@@ -57,7 +80,13 @@ export function computeFactorial(n: number): number {
  * @return The sum of all the values.
  */
 export function addNumbers(values: number[]): number {
-  return 0;
+  let sum = 0;
+
+  for (const value of values) {
+    sum += value;
+  }
+
+  return sum;
 }
 
 /**
@@ -87,6 +116,7 @@ export function binarySearch(
 ): number {
   if (end < start) {
     // The range is not valid so just return -1.
+
     return -1;
   }
 
