@@ -7,7 +7,8 @@ import { computeLexicographicDistance } from "./util.js";
  * @return True if the age corresponds to a voting age and false otherwise.
  */
 export function canVote(age: number): boolean {
-  return false;
+  if (age >= 18) return true;
+  else return false;
 }
 
 /**
@@ -21,10 +22,13 @@ export function compareStrings(a: string, b: string): number {
   // The distance will be a number less than 0 if string `a` is lexicographically less than `b`, 1
   // if it is greater, and 0 if the strings are equal.
   const distance = computeLexicographicDistance(a, b);
-
+  if (distance == 0) {
+    return 0;
+  } else if (distance < 1) {
+    return -1;
+  }
   // TODO(you): Finish this method.
-
-  return 0;
+  else return 1;
 }
 
 /**
@@ -37,7 +41,32 @@ export function compareStrings(a: string, b: string): number {
  * @return The letter grade ("A+", "A", "A-", "B+", etc.).
  */
 export function convertGpaToLetterGrade(gpa: number): string {
-  return "F";
+  switch (true) {
+    case gpa >= 4.0:
+      return "A";
+    case gpa <= 3.99 && gpa >= 3.7:
+      return "A-";
+    case gpa >= 3.3 && gpa <= 3.69:
+      return "B+";
+    case gpa >= 3.0 && gpa <= 3.29:
+      return "B";
+    case gpa >= 2.7 && gpa <= 2.99:
+      return "B-";
+    case gpa >= 2.3 && gpa <= 2.69:
+      return "C+";
+    case gpa >= 2.0 && gpa <= 2.29:
+      return "C";
+    case gpa >= 1.7 && gpa <= 1.99:
+      return "C-";
+    case gpa >= 1.3 && gpa <= 1.69:
+      return "D+";
+    case gpa >= 1.0 && gpa <= 1.29:
+      return "D";
+    case gpa < 1:
+      return "F";
+    default:
+      return "unknown";
+  }
 }
 
 /**
@@ -47,7 +76,11 @@ export function convertGpaToLetterGrade(gpa: number): string {
  * @return The factorial of n.
  */
 export function computeFactorial(n: number): number {
-  return 0;
+  if (n == 0) return 1;
+  for (let i = n - 1; i > 0; i--) {
+    n *= i;
+  }
+  return n;
 }
 
 /**
@@ -57,7 +90,8 @@ export function computeFactorial(n: number): number {
  * @return The sum of all the values.
  */
 export function addNumbers(values: number[]): number {
-  return 0;
+  const sum: number = values.reduce((a, b) => a + b, 0);
+  return sum;
 }
 
 /**
@@ -67,7 +101,16 @@ export function addNumbers(values: number[]): number {
  * @return An array containing the first `n` Fibonacci values.
  */
 export function getFirstNFibonacciNumbers(n: number): number[] {
-  return [];
+  const arr = [1, 1];
+
+  if (n === 0) return [];
+  if (n === 1) return [arr[n]];
+  else if (n > 1) {
+    for (let i = 3; i <= n; i++) {
+      arr[i - 1] = arr[i - 3] + arr[i - 2];
+    }
+  }
+  return arr;
 }
 
 /**
@@ -85,18 +128,21 @@ export function binarySearch(
   end: number,
   value: number,
 ): number {
+  const pivotIndex = Math.floor((start + end) / 2); // The index in the middle of the array.
+
   if (end < start) {
     // The range is not valid so just return -1.
     return -1;
+  } else if (values[pivotIndex] == value) return pivotIndex;
+  else if (values[pivotIndex] > value) {
+    return binarySearch(values, start, pivotIndex - 1, value);
+  } else {
+    return binarySearch(values, pivotIndex + 1, end, value);
   }
-
-  const pivotIndex = Math.floor((start + end) / 2); // The index in the middle of the array.
-
   // TODO(you): Finish implementing this algorithm
 
   // If values[pivotIndex] is equal to value then return `pivotIndex`.
   // Else if values[pivotIndex] is greater than the value, then
   // call `binarySearch(values, start, pivotIndex - 1, value)` and return its value;
   // Else call `binarySearch(values, pivotIndex + 1, end, value)` and return its value.
-  return -1;
 }
