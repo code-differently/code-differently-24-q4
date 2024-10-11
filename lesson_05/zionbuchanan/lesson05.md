@@ -1,8 +1,14 @@
-## User Story
+## User Stories
 ### ZionBuchanan
 
-- As a Costco member, I want to add and customize food items selected from the food court menu, and recieve notifications with a timer showing how much time remains until my order is ready. 
+## User Story 1
+- As a Costco member, I want to add and customize food items selected from the food court menu so that I can personalize my order before checkout.
+Purpose: This story focuses on allowing users to customize their food orders, giving them control over what they want to purchase before placing the order.
 
-- As a Costco member, I want the CostcoApp to implement a software that can replace "AS400" software, and provides details on where to find items, how much does the location have on hand, as well as the exact isle on where the item can be found in the store.
+## User Story 2
+- As a Costco member, I want to receive notifications with a countdown timer so that I can track how much time is left until my food order is ready.
+Purpose: The goal is to provide users with real-time updates on their food order status, improving customer experience.
 
-- As a Costco member, I want to recieve app notifications on how much time remainds until my membership expire.
+## User Story 3
+- As a Costco member, I want to receive notifications about my membership expiration date so that I can renew it before it expires.
+Purpose: This ensures that users are informed in advance about their membership expiration to avoid any disruptions.
