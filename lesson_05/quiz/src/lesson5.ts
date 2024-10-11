@@ -2,18 +2,15 @@ import {
   AnswerChoice,
   MultipleChoiceQuizQuestion,
   QuizPrinter,
-  QuizQuestion,
-} from "codedifferently-instructional"; //dasiaenglish
-
+} from "codedifferently-instructional";
 export class Lesson5 {
-  run(): void {
+  run() {
     const quizQuestions = Lesson5.makeQuizQuestions();
     if (!quizQuestions) throw new Error("Quiz questions cannot be null");
     const printer = new QuizPrinter();
     printer.printQuiz(quizQuestions);
   }
-
-  static makeQuizQuestions(): QuizQuestion[] {
+  static makeQuizQuestions() {
     return [
       Lesson5.makeQuestion0(),
       Lesson5.makeQuestion1(),
@@ -27,8 +24,7 @@ export class Lesson5 {
       Lesson5.makeQuestion9(),
     ];
   }
-
-  private static makeQuestion0(): QuizQuestion {
+  static makeQuestion0() {
     return new MultipleChoiceQuizQuestion(
       0,
       "What is the purpose of the <h1> tag in HTML?",
@@ -41,8 +37,7 @@ export class Lesson5 {
       AnswerChoice.B,
     );
   }
-
-  private static makeQuestion1(): QuizQuestion {
+  static makeQuestion1() {
     return new MultipleChoiceQuizQuestion(
       1,
       "Which attribute is used to specify alternative text for an image in HTML?",
@@ -55,8 +50,7 @@ export class Lesson5 {
       AnswerChoice.C,
     );
   }
-
-  private static makeQuestion2(): QuizQuestion {
+  static makeQuestion2() {
     return new MultipleChoiceQuizQuestion(
       2,
       "Which HTML tag is used to create a hyperlink?",
@@ -69,8 +63,7 @@ export class Lesson5 {
       AnswerChoice.B,
     );
   }
-
-  private static makeQuestion3(): QuizQuestion {
+  static makeQuestion3() {
     return new MultipleChoiceQuizQuestion(
       3,
       "Which of the following is a semantic HTML tag?",
@@ -83,8 +76,7 @@ export class Lesson5 {
       AnswerChoice.B,
     );
   }
-
-  private static makeQuestion4(): QuizQuestion {
+  static makeQuestion4() {
     return new MultipleChoiceQuizQuestion(
       4,
       "What does CSS stand for?",
@@ -97,8 +89,7 @@ export class Lesson5 {
       AnswerChoice.B,
     );
   }
-
-  private static makeQuestion5(): QuizQuestion {
+  static makeQuestion5() {
     return new MultipleChoiceQuizQuestion(
       5,
       "Which CSS property is used to change the text color?",
@@ -111,8 +102,7 @@ export class Lesson5 {
       AnswerChoice.B,
     );
   }
-
-  private static makeQuestion6(): QuizQuestion {
+  static makeQuestion6() {
     return new MultipleChoiceQuizQuestion(
       6,
       "How do you add a comment in CSS?",
@@ -125,8 +115,7 @@ export class Lesson5 {
       AnswerChoice.C,
     );
   }
-
-  private static makeQuestion7(): QuizQuestion {
+  static makeQuestion7() {
     return new MultipleChoiceQuizQuestion(
       7,
       "Which CSS property controls the size of text?",
@@ -139,8 +128,7 @@ export class Lesson5 {
       AnswerChoice.B,
     );
   }
-
-  private static makeQuestion8(): QuizQuestion {
+  static makeQuestion8() {
     return new MultipleChoiceQuizQuestion(
       8,
       "What is the default display value for `<div>` in CSS?",
@@ -153,8 +141,7 @@ export class Lesson5 {
       AnswerChoice.B,
     );
   }
-
-  private static makeQuestion9(): QuizQuestion {
+  static makeQuestion9() {
     return new MultipleChoiceQuizQuestion(
       9,
       "How do you link an external CSS file to an HTML document?",
@@ -168,7 +155,7 @@ export class Lesson5 {
     );
   }
 }
-
 if (!process.env.JEST_WORKER_ID) {
   new Lesson5().run();
 }
+//# sourceMappingURL=lesson5.js.map
