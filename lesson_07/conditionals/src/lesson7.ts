@@ -47,28 +47,29 @@ export function compareStrings(a: string, b: string): number {
  * @return The letter grade ("A+", "A", "A-", "B+", etc.).
  */
 export function convertGpaToLetterGrade(gpa: number): string {
+  
   if(gpa >= 97){
     return "A+"
-  }if(gpa >= 93){
+  }else if(gpa >= 93){
      return "A"
-  }if(gpa >= 90){
+  }else if(gpa >= 90){
      return "A-"
-  }if(gpa >= 87){
+  }else if(gpa >= 87){
      return "B+"
-  }if(gpa >= 83){
+  }else if(gpa >= 83){
      return "B"
-  }if(gpa >= 80){
+  }else if(gpa >= 80){
       return "B-"
-  }if(gpa >= 77){
+  }else if(gpa >= 77){
      return "C+"
-  }if(gpa >= 73){  
+  }else if(gpa >= 73){  
     return "C"
-  }if(gpa >= 70){
+  }else if(gpa >= 70){
     return "C-";
-  }if(gpa >= 67){
+  }else if(gpa >= 67){
     return "D+";
-  }if(gpa >= 65){
-    return "D-";
+  }else if(gpa >= 65){
+    return "D";
   }else{
     return "F"
   }
@@ -81,7 +82,9 @@ export function convertGpaToLetterGrade(gpa: number): string {
  * @return The factorial of n.
  */
 export function computeFactorial(n: number): number {
+  
   let totalValue = 1
+
   for(let i = 1; n >= i; i++){
   totalValue *= i
   }
@@ -112,12 +115,9 @@ export function addNumbers(values: number[]): number {
  * @return An array containing the first `n` Fibonacci values.
  */
 export function getFirstNFibonacciNumbers(n: number): number[] {
+  
   const array = [n]
 
-  if(n <= 0){
-    return array;
-  }
-  
   for(let i = 2; i < n; i++){
     const cont = array[i - 1] + array[i - 2];
     array.push(cont)
@@ -150,10 +150,10 @@ export function binarySearch(
   // TODO(you): Finish implementing this algorithm
   if (values[pivotIndex] === value){
     return pivotIndex;
-  } if (values[pivotIndex] < value){
+  } if (values[pivotIndex] > value){
     return binarySearch(values, start, pivotIndex - 1, value);
   } else { 
-    return binarySearch(values, pivotIndex - 1, end, value);
+    return binarySearch(values, pivotIndex + 1, end, value);
   }
   // If values[pivotIndex] is equal to value then return `pivotIndex`.
   // Else if values[pivotIndex] is greater than the value, then
