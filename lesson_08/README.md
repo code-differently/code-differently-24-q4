@@ -13,4 +13,7 @@ Please review the following resources before lecture:
 
 ## Homework
 
-TODO(anthonydmays): Finish this.
+- [ ] Memorize the `printPermutations` and `reverseString` methods in [algos_app][algos-app].
+- [ ] Do pre-work for [lesson 09](/lesson_09/).
+
+[algos-app]: ./algos/algos_app/src/main/java/com/codedifferently/lesson08/Lesson08.java
