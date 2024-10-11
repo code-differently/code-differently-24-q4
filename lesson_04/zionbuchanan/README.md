@@ -69,4 +69,4 @@ For JavaScript, I created a fuction using chatgpt that would determine whether a
 
 For Java, it was a similar process, but with more structure in the data types. I also used chat gpt to help me understand this process as well.
 ## Differences
-In regards to the syntax and structure, Java was more strict with its rules while JavaScript was more loose. In other words, Java had a 11pm curfew while JavaScript could go out and come back at whatever time it pleases. The data type in Java required explicit commands whereas JavaScript had more leniency towards its data types.
+In regards to the syntax and structure, Java was more strict with its rules while JavaScript was more loose. In other words, Java had a 11pm curfew while JavaScript could go out and come back at whatever time it pleases. The data type in Java required explicit commands whereas JavaScript had more leniency towards its data types. In other words, JavaScript functions are flexible, with no need for type declarations or class associations. Java methods require explicit return and parameter types and must reside within a class.
