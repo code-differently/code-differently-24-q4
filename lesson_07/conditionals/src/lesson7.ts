@@ -113,13 +113,16 @@ export function addNumbers(values: number[]): number {
  * @return An array containing the first `n` Fibonacci values.
  */
 export function getFirstNFibonacciNumbers(n: number): number[] {
-  const nums = [];
+  console.log("n = " + n);
+  let current = 1;
   let prev = 0;
-  for (let i = 1; i < n; i++) {
-    const next = i + prev;
-    prev = i;
+  let temp = current;
 
-    console.log(next);
+  for (let i = 1; i < n; i++) {
+    current += prev;
+    temp = current;
+    prev = temp;
+    console.log(current);
   }
   return [];
 }
