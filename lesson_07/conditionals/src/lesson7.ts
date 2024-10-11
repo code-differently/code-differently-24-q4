@@ -48,27 +48,27 @@ export function compareStrings(a: string, b: string): number {
  */
 export function convertGpaToLetterGrade(gpa: number): string {
   
-  if(gpa >= 97){
+  if(gpa >= 4.0){
     return "A+"
-  }else if(gpa >= 93){
+  }else if(gpa >= 4.0){
      return "A"
-  }else if(gpa >= 90){
+  }else if(gpa >= 3.7){
      return "A-"
-  }else if(gpa >= 87){
+  }else if(gpa >= 3.3){
      return "B+"
-  }else if(gpa >= 83){
+  }else if(gpa >= 3.0){
      return "B"
-  }else if(gpa >= 80){
+  }else if(gpa >= 2.7){
       return "B-"
-  }else if(gpa >= 77){
+  }else if(gpa >= 2.3){
      return "C+"
-  }else if(gpa >= 73){  
+  }else if(gpa >= 2.0){  
     return "C"
-  }else if(gpa >= 70){
+  }else if(gpa >= 1.7){
     return "C-";
-  }else if(gpa >= 67){
+  }else if(gpa >= 1.3){
     return "D+";
-  }else if(gpa >= 65){
+  }else if(gpa >= 1.0){
     return "D";
   }else{
     return "F"
@@ -117,7 +117,9 @@ export function addNumbers(values: number[]): number {
 export function getFirstNFibonacciNumbers(n: number): number[] {
   
   const array = [n]
-
+  if (n == 0){
+    return array;
+  }
   for(let i = 2; i < n; i++){
     const cont = array[i - 1] + array[i - 2];
     array.push(cont)
