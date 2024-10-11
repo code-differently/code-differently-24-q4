@@ -48,10 +48,8 @@ export function compareStrings(a: string, b: string): number {
  */
 export function convertGpaToLetterGrade(gpa: number): string {
   
-  if(gpa >= 3.9){
-    return "A+"
-  }else if(gpa >= 3.7){
-     return "A"
+  if(gpa >= 3.7){
+    return "A"
   }else if(gpa >= 3.3){
      return "A-"
   }else if(gpa >= 3.0){
