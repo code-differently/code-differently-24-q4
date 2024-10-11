@@ -15,4 +15,6 @@
     "[javascriptreact]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
+    "remote.autoForwardPortsFallback": 0,
+    "jest.enable": false,
 }
