@@ -46,6 +46,7 @@ export function compareStrings(a: string, b: string): number {
  * @return The letter grade ("A+", "A", "A-", "B+", etc.).
  */
 export function convertGpaToLetterGrade(gpa: number): string {
+  console.log(gpa);
   switch (
     true // better way to do this. want to use the equivilent of a Java Map (XavierCruz5106)
   ) {
@@ -65,12 +66,10 @@ export function convertGpaToLetterGrade(gpa: number): string {
       return "B";
     case gpa >= 3.3 && gpa < 3.7:
       return "B+";
-    case gpa >= 3.7 && gpa < 3.9:
+    case gpa >= 3.7 && gpa < 4.0:
       return "A-";
-    case gpa === 3.9:
-      return "A";
     case gpa === 4.0:
-      return "A+";
+      return "A";
 
     default:
       return "F";
@@ -100,9 +99,9 @@ export function computeFactorial(n: number): number {
  */
 export function addNumbers(values: number[]): number {
   let sum = 0;
-  for (const value in values) {
-    sum += Number(value);
-  }
+  values.forEach((value) => {
+    sum += value;
+  });
   return sum;
 }
 
@@ -113,18 +112,17 @@ export function addNumbers(values: number[]): number {
  * @return An array containing the first `n` Fibonacci values.
  */
 export function getFirstNFibonacciNumbers(n: number): number[] {
-  console.log("n = " + n);
   let current = 1;
   let prev = 0;
-  let temp = current;
+  const nums = [];
 
-  for (let i = 1; i < n; i++) {
-    current += prev;
-    temp = current;
-    prev = temp;
-    console.log(current);
+  for (let i = 1; i <= n; i++) {
+    nums.push(current);
+    const nextNum = current + prev;
+    prev = current;
+    current = nextNum;
   }
-  return [];
+  return nums;
 }
 
 /**
@@ -151,9 +149,16 @@ export function binarySearch(
 
   // TODO(you): Finish implementing this algorithm
 
+  if (values[pivotIndex] == value) {
+    return pivotIndex;
+  } else if (values[pivotIndex] > value) {
+    return binarySearch(values, start, pivotIndex - 1, value);
+  } else {
+    return binarySearch(values, pivotIndex + 1, end, value);
+  }
+
   // If values[pivotIndex] is equal to value then return `pivotIndex`.
   // Else if values[pivotIndex] is greater than the value, then
   // call `binarySearch(values, start, pivotIndex - 1, value)` and return its value;
   // Else call `binarySearch(values, pivotIndex + 1, end, value)` and return its value.
-  return -1;
 }
