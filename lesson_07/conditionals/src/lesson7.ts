@@ -116,9 +116,12 @@ export function addNumbers(values: number[]): number {
  */
 export function getFirstNFibonacciNumbers(n: number): number[] {
   
-  const array = [n]
-  if (n == 0){
-    return array;
+  const array = [1,1]
+  
+  if (n <= 0){
+    return [];
+  }else if(n === 1){
+    return [1]
   }
   for(let i = 2; i < n; i++){
     const cont = array[i - 1] + array[i - 2];
