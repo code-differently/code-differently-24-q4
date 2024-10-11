@@ -115,9 +115,8 @@ export function convertGpaToLetterGrade(gpa: number): string {
  * @return The factorial of n.
  */
 export function computeFactorial(n: number): number {
-  let fact = 0;
+  let fact = 1;
   if (n>0){
-    fact = 1;
     const numbers = Array.from({ length: n }, (_, index) => index + 1);
     for (const i of numbers) {
       fact *= i;
