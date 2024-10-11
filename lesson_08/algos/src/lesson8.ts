@@ -1,10 +1,10 @@
 class Lesson8 {
   run(): void {
     console.log("The permutations of 'abc' are:");
-    Lesson8.printPermutations("abc", "");
+    Lesson8.printPermutations('abc', '');
 
     console.log();
-    console.log("The reverse of 'abc' is: " + Lesson8.reverseString("abc"));
+    console.log("The reverse of 'abc' is: " + Lesson8.reverseString('abc'));
   }
 
   /**
@@ -57,7 +57,11 @@ class Lesson8 {
    * @param i
    * @param j
    */
-  private static swapCharacters(charArray: string[], i: number, j: number): void {
+  private static swapCharacters(
+    charArray: string[],
+    i: number,
+    j: number,
+  ): void {
     const temp = charArray[i];
     charArray[i] = charArray[j];
     charArray[j] = temp;
@@ -65,5 +69,5 @@ class Lesson8 {
 }
 
 // Run the main method
-const lesson = new Lesson8()
+const lesson = new Lesson8();
 lesson.run();
