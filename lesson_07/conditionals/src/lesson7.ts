@@ -152,13 +152,13 @@ export function addNumbers(values: number[]): number {
 export function getFirstNFibonacciNumbers(n: number): number[] {
   const list: number[] = [];
   const indices = Array.from({ length: n - 1 }, (_, index) => index + 2);
-  if (n>=0){
-    list.push(0);
-  }
   if (n>=1){
     list.push(1);
   }
   if (n>=2){
+    list.push(1);
+  }
+  if (n>=3){
     for (const i of indices) {
       list[i] = list[i - 1] + list[i - 2];
     }
