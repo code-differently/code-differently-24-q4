@@ -109,10 +109,10 @@ export function getFirstNFibonacciNumbers(n: number): number[] {
     if( n == 0)
       return resultArray; 
     resultArray.push(1);
-    let firstNumber: number = 1;
-    let secondNumber: number = 1;
-    let nextNumber : number = 0; 
-    for(let i: number = 1; i < n; i++ ){
+    let firstNumber = 1;
+    let secondNumber = 1;
+    let nextNumber  = 0; 
+    for(let i = 1; i < n; i++ ){
       nextNumber = firstNumber + secondNumber;
       resultArray.push(secondNumber);
       firstNumber = secondNumber;
