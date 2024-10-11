@@ -136,9 +136,9 @@ export function computeFactorial(n: number): number {
 export function addNumbers(values: number[]): number {
   let sum=0;
   if (values.length>0){
-    for (let i = 0; i<values.length; i++){
-      sum+=values[i];
-    }
+    for (const value of values) {
+      sum += value;
+}
     return sum;
   }
   return sum;
