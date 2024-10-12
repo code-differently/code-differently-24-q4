@@ -80,30 +80,30 @@ export function myGrade(grade: number): string {
 // with this and see if I can't get it to look better (simpler/cleaner).
 
 export function convertGpaToLetterGrade(gpa: number): string {
-  if (gpa < 65) {
-    return "F";
-  } else if (gpa < 67 && gpa >= 65) {
-    return "D";
-  } else if (gpa < 70 && gpa >= 67) {
-    return "D+";
-  } else if (gpa < 73 && gpa >= 70) {
-    return "C-";
-  } else if (gpa < 77 && gpa >= 73) {
-    return "C";
-  } else if (gpa < 80 && gpa >= 77) {
-    return "C+";
-  } else if (gpa < 83 && gpa >= 80) {
-    return "B-";
-  } else if (gpa < 87 && gpa >= 83) {
-    return "B";
-  } else if (gpa < 90 && gpa >= 87) {
-    return "B+";
-  } else if (gpa < 93 && gpa >= 90) {
-    return "A-";
-  } else if (gpa < 97 && gpa >= 93) {
-    return "A";
-  } else if (gpa <= 100 && gpa >= 97) {
+  if (gpa >= 4.0) {
     return "A+";
+  } else if (gpa > 3.7 && gpa < 4.0) {
+    return "A";
+  } else if (gpa > 3.3 && gpa <= 3.7) {
+    return "A-";
+  } else if (gpa > 3.0 && gpa <= 3.3) {
+    return "B+";
+  } else if (gpa > 2.7 && gpa <= 3.0) {
+    return "B";
+  } else if (gpa > 2.3 && gpa <= 2.7) {
+    return "B-";
+  } else if (gpa > 2.0 && gpa <= 2.3) {
+    return "C+";
+  } else if (gpa > 1.7 && gpa <= 2.0) {
+    return "C";
+  } else if (gpa > 1.3 && gpa <= 1.7) {
+    return "C-";
+  } else if (gpa > 1.0 && gpa <= 1.3) {
+    return "D+";
+  } else if (gpa > 0.0 && gpa <= 1.0) {
+    return "D";
+  } else if (gpa < 0.0) {
+    return "F";
   } else {
     return "unable to assess";
   }
@@ -120,7 +120,8 @@ console.log(grade);
  */
 export function computeFactorial(n: number): number {
   let result = 1;
-  for (let i = 1; i <= n; i++) { // I used i+1 and fell into an infinite loop. My bad!
+  for (let i = 1; i <= n; i++) {
+    // I used i+1 and fell into an infinite loop. My bad!
     result *= i;
   }
   return result;
@@ -128,7 +129,6 @@ export function computeFactorial(n: number): number {
 // Steps I followed: Describe the function, Declare the function, crawl inside the function
 const n = 7;
 console.log(computeFactorial(n));
-
 
 /** (Q5)
  * Adds all of the provided values and returns the sum.
@@ -154,9 +154,31 @@ console.log(sum);
  * @param n The first `n` of Fibonacci values to compute.
  * @return An array containing the first `n` Fibonacci values.
  */
+//This question nearly had me in tears and I'm sad to say that in the end
+// I had to seek help. However, I think if I can explain what I learned as
+// I go, that help would not have been in vain. Again, pardon the long notes.
 export function getFirstNFibonacciNumbers(n: number): number[] {
-  return [];
+  const myArray: number[] = []; // First: initiatialize an empty array inside the function
+  // Next:Take care of base case since the first two Fibonacci numbers are 1, 1.
+  // If n is 1, return an array with the first number. If n is 2, return an array with
+  // the first two numbers. This step is crucial for ensuring the loop works properly.
+  if (n <= 0) return [];
+  if (n === 1) return [1];
+  if (n === 2) return [1, 1];
+  myArray.push(1, 1);
+
+  for (let i = 2; i < n; i++) {
+    //initialization(stats at 2 because I added the first two numbers in the sequence above)
+    // so this tells the function to start computing from the 3rd number. Condition: this tells
+    // the function that it can only work with numbers less than the given number.
+    // Increment: this tells the function to move on to the next number by 1 (no infinite loops).
+    const nextNum = myArray[i - 1] + myArray[i - 2];
+    myArray.push(nextNum); // adds the new number to the array to continue the loop
+  }
+  return myArray;
 }
+
+console.log(getFirstNFibonacciNumbers(7));
 
 /** (Q7)
  * Finds a value in an array of values.
@@ -180,11 +202,11 @@ export function binarySearch(
 
   const pivotIndex = Math.floor((start + end) / 2); // The index in the middle of the array.
 
-  // TODO(you): Finish implementing this algorithm
-
-  // If values[pivotIndex] is equal to value then return `pivotIndex`.
-  // Else if values[pivotIndex] is greater than the value, then
-  // call `binarySearch(values, start, pivotIndex - 1, value)` and return its value;
-  // Else call `binarySearch(values, pivotIndex + 1, end, value)` and return its value.
-  return -1;
+  if (values[pivotIndex] === value) {
+    return pivotIndex;
+  } else if (values[pivotIndex] > value) {
+    return binarySearch(values, start, pivotIndex - 1, value);
+  }
+  return binarySearch(values, pivotIndex + 1, end, value);
 }
+// This problem was much easier to write out because of question 6.
