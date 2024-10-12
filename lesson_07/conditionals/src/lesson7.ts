@@ -48,28 +48,28 @@ export function compareStrings(a: string, b: string): number {
  */
 export function convertGpaToLetterGrade(gpa: number): string {
   
-  if(gpa > 4.0){
+  if (gpa >= 4.0) {
     return "A";
-  }else if(gpa >= 3.7 && gpa < 4.0) {
-     return "A-";
-  }else if(gpa >= 3.3 && gpa < 3.7){
-     return "B+";
-  }else if(gpa >= 3.0 && gpa < 3.3){
-     return "B";
-  }else if(gpa >= 2.7 && gpa < 3){
-      return "B-";
-  }else if(gpa >= 2.3 && gpa < 3.7){
-     return "C+";
-  }else if(gpa >= 2.0 && gpa < 2.3){  
+  } else if (gpa >= 3.7) {
+    return "A-";
+  } else if (gpa >= 3.3) {
+    return "B+";
+  } else if (gpa >= 3.0) {
+    return "B";
+  } else if (gpa >= 2.7) {
+    return "B-";
+  } else if (gpa >= 2.3) {
+    return "C+";
+  } else if (gpa >= 2.0) {
     return "C";
-  }else if(gpa >= 1.7 && gpa < 2){
+  } else if (gpa >= 1.7) {
     return "C-";
-  }else if(gpa >= 1.3 && gpa < 1.7){
+  } else if (gpa >= 1.3) {
     return "D+";
-  }else if(gpa >= 1.0 && gpa < 1.3){
+  } else if (gpa >= 1.0) {
     return "D";
   }
-    return "F";
+  return "F";
 }
 
 /**
