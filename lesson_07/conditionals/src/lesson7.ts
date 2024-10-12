@@ -111,8 +111,18 @@ export function addNumbers(values: number[]): number {
  * @return An array containing the first n Fibonacci values.
  */
 export function getFirstNFibonacciNumbers(n: number): number[] {
-  const array = [0, 1]; //populate array with 0,1 for base cases
+  const array: number[] = [];
 
+  if (n === 0) {
+    return array;
+  }
+
+  if (n >= 1) {
+    array.push(1); // Add the first Fibonacci number
+  }
+  if (n >= 2) {
+    array.push(1);
+  }
   // starting at 2 increment i until it is = n
   for (let i = 2; i < n; i++) {
     const Fibonacci = array[i - 1] + array[i - 2]; //add the numbers 2 positions behind to get current position
@@ -151,7 +161,7 @@ export function binarySearch(
   // call binarySearch(values, start, pivotIndex - 1, value) and return its value;
   // Else call binarySearch(values, pivotIndex + 1, end, value) and return its value.
   if (values[pivotIndex] === value) return pivotIndex;
-  else if (values[pivotIndex] > pivotIndex)
+  else if (values[pivotIndex] > value)
     return binarySearch(values, start, pivotIndex - 1, value);
   else return binarySearch(values, pivotIndex + 1, end, value);
 }
