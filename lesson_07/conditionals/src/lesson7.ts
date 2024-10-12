@@ -68,7 +68,7 @@ export function convertGpaToLetterGrade(gpa: number): string {
     return "D+";
   }else if(gpa >= 1.0 && gpa < 1.3){
     return "D";
-  }else{
+  }else if(gpa < 1.0){
     return "F"
   }
 }
