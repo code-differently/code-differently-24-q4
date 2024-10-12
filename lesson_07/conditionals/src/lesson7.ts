@@ -42,27 +42,25 @@ export function compareStrings(a: string, b: string): number {
  */
 export function convertGpaToLetterGrade(gpa: number): string {
   switch (true) {
-    case gpa >= 97:
-      return "A+";
-    case gpa >= 93 && gpa <= 96:
+    case gpa >= 4.0:
       return "A";
-    case gpa >= 90 && gpa <= 92:
+    case gpa >= 3.7 && gpa <= 3.99:
       return "A-";
-    case gpa >= 87 && gpa <= 89:
+    case gpa >= 3.3 && gpa <= 3.69:
       return "B+";
-    case gpa >= 83 && gpa <= 86:
+    case gpa >= 3 && gpa <= 3.29:
       return "B";
-    case gpa >= 80 && gpa <= 82:
+    case gpa >= 2.7 && gpa <= 2.99:
       return "B-";
-    case gpa >= 77 && gpa <= 79:
+    case gpa >= 2.3 && gpa <= 2.69:
       return "C+";
-    case gpa >= 73 && gpa <= 76:
+    case gpa >= 2 && gpa <= 2.29:
       return "C";
-    case gpa >= 70 && gpa <= 72:
+    case gpa >= 1.7 && gpa <= 1.99:
       return "C-";
-    case gpa >= 67 && gpa <= 69:
+    case gpa >= 1.3 && gpa <= 1.69:
       return "D+";
-    case gpa >= 65 && gpa <= 66:
+    case gpa >= 1 && gpa <= 1.29:
       return "D";
     default:
       return "F";
@@ -113,23 +111,10 @@ export function addNumbers(values: number[]): number {
  * @return An array containing the first n Fibonacci values.
  */
 export function getFirstNFibonacciNumbers(n: number): number[] {
-  const array: number[] = []; // takes number and converts to array
-  if (n === 0) {
-    // base case for array 0
-    array.push(0);
-    return array;
-  }
-  if (n === 1) {
-    // base case for array 1
-    array.push(0);
-    array.push(1);
-    return array;
-  }
-  array.push(0);
-  array.push(1);
+  const array = [0, 1]; //populate array with 0,1 for base cases
 
   // starting at 2 increment i until it is = n
-  for (let i = 2; i <= n; i++) {
+  for (let i = 2; i < n; i++) {
     const Fibonacci = array[i - 1] + array[i - 2]; //add the numbers 2 positions behind to get current position
     array.push(Fibonacci);
   }
@@ -165,10 +150,8 @@ export function binarySearch(
   // Else if values[pivotIndex] is greater than the value, then
   // call binarySearch(values, start, pivotIndex - 1, value) and return its value;
   // Else call binarySearch(values, pivotIndex + 1, end, value) and return its value.
-  if (values[pivotIndex] === pivotIndex) return pivotIndex;
+  if (values[pivotIndex] === value) return pivotIndex;
   else if (values[pivotIndex] > pivotIndex)
     return binarySearch(values, start, pivotIndex - 1, value);
   else return binarySearch(values, pivotIndex + 1, end, value);
-
-  return -1;
 }
