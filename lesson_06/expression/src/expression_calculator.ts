@@ -4,11 +4,11 @@ export class ExpressionCalculator {
     // Implement your code here to return the correct value.
     const sum = this.add(a, b)
     /* First step of PEMDAS in equation (Parenthesis)*/
-    const product = this.multiply(Sum, c)
+    const product = this.multiply(sum, c)
     /* Second step of PEMDAS in equation (Parenthesis)*/
     const power = Math.pow(d, e)
     /* Third step of PEMDAS in equation (Exponent)*/
-    const quotient = this.divide(Product, Power)
+    const quotient = this.divide(product, power)
      /* Fourth and final step of PEMDAS in equation [Multiplication/Division(left to right)]*/
     const result = quotient
     /* Defines final result */
