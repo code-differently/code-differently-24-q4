@@ -43,18 +43,25 @@ export function compareStrings(a: string, b: string): number {
  * @return The letter grade ("A+", "A", "A-", "B+", etc.).
  */
 export function convertGpaToLetterGrade(gpa: number): string {
-  if (gpa > 4.0) return "A+";
-  if (gpa >= 3.7) return "A";
-  if (gpa >= 3.3) return "A-";
-  if (gpa >= 3.0) return "B+";
-  if (gpa >= 2.7) return "B";
-  if (gpa >= 2.3) return "B-";
-  if (gpa >= 2.0) return "C+";
-  if (gpa >= 1.7) return "C";
-  if (gpa >= 1.3) return "C-";
-  if (gpa >= 1.0) return "D+";
-  if (gpa >= 0.0) return "D";
-
+  if (gpa >= 4.0) return "A";
+  if (gpa >= 3.99) return "A-";
+  if (gpa >= 3.7) return "A-";
+  if (gpa >= 3.69) return "B+";
+  if (gpa >= 3.3) return "B+";
+  if (gpa >= 3.29) return "B";
+  if (gpa >= 3.0) return "B";
+  if (gpa >= 2.99) return "B-";
+  if (gpa >= 2.7) return "B-";
+  if (gpa >= 2.69) return "C+";
+  if (gpa >= 2.3) return "C+";
+  if (gpa >= 2.29) return "C";
+  if (gpa >= 2.0) return "C";
+  if (gpa >= 1.99) return "C-";
+  if (gpa >= 1.7) return "C-";
+  if (gpa >= 1.69) return "D+";
+  if (gpa >= 1.3) return "D+";
+  if (gpa >= 1.29) return "D";
+  if (gpa >= 1.0) return "D";
   return "F";
 }
 
@@ -96,7 +103,23 @@ export function addNumbers(values: number[]): number {
  * @return An array containing the first `n` Fibonacci values.
  */
 export function getFirstNFibonacciNumbers(n: number): number[] {
-  return [];
+  const fibNumbers: number[] = [];
+
+  if (n <= 0) return fibNumbers;
+
+  let first = 1,
+    second = 1;
+  fibNumbers.push(first);
+  if (n > 1) fibNumbers.push(second);
+
+  for (let i = 2; i < n; i++) {
+    const next = first + second;
+    fibNumbers.push(next);
+    first = second;
+    second = next;
+  }
+
+  return fibNumbers;
 }
 
 /**
@@ -112,21 +135,41 @@ export function binarySearch(
   values: number[],
   start: number,
   end: number,
-  value: number,
+  target: number,
 ): number {
-  if (end < start) {
-    // The range is not valid so just return -1.
-
+  if (start > end) {
     return -1;
   }
 
+  const mid = Math.floor((start + end) / 2);
+
+  if (values[mid] === target) {
+    return mid;
+  } else if (values[mid] > target) {
+    return binarySearch(values, start, mid - 1, target);
+  } else {
+    return binarySearch(values, mid + 1, end, target);
+  }
+
+  /**
+   * The following code is part of the binary search logic:
+   */
+
   const pivotIndex = Math.floor((start + end) / 2); // The index in the middle of the array.
 
-  // TODO(you): Finish implementing this algorithm
+  if (values[pivotIndex] === target) {
+    return pivotIndex;
+  } else if (values[pivotIndex] > target) {
+    return binarySearch(values, start, pivotIndex - 1, target);
+  } else {
+    return binarySearch(values, pivotIndex + 1, end, target);
+  }
 
-  // If values[pivotIndex] is equal to value then return `pivotIndex`.
-  // Else if values[pivotIndex] is greater than the value, then
-  // call `binarySearch(values, start, pivotIndex - 1, value)` and return its value;
-  // Else call `binarySearch(values, pivotIndex + 1, end, value)` and return its value.
   return -1;
 }
+// TODO(you): Finish implementing this algorithm
+
+// If values[pivotIndex] is equal to value then return `pivotIndex`.
+// Else if values[pivotIndex] is greater than the value, then
+// call `binarySearch(values, start, pivotIndex - 1, value)` and return its value;
+// Else call `binarySearch(values, pivotIndex + 1, end, value)` and return its value.
