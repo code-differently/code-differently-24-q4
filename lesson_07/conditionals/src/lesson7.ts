@@ -24,13 +24,11 @@ export function canVote(age: number): boolean {
 export function compareStrings(a: string, b: string): number {
   const distance = computeLexicographicDistance(a, b);
 
-  if (a > b) {
+  if (distance < 0) {
     return -1;
-  } else if (b > a) {
-    return 1;
-  } else {
-    return 0;
   }
+
+  return distance;
   // The distance will be a number less than 0 if string `a` is lexicographically less than `b`, 1
   // if it is greater, and 0 if the strings are equal.
 
@@ -49,13 +47,13 @@ export function compareStrings(a: string, b: string): number {
 export function convertGpaToLetterGrade(gpa: number): string {
   if (gpa < 0 || gpa > 4.0) {
     return "Invaild GPA";
-  } else if (gpa <= 0.9) {
+  } else if (gpa < 1) {
     return "F";
-  } else if (gpa < 1.25 && gpa >= 1.0) {
+  } else if (gpa < 1.3 && gpa >= 1.0) {
     return "D";
-  } else if (gpa < 1.75 && gpa >= 1.25) {
+  } else if (gpa < 1.7 && gpa >= 1.3) {
     return "D+";
-  } else if (gpa < 2.0 && gpa >= 1.75) {
+  } else if (gpa < 2.0 && gpa >= 1.7) {
     return "C-";
   } else if (gpa < 2.3 && gpa >= 2.0) {
     return "C";
@@ -68,10 +66,9 @@ export function convertGpaToLetterGrade(gpa: number): string {
   } else if (gpa < 3.7 && gpa >= 3.3) {
     return "B+";
   } else if (gpa < 4.0 && gpa >= 3.7) {
-    return "A";
-  } else {
-    return "A+";
+    return "A-";
   }
+  return "A";
 }
 
 /**
@@ -82,7 +79,7 @@ export function convertGpaToLetterGrade(gpa: number): string {
  */
 export function computeFactorial(n: number): number {
   let sum = 1;
-  for (let i = 1; 1<=n; i++) {
+  for (let i = 1; i <= n; i++) {
     sum = sum *= i;
   }
   return sum;
@@ -94,7 +91,11 @@ export function computeFactorial(n: number): number {
  * @return The sum of all the values.
  */
 export function addNumbers(values: number[]): number {
-  return 0;
+  let sum = 0;
+  for (let i = 0; i < values.length; i++) {
+    sum = sum + values[i];
+  }
+  return sum;
 }
 
 /**
@@ -104,7 +105,20 @@ export function addNumbers(values: number[]): number {
  * @return An array containing the first `n` Fibonacci values.
  */
 export function getFirstNFibonacciNumbers(n: number): number[] {
-  return [];
+  if (n === 0) {
+    return [];
+  } else if (n === 1) {
+    return [1];
+  } else if (n === 2) {
+    return [1, 1];
+  }
+  const fibArray = [1, 1];
+
+  for (let i = 2; i < n; i++) {
+    const nextFibNumber = fibArray[i - 1] + fibArray[i - 2];
+    fibArray.push(nextFibNumber);
+  }
+  return fibArray;
 }
 
 /**
