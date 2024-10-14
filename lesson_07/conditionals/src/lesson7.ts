@@ -81,7 +81,7 @@ export function convertGpaToLetterGrade(gpa: number): string {
  */
 export function computeFactorial(n: number): number {
   let product = 1;
-  for (let i = 1; 1 <= n; i++) {
+  for (let i = 1; i <= n; i++) {
     product *= i;
   }
 
