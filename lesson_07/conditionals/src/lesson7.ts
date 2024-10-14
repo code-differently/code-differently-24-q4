@@ -74,10 +74,7 @@ export function myGrade(grade: number): string {
   return gpa;
 }
 
-//I followed the same logic as question 2. I can already tell that
-// there may be many simpler ways to build this function. I am just
-// happy it came out with no errors and will make a note to play around
-// with this and see if I can't get it to look better (simpler/cleaner).
+//I followed the same logic as question 2. 
 
 export function convertGpaToLetterGrade(gpa: number): string {
   if (gpa >= 4.0) {
@@ -107,7 +104,7 @@ export function convertGpaToLetterGrade(gpa: number): string {
   }
 }
 
-const grade = convertGpaToLetterGrade(32);
+const grade = convertGpaToLetterGrade(3.2);
 console.log(grade);
 
 /** (Q4)
@@ -166,7 +163,7 @@ export function getFirstNFibonacciNumbers(n: number): number[] {
   myArray.push(1, 1);
 
   for (let i = 2; i < n; i++) {
-    //initialization(stats at 2 because I added the first two numbers in the sequence above)
+    //initialization(starts at 2 because I added the first two numbers in the sequence above)
     // so this tells the function to start computing from the 3rd number. Condition: this tells
     // the function that it can only work with numbers less than the given number.
     // Increment: this tells the function to move on to the next number by 1 (no infinite loops).
@@ -208,3 +205,6 @@ export function binarySearch(
   return binarySearch(values, pivotIndex + 1, end, value);
 }
 // This problem was much easier to write out because of question 6.
+const values = [ 2, 4, 6, 8, 10, 12, 14, 16];
+const index = binarySearch(values, 4, 8, 14);
+console.log(index);
