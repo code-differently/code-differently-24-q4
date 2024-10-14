@@ -12,6 +12,7 @@ export function canVote(age: number): boolean {
   } else {
     return false;
   }
+  
 }
 
 /**
