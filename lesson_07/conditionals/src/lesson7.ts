@@ -47,7 +47,7 @@ export function compareStrings(a: string, b: string): number {
  * @return The letter grade ("A+", "A", "A-", "B+", etc.).
  */
 export function convertGpaToLetterGrade(gpa: number): string {
-  if (gpa == 4.0) {
+  if (gpa >= 4.0) {
     return "A";
   } else if (gpa <= 3.99 && gpa >= 3.7) {
     return "A-";
@@ -107,7 +107,7 @@ export function addNumbers(values: number[]): number {
  */
 export function getFirstNFibonacciNumbers(n: number): number[] {
   if (n < 1) {
-    return [];
+    //return [];
   }
 
   const fibonacci: number[] = [1, 1]; // The function starts with the first two Fibonacci numbers
