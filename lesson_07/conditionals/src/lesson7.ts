@@ -34,11 +34,7 @@ export function compareStrings(a: string, b: string): number {
 }
 
 export function computeLexicographicDistance(a: string, b: string): number {
-  //I literally used export function again because typescript kept telling me
-  // that my return statements needed to be inside the body of a function.
-  // I'm a bit skeptical because we are supposed to be DRY! and the only thing I
-  // changed was the function name. But it worked. I'm just leaving this note
-  // to remind myself to ask for clarification about this.
+  
   if (a < b) {
     return -1;
   } else if (a > b) {
@@ -51,14 +47,7 @@ export function computeLexicographicDistance(a: string, b: string): number {
 const result = compareStrings("Kimberlee", "haldane");
 console.log(result);
 
-//If I am understanding question 2 correctly, because the first function
-// 'compareStrings' calls on a second function 'computeLexicographicDistance',
-// I needed to set up both functions. The first function calls the second
-// and the second function does the actual calculation and determines if each string
-// is one of this set (-1, 1, 0). Testing is when the first function comes
-//back into play, comparing two strings and returning a numerical result. Sorry
-// for the long note, it took me a VERY long time to get to this understanding.
-// I just hope I am right.
+
 
 /** (Q3)
  * Converts a GPA on the 4.0 scale to the corresponding letter grade using the college board
@@ -74,7 +63,6 @@ export function myGrade(grade: number): string {
   return gpa;
 }
 
-//I followed the same logic as question 2. 
 
 export function convertGpaToLetterGrade(gpa: number): string {
   if (gpa >= 4.0) {
@@ -116,12 +104,12 @@ console.log(grade);
 export function computeFactorial(n: number): number {
   let result = 1;
   for (let i = 1; i <= n; i++) {
-    // I used i+1 and fell into an infinite loop. My bad!
+   
     result *= i;
   }
   return result;
 }
-// Steps I followed: Describe the function, Declare the function, crawl inside the function
+
 const n = 7;
 console.log(computeFactorial(n));
 
@@ -149,26 +137,18 @@ console.log(sum);
  * @param n The first `n` of Fibonacci values to compute.
  * @return An array containing the first `n` Fibonacci values.
  */
-//This question nearly had me in tears and I'm sad to say that in the end
-// I had to seek help. However, I think if I can explain what I learned as
-// I go, that help would not have been in vain. Again, pardon the long notes.
+
 export function getFirstNFibonacciNumbers(n: number): number[] {
-  const myArray: number[] = []; // First: initiatialize an empty array inside the function
-  // Next:Take care of base case since the first two Fibonacci numbers are 1, 1.
-  // If n is 1, return an array with the first number. If n is 2, return an array with
-  // the first two numbers. This step is crucial for ensuring the loop works properly.
+  const myArray: number[] = []; 
   if (n <= 0) return [];
   if (n === 1) return [1];
   if (n === 2) return [1, 1];
   myArray.push(1, 1);
 
   for (let i = 2; i < n; i++) {
-    //initialization(starts at 2 because I added the first two numbers in the sequence above)
-    // so this tells the function to start computing from the 3rd number. Condition: this tells
-    // the function that it can only work with numbers less than the given number.
-    // Increment: this tells the function to move on to the next number by 1 (no infinite loops).
+   
     const nextNum = myArray[i - 1] + myArray[i - 2];
-    myArray.push(nextNum); // adds the new number to the array to continue the loop
+    myArray.push(nextNum); 
   }
   return myArray;
 }
@@ -191,11 +171,11 @@ export function binarySearch(
   value: number,
 ): number {
   if (end < start) {
-    // The range is not valid so just return -1.
+    
     return -1;
   }
 
-  const pivotIndex = Math.floor((start + end) / 2); // The index in the middle of the array.
+  const pivotIndex = Math.floor((start + end) / 2); 
 
   if (values[pivotIndex] === value) {
     return pivotIndex;
@@ -204,7 +184,7 @@ export function binarySearch(
   }
   return binarySearch(values, pivotIndex + 1, end, value);
 }
-// This problem was much easier to write out because of question 6.
+
 const values = [ 2, 4, 6, 8, 10, 12, 14, 16];
 const index = binarySearch(values, 4, 8, 14);
 console.log(index);
