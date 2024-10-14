@@ -123,7 +123,7 @@ export function getFirstNFibonacciNumbers(n: number): number[] {
  * Finds a value in an array of values.
  *
  * @param values The values to search.
- * @param start The left most index to search.
+ * @param start The left most index to search.e
  * @param end The right most index to search.
  * @param value The value to look for.
  * @return The index of the value if found in the array and -1 otherwise.
