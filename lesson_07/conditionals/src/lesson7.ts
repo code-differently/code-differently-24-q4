@@ -137,7 +137,7 @@ console.log(sum);
  * @param n The first `n` of Fibonacci values to compute.
  * @return An array containing the first `n` Fibonacci values.
  */
-
+//** I had to look up how to complete this problem on google
 export function getFirstNFibonacciNumbers(n: number): number[] {
   const myArray: number[] = []; 
   if (n <= 0) return [];
