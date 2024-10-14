@@ -84,7 +84,9 @@ export function computeFactorial(n: number): number {
 
   return product;
 }
+const n = 2;
 
+console.log(computeFactorial(n));
 /**
  * Adds all of the provided values and returns the sum.
  *
