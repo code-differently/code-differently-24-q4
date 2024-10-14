@@ -43,7 +43,7 @@ export function compareStrings(a: string, b: string): number {
  * @return The letter grade ("A+", "A", "A-", "B+", etc.).
  */
 export function convertGpaToLetterGrade(gpa: number): string {
-  if (gpa == 4.0) {
+  if (gpa === 4.0) {
     return "A";
   } else if (gpa > 4.0) {
     return "A";
@@ -78,7 +78,7 @@ export function convertGpaToLetterGrade(gpa: number): string {
  */
 export function computeFactorial(n: number): number {
   let product = 1;
-  for (let i = 1; 1 <= n; i++) {
+  for (let i = 1; i <= n; i++) {
     product *= i;
   }
 
@@ -107,7 +107,21 @@ export function addNumbers(values: number[]): number {
  * @return An array containing the first `n` Fibonacci values.
  */
 export function getFirstNFibonacciNumbers(n: number): number[] {
-  return [];
+  let current = 1;
+  let prev = 0;
+
+  const numbers = [];
+
+  for (let i = 1; i<=n; i++){
+    numbers.push(current);
+    const nextNum = current + prev; // 1
+    prev = current; // 1
+    current = nextNum
+  }
+  
+   
+  
+  return numbers;
 }
 
 /**
@@ -126,12 +140,22 @@ export function binarySearch(
   value: number,
 ): number {
   if (end < start) {
+
+    
     // The range is not valid so just return -1.
     return -1;
   }
 
   const pivotIndex = Math.floor((start + end) / 2); // The index in the middle of the array.
-
+  if (values[pivotIndex] === value) {
+  return pivotIndex;
+} 
+else if (values[pivotIndex] > value) {
+  return binarySearch(values, start, pivotIndex - 1, value);
+} 
+else {
+  return binarySearch(values, pivotIndex + 1, end, value);
+}
   // TODO(you): Finish implementing this algorithm
 
   // If values[pivotIndex] is equal to value then return `pivotIndex`.
