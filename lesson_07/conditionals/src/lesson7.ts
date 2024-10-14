@@ -32,7 +32,6 @@ export function compareStrings(a: string, b: string): number {
   } else {
     return 0;
   }
-  // TODO(you): Finish this method.
 }
 
 /**
@@ -84,7 +83,6 @@ export function computeFactorial(n: number): number {
   }
   return n;
 }
-/* 4! = 4 x 3 x 2 x 1 = 24*/
 /**
  * Adds all of the provided values and returns the sum.
  *
@@ -141,7 +139,6 @@ export function binarySearch(
 
   const pivotIndex = Math.floor((start + end) / 2); // The index in the middle of the array.
 
-  // TODO(you): Finish implementing this algorithm
 
   if (values[pivotIndex] == value) {
     return pivotIndex;
