@@ -7,7 +7,11 @@ import { computeLexicographicDistance } from "./util.js";
  * @return True if the age corresponds to a voting age and false otherwise.
  */
 export function canVote(age: number): boolean {
-  return false;
+  if (age >= 18) {
+    return true;
+  } else {
+    return false;
+  }
 }
 
 /**
@@ -21,10 +25,13 @@ export function compareStrings(a: string, b: string): number {
   // The distance will be a number less than 0 if string `a` is lexicographically less than `b`, 1
   // if it is greater, and 0 if the strings are equal.
   const distance = computeLexicographicDistance(a, b);
-
-  // TODO(you): Finish this method.
-
-  return 0;
+  if (a < b) {
+    return -1;
+  } else if (a > b) {
+    return 1;
+  } else {
+    return 0;
+  }
 }
 
 /**
@@ -37,7 +44,29 @@ export function compareStrings(a: string, b: string): number {
  * @return The letter grade ("A+", "A", "A-", "B+", etc.).
  */
 export function convertGpaToLetterGrade(gpa: number): string {
-  return "F";
+  if (gpa === 4.0) {
+    return "A";
+  } else if (gpa >= 3.7) {
+    return "A-";
+  } else if (gpa >= 3.3) {
+    return "B+";
+  } else if (gpa >= 3.0) {
+    return "B";
+  } else if (gpa >= 2.7) {
+    return "B-";
+  } else if (gpa >= 2.3) {
+    return "C+";
+  } else if (gpa >= 2.0) {
+    return "C";
+  } else if (gpa >= 1.7) {
+    return "C-";
+  } else if (gpa >= 1.3) {
+    return "D+";
+  } else if (gpa >= 1.0) {
+    return "D";
+  } else {
+    return "F";
+  }
 }
 
 /**
@@ -47,7 +76,11 @@ export function convertGpaToLetterGrade(gpa: number): string {
  * @return The factorial of n.
  */
 export function computeFactorial(n: number): number {
-  return 0;
+  let result = 1;
+  for (let i = 1; i <= n; i++) {
+    result *= i;
+  }
+  return result;
 }
 
 /**
@@ -57,7 +90,11 @@ export function computeFactorial(n: number): number {
  * @return The sum of all the values.
  */
 export function addNumbers(values: number[]): number {
-  return 0;
+  let total = 0;
+  for (const value of values) {
+    total += value;
+  }
+  return total;
 }
 
 /**
@@ -67,7 +104,18 @@ export function addNumbers(values: number[]): number {
  * @return An array containing the first `n` Fibonacci values.
  */
 export function getFirstNFibonacciNumbers(n: number): number[] {
-  return [];
+  if (n === 0) {
+    return [];
+  }
+  if (n === 1) {
+    return [1];
+  }
+  const fibonacciSequence: number[] = [1, 1];
+  for (let i = 2; i < n; i++) {
+    const newNumber = fibonacciSequence[i - 1] + fibonacciSequence[i - 2];
+    fibonacciSequence.push(newNumber);
+  }
+  return fibonacciSequence.slice(0, n);
 }
 
 /**
@@ -90,13 +138,12 @@ export function binarySearch(
     return -1;
   }
 
-  const pivotIndex = Math.floor((start + end) / 2); // The index in the middle of the array.
-
-  // TODO(you): Finish implementing this algorithm
-
-  // If values[pivotIndex] is equal to value then return `pivotIndex`.
-  // Else if values[pivotIndex] is greater than the value, then
-  // call `binarySearch(values, start, pivotIndex - 1, value)` and return its value;
-  // Else call `binarySearch(values, pivotIndex + 1, end, value)` and return its value.
-  return -1;
+  const pivotIndex = Math.floor((start + end) / 2);
+  if (values[pivotIndex] === value) {
+    return pivotIndex;
+  } else if (values[pivotIndex] > value) {
+    return binarySearch(values, start, pivotIndex - 1, value);
+  } else {
+    return binarySearch(values, pivotIndex + 1, end, value);
+  }
 }
