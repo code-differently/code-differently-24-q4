@@ -105,20 +105,18 @@ export function addNumbers(values: number[]): number {
  * @return An array containing the first `n` Fibonacci values.
  */
 export function getFirstNFibonacciNumbers(n: number): number[] {
-  if (n === 0) {
-    return [];
-  } else if (n === 1) {
-    return [1];
-  } else if (n === 2) {
-    return [1, 1];
-  }
-  const fibArray = [1, 1];
+  let current = 1;
+  let prev = 0;
 
-  for (let i = 2; i < n; i++) {
-    const nextFibNumber = fibArray[i - 1] + fibArray[i - 2];
-    fibArray.push(nextFibNumber);
+  const numbers = [];
+
+  for (let i = 1; i <= n; i++) {
+    numbers.push(current);
+    const nextNumber = current + prev;
+    prev = current;
+    current = nextNumber;
   }
-  return fibArray;
+  return numbers;
 }
 
 /**
@@ -142,6 +140,13 @@ export function binarySearch(
   }
 
   const pivotIndex = Math.floor((start + end) / 2); // The index in the middle of the array.
+  if (values[pivotIndex] === value) {
+    return pivotIndex;
+  } else if (values[pivotIndex] > value) {
+    return binarySearch(values, start, pivotIndex - 1, value);
+  } else {
+    return binarySearch(values, pivotIndex + 1, end, value);
+  }
 
   // TODO(you): Finish implementing this algorithm
 
