@@ -1,0 +1,93 @@
+[
+  import public class NileJackProvider
+  {
+    "column1",  Float.class,
+    "column2",  Integer.class,
+    "column3",  String.class,
+    "column4",  BigInt.class,
+    "column5",  Double.class,
+    "column6",  Long.class,
+    "column7",  Boolean.class,
+  },
+  {
+    "column1": "2.9846927E38",
+    "column2": "31547",
+    "column3": "zvpsy",
+    "column4": "1389365663",
+    "column5": "1.3568212826887597E308",
+    "column6": "2903269341198776320",
+    "column7": "false"
+  },
+  {
+    "column1": "1.1708629E38",
+    "column2": "9758",
+    "column3": "x56kiqsfhrmt",
+    "column4": "1291411059",
+    "column5": "1.4310658144532972E308",
+    "column6": "5349308225575656448",
+    "column7": "false"
+  },
+  {
+    "column1": "3.2003028E38",
+    "column2": "23236",
+    "column3": "hx0697rd",
+    "column4": "1021569000",
+    "column5": "1.1812029695991776E308",
+    "column6": "1365447698897773824",
+    "column7": "true"
+  },
+  {
+    "column1": "3.053783E38",
+    "column2": "16064",
+    "column3": "1t2kcbn",
+    "column4": "1769933788",
+    "column5": "1.0575584058025185E308",
+    "column6": "583048624730695808",
+    "column7": "true"
+  },
+  {
+    "column1": "1.4229291E38",
+    "column2": "20556",
+    "column3": "hqr8pxa6ucm",
+    "column4": "193767786",
+    "column5": "1.4200091587041463E308",
+    "column6": "3109639796338298880",
+    "column7": "true"
+  },
+  {
+    "column1": "2.3684926E38",
+    "column2": "21334",
+    "column3": "tzwg6029q4",
+    "column4": "798768748",
+    "column5": "1.1297514119866057E308",
+    "column6": "8042224530499211264",
+    "column7": "false"
+  },
+  {
+    "column1": "1.9054222E38",
+    "column2": "32440",
+    "column3": "f2hdjptoz8w",
+    "column4": "836789060",
+    "column5": "1.2026069923035651E307",
+    "column6": "5325813815938213888",
+    "column7": "false"
+  },
+  {
+    "column1": "2.4662948E38",
+    "column2": "9223",
+    "column3": "di6w3a9n",
+    "column4": "1299327748",
+    "column5": "1.45235568521045E307",
+    "column6": "6142717168008359936",
+    "column7": "false"
+  },
+  {
+    "column1": "3.1097544E38",
+    "column2": "1379",
+    "column3": "cusq2kb",
+    "column4": "908268505",
+    "column5": "3.473809269036574E306",
+    "column6": "7500801420007482368",
+    "column7": "false"
+  }
+]
