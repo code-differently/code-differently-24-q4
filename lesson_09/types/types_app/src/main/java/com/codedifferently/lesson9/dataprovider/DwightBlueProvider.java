@@ -1,7 +1,6 @@
 package com.codedifferently.lesson9.dataprovider;
 
 import java.util.Map;
-
 import org.springframework.stereotype.Service;
 
 @Service
@@ -14,7 +13,7 @@ public class DwightBlueProvider extends DataProvider {
     return Map.of(
         "column1", Long.class,
         "column2", Boolean.class,
-        "column3", Float .class,
+        "column3", Float.class,
         "column4", String.class,
         "column5", Double.class,
         "column6", Short.class,
