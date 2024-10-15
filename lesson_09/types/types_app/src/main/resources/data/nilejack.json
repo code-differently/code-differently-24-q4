@@ -1,13 +1,12 @@
-[ 
-  package com.code 
+[
   {
-    "column1", Float.class,
-    "column2", Integer.class,
-    "column3", Short.class ,
-    "column4", String.class ,
-    "column5", Boolean.class,
-    "column6", Double.class ,
-    "column7", Long.class ,
+    "column1": "2.788476E38",
+    "column2": "23906",
+    "column3": "1.951334947469109E306",
+    "column4": "4vynlcbme89",
+    "column5": "true",
+    "column6": "1946511983",
+    "column7": "871716420668780160"
   },
   {
     "column1": "2.9218724E38",

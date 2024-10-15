@@ -10,7 +10,6 @@ public class NileJackProvider extends DataProvider {
     return "nilejack";
   }
 
-  @SuppressWarnings("rawtypes")
   public Map<String, Class> getColumnTypeByName() {
     return Map.of(
         "column1", Float.class,
