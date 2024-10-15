@@ -1,0 +1,93 @@
+[ 
+  package com.code 
+  {
+    "column1", Float.class,
+    "column2", Integer.class,
+    "column3", Short.class ,
+    "column4", String.class ,
+    "column5", Boolean.class,
+    "column6", Double.class ,
+    "column7", Long.class ,
+  },
+  {
+    "column1": "2.9218724E38",
+    "column2": "5982",
+    "column3": "1.6613559878792952E308",
+    "column4": "kcy91i4",
+    "column5": "true",
+    "column6": "467285300",
+    "column7": "717033365520104960"
+  },
+  {
+    "column1": "2.6791138E38",
+    "column2": "3087",
+    "column3": "1.4531283019824207E307",
+    "column4": "5gdku",
+    "column5": "false",
+    "column6": "1339783318",
+    "column7": "8609205761188083712"
+  },
+  {
+    "column1": "2.7654423E38",
+    "column2": "22857",
+    "column3": "1.3125501238039668E308",
+    "column4": "2ab3nxz",
+    "column5": "false",
+    "column6": "1166125928",
+    "column7": "3850529467803900928"
+  },
+  {
+    "column1": "7.978512E37",
+    "column2": "30614",
+    "column3": "1.0016443609479493E308",
+    "column4": "jh490kp25z8",
+    "column5": "true",
+    "column6": "684136174",
+    "column7": "2530680619863128064"
+  },
+  {
+    "column1": "5.8039073E37",
+    "column2": "4886",
+    "column3": "1.3705152061964327E308",
+    "column4": "ak5we9tfr",
+    "column5": "false",
+    "column6": "728654337",
+    "column7": "1671706500207470592"
+  },
+  {
+    "column1": "5.139036E37",
+    "column2": "9019",
+    "column3": "1.2523590249164425E308",
+    "column4": "5tefqwblim3",
+    "column5": "true",
+    "column6": "14150416",
+    "column7": "4871306662885839872"
+  },
+  {
+    "column1": "2.6188858E37",
+    "column2": "2398",
+    "column3": "1.444754024326182E308",
+    "column4": "w8hfk7nl1s",
+    "column5": "false",
+    "column6": "2000776131",
+    "column7": "8280646876683382784"
+  },
+  {
+    "column1": "3.1079513E38",
+    "column2": "32074",
+    "column3": "9.799167831142151E307",
+    "column4": "glx5ze96mk",
+    "column5": "false",
+    "column6": "2134631706",
+    "column7": "3840235999993978368"
+  },
+  {
+    "column1": "1.1965353E38",
+    "column2": "30848",
+    "column3": "1.0643709914035035E308",
+    "column4": "s51gxi7hm3",
+    "column5": "false",
+    "column6": "1598587760",
+    "column7": "8883551926143157248"
+  }
+]
