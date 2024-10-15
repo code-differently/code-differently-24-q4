@@ -1,20 +1,21 @@
 package com.codedifferently.lesson9;
 
-import static org.assertj.core.api.Assertions.assertThat;
-
-import com.codedifferently.lesson9.dataprovider.DataProvider;
-import com.codedifferently.lesson9.loader.DataFileLoader;
 import java.io.IOException;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
 import java.util.stream.Collectors;
+
+import static org.assertj.core.api.Assertions.assertThat;
 import org.assertj.core.api.junit.jupiter.SoftAssertionsExtension;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.ContextConfiguration;
+
+import com.codedifferently.lesson9.dataprovider.DataProvider;
+import com.codedifferently.lesson9.loader.DataFileLoader;
 
 @SpringBootTest
 @ContextConfiguration(classes = Lesson9.class)
