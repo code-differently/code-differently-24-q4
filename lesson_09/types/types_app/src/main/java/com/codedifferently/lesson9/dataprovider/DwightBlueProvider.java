@@ -18,6 +18,6 @@ public class DwightBlueProvider extends DataProvider {
         "column4", String.class,
         "column5", Double.class,
         "column6", Short.class,
-        "column7",Integer.class);
+        "column7", Integer.class);
   }
 }
