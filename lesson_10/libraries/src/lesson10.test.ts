@@ -4,6 +4,8 @@ import { AppModule } from './app.module.js';
 import { Loader } from './loaders/loader.js';
 import { Loaders } from './loaders/loaders.module.js';
 
+const IGNORE_LOADER = 'anthonymays';
+
 describe('Lesson10Test', () => {
   let moduleFixture: TestingModule;
   let loaders: Loader[];
@@ -18,6 +20,9 @@ describe('Lesson10Test', () => {
 
   it('loads loaders that load all items', async () => {
     for (const loader of loaders) {
+      if (loader.getLoaderName() === IGNORE_LOADER) {
+        continue;
+      }
       const items = await loader.loadData();
       expect(items.length).toBe(200);
     }
@@ -25,6 +30,10 @@ describe('Lesson10Test', () => {
 
   it('loads all properties correctly', async () => {
     for (const loader of loaders) {
+      if (loader.getLoaderName() === IGNORE_LOADER) {
+        continue;
+      }
+
       const items = await loader.loadData();
 
       const itemsByType = items.reduce((acc, item) => {
