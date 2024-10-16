@@ -5,7 +5,7 @@ export class MediaItem {
   private readonly id: string;
   private readonly title: string;
   private readonly releaseYear: number;
-  private readonly credits: Iterable<Credit>;
+  private readonly credits: Credit[];
   private readonly type: MediaType;
 
   constructor(
@@ -19,7 +19,7 @@ export class MediaItem {
     this.title = title;
     this.type = mediaType;
     this.releaseYear = releaseYear;
-    this.credits = credits;
+    this.credits = [...credits];
   }
 
   getId(): string {
@@ -34,8 +34,12 @@ export class MediaItem {
     return this.releaseYear;
   }
 
-  getCredits(): Iterable<Credit> {
-    return this.credits;
+  getCredits(): readonly Credit[] {
+    return [...this.credits];
+  }
+
+  addCredit(credit: Credit): void {
+    this.credits.push(credit);
   }
 
   getType(): MediaType {
