@@ -1,6 +1,6 @@
 import csv from 'csv-parser';
 import fs from 'fs';
-import { Credit, MediaItem } from '../models/index.js';
+import { Credit, MediaItem, Role } from '../models/index.js';
 import { Loader } from './loader.js';
 
 export class XavierCruzLoader implements Loader {
@@ -42,14 +42,32 @@ export class XavierCruzLoader implements Loader {
 
   //PARSE CSV MANUALLY - Extra Credit
   async loadCredits(): Promise<Credit[]> {
-    const credits = [];
-    const readable = fs
-      .createReadStream('data/credits.csv', 'utf-8')
-      .pipe(csv());
-    for await (const row of readable) {
-      const { media_item_id: mediaItemId, role, name } = row;
-      credits.push({ mediaItemId, name, role });
+    const filePath = 'data/credits.csv';
+    const fileContents = fs.readFileSync(filePath, 'utf-8');
+
+    const lines = fileContents.split('\n');
+    const newString = lines.slice(1);
+    const trimmedString = newString;
+
+    for (let i = 0; i < trimmedString.length; i++) {
+      trimmedString[i] = trimmedString[i].substring(
+        trimmedString[i].indexOf(',') + 1,
+      );
     }
+
+    // help from ChatGPT - Fixing the roleStr as Role issue
+    const credits: Credit[] = trimmedString.map((credit) => {
+      const [mediaItemId, roleStr, name] = credit.split(',');
+
+      const role: Role = roleStr as Role;
+
+      return {
+        mediaItemId,
+        role,
+        name,
+      };
+    });
+
     return credits;
   }
 }
