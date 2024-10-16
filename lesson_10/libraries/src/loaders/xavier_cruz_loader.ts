@@ -17,7 +17,7 @@ export class XavierCruzLoader implements Loader {
     );
 
     for (let i = 0; i < mediaItems.length; i++) {
-      if (i < 100) {
+      if (i < mediaItems.length / 2) {
         mediaItems[i].addCredit(credits[i] as Credit); //tests pass however people in credits dont match up to the movies??
       }
     }
