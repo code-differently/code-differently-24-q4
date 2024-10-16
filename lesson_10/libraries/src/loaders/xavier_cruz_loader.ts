@@ -47,18 +47,16 @@ export class XavierCruzLoader implements Loader {
 
     const lines = fileContents.split('\n');
     const newString = lines.slice(1);
-    const trimmedString = newString;
 
-    for (let i = 0; i < trimmedString.length; i++) {
-      trimmedString[i] = trimmedString[i].substring(
-        trimmedString[i].indexOf(',') + 1,
-      );
+    for (let i = 0; i < newString.length; i++) {
+      newString[i] = newString[i].substring(newString[i].indexOf(',') + 1);
     }
 
     // help from ChatGPT - Fixing the roleStr as Role issue
-    const credits: Credit[] = trimmedString.map((credit) => {
+    const credits: Credit[] = newString.map((credit) => {
       const [mediaItemId, roleStr, name] = credit.split(',');
 
+      // cast roleStr to Role type
       const role: Role = roleStr as Role;
 
       return {
