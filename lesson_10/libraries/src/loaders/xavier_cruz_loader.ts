@@ -18,7 +18,7 @@ export class XavierCruzLoader implements Loader {
 
     for (let i = 0; i < mediaItems.length; i++) {
       if (i < mediaItems.length / 2) {
-        mediaItems[i].addCredit(credits[i] as Credit); //tests pass however people in credits dont match up to the movies??
+        mediaItems[i].addCredit(credits[i] as Credit);
       }
     }
 
@@ -26,7 +26,6 @@ export class XavierCruzLoader implements Loader {
   }
 
   async loadMediaItems(): Promise<MediaItem[]> {
-    // TODO: Implement this method.
     const mediaItems = [];
     const readable = fs
       .createReadStream('data/media_items.csv', 'utf-8')
@@ -40,7 +39,6 @@ export class XavierCruzLoader implements Loader {
     return mediaItems;
   }
 
-  //PARSE CSV MANUALLY - Extra Credit
   async loadCredits(): Promise<Credit[]> {
     const filePath = 'data/credits.csv';
     const fileContents = fs.readFileSync(filePath, 'utf-8');
