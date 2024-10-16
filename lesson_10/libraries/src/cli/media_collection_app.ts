@@ -1,5 +1,8 @@
+import { Inject, Injectable } from '@nestjs/common';
 import { program } from 'commander';
 import readline from 'readline';
+import { Loader } from '../loaders/loader.js';
+import { Loaders } from '../loaders/loaders.module.js';
 import { MediaCollection } from '../models/media_collection.js';
 import { MediaItem } from '../models/media_item.js';
 import { SearchCriteria } from '../models/search_criteria.js';
@@ -24,9 +27,13 @@ enum SearchCommand {
   UNKNOWN,
 }
 
-export class MediaCollectionCli {
+@Injectable()
+export class MediaCollectionApp {
+  constructor(@Inject(Loaders) private readonly loaders: Loader[]) {}
+
   async run(): Promise<void> {
-    const collection = new MediaCollection();
+    const loaderName = this.getLoaderFromCommandLine();
+    const collection = await this.loadCollectionUsingLoader(loaderName);
 
     this.printMediaCollection(collection);
 
@@ -43,6 +50,20 @@ export class MediaCollectionCli {
           console.log('\nNot ready yet, coming soon!');
       }
     }
+  }
+
+  private async loadCollectionUsingLoader(loaderName: string | null) {
+    const collection = new MediaCollection();
+    if (loaderName) {
+      const loader = this.loaders.filter(
+        (l) => l.getLoaderName() === loaderName,
+      );
+      if (loader) {
+        const items = await loader[0].loadData();
+        items.forEach((item) => collection.addItem(item));
+      }
+    }
+    return collection;
   }
 
   private printMediaCollection(collection: MediaCollection): void {
