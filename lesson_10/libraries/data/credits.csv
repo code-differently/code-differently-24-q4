@@ -1,4 +1,4 @@
-id,media_item_id,role,person_name
+id,media_item_id,role,name
 1,1,Director,John Doe
 2,1,Producer,Jane Smith
 3,2,Actor,Chris Evans
