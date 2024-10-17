@@ -21,10 +21,10 @@ export class ChigazoGrahamLoader implements Loader {
 
   async loadMediaItems(): Promise<MediaItem[]> {
     // TODO: Implement this method.
-    const mediaItems: MediaItem[] = [];
-    const readable = fs.readFileSync('data/media_items.csv', {
-        encoding: 'utf-8'
-    });
+    const mediaItems = [];
+    const readable = fs
+      .createReadStream('data/credits.csv', 'utf-8')
+      .pipe(csv());
     for await (const row of readable) {
       const { id, type, title, genre, year } = row;
       mediaItems.push(new MediaItem( id, type, title, genre, year, ));
