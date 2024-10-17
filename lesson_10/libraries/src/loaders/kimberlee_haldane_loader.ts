@@ -20,8 +20,28 @@ export class KimberleeHaldaneLoader implements Loader {
   }
 
   async loadMediaItems(): Promise<MediaItem[]> {
-    // TODO: Implement this method.
-    return [];
+    const mediaItems = [];
+    const readable = fs
+      .createReadStream('data/media_items.csv', 'utf-8')
+      .pipe(csv());
+
+    /*interface Movie {
+        id: number;
+        type: string;
+        title: string;
+        genre: string;
+        year: number;
+    }
+
+    const results: Movie[] = [];*/
+
+    fs.createReadStream('data/media_items.csv', 'utf-8').pipe(csv());
+    for await (const row of readable) {
+      const { id, type, title, year } = row;
+      mediaItems.push(new MediaItem(id, title, type, year, []));
+    }
+
+    return mediaItems;
   }
 
   async loadCredits(): Promise<Credit[]> {
