@@ -26,8 +26,8 @@ export class ChigazoGrahamLoader implements Loader {
       .createReadStream('data/media_items.csv', 'utf-8')
       .pipe(csv());
     for await (const row of readable) {
-      const { id, type, title, genre, year } = row;
-      mediaItems.push(new MediaItem(id, type, title, genre, year));
+      const { type, title, genre, year } = row;
+      mediaItems.push(new MediaItem(type, title, genre, year, []));
     }
     return mediaItems;
   }
