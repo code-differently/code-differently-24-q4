@@ -11,7 +11,7 @@ export class ChigazoGrahamLoader implements Loader {
   async loadData(): Promise<MediaItem[]> {
     const credits = await this.loadCredits();
     const mediaItems = await this.loadMediaItems();
-  
+
     console.log(
       `Loaded ${credits.length} credits and ${mediaItems.length} media items`,
     );
@@ -23,11 +23,11 @@ export class ChigazoGrahamLoader implements Loader {
     // TODO: Implement this method.
     const mediaItems = [];
     const readable = fs
-      .createReadStream('data/credits.csv', 'utf-8')
+      .createReadStream('data/media_items.csv', 'utf-8')
       .pipe(csv());
     for await (const row of readable) {
       const { id, type, title, genre, year } = row;
-      mediaItems.push(new MediaItem( id, type, title, genre, year, ));
+      mediaItems.push(new MediaItem(id, type, title, genre, year));
     }
     return mediaItems;
   }
@@ -39,7 +39,7 @@ export class ChigazoGrahamLoader implements Loader {
       .pipe(csv());
     for await (const row of readable) {
       const { media_item_id, role, name } = row;
-      credits.push(new Credit( media_item_id, name, role));
+      credits.push(new Credit(media_item_id, name, role));
     }
     return credits;
   }
