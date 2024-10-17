@@ -22,17 +22,15 @@ export class AmiyahJonesLoader implements Loader {
   async loadMediaItems(): Promise<MediaItem[]> {
     // TODO: Implement this method.
     return [
-        class Test {
+        class movie1 {
           id = '1';
           type = 'movie';
           title = 'Inception';
           genre = 'Sci-Fi';
           year = 2010;
-
-          load() {
-            this.loadMediaItems();
-          }
         }   
+
+        let itemText = this.loadMediaItems(movie1);
     ];
   }
 
