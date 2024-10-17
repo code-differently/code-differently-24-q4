@@ -5,10 +5,6 @@ export class Credit {
   name: string;
   role: Role;
 
-  private mediaItemId: string;
-  private name: string;
-  private role: Role;
-
   constructor(mediaItemId: string, name: string, role: Role) {
     this.mediaItemId = mediaItemId;
     this.name = name;
