@@ -26,8 +26,8 @@ export class ChigazoGrahamLoader implements Loader {
         encoding: 'utf-8'
     });
     for await (const row of readable) {
-      const { type, title, genre, year } = row;
-      mediaItems.push(new MediaItem( type, title, genre, year, []));
+      const { id, type, title, genre, year } = row;
+      mediaItems.push(new MediaItem( id, type, title, genre, year, ));
     }
     return mediaItems;
   }
