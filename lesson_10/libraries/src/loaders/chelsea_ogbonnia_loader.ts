@@ -61,7 +61,8 @@ export class ChelseaOgbonniaLoader implements Loader {
       .pipe(csv());
     for await (const row of readable) {
       const { media_item_id: mediaItemId, role, name } = row;
-      credits.push({ mediaItemId, name, role });
+      const credit = new Credit(mediaItemId, name, role);
+      credits.push(credit);
     }
     return credits;
   }
