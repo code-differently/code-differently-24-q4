@@ -13,55 +13,59 @@ export class MediaCollection {
   }
 
   search(criteria?: SearchCriteria): ReadonlySet<MediaItem> {
-    const items = [...this.items.values()];
-    if (!criteria) {
-      return new Set(items);
+    if (criteria?.title) {
+      return this.searchByTitle(criteria.title);
     }
-    const title = criteria.title;
-    if (title) {
-      return new Set(items.filter((item) => item.getTitle().includes(title)));
+    if (criteria?.releaseYear) {
+      return this.searchByReleaseYear(criteria.releaseYear);
     }
-    if (criteria.releaseYear) {
-      return new Set(
-        items.filter((item) => item.getReleaseYear() === criteria.releaseYear),
-      );
+    if (criteria?.type) {
+      return this.searchByType(criteria.type);
     }
-    if (criteria.type) {
-      return new Set(items.filter((item) => item.getType() === criteria.type));
+    if (criteria?.creditName) {
+      return this.searchByCreditName(criteria.creditName);
     }
-    if (criteria.creditName) {
-      return new Set(
-        items.filter((item) =>
-          [...item.getCredits()].some(
-            (credit) => credit.name === criteria.creditName,
-          ),
+    return new Set(this.getItems());
+  }
+
+  searchByTitle(title: string): ReadonlySet<MediaItem> {
+    return new Set(
+      this.getItems().filter((item) =>
+        item
+          .getTitle()
+          .toLowerCase()
+          .includes(title?.toLowerCase() ?? ''),
+      ),
+    );
+  }
+
+  searchByReleaseYear(releaseYear: number): ReadonlySet<MediaItem> {
+    return new Set(
+      this.getItems().filter((item) => item.getReleaseYear() === releaseYear),
+    );
+  }
+
+  searchByType(type: string): ReadonlySet<MediaItem> {
+    return new Set(this.getItems().filter((item) => item.getType() === type));
+  }
+
+  searchByCreditName(name: string): ReadonlySet<MediaItem> {
+    return new Set(
+      this.getItems().filter((item) =>
+        item.getCredits().some((credit) =>
+          credit
+            .getName()
+            .toLowerCase()
+            .includes(name?.toLowerCase() ?? ''),
         ),
-      );
-    }
-    return new Set(items);
-  }
-
-  searchByTitle(title: string): MediaItem[] {
-    return [...this.items.values()].filter((item) =>
-      item.getTitle().includes(title),
+      ),
     );
   }
 
-  searchByReleaseYear(releaseYear: number): MediaItem[] {
-    return [...this.items.values()].filter(
-      (item) => item.getReleaseYear() === releaseYear,
-    );
+  private getItems(): readonly MediaItem[] {
+    return [...this.items.values()];
   }
 
-  searchByType(type: string): MediaItem[] {
-    return [...this.items.values()].filter((item) => item.getType() === type);
-  }
-
-  searchByCreditName(name: string): MediaItem[] {
-    return [...this.items.values()].filter((item) =>
-      [...item.getCredits()].some((credit) => credit.name === name),
-    );
-  }
   getInfo() {
     return {
       getItems: () => [...this.items] as readonly [string, MediaItem][],
