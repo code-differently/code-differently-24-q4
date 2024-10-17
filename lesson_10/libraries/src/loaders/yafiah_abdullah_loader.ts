@@ -36,18 +36,6 @@ export class YafiahAbdullahLoader implements Loader {
     return media;
   }
 
-  //   //EXTRA CREDIT
-  //      async loadMediaItems(): Promise<MediaItem[]> {
-  //       const mediaItem = fs.readFileSync('data/media_items.csv',{
-  //           encoding: 'utf-8'
-  //       })
-  //       .split('\n')
-  //       .map((row:string): string[] =>{
-  //           return row.split(',');
-  //       })
-  //       return [];
-  // }
-
   async loadCredits(): Promise<Credit[]> {
     const credits = [];
     const readable = fs
