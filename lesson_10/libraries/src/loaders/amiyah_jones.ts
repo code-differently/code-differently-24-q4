@@ -20,22 +20,16 @@ export class AmiyahJonesLoader implements Loader {
   }
 
   async loadMediaItems(): Promise<MediaItem[]> {
-    // TODO: Implement this method.
-    return [
-      
-         class Movie1 {
-
-          constructor(id: number , type: string, title: string, genre: string, year: number){
-          id = 1;
-          type = 'movie';
-          title = 'Inception';
-          genre = 'Sci-Fi';
-          year = 2010;
-          }
-        }  
-
-        let testMovie = this.loadMediaItems(Movie1);
-    ];
+    // TODO: Implement this method.  
+          const movieItem = [];
+          const readable = fs
+          .createReadStream('data/media_items.csv', 'utf-8')
+          .pipe(csv());
+        for await (const row of readable) {
+        const { id,type,title,year } = row;
+        movieItem.push(new MediaItem(id,type,title,year, []));
+      }
+     return movieItem;
   }
 
   async loadCredits(): Promise<Credit[]> {
