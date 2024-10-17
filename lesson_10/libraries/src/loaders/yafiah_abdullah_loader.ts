@@ -13,8 +13,6 @@ export class YafiahAbdullahLoader implements Loader {
       this.loadCredits(),
       this.loadMediaItems(),
     ]);
-    // const credits = await this.loadCredits();
-    // const mediaItems = await this.loadMediaItems();
 
     console.log(
       `Loaded ${credits.length} credits and ${mediaItems.length} media items`,
@@ -24,7 +22,6 @@ export class YafiahAbdullahLoader implements Loader {
   }
 
   async loadMediaItems(): Promise<MediaItem[]> {
-    // TODO: Implement this method.
     const media = [];
     const readable = fs
       .createReadStream('data/media_items.csv', 'utf-8')
