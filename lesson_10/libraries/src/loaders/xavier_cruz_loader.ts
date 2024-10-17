@@ -57,11 +57,7 @@ export class XavierCruzLoader implements Loader {
       // cast roleStr to Role type
       const role: Role = roleStr as Role;
 
-      return {
-        mediaItemId,
-        role,
-        name,
-      };
+      return new Credit(mediaItemId, name, role);
     });
 
     return credits;
