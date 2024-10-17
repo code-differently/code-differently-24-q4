@@ -6,7 +6,7 @@ import { Loader } from './loader.js';
 
 export class DasiaEnglishLoader implements Loader {
   getLoaderName(): string {
-    return 'anthonymays';
+    return 'dasiaenglish';
   }
 
   async loadData(): Promise<MediaItem[]> {
@@ -21,17 +21,18 @@ export class DasiaEnglishLoader implements Loader {
   }
 
   async loadMediaItems(): Promise<MediaItem[]> {
-    const matches = fs
-      .readFileSync('data/media_items.csv', {
-        encoding: 'utf-8',    
-      })
-      .split('\n')
-      .map((row: string): string[] => {
-        return row.split(',');
-      });
-    console.log(matches);
+    const media = [];
+    const readable = fs
+      .createReadStream('data/media_items.csv', 'utf-8')
+      .pipe(csv());
+    for await (const row of readable) {
+      const { id, type, title, year } = row;
+      media.push(new MediaItem(id, title, type, year, []));
+    }
+    return media;
+
     // I used this youtube video to help me understand the above code: https://www.youtube.com/watch?v=bbvECy0ICuo
-    return [];
+    // I also got help from Lj on getting my test to run correctly
   }
 
   async loadCredits(): Promise<Credit[]> {
@@ -41,7 +42,7 @@ export class DasiaEnglishLoader implements Loader {
       .pipe(csv());
     for await (const row of readable) {
       const { media_item_id: mediaItemId, role, name } = row;
-      credits.push({ mediaItemId, name, role });
+      credits.push(new Credit(mediaItemId, name, role));
     }
     return credits;
   }
