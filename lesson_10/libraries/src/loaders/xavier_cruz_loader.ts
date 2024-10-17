@@ -16,15 +16,15 @@ export class XavierCruzLoader implements Loader {
       `Loaded ${credits.length} credits and ${mediaItems.length} media items`,
     );
 
-    let counter = 0;
-    for (let i = 0; i < mediaItems.length; i++) {
-      if (i < mediaItems.length / 2) {
-        mediaItems[i].addCredit(credits[counter] as Credit);
-        counter++;
-        mediaItems[i].addCredit(credits[counter] as Credit);
+    credits.forEach((credit) => {
+      const mediaItem = mediaItems.find(
+        (media) => media.getId() === credit.getMediaItemId(),
+      );
+
+      if (mediaItem) {
+        mediaItem.addCredit(credit);
       }
-      counter++;
-    }
+    });
 
     return [...mediaItems.values()];
   }
