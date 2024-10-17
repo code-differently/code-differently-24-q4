@@ -62,6 +62,14 @@ describe('Lesson10Test', () => {
       }
       const items = await loader.loadData();
       expect(items.filter((i) => i.getCredits().length).length).toBe(100);
+
+      // Every item that has credits should have the right credits.
+      const itemsWithCredits = items.filter((i) => i.getCredits().length);
+      expect(
+        itemsWithCredits.every((i) =>
+          i.getCredits().every((c) => c.getMediaItemId() === i.getId()),
+        ),
+      ).toBe(true);
     }
   });
 });
