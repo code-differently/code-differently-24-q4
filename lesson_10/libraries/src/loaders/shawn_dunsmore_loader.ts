@@ -26,8 +26,8 @@ export class ShawnDunsmoreLoader implements Loader {
       .pipe(csv());
 
     for await (const row of readable) {
-      const { id, title, type, year } = row; // Adjust the fields based on your CSV structure
-      mediaItems.push(new MediaItem(id, title, type, year, [])); // Assuming MediaItem constructor matches this
+      const { id, title, type, year } = row;
+      mediaItems.push(new MediaItem(id, title, type, year, []));
     }
 
     return mediaItems;
