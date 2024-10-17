@@ -6,7 +6,11 @@ import { AmiyahJonesLoader } from './amiyah_jones.js';
 export const Loaders = Symbol.for('Loaders');
 
 // Add your quiz provider here.
-const LOADER_PROVIDERS = [AnthonyMaysLoader, XavierCruzLoader, AmiyahJonesLoader];
+const LOADER_PROVIDERS = [
+  AnthonyMaysLoader,
+  XavierCruzLoader,
+  AmiyahJonesLoader,
+];
 
 @Module({
   providers: [

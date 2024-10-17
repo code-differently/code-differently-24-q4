@@ -19,16 +19,16 @@ export class AmiyahJonesLoader implements Loader {
     return [...mediaItems.values()];
   }
 
-  async loadMediaItems(): Promise<MediaItem[]> { 
-          const allMedia = [];
-          const readable = fs
-          .createReadStream('data/media_items.csv', 'utf-8')
-          .pipe(csv());
-        for await (const row of readable) {
-        const { id,type,title,year } = row;
-        allMedia.push(new MediaItem(id,type,title,year, []));
-      }
-     return allMedia;
+  async loadMediaItems(): Promise<MediaItem[]> {
+    const allMedia = [];
+    const readable = fs
+      .createReadStream('data/media_items.csv', 'utf-8')
+      .pipe(csv());
+    for await (const row of readable) {
+      const { id, type, title, year } = row;
+      allMedia.push(new MediaItem(id, type, title, year, []));
+    }
+    return allMedia;
   }
 
   async loadCredits(): Promise<Credit[]> {
