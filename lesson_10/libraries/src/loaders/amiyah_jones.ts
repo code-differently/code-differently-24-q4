@@ -19,8 +19,7 @@ export class AmiyahJonesLoader implements Loader {
     return [...mediaItems.values()];
   }
 
-  async loadMediaItems(): Promise<MediaItem[]> {
-    // TODO: Implement this method.  
+  async loadMediaItems(): Promise<MediaItem[]> { 
           const allMedia = [];
           const readable = fs
           .createReadStream('data/media_items.csv', 'utf-8')
