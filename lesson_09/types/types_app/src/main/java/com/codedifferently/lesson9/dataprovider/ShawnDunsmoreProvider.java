@@ -1,10 +1,8 @@
 package main.java.com.codedifferently.lesson9.dataprovider;
 
-import java.util.Map;
-
-import org.springframework.stereotype.Service;
-
 import com.codedifferently.lesson9.dataprovider.DataProvider;
+import java.util.Map;
+import org.springframework.stereotype.Service;
 
 @Service
 public class ShawnDunsmoreProvider extends DataProvider {
