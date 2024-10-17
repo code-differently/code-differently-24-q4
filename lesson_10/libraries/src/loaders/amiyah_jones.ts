@@ -26,7 +26,7 @@ export class AmiyahJonesLoader implements Loader {
       .pipe(csv());
     for await (const row of readable) {
       const { id, type, title, year } = row;
-      allMedia.push(new MediaItem(id, type, title, year, []));
+      allMedia.push(new MediaItem(id, title, type, year, []));
     }
     return allMedia;
   }
