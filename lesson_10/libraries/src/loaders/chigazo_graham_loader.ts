@@ -21,18 +21,13 @@ export class ChigazoGrahamLoader implements Loader {
 
   async loadMediaItems(): Promise<MediaItem[]> {
     // TODO: Implement this method.
-    const mediaItems = [];
+    const mediaItems: MediaItem[] = [];
     const readable = fs.readFileSync('data/media_items.csv', {
         encoding: 'utf-8'
-    })
-    .split('\n')
-    .map((row: string): string[] => {
-        return row.split(',');
-    }
-);
+    });
     for await (const row of readable) {
-      const { id, type, title, genre, year } = row;
-      mediaItems.push(new MediaItem(id, type, title, genre, year));
+      const { type, title, genre, year } = row;
+      mediaItems.push(new MediaItem( type, title, genre, year, []));
     }
     return mediaItems;
   }
@@ -43,8 +38,8 @@ export class ChigazoGrahamLoader implements Loader {
       .createReadStream('data/credits.csv', 'utf-8')
       .pipe(csv());
     for await (const row of readable) {
-      const { id, media_item_id, role, name } = row;
-      credits.push(new Credit( id, media_item_id, name, role));
+      const { media_item_id, role, name } = row;
+      credits.push(new Credit( media_item_id, name, role));
     }
     return credits;
   }
