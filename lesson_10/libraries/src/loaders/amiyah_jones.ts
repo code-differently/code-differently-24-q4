@@ -21,7 +21,9 @@ export class AmiyahJonesLoader implements Loader {
 
   async loadMediaItems(): Promise<MediaItem[]> {
     // TODO: Implement this method.
-    return [];
+    return [
+
+    ];
   }
 
   async loadCredits(): Promise<Credit[]> {
@@ -30,8 +32,8 @@ export class AmiyahJonesLoader implements Loader {
       .createReadStream('data/credits.csv', 'utf-8')
       .pipe(csv());
     for await (const row of readable) {
-      const { media_item_id: mediaItemId, role, name } = row;
-      credits.push({ mediaItemId, name, role });
+      const { media_item_id, role, name } = row;
+      credits.push(new Credit(media_item_id, name, role));
     }
     return credits;
   }
