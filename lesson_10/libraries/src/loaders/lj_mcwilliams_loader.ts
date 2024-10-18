@@ -38,7 +38,7 @@ export class LjMcwilliamsLoader implements Loader {
   returns a Promise of an array of Credit Objects.
   */
   async loadCredits(): Promise<Credit[]> {
-    //the empty credits array will store parsed credit data
+    //The empty credits array will store parsed credit data
     const credits = [];
     /**
      * This var creates a readable stream from the CSV file and
