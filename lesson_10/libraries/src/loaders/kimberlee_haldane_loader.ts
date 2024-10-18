@@ -28,9 +28,9 @@ export class KimberleeHaldaneLoader implements Loader {
     fs.createReadStream('data/media_items.csv', 'utf-8').pipe(csv());
     for await (const row of readable) {
       const { id, type, title, year } = row;
+      // Xavier helped me with line 33. I couldn't figure out why
+      // MediaItems was asking for things not listed on the media items list.
       mediaItems.push(new MediaItem(id, title, type, year, []));
-      //Xavier helped me with line 31. I couldn't figure out why
-      //MediaItems was asking for things not listed on the media items list.
     }
 
     return mediaItems;
