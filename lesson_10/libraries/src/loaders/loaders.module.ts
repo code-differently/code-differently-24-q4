@@ -2,6 +2,7 @@ import { Module } from '@nestjs/common';
 import { AngelicaCastilloLoader } from './angelica_castillo_loader.js';
 import { AnthonyMaysLoader } from './anthony_mays_loader.js';
 import { JamesCapparellLoader } from './james_capparell_loader.js';
+import { JosephCaballeroLoader } from './joseph_caballero_loader.js';
 import { NileJacksonLoader } from './nile_jackson_loader.js';
 import { XavierCruzLoader } from './xavier_cruz_loader.js';
 
@@ -14,6 +15,7 @@ const LOADER_PROVIDERS = [
   JamesCapparellLoader,
   NileJacksonLoader,
   XavierCruzLoader,
+  JosephCaballeroLoader,
 ];
 
 @Module({
