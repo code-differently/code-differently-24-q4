@@ -1,10 +1,11 @@
 import { Module } from '@nestjs/common';
 import { AnthonyMaysLoader } from './anthony_mays_loader.js';
+import { PabloLimonParedesLoader } from './pablo_limon_paredes_loader.js'
 
 export const Loaders = Symbol.for('Loaders');
 
 // Add your quiz provider here.
-const LOADER_PROVIDERS = [AnthonyMaysLoader];
+const LOADER_PROVIDERS = [AnthonyMaysLoader, PabloLimonParedesLoader];
 
 @Module({
   providers: [
