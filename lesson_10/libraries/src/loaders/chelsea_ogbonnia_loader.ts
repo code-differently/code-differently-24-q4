@@ -12,6 +12,23 @@ export class ChelseaOgbonniaLoader implements Loader {
     const credits = await this.loadCredits();
     const mediaItems = await this.loadMediaItems();
 
+    const creditsMap: Record<string, Credit[]> = {};
+
+    credits.forEach((credit) => {
+      const mediaItemId = credit.getMediaItemId();
+      if (!creditsMap[mediaItemId]) {
+        creditsMap[mediaItemId] = [];
+      }
+      creditsMap[mediaItemId].push(credit);
+    });
+
+    mediaItems.forEach((mediaItem) => {
+      const mediaItemId = mediaItem.getId();
+      const associatedCredits = creditsMap[mediaItemId] || [];
+
+      associatedCredits.forEach((credit) => mediaItem.addCredit(credit));
+    });
+
     console.log(
       `Loaded ${credits.length} credits and ${mediaItems.length} media items`,
     );
