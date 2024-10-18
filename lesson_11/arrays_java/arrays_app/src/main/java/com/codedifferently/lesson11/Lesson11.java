@@ -3,7 +3,6 @@ package com.codedifferently.lesson11;
 import java.util.ArrayList;
 import java.util.List;
 
-
 public class Lesson11 {
 
   /**
@@ -11,7 +10,7 @@ public class Lesson11 {
    * https://leetcode.com/problems/concatenation-of-array
    */
   public int[] getConcatenation(int[] nums) {
-    int [] ans = new int[nums.length * 2];
+    int[] ans = new int[nums.length * 2];
     System.arraycopy(nums, 0, ans, 0, nums.length);
     System.arraycopy(nums, 0, ans, nums.length, nums.length);
     return ans;
@@ -23,8 +22,8 @@ public class Lesson11 {
    */
   public List<Integer> findWordsContaining(String[] words, char x) {
     ArrayList<Integer> out = new ArrayList<>();
-    for(int i = 0; i<words.length; i++){
-      if (words[i].indexOf(x) != -1){
+    for (int i = 0; i < words.length; i++) {
+      if (words[i].indexOf(x) != -1) {
         out.add(i);
       }
     }
