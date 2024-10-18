@@ -4,7 +4,6 @@ import { OyeyemiJimohLoader } from './oyeyemi_jimoh_loader.js';
 
 export const Loaders = Symbol.for('Loaders');
 
-// Add your quiz provider here.
 const LOADER_PROVIDERS = [OyeyemiJimohLoader, AnthonyMaysLoader];
 
 @Module({

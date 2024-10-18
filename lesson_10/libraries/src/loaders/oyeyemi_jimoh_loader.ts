@@ -20,9 +20,7 @@ export class OyeyemiJimohLoader implements Loader {
   }
 
   async loadMediaItems(): Promise<MediaItem[]> {
-    // TODO: Implement this method.
     const mediaItems = [];
-    //const credits[] = this.loadCredits();
     const readable = fs
       .createReadStream('data/media_items.csv', 'utf-8')
       .pipe(csv());
