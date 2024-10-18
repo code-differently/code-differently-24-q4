@@ -44,28 +44,12 @@ export class JosephCaballeroLoader implements Loader {
       year: number;
     }
     const obj: arrayObj[] = load.map((row: string[]): arrayObj => {
-      if (MediaType.Documentary == row[1]) {
-        return {
-          id: row[0],
-          title: row[2],
-          type: (row[1] = MediaType.Documentary),
-          year: Number(row[4]),
-        };
-      } else if (MediaType.TVShow == row[1]) {
-        return {
-          id: row[0],
-          title: row[2],
-          type: (row[1] = MediaType.TVShow),
-          year: Number(row[4]),
-        };
-      } else {
-        return {
-          id: row[0],
-          title: row[2],
-          type: (row[1] = MediaType.Movie),
-          year: Number(row[4]),
-        };
-      }
+      return {
+        id: row[0],
+        title: row[2],
+        type: row[1] as MediaType,
+        year: Number(row[4]),
+      };
     });
     for await (const row of obj) {
       const { id, type, title, year } = row;
@@ -88,104 +72,10 @@ export class JosephCaballeroLoader implements Loader {
     interface arrayObj {
       media_Item_Id: string;
       type: string;
-      role:
-        | Role.Actor
-        | Role.Cinematographer
-        | Role.Composer
-        | Role.CostumeDesigner
-        | Role.Director
-        | Role.Editor
-        | Role.MakeupArtist
-        | Role.Producer
-        | Role.ProductionDesigner
-        | Role.SoundDesigner
-        | Role.StuntCoordinator
-        | Role.Writer;
+      role: Role;
     }
     const obj: arrayObj[] = load.map((row: string[]): arrayObj => {
-      if (row[2] == Role.Actor) {
-        return {
-          media_Item_Id: row[0],
-          type: row[1],
-          role: (row[2] = Role.Actor),
-        };
-      }
-      if (row[2] == Role.Cinematographer) {
-        return {
-          media_Item_Id: row[0],
-          type: row[1],
-          role: (row[2] = Role.Cinematographer),
-        };
-      }
-      if (row[2] == Role.Composer) {
-        return {
-          media_Item_Id: row[0],
-          type: row[1],
-          role: (row[2] = Role.Composer),
-        };
-      }
-      if (row[2] == Role.CostumeDesigner) {
-        return {
-          media_Item_Id: row[0],
-          type: row[1],
-          role: (row[2] = Role.CostumeDesigner),
-        };
-      }
-      if (row[2] == Role.Director) {
-        return {
-          media_Item_Id: row[0],
-          type: row[1],
-          role: (row[2] = Role.Director),
-        };
-      }
-      if (row[2] == Role.Editor) {
-        return {
-          media_Item_Id: row[0],
-          type: row[1],
-          role: (row[2] = Role.Editor),
-        };
-      }
-      if (row[2] == Role.MakeupArtist) {
-        return {
-          media_Item_Id: row[0],
-          type: row[1],
-          role: (row[2] = Role.MakeupArtist),
-        };
-      }
-      if (row[2] == Role.Producer) {
-        return {
-          media_Item_Id: row[0],
-          type: row[1],
-          role: (row[2] = Role.Producer),
-        };
-      }
-      if (row[2] == Role.ProductionDesigner) {
-        return {
-          media_Item_Id: row[0],
-          type: row[1],
-          role: (row[2] = Role.ProductionDesigner),
-        };
-      }
-      if (row[2] == Role.SoundDesigner) {
-        return {
-          media_Item_Id: row[0],
-          type: row[1],
-          role: (row[2] = Role.SoundDesigner),
-        };
-      }
-      if (row[2] == Role.StuntCoordinator) {
-        return {
-          media_Item_Id: row[0],
-          type: row[1],
-          role: (row[2] = Role.StuntCoordinator),
-        };
-      } else {
-        return {
-          media_Item_Id: row[0],
-          type: row[1],
-          role: (row[2] = Role.Writer),
-        };
-      }
+      return { media_Item_Id: row[0], type: row[1], role: row[2] as Role };
     });
     for await (const row of obj) {
       const { media_Item_Id, type, role } = row;
