@@ -11,13 +11,11 @@ export const Loaders = Symbol.for('Loaders');
 // Add your quiz provider here.
 const LOADER_PROVIDERS = [
   AnthonyMaysLoader,
-
   AngelicaCastilloLoader,
   JamesCapparellLoader,
   NileJacksonLoader,
   XavierCruzLoader,
   DwightBlueLoader,
-  ,
 ];
 
 @Module({
