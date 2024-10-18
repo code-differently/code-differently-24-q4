@@ -3,7 +3,7 @@
  * https://leetcode.com/problems/concatenation-of-array
  */
 export function getConcatenation(nums: number[]): number[] {
-  return [];
+  return [...nums, ...nums]
 }
 
 /**
@@ -11,5 +11,13 @@ export function getConcatenation(nums: number[]): number[] {
  * https://leetcode.com/problems/find-words-containing-character/
  */
 export function findWordsContaining(words: string[], x: string): number[] {
-  return [];
+  let ans = [];
+
+  for(let i = 0; i<words.length; i++){
+    if (words[i].includes(x)){
+      ans.push(i);
+    }
+  }
+
+  return ans;
 }
