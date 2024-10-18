@@ -26,7 +26,7 @@ export class LjMcwilliamsLoader implements Loader {
       .createReadStream('data/media_items.csv', 'utf-8')
       .pipe(csv());
     for await (const row of readable) {
-      /**this destructures the CSV file rows */
+      /**This destructures the CSV file rows. */
       const { id, type, title, year } = row;
       media.push(new MediaItem(id, title, type, year, []));
     }
@@ -34,20 +34,20 @@ export class LjMcwilliamsLoader implements Loader {
   }
 
   /*
-  an asyncchronous function named loadCredits
-  returns a Promise of an array of Credit Objects
+  An asyncchronous function named loadCredits
+  returns a Promise of an array of Credit Objects.
   */
   async loadCredits(): Promise<Credit[]> {
     //the empty credits array will store parsed credit data
     const credits = [];
     /**
-     * this var creates a readable stream from the CSV file and
-     * is piped through the csv function to parse the data
+     * This var creates a readable stream from the CSV file and
+     * is piped through the csv function to parse the data.
      */
     const readable = fs
       .createReadStream('data/credits.csv', 'utf-8')
       .pipe(csv());
-    //this asynchronously iterates over each row of the parsed CSV data
+    //This asynchronously iterates over each row of the parsed CSV data.
     for await (const row of readable) {
       const { media_item_id, role, name } = row;
       credits.push(new Credit(media_item_id, name, role));
