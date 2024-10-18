@@ -15,7 +15,15 @@ export class JamesCapparellLoader implements Loader {
     console.log(
       `Loaded ${credits.length} credits and ${mediaItems.length} media items`,
     );
+    credits.forEach((credit) => {
+      const mediaItem = mediaItems.find(
+        (media) => media.getId() === credit.getMediaItemId(),
+      );
 
+      if (mediaItem) {
+        mediaItem.addCredit(credit);
+      }
+    });
     return [...mediaItems.values()];
   }
 
