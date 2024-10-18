@@ -11,6 +11,8 @@ on:
       - "lesson_07/conditionals/**"
       - "lesson_09/types/**"
       - "lesson_10/libraries/**"
+      - "lesson_11/arrays_java/**"
+      - "lesson_11/arrays_ts/**"
 
 jobs:
   build:
