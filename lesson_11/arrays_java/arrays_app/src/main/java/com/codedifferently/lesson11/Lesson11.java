@@ -4,11 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Lesson11 {
- 
-  /**
-   * Implementation of the solution to LeetCode 1929 below:
-   * https://leetcode.com/problems/concatenation-of-array
-   */
+
   public static int[] getConcatenation(int[] nums) {
     int lenOriginalArray = nums.length;
     int[] concatenatedArrays = new int[lenOriginalArray * 2];
@@ -23,10 +19,6 @@ public class Lesson11 {
     return concatenatedArrays;
   }
 
-  /**
-   * Implementation of the solution to LeetCode 2942 below:
-   * https://leetcode.com/problems/find-words-containing-character/
-   */
   public List<Integer> findWordsContaining(String[] words, char x) {
     var indexList = new ArrayList<Integer>();
     int index = -1;
