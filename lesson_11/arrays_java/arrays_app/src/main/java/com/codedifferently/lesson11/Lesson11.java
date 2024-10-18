@@ -5,7 +5,7 @@ import java.util.List;
 
 public class Lesson11 {
 
-  public static int[] getConcatenation(int[] nums) {
+  public int[] getConcatenation(int[] nums) {
     int lenOriginalArray = nums.length;
     int[] concatenatedArrays = new int[lenOriginalArray * 2];
      
