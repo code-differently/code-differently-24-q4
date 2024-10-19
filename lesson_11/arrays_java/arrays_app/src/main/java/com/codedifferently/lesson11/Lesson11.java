@@ -6,6 +6,9 @@ import java.util.List;
 public class Lesson11 {
 
   public int[] getConcatenation(int[] nums) {
+    if(nums.length == 0){
+      return new int[]{};
+    }
     int lenOriginalArray = nums.length;
     int[] concatenatedArrays = new int[lenOriginalArray * 2];
      
@@ -21,6 +24,10 @@ public class Lesson11 {
 
   public List<Integer> findWordsContaining(String[] words, char x) {
     var indexList = new ArrayList<Integer>();
+    if(words.length == 0){
+      return indexList;
+    }  
+   
     int index = -1;
     for(String word : words){
       index = index + 1;
