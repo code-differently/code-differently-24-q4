@@ -93,3 +93,13 @@ jobs:
       run: |
         npm ci
         npm run compile
+
+    - name: Build Lesson 12 with Java
+      working-directory: ./lesson_12/structs_java
+      run: ./gradlew assemble
+
+    - name: Build Lesson 12 with Node.js
+      working-directory: ./lesson_12/structs_ts
+      run: |
+        npm ci
+        npm run compile

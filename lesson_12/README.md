@@ -9,4 +9,7 @@ Please review the following resources before lecture:
 
 ## Homework
 
-TODO(anthonydmays): Finish this
+- [ ] Implement the `gameResult` method in [Lesson12.java](./structs_java/structs_app/src/main/java/com/codedifferently/lesson12/Lesson12.java).
+- [ ] Implement the `Stack` methods in [Stack.java](./structs_java/structs_app/src/main/java/com/codedifferently/lesson12/Stack.java).
+- [ ] Submit solutions via PR.
+- [ ] Do pre-work for [lesson 13](/lesson_13/).
