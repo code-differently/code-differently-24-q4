@@ -9,9 +9,13 @@ public class Lesson12 {
   public String gameResult(ListNode head) {
     return null;
     //make a linked list 
-
+    Queue<Integer> queue = new LinkedList<Integer>();
+    
     //create two variables to count points for "Odd" and "Even"
-
+    var Odd = new Stack<Integer>();
+    var Even = new Stack<Integer>();
+    // Loop through the linked list to get pairs (so two nodes at a time)
+    
     // Check each pair of nodes (odd and even):
       // compare their values
 
@@ -21,7 +25,7 @@ public class Lesson12 {
 
     // Decide the winner 
       // compare the points after going through both pairs
-      
+
       // Return the name of the winning team or "Tie" if points are equal
     
   }
