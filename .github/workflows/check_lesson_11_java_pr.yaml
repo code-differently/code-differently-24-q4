@@ -1,11 +1,10 @@
-name: Check Lesson 10 Pull Request
+name: Check Lesson 11 Pull Request
 
 on:
   pull_request:
     branches: [ "main" ]
     paths:
       - "lesson_11/arrays_java/**"
-      - "lesson_11/arrays_ts/**"
 
 jobs:
   build:
@@ -23,17 +22,6 @@ jobs:
         java-version: '17'
         distribution: 'temurin'
 
-    - name: Use Node.js
-      uses: actions/setup-node@v4
-      with:
-        node-version: '20.x'
-
     - name: Build Lesson 11 with Java
       working-directory: ./lesson_11/arrays_java
       run: ./gradlew check
-
-    - name: Build Lesson 11 with Node.js
-      working-directory: ./lesson_11/arrays_ts
-      run: |
-        npm ci
-        npm run check
