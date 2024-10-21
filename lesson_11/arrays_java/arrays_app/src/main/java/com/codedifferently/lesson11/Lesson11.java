@@ -24,13 +24,14 @@ public class Lesson11 {
    * https://leetcode.com/problems/find-words-containing-character/
    */
   public List<Integer> findWordsContaining(String[] words, char x) {
-    List<Integer> arrayOfIndices = new ArrayList<>(); // Use a List to dynamically store indices
 
-      for (int i = 0; i < words.length; i++) {
-        if (words[i].indexOf(x) != -1) { // Check if the character is present in the word
-          arrayOfIndices.add(i); // Add the index to the list
-        }
+  List<Integer> arrayOfIndices = new ArrayList<>(); // Use a List to dynamically store indices
+
+    for (int i = 0; i < words.length; i++) {
+      if (words[i].contains(x)){ // Check if the character is present in the word
+        arrayOfIndices.add(i); // Add the index to the list
       }
-    return arrayOfIndices;
+    }
+    return arrayOfIndices; // Return list
   }
-}
+   
