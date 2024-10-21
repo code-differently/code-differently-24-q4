@@ -1,6 +1,6 @@
 export function getConcatenation(nums: number[]): number[] {
-  let n: number = nums.length;
-    let ans: number[] = new Array(2*n);
+  const n: number = nums.length;
+  const ans: number[] = new Array(2*n);
     
      for(let i = 0; i < n; i++){
         ans[i] = nums[i];
@@ -11,7 +11,7 @@ export function getConcatenation(nums: number[]): number[] {
 }
 
 export function findWordsContaining(words: string[], x: string): number[] {
-  let indices: number[] = [];
+  const indices: number[] = [];
 
     for (let i = 0; i < words.length; i++){
         if(words[i].indexOf(x) >= 0){
