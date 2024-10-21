@@ -28,7 +28,8 @@ public class Lesson11 {
   List<Integer> arrayOfIndices = new ArrayList<>(); // Use a List to dynamically store indices
 
     for (int i = 0; i < words.length; i++) {
-      if (words[i].contains(x)){ // Check if the character is present in the word
+      String letter = String.valueOf(x);
+      if (words[i].contains(letter)){ // Check if the character is present in the word
         arrayOfIndices.add(i); // Add the index to the list
       }
     }
