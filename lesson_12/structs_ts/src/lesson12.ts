@@ -9,29 +9,29 @@ export class Lesson12 {
     let e_pts = 0;
     let o_pts = 0;
 
-    if (head === null){
-      return "";
+    if (head === null) {
+      return '';
     }
 
     let curr: ListNode | undefined = head;
 
     while (curr != null) {
-      let next: ListNode | undefined = curr.next;
-      if (next === undefined){
-        return "";
+      const next: ListNode | undefined = curr.next;
+      if (next === undefined) {
+        return '';
       }
-      if (curr.val > next!.val){
+      if (curr.val > next?.val) {
         e_pts++;
-      } else if (curr.val < next!.val){
+      } else if (curr.val < next?.val) {
         o_pts++;
       }
       curr = next.next;
     }
 
     if (e_pts === o_pts) {
-      return "Tie";
+      return 'Tie';
     }
 
-    return e_pts > o_pts ? "Even" : "Odd";
+    return e_pts > o_pts ? 'Even' : 'Odd';
   }
 }
