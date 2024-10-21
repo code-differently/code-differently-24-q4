@@ -21,5 +21,13 @@ function getConcatenation(nums: number[]): number[] {
 */
 
 function findWordsContaining(words: string[], x: string): number[] {
-    
+    let indices: number[] = [];
+
+    for (let i = 0; i < words.length; i++){
+        if(words[i].indexOf(x) >= 0){
+                indices.push(i);
+    }
+}
+
+return indices; 
 };
