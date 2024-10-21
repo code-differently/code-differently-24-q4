@@ -1,6 +1,6 @@
 
 export function getConcatenation(nums: number[]): number[] {
-   const answer = [2*nums.length];
+   const answer = new Array(2*nums.length);
 
    for (let i=0;i<nums.length;i++){
     answer[i]=nums[i];
