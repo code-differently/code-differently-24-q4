@@ -14,3 +14,12 @@ function getConcatenation(nums: number[]): number[] {
 
     return ans;
 };
+
+/**
+* Provide the solution to LeetCode 2942 here:
+* https://leetcode.com/problems/find-words-containing-character/
+*/
+
+function findWordsContaining(words: string[], x: string): number[] {
+    
+};
