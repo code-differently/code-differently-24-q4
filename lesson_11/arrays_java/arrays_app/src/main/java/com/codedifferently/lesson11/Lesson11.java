@@ -26,15 +26,13 @@ public class Lesson11 {
    * Provide the solution to LeetCode 2942 here:
    * https://leetcode.com/problems/find-words-containing-character/
    */
-  public class Solution {
-    public List<Integer> findWordsContaining(String[] words, char x) {
-      List<Integer> indices = new ArrayList<>();
-      for (int i = 0; i < words.length; i++) {
-        if (words[i].contains(String.valueOf(x))) {
-          indices.add(i);
-        }
+  public List<Integer> findWordsContaining(String[] words, char x) {
+    List<Integer> indices = new ArrayList<>();
+    for (int i = 0; i < words.length; i++) {
+      if (words[i].contains(String.valueOf(x))) {
+        indices.add(i);
       }
-      return indices;
     }
+    return indices;
   }
 }
