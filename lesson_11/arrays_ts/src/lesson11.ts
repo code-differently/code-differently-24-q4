@@ -10,7 +10,7 @@ export function getConcatenation(nums: number[]): number[] {
 }
 
 export function findWordsContaining(words: string[], x: string): number[] {
-  let answer = [];
+  const answer = [];
   for(let i=0;i<words.length;i++){
     if (words[i].indexOf(x)!=-1){
       answer.push(i);
