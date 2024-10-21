@@ -22,10 +22,11 @@ public class Lesson11 {
    */
   public List<Integer> findWordsContaining(String[] words, char x) {
     List<Integer> output = new ArrayList();
-       for (int i = 0; i < words.length; i++) {
-        if (words[i].contains(String.valueOf(x))) {
-            output.add(i);
-        }
-       } return output; 
+    for (int i = 0; i < words.length; i++) {
+      if (words[i].contains(String.valueOf(x))) {
+        output.add(i);
+      }
     }
+    return output;
   }
+}
