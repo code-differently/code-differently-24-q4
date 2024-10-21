@@ -2,6 +2,8 @@ package com.codedifferently.lesson11;
 
 import java.util.List;
 
+import java.util.ArrayList;
+
 public class Lesson11 {
 
   /**
@@ -22,19 +24,13 @@ public class Lesson11 {
    * https://leetcode.com/problems/find-words-containing-character/
    */
   public List<Integer> findWordsContaining(String[] words, char x) {
-    int[] indices = new int[words.length];
-    int count = 0;
+    List<Integer> arrayOfIndices = new ArrayList<>(); // Use a List to dynamically store indices
 
-    for (int i = 0; i < words.length ; i++) {
-      if(words[i].contains(Character.toString(x))) {
-        indices[count] = i;
-        count = count + 1;
+      for (int i = 0; i < words.length; i++) {
+        if (words[i].indexOf(x) != -1) { // Check if the character is present in the word
+          arrayOfIndices.add(i); // Add the index to the list
+        }
       }
-    }
-    int[] arrayOfIndices = new int[count];
-    for (int i = 0; i < count; i++) {
-      arrayOfIndices.length;
-    }
-    return arrayOfIndices.length;
+    return arrayOfIndices;
   }
 }
