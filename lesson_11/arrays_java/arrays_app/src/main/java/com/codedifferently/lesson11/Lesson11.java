@@ -11,10 +11,10 @@ public class Lesson11 {
    */
   public int[] getConcatenation(int[] nums) {
     int n = nums.length;
-    int ans[] = new int[2*n];
-    for (int i = 0; i<n; i++){
+    int ans[] = new int[2 * n];
+    for (int i = 0; i < n; i++) {
       ans[i] = nums[i];
-      ans[n+i] = nums[i];
+      ans[n + i] = nums[i];
     }
     return ans;
   }
@@ -27,13 +27,13 @@ public class Lesson11 {
     List<Integer> list = new ArrayList<>();
     for (int i = 0; i < words.length; i++) {
       String str = words[i];
-     for (int j = 0; j < str.length(); j++) {
-       if (str.charAt(j) == x) {
-         list.add(i);
-         break;
+      for (int j = 0; j < str.length(); j++) {
+        if (str.charAt(j) == x) {
+          list.add(i);
+          break;
         }
       }
     }
-   return list;
+    return list;
   }
 }
