@@ -9,7 +9,12 @@ public class Lesson11 {
    * https://leetcode.com/problems/concatenation-of-array
    */
   public int[] getConcatenation(int[] nums) {
-    return null;
+    int[] ans = new int[nums.length + nums.length];
+    for(int i = 0; i < nums.length; i++) {
+      ans[i] = nums[i];
+      ans[i + nums.length] = nums[i];
+    }
+    return ans;
   }
 
   /**
@@ -17,6 +22,19 @@ public class Lesson11 {
    * https://leetcode.com/problems/find-words-containing-character/
    */
   public List<Integer> findWordsContaining(String[] words, char x) {
-    return null;
+    int[] indices = new int[words.length];
+    int count = 0;
+
+    for (int i = 0; i < words.length ; i++) {
+      if(words[i].contains(Character.toString(x))) {
+        indices[count] = i;
+        count = count + 1;
+      }
+    }
+    int[] arrayOfIndices = new int[count];
+    for (int i = 0; i < count; i++) {
+      arrayOfIndices.length;
+    }
+    return arrayOfIndices.length;
   }
 }
