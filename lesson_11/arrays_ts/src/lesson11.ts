@@ -1,7 +1,3 @@
-/**
- * Provide the solution to LeetCode 1929 here:
- * https://leetcode.com/problems/concatenation-of-array
- */
 export function getConcatenation(nums: number[]): number[] {
   let n: number = nums.length;
     let ans: number[] = new Array(2*n);
@@ -14,10 +10,6 @@ export function getConcatenation(nums: number[]): number[] {
     return ans;
 }
 
-/**
- * Provide the solution to LeetCode 2942 here:
- * https://leetcode.com/problems/find-words-containing-character/
- */
 export function findWordsContaining(words: string[], x: string): number[] {
   let indices: number[] = [];
 
