@@ -6,6 +6,32 @@ export class Lesson12 {
    * https://github.com/yang-su2000/Leetcode-algorithm-practice/tree/master/3062-winner-of-the-linked-list-game
    */
   public gameResult(head: ListNode | null): string {
-    return '';
+    let e_pts = 0;
+    let o_pts = 0;
+
+    if (head === null){
+      return "";
+    }
+
+    let curr: ListNode | undefined = head;
+
+    while (curr != null) {
+      let next: ListNode | undefined = curr.next;
+      if (next === undefined){
+        return "";
+      }
+      if (curr.val > next!.val){
+        e_pts++;
+      } else if (curr.val < next!.val){
+        o_pts++;
+      }
+      curr = next.next;
+    }
+
+    if (e_pts === o_pts) {
+      return "Tie";
+    }
+
+    return e_pts > o_pts ? "Even" : "Odd";
   }
 }
