@@ -15,7 +15,7 @@ public class Lesson12 {
     var Odd = new Stack<Integer>();
     var Even = new Stack<Integer>();
     // Loop through the linked list to get pairs (so two nodes at a time)
-    
+
     // Check each pair of nodes (odd and even):
       // compare their values
 
@@ -30,3 +30,9 @@ public class Lesson12 {
     
   }
 }
+
+// Constraints:
+// The number of nodes in the list is in the range [2, 100]. 
+// The number of nodes in the list is even. 1 <= Node.val <= 100 
+// The value of each odd-indexed node is odd. 
+// The value of each even-indexed node is even.
