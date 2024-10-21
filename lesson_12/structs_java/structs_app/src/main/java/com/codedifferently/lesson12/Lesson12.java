@@ -12,8 +12,8 @@ public class Lesson12 {
     Queue<Integer> queue = new LinkedList<Integer>();
     
     //create two variables to count points for "Odd" and "Even"
-    var Odd = new Stack<Integer>();
-    var Even = new Stack<Integer>();
+    int Odd = 0;
+    int Even = 0;
     // Loop through the linked list to get pairs (so two nodes at a time)
 
     // Check each pair of nodes (odd and even):
