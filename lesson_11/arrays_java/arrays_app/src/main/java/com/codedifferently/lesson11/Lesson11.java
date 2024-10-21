@@ -1,5 +1,6 @@
 package com.codedifferently.lesson11;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Lesson11 {
@@ -24,16 +25,17 @@ public class Lesson11 {
    * https://leetcode.com/problems/find-words-containing-character/
    */
   public List<Integer> findWordsContaining(String[] words, char x) {
-    int originalArray = words.length;
+    var words = new ArrayList<Integer>();
+    int wordArray = (words.length)
     // int newValue = (originalArray + 1);
 
-    int[] newArray = new int[originalArray.length + 1];
+    // int[] newArray = new int[words.length + 1];
     
-    for (int i=0; i<originalArray; i++) {
-      if (boolean CC=originalArray[i].contains(Character.toString(x)));
-      System.arraycopy(originalArray,i,newArray,i,originalArray.length);
+   for (int i=0; i<originalArray; i++) {
+     if (words[i].contains(Character.toString(x)));
+     // System.arraycopy(words,i,newArray,i,words.length);
+      ArrayList.add(i);
 
-    }
-    return newArray;
-  
+    } return ArrayList;
+  }
 }
