@@ -19,7 +19,7 @@ public class Stack {
 
   public int pop() {
     if (isEmpty()) {
-        return 0; 
+        throw new EmptyStackException(); 
     } else {
         int value = top.val; 
         top = top.next; 
