@@ -1,5 +1,7 @@
 package com.codedifferently.lesson12;
 
+import java.util.EmptyStackException;
+
 /** Implement the below Stack by providing code for the class methods. */
 public class Stack {
   private ListNode top;
@@ -16,17 +18,20 @@ public class Stack {
   }
 
   public int pop() {
-    if (isEmpty()){
-      System.out.println("EMPTY"); 
+    if (isEmpty()) {
+        return 0; 
+    } else {
+        int value = top.val; 
+        top = top.next; 
+        return value;
     }
-    return 1;
   }
 
   public int peek() {
-    if(isEmpty()){
-      //do stuff
-    } 
-    return 1;
+    if (isEmpty()) {
+      throw new EmptyStackException();
+    }
+    return top.val;
   }
 
   public boolean isEmpty() {
