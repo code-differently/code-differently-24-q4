@@ -10,20 +10,19 @@ public class Lesson12 {
     int even = 0;
     int odd = 0;
 
-    while(head != null && head.next != null){
+    while (head != null && head.next != null) {
       if (head.val > head.next.val) {
-        even++; 
-      } else if(head.val < head.next.val) {
-        odd++;  
+        even++;
+      } else if (head.val < head.next.val) {
+        odd++;
       }
       head = head.next.next;
     }
-      
-    if(even > odd){
-       return "Even";
-    }
-    else if(even < odd ){
-       return "Odd";
+
+    if (even > odd) {
+      return "Even";
+    } else if (even < odd) {
+      return "Odd";
     }
     return "Tie";
   }

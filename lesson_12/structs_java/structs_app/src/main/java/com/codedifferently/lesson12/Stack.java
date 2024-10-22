@@ -9,13 +9,13 @@ public class Stack {
   }
 
   public void push(int value) {
-    top = new ListNode(value, top); 
+    top = new ListNode(value, top);
   }
 
   public int pop() {
-   int value = top.val;
-   top = top.next;
-   return value;
+    int value = top.val;
+    top = top.next;
+    return value;
   }
 
   public int peek() {
