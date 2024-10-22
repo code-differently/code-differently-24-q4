@@ -20,11 +20,11 @@ export class Lesson12 {
     }
 
     if (oddPoints > evenPoints) {
-      return "Odd";
+      return 'Odd';
     } else if (evenPoints > oddPoints) {
-      return "Even";
+      return 'Even';
     } else {
-      return "Tie";
+      return 'Tie';
     }
   }
 }

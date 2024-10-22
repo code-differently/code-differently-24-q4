@@ -1,35 +1,35 @@
 import { ListNode } from './list_node.js';
 
 export class Stack {
-  private top: ListNode | null;
+  private top: ListNode | undefined;
 
   constructor() {
-    this.top = null;
+    this.top = undefined;
   }
 
   push(value: number): void {
     const newNode = new ListNode(value);
-    newNode.next = this.top !== null ? this.top : undefined;
+    newNode.next = this.top;
     this.top = newNode;
   }
 
   pop(): number | undefined {
-    if (this.isEmpty()) {
-      throw new Error('Stack is empty');
+    if (this.top === undefined) {
+      return undefined;
     }
-    const value = this.top!.val;
-    this.top = this.top!.next || null;
-    return value;
+    const poppedNode = this.top;
+    this.top = this.top.next;
+    return poppedNode.val;
   }
 
   peek(): number | null {
-    if (this.isEmpty()) {
+    if (this.top === undefined) {
       throw new Error('Stack is empty');
     }
-    return this.top!.val;
+    return this.top.val;
   }
 
   isEmpty(): boolean {
-    return this.top === null;
+    return this.top === undefined;
   }
 }
