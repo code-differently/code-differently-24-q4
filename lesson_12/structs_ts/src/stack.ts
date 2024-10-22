@@ -41,6 +41,6 @@ export class Stack {
   }
 
   isEmpty(): boolean {
-    return top === undefined;
+    return this.top === undefined;
   }
 }
