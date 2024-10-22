@@ -16,14 +16,14 @@ public class Stack {
   }
 
   public int pop() {
-    if (top == null){
-      //do stuff 
+    if (isEmpty()){
+      System.out.println("EMPTY"); 
     }
     return 1;
   }
 
   public int peek() {
-    if(top == null){
+    if(isEmpty()){
       //do stuff
     } 
     return 1;
