@@ -11,31 +11,27 @@ public class Lesson11 {
    */
   public int[] getConcatenation(int[] nums) {
     int n = nums.length;
-    int[] ans = new int[n*2];
+    int[] ans = new int[n * 2];
 
-    for (int i=0; i<n; i++) {
-      ans[i]=nums[i];
-      ans[i+n]=nums[i];
-      } return ans;
-    } 
-  
+    for (int i = 0; i < n; i++) {
+      ans[i] = nums[i];
+      ans[i + n] = nums[i];
+    }
+    return ans;
+  }
 
   /**
    * Provide the solution to LeetCode 2942 here:
    * https://leetcode.com/problems/find-words-containing-character/
    */
   public List<Integer> findWordsContaining(String[] words, char x) {
-    var words = new ArrayList<Integer>();
-    int wordArray = (words.length)
-    // int newValue = (originalArray + 1);
-
-    // int[] newArray = new int[words.length + 1];
-    
-   for (int i=0; i<originalArray; i++) {
-     if (words[i].contains(Character.toString(x)));
-     // System.arraycopy(words,i,newArray,i,words.length);
-      ArrayList.add(i);
-
-    } return ArrayList;
+    var result = new ArrayList<Integer>();
+    int wordArray = (words.length);
+   
+    for (int i = 0; i < wordArray; i++) {
+      if (words[i].contains(Character.toString(x)));
+      result.add(i);
+    }
+    return result;
   }
 }
