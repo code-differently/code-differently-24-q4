@@ -20,11 +20,13 @@ export class Lesson12 {
       if (next === undefined) {
         return '';
       }
+
       if (curr.val > next?.val) {
         e_pts++;
       } else if (curr.val < next?.val) {
         o_pts++;
       }
+
       curr = next.next;
     }
 
