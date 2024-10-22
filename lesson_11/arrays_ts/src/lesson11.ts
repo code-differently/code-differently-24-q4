@@ -11,7 +11,7 @@ export function getConcatenation(nums: number[]): number[] {
  * https://leetcode.com/problems/find-words-containing-character/
  */
 export function findWordsContaining(words: string[], x: string): number[] {
-  let ans = [];
+  const ans = [];
   for(let i = 0; i<words.length; i++){
     if (words[i].includes(x)){
       ans.push(i);
