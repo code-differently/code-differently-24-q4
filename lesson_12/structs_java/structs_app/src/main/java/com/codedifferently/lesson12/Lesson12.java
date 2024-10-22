@@ -10,7 +10,7 @@ public class Lesson12 {
     ListNode current = head;
     int evenPoints = 0;
     int oddPoints = 0;
-    while (current != null && current.next != null) {
+    while (current != null) {
       if (current.val > current.next.val) {
         evenPoints++;
       } else if (current.val < current.next.val) {
