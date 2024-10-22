@@ -25,8 +25,7 @@ public class Stack {
   public int peek() {
     if(top == null){
       //do stuff
-    }
-    
+    } 
     return 1;
   }
 
