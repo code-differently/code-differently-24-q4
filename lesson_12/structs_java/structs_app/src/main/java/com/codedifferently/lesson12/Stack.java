@@ -10,6 +10,9 @@ public class Stack {
 
   public void push(int value) {
     // Your code here
+    ListNode newNode = new ListNode(value);
+    newNode.next = top;
+    top = newNode;
   }
 
   public int pop() {
@@ -21,6 +24,6 @@ public class Stack {
   }
 
   public boolean isEmpty() {
-    return true;
+    return top == null;
   }
 }
