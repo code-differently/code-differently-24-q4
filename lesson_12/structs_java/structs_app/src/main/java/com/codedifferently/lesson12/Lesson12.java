@@ -9,21 +9,21 @@ public class Lesson12 {
 
     ListNode current = head;
 
-      while (current != null && current.next != null) { 
-        if (current.val > current.next.val){
-          evenPoints++;
-        } else if (current.val < current.next.val){
-          oddPoints++;
-        }
-        current = current.next.next;
+    while (current != null && current.next != null) {
+      if (current.val > current.next.val) {
+        evenPoints++;
+      } else if (current.val < current.next.val) {
+        oddPoints++;
       }
+      current = current.next.next;
+    }
 
-      if (oddPoints > evenPoints) {
-        return "Odd";
-      } else if (evenPoints > oddPoints){
-        return "Even";
-      } else {
-        return "Tie";
-      }   
+    if (oddPoints > evenPoints) {
+      return "Odd";
+    } else if (evenPoints > oddPoints) {
+      return "Even";
+    } else {
+      return "Tie";
+    }
   }
 }

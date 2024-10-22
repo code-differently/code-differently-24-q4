@@ -18,11 +18,11 @@ public class Stack {
 
   public int pop() {
     if (isEmpty()) {
-        throw new EmptyStackException(); 
+      throw new EmptyStackException();
     } else {
-        int value = top.val; 
-        top = top.next; 
-        return value;
+      int value = top.val;
+      top = top.next;
+      return value;
     }
   }
 
