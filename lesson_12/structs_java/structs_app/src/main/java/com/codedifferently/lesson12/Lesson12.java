@@ -35,7 +35,3 @@ public class Lesson12 {
       }   
   }
 }
-
-// Constraints:
-// The number of nodes in the list is in the range [2, 100]. 
-// The number of nodes in the list is even. 1 <= Node.val <= 100 
