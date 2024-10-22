@@ -30,10 +30,9 @@ public class Lesson11 {
 
     for (int i = 0; i < wordArray; i++) {
       if (words[i].contains(Character.toString(x))) {
-      result.add(i);
+        result.add(i);
+      }
     }
-  }
     return result;
   }
-  
 }
