@@ -1,25 +1,35 @@
 import { ListNode } from './list_node.js';
 
 export class Stack {
-  private top: ListNode | undefined;
+  private top: ListNode | null;
 
   constructor() {
-    this.top = undefined;
+    this.top = null;
   }
 
   push(value: number): void {
-    throw new Error('Not implemented');
+    const newNode = new ListNode(value);
+    newNode.next = this.top !== null ? this.top : undefined;
+    this.top = newNode;
   }
 
   pop(): number | undefined {
-    throw new Error('Not implemented');
+    if (this.isEmpty()) {
+      throw new Error('Stack is empty');
+    }
+    const value = this.top!.val;
+    this.top = this.top!.next || null;
+    return value;
   }
 
   peek(): number | null {
-    throw new Error('Not implemented');
+    if (this.isEmpty()) {
+      throw new Error('Stack is empty');
+    }
+    return this.top!.val;
   }
 
   isEmpty(): boolean {
-    throw new Error('Not implemented');
+    return this.top === null;
   }
 }

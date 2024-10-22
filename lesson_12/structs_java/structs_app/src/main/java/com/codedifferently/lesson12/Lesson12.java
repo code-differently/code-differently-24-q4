@@ -10,17 +10,15 @@ public class Lesson12 {
     int oddPoints = 0;
     int evenPoints = 0;
 
-    ListNode current = head;
-
-    while (current != null && current.next != null) {
+    for (ListNode current = head;
+        current != null && current.next != null;
+        current = current.next.next) {
       if (current.val > current.next.val) {
         evenPoints++;
       } else {
         oddPoints++;
       }
-      current = current.next.next;
     }
-
     if (oddPoints > evenPoints) {
       return "Odd";
     } else if (evenPoints > oddPoints) {
