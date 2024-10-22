@@ -27,7 +27,6 @@ public class Lesson11 {
         out.add(i);
       }
     }
-
     return out;
   }
 }
