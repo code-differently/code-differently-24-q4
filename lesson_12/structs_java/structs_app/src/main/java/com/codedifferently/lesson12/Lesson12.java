@@ -16,27 +16,23 @@ public class Lesson12 {
     // Check each pair of nodes (odd and even):
       // compare their values
       while (current != null && current.next != null) {
-      // add a point to "Even" if the odd-indexed node is higher 
-        if (current.val < current.next.val){
+      // add a point to "Even" if the odd-indexed node is higher and vice versa 
+        if (current.val > current.next.val){
           evenPoints++;
-        }
-      //add a point to "Odd" if the even-indexed node is higher 
-      else if (current.val > current.next.val){
+        } else if (current.val < current.next.val){
           oddPoints++;
         }
-
         current = current.next.next;
       }
     // Decide the winner 
       // compare the points and choose the winner or tie
       if (oddPoints > evenPoints) {
-        return("Team odd wins!");
+        return "Odd";
       } else if (evenPoints > oddPoints){
-        return("Team Even wins");
+        return "Even";
       } else {
-        return ("It's a tie");
-      }
-      
+        return "Tie";
+      }   
   }
 }
 
