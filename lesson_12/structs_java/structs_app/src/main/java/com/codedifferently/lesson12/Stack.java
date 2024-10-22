@@ -16,11 +16,11 @@ public class Stack {
   public int pop() {
     int topmostValue = 0;
     if (isEmpty()) {
-        return Integer.parseInt(null);
+      return Integer.parseInt(null);
     } else {
-        topmostValue = top.val;
-        top = top.next;
-        return topmostValue;
+      topmostValue = top.val;
+      top = top.next;
+      return topmostValue;
     }
   }
 
