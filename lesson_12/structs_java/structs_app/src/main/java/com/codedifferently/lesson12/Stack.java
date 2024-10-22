@@ -16,11 +16,18 @@ public class Stack {
   }
 
   public int pop() {
-    return 0;
+    if (top == null){
+      //do stuff 
+    }
+    return 1;
   }
 
   public int peek() {
-    return 0;
+    if(top == null){
+      //do stuff
+    }
+    
+    return 1;
   }
 
   public boolean isEmpty() {
