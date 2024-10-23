@@ -8,18 +8,31 @@ export class Stack {
   }
 
   push(value: number): void {
-    throw new Error('Not implemented');
+    // ListNode newNode = new ListNode(value);
+    // newNode.next = top;
+    // top = newNode;
   }
 
   pop(): number | undefined {
-    throw new Error('Not implemented');
+    return 0;
+    // if (this.isEmpty()) {
+    //   throw new EmptyStackException();
+    // } else {
+    //   int value = top.val;
+    //   top = top.next;
+    //   return value;
+    // }
   }
 
   peek(): number | null {
-    throw new Error('Not implemented');
+     return 0;
+    // if (this.isEmpty()) {
+      // throw new EmptyStackException();
+    // }
+    // return top.val;
   }
 
   isEmpty(): boolean {
-    throw new Error('Not implemented');
+    return top == null;
   }
 }
