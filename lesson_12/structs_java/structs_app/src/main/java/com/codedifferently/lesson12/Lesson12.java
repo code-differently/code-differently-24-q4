@@ -21,9 +21,9 @@ public class Lesson12 {
     }
 
     if (evenTeam < oddTeam) {
-      return "odd";
+      return "Odd";
     } else if (evenTeam > oddTeam) {
-      return "even";
-    } else return "tie";
+      return "Even";
+    } else return "Tie";
   }
 }
