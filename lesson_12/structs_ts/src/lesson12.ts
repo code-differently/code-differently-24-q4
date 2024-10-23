@@ -9,13 +9,13 @@ export class Lesson12 {
     const oddPoints = 0;
     const evenPoints = 0;
 
+    // ListNode current = head;
     class ListNode {
       current: null | undefined;
       costructor(head = null) {
         this.current = head;
       }
     }
-    // ListNode current = head;
 
     // while(current != null && current.next != null) {
     //   if (current.val > current.next.val) {
