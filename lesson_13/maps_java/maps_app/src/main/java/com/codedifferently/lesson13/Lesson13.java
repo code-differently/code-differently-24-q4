@@ -1,12 +1,13 @@
 package com.codedifferently.lesson13;
 
 public class Lesson13 {
-
-  /**
-   * Provide the solution to LeetCode 3146 here:
-   * https://leetcode.com/problems/permutation-difference-between-two-strings
-   */
   public int findPermutationDifference(String s, String t) {
-    return 0;
+    int result = 0;
+    int strLen = s.length();
+    for(int i= 0; i < strLen ; i++){
+        char ch = s.charAt(i);
+        result = result + ( Math.abs(s.indexOf(ch) - t.indexOf(ch)));
+    }
+    return result;
   }
 }
