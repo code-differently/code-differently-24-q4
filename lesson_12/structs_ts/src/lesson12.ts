@@ -6,8 +6,7 @@ export class Lesson12 {
    * https://github.com/yang-su2000/Leetcode-algorithm-practice/tree/master/3062-winner-of-the-linked-list-game
    */
   public gameResult(head: ListNode | null): string {
-    let oddPoints = 0;
-    let evenPoints = 0;
+    let [oddPoints, evenPoints] = [0,0];
 
     let current = head;
    
@@ -17,7 +16,7 @@ export class Lesson12 {
       } else if (current.val < current.next.val) {
         oddPoints++;
       }
-      // current = current.next.next;
+       current = current.next;
     }
 
     if (oddPoints > evenPoints) {
