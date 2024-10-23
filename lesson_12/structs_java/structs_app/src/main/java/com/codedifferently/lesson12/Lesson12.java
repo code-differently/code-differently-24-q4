@@ -9,4 +9,39 @@ public class Lesson12 {
   public String gameResult(ListNode head) {
     return null;
   }
+
+  class ListNode {
+    int val;
+    ListNode next;
+
+    ListNode(int x) {
+      val = x;
+    }
+  }
+
+  class Solution {
+    public String gameResult(ListNode head) {
+      int[] scores = new int[2];
+
+      while (head.next != null) {
+        // Used ChatGpt to help complete this if statement-starting at the logical & operand
+        if (head.val != head.next.val && head.val % 2 == 0) {
+          if (head.val > head.next.val) {
+            scores[head.val % 2]++;
+            // Gpt help ended at the line above
+          } else {
+            scores[head.next.val % 2]++;
+          }
+        }
+        head = head.next;
+      }
+      if (scores[0] == scores[1]) {
+        return "Tie";
+      } else if (scores[0] > scores[1]) {
+        return "Even";
+      } else {
+        return "odd";
+      }
+    }
+  }
 }
