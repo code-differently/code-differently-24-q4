@@ -10,7 +10,7 @@ public class Lesson12 {
     ListNode current = head;
     int even = 0;
     int odd = 0;
-    while (current.next != null) {
+    while (current != null) {
       ListNode nextNode = current.next;
       if (current.val < nextNode.val) {
         odd++;
@@ -26,7 +26,6 @@ public class Lesson12 {
     if (even < odd) {
       return "Odd";
     }
-
     if (even == odd) {
       return "Tie";
     }

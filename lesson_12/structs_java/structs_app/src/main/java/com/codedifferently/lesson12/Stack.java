@@ -28,3 +28,4 @@ public class Stack {
     return top == null;
   }
 }
+// I used chatgpt to walk me through the implementation without giving me the answers.
