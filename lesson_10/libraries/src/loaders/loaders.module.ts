@@ -12,6 +12,7 @@ export const Loaders = Symbol.for('Loaders');
 const LOADER_PROVIDERS = [
   AnthonyMaysLoader,
   AngelicaCastilloLoader,
+  DavidSmithLoader,
   DwightBlueLoader,
   JamesCapparellLoader,
   NileJacksonLoader,
