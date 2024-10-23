@@ -19,7 +19,7 @@ export class Stack {
     }
 
     const value = this.top?.val;
-    this.top = this.top!.next;
+    this.top = this.top?.next;
     return value;
   }
 
@@ -28,7 +28,7 @@ export class Stack {
       return null;
     } 
 
-    return this.top!.val;
+    return this.top?.val;
   }
 
   isEmpty(): boolean {
