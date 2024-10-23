@@ -5,6 +5,7 @@ import { DavidSmithLoader } from './david_smith_loader.js';
 import { DwightBlueLoader } from './dwight_blue_loader.js';
 import { JamesCapparellLoader } from './james_capparell_loader.js';
 import { NileJacksonLoader } from './nile_jackson_loader.js';
+import { PabloLimonParedesLoader } from './pablo_limon_paredes_loader.js';
 import { XavierCruzLoader } from './xavier_cruz_loader.js';
 import { ZionBuchananLoader } from './zion_buchanan_loader.js';
 
@@ -18,6 +19,7 @@ const LOADER_PROVIDERS = [
   DwightBlueLoader,
   JamesCapparellLoader,
   NileJacksonLoader,
+  PabloLimonParedesLoader,
   XavierCruzLoader,
   ZionBuchananLoader,
 ];
