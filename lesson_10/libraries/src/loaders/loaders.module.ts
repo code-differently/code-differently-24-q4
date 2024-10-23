@@ -11,6 +11,7 @@ import { JamesCapparellLoader } from './james_capparell_loader.js';
 import { JosephCaballeroLoader } from './joseph_caballero_loader.js';
 import { KimberleeHaldaneLoader } from './kimberlee_haldane_loader.js';
 import { NileJacksonLoader } from './nile_jackson_loader.js';
+import { OyeyemiJimohLoader } from './oyeyemi_jimoh_loader.js';
 import { PabloLimonParedesLoader } from './pablo_limon_paredes_loader.js';
 import { ShawnDunsmoreLoader } from './shawn_dunsmore_loader.js';
 import { TommyTranLoader } from './tommy_tran_loader.js';
@@ -20,7 +21,6 @@ import { ZionBuchananLoader } from './zion_buchanan_loader.js';
 
 export const Loaders = Symbol.for('Loaders');
 
-// Add your quiz provider here.
 const LOADER_PROVIDERS = [
   AmiyahJonesLoader,
   AngelicaCastilloLoader,
@@ -33,6 +33,7 @@ const LOADER_PROVIDERS = [
   JosephCaballeroLoader,
   KimberleeHaldaneLoader,
   NileJacksonLoader,
+  OyeyemiJimohLoader,
   PabloLimonParedesLoader,
   ShawnDunsmoreLoader,
   TommyTranLoader,
