@@ -1,27 +1,29 @@
 import { ListNode } from './list_node.js';
 
 export class Lesson12 {
-  public gameResult(head: ListNode): string {
+  public gameResult(head: ListNode | null): string {
     let scoreEven = 0;
     let scoreOdd = 0;
-    let evenNum = 0;
-    let oddNum = 0;
-    const length = this.getLength(head);
+    let current: ListNode | null = head;
+    let index = 0;
 
-    for (let i = 0; i < length; i++) {
-      const resultNode = this.getElementAt(head, i);
-      if (resultNode) {
-        if (i % 2 === 0) {
-          evenNum = resultNode.val;
-        } else {
-          oddNum = resultNode.val;
-          if (evenNum > oddNum) {
+    while (current !== null) {
+      // Check if the index is even
+      if (index % 2 === 0) {
+        // Only check nextNode if current is not the last node
+        const nextNode = current.next;
+        if (nextNode != undefined) {
+          if (current.val > nextNode.val) {
             scoreEven += 1;
-          } else if (evenNum < oddNum) {
+          } else if (current.val < nextNode.val) {
             scoreOdd += 1;
           }
         }
       }
+
+      // Move to the next node
+      current = current.next ?? null;
+      index++; // Increment the index
     }
 
     if (scoreEven > scoreOdd) {
@@ -33,29 +35,31 @@ export class Lesson12 {
     }
   }
 
-  getElementAt(head: ListNode | undefined, position: number): ListNode | undefined {
-    let current = head;
-    let index = 0;
+    
 
-    while (current !== undefined) {
-      if (index === position) {
-        return current; // Return the node at the specified position
-      }
-      current = current.next; // Move to the next node
-      index++; // Increment the index
-    }
+//   getElementAt(head: ListNode | undefined, position: number): ListNode | undefined {
+//     let current = head;
+//     let index = 0;
 
-    return undefined; // Return null if the position is out of bounds
-  }
+//     while (current !== undefined) {
+//       if (index === position) {
+//         return current; // Return the node at the specified position
+//       }
+//       current = current.next; // Move to the next node
+//       index++; // Increment the index
+//     }
 
-  getLength(head: ListNode | undefined): number {
-    let length = 0;
-    let current = head;
+//     return undefined; // Return null if the position is out of bounds
+//   }
 
-    while (current !== undefined) {
-      length++; // Increment to keep count through each element
-      current = current.next; // Move on to the next element
-    }
-    return length;
-  }
+//   getLength(head: ListNode | undefined): number {
+//     let length = 0;
+//     let current = head;
+
+//     while (current !== undefined) {
+//       length++; // Increment to keep count through each element
+//       current = current.next; // Move on to the next element
+//     }
+//     return length;
+//   }
 }
