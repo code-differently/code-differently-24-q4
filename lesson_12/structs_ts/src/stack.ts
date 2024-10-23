@@ -1,25 +1,34 @@
 import { ListNode } from './list_node.js';
 
 export class Stack {
-  private top: ListNode | undefined;
+  private top?: ListNode;
 
   constructor() {
     this.top = undefined;
   }
 
   push(value: number): void {
-    throw new Error('Not implemented');
+    const newNode = new ListNode(value, this.top);
+    this.top = newNode;
   }
 
-  pop(): number | undefined {
-    throw new Error('Not implemented');
+  pop(): number {
+    if (this.isEmpty()) {
+      throw new Error("Stack is empty");
+    }
+    const value = this.top!.val; // Non-null assertion since we've checked for emptiness
+    this.top = this.top?.next; // No change needed here, TypeScript allows accessing next
+    return value;
   }
 
-  peek(): number | null {
-    throw new Error('Not implemented');
+  peek(): number {
+    if (this.isEmpty()) {
+      throw new Error("Stack is empty");
+    }
+    return this.top!.val; // Non-null assertion since we've checked for emptiness
   }
 
   isEmpty(): boolean {
-    throw new Error('Not implemented');
+    return this.top === undefined; // Check for undefined since top is optional
   }
 }
