@@ -1,6 +1,5 @@
 package com.codedifferently.lesson12;
 
-
 public class Lesson12 {
 
 
@@ -9,21 +8,23 @@ public class Lesson12 {
   * https://github.com/yang-su2000/Leetcode-algorithm-practice/tree/master/3062-winner-of-the-linked-list-game
   */
  public String gameResult(ListNode head) {
-   int evenCounter = 0; //Keeps track of even score
-   int oddCounter = 0; //Keeps track of odd score
+    int evenCounter = 0; //Keeps track of even score
+    int oddCounter = 0; //Keeps track of odd score
+
+    while(head != null && head.next != null) { //Goes through the Linked List until theres no more pairs
+      int evenValue = head.val; //Makes the first even value to compare equal to the first number of the list
+      int oddValue = head.next.val; //Makes the first odd value to compare equal to the second number of the list
 
 
-   int evenValue = head.val; //Makes the first even value to compare equal to the first number of the list
-   int oddValue = head.next.val; //Makes the first odd value to compare equal to the second number of the list
-
-
-   if ( evenValue > oddValue ) {
-     evenCounter = evenCounter + 1;
-     //Compares the even and odd value, adds 1 to even score if even is greater
-   } else {
-     oddCounter = ++oddCounter + 1;
-   } //Compares the even and odd value, adds 1 to odd score if odd is greater
-
+      if ( evenValue > oddValue ) {
+        evenCounter = evenCounter + 1;
+        //Compares the even and odd value, adds 1 to even score if even is greater
+      } else {
+      oddCounter = oddCounter + 1;
+      } //Compares the even and odd value, adds 1 to odd score if odd is greater
+     // head.val = head.next.val; //Brings out the next pair befor restarting the loop
+      head = head.next; //Brings out the next pair befor restarting the loop
+    }
 
    if (evenCounter > oddCounter) {
      return "Even";
@@ -34,7 +35,7 @@ public class Lesson12 {
    } else {
      return "Tie";
    } //Compares the even and odd score, prints 'Tie' if the two scores are equal
-   
+
   }
 
 }
