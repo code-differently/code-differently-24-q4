@@ -9,7 +9,22 @@ export class Lesson12 {
     const oddPoints = 0;
     const evenPoints = 0;
 
+    class ListNode {
+      costructor(current) {
+        this.current = head;
+        this. = 
+      }
+    }
+    // ListNode current = head;
 
+    // while(current != null && current.next != null) {
+    //   if (current.val > current.next.val) {
+    //     evenPoints++;
+    //   } else if (current.val < current.next.val) {
+    //     oddPoints++;
+    //   }
+    //   current = current.next.next;
+    // }
 
     if (oddPoints > evenPoints) {
       return "Odd";
