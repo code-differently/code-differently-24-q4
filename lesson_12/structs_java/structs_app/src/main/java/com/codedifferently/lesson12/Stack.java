@@ -10,17 +10,28 @@ public class Stack {
 
   public void push(int value) {
     // Your code here
+    ListNode newTop = new ListNode(value);
+    newTop.next = top;
+    top = newTop;
   }
 
   public int pop() {
-    return 0;
+    if (isEmpty()) {
+      throw new IllegalStateException("Empty");
+    }
+    int oldTopVal = top.val;
+    top = top.next;
+    return oldTopVal;
   }
 
   public int peek() {
-    return 0;
+    if (isEmpty()) {
+      throw new IllegalStateException("Empty");
+    }
+    return top.val;
   }
 
   public boolean isEmpty() {
-    return true;
+    return top == null;
   }
 }
