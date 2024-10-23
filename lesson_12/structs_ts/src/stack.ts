@@ -27,8 +27,8 @@ export class Stack {
     if (this.isEmpty()) {
       return null;
     } 
-
-    return this.top!.val;
+    const currentTop = this.top;
+    return currentTop ? currentTop.val : null;
   }
 
   isEmpty(): boolean {
