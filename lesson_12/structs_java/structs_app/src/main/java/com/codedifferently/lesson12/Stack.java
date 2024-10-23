@@ -15,8 +15,9 @@ public class Stack {
   }
 
   public int pop() {
+    int headnumber = top.val;
     top = top.next;
-    return top.val;
+    return headnumber;
   }
 
   public int peek() {
