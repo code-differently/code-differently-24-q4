@@ -17,14 +17,19 @@ public class Lesson12 {
           scores[head.val % 2]++;
           // Gpt help ended at the line above
         } else {
+          //else will only be applicable if the previous condition is false
           scores[head.next.val % 2]++;
+          //increments score for the next node value
         }
       }
       head = head.next;
+      //reassigns the variable, head, to point to the next node in the list
     }
     if (scores[0] == scores[1]) {
+      //checks for a tie
       return "Tie";
     } else if (scores[0] > scores[1]) {
+      //checks if the even score is greater than the odd like the elif in the python example
       return "Even";
     } else {
       return "Odd";
