@@ -20,9 +20,11 @@ export class Stack {
   }
 
   peek(): number | null {
+    if (this.top === undefined) {
+      throw new Error('is Empty');
+    }
     return this.top ? this.top.val : null;
   }
-
   isEmpty(): boolean {
     return this.top === undefined;
   }
