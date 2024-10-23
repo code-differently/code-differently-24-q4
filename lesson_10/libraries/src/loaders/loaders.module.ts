@@ -5,6 +5,7 @@ import { DwightBlueLoader } from './dwight_blue_loader.js';
 import { JamesCapparellLoader } from './james_capparell_loader.js';
 import { NileJacksonLoader } from './nile_jackson_loader.js';
 import { XavierCruzLoader } from './xavier_cruz_loader.js';
+import { ZionBuchananLoader } from './zion_buchanan_loader.js';
 
 export const Loaders = Symbol.for('Loaders');
 
@@ -17,6 +18,7 @@ const LOADER_PROVIDERS = [
   JamesCapparellLoader,
   NileJacksonLoader,
   XavierCruzLoader,
+  ZionBuchananLoader,
 ];
 
 @Module({
