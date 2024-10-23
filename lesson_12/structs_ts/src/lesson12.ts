@@ -1,11 +1,37 @@
 import { ListNode } from './list_node.js';
 
 export class Lesson12 {
-  /**
-   * Provide the solution to LeetCode 3062 here:
-   * https://github.com/yang-su2000/Leetcode-algorithm-practice/tree/master/3062-winner-of-the-linked-list-game
-   */
   public gameResult(head: ListNode | null): string {
-    return '';
+    let scoreEven = 0;
+    let scoreOdd = 0;
+    let current: ListNode | null = head;
+    let index = 0;
+
+    while (current !== null) {
+      // Check if the index is even
+      if (index % 2 === 0) {
+        // Only check nextNode if current is not the last node
+        const nextNode = current.next;
+        if (nextNode != undefined) {
+          if (current.val > nextNode.val) {
+            scoreEven += 1;
+          } else if (current.val < nextNode.val) {
+            scoreOdd += 1;
+          }
+        }
+      }
+
+      // Move to the next node
+      current = current.next ?? null;
+      index++; // Increment the index
+    }
+
+    if (scoreEven > scoreOdd) {
+      return 'Even';
+    } else if (scoreEven < scoreOdd) {
+      return 'Odd';
+    } else {
+      return 'Tie';
+    }
   }
 }
