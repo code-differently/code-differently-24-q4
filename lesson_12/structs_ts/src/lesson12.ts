@@ -10,14 +10,14 @@ export class Lesson12 {
 
     let current = head;
    
-    while(current != null && current.next != null) {
-      if (current.val > current.next.val) {
-        evenPoints++;
-      } else if (current.val < current.next.val) {
-        oddPoints++;
-      }
-       current = current.next;
-    }
+    // while(current != null && current.next != null) {
+    //   if (current.val > current.next.val) {
+    //     evenPoints++;
+    //   } else if (current.val < current.next.val) {
+    //     oddPoints++;
+    //   }
+    //    current = current.next.next;
+    // }
 
     if (oddPoints > evenPoints) {
       return "Odd";
