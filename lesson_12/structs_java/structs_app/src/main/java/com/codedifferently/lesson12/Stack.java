@@ -18,7 +18,7 @@ public class Stack {
       throw new IllegalStateException("Stack is empty");
     }
     int value = top.val;
-    top =top.next;
+    top = top.next;
     return value;
   }
 
