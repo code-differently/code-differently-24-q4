@@ -40,6 +40,8 @@ const LOADER_PROVIDERS = [
   ShawnDunsmoreLoader,
   TommyTranLoader,
   XavierCruzLoader,
+  YafiahAbdullahLoader,
+  ZionBuchananLoader,
 ];
 
 @Module({
