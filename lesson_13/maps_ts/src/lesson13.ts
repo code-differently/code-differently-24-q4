@@ -17,7 +17,9 @@ export function findPermutationDifference(s: string, t: string): number {
   //Calculate the absolute difference between the index in s and the current index in t.
       let indexInS = charPositionMap.get(t.charAt(tIndex));
     //Add the absolute difference you calculated to the total difference.
-      totalDifference += Math.abs(indexInS - tIndex);
+      if (indexInS != undefined) {
+        totalDifference += Math.abs(indexInS - tIndex);
+      }
     }
   //After going through all characters in t, return the total difference.
     return totalDifference;
