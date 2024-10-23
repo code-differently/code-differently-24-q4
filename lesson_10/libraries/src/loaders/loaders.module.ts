@@ -27,6 +27,7 @@ const LOADER_PROVIDERS = [
   AngelicaCastilloLoader,
   AnthonyMaysLoader,
   ChelseaOgbonniaLoader,
+  ChigazoGrahamLoader,
   DavidSmithLoader,
   DwightBlueLoader,
   HummadTanweerLoader,
