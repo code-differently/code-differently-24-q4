@@ -3,9 +3,9 @@ import fs from 'fs';
 import { Credit, MediaItem } from '../models/index.js';
 import { Loader } from './loader.js';
 
-export class JamesCapparellLoader implements Loader {
+export class TommyTranLoader implements Loader {
   getLoaderName(): string {
-    return 'jamescapparell';
+    return 'tommytran';
   }
 
   async loadData(): Promise<MediaItem[]> {
@@ -15,28 +15,20 @@ export class JamesCapparellLoader implements Loader {
     console.log(
       `Loaded ${credits.length} credits and ${mediaItems.length} media items`,
     );
-    credits.forEach((credit) => {
-      const mediaItem = mediaItems.find(
-        (media) => media.getId() === credit.getMediaItemId(),
-      );
 
-      if (mediaItem) {
-        mediaItem.addCredit(credit);
-      }
-    });
     return [...mediaItems.values()];
   }
 
   async loadMediaItems(): Promise<MediaItem[]> {
-    const medias = [];
+    const mediaitems: MediaItem[] = [];
     const readable = fs
       .createReadStream('data/media_items.csv', 'utf-8')
       .pipe(csv());
     for await (const row of readable) {
-      const {id, title, type, year } = row;
-      medias.push(new MediaItem(id, title, type, year, []));
+      const { id, title, type, year } = row;
+      mediaitems.push(new MediaItem(id, title, type, year, [])); // help from xavier to instatiate the class
     }
-    return medias;
+    return mediaitems;
   }
 
   async loadCredits(): Promise<Credit[]> {
@@ -45,8 +37,8 @@ export class JamesCapparellLoader implements Loader {
       .createReadStream('data/credits.csv', 'utf-8')
       .pipe(csv());
     for await (const row of readable) {
-      const { media_item_id, role, name } = row;
-      credits.push(new Credit(media_item_id, name, role));
+      const { media_item_id: mediaItemId, role, name } = row;
+      credits.push(new Credit(mediaItemId, name, role));
     }
     return credits;
   }
