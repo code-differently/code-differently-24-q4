@@ -12,10 +12,10 @@ export const Loaders = Symbol.for('Loaders');
 const LOADER_PROVIDERS = [
   AnthonyMaysLoader,
   AngelicaCastilloLoader,
+  DwightBlueLoader,
   JamesCapparellLoader,
   NileJacksonLoader,
   XavierCruzLoader,
-  DwightBlueLoader,
 ];
 
 @Module({
