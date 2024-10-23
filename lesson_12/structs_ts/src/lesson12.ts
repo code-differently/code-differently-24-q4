@@ -25,11 +25,11 @@ export class Lesson12 {
     }
 
     if (scoreEven > scoreOdd) {
-      return "Even";
+      return 'Even';
     } else if (scoreEven < scoreOdd) {
-      return "Odd";
+      return 'Odd';
     } else {
-      return "Tie";
+      return 'Tie';
     }
   }
 

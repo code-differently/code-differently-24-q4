@@ -12,20 +12,20 @@ export class Stack {
     this.top = newNode;
   }
 
-  pop(): number {
+  pop(): number | undefined {
     if (this.isEmpty()) {
-      throw new Error("Stack is empty");
+      throw new Error('Stack is empty');
     }
-    const value = this.top!.val; // Non-null assertion since we've checked for emptiness
+    const value = this.top?.val; // Non-null assertion since we've checked for emptiness
     this.top = this.top?.next; // No change needed here, TypeScript allows accessing next
     return value;
   }
 
-  peek(): number {
+  peek(): number | undefined {
     if (this.isEmpty()) {
-      throw new Error("Stack is empty");
+      throw new Error('Stack is empty');
     }
-    return this.top!.val; // Non-null assertion since we've checked for emptiness
+    return this.top?.val; // Non-null assertion since we've checked for emptiness
   }
 
   isEmpty(): boolean {
