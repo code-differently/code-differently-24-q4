@@ -28,10 +28,10 @@ export class Stack {
       return null;
     } 
 
-    return this.top.val;
+    return this.top!.val;
   }
 
   isEmpty(): boolean {
-    return this.top === undefined;
+    return this.top === null;
   }
 }
