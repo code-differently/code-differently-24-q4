@@ -12,6 +12,7 @@ import { JosephCaballeroLoader } from './joseph_caballero_loader.js';
 import { KimberleeHaldaneLoader } from './kimberlee_haldane_loader.js';
 import { NileJacksonLoader } from './nile_jackson_loader.js';
 import { PabloLimonParedesLoader } from './pablo_limon_paredes_loader.js';
+import { ShawnDunsmoreLoader } from './shawn_dunsmore_loader.js';
 import { TommyTranLoader } from './tommy_tran_loader.js';
 import { XavierCruzLoader } from './xavier_cruz_loader.js';
 import { ZionBuchananLoader } from './zion_buchanan_loader.js';
@@ -33,6 +34,7 @@ const LOADER_PROVIDERS = [
   KimberleeHaldaneLoader,
   NileJacksonLoader,
   PabloLimonParedesLoader,
+  ShawnDunsmoreLoader,
   TommyTranLoader,
   XavierCruzLoader,
   ZionBuchananLoader,
