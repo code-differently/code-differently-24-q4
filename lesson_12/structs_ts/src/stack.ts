@@ -9,12 +9,14 @@ export class Stack {
 
   push(value: number): void {
     // ListNode newNode = new ListNode(value);
+    const newNode = new ListNode(value)
     // newNode.next = top;
+    newNode.next = this.top;
     // top = newNode;
+    this.top = newNode;
   }
 
   pop(): number | undefined {
-    return 0;
     // if (this.isEmpty()) {
     //   throw new EmptyStackException();
     // } else {
@@ -22,17 +24,28 @@ export class Stack {
     //   top = top.next;
     //   return value;
     // }
+    if (this.isEmpty()) {
+      return undefined;
+    }
+
+    const value = this.top?.val;
+    this.top = this.top.next;
+    return value;
   }
 
   peek(): number | null {
-     return 0;
     // if (this.isEmpty()) {
       // throw new EmptyStackException();
     // }
     // return top.val;
+    if (this.isEmpty()) {
+      return undefined;
+    } 
+
+    return this.top?.val;
   }
 
   isEmpty(): boolean {
-    return top == null;
+    return this.top === undefined;
   }
 }
