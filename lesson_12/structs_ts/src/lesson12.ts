@@ -10,9 +10,9 @@ export class Lesson12 {
     const evenPoints = 0;
 
     class ListNode {
-      costructor(current) {
+      current: null | undefined;
+      costructor(head = null) {
         this.current = head;
-        this. = 
       }
     }
     // ListNode current = head;
