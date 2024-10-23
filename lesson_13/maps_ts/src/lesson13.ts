@@ -3,5 +3,17 @@
  * https://leetcode.com/problems/permutation-difference-between-two-strings
  */
 export function findPermutationDifference(s: string, t: string): number {
-  return 0;
+  const map = new Map<string, number>();
+
+  for (let i = 0; i < t.length; i++) {
+    map.set(t[i], i);
+  }
+
+  let difference = 0;
+  for (let i = 0; i < s.length; i++) {
+    // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+    difference += Math.abs(i - map.get(s[i])!);
+  }
+
+  return difference;
 }
