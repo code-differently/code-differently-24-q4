@@ -1,5 +1,6 @@
 package com.codedifferently.lesson12;
 
+
 /** Implement the below Stack by providing code for the class methods. */
 public class Stack {
   private ListNode top;
@@ -7,20 +8,25 @@ public class Stack {
   public Stack() {
     this.top = null;
   }
-
   public void push(int value) {
-    // Your code here
+    ListNode newTop = new ListNode (value);
+    newTop.next = top;
+    top = newTop;
   }
 
   public int pop() {
-    return 0;
+    var oldTop = top.val;
+    top = top.next;
+    return oldTop;
   }
 
   public int peek() {
-    return 0;
+    var headVal = top.val;
+    return headVal;
   }
 
   public boolean isEmpty() {
-    return true;
+    return top == null;
   }
 }
+
