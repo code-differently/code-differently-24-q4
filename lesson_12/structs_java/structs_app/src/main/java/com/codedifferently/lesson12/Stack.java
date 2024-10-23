@@ -10,17 +10,23 @@ public class Stack {
 
   public void push(int value) {
     // Your code here
+    ListNode top2 = new ListNode(value);
+    top2.next = top;
+    top = top2;
   }
 
   public int pop() {
-    return 0;
+    int topvalue = top.val;
+    top = top.next;
+
+    return topvalue;
   }
 
   public int peek() {
-    return 0;
+    return top.val;
   }
 
   public boolean isEmpty() {
-    return true;
+    return top == null
   }
 }
