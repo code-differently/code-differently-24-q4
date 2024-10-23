@@ -24,14 +24,13 @@ export class Stack {
   }
 
   peek(): number | null {
-    if (this.isEmpty()) {
-      return null;
+    if (this.top === undefined) {
+      throw new Error('Stack is empty');
     } 
-    const currentTop = this.top;
-    return currentTop ? currentTop.val : null;
+    return this.top.val;
   }
 
   isEmpty(): boolean {
-    return this.top === null;
+    return this.top === undefined;
   }
 }
