@@ -16,9 +16,9 @@ public class Stack {
 
   public int pop() {
     int newTop = 0;
-    if(isEmpty()){
+    if (isEmpty()) {
       throw new IllegalStateException("Stack is empty");
-    }else{
+    } else {
       newTop = top.val;
       top = top.next;
       return newTop;
@@ -26,7 +26,7 @@ public class Stack {
   }
 
   public int peek() {
-    if(isEmpty()){
+    if (isEmpty()) {
       throw new IllegalStateException("Stack is empty");
     }
     return top.val;
