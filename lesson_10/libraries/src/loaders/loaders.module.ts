@@ -1,5 +1,7 @@
 import { Module } from '@nestjs/common';
+
 import { AngelicaCastilloLoader } from './angelica_castillo_loader.js';
+import { HummadTanweerLoader } from './hummad_tanweer_loader.js';
 import { AnthonyMaysLoader } from './anthony_mays_loader.js';
 import { DavidSmithLoader } from './david_smith_loader.js';
 import { DwightBlueLoader } from './dwight_blue_loader.js';
@@ -12,15 +14,17 @@ import { TommyTranLoader } from './tommy_tran_loader.js';
 import { XavierCruzLoader } from './xavier_cruz_loader.js';
 import { ZionBuchananLoader } from './zion_buchanan_loader.js';
 
+
 export const Loaders = Symbol.for('Loaders');
 
 // Add your quiz provider here.
 
 const LOADER_PROVIDERS = [
-  AnthonyMaysLoader,
   AngelicaCastilloLoader,
+  AnthonyMaysLoader,
   DavidSmithLoader,
   DwightBlueLoader,
+  HummadTanweerLoader,
   JamesCapparellLoader,
   JosephCaballeroLoader,
   KimberleeHaldaneLoader,
