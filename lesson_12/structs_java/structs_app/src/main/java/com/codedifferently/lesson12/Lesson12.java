@@ -27,7 +27,7 @@ public class Lesson12 {
     } else if (scores[0] > scores[1]) {
       return "Even";
     } else {
-      return "odd";
+      return "Odd";
     }
   }
 }
