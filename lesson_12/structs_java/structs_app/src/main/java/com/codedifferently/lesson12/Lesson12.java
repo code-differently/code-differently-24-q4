@@ -16,14 +16,13 @@ public class Lesson12 {
       int oddValue = head.next.val; //Makes the first odd value to compare equal to the second number of the list
 
 
-      if ( evenValue > oddValue ) {
-        evenCounter = evenCounter + 1;
+      if (evenValue > oddValue) {
+        evenCounter++;
         //Compares the even and odd value, adds 1 to even score if even is greater
-      } else {
-      oddCounter = oddCounter + 1;
+      } else if (evenValue < oddValue) {
+        oddCounter++;
       } //Compares the even and odd value, adds 1 to odd score if odd is greater
-     // head.val = head.next.val; //Brings out the next pair befor restarting the loop
-      head = head.next; //Brings out the next pair befor restarting the loop
+      head = head.next.next; //Brings out the next pair befor restarting the loop
     }
 
    if (evenCounter > oddCounter) {
