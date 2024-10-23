@@ -1,10 +1,11 @@
 import { Module } from '@nestjs/common';
 
 import { AngelicaCastilloLoader } from './angelica_castillo_loader.js';
-import { HummadTanweerLoader } from './hummad_tanweer_loader.js';
 import { AnthonyMaysLoader } from './anthony_mays_loader.js';
+import { ChelseaOgbonniaLoader } from './chelsea_ogbonnia_loader.js';
 import { DavidSmithLoader } from './david_smith_loader.js';
 import { DwightBlueLoader } from './dwight_blue_loader.js';
+import { HummadTanweerLoader } from './hummad_tanweer_loader.js';
 import { JamesCapparellLoader } from './james_capparell_loader.js';
 import { JosephCaballeroLoader } from './joseph_caballero_loader.js';
 import { KimberleeHaldaneLoader } from './kimberlee_haldane_loader.js';
@@ -22,6 +23,7 @@ export const Loaders = Symbol.for('Loaders');
 const LOADER_PROVIDERS = [
   AngelicaCastilloLoader,
   AnthonyMaysLoader,
+  ChelseaOgbonniaLoader,
   DavidSmithLoader,
   DwightBlueLoader,
   HummadTanweerLoader,
