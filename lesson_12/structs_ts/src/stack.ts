@@ -28,7 +28,7 @@ export class Stack {
       return null;
     } 
 
-    return this.top!.val;
+    return this.top.val;
   }
 
   isEmpty(): boolean {
