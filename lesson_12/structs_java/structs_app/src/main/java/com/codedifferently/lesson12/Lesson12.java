@@ -10,14 +10,6 @@ public class Lesson12 {
     return null;
   }
 
-  class ListNode {
-    int val;
-    ListNode next;
-
-    ListNode(int x) {
-      val = x;
-    }
-  }
 
   class Solution {
     public String gameResult(ListNode head) {
