@@ -3,9 +3,9 @@ import fs from 'fs';
 import { Credit, MediaItem } from '../models/index.js';
 import { Loader } from './loader.js';
 
-export class JamesCapparellLoader implements Loader {
+export class PabloLimonParedesLoader implements Loader {
   getLoaderName(): string {
-    return 'jamescapparell';
+    return 'pablolimonparedes';
   }
 
   async loadData(): Promise<MediaItem[]> {
@@ -15,28 +15,20 @@ export class JamesCapparellLoader implements Loader {
     console.log(
       `Loaded ${credits.length} credits and ${mediaItems.length} media items`,
     );
-    credits.forEach((credit) => {
-      const mediaItem = mediaItems.find(
-        (media) => media.getId() === credit.getMediaItemId(),
-      );
 
-      if (mediaItem) {
-        mediaItem.addCredit(credit);
-      }
-    });
     return [...mediaItems.values()];
   }
 
   async loadMediaItems(): Promise<MediaItem[]> {
-    const medias = [];
+    const mediaitem = [];
     const readable = fs
       .createReadStream('data/media_items.csv', 'utf-8')
       .pipe(csv());
     for await (const row of readable) {
-      const {id, title, type, year } = row;
-      medias.push(new MediaItem(id, title, type, year, []));
+      const { id, title, type, year } = row;
+      mediaitem.push(new MediaItem(id, title, type, year, []));
     }
-    return medias;
+    return mediaitem;
   }
 
   async loadCredits(): Promise<Credit[]> {
