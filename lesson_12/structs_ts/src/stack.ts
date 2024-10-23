@@ -19,16 +19,16 @@ export class Stack {
     }
 
     const value = this.top?.val;
-    this.top = this.top.next;
+    this.top = this.top!.next;
     return value;
   }
 
   peek(): number | null {
     if (this.isEmpty()) {
-      return undefined;
+      return null;
     } 
 
-    return this.top?.val;
+    return this.top!.val;
   }
 
   isEmpty(): boolean {
