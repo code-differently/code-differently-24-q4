@@ -1,5 +1,5 @@
 export function findPermutationDifference(s: string, t: string): number {
-    let charPositionMap = new Map<string, number>();
+    const charPositionMap = new Map<string, number>();
   
     let totalDifference = 0;
   
@@ -8,7 +8,7 @@ export function findPermutationDifference(s: string, t: string): number {
     }
       
     for (let tIndex = 0; tIndex < t.length; tIndex++) {
-      let indexInS = charPositionMap.get(t.charAt(tIndex));
+      const indexInS = charPositionMap.get(t.charAt(tIndex));
     
       if (indexInS != undefined) {
         totalDifference += Math.abs(indexInS - tIndex);
