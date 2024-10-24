@@ -1,5 +1,7 @@
 package com.codedifferently.lesson13;
 
+import java.util.HashMap;
+
 public class Lesson13 {
 
   /**
@@ -7,6 +9,15 @@ public class Lesson13 {
    * https://leetcode.com/problems/permutation-difference-between-two-strings
    */
   public int findPermutationDifference(String s, String t) {
-    return 0;
+    var bmb = new HashMap<Character, Integer>();
+    int permDiff = 0;
+    for (int i = 0; i < s.length(); i++) {
+      bmb.put(s.charAt(i), i);
+    }
+    for (char key : bmb.keySet()) {
+      int indexInT = t.indexOf(Character.toString(key));
+      permDiff += Math.abs(s.indexOf(key) - indexInT);
+    }
+    return permDiff;
   }
 }
