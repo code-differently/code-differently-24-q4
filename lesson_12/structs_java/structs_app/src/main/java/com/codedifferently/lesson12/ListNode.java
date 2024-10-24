@@ -16,7 +16,7 @@ public class ListNode {
   }
 
 
-public static String listWinner(ListNode head) {
+/* public static String listWinner(ListNode head) {
   int evenScore = 0;
   int oddScore = 0;
 
@@ -48,5 +48,5 @@ public static void main(String[] args) {
 
   String winner = listWinner(head);
   System.out.println("The winner is: " + winner);
-}
+} */
 } 
