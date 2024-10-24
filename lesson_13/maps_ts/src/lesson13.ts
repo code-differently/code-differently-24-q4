@@ -1,7 +1,19 @@
-/**
- * Provide the solution to LeetCode 3146 here:
- * https://leetcode.com/problems/permutation-difference-between-two-strings
- */
 export function findPermutationDifference(s: string, t: string): number {
-  return 0;
+    const charPositionMap = new Map<string, number>();
+  
+    let totalDifference = 0;
+  
+    for (let sIndex = 0; sIndex < s.length; sIndex++) {
+      charPositionMap.set(s.charAt(sIndex), sIndex)
+    }
+      
+    for (let tIndex = 0; tIndex < t.length; tIndex++) {
+      const indexInS = charPositionMap.get(t.charAt(tIndex));
+    
+      if (indexInS != undefined) {
+        totalDifference += Math.abs(indexInS - tIndex);
+      }
+    }
+  
+    return totalDifference;
 }
