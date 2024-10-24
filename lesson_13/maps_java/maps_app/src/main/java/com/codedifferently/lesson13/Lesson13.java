@@ -16,6 +16,7 @@ public class Lesson13 {
     }
 
     int permutationDifference = 0;
+     
     for (int i = 0; i < t.length(); i++) {
       char ch = t.charAt(i);
       int indexInS = indexMap.get(ch);
