@@ -11,7 +11,6 @@ public class Lesson13 {
 
     int result = 0;
     for (int i = 0; i < s.length(); i++) {
-      // Default to -1 if char not found
       result += Math.abs(i - indexMap.getOrDefault(s.charAt(i), -1));
     }
     return result;
