@@ -8,18 +8,26 @@ export class Stack {
   }
 
   push(value: number): void {
-    throw new Error('Not implemented');
+    const pusher = new ListNode(value);
+    pusher.next = this.top;
+    this.top = pusher;
   }
 
   pop(): number | undefined {
-    throw new Error('Not implemented');
+    const val = this.top?.val;
+    this.top = this.top?.next;
+    return val;
   }
 
   peek(): number | null {
-    throw new Error('Not implemented');
+    if (this.top != null) {
+      return this.top.val;
+    } else {
+      throw new Error('empty stack');
+    }
   }
 
   isEmpty(): boolean {
-    throw new Error('Not implemented');
+    return this.top == null;
   }
 }
