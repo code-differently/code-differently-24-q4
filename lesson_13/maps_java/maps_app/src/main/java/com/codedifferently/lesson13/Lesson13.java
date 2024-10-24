@@ -1,5 +1,7 @@
 package com.codedifferently.lesson13;
 
+import java.util.HashMap;
+
 public class Lesson13 {
 
   /**
@@ -8,15 +10,15 @@ public class Lesson13 {
    */
   public int findPermutationDifference(String s, String t) {
     var sum = 0;
-    char[] charArray1 = s.toCharArray();
-    char[] charArray2 = t.toCharArray();
+    HashMap<Character, Integer> strStone = new HashMap<>();
 
     for (int i = 0; i < s.length(); i++) {
-      for (int j = 0; j < t.length(); j++) {
-        if (charArray1[i] == charArray2[j]) {
-          sum = sum + Math.abs(i - j);
-        }
-      }
+      strStone.put(s.charAt(i), i);
+    }
+    for (char key : strStone.keySet()) {
+      int indexSTR = t.indexOf(Character.toString(key));
+
+      sum += Math.abs(s.indexOf(key) - indexSTR);
     }
     return sum;
   }
