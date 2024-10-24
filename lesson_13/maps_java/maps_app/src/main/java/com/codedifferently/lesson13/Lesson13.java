@@ -6,22 +6,16 @@ public class Lesson13 {
 
   public int findPermutationDifference(String s, String t) {
     HashMap<Character, Integer> stringS = new HashMap<>();
-    for (int i = 0; i < s.length(); i++) {
-      stringS.put(s.charAt(i), i);
-    }
     HashMap<Character, Integer> stringT = new HashMap<>();
+    int diffSum = 0;
     for (int i = 0; i < t.length(); i++) {
+      stringS.put(s.charAt(i), i);
       stringT.put(t.charAt(i), i);
     }
-    return compareMaps(stringS, stringT);
-  }
-
-  public int compareMaps(HashMap<Character, Integer> map1, HashMap<Character, Integer> map2) {
-    int diffSum = 0;
-    for (Character key : map1.keySet()) {
-      if (map2.containsKey(key)) {
-        int value1 = map1.get(key);
-        int value2 = map2.get(key);
+    for (Character key : stringS.keySet()) {
+      if (stringT.containsKey(key)) {
+        int value1 = stringS.get(key);
+        int value2 = stringT.get(key);
         int difference = Math.abs(value1 - value2);
         diffSum += difference;
       }
