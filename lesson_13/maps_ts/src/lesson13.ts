@@ -1,13 +1,14 @@
-/**
- * Provide the solution to LeetCode 3146 here:
- * https://leetcode.com/problems/permutation-difference-between-two-strings
- */
 export function findPermutationDifference(s: string, t: string): number {
-    let result = 0;
-    const strLen: number = s.length;
-    for (let i = 0; i < strLen; i++) {
-        const ch: string = s.charAt(i);
-        result = result + Math.abs(s.indexOf(ch) - t.indexOf(ch));
-    }
-    return result;
+  const indexMap = new Map<string, number>();
+
+  for (let i = 0; i < t.length; i++) {
+    indexMap.set(t.charAt(i), i);
+  }
+
+  let result = 0;
+  for (let i = 0; i < s.length; i++) {
+    result += Math.abs(i - (indexMap.get(s.charAt(i)) ?? -1));
+  }
+
+  return result;
 }
