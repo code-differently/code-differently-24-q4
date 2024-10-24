@@ -10,11 +10,9 @@ public class Lesson13 {
    */
 
   /**
-   * We need to return the absolute difference btw. a chars index in both 's' and 't' 
-   * if s = "abc" and t = "bac" 
-   * for s: a @index 0, b @index 1, c @index 2 
-   * for t: a @index 1, b @index 0, c @index 2 
-   * the math: |0 - 1| + |1 - 0| + \2 - 2| = |-1| + |1| + |0| = 1 + 1 + 0 = 2 we return 2
+   * We need to return the absolute difference btw. a chars index in both 's' and 't' if s = "abc"
+   * and t = "bac" for s: a @index 0, b @index 1, c @index 2 for t: a @index 1, b @index 0, c @index
+   * 2 the math: |0 - 1| + |1 - 0| + \2 - 2| = |-1| + |1| + |0| = 1 + 1 + 0 = 2 we return 2
    */
   public int findPermutationDifference(String s, String t) {
     var compareStrings = new HashMap<Character, Integer>();
