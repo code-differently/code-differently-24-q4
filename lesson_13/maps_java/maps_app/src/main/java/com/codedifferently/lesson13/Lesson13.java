@@ -1,12 +1,25 @@
 package com.codedifferently.lesson13;
 
-public class Lesson13 {
+import java.util.HashMap;
 
-  /**
-   * Provide the solution to LeetCode 3146 here:
-   * https://leetcode.com/problems/permutation-difference-between-two-strings
-   */
+public class Lesson13 {
   public int findPermutationDifference(String s, String t) {
-    return 0;
+    HashMap<Character, Integer> letters = new HashMap<>();
+    int permDifferences = 0;
+    for (int i = 0; i < s.length(); i++) {
+      letters.put(s.charAt(i), i);
+    }
+    for (char key : letters.keySet()) {
+      int indexInT = t.indexOf(Character.toString(key));
+      permDifferences += Math.abs(s.indexOf(key) - indexInT);
+    }
+    // int sumDifference = 0;
+    // for (int i = 0; i < s.length(); i++) {
+    //   char currentChar = s.charAt(i);
+    //   int indexInT = t.indexOf(currentChar);
+    //   int difference = Math.abs(i - indexInT);
+    //   sumDifference += difference;
+
+    return permDifferences;
   }
 }
