@@ -16,12 +16,10 @@ public class Lesson13 {
       smap.put(s.charAt(i), i);
       tmap.put(t.charAt(i), i);
     }
-    for (Character key : smap.keySet()) {
-      if (tmap.containsKey(key)) {
-        Integer val1 = smap.get(key);
-        Integer val2 = tmap.get(key);
-        sum += Math.abs(val1 - val2);
-      }
+    for (char key : smap.keySet()) {
+      int val1 = smap.get(key);
+      int val2 = tmap.get(key);
+      sum += Math.abs(val1 - val2);
     }
     return sum;
   }
