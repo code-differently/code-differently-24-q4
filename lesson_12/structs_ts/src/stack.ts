@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-non-null-assertion */
 import { ListNode } from './list_node.js';
 
 export class Stack {
@@ -7,19 +8,24 @@ export class Stack {
     this.top = undefined;
   }
 
-  push(number: number): void {
-    throw new Error('Not implemented');
+  push(value: number): void {
+    const newNode = new ListNode(value);
+    newNode.next = this.top;
+    this.top = newNode;
   }
 
   pop(): number | undefined {
-    throw new Error('Not implemented');
+    if (this.isEmpty()) return undefined;
+    const value = this.top!.value;
+    this.top = this.top!.next;
+    return value;
   }
 
   peek(): number | null {
-    throw new Error('Not implemented');
+    return this.isEmpty() ? null : this.top?.value;
   }
 
   isEmpty(): boolean {
-    throw new Error('Not implemented');
+    return this.top === undefined;
   }
 }
