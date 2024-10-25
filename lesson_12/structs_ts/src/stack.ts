@@ -8,21 +8,21 @@ export class Stack {
     this.top = undefined;
   }
 
-  push(value: number): void {
-    const newNode = new ListNode(value);
+  push(val: number): void {
+    const newNode = new ListNode(val);
     newNode.next = this.top;
     this.top = newNode;
   }
 
   pop(): number | undefined {
     if (this.isEmpty()) return undefined;
-    const value = this.top!.value;
+    const val = this.top!.val;
     this.top = this.top!.next;
-    return value;
+    return val;
   }
 
   peek(): number | null {
-    return this.isEmpty() ? null : this.top?.value;
+    return this.isEmpty() ? null : this.top?.val;
   }
 
   isEmpty(): boolean {
