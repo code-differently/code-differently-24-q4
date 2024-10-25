@@ -9,12 +9,12 @@ public class Lesson13 {
    * https://leetcode.com/problems/permutation-difference-between-two-strings
    */
   public int findPermutationDifference(String s, String t) {
-    var bmb = new HashMap<Character, Integer>();
+    var sIndexByChar = new HashMap<Character, Integer>();
     int permDiff = 0;
     for (int i = 0; i < s.length(); i++) {
-      bmb.put(s.charAt(i), i);
+      sIndexByChar.put(s.charAt(i), i);
     }
-    for (char key : bmb.keySet()) {
+    for (char key : sIndexByChar.keySet()) {
       int indexInT = t.indexOf(Character.toString(key));
       permDiff += Math.abs(s.indexOf(key) - indexInT);
     }
