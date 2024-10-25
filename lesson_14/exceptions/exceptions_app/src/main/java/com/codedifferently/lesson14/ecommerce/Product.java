@@ -9,11 +9,25 @@ public class Product {
     this.name = name;
   }
 
-  public String getProductId() {
+  public String getProductId() /*throws ProductNotFoundException*/ {
+    if (productId == null) {
+      try {
+        throw new ProductNotFoundException("The product ID can not be found.");
+      } catch (ProductNotFoundException e) {
+        System.out.println(e);
+      }
+    }
     return productId;
   }
 
-  public String getName() {
+  public String getName() /*throws ProductNotFoundException*/ {
+    if (name == null) {
+      try {
+        throw new ProductNotFoundException("Nothing matches that name");
+      } catch (ProductNotFoundException e) {
+        System.out.println(e);
+      }
+    }
     return name;
   }
 }
