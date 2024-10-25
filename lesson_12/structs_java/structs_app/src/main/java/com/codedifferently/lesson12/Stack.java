@@ -9,15 +9,15 @@ public class Stack {
   }
 
   public void push(int value) {
-    ListNode tophat = new ListNode(value);
-    tophat.next = top;
-    top = tophat;
+    ListNode topHat = new ListNode(value);
+    topHat.next = top;
+    top = topHat;
   }
 
   public int pop() {
-    int headnumber = top.val;
+    int headNumber = top.val;
     top = top.next;
-    return headnumber;
+    return headNumber;
   }
 
   public int peek() {
