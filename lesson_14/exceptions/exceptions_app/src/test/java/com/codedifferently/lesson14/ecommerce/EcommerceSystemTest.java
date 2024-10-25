@@ -7,6 +7,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 class EcommerceSystemTest {
+
   EcommerceSystem ecommerceSystem;
 
   @BeforeEach
@@ -21,7 +22,7 @@ class EcommerceSystemTest {
   }
 
   @Test
-  void testPlaceOrder() {
+  void testPlaceOrder() throws Exception {
     // Arrange
     ecommerceSystem.addProduct("1", "Laptop");
 
@@ -34,7 +35,7 @@ class EcommerceSystemTest {
   }
 
   @Test
-  void testPlaceOrder_productDoesNotExist() {
+  void testPlaceOrder_productDoesNotExist() throws Exception {
     // Act
     assertThatThrownBy(() -> ecommerceSystem.placeOrder("1", 1))
         .isInstanceOf(ProductNotFoundException.class)
@@ -42,7 +43,7 @@ class EcommerceSystemTest {
   }
 
   @Test
-  void testCancelOrder() {
+  void testCancelOrder() throws Exception {
     // Arrange
     ecommerceSystem.addProduct("1", "Laptop");
     String orderId = ecommerceSystem.placeOrder("1", 1);
@@ -60,7 +61,7 @@ class EcommerceSystemTest {
   }
 
   @Test
-  void testCheckOrderStatus_orderCancelled() {
+  void testCheckOrderStatus_orderCancelled() throws Exception {
     // Arrange
     ecommerceSystem.addProduct("1", "Laptop");
     String orderId = ecommerceSystem.placeOrder("1", 1);
