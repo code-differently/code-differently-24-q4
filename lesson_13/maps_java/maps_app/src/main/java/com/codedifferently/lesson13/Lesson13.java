@@ -9,16 +9,16 @@ public class Lesson13 {
    * https://leetcode.com/problems/permutation-difference-between-two-strings
    */
   public int findPermutationDifference(String s, String t) {
-    HashMap<Character, Integer> smap = new HashMap<>();
-    HashMap<Character, Integer> tmap = new HashMap<>();
+    HashMap<Character, Integer> sMap = new HashMap<>();
+    HashMap<Character, Integer> tMap = new HashMap<>();
     int sum = 0;
     for (int i = 0; i < s.length(); i++) {
-      smap.put(s.charAt(i), i);
-      tmap.put(t.charAt(i), i);
+      sMap.put(s.charAt(i), i);
+      tMap.put(t.charAt(i), i);
     }
-    for (char key : smap.keySet()) {
-      int val1 = smap.get(key);
-      int val2 = tmap.get(key);
+    for (char key : sMap.keySet()) {
+      int val1 = sMap.get(key);
+      int val2 = tMap.get(key);
       sum += Math.abs(val1 - val2);
     }
     return sum;
