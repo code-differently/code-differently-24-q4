@@ -21,8 +21,11 @@ export class Stack {
     return val;
   }
 
-  peek(): number | null {
-    return this.isEmpty() ? null : this.top?.val;
+  peek(): number {
+    if (this.isEmpty()) {
+      /* empty */
+    }
+    return this.top!.val;
   }
 
   isEmpty(): boolean {
