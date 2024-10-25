@@ -15,15 +15,15 @@ public class Lesson13 {
    * 2 the math: |0 - 1| + |1 - 0| + \2 - 2| = |-1| + |1| + |0| = 1 + 1 + 0 = 2 we return 2
    */
   public int findPermutationDifference(String s, String t) {
-    var compareStrings = new HashMap<Character, Integer>();
+    var stringMap = new HashMap<Character, Integer>();
     int total = 0;
 
     for (int i = 0; i < s.length(); i++) {
-      compareStrings.put(s.charAt(i), s.indexOf(s.charAt(i)));
+      stringMap.put(s.charAt(i), s.indexOf(s.charAt(i)));
     }
 
     for (int i = 0; i < t.length(); i++) {
-      int absDiff = Math.abs(compareStrings.get(s.charAt(i)) - t.indexOf(s.charAt(i)));
+      int absDiff = Math.abs(stringMap.get(s.charAt(i)) - t.indexOf(s.charAt(i)));
       total += absDiff;
     }
     return total;
