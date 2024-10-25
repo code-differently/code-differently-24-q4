@@ -13,12 +13,10 @@ public class Lesson13 {
       stringT.put(t.charAt(i), i);
     }
     for (Character key : stringS.keySet()) {
-      if (stringT.containsKey(key)) {
-        int value1 = stringS.get(key);
-        int value2 = stringT.get(key);
-        int difference = Math.abs(value1 - value2);
-        diffSum += difference;
-      }
+      int value1 = stringS.get(key);
+      int value2 = stringT.get(key);
+      int difference = Math.abs(value1 - value2);
+      diffSum += difference;
     }
     return diffSum;
   }
