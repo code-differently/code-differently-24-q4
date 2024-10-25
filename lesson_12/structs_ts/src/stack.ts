@@ -7,7 +7,7 @@ export class Stack {
     this.top = undefined;
   }
 
-  push(value: number): void {
+  push(number: number): void {
     throw new Error('Not implemented');
   }
 
