@@ -5,4 +5,9 @@
 
 package com.codedifferently.lesson14.ecommerce;
 
-class OrderNotFoundException {}
+class OrderNotFoundException extends Exception {
+
+  public OrderNotFoundException(String message) {
+    super(message);
+  }
+}
