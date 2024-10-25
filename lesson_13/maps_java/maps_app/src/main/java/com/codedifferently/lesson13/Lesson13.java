@@ -9,18 +9,18 @@ public class Lesson13 {
    * https://leetcode.com/problems/permutation-difference-between-two-strings
    */
   public int findPermutationDifference(String s, String t) {
-    var charCountS = new HashMap<Character, Integer>();
+    var stringS = new HashMap<Character, Integer>();
 
     int totalDifference = 0;
 
     for (int sIndex = 0; sIndex < s.length(); sIndex++) {
-      charCountS.put(s.charAt(sIndex), sIndex);
+      stringS.put(s.charAt(sIndex), sIndex);
     }
     for (int tIndex = 0; tIndex < t.length(); tIndex++) {
-      int countIndexS = charCountS.put(t.charAt(tIndex), tIndex);
+      int countIndexS = stringS.put(t.charAt(tIndex), tIndex);
 
       totalDifference += Math.abs(countIndexS - tIndex);
     }
     return totalDifference;
   }
-}
+}  
