@@ -12,24 +12,14 @@ public class Order {
   }
 
   public String getOrderId() throws OrderNotFoundException {
-    if (orderId == null) {
-      throw new OrderNotFoundException("This order does not match any in our records");
-    }
     return orderId;
   }
 
   public Product getProduct() throws OrderNotFoundException {
-    if (product == null) {
-      throw new OrderNotFoundException("This Product is not in our system.");
-    }
     return product;
   }
 
   public int getQuantity() throws OrderNotFoundException {
-    if (quantity == 0) {
-      throw new OrderNotFoundException("Out of Stock.");
-    }
-
     return quantity;
   }
 }

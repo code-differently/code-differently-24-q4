@@ -10,24 +10,10 @@ public class Product {
   }
 
   public String getProductId() {
-    if (productId == null) {
-      try {
-        throw new ProductNotFoundException("The product ID can not be found.");
-      } catch (ProductNotFoundException e) {
-        System.out.println(e);
-      }
-    }
     return productId;
   }
 
   public String getName() {
-    if (name == null) {
-      try {
-        throw new ProductNotFoundException("Nothing matches that name");
-      } catch (ProductNotFoundException e) {
-        System.out.println(e);
-      }
-    }
     return name;
   }
 }
