@@ -9,7 +9,7 @@ public class Product {
     this.name = name;
   }
 
-  public String getProductId() /*throws ProductNotFoundException*/ {
+  public String getProductId() {
     if (productId == null) {
       try {
         throw new ProductNotFoundException("The product ID can not be found.");
@@ -20,7 +20,7 @@ public class Product {
     return productId;
   }
 
-  public String getName() /*throws ProductNotFoundException*/ {
+  public String getName() {
     if (name == null) {
       try {
         throw new ProductNotFoundException("Nothing matches that name");
