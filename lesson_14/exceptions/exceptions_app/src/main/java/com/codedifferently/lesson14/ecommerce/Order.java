@@ -11,7 +11,7 @@ public class Order {
     this.quantity = quantity;
   }
 
-  public String getOrderId(){
+  public String getOrderId() {
     return orderId;
   }
 

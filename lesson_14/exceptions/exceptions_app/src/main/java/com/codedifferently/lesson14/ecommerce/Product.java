@@ -13,7 +13,7 @@ public class Product {
     return productId;
   }
 
-  public String getName()  {
+  public String getName() {
     return name;
   }
 }
