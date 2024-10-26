@@ -4,7 +4,6 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.UUID;
 
-
 public class EcommerceSystem {
   private Map<String, Product> products;
   private Map<String, Order> orders;
@@ -18,7 +17,7 @@ public class EcommerceSystem {
     products.put(productId, new Product(productId, name));
   }
 
-  public String placeOrder(String productId, int quantity)  throws ProductNotFoundException{
+  public String placeOrder(String productId, int quantity) throws ProductNotFoundException {
     Product product = products.get(productId);
     if (product == null) {
       throw new ProductNotFoundException("Product with Id 1 Not found ");
@@ -28,12 +27,10 @@ public class EcommerceSystem {
     return orderId;
   }
 
-  public void cancelOrder(String orderId) throws
-   OrderNotFoundException{
+  public void cancelOrder(String orderId) throws OrderNotFoundException {
     Order order = orders.get(orderId);
     try {
-        if (order == null ) throw new 
-        OrderNotFoundException("No Such order exists");
+      if (order == null) throw new OrderNotFoundException("No Such order exists");
     } catch (OrderNotFoundException e) {
       System.out.println(" order does not exist");
     }
@@ -42,7 +39,7 @@ public class EcommerceSystem {
 
   public String checkOrderStatus(String orderId) throws OrderNotFoundException {
     Order order = orders.get(orderId);
-    if(order == null) throw new OrderNotFoundException("order with ID 1 not found");
+    if (order == null) throw new OrderNotFoundException("order with ID 1 not found");
     return "Order ID: "
         + orderId
         + ", Product: "
