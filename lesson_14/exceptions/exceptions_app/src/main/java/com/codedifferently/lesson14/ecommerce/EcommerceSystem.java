@@ -20,7 +20,7 @@ public class EcommerceSystem {
   public String placeOrder(String productId, int quantity) throws ProductNotFoundException {
     Product product = products.get(productId);
     if (product == null) {
-      throw new ProductNotFoundException("Product with Id 1 Not found ");
+      throw new ProductNotFoundException("Product with ID 1 Not found ");
     }
     String orderId = UUID.randomUUID().toString();
     orders.put(orderId, new Order(orderId, product, quantity));
