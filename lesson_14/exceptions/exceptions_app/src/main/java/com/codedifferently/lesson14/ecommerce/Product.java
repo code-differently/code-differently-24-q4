@@ -9,11 +9,11 @@ public class Product {
     this.name = name;
   }
 
-  public String getProductId() throws ProductNotFoundException {
+  public String getProductId() {
     return productId;
   }
 
-  public String getName() throws ProductNotFoundException {
+  public String getName()  {
     return name;
   }
 }
