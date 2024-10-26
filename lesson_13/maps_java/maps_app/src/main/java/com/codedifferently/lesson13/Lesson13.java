@@ -23,4 +23,4 @@ public class Lesson13 {
     }
     return totalDifference;
   }
-}  
+}
