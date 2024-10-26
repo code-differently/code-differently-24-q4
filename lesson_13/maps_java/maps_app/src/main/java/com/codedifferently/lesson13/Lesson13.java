@@ -11,7 +11,7 @@ public class Lesson13 {
   public int findPermutationDifference(String s, String t) {
     HashMap<Character, Integer> indexMap = new HashMap<>();
 
-    for (int i =0; i < s.length(); i++) {
+    for (int i = 0; i < s.length(); i++) {
       indexMap.put(s.charAt(i), i);
     }
 
