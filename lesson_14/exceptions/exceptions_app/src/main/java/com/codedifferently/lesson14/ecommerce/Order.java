@@ -11,15 +11,15 @@ public class Order {
     this.quantity = quantity;
   }
 
-  public String getOrderId() throws OrderNotFoundException {
+  public String getOrderId() {
     return orderId;
   }
 
-  public Product getProduct() throws OrderNotFoundException {
+  public Product getProduct() {
     return product;
   }
 
-  public int getQuantity() throws OrderNotFoundException {
+  public int getQuantity() {
     return quantity;
   }
 }
