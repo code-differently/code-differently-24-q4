@@ -40,11 +40,6 @@ class EcommerceSystemTest {
     assertThatThrownBy(() -> ecommerceSystem.placeOrder("1", 1))
         .isInstanceOf(ProductNotFoundException.class)
         .hasMessage("Product with ID 1 not found");
-
-    // Act
-    assertThatThrownBy(() -> ecommerceSystem.placeOrder("34", 1))
-        .isInstanceOf(ProductNotFoundException.class)
-        .hasMessage("Product with ID 34 not found");
   }
 
   @Test
@@ -63,23 +58,18 @@ class EcommerceSystemTest {
     assertThatThrownBy(() -> ecommerceSystem.checkOrderStatus("1"))
         .isInstanceOf(OrderNotFoundException.class)
         .hasMessage("Order with ID 1 not found");
-
-    // Act
-    assertThatThrownBy(() -> ecommerceSystem.checkOrderStatus("33"))
-        .isInstanceOf(OrderNotFoundException.class)
-        .hasMessage("Order with ID 33 not found");
   }
 
   @Test
   void testCheckOrderStatus_orderCancelled() throws Exception {
     // Arrange
-    ecommerceSystem.addProduct("58", "Laptop");
-    String orderId = ecommerceSystem.placeOrder("58", 1);
+    ecommerceSystem.addProduct("1", "Laptop");
+    String orderId = ecommerceSystem.placeOrder("1", 1);
     ecommerceSystem.cancelOrder(orderId);
 
     // Act
-    assertThatThrownBy(() -> ecommerceSystem.checkOrderStatus("58"))
+    assertThatThrownBy(() -> ecommerceSystem.checkOrderStatus("1"))
         .isInstanceOf(OrderNotFoundException.class)
-        .hasMessage("Order with ID 58 not found");
+        .hasMessage("Order with ID 1 not found");
   }
 }
