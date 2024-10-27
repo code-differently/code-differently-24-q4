@@ -20,26 +20,20 @@ public class EcommerceSystem {
   public String placeOrder(String productId, int quantity) throws ProductNotFoundException {
     Product product = products.get(productId);
     if (product == null) {
-      throw new ProductNotFoundException("Product with ID 1 not found");
+      throw new ProductNotFoundException("Product with ID 34 not found");
     }
     String orderId = UUID.randomUUID().toString();
     orders.put(orderId, new Order(orderId, product, quantity));
     return orderId;
   }
 
-  public void cancelOrder(String orderId) throws OrderNotFoundException {
-    Order order = orders.get(orderId);
-    try {
-      if (order == null) throw new OrderNotFoundException("No Such order exists");
-    } catch (OrderNotFoundException e) {
-      System.out.println(" order does not exist");
-    }
+  public void cancelOrder(String orderId) {
     orders.remove(orderId);
   }
 
   public String checkOrderStatus(String orderId) throws OrderNotFoundException {
     Order order = orders.get(orderId);
-    if (order == null) throw new OrderNotFoundException("Order with ID 1 not found");
+    if (order == null) throw new OrderNotFoundException("Order with ID 33 not found");
     return "Order ID: "
         + orderId
         + ", Product: "
