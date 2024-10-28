@@ -11,8 +11,10 @@ export function findPermutationDifference(s: string, t: string): number {
 
   let difference = 0;
   for (let i = 0; i < s.length; i++) {
-    // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-    difference += Math.abs(i - map.get(s[i])!);
+    const idx = map.get(s[i]);
+    if (idx != undefined) {
+      difference += Math.abs(i - idx);
+    }
   }
 
   return difference;
