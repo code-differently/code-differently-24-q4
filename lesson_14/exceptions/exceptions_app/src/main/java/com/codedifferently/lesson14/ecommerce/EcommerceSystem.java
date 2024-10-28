@@ -17,24 +17,51 @@ public class EcommerceSystem {
     products.put(productId, new Product(productId, name));
   }
 
-  public String placeOrder(String productId, int quantity) {
-    Product product = products.get(productId);
+  public String placeOrder(String productId, int quantity)  throws ProductNotFoundException, InvalidOrderQuantityException {
+    Product product = products.get(productId); {
     String orderId = UUID.randomUUID().toString();
     orders.put(orderId, new Order(orderId, product, quantity));
     return orderId;
+    
+    if (! products.containsKey(productId));
+    throw new ProductNotFoundException("Product with ID " + productId + "not found");
+  }
+    if (quantity < 1); {
+    throw new InvalidOrderQuantityException("Quantity must be at least 1");
+}
+   
+}
+
+  public void cancelOrder(String orderId) throws OrderNotFoundException {
+    orders.remove(orderId); {
+      
+      Order order = orders.get(orderId);
+      if (order == null) {
+        throw new OrderNotFoundException("Order with ID " + orderId + "not found");
+      }
+      if (order.getStatus().equals("Canceled")) {
+        throw new OrderNotFoundException("Order has already been canceled");
+      }
+      if (order.getStatus().equals("Processed")) {
+        throw new OrderNotFoundException("Order has already been processed");
+      }
+    }
   }
 
-  public void cancelOrder(String orderId) {
-    orders.remove(orderId);
-  }
-
-  public String checkOrderStatus(String orderId) {
-    Order order = orders.get(orderId);
+  public String checkOrderStatus(String orderId) throws OrderNotFoundException {
+    Order order = orders.get(orderId); 
     return "Order ID: "
         + orderId
         + ", Product: "
         + order.getProduct().getName()
         + ", Quantity: "
         + order.getQuantity();
+
+  if (orders.get(orderId) == null) {
+    throw new OrderNotFoundException("Order with ID " + orderId + "not found");
   }
+  if (orders.remove(orderId)) {
+    throw new OrderNotFoundException("Order with ID " + orderId + "not found");
+  }
+}
 }
