@@ -26,7 +26,7 @@ public class EcommerceSystem {
     orders.put(orderId, new Order(orderId, product, quantity));
     return orderId;
   }
-  
+
   public void cancelOrder(String orderId) {
     orders.remove(orderId);
   }
