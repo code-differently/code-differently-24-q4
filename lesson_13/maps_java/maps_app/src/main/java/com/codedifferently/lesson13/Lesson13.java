@@ -10,14 +10,14 @@ public class Lesson13 {
    */
   public int findPermutationDifference(String s, String t) {
     HashMap<Character, Integer> hashMap = new HashMap<>();
-    int pD = 0;
+    int permutationD = 0;
     for (int i = 0; i < s.length(); i++) {
       hashMap.put(s.charAt(i), i);
     }
     for (char key : hashMap.keySet()) {
       int indexT = t.indexOf(Character.toString(key));
-      pD += Math.abs(s.indexOf(key) - indexT);
+      permutationD += Math.abs(s.indexOf(key) - indexT);
     }
-    return pD;
+    return permutationD;
   }
 }
