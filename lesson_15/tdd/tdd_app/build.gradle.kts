@@ -42,7 +42,7 @@ tasks.named<Test>("test") {
     finalizedBy(tasks.jacocoTestReport)
 }
 
-tasks.register<JacocoReport>("myJacocoTestReport") {
+tasks.jacocoTestReport {
   dependsOn(tasks.test)
   reports {
     xml.required = true
