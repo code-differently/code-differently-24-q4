@@ -5,11 +5,11 @@ public class Lesson14 {
   public static void main(String[] args) {
     // System.out.println("Hello World");
     try {
-      ecommerceSystem.placeOrder("1", 1);  
+      String orderId = ecommerceSystem.placeOrder("1", 1);  
     } catch (ProductNotFoundException e) {
-      System.out.println("Product not found.");
+      System.out.println("Product with ID " + orderId + " not found.");
     } catch (OrderNotFoundException e){
-      System.out.println("Order not found.");
+      System.out.println("Order with ID " + orderId + " not found.");
     }
   }
 }
