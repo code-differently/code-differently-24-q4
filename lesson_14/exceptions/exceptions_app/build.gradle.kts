@@ -32,7 +32,7 @@ dependencies {
 
 application {
     // Define the main class for the application.
-    mainClass.set("com.codedifferently.lesson12.Lesson12")
+    mainClass.set("com.codedifferently.lesson14.Lesson14")
 }
 
 tasks.named<Test>("test") {
