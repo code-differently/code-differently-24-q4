@@ -17,7 +17,7 @@ public class EcommerceSystem {
     products.put(productId, new Product(productId, name));
   }
 
-  public String placeOrder(String productId, int quantity) throws ProductNotFoundException{
+  public String placeOrder(String productId, int quantity) throws ProductNotFoundException {
     Product product = products.get(productId);
     if (product == null) {
       throw new ProductNotFoundException("Product with ID " + productId + " not found");
@@ -31,7 +31,7 @@ public class EcommerceSystem {
     orders.remove(orderId);
   }
 
-  public String checkOrderStatus(String orderId) throws OrderNotFoundException{
+  public String checkOrderStatus(String orderId) throws OrderNotFoundException {
     Order order = orders.get(orderId);
     if (order == null) {
       throw new OrderNotFoundException("Order with ID " + orderId + " not found");
