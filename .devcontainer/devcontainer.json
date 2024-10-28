@@ -37,7 +37,8 @@
 				"mechatroner.rainbow-csv",
 				"alexcvzz.vscode-sqlite",
 				"Orta.vscode-jest",
-				"firsttris.vscode-jest-runner"
+				"firsttris.vscode-jest-runner",
+				"emeraldwalk.RunOnSave"
 			],
             "settings": {
                 "terminal.integrated.defaultProfile.linux": "zsh",
