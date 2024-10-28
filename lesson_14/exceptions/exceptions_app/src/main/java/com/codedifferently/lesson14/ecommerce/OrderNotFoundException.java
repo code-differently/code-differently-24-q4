@@ -4,7 +4,9 @@
  */
 
 package com.codedifferently.lesson14.ecommerce;
-//Custom Exception with the name OrderNotFoundException set to display a string message of your choosing
+
+// Custom Exception with the name OrderNotFoundException set to display a string message of your
+// choosing
 class OrderNotFoundException extends Exception {
   public OrderNotFoundException(String message) {
     super(message);

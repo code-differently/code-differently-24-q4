@@ -21,7 +21,8 @@ public class EcommerceSystem {
     Product product = products.get(productId);
     String orderId = UUID.randomUUID().toString();
     orders.put(orderId, new Order(orderId, product, quantity));
-    //Asks if product is null and to throw the exception message 'Product with ID {orderId} not found' if it is. 
+    // Asks if product is null and to throw the exception message 'Product with ID {orderId} not
+    // found' if it is.
     if (product == null) {
       throw new ProductNotFoundException("Product with ID " + productId + " not found");
     }
@@ -35,7 +36,8 @@ public class EcommerceSystem {
 
   public String checkOrderStatus(String orderId) throws OrderNotFoundException {
     Order order = orders.get(orderId);
-    //Asks if order is null and to throw the exception message 'Order with ID {orderId} not found' if it is. 
+    // Asks if order is null and to throw the exception message 'Order with ID {orderId} not found'
+    // if it is.
     if (order == null) {
       throw new OrderNotFoundException("Order with ID " + orderId + " not found");
     }
