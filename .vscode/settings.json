@@ -15,4 +15,14 @@
     "[javascriptreact]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
+    "emeraldwalk.runonsave": {
+        "commands": [
+            {
+                "match": ".java",
+                "message": "running",
+                "messageAfter": "finished",
+                "cmd": "cd ${fileDirname} && while [ ! -d 'gradle' ]; do cd ..; done && ./gradlew spotlessApply"
+            }
+        ]
+    }
 }
