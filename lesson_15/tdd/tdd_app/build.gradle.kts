@@ -49,6 +49,19 @@ tasks.jacocoTestReport {
   }
 }
 
+tasks.jacocoTestCoverageVerification {
+  violationRules {
+    rule {
+      limit {
+        minimum = "0.8".toBigDecimal()
+      }
+    }
+  }
+}
+
+tasks.check {
+	dependsOn(tasks.jacocoTestCoverageVerification)
+}
 
 configure<com.diffplug.gradle.spotless.SpotlessExtension> {
 
