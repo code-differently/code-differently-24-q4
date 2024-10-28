@@ -4,7 +4,7 @@
  */
 
 package com.codedifferently.lesson14.ecommerce;
-
+//Custom Exception with the name ProductNotFoundException set to display a string message of your choosing
 class ProductNotFoundException extends Exception {
   public ProductNotFoundException(String message) {
     super(message);
