@@ -61,7 +61,7 @@ public class EmployeeTest {
     double expectedSalary = cut.getSalary();
 
     // Assert
-    double actualSalary = cut.getSalary();
+    double actualSalary = 200.00;
     assertEquals(expectedSalary, actualSalary, "The Salary should be '200.00'");
   }
 
