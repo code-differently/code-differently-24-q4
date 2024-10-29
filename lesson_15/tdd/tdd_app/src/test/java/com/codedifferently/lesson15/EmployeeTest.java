@@ -6,7 +6,8 @@ import org.junit.jupiter.api.Test;
 public class EmployeeTest {
     @Test
     void testGetDepartment() {
-
+        //Arrange
+        //Act
     }
 
     @Test
@@ -24,27 +25,32 @@ public class EmployeeTest {
 
     @Test
     void testGetId() {
-
+        //Arrange
+        //Act
     }
 
     @Test
     void testGetName() {
-
+        //Arrange
+        //Act
     }
 
     @Test
     void testGetSalary() {
-
+        //Arrange
+        //Act
     }
 
     @Test
     void testSetDepartment() {
-
+        //Arrange
+        //Act
     }
 
     @Test
     void testSetId() {
-
+        //Arrange
+        //Act
     }
 
     @Test
@@ -54,6 +60,7 @@ public class EmployeeTest {
 
     @Test
     void testSetSalary() {
-
+        //Arrange
+        //Act
     }
 }
