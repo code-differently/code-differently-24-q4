@@ -45,12 +45,19 @@ public class EmployeeTest {
     @Test
     void testGetName() {
         //Arrange
+        Employee employee = new Employee(12345, "John Doe", "Engineering", 75000);
+        
         //Act
+        employee.getName();
+
+        //Assert
+        assertEquals("John Doe", employee.getName());
     }
 
     @Test
     void testGetSalary() {
         //Arrange
+        Employee employee = new Employee(12345, "John Doe", "Engineering", 75000);
         //Act
     }
 
