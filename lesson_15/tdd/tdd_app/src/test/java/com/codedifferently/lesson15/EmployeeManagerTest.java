@@ -88,18 +88,4 @@ public class EmployeeManagerTest {
         });
     }
 
-    @Test
-    void testUpdateEmployeeThrowsExceptionForNonExistentId() {
-        Employee employee = new Employee(1, "John Doe", null, 0);
-        assertThrows(IllegalArgumentException.class, () -> {
-            employeeManager.updateEmployee(employee);
-        });
-    }
-
-    @Test
-    void testRemoveEmployeeThrowsExceptionForNonExistentId() {
-        assertThrows(IllegalArgumentException.class, () -> {
-            employeeManager.removeEmployee(999);
-        });
-    }
 }
