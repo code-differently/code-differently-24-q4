@@ -6,7 +6,7 @@ import java.util.Map;
 public class EmployeeManager {
   private Map<Integer, Employee> employees;
 
-  public EmployeeManager() {
+  public EmployeeManager() { 
     employees = new HashMap<>();
   }
 
