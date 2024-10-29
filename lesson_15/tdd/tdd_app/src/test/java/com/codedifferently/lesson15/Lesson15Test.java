@@ -1,6 +1,7 @@
 package com.codedifferently.lesson15;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -26,14 +27,14 @@ class Lesson15Test {
   @Test
   public void testSetId() {
     employee.setId(2);
-    //Assert
+    // Assert
     assertEquals(employee.getId(), 2);
   }
 
   @Test
   public void testGetName() {
     employee.getName();
-    //Assert
+    // Assert
     assertEquals(employee.getName(), "Wall-E");
   }
 
