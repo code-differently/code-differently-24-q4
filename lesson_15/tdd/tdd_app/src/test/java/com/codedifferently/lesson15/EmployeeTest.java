@@ -7,7 +7,13 @@ public class EmployeeTest {
     @Test
     void testGetDepartment() {
         //Arrange
+        Employee employee = new Employee(12345, "John Doe", "Engineering", 75000);
+
         //Act
+        employee.getDepartment();
+
+        //Assert
+        assertEquals("Engineering", employee.getDepartment());
     }
 
     @Test
@@ -26,7 +32,14 @@ public class EmployeeTest {
     @Test
     void testGetId() {
         //Arrange
+        Employee employee = new Employee(12345, "John Doe", "Engineering", 75000);
+
         //Act
+        int actualEmployeeID = employee.getId();
+
+        //Assert 
+        int expectedEmployeeID = 12345;
+        assertEquals(expectedEmployeeID, actualEmployeeID);
     }
 
     @Test
