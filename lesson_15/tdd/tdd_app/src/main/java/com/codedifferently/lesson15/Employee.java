@@ -51,7 +51,7 @@ public class Employee {
   }
 
   public String getDetails(){
-    return "The employee, " +name+ " in " +department+ " with the id of " +id+ " has a salary of " +salary+ " .";
+    return "The employee, " +name+ " in " +department+ " with the ID of " +id+ " has a salary of " +salary+ " .";
   }
 
 }
