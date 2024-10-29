@@ -1,5 +1,7 @@
 package com.codedifferently.lesson15;
 
+import java.io.Console;
+
 public class Employee {
   private int id;
   private String name;
@@ -45,4 +47,10 @@ public class Employee {
   public void setSalary(double salary) {
     this.salary = salary;
   }
+  public String getDetails() {
+    return details;
+  }
+  public void getDetails(String details){
+    return "The employee, " +name+ " in " +department+ " with the id of " +id+ " has a salary of " +salary+ " .";
+  } 
 }
