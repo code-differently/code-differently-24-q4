@@ -6,7 +6,7 @@ public class EmployeeManagerTest {
     @Test
     void testAddEmployee() {
     //employees.put(employee.getId(), employee);
-        var newEmployee = new employees.put(employee.getId(), employee);
+    // var newEmployee = new employees.put(employee.getId(), employee);
     }
 
     @Test
