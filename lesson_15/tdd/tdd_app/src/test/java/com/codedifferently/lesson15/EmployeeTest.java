@@ -71,24 +71,48 @@ public class EmployeeTest {
     @Test
     void testSetDepartment() {
         //Arrange
+        Employee employee = new Employee(12345, "John Doe", "", 75000);
+
         //Act
+        employee.setDepartment("Engineering");
+
+        //Assert 
+        assertEquals("Engineering", employee.getDepartment());
     }
 
     @Test
     void testSetId() {
         //Arrange
+        Employee employee = new Employee(0, "John Doe", "", 75000);
+        
         //Act
+        employee.setId(12345);
+
+        //Assert
+        assertEquals(12345, employee.getId());
     }
 
     @Test
     void testSetName() {
         //Arrange
+        Employee employee = new Employee(12345, "", "Engineering", 75000);
+        
         //Act
+        employee.setName("Alice Johnson");
+
+        //Assert
+        assertEquals("Alice Johnson", employee.getName());
     }
 
     @Test
     void testSetSalary() {
         //Arrange
+        Employee employee = new Employee(12345, "", "Engineering", 0);
+        
         //Act
+        employee.setSalary(75000);
+
+        //Assert
+        assertEquals(75000, employee.getSalary());
     }
 }
