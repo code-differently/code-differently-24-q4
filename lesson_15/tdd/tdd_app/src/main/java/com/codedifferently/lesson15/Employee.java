@@ -46,10 +46,6 @@ public class Employee {
     this.salary = salary;
   }
 
-  public void details(){
-    System.out.println(getDetails());
-  }
-
   public String getDetails(){
     return "The employee, " +name+ " in " +department+ " with the ID of " +id+ " has a salary of " +salary+ " .";
   }
