@@ -1,35 +1,44 @@
 package com.codedifferently.lesson15;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 public class EmployeeManagerTest {
+    private EmployeeManager employeeManager;
+
+    @BeforeEach
+    public void setUp() {
+        employeeManager = new EmployeeManager();
+    }
+
     @Test
     void testAddEmployee() {
         //Arrange
-        List<Employee> employees = new ArrayList<>();
-        Employee employee = new Employee(
-            24680, 
-            "Web Design", 
-            "Alice Johnson", 
-            75000
-            );
+        Employee employee = new Employee(1, "John Doe", null, 0);
         
         //Act
-        employees.add(employee.getId(), employee);
+        employeeManager.addEmployee(employee);
 
         //Assert
-        assertTrue(employees.contains(employee));
+        assertEquals(1, employeeManager.getEmployeeCount());
         
     }
 
     @Test
     void testUpdateEmployee() {
         //Arrange
+        Employee employee = new Employee(1, "John Doe", null, 0);
+        Employee updatedEmployee = new Employee(1, "Jane Doe", null, 0);
+        
         //Act
+         employeeManager.addEmployee(employee);
+         employeeManager.updateEmployee(updatedEmployee);
+
+        //Assert
+        Employee retrievedEmployee = employeeManager.getEmployee(1);
+        assertEquals(updatedEmployee.getName(), retrievedEmployee.getName());
+
     }
 
     @Test
