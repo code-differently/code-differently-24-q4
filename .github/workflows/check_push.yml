@@ -122,3 +122,7 @@ jobs:
     - name: Build Lesson 14 with Java
       working-directory: ./lesson_14/exceptions
       run: ./gradlew assemble
+
+    - name: Build Lesson 15 with Java
+      working-directory: ./lesson_15/tdd
+      run: ./gradlew check
