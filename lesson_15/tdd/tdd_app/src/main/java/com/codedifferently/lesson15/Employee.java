@@ -46,8 +46,14 @@ public class Employee {
     this.salary = salary;
   }
 
-  public String getDetails(){
-    return "Employee: " + name + ", Department: " + department + " , ID: " +id+ " , Salary: " + (int)salary;
+  public String getDetails() {
+    return "Employee: "
+        + name
+        + ", Department: "
+        + department
+        + " , ID: "
+        + id
+        + " , Salary: "
+        + (int) salary;
   }
-
 }

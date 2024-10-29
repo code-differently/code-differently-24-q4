@@ -7,7 +7,7 @@ public class EmployeeManager {
 
   private final Map<Integer, Employee> employees;
 
-  public EmployeeManager() { 
+  public EmployeeManager() {
     employees = new HashMap<>();
   }
 
