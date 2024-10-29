@@ -15,7 +15,7 @@ public class EmployeeTest {
     }
 
     @Test
-    //Method beign tested
+    //Method being tested
     public void testGetId() {
         //Execersise
         int actualId = employee.getId();
@@ -37,10 +37,10 @@ public class EmployeeTest {
 
     @Test
     public void testGetName() {
-        //Act
-        String actualName = employee.getName();
         //Arrange
         String expectedName = "Chigazo";
+        //Act
+        String actualName = employee.getName();
         //Assert
         assertEquals(expectedName, actualName);
     }
@@ -56,18 +56,18 @@ public class EmployeeTest {
     }
 
     @Test
-    public void getDepartmentTest() {
-        //Act
-        String expectedDepartment = employee.getDepartment();
+    public void testGetDepartment() {
         //Arrange
         String actualDepartment = "Finance";
+        //Act
+        String expectedDepartment = employee.getDepartment();
         //Assert
         assertEquals(expectedDepartment, actualDepartment);
     }
 
     @Test
-    public void setDepartmentTest() {
-         //Arrange
+    public void testSetDepartment() {
+        //Arrange
         String expectedSetDepartment = "Tech";
         //Act
         employee.setDepartment(expectedSetDepartment);
@@ -76,7 +76,7 @@ public class EmployeeTest {
     }
 
     @Test
-    public void getSalaryTest() {
+    public void testGetSalary() {
         //Arrange
         double actualSalary = 50000.00;
         //Act
@@ -86,13 +86,27 @@ public class EmployeeTest {
     }
 
     @Test
-    public void setSalaryTest() {
+    public void testSetSalary() {
         //Arrange
         double expectedSetSalary = 100000.00;
         //Act
         employee.setSalary(expectedSetSalary);
         //Assert
         assertEquals(expectedSetSalary, employee.getSalary());
+    }
+
+    @Test
+    public void testGetDetails() {
+        //Arrange
+        String actualDetails = 
+        "id: " + employee.getId()
+         + "name: " + employee.getName()
+         + "department: " + employee.getDepartment()
+         + "salary: " + employee.getSalary();
+        //Act
+        String expectedDetails = employee.getDetails();
+        //Assert
+        assertEquals(expectedDetails, actualDetails);
     }
 }
 
