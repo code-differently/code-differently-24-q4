@@ -13,8 +13,10 @@ public class EmployeeTest {
     void testGetDetails() {
         //Arrange
         Employee employee = new Employee(12345, "John Doe", "Engineering", 75000);
+        
         //Act
         String actualDetails = employee.getDetails();
+        
         //Assert
         String expectedDetails = "Employee: John Doe, Department: Engineering , ID: 12345 , Salary: 75000";
         assertEquals(expectedDetails, actualDetails);
