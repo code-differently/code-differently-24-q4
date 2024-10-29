@@ -58,7 +58,13 @@ public class EmployeeTest {
     void testGetSalary() {
         //Arrange
         Employee employee = new Employee(12345, "John Doe", "Engineering", 75000);
+       
         //Act
+        double expectedSalary = employee.getSalary();
+
+        //Assert
+        double actualSalary = 75000;
+        assertEquals(expectedSalary, actualSalary);
     }
 
     @Test
