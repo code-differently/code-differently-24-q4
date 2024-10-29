@@ -3,21 +3,26 @@ package com.codedifferently.lesson15;
 import java.util.ArrayList;
 import java.util.List;
 
+import static org.junit.jupiter.api.Assertions.assertTrue;
 import org.junit.jupiter.api.Test;
 
 public class EmployeeManagerTest {
     @Test
     void testAddEmployee() {
-        // employees.put(employee.getId(), employee);
         //Arrange
         List<Employee> employees = new ArrayList<>();
-        Employee employee = new Employee(12345, "Engineering", "Alice Johnson", 75000);
+        Employee employee = new Employee(
+            24680, 
+            "Web Design", 
+            "Alice Johnson", 
+            75000
+            );
         
         //Act
-        employees.add(employee);
+        employees.add(employee.getId(), employee);
 
         //Assert
-        
+        assertTrue(employees.contains(employee));
         
     }
 
