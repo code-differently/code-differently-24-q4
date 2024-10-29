@@ -10,10 +10,11 @@ public class EmployeeTest {
         Employee employee = new Employee(12345, "John Doe", "Engineering", 75000);
 
         //Act
-        employee.getDepartment();
+        String actualDepartment = employee.getDepartment();
 
         //Assert
-        assertEquals("Engineering", employee.getDepartment());
+        String expectedDepartment = "Engineering";
+        assertEquals(expectedDepartment, actualDepartment);
     }
 
     @Test
