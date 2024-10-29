@@ -7,13 +7,17 @@ public class EmployeeManagerTest {
     EmployeeTest employeeTest;
 
     @Test
-    public void getIdTest() {
-        // test if id matches set id
+    public void testaddEmployee() {
+        // Arrange
+        
+        //Act
+
+        //Assert
         
     }
 
     @Test
-    public void setIdTest() {
+    public void test() {
         // tests if changed id matches new id
     }
 

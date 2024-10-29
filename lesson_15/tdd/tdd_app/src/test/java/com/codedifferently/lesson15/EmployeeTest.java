@@ -11,7 +11,7 @@ public class EmployeeTest {
     //Set up
     @BeforeEach
     void setUp() {
-        employee = new Employee(19, "Chigazo", "Finance", 200000.00);
+        employee = new Employee(19, "Chigazo", "Finance", 50000.00);
     }
 
     @Test
@@ -37,17 +37,17 @@ public class EmployeeTest {
 
     @Test
     public void testGetName() {
-        
+        //Act
         String actualName = employee.getName();
-
+        //Arrange
         String expectedName = "Chigazo";
-
+        //Assert
         assertEquals(expectedName, actualName);
     }
 
     @Test
     public void testSetName() {
-         //Arrange
+        //Arrange
         String expectedSetName = "Austin";
         //Act
         employee.setName(expectedSetName);
@@ -57,34 +57,42 @@ public class EmployeeTest {
 
     @Test
     public void getDepartmentTest() {
+        //Act
         String expectedDepartment = employee.getDepartment();
-
+        //Arrange
         String actualDepartment = "Finance";
-
+        //Assert
         assertEquals(expectedDepartment, actualDepartment);
     }
 
-    // @Test
-    // public void setDepartmentTest() {
-    //     employee.setDepartment();
-    // }
+    @Test
+    public void setDepartmentTest() {
+         //Arrange
+        String expectedSetDepartment = "Tech";
+        //Act
+        employee.setDepartment(expectedSetDepartment);
+        //Assert
+        assertEquals(expectedSetDepartment, employee.getDepartment());
+    }
 
     @Test
     public void getSalaryTest() {
+        //Arrange
+        double actualSalary = 50000.00;
+        //Act
         double expectedSalary = employee.getSalary();
-
-        double actualSalary = 200000.00;
-
+        //Assert
         assertEquals(expectedSalary, actualSalary);
     }
 
-    // @Test
-    // public void setSalaryTest() {
-    //     employee.setSalary();
-    // }
-
-    private void getId() {
-        throw new UnsupportedOperationException("Not supported yet.");
+    @Test
+    public void setSalaryTest() {
+        //Arrange
+        double expectedSetSalary = 100000.00;
+        //Act
+        employee.setSalary(expectedSetSalary);
+        //Assert
+        assertEquals(expectedSetSalary, employee.getSalary());
     }
 }
 
