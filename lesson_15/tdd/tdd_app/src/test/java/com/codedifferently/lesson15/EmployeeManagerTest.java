@@ -8,8 +8,8 @@ import org.junit.jupiter.api.Test;
 
 class EmployeeManagerTest {
 
-  private EmployeeManager manager;
-  private Employee emp;
+  public EmployeeManager manager;
+  public Employee emp;
 
   @BeforeEach
   public void setUp() {
