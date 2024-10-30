@@ -1,0 +1,28 @@
+name: Check Lesson 17 Java Pull Request
+
+on:
+  pull_request:
+    branches: [ "main" ]
+    paths:
+      - "lesson_17/oop/**"
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pull-requests: write
+
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: Set up JDK 17
+      uses: actions/setup-java@v4
+      with:
+        java-version: '17'
+        distribution: 'temurin'
+
+    - name: Build Lesson 17 with Java
+      working-directory: ./lesson_17/oop
+      run: ./gradlew check
