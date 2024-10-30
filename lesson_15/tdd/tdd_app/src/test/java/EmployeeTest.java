@@ -61,4 +61,9 @@ public class EmployeeTest {
 
     assertEquals(1000000, employee.getSalary());
   }
+
+  @Test
+  void getDetails() {
+    assertEquals(employee.getDetails(), employee.getDetails());
+  }
 }
