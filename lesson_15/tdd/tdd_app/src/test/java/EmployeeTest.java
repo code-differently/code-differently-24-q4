@@ -10,7 +10,7 @@ public class EmployeeTest {
 
   @BeforeEach
   void setUp() {
-    employee = new Employee(15, "Pablo", "Emperor", 100);
+    employee = new Employee(15, "Pablo", "Emperor", 100.0);
   }
 
   @Test
@@ -52,18 +52,19 @@ public class EmployeeTest {
 
   @Test
   void testgetSalary() {
-    assertEquals(100, employee.getSalary());
+    assertEquals(100.0, employee.getSalary());
   }
 
   @Test
   void testsetSalary() {
-    employee.setSalary(1000000);
+    employee.setSalary(1000000.0);
 
-    assertEquals(1000000, employee.getSalary());
+    assertEquals(1000000.0, employee.getSalary());
   }
 
   @Test
   void getDetails() {
-    assertEquals(employee.getDetails(), employee.getDetails());
+    String expectedDetails = "15 Pablo Emperor 100.0.";
+    assertEquals(expectedDetails, employee.getDetails());
   }
 }
