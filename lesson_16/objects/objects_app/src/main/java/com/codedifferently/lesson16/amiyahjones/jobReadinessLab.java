@@ -1,3 +1,3 @@
-public class jobReadinessLab {
+public class JobReadinessLab {
 
 }
