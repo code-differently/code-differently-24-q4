@@ -35,4 +35,15 @@ class Lesson15Test {
     // Assert
     assertEquals(expectedValue, actualValue, "The value retrieved should match the value added.");
   }
+
+  @Test
+  public void testUpdateEmployee() {
+    // Arrange
+    manager.addEmployee(emp);
+    Employee updatedEmployee = new Employee(0, "1, Frankenstein");
+    // Act
+    manager.updateEmployee(updatedEmployee);
+    //Assert
+    assertEquals(updatedEmployee, manager.getEmployee(1), "Updated employee details should match the new information.");
+  }
 }
