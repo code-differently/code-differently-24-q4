@@ -2,6 +2,7 @@ package com.codedifferently.lesson14.ecommerce;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
+
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -15,7 +16,6 @@ class EcommerceSystemTest {
   }
 
   @Test
-  
   void testAddProduct() {
     // Act
     ecommerceSystem.addProduct("1", "Laptop");
