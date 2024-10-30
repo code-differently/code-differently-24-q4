@@ -2,6 +2,7 @@ plugins {
     // Apply the application plugin to add support for building a CLI application in Java.
     application
     eclipse
+    jacoco
     id("com.diffplug.spotless") version "6.25.0"
 	  id("org.springframework.boot") version "3.2.2"
     id("com.adarshr.test-logger") version "4.0.0"
@@ -38,8 +39,29 @@ application {
 tasks.named<Test>("test") {
     // Use JUnit Platform for unit tests.
     useJUnitPlatform()
+    finalizedBy(tasks.jacocoTestReport)
 }
 
+tasks.jacocoTestReport {
+  dependsOn(tasks.test)
+  reports {
+    xml.required = true
+  }
+}
+
+tasks.jacocoTestCoverageVerification {
+  violationRules {
+    rule {
+      limit {
+        minimum = "0.8".toBigDecimal()
+      }
+    }
+  }
+}
+
+tasks.check {
+	dependsOn(tasks.jacocoTestCoverageVerification)
+}
 
 configure<com.diffplug.gradle.spotless.SpotlessExtension> {
 

@@ -4,7 +4,7 @@ on:
   pull_request:
     branches: [ "main" ]
     paths:
-      - "lesson_17/oop/**"
+      - "lesson_17/bank/**"
 
 jobs:
   build:
@@ -24,5 +24,5 @@ jobs:
         distribution: 'temurin'
 
     - name: Build Lesson 17 with Java
-      working-directory: ./lesson_17/oop
+      working-directory: ./lesson_17/bank
       run: ./gradlew check
