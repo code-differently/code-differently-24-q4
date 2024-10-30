@@ -1,3 +1,5 @@
+package main.java.com.codedifferently.lesson16.amiyahjones;
+
 import java.util.ArrayList;
 
 public class JobReadinessLab {
@@ -7,6 +9,5 @@ public class JobReadinessLab {
     String jobTutor;
     boolean isSuccessful;
     ArrayList<String> students;
-
 }
 
