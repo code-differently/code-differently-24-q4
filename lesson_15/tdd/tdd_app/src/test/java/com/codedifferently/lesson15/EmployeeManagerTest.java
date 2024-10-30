@@ -56,7 +56,7 @@ public class EmployeeManagerTest {
   @Test
   public void getEmployeeCount() {
     employeeManager.removeEmployee(2);
-    count = employeeManager.getEmployeeCount();
+    int count = employeeManager.getEmployeeCount();
   }
 
   @Test
