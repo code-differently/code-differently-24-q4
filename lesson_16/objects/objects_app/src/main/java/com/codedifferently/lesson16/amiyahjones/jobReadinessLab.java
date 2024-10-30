@@ -6,8 +6,6 @@ public class JobReadinessLab {
     String jobTutor;
     boolean isSuccessful;
     //a list of students;
-    
-
-
-
+   
 }
+
