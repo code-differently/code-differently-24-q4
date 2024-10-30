@@ -13,7 +13,7 @@ class Lesson15Test {
   @BeforeEach
   public void setUp() {
     manager = new EmployeeManager();
-    emp = new Employee(1, "Edgar Allen Poe");
+    emp = new Employee(1, "Edgar Allen Poe", "Writer", 0.0);
   }
 
   @Test
@@ -40,10 +40,13 @@ class Lesson15Test {
   public void testUpdateEmployee() {
     // Arrange
     manager.addEmployee(emp);
-    Employee updatedEmployee = new Employee(0, "1, Frankenstein");
+    Employee updatedEmployee = new Employee(1, "Frankenstein", "Admin", 0.0);
     // Act
     manager.updateEmployee(updatedEmployee);
-    //Assert
-    assertEquals(updatedEmployee, manager.getEmployee(1), "Updated employee details should match the new information.");
+    // Assert
+    assertEquals(
+        updatedEmployee,
+        manager.getEmployee(1),
+        "Updated employee details should match the new information.");
   }
 }
