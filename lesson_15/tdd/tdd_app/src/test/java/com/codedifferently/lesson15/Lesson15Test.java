@@ -28,11 +28,10 @@ class Lesson15Test {
   @Test
   public void testGetEmployee() {
     // Arrange
-    int key = 1;
-    Employee expectedValue = new Employee(1, "Edgar Allen Poe");
-    manager.addEmployee(expectedValue);
+    manager.addEmployee(emp);
+    Employee expectedValue = emp;
     // Act
-    Employee actualValue = manager.getEmployee(key);
+    Employee actualValue = manager.getEmployee(1);
     // Assert
     assertEquals(expectedValue, actualValue, "The value retrieved should match the value added.");
   }
