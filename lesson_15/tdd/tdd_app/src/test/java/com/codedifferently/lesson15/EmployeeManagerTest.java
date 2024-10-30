@@ -1,11 +1,12 @@
 package com.codedifferently.lesson15;
 
+import static org.assertj.core.api.Assertions.*;
 import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-class Lesson15Test {
+class EmployeeManagerTest {
 
   private EmployeeManager manager;
   private Employee emp;
@@ -48,5 +49,25 @@ class Lesson15Test {
         updatedEmployee,
         manager.getEmployee(1),
         "Updated employee details should match the new information.");
+  }
+
+  @Test
+  public void testRemoveEmployee() {
+    // Arrange
+    manager.addEmployee(emp);
+    // Act
+    manager.removeEmployee(1);
+    Employee removedEmployee = manager.getEmployee(1);
+    // Assert
+    assertEquals(0, manager.getEmployeeCount(), "Employee count should be 0.");
+    assertNull(removedEmployee, "Employee should be removed from system.");
+  }
+
+  @Test
+  public void testAssertEmployeeInCollection() throws Exception {
+    // Act
+    assertThatThrownBy(() -> manager.getEmployee(1))
+        .isInstanceOf(IllegalArgumentException.class)
+        .hasMessage("Employee does not in collection with id 1");
   }
 }
