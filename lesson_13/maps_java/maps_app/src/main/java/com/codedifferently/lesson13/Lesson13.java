@@ -1,4 +1,5 @@
 package com.codedifferently.lesson13;
+import java.util.HashMap;
 
 public class Lesson13 {
 
@@ -7,6 +8,23 @@ public class Lesson13 {
    * https://leetcode.com/problems/permutation-difference-between-two-strings
    */
   public int findPermutationDifference(String s, String t) {
-    return 0;
+
+ HashMap<Character, Integer> indexFinder = new HashMap<>();
+
+        
+        for (int i = 0; i < s.length(); i++) {
+            char character = s.charAt(i);
+            indexFinder.put(character, i);
+        }
+
+        int sum = 0;  
+
+        for (int i = 0; i < t.length(); i++) {
+            char character = t.charAt(i); 
+            int value = indexFinder.get(character); 
+            sum += Math.abs(value - i); 
+        }
+
+        return sum; 
+    }
   }
-}
