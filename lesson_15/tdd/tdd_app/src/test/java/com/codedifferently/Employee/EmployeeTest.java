@@ -49,4 +49,13 @@ class EmployeeTest {
     // Assert
     assertEquals(50000.0, salary);
   }
+
+  @Test
+  void getDetails() {
+
+    String expected = "Employee ID 1545, Name Ray Allen, Department Lavatory, Salary 50000.0";
+    String actual = employee.getDetails();
+
+    assertEquals(expected, actual);
+  }
 }
