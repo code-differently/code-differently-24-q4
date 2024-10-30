@@ -5,7 +5,6 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import java.util.HashMap;
 import java.util.Map;
-
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -14,13 +13,12 @@ public class EmployeeManagerTest {
   private Map<Integer, Employee> employees;
   Employee employee1;
   Employee employee2;
-  
 
   @BeforeEach
   public void setup() {
     employees = new HashMap<Integer, Employee>();
     employees.put(1, new Employee(1, "Nile", "SWE", 65000.00));
-   
+
     employeeManager = new EmployeeManager();
   }
 
@@ -31,11 +29,10 @@ public class EmployeeManagerTest {
 
   @Test
   public void addEmployee() { // Use addEmployee to add employees
-   assertThat(employees).hasSize(1);
-    employees.put(2,new Employee(2, "Chino", "Marketing", 70000.00));
+    assertThat(employees).hasSize(1);
+    employees.put(2, new Employee(2, "Chino", "Marketing", 70000.00));
     assertThat(employees).hasSize(2);
   }
-   
 
   @Test // Invoke getEmployeeCount
   public void getEmployee() {
@@ -48,7 +45,7 @@ public class EmployeeManagerTest {
 
   @Test
   public void updateEmployee() {
-     employee1.put(new Employee (1, "Nile", "SWE", 65000.00));
+    employee1.put(new Employee(1, "Nile", "SWE", 65000.00));
     employee1.setSalary(70000.00);
     employeeManager.updateEmployee(employee1);
 
