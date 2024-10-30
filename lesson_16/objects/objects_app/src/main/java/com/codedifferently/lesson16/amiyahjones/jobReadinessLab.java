@@ -3,9 +3,11 @@ public class JobReadinessLab {
     int mentorSession;
     String teacherAssistant; 
     String socialSupport;
-    String tutor;
-    //Array students;
-
+    String jobTutor;
+    boolean isSuccessful;
+    //a list of students;
     
+
+
 
 }
