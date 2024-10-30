@@ -1,63 +1,48 @@
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
 import com.codedifferently.lesson15.Employee;
 import com.codedifferently.lesson15.EmployeeManager;
-import java.util.HashMap;
-import java.util.Map;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
 
 public class EmployeeManagerTest {
   Employee employee;
   EmployeeManager employeeManager;
-  Map<Integer, Employee> employees;
   Employee employeeNew;
 
   @BeforeEach
   void setUp() {
     employee = new Employee(15, "Pablo", "Emperor", 100);
     employeeManager = new EmployeeManager();
-    employees = new HashMap<>();
   }
 
   @Test
   void testAddEmployee() {
-    employees.put(employee.getId(), employee);
-
     employeeManager.addEmployee(employee);
 
-    assertEquals(employees.get(employee.getId()), employeeManager.getEmployee(employee.getId()));
+    assertEquals(1, employeeManager.getEmployeeCount());
   }
 
   @Test
   void testGetEmployee() {
-    employees.put(employee.getId(), employee);
+    employeeManager.addEmployee(employee);
 
-    assertEquals(employee, employees.get(employee.getId()));
+    assertEquals(employee, employeeManager.getEmployee(employee.getId()));
   }
 
   @Test
   void testUpdateEmployee() {
-    employees.put(employee.getId(), employee);
-
     employeeNew = new Employee(15, "Paul", "President", 200);
-
-    employees.put(employeeNew.getId(), employeeNew);
 
     employeeManager.addEmployee(employee);
 
     employeeManager.updateEmployee(employeeNew);
 
-    assertEquals(
-        employeeManager.getEmployee(employeeNew.getId()), employees.get(employeeNew.getId()));
+    assertEquals(employeeManager.getEmployee(employeeNew.getId()), employeeNew);
   }
 
   @Test
   void testRemoveEmployee() {
-    employees.put(employee.getId(), employee);
-
-    employees.remove(employee.getId(), employee);
-
     employeeManager.addEmployee(employee);
 
     employeeManager.removeEmployee(employee.getId());
@@ -66,15 +51,8 @@ public class EmployeeManagerTest {
   }
 
   @Test
-  void testAssertEmployeeInCollection() throws IllegalArgumentException {}
-
-  @Test
   void testGetEmployeeCount() {
-    employees.put(employee.getId(), employee);
-
     employeeNew = new Employee(16, "Paul", "President", 200);
-
-    employees.put(employeeNew.getId(), employeeNew);
 
     employeeManager.addEmployee(employee);
 
