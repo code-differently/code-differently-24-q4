@@ -51,13 +51,18 @@ public class Employee {
   }
 
   public String getDetails() {
-    return "id: " + this.getId() + " name: " + this.getName() + " department: " + this.getDepartment() + " salary: " + this.getSalary();
-    
-
+    return "id: "
+        + this.getId()
+        + " name: "
+        + this.getName()
+        + " department: "
+        + this.getDepartment()
+        + " salary: "
+        + this.getSalary();
   }
 
-public void put(Employee employee) {
+  public void put(Employee employee) {
     // TODO Auto-generated method stub
     throw new UnsupportedOperationException("Unimplemented method 'put'");
-}
+  }
 }
