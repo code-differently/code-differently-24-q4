@@ -46,7 +46,7 @@ public class Book {
   public Genre getGenre() {
     return genre;
   }
-  
+
   public BookType getBookType() {
     return bookType;
   }
