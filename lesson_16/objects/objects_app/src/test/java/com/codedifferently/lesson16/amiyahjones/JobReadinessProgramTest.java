@@ -4,12 +4,12 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import org.junit.jupiter.api.Test;
 
-public class JobReadinessLabTest {
+public class JobReadinessProgramTest {
 
     @Test
     void testAddStudent() {
         //Arrange
-        Student student = new student();
+        JobReadinessLab student = new JobReadinessLab("Alice", 5);
         //Act
         students.addStudent(student);
         //Assert
