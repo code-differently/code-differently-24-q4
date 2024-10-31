@@ -38,6 +38,12 @@ public class PersonTest {
   }
 
   @Test
+  public void testUpdatePosition() {
+    person.updatePosition(Position.SOFTWARE_DEV);
+    assertEquals(Position.SOFTWARE_DEV, person.getPosition());
+  }
+
+  @Test
   public void testGetTraits() {
     assertEquals(
         new ArrayList<>(Arrays.asList("Tall", "Insane", "Funny", "something else here idk")),
@@ -133,5 +139,11 @@ public class PersonTest {
         () -> {
           person2.addToTraits(traits);
         });
+  }
+
+  @Test
+  public void testGetTraits_PersonStringArray() {
+    Person person2 = new Person(null, 0, null, new String[] {"test"}, null);
+    assertEquals(new ArrayList<>(Arrays.asList("test")), person2.getTraits());
   }
 }
