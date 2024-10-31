@@ -17,14 +17,12 @@ repositories {
 
 dependencies {
     // Use JUnit Jupiter for testing.
-    testImplementation("com.codedifferently.instructional:instructional-lib")
     testImplementation("org.junit.jupiter:junit-jupiter:5.9.1")
     testImplementation("org.springframework.boot:spring-boot-starter-test")
     testImplementation("org.assertj:assertj-core:3.25.1")
     testImplementation("at.favre.lib:bcrypt:0.10.2")
 
     // This dependency is used by the application.
-    implementation("com.codedifferently.instructional:instructional-lib")
     implementation("com.google.guava:guava:31.1-jre")
     implementation("com.google.code.gson:gson:2.10.1")
     implementation("org.projectlombok:lombok:1.18.30")
