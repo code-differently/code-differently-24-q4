@@ -1,10 +1,10 @@
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
 
 import com.codedifferently.lesson15.Employee;
 import com.codedifferently.lesson15.EmployeeManager;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
 public class EmployeeManagerTest {
 
@@ -61,10 +61,10 @@ public class EmployeeManagerTest {
     assertEquals(employee.getDetails(), "Id 0 Name: Zion department Code Differently0.0 salary");
   }
 
-    @Test
-  public void testRemoveEmployee(){
+  @Test
+  public void testRemoveEmployee() {
     // Setup
-    var id=0;
+    var id = 0;
 
     // Execute
     employeeManager.addEmployee(employee);

@@ -1,6 +1,7 @@
 package com.codedifferently.lesson15;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -51,15 +52,15 @@ class EmployeeTest {
   public void testGetDetails() {
     assertEquals(employee.getDetails(), "Id 0 Name: Zion department Code Differently0.0 salary");
   }
-  @Test
-  public void testGetSalary() { 
-    employee.getSalary();
-    assertEquals(employee.getSalary(), 0);
-  } 
 
-  @Test 
-  public void testSetSalary() { 
+  @Test
+  public void testGetSalary() {
+    employee.getSalary();
     assertEquals(employee.getSalary(), 0);
   }
 
+  @Test
+  public void testSetSalary() {
+    assertEquals(employee.getSalary(), 0);
+  }
 }
