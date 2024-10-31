@@ -18,9 +18,9 @@ public class JobReadinessLab {
 
     }
 
-    JobReadinessLab(String jTeacher, int jSessions){
-        mentorSession = jSessions;
-        teacherAssistant = jTeacher;
+    JobReadinessLab(String teacherAssistant, int mentorSession){
+        this.mentorSession = mentorSession;
+        this.teacherAssistant = teacherAssistant;
         socialSupport = "Estelle";
         jobTutor = "Anthony";
         students = new ArrayList<>();
