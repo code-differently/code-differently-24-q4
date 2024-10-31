@@ -50,4 +50,8 @@ public class Employee {
     // TODO Auto-generated method stub
     throw new UnsupportedOperationException("Unimplemented method 'containsKey'");
   }
+
+  public Employee getDetails(Employee employee) {
+    return employee;
+  }
 }
