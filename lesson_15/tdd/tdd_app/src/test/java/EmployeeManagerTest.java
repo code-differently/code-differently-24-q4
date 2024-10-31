@@ -1,10 +1,10 @@
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
 import com.codedifferently.lesson15.Employee;
 import com.codedifferently.lesson15.EmployeeManager;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
 
 public class EmployeeManagerTest {
 
@@ -75,4 +75,5 @@ public class EmployeeManagerTest {
         .isInstanceOf(IllegalArgumentException.class)
         .hasMessage("Employee does not in collection with id " + id);
   }
+  
 }
