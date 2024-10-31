@@ -1,11 +1,10 @@
 package com.codedifferently.lesson16.xaviercruz;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertThrows;
-
 import java.util.ArrayList;
 import java.util.Arrays;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 import org.junit.jupiter.api.Test;
 
 public class PersonTest {
@@ -14,6 +13,12 @@ public class PersonTest {
   @Test
   public void testGetName(){
     assertEquals("That one guy right there", person.getName());
+  }
+
+  @Test
+  public void testChangeName(){
+    person.changeName("new name right here bruh");
+    assertEquals("new name right here bruh", person.getName());
   }
 
   @Test
@@ -49,11 +54,20 @@ public class PersonTest {
   }
 
   @Test
-  public void testAddToTraits_Exception() throws TooManyTraitsException{
+  public void testAddToTraits_Exception(){
     String[] newTraits = new String[]{"test", "test", "test", "test", "test", "test", "test"};
     assertThrows(TooManyTraitsException.class, () -> {
       person.addToTraits(newTraits);
     });
+  }
+
+  @Test
+  public void testSetEyeColor() {
+    Color color = Color.GREEN;
+
+    person.setEyeColor(color);
+
+    assertEquals(Color.GREEN, person.getEyeColor());
   }
 
 
