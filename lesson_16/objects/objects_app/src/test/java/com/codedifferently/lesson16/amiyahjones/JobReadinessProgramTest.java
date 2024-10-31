@@ -22,7 +22,7 @@ public class JobReadinessProgramTest {
     @Test
     void testGetStudentCount() {
         //Arrange
-        JobReadinessProgram program = new JobReadinessProgram(null);
+        JobReadinessProgram program = new JobReadinessProgram(null, true);
         program.addStudent("John");
 
         //Act
@@ -37,28 +37,38 @@ public class JobReadinessProgramTest {
 
     @Test 
     void testCheckReadinessBeginner() {
-        JobReadinessProgram student = new JobReadinessProgram(level.advanced);
+        JobReadinessProgram student = new JobReadinessProgram(level.advanced, true);
         String result = student.checkReadiness();
         assertEquals("Needs more training.", result);
     }
 
     @Test 
     void testCheckReadinessIntermediate() {
-        JobReadinessProgram student = new JobReadinessProgram(level.intermediate);
+        JobReadinessProgram student = new JobReadinessProgram(level.intermediate, true);
         String result = student.checkReadiness();
         assertEquals("Ready for job applications!", result);
     }
 
     @Test 
     void testCheckReadinessAdvanced() {
-        JobReadinessProgram student = new JobReadinessProgram(level.advanced);
+        JobReadinessProgram student = new JobReadinessProgram(level.advanced, true);
         String result = student.checkReadiness();
         assertEquals("Ready for job applications!", result);
     }
 
     @Test
     void testVerifyIfSuccessful(){
-         JobReadinessProgram graduate = new JobReadinessProgram(null);
-         String student = graduate.verifyIsSuccessful();
+         JobReadinessProgram graduate = new JobReadinessProgram(null, false);
+         
+         var graduation = graduate.verifyIsSuccessful();
+         assertEquals(true, graduation);
+
+    }
+
+    @Test
+    void testLecturePerWeek(){
+       JobReadinessProgram program = new JobReadinessProgram(level.advanced, true);
+       var lecturesAttended = program.lecturePerWeek();
+       assertEquals(3, lecturesAttended);
     }
 }
