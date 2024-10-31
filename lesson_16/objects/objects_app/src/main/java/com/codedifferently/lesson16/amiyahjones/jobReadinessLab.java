@@ -3,11 +3,11 @@ package main.java.com.codedifferently.lesson16.amiyahjones;
 import java.util.ArrayList;
 
 public class JobReadinessLab {
-    private int mentorSession;
-    private String teacherAssistant, socialSupport, jobTutor;
+    private final int mentorSession;
+    private final String teacherAssistant, socialSupport, jobTutor;
     private boolean isSuccessful; 
     ArrayList<String> students;
-    private level readinessLevel;
+    private final level readinessLevel;
 
     enum level {
         BEGINNER , 
@@ -24,15 +24,49 @@ public class JobReadinessLab {
         readinessLevel = level.BEGINNER;
     }
 
-   public Boolean verifyisSuccessful() {
-    if (!isSuccessful){
-        System.out.println("At least you got to know what software engineering is like!");
+    public String checkReadiness() {
+        return (readinessLevel == level.INTERMEDIATE) ? "Ready for job applications!" : "Needs more training.";
+    }
+
+   public Boolean verifyIsSuccessful() {
+    if (isSuccessful){
+        System.out.println("Congraulations! You made it through your journey!");
+    } else {
+         System.out.println("At least you got to know what software engineering is like!");
     }
     return isSuccessful;
    }
 
    public int getStudentCount() {
-    return students.size();
+    int count = students.size();
+    System.out.println("Total students enrolles: " + count);
+    return count;
    }
+
+   public void addStudent(String studentName){
+    students.add(studentName);
+   }
+
+   public void printStudents() {
+    for (String student : students) {
+        System.out.println(student);
+    }
+   }
+
+   public int getMentorSession () {
+    return mentorSession;
+   }
+   
+   public String getTeacherAssistant() {
+    return teacherAssistant;
+    }
+
+    public String getSocialSupport() {
+        return socialSupport;
+    }
+
+    public String getJobTutor() {
+        return jobTutor;
+    }
 }
 
