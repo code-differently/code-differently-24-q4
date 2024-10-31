@@ -9,9 +9,10 @@ public class JobReadinessProgramTest {
     @Test
     void testAddStudent() {
         //Arrange
-        JobReadinessLab student = new JobReadinessLab("Alice", 5);
+
         //Act
-        students.addStudent(student);
+        program.addStudent(student);
+
         //Assert
 
     }
@@ -46,18 +47,24 @@ public class JobReadinessProgramTest {
     void testGetMentorSession() {
         //Arrange
 
+
         //Act
 
-        //Assert        
+
+        //Assert   
+
     }
 
     @Test
     void testGetSocialSupport() {
         //Arrange
 
+
         //Act
 
+
         //Assert 
+
 
     }
 
@@ -65,7 +72,9 @@ public class JobReadinessProgramTest {
     void testGetTeacherAssistant() {
         //Arrange
 
+
         //Act
+
 
         //Assert 
 
@@ -75,7 +84,9 @@ public class JobReadinessProgramTest {
     void testPrintStudents() {
         //Arrange
 
+
         //Act
+
 
         //Assert
 
@@ -85,7 +96,9 @@ public class JobReadinessProgramTest {
     void testVerifyIsSuccessful() {
         //Arrange
 
+
         //Act
+        
 
         //Assert
         assertEquals(false , true);
