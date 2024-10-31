@@ -9,5 +9,24 @@ public class JobReadinessLab {
     String jobTutor;
     boolean isSuccessful;
     ArrayList<String> students;
+    level readinessLevel;
+
+    enum level {
+        BEGINNER , 
+        INTERMEDIATE , 
+        ADVANCED
+
+    }
+
+    JobReadinessLab(String jTeacher, int jSessions){
+        mentorSession = jSessions;
+        teacherAssistant = jTeacher;
+        socialSupport = "Estelle";
+        jobTutor = "Anthony";
+        students = new ArrayList<>();
+        readinessLevel = level.BEGINNER;
+    }
+
+   
 }
 
