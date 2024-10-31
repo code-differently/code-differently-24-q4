@@ -64,10 +64,27 @@ public class PersonTest {
   }
 
   @Test
-  public void testAddToTraits_Exception(){
+  public void testAddToTraitsStringArray_Exception(){
     String[] newTraits = new String[]{"test", "test", "test", "test", "test", "test", "test"};
     assertThrows(TooManyTraitsException.class, () -> {
       person.addToTraits(newTraits);
+    });
+  }
+
+  @Test
+  public void testAddToTraitsString_Exception(){
+    Person person2 = new Person("That one guy right there", 25, Position.ARSONIST, new ArrayList<>(Arrays.asList("Tall", "Insane", "Funny", "something else here idk", "test", "test", "test","test","test","test")), Color.RED);
+    assertThrows(TooManyTraitsException.class, () -> {
+      person2.addToTraits("newTrait");
+    });
+  }
+
+  @Test
+  public void testAddToTraitsList_Exception(){
+    Person person2 = new Person("That one guy right there", 25, Position.ARSONIST, new ArrayList<>(Arrays.asList("Tall", "Insane", "Funny", "something else here idk", "test", "test", "test","test","test","test")), Color.RED);
+    var traits = new ArrayList<String>(Arrays.asList("testTrait"));
+    assertThrows(TooManyTraitsException.class, () -> {
+      person2.addToTraits(traits);
     });
   }
 
