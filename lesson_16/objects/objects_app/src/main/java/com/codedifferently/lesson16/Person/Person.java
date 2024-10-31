@@ -66,7 +66,11 @@ public class Person {
 
     public ArrayList<String> getHairColor() {
         if (hairColor == null) {
-            throw new IllegalArgumentException("No hair color? This person must be bald!");
+            try {
+                throw new IllegalArgumentException("No hair color? This person must be bald!");
+            } catch (IllegalArgumentException e) {
+                hairColor.add("Bald");
+            }
         }
         return hairColor;
     }
@@ -97,9 +101,9 @@ public class Person {
 
     public String getLifeStatus() {
         if (alive == true) {
-            return "alive";
+            return "Alive";
         } else {
-            return "deceased";
+            return "Deceased";
         }
     }
 
