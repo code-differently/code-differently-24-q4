@@ -45,6 +45,9 @@ public class JobReadinessLab {
 
    public void addStudent(String studentName){
     students.add(studentName);
+        try {
+            throw new StudentLimitExceededException("The classroom is full");
+        }
    }
 
    public void printStudents() {
