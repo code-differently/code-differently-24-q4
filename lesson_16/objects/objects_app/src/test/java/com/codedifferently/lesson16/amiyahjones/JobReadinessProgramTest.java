@@ -37,7 +37,7 @@ public class JobReadinessProgramTest {
 
     @Test 
     void testCheckReadinessBeginner() {
-        JobReadinessProgram student = new JobReadinessProgram(level.beginner);
+        JobReadinessProgram student = new JobReadinessProgram(level.advanced);
         String result = student.checkReadiness();
         assertEquals("Needs more training.", result);
     }
@@ -55,5 +55,10 @@ public class JobReadinessProgramTest {
         String result = student.checkReadiness();
         assertEquals("Ready for job applications!", result);
     }
-    
+
+    @Test
+    void testVerifyIfSuccessful(){
+         JobReadinessProgram graduate = new JobReadinessProgram(null);
+         String student = graduate.verifyIsSuccessful();
+    }
 }

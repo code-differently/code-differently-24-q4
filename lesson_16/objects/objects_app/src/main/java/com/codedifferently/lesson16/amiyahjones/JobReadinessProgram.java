@@ -3,6 +3,7 @@ package com.codedifferently.lesson16.amiyahjones;
 import java.util.ArrayList;
 
 public class JobReadinessProgram {
+    private boolean isSuccessful; 
     ArrayList<String> students;
     private final level readinessLevel;
 
@@ -30,4 +31,13 @@ public class JobReadinessProgram {
     public String checkReadiness() {
         return (readinessLevel == level.beginner) ? "Needs more training." : "Ready for job applications!";
     }
+
+    public Boolean verifyIsSuccessful() {
+    if (isSuccessful){
+        System.out.println("Congraulations! You made it through your journey!");
+    } else {
+         System.out.println("At least you got to know what software engineering is like!");
+    }
+    return isSuccessful;
+   }
 }
