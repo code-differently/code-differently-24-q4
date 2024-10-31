@@ -6,7 +6,7 @@ public class JobReadinessLab {
     private int mentorSession;
     private String teacherAssistant, socialSupport, jobTutor;
     private boolean isSuccessful; 
-    private ArrayList<String> students;
+    ArrayList<String> students;
     private level readinessLevel;
 
     enum level {
