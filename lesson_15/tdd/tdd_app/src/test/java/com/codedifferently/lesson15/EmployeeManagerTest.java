@@ -5,6 +5,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import java.util.HashMap;
 import java.util.Map;
+
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -64,7 +65,7 @@ public class EmployeeManagerTest {
     employees.put(1, new Employee(1, "Nile", "SWE", 65000.00));
     assertThat(employees).hasSize(1);
     Map<Integer, Employee> employeeMap = employeeManager.getEmployees();
-    employeeMap.put(count, employee1);
+    employeeMap.putAll(employees);
     assertThat(employeeMap.size()).isEqualTo(1);
   }
 
