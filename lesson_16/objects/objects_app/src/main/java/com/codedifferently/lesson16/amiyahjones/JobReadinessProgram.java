@@ -4,16 +4,17 @@ import java.util.ArrayList;
 
 public class JobReadinessProgram {
     ArrayList<String> students;
-    private final level readinessLevel = null;
+    private final level readinessLevel;
 
     enum level {
-        BEGINNER , 
-        INTERMEDIATE , 
-        ADVANCED
+        beginner , 
+        intermediate , 
+        advanced
     }
 
-    public JobReadinessProgram(){
+    public JobReadinessProgram(level readinessLevel){
         students = new ArrayList<>();
+        this.readinessLevel = readinessLevel;
     }
     
     public void addStudent(String studentName){
@@ -25,8 +26,8 @@ public class JobReadinessProgram {
         System.out.println("Total students enrolled: " + count);
         return count;
     }
-
+    
     public String checkReadiness() {
-        return (readinessLevel == level.INTERMEDIATE) ? "Ready for job applications!" : "Needs more training.";
+        return (readinessLevel == level.beginner) ? "Needs more training." : "Ready for job applications!";
     }
 }
