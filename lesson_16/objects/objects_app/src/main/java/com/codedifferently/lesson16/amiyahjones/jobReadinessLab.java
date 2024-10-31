@@ -4,10 +4,8 @@ import java.util.ArrayList;
 
 public class JobReadinessLab {
     int mentorSession;
-    String teacherAssistant; 
-    String socialSupport;
-    String jobTutor;
-    boolean isSuccessful;
+    String teacherAssistant, socialSupport, jobTutor;
+    boolean isSuccessful; 
     ArrayList<String> students;
     level readinessLevel;
 
