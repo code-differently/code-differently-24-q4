@@ -24,7 +24,7 @@ public class JobReadinessLab {
         readinessLevel = level.BEGINNER;
     }
 
-    public String checkReadiness() {
+   public String checkReadiness() {
         return (readinessLevel == level.INTERMEDIATE) ? "Ready for job applications!" : "Needs more training.";
     }
 
