@@ -61,11 +61,11 @@ public class JobReadinessLab {
     return teacherAssistant;
     }
 
-    public String getSocialSupport() {
+   public String getSocialSupport() {
         return socialSupport;
     }
 
-    public String getJobTutor() {
+   public String getJobTutor() {
         return jobTutor;
     }
 }
