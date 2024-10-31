@@ -1,6 +1,7 @@
 package com.codedifferently.lesson15;
 
-import static org.assertj.core.api.Assertions.*;
+import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.assertThatThrownBy;
 import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.BeforeEach;
@@ -8,66 +9,72 @@ import org.junit.jupiter.api.Test;
 
 class EmployeeManagerTest {
 
-  public EmployeeManager manager;
-  public Employee emp;
+  private EmployeeManager employeeManager;
+  private Employee employee;
 
   @BeforeEach
-  public void setUp() {
-    manager = new EmployeeManager();
-    emp = new Employee(1, "Edgar Allen Poe", "Writer", 0.0);
+  void setUp() {
+    employeeManager = new EmployeeManager();
+    employee = new Employee(1, "Edgar Allen Poe", "Publications", 0.0);
+    employeeManager.addEmployee(employee);
   }
 
   @Test
-  public void testAddEmployee() {
-    // Act
-    manager.addEmployee(emp);
-    // Assert
-    assertEquals(1, manager.getEmployeeCount());
-    assertEquals(emp, manager.getEmployee(1));
-  }
-
-  @Test
-  public void testGetEmployee() {
+  void testAddEmployee() {
     // Arrange
-    manager.addEmployee(emp);
-    Employee expectedValue = emp;
+    Employee newEmployee = new Employee(2, "Sheet Ghost", "Administration", 0.0);
     // Act
-    Employee actualValue = manager.getEmployee(1);
+    employeeManager.addEmployee(newEmployee);
     // Assert
-    assertEquals(expectedValue, actualValue, "The value retrieved should match the value added.");
+    assertThat(employeeManager.getEmployee(2)).isEqualTo(newEmployee);
   }
 
   @Test
-  public void testUpdateEmployee() {
+  void testGetEmployee() {
+    // Act
+    Employee actualEmployee = employeeManager.getEmployee(1);
+    // Assert
+    assertThat(actualEmployee).isEqualTo(employee);
+  }
+
+  @Test
+  void testUpdateEmployee() {
     // Arrange
-    manager.addEmployee(emp);
-    Employee updatedEmployee = new Employee(1, "Frankenstein", "Admin", 0.0);
+    Employee updatedEmployee = new Employee(1, "Frankenstein", "Development", 0.0);
     // Act
-    manager.updateEmployee(updatedEmployee);
+    employeeManager.updateEmployee(updatedEmployee);
+    Employee actualEmployee = employeeManager.getEmployee(1);
     // Assert
-    assertEquals(
-        updatedEmployee,
-        manager.getEmployee(1),
-        "Updated employee details should match the new information.");
+    assertThat(actualEmployee).isEqualTo(updatedEmployee);
   }
 
   @Test
-  public void testRemoveEmployee() {
-    // Arrange
-    manager.addEmployee(emp);
+  void testRemoveEmployee() {
     // Act
-    manager.removeEmployee(1);
-    Employee removedEmployee = manager.getEmployee(1);
+    employeeManager.removeEmployee(1);
+    Employee removedEmployee = employeeManager.getEmployee(1);
     // Assert
-    assertEquals(0, manager.getEmployeeCount(), "Employee count should be 0.");
-    assertNull(removedEmployee, "Employee should be removed from system.");
+    assertEquals(0, employeeManager.getEmployeeCount(), "Employee count should be 0");
+    assertNull(removedEmployee, "Employee should be removed from directory.");
   }
 
   @Test
-  public void testAssertEmployeeInCollection() throws Exception {
-    // Act
-    assertThatThrownBy(() -> manager.getEmployee(1))
+  void testAssertEmployeeInCollection() {
+    // Arrange & Act & Assert
+    assertThatThrownBy(() -> employeeManager.getEmployee(52))
         .isInstanceOf(IllegalArgumentException.class)
-        .hasMessage("Employee does not in collection with id 1");
+        .hasMessage("Employee does not exist in collection with Id 1");
+  }
+
+  @Test
+  void testGetEmployeeCount() {
+    // Arrange
+    Employee addNew1 = new Employee(2, "Dracula", "Medical", 0.0);
+    Employee addNew2 = new Employee(3, "Blade", "Security", 0.0);
+    // Act
+    employeeManager.addEmployee(addNew1);
+    employeeManager.addEmployee(addNew2);
+    // Assert
+    assertEquals(3, employeeManager.getEmployeeCount());
   }
 }
