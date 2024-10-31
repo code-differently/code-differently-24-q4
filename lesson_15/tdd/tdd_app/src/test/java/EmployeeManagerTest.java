@@ -75,5 +75,4 @@ public class EmployeeManagerTest {
         .isInstanceOf(IllegalArgumentException.class)
         .hasMessage("Employee does not in collection with id " + id);
   }
-  
 }
