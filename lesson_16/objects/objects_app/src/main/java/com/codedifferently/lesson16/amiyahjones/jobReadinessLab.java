@@ -37,7 +37,7 @@ public class JobReadinessLab {
     return isSuccessful;
    }
 
-   public int getStudentCount() {
+   public int countStudents() {
     int count = students.size();
     System.out.println("Total students enrolles: " + count);
     return count;
