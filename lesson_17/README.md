@@ -17,6 +17,7 @@ Please review the following resources before lecture:
 ## Homework
 
 - [ ] Complete [Applying SOLID principles](#applying-solid-principles-bank-atm) exercise.
+- [ ] Review [OOP Project](/project_oop/) documentation and complete user stories.
 
 ## Applying SOLID Principles (Bank ATM)
 
