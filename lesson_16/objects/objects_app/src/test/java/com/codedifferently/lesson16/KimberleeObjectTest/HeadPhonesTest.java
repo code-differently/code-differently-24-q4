@@ -1,7 +1,6 @@
 package com.codedifferently.lesson16.KimberleeObjectTest;
 
 import static org.junit.jupiter.api.Assertions.*;
-import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 
 import com.codedifferently.lesson16.KimberleeObject.HeadPhones;
 import com.codedifferently.lesson16.KimberleeObject.HeadPhones.HeadPhoneColor;
@@ -15,15 +14,6 @@ public class HeadPhonesTest {
   @BeforeEach
   public void setUp() {
     headphones = new HeadPhones();
-  }
-
-  public void BrandsArray() {
-    String[] brands = new String[5];
-    brands[0] = "Beats";
-    brands[1] = "Sony";
-    brands[2] = "Bose";
-    brands[3] = "SkullCandy";
-    brands[4] = "Juicy";
   }
 
   @Test
@@ -89,5 +79,16 @@ public class HeadPhonesTest {
         HeadPhoneColor.ROSEGOLD,
         headphones.getHeadPhoneColor(),
         "Headphone color should be set to Rose Gold.");
+  }
+
+  @Test
+  public void testPreferredBrand() {
+    // Assert
+    assertTrue(BrandsArray.isPreferredBrand("Beats"), "Beats should be a preferred brand.");
+    assertTrue(BrandsArray.isPreferredBrand("Sony"), "Sony should be a preferred brand.");
+    assertFalse(BrandsArray.isPreferredBrand("Apple"), "Apple should not be a preferred brand.");
+    assertTrue(
+        BrandsArray.isPreferredBrand("SkullCandy"), "SkullCandy should be a preferred brand.");
+    assertTrue(BrandsArray.isPreferredBrand("Juicy"), "Juicy should be a preferred brand.");
   }
 }

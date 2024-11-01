@@ -1,6 +1,11 @@
 package com.codedifferently.lesson16.KimberleeObject;
 
+import java.util.Arrays;
+
 public class HeadPhones {
+  @SuppressWarnings("unused")
+  private static final Object PREFERRED_BRANDS = null;
+
   private int volume = 0;
   private boolean isPoweredOn = false;
   private HeadPhoneColor headPhoneColor = HeadPhoneColor.BLACK;
@@ -14,6 +19,15 @@ public class HeadPhones {
     PINK,
     WHITE,
     BLACK;
+  }
+
+  public void BrandsArray() {
+    String[] brands = new String[5];
+    brands[0] = "Beats";
+    brands[1] = "Sony";
+    brands[2] = "Bose";
+    brands[3] = "SkullCandy";
+    brands[4] = "Juicy";
   }
 
   public int getVolume(int i) {
@@ -64,5 +78,15 @@ public class HeadPhones {
 
   public void setColor(HeadPhoneColor color) {
     this.headPhoneColor = color;
+  }
+
+  public class BrandUtils {
+    private static final String[] PREFERRED_BRANDS = {
+      "Beats", "Sony", "Bose", "SkullCandy", "Juicy"
+    };
+
+    public static boolean isPreferredBrand(String brand) {
+      return Arrays.asList(PREFERRED_BRANDS).contains(brand);
+    }
   }
 }
