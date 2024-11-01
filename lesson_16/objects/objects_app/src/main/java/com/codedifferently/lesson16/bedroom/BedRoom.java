@@ -1,4 +1,4 @@
-public class bedroom {
+public class BedRoom {
     //enum for bed sizes
        enum MattressSize { 
         TWIN, QUEEN, KING
@@ -23,7 +23,7 @@ public class bedroom {
     // drawers.put("Drawer4", "Underwear");
 
 //Constructor
-    public Bedroom(int numberOfWalls, int numberOfWindows, String colorOfWall, boolean isOutletWorking, MattressSize bedSize) {
+    public bedRoom(int numberOfWalls, int numberOfWindows, String colorOfWall, boolean isOutletWorking, MattressSize bedSize) {
         this.numberOfWalls = numberOfWalls;
         this.numberOfWindows = numberOfWindows;
         this.colorOfWall = colorOfWall;
@@ -63,5 +63,16 @@ public class bedroom {
         this.bedSize=bedSize;
     }
 
+    
+
+ @Override
+    public String toString() {
+        return "Bedroom{" +
+                "numberOfWalls=" + numberOfWalls +
+                ", numberOfWindows=" + numberOfWindows +
+                ", colorOfWall='" + colorOfWall + '\'' +
+                ", isOutletWorking=" + isOutletWorking +
+                ", bedSize=" + bedSize +
+                '}';
 } 
 }

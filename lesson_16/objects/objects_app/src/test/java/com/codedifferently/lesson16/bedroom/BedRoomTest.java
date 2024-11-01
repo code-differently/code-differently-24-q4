@@ -1,10 +1,11 @@
+
+import org.junit.jupiter.api.Test;
 public class bedroomTest {
-    import org.junit.jupiter.api.Test;
 
 public class BedroomTest {
 
 @Test
-public void tesGetColor(){ 
+public void testGetColor(){ 
 Bedroom.getColor();
 var coloris="green";
 }
