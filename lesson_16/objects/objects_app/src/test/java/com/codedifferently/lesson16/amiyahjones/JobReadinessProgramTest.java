@@ -10,7 +10,7 @@ public class JobReadinessProgramTest {
     @Test
     void testAddStudent() throws ClassroomFullException {
         //Arrange
-        JobReadinessProgram program = new JobReadinessProgram(null, false, null);
+        JobReadinessProgram program = new JobReadinessProgram(null, false, "rich");
 
         //Act
         program.addStudent("John");
@@ -35,6 +35,25 @@ public class JobReadinessProgramTest {
         
     }
 
+   @Test
+    void testClassroomFullException() {
+    //Arrange
+    JobReadinessProgram program = new JobReadinessProgram(Level.Beginner, true, "Jordan");
+    
+    //Act
+    try {
+        for (int i = 1; i <= 23; i++) { 
+            program.addStudent("Student " + i);
+        }
+    } catch (ClassroomFullException e) {
+        System.out.println(e.getMessage());
+    }
+
+    // Assert 
+    int currentCount = program.getStudentCount();
+    assert(currentCount == 22); 
+    }    
+
     @Test 
     void testCheckReadinessBeginner() {
         JobReadinessProgram student = new JobReadinessProgram(Level.Advanced, true, null);
@@ -58,7 +77,7 @@ public class JobReadinessProgramTest {
 
     @Test
     void testVerifyIfSuccessful() {
-         JobReadinessProgram graduate = new JobReadinessProgram(null, false, null);
+         JobReadinessProgram graduate = new JobReadinessProgram(null, false, "rich");
          
          var graduation = graduate.verifyIsSuccessful();
          assertEquals(true, graduation);
@@ -67,24 +86,53 @@ public class JobReadinessProgramTest {
 
     @Test
     void testLecturePerWeek() {
-       JobReadinessProgram program = new JobReadinessProgram(Level.Advanced, true, null);
+       JobReadinessProgram program = new JobReadinessProgram(Level.Advanced, true, "rich");
        var lecturesAttended = program.lecturePerWeek();
        assertEquals(3, lecturesAttended);
     }
 
     @Test 
     void testGetMentor() {
-        JobReadinessProgram program = new JobReadinessProgram(Level.Beginner, true, null);
+        JobReadinessProgram program = new JobReadinessProgram(Level.Beginner, true, "jordan");
         var AssignedMentor = program.getMentor();
         assertEquals("Anthony", AssignedMentor);
     }
 
      @Test 
-    void testGetSocialSupport() {
-        JobReadinessProgram program = new JobReadinessProgram(Level.Beginner, true, null);
+     void testGetSocialSupport() {
+        JobReadinessProgram program = new JobReadinessProgram(Level.Beginner, true, "vicente");
         var SocialSupport = program.getSocialSupport();
         assertEquals("Estelle", SocialSupport);
     }
 
+    @Test 
+    void testGetTeacherAssistants() {
+        JobReadinessProgram program = new JobReadinessProgram(Level.Beginner, true, "vicente");
+        var teacherAssitant = program.getTeacherAssistants();
+        assertEquals(program.getTeacherAssistants(), teacherAssitant);
+    }
+
+    @Test
+    void testAssignTA() {
+        JobReadinessProgram program = new JobReadinessProgram(Level.Beginner, true, "jordan");
+        boolean result = program.assignTA("vicente");
+        assert(result == true);
+
+        try {
+            program.assignTA("Invalid TA");
+        } catch (IllegalArgumentException e) {
+            System.out.println(e.getMessage());
+        }
+    }
+
+    @Test
+    void testDisplayAssignedTA() {
+        JobReadinessProgram program = new JobReadinessProgram(Level.Advanced, true, "rich");
+        program.displayAssignedTA();
+
+        JobReadinessProgram emptyProgram = new JobReadinessProgram(Level.Beginner, true, "Invalid TA");
+        emptyProgram.displayAssignedTA();
+
+    }
     
 }
