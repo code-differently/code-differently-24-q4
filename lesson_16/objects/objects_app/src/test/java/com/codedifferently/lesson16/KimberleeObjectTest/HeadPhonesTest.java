@@ -4,6 +4,7 @@ import static org.junit.jupiter.api.Assertions.*;
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 
 import com.codedifferently.lesson16.KimberleeObject.HeadPhones;
+import com.codedifferently.lesson16.KimberleeObject.HeadPhones.HeadPhoneColor;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -14,15 +15,6 @@ public class HeadPhonesTest {
   @BeforeEach
   public void setUp() {
     headphones = new HeadPhones();
-  }
-
-  public enum HeadPhoneColor {
-    RED,
-    BLUE,
-    ROSEGOLD,
-    PINK,
-    WHITE,
-    BLACK;
   }
 
   public void BrandsArray() {
@@ -37,7 +29,8 @@ public class HeadPhonesTest {
   @Test
   public void testDefaultState() {
     assertEquals(0, headphones.getVolume(0), "Volume should be 0 by default.");
-    assertEquals("BLACK", headphones.getHeadPhoneColor(), "Color should be black by default.");
+    assertEquals(
+        HeadPhoneColor.BLACK, headphones.getHeadPhoneColor(), "Color should be black by default.");
     assertFalse(headphones.isPoweredOn(), "HeadPhones should be off by default.");
     assertTrue(headphones.isWireless(), "HeadPhones should be wireless by default.");
     assertArrayEquals(new String[] {"Beats"}, new String[] {"Beats"});
@@ -85,5 +78,16 @@ public class HeadPhonesTest {
     headphones.decreaseVolume();
     // Assert
     assertEquals(0, headphones.getVolume(0), "Volume should not go lower than 0.");
+  }
+
+  @Test
+  public void testSetColor() {
+    // Act
+    headphones.setColor(HeadPhoneColor.ROSEGOLD);
+    // Assert
+    assertEquals(
+        HeadPhoneColor.ROSEGOLD,
+        headphones.getHeadPhoneColor(),
+        "Headphone color should be set to Rose Gold.");
   }
 }

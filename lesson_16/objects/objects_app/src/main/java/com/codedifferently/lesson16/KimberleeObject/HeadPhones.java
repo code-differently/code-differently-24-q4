@@ -3,16 +3,25 @@ package com.codedifferently.lesson16.KimberleeObject;
 public class HeadPhones {
   private int volume = 0;
   private boolean isPoweredOn = false;
-  private String HeadPhoneColor = "BLACK";
+  private HeadPhoneColor headPhoneColor = HeadPhoneColor.BLACK;
   private boolean isWireless = true;
   private String brands = "Beats";
+
+  public enum HeadPhoneColor {
+    RED,
+    BLUE,
+    ROSEGOLD,
+    PINK,
+    WHITE,
+    BLACK;
+  }
 
   public int getVolume(int i) {
     return volume;
   }
 
-  public String getHeadPhoneColor() {
-    return HeadPhoneColor;
+  public HeadPhoneColor getHeadPhoneColor() {
+    return headPhoneColor;
   }
 
   public boolean isPoweredOn() {
@@ -51,5 +60,9 @@ public class HeadPhones {
     if (volume > 0) {
       volume--;
     }
+  }
+
+  public void setColor(HeadPhoneColor color) {
+    this.headPhoneColor = color;
   }
 }
