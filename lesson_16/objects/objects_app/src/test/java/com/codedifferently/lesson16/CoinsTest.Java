@@ -1,68 +1,75 @@
 package com.codedifferently.lesson16;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.assertj.core.api.Assertions.assertThat;
 
 import org.junit.jupiter.api.Test;
+import java.util.ArrayList;
+import java.util.List;
 
 class CoinTest{
 
-@test 
-void testCheckCoininPocket(){
+@Test 
+  void testCheckCoinInPocket(){
 //arrange
-Coins coin = new Coin(to fill in);
-
+    Coins coin = new Coin(Coins.CoinType.NICKEL, 5, false, 5.0, 1966, new ArrayList<>(nickel,copper));
 //act action
-CoinType actualCoin = CoinType.nickel;   
+    CoinType actualCoin = CoinType.NICKEL;   
 
 //assert
-assertEquals(nickel,coins.checkCoinType())
-}
-@test 
-void testWeighCoins(){
-//arrange
-Coins coin = new Coin(to fill in);
-double expectedWeight = 5.0;
-//act
-double coinWeight = coin.coinGramWeight();
-//assert
-assertEquals(expected, coinweight);
-}
-@test 
-void testConvertCoins(){
-//arrange
-coinCollection = new Arraylist<>();
-Coin nickel1 = new coin();
-Coin nickel2 = new coin();
-coinCollection.add(nickel1);
-coinCollection.add(nickel2);
-
-//act
-Coin Dime = Coin.convertNickelsToDime();
-//assert
-Assert(10, Dime.getValue())
+    assertEquals(CoinType.NICKEL,coins.checkCoinType())
 }
 @Test 
-void testCollectCoins(){
+  void testWeighCoins(){
 //arrange
-coinCollection = new Arraylist<>();
-Coin penny = new coin();
-Coin nickel = new coin();
-Coin dime = new coin ();
-add coins to coin collection
+    Coins coin = new Coin(Coins.CoinType.NICKEL, 5, false, 5.0, 1966, new ArrayList<>(nickel,copper));
+    double expectedWeight = 5.0;
 //act
-AddCoin(penny);
-AddCoin(nickel);
-AddCoin(dime);
+    double coinWeight = coin.coinGramWeight();
 //assert
-AssertEquals(3,coinCollection());
+    assertEquals(expected, coinWeight);
 }
-@test
-void testGetAgeCoin(){
+@Test 
+  void testConvertCoins(){
 //arrange
-    Coin coin = new coin();
+    coinCollection = new Arraylist<>();
+    Coin nickel1 = new Coin();
+    Coin nickel2 = new coin();
+    coinCollection.add(nickel1);
+    coinCollection.add(nickel2);
+
+//act
+    Coin Dime = Coin.convertNickelsToDime(nickel1, nickel2);
+//assert
+    Assert(10, Dime.getValue())
+}
+@Test 
+  void testCollectCoins(){
+//arrange
+    coinCollection = new Arraylist<>();
+    Coin penny = new Coin();
+    Coin nickel = new Coin();
+    Coin dime = new Coin ();
+//act
+    AddCoin(penny);
+    AddCoin(nickel);
+    AddCoin(dime);
+//assert
+    AssertEquals(3,coinCollection());
+}
+@Test
+  void testGetAgeCoin(){
+//arrange
+    Coin coin = new Coin();
 // Act
     int age = coin.geCoinAge();
 // Assert
-    assertEquals(1954, actual);
+    assertEquals(1954, age);
   }
+@Test  
+  void testGetMaterialComposition(){
+    Coin Penny = new Coin(new Arraylist<>(Array.asList("copper,zinc")))
+
+}
 }
