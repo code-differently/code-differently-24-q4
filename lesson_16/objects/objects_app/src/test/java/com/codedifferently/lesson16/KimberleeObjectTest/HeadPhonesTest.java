@@ -1,8 +1,8 @@
 package com.codedifferently.lesson16.KimberleeObjectTest;
 
+import static org.assertj.core.api.Assertions.assertThatThrownBy;
 import static org.junit.jupiter.api.Assertions.*;
 
-import static org.assertj.core.api.Assertions.assertThatThrownBy;
 import com.codedifferently.lesson16.KimberleeObject.HeadPhones;
 import com.codedifferently.lesson16.KimberleeObject.HeadPhones.HeadPhoneColor;
 import org.junit.jupiter.api.BeforeEach;
@@ -96,20 +96,21 @@ public class HeadPhonesTest {
   @Test
   public void testwirelessConnection() throws Exception {
     // Arrange
-    headphones.isPoweredOn(); 
+    headphones.isPoweredOn();
     headphones.isWireless();
     // Act
     headphones.connectToBluetooth();
     // Assert
-    assertTrue(headphones.isConnectedToBluetooth(), "Headphones should connect to bluetooh when wireless and turned on.");
+    assertTrue(
+        headphones.isConnectedToBluetooth(),
+        "Headphones should connect to bluetooh when wireless and turned on.");
   }
 
   @Test
   public void testwirelessConnection_connectionNotFound() throws Exception {
     // Act
     assertThatThrownBy(() -> headphones.wirelessConnection())
-                .isInstanceOf(ConnectionNotFoundException.class)
-                .hasMessage("Headphones Wireless Connection Not Found.");
-          }
+        .isInstanceOf(ConnectionNotFoundException.class)
+        .hasMessage("Headphones Wireless Connection Not Found.");
+  }
 }
-

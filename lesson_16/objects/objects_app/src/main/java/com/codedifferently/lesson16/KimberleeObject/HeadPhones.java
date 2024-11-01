@@ -82,27 +82,28 @@ public class HeadPhones {
   }
 
   public class BrandUtils {
-    private static final String[] PREFERRED_BRANDS = {"Beats", "Sony", "Bose", "SkullCandy", "Juicy"};
+    private static final String[] PREFERRED_BRANDS = {
+      "Beats", "Sony", "Bose", "SkullCandy", "Juicy"
+    };
 
-  public static boolean isPreferredBrand(String brand) {
-    return Arrays.asList(PREFERRED_BRANDS).contains(brand);
+    public static boolean isPreferredBrand(String brand) {
+      return Arrays.asList(PREFERRED_BRANDS).contains(brand);
+    }
   }
-}
 
   public void connectToBluetooth() {
     if (isPoweredOn && isWireless) {
-            isConnectedToBluetooth = true;
+      isConnectedToBluetooth = true;
     }
-}
+  }
 
   public boolean isConnectedToBluetooth() {
-     return isConnectedToBluetooth;
-}
+    return isConnectedToBluetooth;
+  }
 
-public void wirelessConnection() throws ConnectionNotFoundException {
+  public void wirelessConnection() throws ConnectionNotFoundException {
     if (!isConnectedToBluetooth) {
-        throw new ConnectionNotFoundException("Headphones Wireless Connection Not Found.");
+      throw new ConnectionNotFoundException("Headphones Wireless Connection Not Found.");
     }
-    
-}
+  }
 }
