@@ -44,6 +44,12 @@ public class JobReadinessProgram {
         System.out.println("Total students enrolled: " + count);
         return count;
     }
+
+    public void displayStudents() {
+    for (String student : students) {
+        System.out.println(student);
+    }
+   }
     
     public String checkReadiness() {
         return (readinessLevel == Level.Beginner) ? "Needs more training." : "Ready for job applications!";
