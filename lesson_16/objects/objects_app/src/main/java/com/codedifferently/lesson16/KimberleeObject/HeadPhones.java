@@ -12,7 +12,6 @@ public class HeadPhones {
   private boolean isWireless = true;
   private String brands = "Beats";
   private boolean isConnectedToBluetooth = false;
-
   public enum HeadPhoneColor {
     RED,
     BLUE,
@@ -91,14 +90,15 @@ public class HeadPhones {
     }
   }
 
-  public void connectToBluetooth() {
+  public boolean connectToBluetooth() {
     if (isPoweredOn && isWireless) {
       isConnectedToBluetooth = true;
     }
+    return isConnectedToBluetooth;
   }
 
   public boolean isConnectedToBluetooth() {
-    return isConnectedToBluetooth;
+    return connectToBluetooth();
   }
 
   public void wirelessConnection() throws ConnectionNotFoundException {
