@@ -1,8 +1,7 @@
 public enum Department {
-    Sales,
-    Finance,
-    Technology,
-    Research,
-    Administration
+  Sales,
+  Finance,
+  Technology,
+  Research,
+  Administration
 }
-
