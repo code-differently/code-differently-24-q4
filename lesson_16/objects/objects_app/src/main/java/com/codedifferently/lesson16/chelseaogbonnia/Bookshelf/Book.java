@@ -1,4 +1,4 @@
-package com.codedifferently.lesson16.chelseaogbonnia;
+package com.codedifferently.lesson16.chelseaogbonnia.Bookshelf;
 
 enum Genre {
   FICTION,
