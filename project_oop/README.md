@@ -7,24 +7,24 @@ For this project, you and your teammates are tasked with modeling a real-world p
 
 ## Prerequisites
 
-Before starting work on your project, you will need to submit three user stories as feature requests in your assigned GitHub repo. These will need to be approved by the instructor before you can begin coding.
+Before starting work on your project, you will need to submit three user stories as feature requests in your assigned GitHub repo. These will need to be approved by the instructor before you can begin coding. Your final project submission must enable the functionality described by your user stories.
 
 ## Project Requirements
 
 * All work must be submitted in your team's assigned GitHub repository.
 * The assignment can be completed in TypeScript or in Java.
-* Must include at least 5 types of objects that relate to each other.
-* One of your objects must be a custom data structure that provides for adding, removing, and updating items in a collection
+* Must include at least 5 types of objects with meaningful relattionships to each other.
+* One of your objects must be a custom data structure that provides for adding, removing, and updating items in a collection.
 * Implement at least two custom exceptions.
-* Write unit tests achieving 90% code coverage
-* Must include an integration test
-* Your solution must illustrate each of the SOLID principles
-* Each team member must contribute at least one commit containing code and tests.
-* Include a README for your repo including a description of the problem you're solving, the solution, and how you would improve your solution.
+* Write unit tests achieving 90% code coverage.
+* Must include an integration test.
+* Your solution must illustrate each of the SOLID principles.
+* Each team member must contribute *at least one* submitted pull request containing working code and tests.
+* Include a README for your repo describing the problem you're solving, the solution, and how you would improve your solution.
 
 # Presentation Requirements
 
-* Your total time will be limited to 10 minutes and up to 10 slides.
+* Your presentation should be no more than 10 minutes with a maximum of 10 slides.
 * Each member of the team must speak during the presentation.
 * Your presentation must address the following questions:
     * What problem were you attempting to solve?
@@ -34,7 +34,7 @@ Before starting work on your project, you will need to submit three user stories
 
 ## Extra Credit
 
-Design a CLI that allows users to interact with your application. Check out the code in [lesson_10](/lesson_10/libraries/src/cli/) for an example.
+Design a CLI that allows users to interact with your application. Check out the code in [lesson_10](/lesson_10/libraries/src/cli/) for an example in TypeScript, or [this file](/lib/java/codedifferently-instructional/instructional-lib/src/main/java/com/codedifferently/instructional/quiz/QuizProctor.java) for an example in Java.
 
 ## Timeline
 
