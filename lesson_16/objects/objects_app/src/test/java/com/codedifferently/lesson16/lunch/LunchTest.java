@@ -1,11 +1,9 @@
-package com.codedifferently.lesson16.LunchTest;
+package com.codedifferently.lesson16.lunch;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.junit.jupiter.api.Assertions.fail;
 
-import com.codedifferently.lesson16.Lunch.InvalidCalorieException;
-import com.codedifferently.lesson16.Lunch.Lunch;
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 import java.util.ArrayList;
