@@ -38,10 +38,10 @@ Design a CLI that allows users to interact with your application. Check out the 
 
 ## Timeline
 
-* Submit three user stories (Monday, 11/4 5PM ET)
-* Receive approval for your user stories (Tuesday, 11/5 1PM ET)
-* Finish code commits (11/8, 1PM ET)
-* Give presentation (11/11, 1PM ET)
+* Submit three user stories (Monday, 11/4, 5PM ET)
+* Receive approval for your user stories (Tuesday, 11/5, 1PM ET)
+* Finish code commits (Friday, 11/8, 1PM ET)
+* Give presentation (Monday, 11/11, 1PM ET)
 
 ## Grading
 
