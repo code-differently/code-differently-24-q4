@@ -56,7 +56,6 @@ public class SlotMachine {
     return payAmount;
   }
 
-
   public int getMoneyNeeded() {
     return moneyNeeded;
   }
