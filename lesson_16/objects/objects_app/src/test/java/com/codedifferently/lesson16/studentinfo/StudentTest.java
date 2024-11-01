@@ -1,9 +1,11 @@
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNotNull;
+package com.codedifferently.lesson16.studentinfo;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -12,8 +14,6 @@ public class StudentTest {
 
   @BeforeEach
   public void setUp() {
-    // classUnderTest = new Student();
-    // List<Student> studentList = new ArrayList<>();
     List<String> phoneNumbers = new ArrayList<>();
     phoneNumbers.add("302-999-2222");
     phoneNumbers.add("302-211-2222");
