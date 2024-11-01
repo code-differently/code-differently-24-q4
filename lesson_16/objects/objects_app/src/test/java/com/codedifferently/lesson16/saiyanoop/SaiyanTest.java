@@ -2,12 +2,10 @@ package com.codedifferently.lesson16.saiyanoop;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+import com.codedifferently.lesson16.saiyanoop.Saiyan.SaiyanForms;
 import java.util.ArrayList;
 import java.util.Arrays;
-
 import org.junit.jupiter.api.Test;
-
-import com.codedifferently.lesson16.saiyanoop.Saiyan.SaiyanForms;
 
 public class SaiyanTest {
   @Test
