@@ -1,17 +1,14 @@
-package com.codedifferently.lesson16;
+package com.codedifferently.lesson16.coins;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
-import static org.junit.jupiter.api.Assertions.assertTrue;
 
+import com.codedifferently.lesson16.coins.Coins.CoinType;
 import java.util.ArrayList;
 import java.util.List;
-
 import org.junit.jupiter.api.Test;
-
-import com.codedifferently.lesson16.Coins.CoinType;
 
 class CoinTest {
 
@@ -55,16 +52,11 @@ class CoinTest {
   }
 
   @Test
-  void testCollectCoins() {
+  void testCoinCollection() {
     // arrange
-    Coins.collectCoins();
+    List<Coins> coinCollection = Coins.setCoinCollection();
 
-    List<Coins> coinCollection = Coins.getCoinCollection();
-
-    assertTrue(coinCollection.size() == 3);
-
-
-
+    assertEquals(3, coinCollection.size());
   }
 
   @Test

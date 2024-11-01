@@ -1,4 +1,4 @@
-package com.codedifferently.lesson16;
+package com.codedifferently.lesson16.coins;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -58,7 +58,11 @@ public class Coins {
   }
 
   public List<String> getMaterial() {
-    return material;
+    List<String> materialsList = new ArrayList<>();
+    for (String mat : material) {
+      materialsList.add(mat);
+    }
+    return materialsList;
   }
 
   public static int convertNickelsToDimes(int totalNickels) {
@@ -68,7 +72,7 @@ public class Coins {
     return totalNickels / 2;
   }
 
-  public static List<Coins> CollectCoins() {
+  public static List<Coins> setCoinCollection() {
     Coins penny = new Coins(Coins.CoinType.PENNY, 1, true, 2.5, 1977, List.of("zinc", "copper"));
     Coins nickel =
         new Coins(Coins.CoinType.NICKEL, 5, true, 5.0, 1953, List.of("nickel", "copper"));
