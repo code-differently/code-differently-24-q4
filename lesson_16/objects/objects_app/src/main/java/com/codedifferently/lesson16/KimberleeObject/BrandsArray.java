@@ -1,4 +1,4 @@
-package com.codedifferently.lesson16.KimberleeObjectTest;
+package com.codedifferently.lesson16.KimberleeObject;
 
 import java.util.Arrays;
 import java.util.List;

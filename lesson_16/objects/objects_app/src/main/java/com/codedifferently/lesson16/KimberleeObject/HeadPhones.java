@@ -12,6 +12,7 @@ public class HeadPhones {
   private boolean isWireless = true;
   private String brands = "Beats";
   private boolean isConnectedToBluetooth = false;
+
   public enum HeadPhoneColor {
     RED,
     BLUE,

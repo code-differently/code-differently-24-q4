@@ -3,6 +3,8 @@ package com.codedifferently.lesson16.KimberleeObjectTest;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 import static org.junit.jupiter.api.Assertions.*;
 
+import com.codedifferently.lesson16.KimberleeObject.BrandsArray;
+import com.codedifferently.lesson16.KimberleeObject.ConnectionNotFoundException;
 import com.codedifferently.lesson16.KimberleeObject.HeadPhones;
 import com.codedifferently.lesson16.KimberleeObject.HeadPhones.HeadPhoneColor;
 import org.junit.jupiter.api.BeforeEach;
