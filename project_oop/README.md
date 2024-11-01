@@ -16,7 +16,7 @@ Before starting work on your project, you will need to submit three user stories
 * Must include at least 5 types of objects with meaningful relattionships to each other.
 * One of your objects must be a custom data structure that provides for adding, removing, and updating items in a collection.
 * Implement at least two custom exceptions.
-* Write unit tests achieving 90% code coverage.
+* Write unit tests achieving 90% code coverage (using JaCoCo for Java or Jest for Typescript).
 * Must include an integration test.
 * Your solution must illustrate each of the SOLID principles.
 * Each team member must contribute *at least one* submitted pull request containing working code and tests.
