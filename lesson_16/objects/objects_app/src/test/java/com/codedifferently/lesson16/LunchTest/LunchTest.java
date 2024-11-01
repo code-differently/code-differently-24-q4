@@ -3,6 +3,7 @@ package com.codedifferently.lesson16.LunchTest;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
+import com.codedifferently.lesson16.Lunch.InvalidCalorieException;
 import com.codedifferently.lesson16.Lunch.Lunch;
 import java.util.ArrayList;
 import org.junit.jupiter.api.BeforeEach;
@@ -11,9 +12,10 @@ import org.junit.jupiter.api.Test;
 public class LunchTest {
 
   private Lunch lunch;
+  private Lunch impossibleLunch;
 
   @BeforeEach
-  public void setUp() {
+  public void setUp() throws InvalidCalorieException {
     lunch = new Lunch("Grilled Chicken", "Caesar Salad", 450, Lunch.LunchType.NON_VEGETARIAN);
   }
 
@@ -33,13 +35,13 @@ public class LunchTest {
   }
 
   @Test
-  public void testGetHealthMessageHealthy() {
+  public void testGetHealthMessageHealthy() throws InvalidCalorieException {
     lunch = new Lunch("Salad", "Fruit", 300, Lunch.LunchType.VEGAN);
     assertEquals("This lunch is healthy!", lunch.getHealthMessage());
   }
 
   @Test
-  public void testGetHealthMessageUnhealthy() {
+  public void testGetHealthMessageUnhealthy() throws InvalidCalorieException {
     lunch = new Lunch("Cheeseburger", "Fries", 800, Lunch.LunchType.NON_VEGETARIAN);
     assertEquals("This lunch is high in calories.", lunch.getHealthMessage());
   }
@@ -56,4 +58,52 @@ public class LunchTest {
   public ArrayList<String> getDrinks() {
     return lunch.getDrinks();
   }
+
+  @Test
+    public void testLunchType() throws InvalidCalorieException {
+        lunch = new Lunch("Tofu Stir Fry", "Brown Rice", 350, Lunch.LunchType.VEGAN);
+        assertEquals(Lunch.LunchType.VEGAN, lunch.getLunchType());
+    }
+
+    @Test
+    public void testAddMultipleDrinks() {
+    lunch.addDrink("Soda");
+    lunch.addDrink("Juice");
+    lunch.addDrink("Coffee");
+
+    ArrayList<String> expectedDrinks = new ArrayList<>();
+    expectedDrinks.add("Soda");
+    expectedDrinks.add("Juice");
+    expectedDrinks.add("Coffee");
+
+    assertEquals(expectedDrinks.size(), lunch.getDrinks().size());
+    assertTrue(lunch.getDrinks().containsAll(expectedDrinks));
+    }
+
+    @Test
+    public void testHighCalories() throws InvalidCalorieException {
+    lunch = new Lunch("Double Cheeseburger", "Loaded Fries", 2000, Lunch.LunchType.NON_VEGETARIAN);
+    assertEquals(2000, lunch.getCalories());
+    }
+
+    @Test
+    public void testEmptyMainDish() throws InvalidCalorieException {
+    lunch = new Lunch("", "Salad", 300, Lunch.LunchType.VEGETARIAN);
+    assertEquals("", lunch.getMainDish());
+    }
+
+    // Expected to fail with exception message: Calories cannot be zero or negative
+    @Test
+    public void testZeroCalories() throws InvalidCalorieException {
+        lunch = new Lunch("Fruit Salad", "Yogurt", 0, Lunch.LunchType.VEGAN);
+        assertEquals("Fruit Salad", lunch.getMainDish());
+        assertEquals(0, lunch.getCalories());
+    }
+
+    // Expected to fail with exception message: Calories cannot be zero or negative
+  @Test
+    public void testNegativeCaloriesThrowsException() throws InvalidCalorieException {
+        impossibleLunch = new Lunch("Grilled Chicken", "Caesar Salad", -100, Lunch.LunchType.NON_VEGETARIAN);
+        assertEquals(-100, lunch.getCalories());
+    }
 }

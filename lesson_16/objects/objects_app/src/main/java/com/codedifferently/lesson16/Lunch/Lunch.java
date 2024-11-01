@@ -19,7 +19,10 @@ public class Lunch {
   private final ArrayList<String> drinks; // Collection type (ArrayList)
 
   // Constructor
-  public Lunch(String mainDish, String sideDish, int calories, LunchType lunchType) {
+  public Lunch(String mainDish, String sideDish, int calories, LunchType lunchType) throws InvalidCalorieException {
+    if (calories <= 0) {
+        throw new InvalidCalorieException("Calories cannot be zero or negative.");
+    }
     this.mainDish = mainDish;
     this.sideDish = sideDish;
     this.calories = calories;
