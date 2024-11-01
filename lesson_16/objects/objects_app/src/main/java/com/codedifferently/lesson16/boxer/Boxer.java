@@ -61,10 +61,6 @@ public class Boxer {
     return power;
   }
 
-  public HashMap<String, Character> getFightHistory() {
-    return fights;
-  }
-
   public int getHealth() {
     return health;
   }
@@ -133,15 +129,6 @@ public class Boxer {
   public void setName(String name) {
     this.name = name;
   }
-
-  public void setFights(HashMap<String, Character> fights) {
-    this.fights = fights;
-  }
-
-  public void setPower(int power) {
-    this.power = power;
-  }
-
   public void setHealth(int health) {
     this.health = health;
   }
@@ -150,27 +137,7 @@ public class Boxer {
     return skillSet;
   }
 
-  public void setSkillSet(BoxerStyle skillSet) {
-    this.skillSet = skillSet;
-  }
-
   public void setAbleToFight(boolean ableToFight) {
     this.ableToFight = ableToFight;
-  }
-
-  public BoxerStyle[] getStyle() {
-    return style;
-  }
-
-  public void setStyle(BoxerStyle[] style) {
-    this.style = style;
-  }
-
-  public static Random getRand() {
-    return rand;
-  }
-
-  public static void setRand(Random rand) {
-    Boxer.rand = rand;
   }
 }
