@@ -8,7 +8,7 @@ import com.codedifferently.lesson16.amiyahjones.JobReadinessProgram.Level;
 public class JobReadinessProgramTest {
 
     @Test
-    void testAddStudent() {
+    void testAddStudent() throws ClassroomFullException {
         //Arrange
         JobReadinessProgram program = new JobReadinessProgram(null, false, null);
 
@@ -20,7 +20,7 @@ public class JobReadinessProgramTest {
     }
 
     @Test
-    void testGetStudentCount() {
+    void testGetStudentCount() throws ClassroomFullException {
         //Arrange
         JobReadinessProgram program = new JobReadinessProgram(null, true, null);
         program.addStudent("John");
