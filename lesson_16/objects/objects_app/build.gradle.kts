@@ -3,6 +3,7 @@ plugins {
     application
     eclipse
     jacoco
+    id("io.freefair.lombok") version "8.10.2"
     id("com.diffplug.spotless") version "6.25.0"
 	  id("org.springframework.boot") version "3.2.2"
     id("com.adarshr.test-logger") version "4.0.0"
@@ -25,7 +26,6 @@ dependencies {
     // This dependency is used by the application.
     implementation("com.google.guava:guava:31.1-jre")
     implementation("com.google.code.gson:gson:2.10.1")
-    implementation("org.projectlombok:lombok:1.18.30")
     implementation("org.springframework.boot:spring-boot-starter")
 }
 
