@@ -103,5 +103,4 @@ public class SlotMachine {
   public void setMoneyNeeded(int moneyNeeded) {
     this.moneyNeeded = moneyNeeded;
   }
-  
 }

@@ -2,8 +2,9 @@ package com.codedifferently.lesson16.ShawnDunsmore;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
-import java.util.Collections; 
+
 import java.util.ArrayList;
+import java.util.Collections;
 import org.junit.jupiter.api.Test;
 
 public class SlotMachineTest {
@@ -62,99 +63,112 @@ public class SlotMachineTest {
     SlotMachine slotMachine2 = new SlotMachine(1, 10, "Test Slot 2", BuyType.BONUS_BUY, icons, 10);
     assertEquals(30, slotMachine2.payOut(), "Expected payout for BONUS_BUY to be 30");
   }
+
   @Test
-    public void testSetNumOfSlots() {
-        SlotMachine slotMachine = new SlotMachine(3, 10, "Test Slot", BuyType.NORMAL_BUY, new ArrayList<>(), 10);
+  public void testSetNumOfSlots() {
+    SlotMachine slotMachine =
+        new SlotMachine(3, 10, "Test Slot", BuyType.NORMAL_BUY, new ArrayList<>(), 10);
 
-        slotMachine.setNumOfSlots(5);
+    slotMachine.setNumOfSlots(5);
 
-        assertEquals(5, slotMachine.getNumOfSlots(), "The number of slots should be updated to 5");
-    }
-    @Test
-    public void testSetPayAmount() {
-        SlotMachine slotMachine = new SlotMachine(3, 10, "Test Slot", BuyType.NORMAL_BUY, new ArrayList<>(), 10);
+    assertEquals(5, slotMachine.getNumOfSlots(), "The number of slots should be updated to 5");
+  }
 
-        slotMachine.setPayAmount(20);
+  @Test
+  public void testSetPayAmount() {
+    SlotMachine slotMachine =
+        new SlotMachine(3, 10, "Test Slot", BuyType.NORMAL_BUY, new ArrayList<>(), 10);
 
-        assertEquals(20, slotMachine.getPayAmount(), "The pay amount should be updated to 20");
-    }
+    slotMachine.setPayAmount(20);
 
-    @Test
-    public void testSetName() {
-        SlotMachine slotMachine = new SlotMachine(3, 10, "Test Slot", BuyType.NORMAL_BUY, new ArrayList<>(), 10);
+    assertEquals(20, slotMachine.getPayAmount(), "The pay amount should be updated to 20");
+  }
 
-        slotMachine.setName("Lucky Slot");
+  @Test
+  public void testSetName() {
+    SlotMachine slotMachine =
+        new SlotMachine(3, 10, "Test Slot", BuyType.NORMAL_BUY, new ArrayList<>(), 10);
 
-        assertEquals("Lucky Slot", slotMachine.getName(), "The name should be updated to 'Lucky Slot'");
-    }
+    slotMachine.setName("Lucky Slot");
 
-    @Test
-    public void testSetBuyType() {
-        SlotMachine slotMachine = new SlotMachine(3, 10, "Test Slot", BuyType.NORMAL_BUY, new ArrayList<>(), 10);
+    assertEquals("Lucky Slot", slotMachine.getName(), "The name should be updated to 'Lucky Slot'");
+  }
 
-        slotMachine.setBuyType(BuyType.BONUS_BUY);
+  @Test
+  public void testSetBuyType() {
+    SlotMachine slotMachine =
+        new SlotMachine(3, 10, "Test Slot", BuyType.NORMAL_BUY, new ArrayList<>(), 10);
 
-        assertEquals(BuyType.BONUS_BUY, slotMachine.getBuyType(), "The buy type should be updated to BONUS_BUY");
-    }
-    @Test
-    public void testSetIconList() {
-        SlotMachine slotMachine = new SlotMachine(3, 10, "Test Slot", BuyType.NORMAL_BUY, new ArrayList<>(), 10);
+    slotMachine.setBuyType(BuyType.BONUS_BUY);
 
-        ArrayList<String> newIcons = new ArrayList<>();
-        newIcons.add("🍒");
-        newIcons.add("🍋");
-        newIcons.add("🍊");
+    assertEquals(
+        BuyType.BONUS_BUY, slotMachine.getBuyType(), "The buy type should be updated to BONUS_BUY");
+  }
 
-        slotMachine.setIconList(newIcons);
+  @Test
+  public void testSetIconList() {
+    SlotMachine slotMachine =
+        new SlotMachine(3, 10, "Test Slot", BuyType.NORMAL_BUY, new ArrayList<>(), 10);
 
-        assertEquals(newIcons, slotMachine.getIconList(), "The icon list should be updated with the new icons");
-    }
+    ArrayList<String> newIcons = new ArrayList<>();
+    newIcons.add("🍒");
+    newIcons.add("🍋");
+    newIcons.add("🍊");
 
-    @Test
-    public void testSetMoneyNeeded() {
-        SlotMachine slotMachine = new SlotMachine(3, 10, "Test Slot", BuyType.NORMAL_BUY, new ArrayList<>(), 10);
+    slotMachine.setIconList(newIcons);
 
-        slotMachine.setMoneyNeeded(15);
+    assertEquals(
+        newIcons, slotMachine.getIconList(), "The icon list should be updated with the new icons");
+  }
 
-        assertEquals(15, slotMachine.getMoneyNeeded(), "The money needed should be updated to 15");
-    }
-     @Test
-    public void testSpinThrowsExceptionWhenMoneyIsInsufficient() {
-        ArrayList<String> icons = new ArrayList<>();
-        icons.add("🍒");
-        icons.add("🍋");
-        icons.add("🍊");
+  @Test
+  public void testSetMoneyNeeded() {
+    SlotMachine slotMachine =
+        new SlotMachine(3, 10, "Test Slot", BuyType.NORMAL_BUY, new ArrayList<>(), 10);
 
-        SlotMachine slotMachine = new SlotMachine(3, 10, "Test Slot", BuyType.NORMAL_BUY, icons, 10);
+    slotMachine.setMoneyNeeded(15);
 
-        Exception exception = assertThrows(InvalidPayAmountException.class, () -> {
-            slotMachine.spin(5); 
-        });
+    assertEquals(15, slotMachine.getMoneyNeeded(), "The money needed should be updated to 15");
+  }
 
-        assertEquals("Amount inavalid", exception.getMessage());
-    }
+  @Test
+  public void testSpinThrowsExceptionWhenMoneyIsInsufficient() {
+    ArrayList<String> icons = new ArrayList<>();
+    icons.add("🍒");
+    icons.add("🍋");
+    icons.add("🍊");
 
-    @Test
-    public void testSpinShufflesIconList() throws InvalidPayAmountException {
-        ArrayList<String> icons = new ArrayList<>();
-        icons.add("🍒");
-        icons.add("🍋");
-        icons.add("🍊");
+    SlotMachine slotMachine = new SlotMachine(3, 10, "Test Slot", BuyType.NORMAL_BUY, icons, 10);
 
-        SlotMachine slotMachine = new SlotMachine(3, 10, "Test Slot", BuyType.NORMAL_BUY, icons, 10);
+    Exception exception =
+        assertThrows(
+            InvalidPayAmountException.class,
+            () -> {
+              slotMachine.spin(5);
+            });
 
-        ArrayList<String> originalIcons = new ArrayList<>(slotMachine.getIconList());
+    assertEquals("Amount inavalid", exception.getMessage());
+  }
 
-        slotMachine.spin(10);
+  @Test
+  public void testSpinShufflesIconList() throws InvalidPayAmountException {
+    ArrayList<String> icons = new ArrayList<>();
+    icons.add("🍒");
+    icons.add("🍋");
+    icons.add("🍊");
 
-        ArrayList<String> shuffledIcons = slotMachine.getIconList();
+    SlotMachine slotMachine = new SlotMachine(3, 10, "Test Slot", BuyType.NORMAL_BUY, icons, 10);
 
-        Collections.sort(originalIcons);
-        Collections.sort(shuffledIcons);
+    ArrayList<String> originalIcons = new ArrayList<>(slotMachine.getIconList());
 
-        assertEquals(originalIcons, shuffledIcons, "The icon list should have the same contents after spinning");
-    }
+    slotMachine.spin(10);
+
+    ArrayList<String> shuffledIcons = slotMachine.getIconList();
+
+    Collections.sort(originalIcons);
+    Collections.sort(shuffledIcons);
+
+    assertEquals(
+        originalIcons, shuffledIcons, "The icon list should have the same contents after spinning");
+  }
 }
-    
-
-
