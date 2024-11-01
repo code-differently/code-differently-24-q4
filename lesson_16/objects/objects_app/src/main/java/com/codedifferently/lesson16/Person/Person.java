@@ -12,7 +12,14 @@ public class Person {
   private double height;
   private ArrayList<String> hairColor;
 
-  public Person(String name, String sex, String race, int age, double height, ArrayList<String> hairColor, boolean alive) {
+  public Person(
+      String name,
+      String sex,
+      String race,
+      int age,
+      double height,
+      ArrayList<String> hairColor,
+      boolean alive) {
     this.name = name;
     this.sex = sex;
     this.race = race;
