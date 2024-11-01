@@ -2,11 +2,10 @@ package com.codedifferently.lesson16.HorseStableTest;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
-
 import com.codedifferently.lesson16.HorseStable.HorseStable;
 import com.codedifferently.lesson16.HorseStable.StableFullException;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
 public class HorseStableTest {
   private HorseStable stable;
@@ -34,14 +33,14 @@ public class HorseStableTest {
 
   @Test
   public void testDisplayHorses_NoHorses() {
-    stable.displayHorses(); 
+    stable.displayHorses();
   }
 
   @Test
   public void testDisplayHorses_WithHorses() throws StableFullException {
     stable.addHorse("Spirit");
     stable.addHorse("Shadow");
-    stable.displayHorses(); 
+    stable.displayHorses();
   }
 
   @Test
