@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node build/lesson10.js",
     "dev": "tsc-watch --noClear -p ./tsconfig.build.json --onSuccess \"node ./build/lesson10.js\"",
-    "test": "node --experimental-vm-modules node_modules/.bin/jest",
+    "test": "node --experimental-vm-modules node_modules/.bin/jest --coverage",
     "compile": "tsc -p tsconfig.build.json",
     "prepare": "npm run compile",
     "pretest": "npm run compile",
