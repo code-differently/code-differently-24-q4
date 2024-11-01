@@ -1,10 +1,10 @@
 package com.codedifferently.lesson15;
 
-import static org.assertj.core.api.Assertions.assertThatThrownBy;
-import static org.junit.jupiter.api.Assertions.assertEquals;
-
 import java.util.ArrayList;
 import java.util.List;
+
+import static org.assertj.core.api.Assertions.assertThatThrownBy;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -29,6 +29,7 @@ public class EmployeeManagerTest {
     Employee employee1 = new Employee(1, "Penny", "Sales", 65000.00);
     // Act & Assert
     employeeManager.addEmployee(employee1);
+    assertEquals(employee1, employeeManager.getEmployee(1));
   }
 
   @Test
