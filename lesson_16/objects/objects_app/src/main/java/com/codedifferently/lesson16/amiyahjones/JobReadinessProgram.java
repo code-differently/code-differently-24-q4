@@ -1,8 +1,6 @@
 package com.codedifferently.lesson16.amiyahjones;
 
 import java.util.ArrayList;
-// import java.util.Arrays;
-import java.util.HashMap;
 import java.util.List;
 
 public class JobReadinessProgram {
@@ -10,10 +8,16 @@ public class JobReadinessProgram {
     ArrayList<String> students;
     private final Level readinessLevel;
     private final int lecturePerWeek;
-    private static final HashMap<Integer, String> teacherAssistants;
+    private static final ArrayList<String> teacherAssistants = new ArrayList<>();
     private String assignedTA;
     private final String mentor;
     private final String socialSupport;
+
+    static {
+        teacherAssistants.add("Rich");
+        teacherAssistants.add("Vicente");
+        teacherAssistants.add("Jordan");
+    }
 
     enum Level {
         Beginner , 
@@ -26,9 +30,9 @@ public class JobReadinessProgram {
         this.readinessLevel = readinessLevel;
         this.isSuccessful = isSuccessful;
         lecturePerWeek = 3;
-        this.assignedTA = null;
         mentor = "Anthony";
         socialSupport = "Estelle";
+        this.assignedTA = assignedTA;
     }
     
     public void addStudent(String studentName){
@@ -67,8 +71,8 @@ public class JobReadinessProgram {
         return socialSupport;
     }
 
-   public List<String> teacherAssistants() {
-    return teacherAssistants;
+   public List<String> getTeacherAssistants() {
+    return new ArrayList<>(teacherAssistants);
    }
     
    public boolean assignTA(String taName) {
@@ -76,8 +80,7 @@ public class JobReadinessProgram {
             this.assignedTA = taName;
             return true; 
         } else {
-            System.out.println("Not a TA. Please choose from: " + teacherAssistants);
-            return false; 
+            throw new IllegalArgumentException("Not a TA. Please choose from: " + getTeacherAssistants());
         }
     }
 
