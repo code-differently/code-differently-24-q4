@@ -56,7 +56,7 @@ public class JobReadinessProgramTest {
 
     @Test 
     void testCheckReadinessBeginner() {
-        JobReadinessProgram student = new JobReadinessProgram(Level.Advanced, true, null);
+        JobReadinessProgram student = new JobReadinessProgram(Level.Beginner, true, null);
         String result = student.checkReadiness();
         assertEquals("Needs more training.", result);
     }
@@ -114,8 +114,8 @@ public class JobReadinessProgramTest {
 
     @Test
     void testAssignTA() {
-        JobReadinessProgram program = new JobReadinessProgram(Level.Beginner, true, "jordan");
-        boolean result = program.assignTA("vicente");
+        JobReadinessProgram program = new JobReadinessProgram(Level.Beginner, true, "Jordan");
+        boolean result = program.assignTA("Vicente");
         assert(result == true);
 
         try {
