@@ -6,6 +6,8 @@ import static org.junit.jupiter.api.Assertions.fail;
 
 import com.codedifferently.lesson16.Lunch.InvalidCalorieException;
 import com.codedifferently.lesson16.Lunch.Lunch;
+import java.io.ByteArrayOutputStream;
+import java.io.PrintStream;
 import java.util.ArrayList;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -13,6 +15,7 @@ import org.junit.jupiter.api.Test;
 public class LunchTest {
 
   private Lunch lunch;
+  private final PrintStream originalOut = System.out; // Store the original System.out
 
   @BeforeEach
   public void setUp() throws InvalidCalorieException {
@@ -48,10 +51,20 @@ public class LunchTest {
 
   @Test
   public void testDisplayDrinks() {
+    // Redirect output to capture printed text
+    ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
+    System.setOut(new PrintStream(outputStream));
+
     lunch.addDrink("Water");
-    // Capture output or verify by using a mocked System.out or similar approach
-    // For simplicity, you could check if a drink was added and assume display works
-    assertTrue(lunch.getDrinks().contains("Water"));
+    lunch.addDrink("Soda");
+    lunch.displayDrinks();
+
+    // Reset System.out to original
+    System.setOut(originalOut);
+
+    // Prepare the expected output
+    String expectedOutput = "Available drinks:\n- Water\n- Soda\n";
+    assertEquals(expectedOutput, outputStream.toString());
   }
 
   // Helper method to access the drinks list for testing
