@@ -12,7 +12,7 @@ public class JobReadinessProgram {
     private String assignedTA;
     private final String mentor;
     private final String socialSupport;
-    private final int MAX_CAPACITY;
+    private final int MAX_CAPACITY = 22;
 
     static {
         teacherAssistants.add("Rich");
@@ -33,15 +33,16 @@ public class JobReadinessProgram {
         lecturePerWeek = 3;
         mentor = "Anthony";
         socialSupport = "Estelle";
-        this.assignedTA = assignedTA;
+        if (teacherAssistants.contains(assignedTA)) {
+            this.assignedTA = assignedTA;
+        }
     }
     
     public void addStudent(String studentName) throws ClassroomFullException{
-    students.add(studentName);
     int classroomCheck = students.size();
     if (classroomCheck == MAX_CAPACITY) {
         throw new ClassroomFullException("Classroom is full");
-    }
+    } students.add(studentName);
    }
 
     public int getStudentCount() {
