@@ -61,15 +61,6 @@ public class JobReadinessProgram {
         return (readinessLevel == Level.Beginner) ? "Needs more training." : "Ready for job applications!";
     }
 
-    public Boolean verifyIsSuccessful() {
-    if (isSuccessful){
-        System.out.println("Congraulations! You made it through your journey!");
-    } else {
-         System.out.println("At least you got to know what software engineering is like!");
-    }
-    return isSuccessful;
-   }
-
    public int lecturePerWeek() {
      System.out.println("Number of lectures students have: ");
      return lecturePerWeek;
@@ -103,5 +94,14 @@ public class JobReadinessProgram {
             System.out.println("No Teacher Assistant assigned.");
         }
     }
+
+    public Boolean verifyIsSuccessful() {
+    if (isSuccessful){
+        System.out.println("Congraulations! You made it through your journey!");
+    } else {
+         System.out.println("At least you got to know what software engineering is like!");
+    }
+    return isSuccessful;
+   }    
 
 }

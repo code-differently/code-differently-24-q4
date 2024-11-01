@@ -77,7 +77,7 @@ public class JobReadinessProgramTest {
 
     @Test
     void testVerifyIfSuccessful() {
-         JobReadinessProgram graduate = new JobReadinessProgram(null, false, "rich");
+         JobReadinessProgram graduate = new JobReadinessProgram(null, true, "rich");
          
          var graduation = graduate.verifyIsSuccessful();
          assertEquals(true, graduation);
