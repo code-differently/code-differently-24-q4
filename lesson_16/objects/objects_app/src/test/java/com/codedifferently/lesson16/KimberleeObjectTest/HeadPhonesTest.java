@@ -60,4 +60,30 @@ public class HeadPhonesTest {
     // Assert
     assertFalse(headphones.isPoweredOn(), "Headphones should turn off after calling");
   }
+
+  @Test
+  public void testIncreaseVolume() {
+    // Arrange
+    headphones.turnOn();
+    headphones.increaseVolume();
+    assertEquals(1, headphones.getVolume(0), "Volume should increase by 1");
+    // Act
+    headphones.setVolume(99);
+    headphones.increaseVolume();
+    // Assert
+    assertEquals(100, headphones.getVolume(0), "Volume should not exceed 100.");
+  }
+
+  @Test
+  public void testDecreaseVolume() {
+    // Arrange
+    headphones.turnOn();
+    headphones.setVolume(1);
+    headphones.decreaseVolume();
+    assertEquals(0, headphones.getVolume(0), "Volume should decrease to 0.");
+    // Act
+    headphones.decreaseVolume();
+    // Assert
+    assertEquals(0, headphones.getVolume(0), "Volume should not go lower than 0.");
+  }
 }
