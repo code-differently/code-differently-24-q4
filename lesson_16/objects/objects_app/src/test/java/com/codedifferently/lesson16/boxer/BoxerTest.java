@@ -4,11 +4,11 @@ import static org.assertj.core.api.Assertions.assertThatThrownBy;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertNotEquals;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
 
 import com.codedifferently.lesson16.boxer.Boxer.BoxerHasNoFightsException;
 import com.codedifferently.lesson16.boxer.Boxer.BoxerIsRetiredException;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
 public class BoxerTest {
 
@@ -31,8 +31,10 @@ public class BoxerTest {
     boxer.rest();
     assertNotEquals(boxer.getHealth(), previousHealth);
   }
+
   @Test
-  void testGetFightHistory_makingAFighterToHaveABout() throws BoxerHasNoFightsException, BoxerIsRetiredException {
+  void testGetFightHistory_makingAFighterToHaveABout()
+      throws BoxerHasNoFightsException, BoxerIsRetiredException {
     Boxer mike = new Boxer("mike", 1000, 1000);
     boxer.bout(mike);
     assertEquals("You fought " + mike.getName() + " L", boxer.getFights());
@@ -57,14 +59,16 @@ public class BoxerTest {
   }
 
   @Test
-  void testBout_makingNewBoxerToFightAndDraw() throws BoxerIsRetiredException, BoxerHasNoFightsException {
+  void testBout_makingNewBoxerToFightAndDraw()
+      throws BoxerIsRetiredException, BoxerHasNoFightsException {
     Boxer ryan = new Boxer("Ryan Garcia", 99, 99);
     boxer.bout(ryan);
     assertEquals(boxer.getFights(), "You fought Ryan Garcia D");
   }
 
   @Test
-  void testBout_makingNewBoxerToWinAgainstWithBoxer() throws BoxerIsRetiredException, BoxerHasNoFightsException {
+  void testBout_makingNewBoxerToWinAgainstWithBoxer()
+      throws BoxerIsRetiredException, BoxerHasNoFightsException {
     Boxer hitman = new Boxer("Thomas Hearns", 98, 98);
     boxer.bout(hitman);
     assertEquals(boxer.getFights(), "You fought " + hitman.getName() + " W");
@@ -128,7 +132,8 @@ public class BoxerTest {
   }
 
   @Test
-  void testBoxerIsRetiredException_retiringBoxerThenThrowingException() throws BoxerIsRetiredException {
+  void testBoxerIsRetiredException_retiringBoxerThenThrowingException()
+      throws BoxerIsRetiredException {
     Boxer leaonard = new Boxer("Sugar ray", 200, 200);
     boxer.retire();
     assertThatThrownBy(
