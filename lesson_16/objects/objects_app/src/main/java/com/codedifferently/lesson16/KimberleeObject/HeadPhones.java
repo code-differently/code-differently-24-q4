@@ -28,4 +28,12 @@ public class HeadPhones {
   public String getBrandsArray() {
     return brands;
   }
+
+  public void turnOn() {
+    isPoweredOn = true;
+  }
+
+  public void turnOff() {
+    isPoweredOn = false;
+  }
 }

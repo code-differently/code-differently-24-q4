@@ -42,10 +42,22 @@ public class HeadPhonesTest {
     assertTrue(headphones.isWireless(), "HeadPhones should be wireless by default.");
     assertArrayEquals(new String[] {"Beats"}, new String[] {"Beats"});
   }
-  // Arrange
 
-  // Act
+  @Test
+  public void testTurnOn() {
+    // Act
+    headphones.turnOn();
+    // Assert
+    assertTrue(headphones.isPoweredOn(), "Headphones should turn on after calling turnOn");
+  }
 
-  // Assert
-
+  @Test
+  public void testTurnOff() {
+    // Arrange
+    headphones.turnOn();
+    // Act
+    headphones.turnOff();
+    // Assert
+    assertFalse(headphones.isPoweredOn(), "Headphones should turn off after calling");
+  }
 }
