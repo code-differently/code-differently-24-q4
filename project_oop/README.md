@@ -3,7 +3,7 @@
 
 ## Introduction
 
-For this project, you and your teammates are tasked with modeling a real-world problem using object-oriented and SOLID design principles, from ideation to implementation.
+For this project, you and your teammates are tasked with modeling a solution to a real-world problem using object-oriented and SOLID design principles, from ideation to implementation.
 
 ## Prerequisites
 
@@ -17,7 +17,7 @@ Before starting work on your project, you will need to submit three user stories
 * One of your objects must be a custom data structure that provides for adding, removing, and updating items in a collection.
 * Implement at least two custom exceptions.
 * Write unit tests achieving 90% code coverage (using JaCoCo for Java or Jest for Typescript).
-* Must include an integration test.
+* Must include an integration test for each user story that demonstrates how your code implements the desired feature.
 * Your solution must illustrate each of the SOLID principles.
 * Each team member must contribute *at least one* submitted pull request containing working code and tests.
 * Include a README for your repo describing the problem you're solving, the solution, and how you would improve your solution.
