@@ -1,78 +1,94 @@
 package com.codedifferently.lesson16;
 
+import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.assertThatThrownBy;
 import static org.junit.jupiter.api.Assertions.assertEquals;
-
-import java.sql.Array;
-import java.util.ArrayList;
-
-import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import com.codedifferently.lesson16.Coins.CoinType;
+import java.util.ArrayList;
+import java.util.List;
+import org.junit.jupiter.api.Test;
 
-class CoinTest{
+class CoinTest {
 
+  @Test
+  void testCheckCoinInPocket() {
+    // arrange
+    Coins coin = new Coins(CoinType.NICKEL, 5, false, 5.0, 1953, List.of("nickel", "copper"));
+    // act action
+    Coins.CoinType actualCoin = coin.getCoinType();
+    int coinValue = coin.getCoinValue();
+    boolean coinRarity = coin.isCoinRare();
 
-
-@Test 
-  void testCheckCoinInPocket(){
-//arrange
-    Coins coin = new Coin(Coins.CoinType.NICKEL, 5, false, 5.0, 1966, new ArrayList<>(nickel,copper));
-//act action
-    CoinType actualCoin = CoinType.NICKEL;   
-
-//assert
-    assertEquals(CoinType.NICKEL,coins.checkCoinType())
-}
-@Test 
-  void testWeighCoins(){
-//arrange
-    Coins coin = new Coin(Coins.CoinType.NICKEL, 5, false, 5.0, 1966, new ArrayList<>(nickel,copper));
-    double expectedWeight = 5.0;
-//act
-    double coinWeight = coin.coinGramWeight();
-//assert
-    assertEquals(expected, coinWeight);
-}
-@Test 
-  void testConvertCoins(){
-//arrange
-    coinCollection = new Arraylist<>();
-    Coin nickel1 = new Coin();
-    Coin nickel2 = new coin();
-    coinCollection.add(nickel1);
-    coinCollection.add(nickel2);
-
-//act
-    Coin Dime = Coin.convertNickelsToDime(nickel1, nickel2);
-//assert
-    Assert(10, Dime.getValue())
-}
-@Test 
-  void testCollectCoins(){
-//arrange
-    coinCollection = new Arraylist<>();
-    Coin penny = new Coin();
-    Coin nickel = new Coin();
-    Coin dime = new Coin ();
-//act
-    AddCoin(penny);
-    AddCoin(nickel);
-    AddCoin(dime);
-//assert
-    AssertEquals(3,coinCollection());
-}
-@Test
-  void testGetAgeCoin(){
-//arrange
-    Coin coin = new Coin();
-// Act
-    int age = coin.geCoinAge();
-// Assert
-    assertEquals(1954, age);
+    // assert
+    assertEquals(CoinType.NICKEL, actualCoin);
+    assertEquals(5, coinValue);
+    assertFalse(coinRarity);
   }
-@Test  
-  void testGetMaterialComposition(){
-    Coin Penny = new Coin(new Arraylist<>(Array.asList("copper,zinc")))
 
-}
+  @Test
+  void testWeighCoins() {
+    // arrange
+    Coins coin = new Coins(CoinType.NICKEL, 5, false, 5.0, 1953, List.of("nickel", "copper"));
+    double expectedWeight = 5.0;
+    // act
+    double coinWeight = coin.getCoinGramWeight();
+    // assert
+    assertEquals(expectedWeight, coinWeight);
+  }
+
+  @Test
+  void testConvertCoins() {
+    // arrange
+    List<Coins> coinCollection = new ArrayList<>();
+    coinCollection.add(new Coins(CoinType.NICKEL, 5, false, 5.0, 1953, List.of()));
+    coinCollection.add(new Coins(CoinType.NICKEL, 5, false, 5.0, 1953, List.of()));
+    // act
+    int totalNickles = coinCollection.size();
+    int dimes = Coins.convertNickelsToDimes(totalNickles);
+    // assert
+    assertEquals(1, dimes);
+  }
+
+  @Test
+  void testCollectCoins() {
+    // arrange
+    Coins.CollectCoins();
+
+    List<Coins> coinCollection = Coins.getCoinCollection();
+
+    assertTrue(coinCollection.size() == 3);
+  }
+
+  @Test
+  void testGetAgeCoin() {
+    // arrange
+    Coins dime = new Coins(CoinType.DIME, 10, true, 10.0, 1957, List.of("nickel", "copper"));
+    // Act
+    int age = dime.getCoinAge();
+    // Assert
+    assertEquals(1957, age);
+  }
+
+  @Test
+  void testGetMaterialComposition() {
+    // arrange
+    Coins penny = new Coins(CoinType.PENNY, 1, true, 2.5, 1977, List.of("zinc", "copper"));
+    // act
+    List<String> materialComposition = penny.getMaterial();
+    // assert
+    assertThat(materialComposition).containsExactly("zinc", "copper");
+  }
+
+  @Test
+  void testCannotConvert() {
+    assertThatThrownBy(
+            () -> {
+              Coins.convertNickelsToDimes(0);
+            })
+        .isInstanceOf(IllegalArgumentException.class)
+        .hasMessageContaining("you do not have enough nickles");
+  }
 }
