@@ -5,6 +5,10 @@
 
 For this project, you and your teammates are tasked with modeling a real-world problem using object-oriented and SOLID design principles, from ideation to implementation.
 
+## Prerequisites
+
+Before starting work on your project, you will need to submit three user stories as feature requests in your assigned GitHub repo. These will need to be approved by the instructor before you can begin coding.
+
 ## Project Requirements
 
 * All work must be submitted in your team's assigned GitHub repository.
