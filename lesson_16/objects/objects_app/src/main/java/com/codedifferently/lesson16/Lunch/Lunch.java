@@ -43,6 +43,7 @@ public class Lunch {
 
   // Member function to display all drinks
   public void displayDrinks() {
+
     System.out.println("Available drinks:");
     for (String drink : drinks) {
       System.out.println("- " + drink);

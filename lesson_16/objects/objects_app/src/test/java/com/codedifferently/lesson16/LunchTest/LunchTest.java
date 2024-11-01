@@ -60,6 +60,11 @@ public class LunchTest {
   }
 
   @Test
+  public void testGetSideDish() throws InvalidCalorieException {
+    assertEquals("Caesar Salad", lunch.getSideDish());
+  }
+
+  @Test
   public void testLunchType() throws InvalidCalorieException {
     lunch = new Lunch("Tofu Stir Fry", "Brown Rice", 350, Lunch.LunchType.VEGAN);
     assertEquals(Lunch.LunchType.VEGAN, lunch.getLunchType());
