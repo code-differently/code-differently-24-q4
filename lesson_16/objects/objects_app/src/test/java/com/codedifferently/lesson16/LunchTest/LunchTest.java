@@ -2,6 +2,7 @@ package com.codedifferently.lesson16.LunchTest;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.fail;
 
 import com.codedifferently.lesson16.Lunch.InvalidCalorieException;
 import com.codedifferently.lesson16.Lunch.Lunch;
@@ -12,7 +13,6 @@ import org.junit.jupiter.api.Test;
 public class LunchTest {
 
   private Lunch lunch;
-  private Lunch impossibleLunch;
 
   @BeforeEach
   public void setUp() throws InvalidCalorieException {
@@ -94,17 +94,23 @@ public class LunchTest {
 
   // Expected to fail with exception message: Calories cannot be zero or negative
   @Test
-  public void testZeroCalories() throws InvalidCalorieException {
-    lunch = new Lunch("Fruit Salad", "Yogurt", 0, Lunch.LunchType.VEGAN);
-    assertEquals("Fruit Salad", lunch.getMainDish());
-    assertEquals(0, lunch.getCalories());
+  public void testZeroCaloriesThrowsException() {
+    try {
+      lunch = new Lunch("Grilled Chicken", "Caesar Salad", 0, Lunch.LunchType.NON_VEGETARIAN);
+      fail("Expected InvalidCalorieException to be thrown");
+    } catch (InvalidCalorieException e) {
+      assertEquals("Calories cannot be zero or negative.", e.getMessage());
+    }
   }
 
-  // Expected to fail with exception message: Calories cannot be zero or negative
+  // Expected to fail with exception message: Calories cannot be zero or negative.
   @Test
-  public void testNegativeCaloriesThrowsException() throws InvalidCalorieException {
-    impossibleLunch =
-        new Lunch("Grilled Chicken", "Caesar Salad", -100, Lunch.LunchType.NON_VEGETARIAN);
-    assertEquals(-100, lunch.getCalories());
+  public void testNegativeCaloriesThrowsException() {
+    try {
+      lunch = new Lunch("Grilled Chicken", "Caesar Salad", -100, Lunch.LunchType.NON_VEGETARIAN);
+      fail("Expected InvalidCalorieException to be thrown");
+    } catch (InvalidCalorieException e) {
+      assertEquals("Calories cannot be zero or negative.", e.getMessage());
+    }
   }
 }
