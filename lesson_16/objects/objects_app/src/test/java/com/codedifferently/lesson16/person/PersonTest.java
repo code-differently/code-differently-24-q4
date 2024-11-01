@@ -1,9 +1,9 @@
 package com.codedifferently.lesson16.person;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-
 import java.util.ArrayList;
+
 import org.junit.jupiter.api.Assertions;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -120,7 +120,7 @@ public class PersonTest {
   }
 
   @Test
-  public void testGetHairColor() {
+  public void testGetHairColor() throws PersonIsBaldException {
     // Act
     ArrayList<String> actualHairColor = person.getHairColor();
     // Arrange
@@ -132,13 +132,13 @@ public class PersonTest {
   }
 
   @Test
-  public void testGetHairColor__hairColorDoesNotExist() {
+  public void testGetHairColor__hairColorDoesNotExist() throws PersonIsBaldException {
     // Arrange
     Person baldPerson = new Person("John", "Male", "Caucasian", 25, 1.75, null, true);
     // Act
     Exception exception =
         Assertions.assertThrows(
-            IllegalArgumentException.class,
+            PersonIsBaldException.class,
             () -> {
               baldPerson.getHairColor();
             });
@@ -155,7 +155,7 @@ public class PersonTest {
   }
 
   @Test
-  public void testSetHairColor() {
+  public void testSetHairColor() throws PersonIsBaldException {
     // Arrange
     ArrayList<String> expectedHairColor = new ArrayList<>();
     expectedHairColor.add("Brown");

@@ -69,11 +69,11 @@ public class Person {
     this.height = height;
   }
 
-  public ArrayList<String> getHairColor() {
+  public ArrayList<String> getHairColor() throws PersonIsBaldException {
     if (hairColor == null || hairColor.isEmpty()) {
       this.hairColor = new ArrayList<>();
       hairColor.add("Bald");
-      throw new IllegalArgumentException("No hair color? This person must be bald!");
+      throw new PersonIsBaldException("No hair color? This person must be bald!");
     }
     return hairColor;
   }
