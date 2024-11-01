@@ -11,6 +11,7 @@ public class HeadPhones {
   private HeadPhoneColor headPhoneColor = HeadPhoneColor.BLACK;
   private boolean isWireless = true;
   private String brands = "Beats";
+  private boolean isConnectedToBluetooth = false;
 
   public enum HeadPhoneColor {
     RED,
@@ -81,12 +82,27 @@ public class HeadPhones {
   }
 
   public class BrandUtils {
-    private static final String[] PREFERRED_BRANDS = {
-      "Beats", "Sony", "Bose", "SkullCandy", "Juicy"
-    };
+    private static final String[] PREFERRED_BRANDS = {"Beats", "Sony", "Bose", "SkullCandy", "Juicy"};
 
-    public static boolean isPreferredBrand(String brand) {
-      return Arrays.asList(PREFERRED_BRANDS).contains(brand);
-    }
+  public static boolean isPreferredBrand(String brand) {
+    return Arrays.asList(PREFERRED_BRANDS).contains(brand);
   }
+}
+
+  public void connectToBluetooth() {
+    if (isPoweredOn && isWireless) {
+            isConnectedToBluetooth = true;
+    }
+}
+
+  public boolean isConnectedToBluetooth() {
+     return isConnectedToBluetooth;
+}
+
+public void wirelessConnection() throws ConnectionNotFoundException {
+    if (!isConnectedToBluetooth) {
+        throw new ConnectionNotFoundException("Headphones Wireless Connection Not Found.");
+    }
+    
+}
 }

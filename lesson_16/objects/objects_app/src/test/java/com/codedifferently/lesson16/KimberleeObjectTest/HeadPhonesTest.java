@@ -2,6 +2,7 @@ package com.codedifferently.lesson16.KimberleeObjectTest;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+import static org.assertj.core.api.Assertions.assertThatThrownBy;
 import com.codedifferently.lesson16.KimberleeObject.HeadPhones;
 import com.codedifferently.lesson16.KimberleeObject.HeadPhones.HeadPhoneColor;
 import org.junit.jupiter.api.BeforeEach;
@@ -91,4 +92,24 @@ public class HeadPhonesTest {
         BrandsArray.isPreferredBrand("SkullCandy"), "SkullCandy should be a preferred brand.");
     assertTrue(BrandsArray.isPreferredBrand("Juicy"), "Juicy should be a preferred brand.");
   }
+
+  @Test
+  public void testwirelessConnection() throws Exception {
+    // Arrange
+    headphones.isPoweredOn(); 
+    headphones.isWireless();
+    // Act
+    headphones.connectToBluetooth();
+    // Assert
+    assertTrue(headphones.isConnectedToBluetooth(), "Headphones should connect to bluetooh when wireless and turned on.");
+  }
+
+  @Test
+  public void testwirelessConnection_connectionNotFound() throws Exception {
+    // Act
+    assertThatThrownBy(() -> headphones.wirelessConnection())
+                .isInstanceOf(ConnectionNotFoundException.class)
+                .hasMessage("Headphones Wireless Connection Not Found.");
+          }
 }
+
