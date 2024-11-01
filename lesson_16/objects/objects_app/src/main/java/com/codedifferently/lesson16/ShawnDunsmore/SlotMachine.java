@@ -30,41 +30,41 @@ public class SlotMachine {
     return numOfSlots;
   }
 
-  public void setNumOfSlots(int numOfSlots) {
-    this.numOfSlots = numOfSlots;
-  }
+  //   public void setNumOfSlots(int numOfSlots) {
+  //     this.numOfSlots = numOfSlots;
+  //   }
 
   public int getPayAmount() {
     return payAmount;
   }
 
-  public void setPayAmount(int payAmount) {
-    this.payAmount = payAmount;
-  }
+  //   public void setPayAmount(int payAmount) {
+  //     this.payAmount = payAmount;
+  //   }
 
   public String getName() {
     return name;
   }
 
-  public void setName(String name) {
-    this.name = name;
-  }
+  //   public void setName(String name) {
+  //     this.name = name;
+  //   }
 
   public BuyType getBuyType() {
     return buyType;
   }
 
-  public void setBuyType(BuyType buyType) {
-    this.buyType = buyType;
-  }
+  //   public void setBuyType(BuyType buyType) {
+  //     this.buyType = buyType;
+  //   }
 
   public ArrayList<String> getIconList() {
     return iconList;
   }
 
-  public void setIconList(ArrayList<String> iconList) {
-    this.iconList = iconList;
-  }
+  //   public void setIconList(ArrayList<String> iconList) {
+  //     this.iconList = iconList;
+  //   }
 
   public int payOut() {
     if (buyType.equals(BuyType.DOUBLE_CHANCE)) {
@@ -100,7 +100,7 @@ public class SlotMachine {
     return moneyNeeded;
   }
 
-  public void setMoneyNeeded(int moneyNeeded) {
-    this.moneyNeeded = moneyNeeded;
-  }
+  //   public void setMoneyNeeded(int moneyNeeded) {
+  //     this.moneyNeeded = moneyNeeded;
+  //   }
 }
