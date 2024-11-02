@@ -46,11 +46,6 @@ public class Employee {
     this.salary = salary;
   }
 
-  public boolean containsKey(Object id2) {
-    // TODO Auto-generated method stub
-    throw new UnsupportedOperationException("Unimplemented method 'containsKey'");
-  }
-
   public Employee getDetails(Employee employee) {
     return employee;
   }
