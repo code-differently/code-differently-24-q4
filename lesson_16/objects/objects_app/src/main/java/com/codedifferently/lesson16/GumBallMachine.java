@@ -1,49 +1,57 @@
 package com.codedifferently.lesson16;
 
-import java.util.ArrayList;
-
+import com.codedifferently.lesson16.gumball.Colors;
+import java.util.HashMap;
+import java.util.Random;
 
 public class GumBallMachine {
+  private Colors colors; // Current color of the gumball
+  private int gumBallCount; // Count of gumballs in the machine
+  private boolean isBroken; // Status of the machine
+  private HashMap<Colors, Integer> gumball; // Collection of gumballs
+  private Random rand; // Random object for color selection
 
-  enum Colors{
-    GREEN,
-    RED,
-    PINK
-  }
-  
-  enum coinTypes{
-   0.05,
-   0.10,
-   0.25
-  }
-  
-  private  Colors colors;
-  private int gumBallCount;
-  private boolean isBroken;
-  private ArrayList coinType;
-  private int invalidCoin;
-  
-  public GumBallMachine(int GumBallCount, boolean isBroken) {
-    this.colors = colors.GREEN;
+  // Constructor
+  public GumBallMachine(int gumBallCount, boolean isBroken) {
+    this.colors = Colors.GREEN; // Default color
     this.gumBallCount = gumBallCount;
     this.isBroken = isBroken;
-    this.coinType = coinType;
-    this.invalidCoin = invalidCoin;
+    this.gumball = new HashMap<>();
+    this.rand = new Random();
   }
 
-  public gumBallMachineCount(int gumBallCount) {
-    if(previousGumballMachine < new GumballMachineCount);{
+  public Colors getCurrentColor() {
+    return this.colors;
   }
 
-    get.GumballCount = new gumballMachineCount;{
+  public void setRandomColors() {
+    Colors[] colorArray = Colors.values();
+    int randIndex = rand.nextInt(colorArray.length);
+    this.colors = colorArray[randIndex]; // Set a random color
   }
 
-    public int getGumBallCount(){
-    return new gumBallMachineCount;
+  public int getGumBallCount() {
+    return this.gumBallCount;
   }
 
-  public Colors getcolors(){
-    return colors
+  public void getGumBall(double quarter) throws invalidCoinInsertedException {
+    if (quarter != 0.25) {
+      throw new invalidCoinInsertedException("You need a quarter!");
+    }
+    if (gumBallCount > 0 && !isBroken) {
+      gumBallCount--; // Dispense a gumball
+    } else if (gumBallCount == 0) {
+      throw new invalidCoinInsertedException("No more gumballs!");
+    } else {
+      throw new invalidCoinInsertedException("Machine is broken!");
+    }
   }
 
+  public boolean isBroken() {
+    return isBroken;
+  }
+
+  public void breakMachine() {
+    isBroken = true;
+  }
 }
