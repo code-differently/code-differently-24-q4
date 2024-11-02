@@ -33,8 +33,12 @@ public class Saiyan {
     return powerLevel;
   }
 
-  public void setPowerLevel(int powerLevel) {
+  public void setPowerLevel(int powerLevel) throws InvalidPowerLevelCustomExcepetion {
     this.powerLevel = powerLevel;
+    if (powerLevel <= 0) {
+      throw new InvalidPowerLevelCustomExcepetion("Power Level can not be zero or less!");
+    }
+
     SaiyanForms form = SaiyanForms.BASE;
     if (powerLevel > 2000 && powerLevel < 2999) {
       form = SaiyanForms.SSJ1;
@@ -68,6 +72,9 @@ public class Saiyan {
 
   public void removeAllAccessories() {
     accessories.removeAll(accessories);
+    for (int i = accessories.size() - 1; i >= 0; i--) {
+      accessories.remove(i);
+    }
   }
 
   public SaiyanForms getSaiyanForms() {

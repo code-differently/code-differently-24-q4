@@ -1,6 +1,7 @@
 package com.codedifferently.lesson16.saiyanoop;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.fail;
 
 import com.codedifferently.lesson16.saiyanoop.Saiyan.SaiyanForms;
 import java.util.ArrayList;
@@ -14,20 +15,19 @@ public class SaiyanTest {
         new Saiyan(
             1200,
             "Goku",
-            new ArrayList<String>(Arrays.asList("WristBands, Boots, Orange Gi, Blue Belt")),
+            new ArrayList<String>(Arrays.asList("Power Pole", "Scouter", "Flying Nimbus")),
             SaiyanForms.BASE,
             false);
     assertEquals(1200, saiyan.getPowerLevel());
   }
 
   @Test
-  void testpowerLevelDroppingAndFormDown() {
+  void testpowerLevelDroppingAndFormDown() throws InvalidPowerLevelCustomExcepetion {
     Saiyan saiyan =
         new Saiyan(
             4200,
             "Goku",
-            new ArrayList<String>(
-                Arrays.asList("WristBands, Boots, Orange Gi, Blue Belt, Blue Undershirt")),
+            new ArrayList<String>(Arrays.asList("Power Pole", "Scouter", "Flying Nimbus")),
             SaiyanForms.SSJ3,
             false);
     saiyan.setPowerLevel(3300);
@@ -39,13 +39,12 @@ public class SaiyanTest {
   }
 
   @Test
-  void testpowerLevelRisingAndFormUp() {
+  void testpowerLevelRisingAndFormUp() throws InvalidPowerLevelCustomExcepetion {
     Saiyan saiyan =
         new Saiyan(
             1200,
             "Goku",
-            new ArrayList<String>(
-                Arrays.asList("WristBands, Boots, Orange Gi, Blue Belt, Blue Undershirt")),
+            new ArrayList<String>(Arrays.asList("Power Pole", "Scouter", "Flying Nimbus")),
             SaiyanForms.BASE,
             false);
     saiyan.setPowerLevel(2600);
@@ -62,7 +61,7 @@ public class SaiyanTest {
         new Saiyan(
             1200,
             "Goku",
-            new ArrayList<String>(Arrays.asList("WristBands, Boots, Orange Gi, Blue Belt")),
+            new ArrayList<String>(Arrays.asList("Power Pole", "Scouter", "Flying Nimbus")),
             SaiyanForms.BASE,
             false);
     saiyan.setHasATail(true);
@@ -75,7 +74,7 @@ public class SaiyanTest {
         new Saiyan(
             1200,
             "Goku",
-            new ArrayList<String>(Arrays.asList("WristBands, Boots, Orange Gi, Blue Belt")),
+            new ArrayList<String>(Arrays.asList("Power Pole", "Scouter", "Flying Nimbus")),
             SaiyanForms.BASE,
             false);
     assertEquals(false, saiyan.isHasATail());
@@ -87,7 +86,7 @@ public class SaiyanTest {
         new Saiyan(
             1200,
             "Goku",
-            new ArrayList<String>(Arrays.asList("WristBands, Boots, Orange Gi, Blue Belt")),
+            new ArrayList<String>(Arrays.asList("Power Pole", "Scouter", "Flying Nimbus")),
             SaiyanForms.BASE,
             false);
     assertEquals("Goku", saiyan.getName());
@@ -99,7 +98,7 @@ public class SaiyanTest {
         new Saiyan(
             1200,
             "Goku",
-            new ArrayList<String>(Arrays.asList("WristBands, Boots, Orange Gi, Blue Belt")),
+            new ArrayList<String>(Arrays.asList("Power Pole", "Scouter", "Flying Nimbus")),
             SaiyanForms.BASE,
             false);
     saiyan.setName("Kakarot");
@@ -107,8 +106,71 @@ public class SaiyanTest {
   }
 
   @Test
-  void testwhatAccessoriesTheyHaveOn() {}
+  void testgetAnAccessory() {
+    Saiyan saiyan =
+        new Saiyan(
+            1200,
+            "Goku",
+            new ArrayList<String>(Arrays.asList("Power Pole", "Scouter", "Flying Nimbus")),
+            SaiyanForms.BASE,
+            false);
+    assertEquals("Power Pole", saiyan.getAccessories().get(0));
+  }
 
   @Test
-  void test() {}
+  void testaddingAnAccessory() {
+    Saiyan saiyan =
+        new Saiyan(
+            1200,
+            "Goku",
+            new ArrayList<String>(Arrays.asList("Power Pole", "Scouter", "Flying Nimbus")),
+            SaiyanForms.BASE,
+            false);
+    saiyan.addAccessories("Senzu Bean");
+    assertEquals(4, saiyan.getAccessories().size());
+  }
+
+  @Test
+  void testremovingAllAccessories() {
+    Saiyan saiyan =
+        new Saiyan(
+            1200,
+            "Goku",
+            new ArrayList<String>(Arrays.asList("Power Pole", "Scouter", "Flying Nimbus")),
+            SaiyanForms.BASE,
+            false);
+    saiyan.removeAllAccessories();
+    assertEquals(0, saiyan.getAccessories().size());
+  }
+
+  @Test
+  void testremoveAccessories() {
+    Saiyan saiyan =
+        new Saiyan(
+            1200,
+            "Goku",
+            new ArrayList<String>(Arrays.asList("Power Pole", "Scouter", "Flying Nimbus")),
+            SaiyanForms.BASE,
+            false);
+    saiyan.removeAccessories("Power Pole");
+    assertEquals(2, saiyan.getAccessories().size());
+  }
+
+  @Test
+  void testcanNotGetZeroOrNegativePowerLevel() throws InvalidPowerLevelCustomExcepetion {
+    Saiyan saiyan =
+        new Saiyan(
+            1200,
+            "Goku",
+            new ArrayList<String>(Arrays.asList("Power Pole", "Scouter", "Flying Nimbus")),
+            SaiyanForms.BASE,
+            false);
+
+    try {
+      saiyan.setPowerLevel(-10);
+      fail("Expected InvalidPowerLevelCustomException to be thrown");
+    } catch (InvalidPowerLevelCustomExcepetion e) {
+      assertEquals("Power Level can not be zero or less!", e.getMessage());
+    }
+  }
 }
