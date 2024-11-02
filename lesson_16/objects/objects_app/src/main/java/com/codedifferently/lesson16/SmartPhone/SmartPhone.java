@@ -29,22 +29,12 @@ public class SmartPhone {
     return batteryPercentage;
   }
 
-  public void setSmartPhoneBatteryIncrease(int chargeBatteryAmount) {
-    // loop
-  }
-
-  public void chargeSmartPhone() {}
-
-  public void setSmartPhonePower() {}
-
   public void setSmartPhoneBatteryPercentage(int currentBatteryPercentage) {
     if (currentBatteryPercentage < 0 || currentBatteryPercentage > 100) {
       throw new IllegalArgumentException("Battery percentage must be in between 0 and 100.");
     }
     this.batteryPercentage = currentBatteryPercentage;
   }
-
-  public void addSmartPhoneApps(String App) {}
 
   public String getSmartPhoneApps() {
     var smartPhoneApps = "";
@@ -57,10 +47,6 @@ public class SmartPhone {
   public void removeSmartPhoneApps(String App) {
     apps.remove(App);
   }
-
-  public void currentSmartPhoneVolume() {}
-
-  public void addSmartPhoneVolume() {}
 
   public int getSmartPhoneVolume() {
     return 5;
