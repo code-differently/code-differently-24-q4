@@ -3,6 +3,7 @@ plugins {
     application
     eclipse
     jacoco
+    id("io.freefair.lombok") version "8.10.2"
     id("com.diffplug.spotless") version "6.25.0"
 	  id("org.springframework.boot") version "3.2.2"
     id("com.adarshr.test-logger") version "4.0.0"
@@ -17,14 +18,12 @@ repositories {
 
 dependencies {
     // Use JUnit Jupiter for testing.
-    testImplementation("com.codedifferently.instructional:instructional-lib")
     testImplementation("org.junit.jupiter:junit-jupiter:5.9.1")
     testImplementation("org.springframework.boot:spring-boot-starter-test")
     testImplementation("org.assertj:assertj-core:3.25.1")
     testImplementation("at.favre.lib:bcrypt:0.10.2")
 
     // This dependency is used by the application.
-    implementation("com.codedifferently.instructional:instructional-lib")
     implementation("com.google.guava:guava:31.1-jre")
     implementation("com.google.code.gson:gson:2.10.1")
     implementation("org.projectlombok:lombok:1.18.30")
