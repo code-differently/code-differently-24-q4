@@ -3,6 +3,10 @@ import static org.assertj.core.api.Assertions.assertThat;
 import org.junit.jupiter.api.Test;
 
 public class DogTest {
+  // public static void newDog(String[] args) {
+  //  Object Dog = new Dog(2, "Mutt", "male", Enum Colors, true );
+
+  // }
 
   public int getAge(int age) {
     return age;
@@ -22,7 +26,7 @@ public class DogTest {
   @Test
   public void testGetBreed() {
     String getBreed = getbreed(getbreed("Mutt"));
-    assertThat(getbreed("mutt"));
+    assertThat(getbreed("Mutt"));
   }
 
   public String getGender(String gender) {
@@ -32,9 +36,9 @@ public class DogTest {
   @Test
   public String testGetGender() {
     String getGender = getGender(getGender("male"));
-    String myDogsGender = testGetGender();
+
     assertThat(getGender("male"));
-    return testGetGender();
+    return getbreed(getGender);
   }
 
   public Enum getColors(Enum Colors) {
@@ -42,9 +46,10 @@ public class DogTest {
   }
 
   @Test
-  private final Enum testGetColors(Enum Colors) {
-    Enum testGetColors = Colors;
-    return Colors;
+  private Enum testGetColors(Enum Colors) {
+    Enum getColors = Colors;
+    assertThat(getColors(Colors));
+    return getColors(Colors);
   }
 
   @Test
@@ -59,6 +64,7 @@ public class DogTest {
     var getFedStatus = Fed | isNotFed;
     assertThat(getFedStatus).isTrue();
     assertThat(Fed).isFalse();
+    assertThat(getFedStatus).isEqualTo(isFed);
     return getFedStatus == Fed;
   }
 }

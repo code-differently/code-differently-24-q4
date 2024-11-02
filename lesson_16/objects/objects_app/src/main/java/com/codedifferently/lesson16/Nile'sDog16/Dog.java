@@ -1,4 +1,3 @@
-import java.awt.Color;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -12,7 +11,7 @@ public class Dog {
 
     public static void main(Enum[] args) {
 
-      List<Color> colorList = new ArrayList<>();
+      List<Colors> colorList = new ArrayList<>();
       for (Colors color : Colors.values()) {}
     }
 
@@ -24,7 +23,7 @@ public class Dog {
     private Colors color;
 
     // Constructor
-    void Dog(int age, String breed, String gender, Enum Colors, boolean isFed) {
+    public void Dog(int age, String breed, String gender, Enum Colors, boolean isFed) {
       this.age = age;
       this.breed = breed;
       this.gender = gender;
