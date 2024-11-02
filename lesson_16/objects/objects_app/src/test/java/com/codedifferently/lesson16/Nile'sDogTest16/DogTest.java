@@ -4,9 +4,6 @@ import org.junit.jupiter.api.Test;
 
 public class DogTest {
   // public static void newDog(String[] args) {
-  //  Object Dog = new Dog(2, "Mutt", "male", Enum Colors, true );
-
-  // }
 
   public int getAge(int age) {
     return age;

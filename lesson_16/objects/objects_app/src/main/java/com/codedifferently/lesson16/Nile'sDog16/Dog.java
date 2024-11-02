@@ -8,7 +8,7 @@ public class Dog {
       BROWN,
       BLONDE;
     }
-
+//
     public static void main(Enum[] args) {
 
       List<Colors> colorList = new ArrayList<>();
