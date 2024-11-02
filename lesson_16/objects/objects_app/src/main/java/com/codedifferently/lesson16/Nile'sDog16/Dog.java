@@ -1,58 +1,58 @@
-package com.codedifferently.lesson16.Dog;
+import java.awt.Color;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Dog {
-  private final Enum Colors;
+  public abstract class EnumToArray {
+    enum Colors {
+      WHITE,
+      BROWN,
+      BLONDE;
+    }
 
-  private Enum getColors() {
-    return Colors;
-  }
+    public static void main(Enum[] args) {
 
-  enum Colors {
-    WHITE,
-    BROWN,
-    BLONDE;
-  }
+      List<Color> colorList = new ArrayList<>();
+      for (Colors color : Colors.values()) {}
+    }
 
-  {
-    Colors[] colors = Colors.values();
-    for (var i = 0; i < Colors.length; i++) {}
-  }
+    // Attributes
+    private int age;
+    private String breed;
+    private String gender;
+    private Boolean isFed, isNotFed;
+    private Colors color;
 
-  // Attributes
-  private int Age;
-  private String Breed;
-  private String Gender;
-  private Boolean isFed, isNotFed;
+    // Constructor
+    void Dog(int age, String breed, String gender, Enum Colors, boolean isFed) {
+      this.age = age;
+      this.breed = breed;
+      this.gender = gender;
+      this.color = color;
+      this.isFed = isFed | isNotFed;
+    }
 
-  // Constructor
-  public Dog(int Age, String Breed, String Gender, Enum Colors, Boolean isFed) {
-    this.Age = Age;
-    this.Breed = Breed;
-    this.Gender = Gender;
-    this.Colors = Colors;
-    this.isFed = isFed | isNotFed;
-  }
+    public static int myDogsAge(int Age) {
+      return 2;
+    }
 
-  public static int myDogsAge(int Age) {
-    return 2;
-  }
+    public static String getbreed(String breed) {
+      return "mutt";
+    }
 
-  public static String getbreed(String breed) {
-    return "mutt";
-  }
+    public static String getGender(String Gender) {
+      return "male";
+    }
 
-  public static String getGender(String Gender) {
-    return "male";
-  }
+    public static Enum getColors(Enum Colors) {
+      return Colors;
+    }
 
-  public static Enum getColors(Enum Colors) {
-    return Colors;
-  }
+    public Boolean isFed(Boolean Fed) {
 
-  public Boolean isFed(Boolean Fed) {
+      Boolean getFedStatus = isFed, isNotFed;
 
-    Boolean getFedStatus = isFed, isNotFed;
-
-    return getFedStatus == Fed;
+      return getFedStatus == Fed;
+    }
   }
 }

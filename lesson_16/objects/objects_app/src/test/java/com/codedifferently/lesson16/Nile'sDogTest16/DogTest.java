@@ -4,8 +4,8 @@ import org.junit.jupiter.api.Test;
 
 public class DogTest {
 
-  public int getAge(int Age) {
-    return Age;
+  public int getAge(int age) {
+    return age;
   }
 
   @Test
