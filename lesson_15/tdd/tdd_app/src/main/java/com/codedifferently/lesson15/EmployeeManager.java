@@ -34,7 +34,7 @@ public class EmployeeManager {
     if (this.employees.containsKey(id)) {
       return;
     }
-    throw new IllegalArgumentException("Employee does not in collection with id " + id);
+    throw new IllegalArgumentException("Employee does not exist in collection with Id " + id);
   }
 
   public int getEmployeeCount() {

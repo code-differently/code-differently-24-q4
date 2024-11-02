@@ -50,6 +50,8 @@ class EmployeeManagerTest {
 
   @Test
   void testRemoveEmployee() {
+    // Arrange
+    employeeManager.addEmployee(new Employee(1, "Frankenstein", "Development", 0.0));
     // Act
     employeeManager.removeEmployee(1);
     Employee removedEmployee = employeeManager.getEmployee(1);
@@ -63,7 +65,7 @@ class EmployeeManagerTest {
     // Arrange & Act & Assert
     assertThatThrownBy(() -> employeeManager.getEmployee(52))
         .isInstanceOf(IllegalArgumentException.class)
-        .hasMessage("Employee does not exist in collection with Id 1");
+        .hasMessage("Employee does not exist in collection with Id 52");
   }
 
   @Test
