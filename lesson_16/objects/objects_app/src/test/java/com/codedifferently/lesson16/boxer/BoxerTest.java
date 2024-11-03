@@ -37,7 +37,7 @@ public class BoxerTest {
       throws BoxerHasNoFightsException, BoxerIsRetiredException {
     Boxer mike = new Boxer("mike", 1000, 1000);
     boxer.bout(mike);
-    assertEquals("You fought " + mike.getName() + " L", boxer.getFights());
+    assertEquals("fought: " + mike.getName() + " L.", boxer.getFights());
   }
 
   @Test
@@ -63,7 +63,7 @@ public class BoxerTest {
       throws BoxerIsRetiredException, BoxerHasNoFightsException {
     Boxer ryan = new Boxer("Ryan Garcia", 99, 99);
     boxer.bout(ryan);
-    assertEquals(boxer.getFights(), "You fought Ryan Garcia D");
+    assertEquals(boxer.getFights(), "fought: Ryan Garcia D.");
   }
 
   @Test
@@ -71,7 +71,7 @@ public class BoxerTest {
       throws BoxerIsRetiredException, BoxerHasNoFightsException {
     Boxer hitman = new Boxer("Thomas Hearns", 98, 98);
     boxer.bout(hitman);
-    assertEquals(boxer.getFights(), "You fought " + hitman.getName() + " W");
+    assertEquals(boxer.getFights(), "fought: " + hitman.getName() + " W.");
   }
 
   @Test
@@ -88,7 +88,7 @@ public class BoxerTest {
   @Test
   void testAddFights() throws BoxerIsRetiredException, BoxerHasNoFightsException {
     boxer.addFights("Marvin Hagler", 'L');
-    assertEquals(boxer.getFights(), "You fought Marvin Hagler L");
+    assertEquals(boxer.getFights(), "fought: Marvin Hagler L.");
   }
 
   @Test
