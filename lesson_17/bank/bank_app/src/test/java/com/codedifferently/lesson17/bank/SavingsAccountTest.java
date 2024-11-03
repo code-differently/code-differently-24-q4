@@ -51,7 +51,7 @@ public class SavingsAccountTest {
   @Test
   void deposit_withNegativeAmount() {
     assertThatExceptionOfType(IllegalArgumentException.class)
-        .isThrownBy(() -> classUnderTest.deposit(-50.0));
+        .isThrownBy(() -> classUnderTest.deposit(-50.0))
         .withMessage("Deposit amount must be positive");
   }
 
