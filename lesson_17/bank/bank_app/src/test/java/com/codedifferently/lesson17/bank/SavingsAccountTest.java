@@ -1,13 +1,14 @@
 package com.codedifferently.lesson17.bank;
 
-import java.util.HashSet;
-import java.util.Set;
-import java.util.UUID;
-
 import static org.assertj.core.api.Assertions.assertThatExceptionOfType;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
+
+import java.util.HashSet;
+import java.util.Set;
+import java.util.UUID;
+
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -37,6 +38,11 @@ public class SavingsAccountTest {
   }
 
   @Test
+  void initialBalanceIsCorrect() {
+    assertEquals(100.0, classUnderTest.getBalance(), "Initial balance should be set correctly");
+  }
+
+  @Test
   void deposit() {
     classUnderTest.deposit(50.0);
     assertEquals(150.0, classUnderTest.getBalance());
@@ -46,6 +52,7 @@ public class SavingsAccountTest {
   void deposit_withNegativeAmount() {
     assertThatExceptionOfType(IllegalArgumentException.class)
         .isThrownBy(() -> classUnderTest.deposit(-50.0));
+        .withMessage("Deposit amount must be positive");
   }
 
   @Test
@@ -56,7 +63,7 @@ public class SavingsAccountTest {
 
   @Test
   void withdraw_withNegativeAmount() {
-    assertThatExceptionOfType(IllegalStateException.class)
+    assertThatExceptionOfType(IllegalArgumentException.class)
         .isThrownBy(() -> classUnderTest.withdraw(-50.0))
         .withMessage("Withdrawal amount must be positive");
   }
@@ -76,7 +83,8 @@ public class SavingsAccountTest {
   @Test
   void closeAccount_withPositiveBalance() {
     assertThatExceptionOfType(IllegalStateException.class)
-        .isThrownBy(() -> classUnderTest.closeAccount());
+        .isThrownBy(() -> classUnderTest.closeAccount())
+        .withMessage("Cannot close account with positive balance");
   }
 
   @Test
@@ -89,13 +97,13 @@ public class SavingsAccountTest {
 
   @Test
   void equals() {
-    CheckingAccount otherAccount = new SavingsAccount("123456789", owners, 200.0);
+    SavingsAccount otherAccount = new SavingsAccount("123456789", owners, 200.0);
     assertEquals(classUnderTest, otherAccount);
   }
 
   @Test
   void hashCodeTest() {
-    CheckingAccount otherAccount = new SavingsAccount("123456789", owners, 200.0);
+    SavingsAccount otherAccount = new SavingsAccount("123456789", owners, 200.0);
     assertEquals(classUnderTest.hashCode(), otherAccount.hashCode());
   }
 
