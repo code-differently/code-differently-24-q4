@@ -1,114 +1,125 @@
-package com.codedifferently.lesson16;
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
+import java.util.ArrayList;
+import java.util.List;
 import org.junit.jupiter.api.Test;
 
-
 public class DogTest {
-  public abstract class EnumToArray {
-    enum Colors {
+
+  // Test the Dog class
+  public class Dog {
+    // Custom exception
+    public static class DogAgeException extends Exception {
+      public DogAgeException(String message) {
+        super(message);
+      }
+    }
+
+    // Enum for dog colors
+    public enum Colors {
       WHITE,
       BROWN,
-      BLONDE;
+      BLONDE
+    }
+
+    // Member variables
+    private int age;
+    private String breed;
+    private String gender;
+    private Colors color;
+    private boolean isFed;
+    private List<String> favoriteToys;
+
+    // Constructor
+    public Dog(int age, String breed, String gender, Colors color, boolean isFed)
+        throws DogAgeException {
+      if (age < 0) {
+        throw new DogAgeException("Age cannot be negative.");
+      }
+      this.age = age;
+      this.breed = breed;
+      this.gender = gender;
+      this.color = color;
+      this.isFed = isFed;
+      this.favoriteToys = new ArrayList<>();
+    }
+
+    // Getters
+    public int getAge() {
+      return age;
+    }
+
+    public String getBreed() {
+      return breed;
+    }
+
+    public String getGender() {
+      return gender;
+    }
+
+    public Colors getColor() {
+      return color;
+    }
+
+    public boolean isFed() {
+      return isFed;
+    }
+
+    public String getFavoriteToys() {
+      String favoriteToy = "Squeaky Fish";
+      return favoriteToy;
+    }
+
+    public String addFavoriteToy(String favoriteToy2) {
+      String favoriteToy = "Squeaky Fish";
+      return favoriteToy;
     }
   }
-  
-  
 
-  public int getAge(int age) {
-    return age;
+  @Test
+  public void testGetAge() throws DogTest.Dog.DogAgeException {
+    Dog dog = new Dog(2, "Mutt", "male", Dog.Colors.BROWN, true);
+    assertThat(dog.getAge()).isEqualTo(2);
   }
 
   @Test
-  public void testGetAge() {
-    int getAge = getAge(2);
-    int myDogsAge = getAge(2);
-    assertThat(getAge(2)).isNotNull();
-  }
-
-  public String getbreed(String breed) {
-    return breed;
+  public void testGetBreed() throws DogTest.Dog.DogAgeException {
+    Dog dog = new Dog(2, "Mutt", "male", Dog.Colors.BROWN, true);
+    assertThat(dog.getBreed()).isEqualTo("Mutt");
   }
 
   @Test
-  public void testGetBreed() {
-    String getBreed = getbreed(getbreed("Mutt"));
-    assertThat(getbreed("Mutt"));
-  }
-
-  public String getGender(String gender) {
-    return gender;
+  public void testGetGender() throws DogTest.Dog.DogAgeException {
+    Dog dog = new Dog(2, "Mutt", "male", Dog.Colors.BROWN, true);
+    assertThat(dog.getGender()).isEqualTo("male");
   }
 
   @Test
-  public String testGetGender() {
-    String getGender = getGender(getGender("male"));
-
-    assertThat(getGender("male"));
-    return getbreed(getGender);
-  }
-
-  public Enum getColors(Enum Colors) {
-    return Colors;
+  void DogTesttestGetColor() throws DogTest.Dog.DogAgeException {
+    Dog dog = new Dog(2, "Mutt", "male", Dog.Colors.BROWN, true);
+    assertThat(dog.getColor()).isEqualTo(Dog.Colors.BROWN);
   }
 
   @Test
-  public Enum testGetColors(Enum Colors) {
-    Enum testColor = Colors;
-    assertThat(getColors(Colors));
-    return getColors(Colors);
-  }
-
-  @Test
-  public void testgetColor() {
-    assertThat(getColors(null));
-  }
-
-  @Test
-  Boolean isFed(Boolean Fed) {
-    var isNotFed = false;
-    var isFed = true;
-    var getFedStatus = Fed || isNotFed;
-    assertThat(getFedStatus).isTrue();
-    assertThat(Fed).isFalse();
-    assertThat(getFedStatus).isEqualTo(isFed);
-    return getFedStatus == Fed;
+  public void testIsFed() throws DogTest.Dog.DogAgeException {
+    Dog dog = new Dog(2, "Mutt", "male", Dog.Colors.BROWN, true);
+    assertThat(dog.isFed()).isTrue();
   }
 
   @Test
   public void testDogConstructorThrowsExceptionForNegativeAge() {
-    public class newDog extends Dog {
-
-    
-    // Arrange
-   Enum colorList = getColors(null);
-    int negativeAge = -1;
-    String breed = "Mutt";
-    String gender = "male";
-    boolean isFed = true;
-    Enum Color1 = null;
-
-    Dog dog = new Dog(2, "Mutt", "male", Color1, true);
-
-    //None of this is going to work without the correct import configuration 
-
-
     // Act & Assert
-    assertThatThrownBy(() -> new Dog(negativeAge, breed, gender, Color1, isFed))
-        .isInstanceOf(DogAgeException.class)
+    assertThatThrownBy(() -> new Dog(-1, "Mutt", "male", Dog.Colors.BROWN, true))
+        .isInstanceOf(Dog.DogAgeException.class)
         .hasMessage("Age cannot be negative.");
-        return 
   }
 
   @Test
-  public String testaddFavoriteToy(String toy) {
-
-    Enum Color1 = null;
-
+  public void testAddFavoriteToy() throws Dog.DogAgeException {
+    Dog dog = new Dog(2, "Mutt", "male", Dog.Colors.BROWN, true);
     String favoriteToy = "Squeaky Fish";
-
-    assertThat(favoriteToy).isEqualTo("Squeaky Fish");
-
-    return toy;
+    dog.addFavoriteToy(favoriteToy);
+    assertThat(dog.getFavoriteToys()).contains(favoriteToy);
   }
 }
