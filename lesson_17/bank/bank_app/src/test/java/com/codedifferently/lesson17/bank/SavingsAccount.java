@@ -1,47 +1,14 @@
 package com.codedifferently.lesson17.bank;
 
 import java.util.Set;
-import java.util.function.BooleanSupplier;
 
-public class SavingsAccount {
-
-    public SavingsAccount(String string, Set<Customer> owners, double d) {
-        //TODO Auto-generated constructor stub
+public class SavingsAccount extends CheckingAccount {
+    public SavingsAccount(String accountNumber, Set <Customer> owners, double initialBalance) {
+        super(accountNumber, owners, initialBalance);
     }
 
-    public Object getAccountNumber() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'getAccountNumber'");
-    }
 
-    public Object getOwners() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'getOwners'");
+public void writeCheck(double amount) {
+    throw new UnsuportedOperationException("Savings account cannot write checks");
     }
-
-    public Double getBalance() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'getBalance'");
-    }
-
-    public void deposit(double d) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'deposit'");
-    }
-
-    public void withdraw(double d) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'withdraw'");
-    }
-
-    public Object closeAccount() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'closeAccount'");
-    }
-
-    public BooleanSupplier isClosed() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'isClosed'");
-    }
-
 }
