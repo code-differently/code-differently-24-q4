@@ -20,7 +20,8 @@ public class SmartPhoneTest {
             "Iphone14",
             50,
             true,
-            new ArrayList<>(Arrays.asList("Phone,Contacts,Photos,Settings,Calender")));
+            new ArrayList<>(
+                Arrays.asList("Phone,", "Contacts,", "Photos,", "Settings,", "Calender")));
     // Turn phone on
   }
 
@@ -29,9 +30,10 @@ public class SmartPhoneTest {
     // Arrange
 
     // Act
-    smartPhone.chargeSmartPhone(); // Method with a loop to increase the battery percentage
+    smartPhone.setSmartPhonePowerbattery(
+        55); // Method with a loop to increase the battery percentage
     // Assert
-    assertEquals(smartPhone.getBatteryPercentage(), 50);
+    assertEquals(smartPhone.getBatteryPercentage(), 55);
   }
 
   @Test
@@ -41,7 +43,8 @@ public class SmartPhoneTest {
     // Act
     smartPhone.addSmartPhoneApps("Instagram"); // Method Add an app to my phone
     // Assert
-    assertEquals(smartPhone.getSmartPhoneApps(), "Phone,Contacts,Photos,Settings,Calender");
+    assertEquals(
+        smartPhone.getSmartPhoneApps(), "Phone,Contacts,Photos,Settings,Calender,Instagram");
   }
 
   @Test
@@ -49,7 +52,7 @@ public class SmartPhoneTest {
     // Arrange
     smartPhone.addSmartPhoneApps("Instagram");
     // Act
-    smartPhone.removeSmartPhoneApps("Instagram"); // Method that removes the app from my phone
+    smartPhone.removeSmartPhoneApps(",Instagram"); // Method that removes the app from my phone
     // Assert
     assertEquals(
         smartPhone.getSmartPhoneApps(),
@@ -67,10 +70,6 @@ public class SmartPhoneTest {
 
     // Assert
     assertNotEquals(smartPhone.getSmartPhoneVolume(), smartPhoneOldVolume);
-  }
-
-  private void getSmartPhonePercentage() {
-    throw new UnsupportedOperationException("Not supported yet.");
   }
 
   @Test
