@@ -106,7 +106,7 @@ public class Boxer {
     for (Map.Entry<String, Character> entry : fights.entrySet()) {
       String key = entry.getKey();
       char value = entry.getValue();
-      fightsHad += "You fought " + key + " " + value;
+      fightsHad += "You fought " + key + " " + value +"\n";
     }
     return fightsHad;
   }
