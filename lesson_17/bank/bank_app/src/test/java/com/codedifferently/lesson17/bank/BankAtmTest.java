@@ -5,6 +5,8 @@ import static org.assertj.core.api.Assertions.assertThatExceptionOfType;
 
 import com.codedifferently.lesson17.bank.exceptions.AccountNotFoundException;
 import com.codedifferently.lesson17.bank.exceptions.CheckVoidedException;
+import com.codedifferently.lesson17.bank.exceptions.UnsupportedCurrencyException;
+
 import java.util.Set;
 import java.util.UUID;
 import org.junit.jupiter.api.BeforeEach;
@@ -59,7 +61,12 @@ class BankAtmTest {
   @Test
   void testDepositFunds() {
     // Act
-    classUnderTest.depositFunds(account1.getAccountNumber(), 50.0);
+    try {
+      classUnderTest.depositFunds(account1.getAccountNumber(), 50.0, "USD");
+    } catch (UnsupportedCurrencyException e) {
+      // TODO Auto-generated catch block
+      e.printStackTrace();
+    }
 
     // Assert
     assertThat(account1.getBalance()).isEqualTo(150.0);
