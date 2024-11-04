@@ -7,8 +7,7 @@ public class SavingsAccount extends CheckingAccount {
         super(accountNumber, owners, initialBalance);
     }
 
-
 public void writeCheck(double amount) {
-    throw new UnsuportedOperationException("Savings account cannot write checks");
+    throw new CheckNotAllowedException("Savings account cannot write checks");
     }
 }
