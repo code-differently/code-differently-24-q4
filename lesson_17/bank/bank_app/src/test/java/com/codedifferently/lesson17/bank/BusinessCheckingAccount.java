@@ -2,17 +2,14 @@ package com.codedifferently.lesson17.bank;
 import java.util.Set;
 
 public class BusinessCheckingAccount extends CheckingAccount{
-    private final boolean isBusinessOwner;
+    private final String businessName;
 
-    public BusinessCheckingAccount(String accountNumber, Set<Customer> owners, boolean isBusinessOwner) {
+    public BusinessCheckingAccount(String accountNumber, Set<Customer> owners, String businessName) {
         super(accountNumber, owners, 0.0);
-        this.isBusinessOwner = isBusinessOwner;
+        this.businessName = businessName;
     }
 
-    public void writeCheck(double amount) {
-        if(!isBusinessOwner) {
-            throw new IllegalArgumentException("Must be a business owner to write a check.");
-        }
-        super.writeCheck(amount);
-    }
+    public String getBusinessName() {
+        return businessName;
+    }    
 }
