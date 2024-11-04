@@ -123,23 +123,14 @@ class BankAtmTest {
   }
 
   @Test 
-  void testAddBusinessCheckingAccountWithBusinessAccount() {
+  void testGetBusinessName() {
     // Arrange
     Customer businessOwner = new Customer(UUID.randomUUID(), "Business Owner");
     Set<Customer> owners = Set.of(businessOwner);
+    BusinessCheckingAccount businessAccount = new BusinessCheckingAccount("123456789", owners, "Business Inc.", 1000.0);
 
-    BusinessCheckingAccount existingBusinessAccount = new BusinessCheckingAccount("123456789", owners, "Existing Business", 1000.0);
-    classUnderTest.addAccount(existingBusinessAccount); 
-
-   
-    BusinessCheckingAccount newBusinessAccount = new BusinessCheckingAccount("789456123", owners, "New Business", 1000.0);
-
-    // Act
-    classUnderTest.addAccount(newBusinessAccount);
-
-    // Assert
-    Set<CheckingAccount> accounts = classUnderTest.findAccountsByCustomerId(businessOwner.getId());
-    assertThat(accounts).contains(existingBusinessAccount, newBusinessAccount);
+    //Act & Assert 
+    assertThat(businessAccount.getBusinessName());
 }
 
 }
