@@ -131,6 +131,6 @@ class BankAtmTest {
 
     //Act & Assert 
     assertThat(businessAccount.getBusinessName());
-}
+  }
 
 }
