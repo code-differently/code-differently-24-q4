@@ -12,15 +12,20 @@ public class BankAtm {
   private final Map<UUID, Customer> customerById = new HashMap<>();
   private final Map<String, CheckingAccount> accountByNumber = new HashMap<>();
 
-  public BusinessCheckingAccount createCheckingAccount(
-      String accountNumber, Set<Customer> owners, double initialBalance) {
+  public void addAccount(String accountNumber, Set<Customer> owners, double initialBalance) {
     boolean hasBusinessOwner = owners.stream().anyMatch(Customer::isBusiness);
 
     if (hasBusinessOwner) {
-      return new BusinessCheckingAccount(accountNumber, owners, initialBalance);
+      accountByNumber.put(
+          accountNumber, new BusinessCheckingAccount(accountNumber, owners, initialBalance));
     } else {
-      return new BusinessCheckingAccount(accountNumber, owners, initialBalance);
+      accountByNumber.put(
+          accountNumber, new CheckingAccount(accountNumber, owners, initialBalance));
     }
+  }
+
+  public Map<String, CheckingAccount> getAccountByNumber() {
+    return accountByNumber;
   }
 
   /**

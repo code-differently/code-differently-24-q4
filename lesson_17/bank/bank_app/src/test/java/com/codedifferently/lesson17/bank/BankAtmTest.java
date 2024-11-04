@@ -112,20 +112,36 @@ class BankAtmTest {
   }
 
   @Test
-  void createCheckingAccount_withNoBusinessOwner_shouldReturnStandardCheckingAccount() {
+  void addAccount_withNoBusinessOwner_shouldReturnStandardCheckingAccount() {
+    String accountNumber = "123456789";
+    double initialBalance = 100.0;
+
     Set<Customer> owners = new HashSet<>();
     owners.add(new Customer(UUID.randomUUID(), "Individual Owner", false));
 
-    CheckingAccount account = bankAtm.createCheckingAccount("123456789", owners, 100.0);
-    assertFalse(account instanceof BusinessCheckingAccount);
+    bankAtm.addAccount(accountNumber, owners, initialBalance);
+    CheckingAccount account = bankAtm.getAccountByNumber().get(accountNumber);
+
+    assertNotNull(account, "Account should be created and added to map.");
+    assertFalse(
+        account instanceof BusinessCheckingAccount,
+        "Account should be a standard CheckingAccount.");
   }
 
   @Test
-  void createCheckingAccount_withBusinessOwner_shouldReturnBusinessCheckingAccount() {
+  void addAccount_withBusinessOwner_shouldReturnBusinessCheckingAccount() {
+    String accountNumber = "987654321";
+    double initialBalance = 200.0;
+
     Set<Customer> owners = new HashSet<>();
     owners.add(new Customer(UUID.randomUUID(), "Business Owner", true));
 
-    BusinessCheckingAccount account = bankAtm.createCheckingAccount("123456789", owners, 100.0);
-    assertTrue(account instanceof BusinessCheckingAccount);
+    bankAtm.addAccount(accountNumber, owners, initialBalance);
+
+    CheckingAccount account = bankAtm.getAccountByNumber().get(accountNumber);
+
+    assertNotNull(account, "Account should be created and added to map.");
+    assertTrue(
+        account instanceof BusinessCheckingAccount, "Account should be a BusinessCheckingAccount.");
   }
 }
