@@ -12,6 +12,7 @@ public class BankAtm {
 
   private final Map<UUID, Customer> customerById = new HashMap<>();
   private final Map<String, CheckingAccount> accountByNumber = new HashMap<>();
+  private final AuditLog auditLog = new AuditLog();
 
   /**
    * Adds a checking account to the bank.
@@ -50,6 +51,7 @@ public class BankAtm {
   public void depositFunds(String accountNumber, double amount) {
     CheckingAccount account = getAccountOrThrow(accountNumber);
     account.deposit(amount);
+    auditLog.logTransaction("Deposited to account: " + accountNumber, amount, "Deposit");
   }
 
   /**
@@ -61,6 +63,7 @@ public class BankAtm {
   public void depositFunds(String accountNumber, Check check) {
     CheckingAccount account = getAccountOrThrow(accountNumber);
     check.depositFunds(account);
+    auditLog.logTransaction("Deposited check to account: " + accountNumber, check.getAmount(), "Check Deposit");
   }
 
   /**
@@ -72,6 +75,7 @@ public class BankAtm {
   public void withdrawFunds(String accountNumber, double amount) {
     CheckingAccount account = getAccountOrThrow(accountNumber);
     account.withdraw(amount);
+    auditLog.logTransaction("Withdrew from account: " + accountNumber, amount, "Withdrawal");
   }
 
   /**
