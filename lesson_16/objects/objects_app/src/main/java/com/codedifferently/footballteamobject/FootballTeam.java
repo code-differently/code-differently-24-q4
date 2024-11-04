@@ -75,8 +75,7 @@ public class FootballTeam {
 
   public void addPlayer(int number, String name) throws DuplicatePlayerException {
     if (players.containsKey(number)) {
-      throw new DuplicatePlayerException(
-          "A player with that number already exists.");
+      throw new DuplicatePlayerException("A player with that number already exists.");
     }
     players.put(number, name);
     playerCount++;

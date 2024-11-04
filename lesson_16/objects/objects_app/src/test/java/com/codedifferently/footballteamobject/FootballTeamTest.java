@@ -1,17 +1,16 @@
 package com.codedifferently.footballteamobject;
 
-import java.util.HashMap;
-import java.util.Map;
-
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertTrue;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
 
 import com.codedifferently.footballteamobject.FootballTeam.Conference;
+import java.util.HashMap;
+import java.util.Map;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
 public class FootballTeamTest {
   FootballTeam team;
@@ -72,7 +71,8 @@ public class FootballTeamTest {
 
   @Test
   public void testGroupOfFiveConferences() {
-    FootballTeam team = new FootballTeam("Team Name", "Location", Conference.AMERICAN, new HashMap<>());
+    FootballTeam team =
+        new FootballTeam("Team Name", "Location", Conference.AMERICAN, new HashMap<>());
     assertFalse(team.isPowerFive());
     team = new FootballTeam("Team Name", "Location", Conference.CONFERENCE_USA, new HashMap<>());
     assertFalse(team.isPowerFive());
@@ -88,8 +88,11 @@ public class FootballTeamTest {
   void testDuplicatePlayerException() {
     String message = "A player with that number already exists.";
     DuplicatePlayerException exception = new DuplicatePlayerException(message);
-    assertThatThrownBy(() -> { throw exception; })
-      .isInstanceOf(DuplicatePlayerException.class)
-      .hasMessage(message);
-    }
+    assertThatThrownBy(
+            () -> {
+              throw exception;
+            })
+        .isInstanceOf(DuplicatePlayerException.class)
+        .hasMessage(message);
+  }
 }
