@@ -2,9 +2,9 @@ package com.codedifferently.lesson17.bank;
 
 import java.util.Set;
 
-/** 
- * Represents a savings account, which is a specialized type of checking account.
- * Inherits the behavior and properties of the CheckingAccount class.
+/**
+ * Represents a savings account, which is a specialized type of checking account. Inherits the
+ * behavior and properties of the CheckingAccount class.
  */
 public class SavingsAccount extends CheckingAccount {
 
@@ -16,13 +16,15 @@ public class SavingsAccount extends CheckingAccount {
    * @param initialBalance The initial balance to set for the account.
    */
   public SavingsAccount(String accountNumber, Set<Customer> owners, double initialBalance) {
-    super(accountNumber, owners, initialBalance); // Call the superclass constructor to initialize common fields
+    super(
+        accountNumber,
+        owners,
+        initialBalance); // Call the superclass constructor to initialize common fields
   }
 
   /**
-   * Deposits funds into the savings account.
-   * This method overrides the deposit method in CheckingAccount, but currently
-   * it behaves the same way as the parent class.
+   * Deposits funds into the savings account. This method overrides the deposit method in
+   * CheckingAccount, but currently it behaves the same way as the parent class.
    *
    * @param amount The amount to deposit into the savings account.
    */
