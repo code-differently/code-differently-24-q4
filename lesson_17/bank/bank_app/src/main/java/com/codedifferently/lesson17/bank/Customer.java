@@ -58,6 +58,20 @@ public class Customer {
     return accounts;
   }
 
+  /**
+   * Checks if the customer has at least one business account.
+   *
+   * @return true if the customer has a business account, false otherwise.
+   */  
+  public boolean hasBusinessAccount() {
+    for (CheckingAccount account : accounts) {
+      if (account instanceof BusinessCheckingAccount) {
+        return true; // Found a business account
+      }
+    }
+    return false;
+  }
+
   @Override
   public int hashCode() {
     return id.hashCode();

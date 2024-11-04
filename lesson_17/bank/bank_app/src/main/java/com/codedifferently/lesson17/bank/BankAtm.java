@@ -1,10 +1,11 @@
 package com.codedifferently.lesson17.bank;
 
-import com.codedifferently.lesson17.bank.exceptions.AccountNotFoundException;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
 import java.util.UUID;
+
+import com.codedifferently.lesson17.bank.exceptions.AccountNotFoundException;
 
 /** Represents a bank ATM. */
 public class BankAtm {
@@ -18,6 +19,20 @@ public class BankAtm {
    * @param account The account to add.
    */
   public void addAccount(CheckingAccount account) {
+    if (account instanceof BusinessCheckingAccount) {
+      boolean hasBusinessAccount = false;
+      for (Customer owner : account.getOwners()) {
+          Customer customer = customerById.get(owner.getId());
+          if (customer != null && customer.hasBusinessAccount()) {
+            hasBusinessAccount = true;
+            break;
+          }
+        }
+        if (!hasBusinessAccount) {
+          throw new IllegalArgumentException("At least one owning account must be a business account.");
+        }
+      } 
+      
     accountByNumber.put(account.getAccountNumber(), account);
     account
         .getOwners()
@@ -26,6 +41,7 @@ public class BankAtm {
               customerById.put(owner.getId(), owner);
             });
   }
+
 
   /**
    * Finds all accounts owned by a customer.
