@@ -86,6 +86,15 @@ public class CheckingAccount {
     return balance;
   }
 
+  /**
+   * Gets the voided status of the check.
+   *
+   * @return True if the check is voided, and false otherwise.
+   */
+  public boolean getStatus() {
+    return isActive;
+  }
+
   /** Closes the account. */
   public void closeAccount() throws IllegalStateException {
     if (balance > 0) {
