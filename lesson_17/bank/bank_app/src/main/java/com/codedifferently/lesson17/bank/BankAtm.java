@@ -19,7 +19,16 @@ public class BankAtm {
    *
    * @param account The account to add.
    */
-  public void addAccount(CheckingAccount account) {      
+  public void addAccount(CheckingAccount account) {
+    if (account instanceof BusinessCheckingAccount) {
+      boolean hasBusinessAccount = account.getOwners().stream()
+        .anyMatch(owner -> owner.isBusiness());
+
+        if(!hasBusinessAccount) {
+          throw new IllegalArgumentException("At least one owning account must be a business account.");
+        }
+    }      
+    
     accountByNumber.put(account.getAccountNumber(), account);
     account
         .getOwners()
