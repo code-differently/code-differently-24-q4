@@ -12,9 +12,9 @@ public class BusinessCheckingAccount extends CheckingAccount {
    * @param owners The owners of the account.
    * @param initialBalance The initial balance of the account.
    */
-  public BusinessCheckingAccount(String accountNumber, Set<Customer> owners, double initialBalance) {
+  public BusinessCheckingAccount(
+      String accountNumber, Set<Customer> owners, double initialBalance) {
     super(accountNumber, owners, initialBalance);
     isActive = true;
   }
-
 }
