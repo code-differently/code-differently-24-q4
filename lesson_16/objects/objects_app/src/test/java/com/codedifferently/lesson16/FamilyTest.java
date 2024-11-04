@@ -32,6 +32,7 @@ public class FamilyTest {
   }
 
   @Test
+  // has SixKids
   void testFamiy_hasSixKids() {
     // int i = 0;
 
