@@ -22,4 +22,8 @@ public class BusinessCheckingAccount extends CheckingAccount{
         }
         this.businessName = businessName;
     }   
+
+    public String getBusinessName() {
+        return businessName;
+    }
 }
