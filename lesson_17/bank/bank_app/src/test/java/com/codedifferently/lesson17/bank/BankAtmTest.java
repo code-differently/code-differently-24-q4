@@ -6,7 +6,6 @@ import static org.assertj.core.api.Assertions.assertThatExceptionOfType;
 import com.codedifferently.lesson17.bank.exceptions.AccountNotFoundException;
 import com.codedifferently.lesson17.bank.exceptions.CheckVoidedException;
 import com.codedifferently.lesson17.bank.exceptions.UnsupportedCurrencyException;
-
 import java.util.Set;
 import java.util.UUID;
 import org.junit.jupiter.api.BeforeEach;

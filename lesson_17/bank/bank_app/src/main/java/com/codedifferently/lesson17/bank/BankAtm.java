@@ -2,7 +2,6 @@ package com.codedifferently.lesson17.bank;
 
 import com.codedifferently.lesson17.bank.exceptions.AccountNotFoundException;
 import com.codedifferently.lesson17.bank.exceptions.UnsupportedCurrencyException;
-
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
@@ -48,7 +47,8 @@ public class BankAtm {
    * @param amount The amount to deposit.
    * @throws UnsupportedCurrencyException
    */
-  public void depositFunds(String accountNumber, double amount, String currencyType) throws UnsupportedCurrencyException {
+  public void depositFunds(String accountNumber, double amount, String currencyType)
+      throws UnsupportedCurrencyException {
     CheckingAccount account = getAccountOrThrow(accountNumber);
     double convertedAmount = CurrencyConverter.convert(amount, currencyType, "USD");
     account.deposit(convertedAmount);

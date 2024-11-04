@@ -4,8 +4,6 @@ public class MoneyOrder {
   private double amount;
   private CheckingAccount account;
 
-
-
   /**
    * Creates a new check.
    *

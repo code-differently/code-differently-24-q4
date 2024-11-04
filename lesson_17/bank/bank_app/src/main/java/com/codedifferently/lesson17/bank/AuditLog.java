@@ -1,5 +1,3 @@
 package com.codedifferently.lesson17.bank;
 
-public class AuditLog {
-
-}
+public class AuditLog {}
