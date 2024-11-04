@@ -2,9 +2,11 @@ package com.codedifferently.lesson17.bank;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatExceptionOfType;
+import static org.junit.jupiter.api.Assertions.*;
 
 import com.codedifferently.lesson17.bank.exceptions.AccountNotFoundException;
 import com.codedifferently.lesson17.bank.exceptions.CheckVoidedException;
+import java.util.HashSet;
 import java.util.Set;
 import java.util.UUID;
 import org.junit.jupiter.api.BeforeEach;
@@ -17,6 +19,7 @@ class BankAtmTest {
   private CheckingAccount account2;
   private Customer customer1;
   private Customer customer2;
+  private BankAtm bankAtm;
 
   @BeforeEach
   void setUp() {
@@ -106,5 +109,23 @@ class BankAtmTest {
     assertThatExceptionOfType(AccountNotFoundException.class)
         .isThrownBy(() -> classUnderTest.withdrawFunds(nonExistingAccountNumber, 50.0))
         .withMessage("Account not found");
+  }
+
+  @Test
+  void createCheckingAccount_withNoBusinessOwner_shouldReturnStandardCheckingAccount() {
+    Set<Customer> owners = new HashSet<>();
+    owners.add(new Customer(UUID.randomUUID(), "Individual Owner", false));
+
+    CheckingAccount account = bankAtm.createCheckingAccount("123456789", owners, 100.0);
+    assertFalse(account instanceof BusinessCheckingAccount);
+  }
+
+  @Test
+  void createCheckingAccount_withBusinessOwner_shouldReturnBusinessCheckingAccount() {
+    Set<Customer> owners = new HashSet<>();
+    owners.add(new Customer(UUID.randomUUID(), "Business Owner", true));
+
+    BusinessCheckingAccount account = bankAtm.createCheckingAccount("123456789", owners, 100.0);
+    assertTrue(account instanceof BusinessCheckingAccount);
   }
 }

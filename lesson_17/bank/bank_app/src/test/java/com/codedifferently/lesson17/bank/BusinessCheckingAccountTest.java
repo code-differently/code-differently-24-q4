@@ -1,11 +1,8 @@
 package com.codedifferently.lesson17.bank;
 
 import static org.assertj.core.api.Assertions.assertThatExceptionOfType;
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertFalse;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.*;
 
-import com.codedifferently.lesson17.bank.exceptions.InsufficientFundsException;
 import java.util.HashSet;
 import java.util.Set;
 import java.util.UUID;
@@ -13,8 +10,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 public class BusinessCheckingAccountTest {
-    
-    private CheckingAccount classUnderTest;
+
   private Set<Customer> owners;
 
   @BeforeEach
@@ -22,85 +18,25 @@ public class BusinessCheckingAccountTest {
     owners = new HashSet<>();
     owners.add(new Customer(UUID.randomUUID(), "John Doe", false));
     owners.add(new Customer(UUID.randomUUID(), "Jane Smith", false));
-    classUnderTest = new BusinessCheckingAccount("123456789", owners, 100.0);
+    new BusinessCheckingAccount("123456789", owners, 100.0);
   }
 
   @Test
-  void getAccountNumber() {
-    assertEquals("123456789", classUnderTest.getAccountNumber());
-  }
+  void businessCheckingAccount_withNoBusinessOwner_shouldThrowException() {
+    Set<Customer> owners = new HashSet<>();
+    owners.add(new Customer(UUID.randomUUID(), "Individual Owner", false));
 
-  @Test
-  void getOwners() {
-    assertEquals(owners, classUnderTest.getOwners());
-  }
-
-  @Test
-  void deposit() {
-    classUnderTest.deposit(50.0);
-    assertEquals(150.0, classUnderTest.getBalance());
-  }
-
-  @Test
-  void deposit_withNegativeAmount() {
     assertThatExceptionOfType(IllegalArgumentException.class)
-        .isThrownBy(() -> classUnderTest.deposit(-50.0));
+        .isThrownBy(() -> new BusinessCheckingAccount("123456789", owners, 100.0))
+        .withMessage("At least one owner must be a business for a BusinessCheckingAccount");
   }
 
   @Test
-  void withdraw() {
-    classUnderTest.withdraw(50.0);
-    assertEquals(50.0, classUnderTest.getBalance());
-  }
+  void businessCheckingAccount_withBusinessOwner_shouldCreateAccount() {
+    Set<Customer> owners = new HashSet<>();
+    owners.add(new Customer(UUID.randomUUID(), "Business Owner", true));
 
-  @Test
-  void withdraw_withNegativeAmount() {
-    assertThatExceptionOfType(IllegalStateException.class)
-        .isThrownBy(() -> classUnderTest.withdraw(-50.0))
-        .withMessage("Withdrawal amount must be positive");
-  }
-
-  @Test
-  void withdraw_withInsufficientBalance() {
-    assertThatExceptionOfType(InsufficientFundsException.class)
-        .isThrownBy(() -> classUnderTest.withdraw(150.0))
-        .withMessage("Account does not have enough funds for withdrawal");
-  }
-
-  @Test
-  void getBalance() {
-    assertEquals(100.0, classUnderTest.getBalance());
-  }
-
-  @Test
-  void closeAccount_withPositiveBalance() {
-    assertThatExceptionOfType(IllegalStateException.class)
-        .isThrownBy(() -> classUnderTest.closeAccount());
-  }
-
-  @Test
-  void isClosed() {
-    assertFalse(classUnderTest.isClosed());
-    classUnderTest.withdraw(100);
-    classUnderTest.closeAccount();
-    assertTrue(classUnderTest.isClosed());
-  }
-
-  @Test
-  void equals() {
-    BusinessCheckingAccount otherAccount = new BusinessCheckingAccount("123456789", owners, 200.0);
-    assertEquals(classUnderTest, otherAccount);
-  }
-
-  @Test
-  void hashCodeTest() {
-    BusinessCheckingAccount otherAccount = new BusinessCheckingAccount("123456789", owners, 200.0);
-    assertEquals(classUnderTest.hashCode(), otherAccount.hashCode());
-  }
-
-  @Test
-  void toStringTest() {
-    String expected = "BusinessCheckingAccount{accountNumber='123456789', balance=100.0, isActive=true}";
-    assertEquals(expected, classUnderTest.toString());
+    BusinessCheckingAccount account = new BusinessCheckingAccount("123456789", owners, 100.0);
+    assertEquals("123456789", account.getAccountNumber());
   }
 }

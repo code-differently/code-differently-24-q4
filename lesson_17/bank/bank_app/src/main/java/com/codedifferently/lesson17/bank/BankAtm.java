@@ -11,16 +11,18 @@ public class BankAtm {
 
   private final Map<UUID, Customer> customerById = new HashMap<>();
   private final Map<String, CheckingAccount> accountByNumber = new HashMap<>();
-  public CheckingAccount createCheckingAccount(String accountNumber, Set<Customer> owners, double initialBalance) {
+
+  public BusinessCheckingAccount createCheckingAccount(
+      String accountNumber, Set<Customer> owners, double initialBalance) {
     boolean hasBusinessOwner = owners.stream().anyMatch(Customer::isBusiness);
 
     if (hasBusinessOwner) {
       return new BusinessCheckingAccount(accountNumber, owners, initialBalance);
     } else {
-      return new CheckingAccount(accountNumber, owners, initialBalance);
+      return new BusinessCheckingAccount(accountNumber, owners, initialBalance);
     }
-    }
-    
+  }
+
   /**
    * Adds a checking account to the bank.
    *

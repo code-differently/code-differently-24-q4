@@ -12,7 +12,6 @@ public class Customer {
   private final Set<CheckingAccount> accounts = new HashSet<>();
   private boolean isBusiness;
 
-
   /**
    * Creates a new customer.
    *
@@ -23,7 +22,6 @@ public class Customer {
     this.id = id;
     this.name = name;
     this.isBusiness = isBusiness;
-   
   }
 
   /**
