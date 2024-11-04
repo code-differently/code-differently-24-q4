@@ -1,14 +1,15 @@
 package com.codedifferently.lesson17.bank;
 
+import java.util.Set;
+import java.util.UUID;
+
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatExceptionOfType;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
 import com.codedifferently.lesson17.bank.exceptions.AccountNotFoundException;
 import com.codedifferently.lesson17.bank.exceptions.CheckVoidedException;
-import java.util.Set;
-import java.util.UUID;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
 
 class BankAtmTest {
 
@@ -107,4 +108,38 @@ class BankAtmTest {
         .isThrownBy(() -> classUnderTest.withdrawFunds(nonExistingAccountNumber, 50.0))
         .withMessage("Account not found");
   }
+
+  @Test
+  void testAddBusinessCheckingAccountWithoutBusinessAccount() {
+    // Arrange
+    Customer businessOwner = new Customer(UUID.randomUUID(), "Business Owner");
+    Set<Customer> owners = Set.of(businessOwner);
+    BusinessCheckingAccount businessAccount = new BusinessCheckingAccount("123456789", owners, "Business Inc.", 1000.0);
+    
+    // Act & Assert
+    assertThatExceptionOfType(IllegalArgumentException.class)
+      .isThrownBy(() -> classUnderTest.addAccount(businessAccount))
+      .withMessage("At least one owning account must be a business account.");
+  }
+
+  @Test 
+  void testAddBusinessCheckingAccountWithBusinessAccount() {
+    // Arrange
+    Customer businessOwner = new Customer(UUID.randomUUID(), "Business Owner");
+    Set<Customer> owners = Set.of(businessOwner);
+
+    BusinessCheckingAccount existingBusinessAccount = new BusinessCheckingAccount("123456789", owners, "Existing Business", 1000.0);
+    classUnderTest.addAccount(existingBusinessAccount); 
+
+   
+    BusinessCheckingAccount newBusinessAccount = new BusinessCheckingAccount("789456123", owners, "New Business", 1000.0);
+
+    // Act
+    classUnderTest.addAccount(newBusinessAccount);
+
+    // Assert
+    Set<CheckingAccount> accounts = classUnderTest.findAccountsByCustomerId(businessOwner.getId());
+    assertThat(accounts).contains(existingBusinessAccount, newBusinessAccount);
+}
+
 }
