@@ -19,5 +19,7 @@ public class MoneyOrder {
     }
     this.amount = amount;
     this.account = account;
+
+    account.withdraw(amount);
   }
 }

@@ -10,7 +10,7 @@ public class Customer {
   private final UUID id;
   private final String name;
   private final Set<CheckingAccount> accounts = new HashSet<>();
-  private boolean isBusiness;
+  private boolean isBusiness = false;
 
   /**
    * Creates a new customer.
@@ -22,6 +22,11 @@ public class Customer {
     this.id = id;
     this.name = name;
     this.isBusiness = isBusiness;
+  }
+
+  public Customer(UUID id, String name) {
+    this.id = id;
+    this.name = name;
   }
 
   /**

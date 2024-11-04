@@ -17,6 +17,4 @@ public class BusinessCheckingAccount extends CheckingAccount {
     isActive = true;
   }
 
-
-
 }
