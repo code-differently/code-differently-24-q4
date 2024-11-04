@@ -34,14 +34,16 @@ public class Family {
     }
     return false;
   }
+
   public int agesSizeValue() {
-  return ages.size();
+    return ages.size();
   }
+
   public boolean hasSixKids() {
     // TODO Auto-generated method stub
     int num = ages.size();
-    
-    return num <6;
+
+    return num < 6;
   }
 
   // throw new UnsupportedOperationException("Unimplemented method 'hasA12YO'");
