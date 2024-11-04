@@ -58,6 +58,11 @@ public class Customer {
     return accounts;
   }
 
+  // defaults accounts to non-business Owners.
+  public boolean isBusiness() {
+    return false;
+  }
+
   @Override
   public int hashCode() {
     return id.hashCode();

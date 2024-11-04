@@ -21,6 +21,9 @@ public class Check {
     if (amount < 0) {
       throw new IllegalArgumentException("Check amount must be positive");
     }
+    if (account instanceof SavingsAccount) {
+      throw new UnsupportedOperationException("Cannot issue checks from a savings account.");
+    }
     this.checkNumber = checkNumber;
     this.amount = amount;
     this.account = account;
