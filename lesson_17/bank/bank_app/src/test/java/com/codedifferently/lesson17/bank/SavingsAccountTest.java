@@ -20,8 +20,8 @@ public class SavingsAccountTest {
   @BeforeEach
   void setUp() {
     owners = new HashSet<>();
-    owners.add(new Customer(UUID.randomUUID(), "John Doe"));
-    owners.add(new Customer(UUID.randomUUID(), "Jane Smith"));
+    owners.add(new Customer(UUID.randomUUID(), "John Doe", false));
+    owners.add(new Customer(UUID.randomUUID(), "Jane Smith", false));
     classUnderTest = new SavingsAccount("123456789", owners, 100.0);
   }
 
