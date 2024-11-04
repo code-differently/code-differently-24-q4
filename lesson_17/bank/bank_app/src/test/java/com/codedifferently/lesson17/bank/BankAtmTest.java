@@ -83,10 +83,13 @@ class BankAtmTest {
 
   @Test
   void testDepositFunds_DoesntDepositCheckTwice() {
+    // Arrange
     Check check = new Check("987654321", 100.0, account1);
 
+    // Act
     classUnderTest.depositFunds("987654321", check);
 
+    // Assert
     assertThatExceptionOfType(CheckVoidedException.class)
         .isThrownBy(() -> classUnderTest.depositFunds("987654321", check))
         .withMessage("Check is voided");
@@ -103,6 +106,7 @@ class BankAtmTest {
 
   @Test
   void testWithdrawFunds_AccountNotFound() {
+    // Arrange
     String nonExistingAccountNumber = "999999999";
 
     // Act & Assert

@@ -42,7 +42,12 @@ public class Customer {
     return name;
   }
 
-  public boolean isBusiness() { // Add this method
+  /**
+   * Checks if the customer is a business.
+   *
+   * @return true if the customer is a business; false otherwise.
+   */
+  public boolean isBusiness() {
     return isBusiness;
   }
 
@@ -66,11 +71,13 @@ public class Customer {
 
   @Override
   public int hashCode() {
+    // Generate a hash code based on the customer's ID for proper set operations
     return id.hashCode();
   }
 
   @Override
   public boolean equals(Object obj) {
+    // Check if this customer is equal to another customer based on their ID
     if (obj instanceof Customer other) {
       return id.equals(other.id);
     }
@@ -79,6 +86,7 @@ public class Customer {
 
   @Override
   public String toString() {
+    // Provide a string representation of the customer including ID and name
     return "Customer{" + "id=" + id + ", name='" + name + '\'' + '}';
   }
 }
