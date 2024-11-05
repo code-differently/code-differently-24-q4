@@ -10,6 +10,7 @@ public class Customer {
   private final UUID id;
   private final String name;
   private final Set<CheckingAccount> accounts = new HashSet<>();
+  private boolean hasBusinessOwner;
 
   /**
    * Creates a new customer.
@@ -20,6 +21,7 @@ public class Customer {
   public Customer(UUID id, String name) {
     this.id = id;
     this.name = name;
+    this.hasBusinessOwner = false;
   }
 
   /**
@@ -69,6 +71,18 @@ public class Customer {
       return id.equals(other.id);
     }
     return false;
+  }
+
+  public void changeToBusinessAccount() {
+    hasBusinessOwner = true;
+  }
+
+  public boolean hasBusinessOwner() {
+    return false;
+  }
+
+  public boolean getHasBusinessOwner() {
+    return true;
   }
 
   @Override
