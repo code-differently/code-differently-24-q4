@@ -6,6 +6,7 @@ import static org.junit.jupiter.api.Assertions.*;
 import com.codedifferently.lesson16.KimberleeObject.BrandsArray;
 import com.codedifferently.lesson16.KimberleeObject.ConnectionNotFoundException;
 import com.codedifferently.lesson16.KimberleeObject.HeadPhones;
+import com.codedifferently.lesson16.KimberleeObject.HeadPhones.BoostMode;
 import com.codedifferently.lesson16.KimberleeObject.HeadPhones.HeadPhoneColor;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -27,6 +28,7 @@ public class HeadPhonesTest {
     assertFalse(headphones.isPoweredOn(), "HeadPhones should be off by default.");
     assertTrue(headphones.isWireless(), "HeadPhones should be wireless by default.");
     assertArrayEquals(new String[] {"Beats"}, new String[] {"Beats"});
+    assertEquals(BoostMode.BASS_BOOST, headphones.getCurrentBoostMode(), "BASS_BOOST should be the default setting.");
   }
 
   @Test
@@ -114,5 +116,19 @@ public class HeadPhonesTest {
     assertThatThrownBy(() -> headphones.wirelessConnection())
         .isInstanceOf(ConnectionNotFoundException.class)
         .hasMessage("Headphones Wireless Connection Not Found.");
+  }
+
+  @Test 
+  public void testBoostMode() {
+    assertEquals(BoostMode.BASS_BOOST, headphones.getCurrentBoostMode(), "BASS_BOOST should be the default setting.");
+    
+    headphones.nextBoostMode();
+    assertEquals(BoostMode.VOCAL_BOOST, headphones.getCurrentBoostMode(), "The next Boost setting should be VOCAL.");
+
+    headphones.nextBoostMode();
+    assertEquals(BoostMode.TREBLE_BOOST, headphones.getCurrentBoostMode(), "The next Boost setting should be TREBLE.");
+
+    headphones.nextBoostMode();
+    assertEquals(BoostMode.BASS_BOOST, headphones.getCurrentBoostMode(), "BoostMode cycle should return to BASS_BOOST.");
   }
 }

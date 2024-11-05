@@ -31,6 +31,12 @@ public class HeadPhones {
     brands[4] = "Juicy";
   }
 
+  public enum BoostMode {
+    BASS_BOOST,
+    VOCAL_BOOST,
+    TREBLE_BOOST;
+  }
+
   public int getVolume(int i) {
     return volume;
   }

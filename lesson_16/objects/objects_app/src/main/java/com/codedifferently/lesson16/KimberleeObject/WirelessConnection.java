@@ -1,4 +1,4 @@
-package com.codedifferently.lesson16.KimberleeObjectTest;
+package com.codedifferently.lesson16.KimberleeObject;
 
 public class WirelessConnection {
   WirelessConnection wirelessConnection;
