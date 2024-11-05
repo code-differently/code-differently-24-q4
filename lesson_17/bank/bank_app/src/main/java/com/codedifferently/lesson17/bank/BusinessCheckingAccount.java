@@ -13,4 +13,18 @@ public class BusinessCheckingAccount extends CheckingAccount {
   private boolean hasBusinessOwner(Set<Customer> owners) {
     return owners.stream().anyMatch(Customer::isBusiness);
   }
+
+
+  @Override
+  public String toString() {
+    return "BusinessCheckingAccount{"
+        + "accountNumber='"
+        + accountNumber
+        + '\''
+        + ", balance="
+        + balance
+        + ", isActive="
+        + isActive
+        + '}';
+  }
 }
