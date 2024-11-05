@@ -12,7 +12,7 @@ public class Person {
   private Color eyeColor;
   private final int max_traits = 10;
 
-  public Person(String name, int age, Position position, ArrayList<String> traits, Color eyeColor) {
+  public Person(String name, int age, Position position, List<String> traits, Color eyeColor) {
     this.name = name;
     this.age = age;
     this.position = position;

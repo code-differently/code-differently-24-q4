@@ -5,16 +5,22 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 public class PersonTest {
-  Person person =
+  Person person;
+  @BeforeEach
+  public void setUp(){
+    person =
       new Person(
           "That one guy right there",
           25,
           Position.ARSONIST,
           new ArrayList<>(Arrays.asList("Tall", "Insane", "Funny", "something else here idk")),
           Color.RED);
+  }
 
   @Test
   public void testGetName() {
