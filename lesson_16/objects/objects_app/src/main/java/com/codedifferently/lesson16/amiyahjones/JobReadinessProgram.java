@@ -64,7 +64,7 @@ public class JobReadinessProgram {
         : "Ready for job applications!";
   }
 
-  public int lecturePerWeek() {
+  public int getLecturesPerWeek() {
     System.out.println("Number of lectures students have: ");
     return lecturePerWeek;
   }

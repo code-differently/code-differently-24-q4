@@ -1,16 +1,16 @@
 package com.codedifferently.lesson16.amiyahjones;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import org.junit.jupiter.api.Test;
 
 import com.codedifferently.lesson16.amiyahjones.JobReadinessProgram.Level;
-import org.junit.jupiter.api.Test;
 
 public class JobReadinessProgramTest {
 
   @Test
   void testAddStudent() throws ClassroomFullException {
     // Arrange
-    JobReadinessProgram program = new JobReadinessProgram(null, false, "rich");
+    JobReadinessProgram program = new JobReadinessProgram(Level.Beginner, false, "rich");
 
     // Act
     program.addStudent("John");
@@ -22,7 +22,7 @@ public class JobReadinessProgramTest {
   @Test
   void testGetStudentCount() throws ClassroomFullException {
     // Arrange
-    JobReadinessProgram program = new JobReadinessProgram(null, true, null);
+    JobReadinessProgram program = new JobReadinessProgram(Level.Advanced, true, "vicente");
     program.addStudent("John");
 
     // Act
@@ -68,14 +68,14 @@ public class JobReadinessProgramTest {
 
   @Test
   void testCheckReadinessAdvanced() {
-    JobReadinessProgram student = new JobReadinessProgram(Level.Advanced, true, null);
+    JobReadinessProgram student = new JobReadinessProgram(Level.Advanced, true, "vicente");
     String result = student.checkReadiness();
     assertEquals("Ready for job applications!", result);
   }
 
   @Test
   void testVerifyIfSuccessful() {
-    JobReadinessProgram graduate = new JobReadinessProgram(null, true, "rich");
+    JobReadinessProgram graduate = new JobReadinessProgram(Level.Intermediate, true, "rich");
 
     var graduation = graduate.verifyIsSuccessful();
     assertEquals(true, graduation);
@@ -84,7 +84,7 @@ public class JobReadinessProgramTest {
   @Test
   void testLecturePerWeek() {
     JobReadinessProgram program = new JobReadinessProgram(Level.Advanced, true, "rich");
-    var lecturesAttended = program.lecturePerWeek();
+    var lecturesAttended = program.getLecturesPerWeek();
     assertEquals(3, lecturesAttended);
   }
 
