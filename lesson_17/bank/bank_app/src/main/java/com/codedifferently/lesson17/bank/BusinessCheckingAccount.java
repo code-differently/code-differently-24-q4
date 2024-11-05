@@ -14,7 +14,6 @@ public class BusinessCheckingAccount extends CheckingAccount {
     return owners.stream().anyMatch(Customer::isBusiness);
   }
 
-
   @Override
   public String toString() {
     return "BusinessCheckingAccount{"
