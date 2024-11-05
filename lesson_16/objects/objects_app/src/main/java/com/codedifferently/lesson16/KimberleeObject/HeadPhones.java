@@ -11,11 +11,18 @@ public class HeadPhones {
   private String brands = "Beats";
           boolean isPreferredBrand = BrandUtils.isPreferredBrand(brands);
   private boolean isConnectedToBluetooth = false;
+  
+  public enum BoostMode {
+    BASS_BOOST,
+    VOCAL_BOOST,
+    TREBLE_BOOST;
+  }
+
   private BoostMode currentMode;
   private BoostMode[] modes = BoostMode.values();
   private int currentModeIndex = 0;
 
-  public void HeadPhones() {
+  public HeadPhones() {
     this.currentMode = BoostMode.BASS_BOOST;
     System.out.println("Constructor called: currentMode set to " + currentMode);
   }
@@ -48,11 +55,7 @@ public class HeadPhones {
     brands[4] = "Juicy";
   }
 
-  public enum BoostMode {
-    BASS_BOOST,
-    VOCAL_BOOST,
-    TREBLE_BOOST;
-  }
+  
 
   public int getVolume() {
     return volume;
@@ -70,8 +73,8 @@ public class HeadPhones {
     return isWireless;
   }
 
-  public String getBrandsArray() {
-    return brands;
+  public String[] getBrandsArray() {
+    return BrandUtils.PREFERRED_BRANDS;
   }
 
   public void turnOn() {
