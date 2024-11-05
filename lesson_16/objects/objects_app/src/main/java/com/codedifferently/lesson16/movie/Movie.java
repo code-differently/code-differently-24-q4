@@ -1,5 +1,7 @@
 package com.codedifferently.lesson16.movie;
 
+import java.util.ArrayList;
+
 public class Movie {
 
   // member variables
@@ -8,6 +10,7 @@ public class Movie {
   private double rating;
   private final Genres genres;
   private final MovieRating movieRating;
+  private ArrayList<String> actors;
 
   // constructor
   public Movie(
@@ -17,11 +20,12 @@ public class Movie {
     this.rating = rating;
     this.movieRating = movieRating;
     this.genres = genres;
+    this.actors = new ArrayList<String>();
   }
 
   // getters and setters member functions
 
-    public String getTitle() {
+  public String getTitle() {
     return title;
   }
 
@@ -53,11 +57,33 @@ public class Movie {
     return movieRating;
   }
 
-  //Conditional
-  if MovieRating =< 4 { 
- return "Title"; 
-  } 
-   
+  // Conditional
+  public String goodRating() {
+    if (rating >= 7.0) {
+      return "The movie is not good";
+    } else {
+      return "The movie is satisfactory";
+    }
+  }
 
+  public void addActor(String actor) {
+    actors.add(actor);
+  }
+
+  public String getActors() throws actorNotAvailableException {
+    if (actors.isEmpty()) {
+      throw new actorNotAvailableException("actors not available");
+    }
+    String names = "";
+    for (String actor : actors) {
+      names += actor + ",";
+    }
+    return names;
+  }
+}
+
+class actorNotAvailableException extends Exception {
+  public actorNotAvailableException(String message) {
+    super(message);
   }
 }
