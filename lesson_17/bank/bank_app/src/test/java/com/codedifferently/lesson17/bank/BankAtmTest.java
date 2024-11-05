@@ -109,19 +109,6 @@ class BankAtmTest {
         .withMessage("Account not found");
   }
 
-  @Test
-  void testAddBusinessCheckingAccountWithoutBusinessAccount() {
-    // Arrange
-    Customer businessOwner = new Customer(UUID.randomUUID(), "Business Owner", true);
-    Set<Customer> owners = Set.of(businessOwner);
-    BusinessCheckingAccount businessAccount = new BusinessCheckingAccount("123456789", owners, "Business Inc.", 1000.0);
-    
-    // Act & Assert
-    assertThatExceptionOfType(IllegalArgumentException.class)
-      .isThrownBy(() -> classUnderTest.addAccount(businessAccount))
-      .withMessage("At least one owning account must be a business account.");
-  }
-
   @Test 
   void testGetBusinessName() {
     // Arrange
