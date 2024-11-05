@@ -9,10 +9,26 @@ public class HeadPhones {
   private HeadPhoneColor headPhoneColor = HeadPhoneColor.BLACK;
   private boolean isWireless = true;
   private String brands = "Beats";
+          boolean isPreferredBrand = BrandUtils.isPreferredBrand(brands);
   private boolean isConnectedToBluetooth = false;
   private BoostMode currentMode;
   private BoostMode[] modes = BoostMode.values();
   private int currentModeIndex = 0;
+
+  public void HeadPhones() {
+    this.currentMode = BoostMode.BASS_BOOST;
+    System.out.println("Constructor called: currentMode set to " + currentMode);
+  }
+
+  public void nextBoostMode() {
+    currentModeIndex = (currentModeIndex + 1) % modes.length;
+    currentMode = modes[currentModeIndex];
+  }
+
+  public BoostMode getCurrentMode() {
+    System.out.println("getCurrentMode called: currentMode is " + currentMode);
+    return currentMode;
+  }
 
   public enum HeadPhoneColor {
     RED,
@@ -38,11 +54,7 @@ public class HeadPhones {
     TREBLE_BOOST;
   }
 
-  public void headPhones() {
-    this.currentMode = BoostMode.BASS_BOOST;
-  }
-
-  public int getVolume(int i) {
+  public int getVolume() {
     return volume;
   }
 
@@ -117,14 +129,5 @@ public class HeadPhones {
     if (!isConnectedToBluetooth) {
       throw new ConnectionNotFoundException("Headphones Wireless Connection Not Found.");
     }
-  }
-
-  public void nextBoostMode() {
-    currentModeIndex = (currentModeIndex + 1) % modes.length;
-    currentMode = modes[currentModeIndex];
-  }
-
-  public BoostMode getCurrentMode() {
-    return currentMode;
   }
 }

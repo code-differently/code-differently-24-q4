@@ -3,7 +3,6 @@ package com.codedifferently.lesson16.KimberleeObjectTest;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 import static org.junit.jupiter.api.Assertions.*;
 
-import com.codedifferently.lesson16.KimberleeObject.BrandsArray;
 import com.codedifferently.lesson16.KimberleeObject.ConnectionNotFoundException;
 import com.codedifferently.lesson16.KimberleeObject.HeadPhones;
 import com.codedifferently.lesson16.KimberleeObject.HeadPhones.BoostMode;
@@ -22,7 +21,7 @@ public class HeadPhonesTest {
 
   @Test
   public void testDefaultState() {
-    assertEquals(0, headphones.getVolume(0), "Volume should be 0 by default.");
+    assertEquals(0, headphones.getVolume(), "Volume should be 0 by default.");
     assertEquals(
         HeadPhoneColor.BLACK, headphones.getHeadPhoneColor(), "Color should be black by default.");
     assertFalse(headphones.isPoweredOn(), "HeadPhones should be off by default.");
@@ -57,12 +56,12 @@ public class HeadPhonesTest {
     // Arrange
     headphones.turnOn();
     headphones.increaseVolume();
-    assertEquals(1, headphones.getVolume(0), "Volume should increase by 1");
+    assertEquals(1, headphones.getVolume(), "Volume should increase by 1");
     // Act
     headphones.setVolume(99);
     headphones.increaseVolume();
     // Assert
-    assertEquals(100, headphones.getVolume(0), "Volume should not exceed 100.");
+    assertEquals(100, headphones.getVolume(), "Volume should not exceed 100.");
   }
 
   @Test
@@ -71,11 +70,11 @@ public class HeadPhonesTest {
     headphones.turnOn();
     headphones.setVolume(1);
     headphones.decreaseVolume();
-    assertEquals(0, headphones.getVolume(0), "Volume should decrease to 0.");
+    assertEquals(0, headphones.getVolume(), "Volume should decrease to 0.");
     // Act
     headphones.decreaseVolume();
     // Assert
-    assertEquals(0, headphones.getVolume(0), "Volume should not go lower than 0.");
+    assertEquals(0, headphones.getVolume(), "Volume should not go lower than 0.");
   }
 
   @Test
@@ -92,19 +91,22 @@ public class HeadPhonesTest {
   @Test
   public void testPreferredBrand() {
     // Assert
-    assertTrue(BrandsArray.isPreferredBrand("Beats"), "Beats should be a preferred brand.");
-    assertTrue(BrandsArray.isPreferredBrand("Sony"), "Sony should be a preferred brand.");
-    assertFalse(BrandsArray.isPreferredBrand("Apple"), "Apple should not be a preferred brand.");
     assertTrue(
-        BrandsArray.isPreferredBrand("SkullCandy"), "SkullCandy should be a preferred brand.");
-    assertTrue(BrandsArray.isPreferredBrand("Juicy"), "Juicy should be a preferred brand.");
+        HeadPhones.BrandUtils.isPreferredBrand("Beats"), "Beats should be a preferred brand.");
+    assertTrue(HeadPhones.BrandUtils.isPreferredBrand("Sony"), "Sony should be a preferred brand.");
+    assertFalse(
+        HeadPhones.BrandUtils.isPreferredBrand("Apple"), "Apple should not be a preferred brand.");
+    assertTrue(
+        HeadPhones.BrandUtils.isPreferredBrand("SkullCandy"),
+        "SkullCandy should be a preferred brand.");
+    assertTrue(
+        HeadPhones.BrandUtils.isPreferredBrand("Juicy"), "Juicy should be a preferred brand.");
   }
 
   @Test
   public void testwirelessConnection() throws Exception {
     // Arrange
-    headphones.isPoweredOn();
-    headphones.isWireless();
+    headphones.turnOn();
     // Act
     headphones.connectToBluetooth();
     // Assert
