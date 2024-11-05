@@ -14,9 +14,12 @@ public class BankAtm {
   private final AuditLog auditLog = new AuditLog();
 
   /**
-   * Adds a checking account to the bank.
+   * Adds a checking account to the bank. If the account is a BusinessCheckingAccount, it ensures
+   * that at least one of the account owners is a business.
    *
    * @param account The account to add.
+   * @throws IllegalArgumentException if the account is a BusinessCheckingAccount and none of its
+   *     owners are business.
    */
   public void addAccount(CheckingAccount account) {
     if (account instanceof BusinessCheckingAccount) {
