@@ -1,4 +1,4 @@
-package com.codedifferently.lesson16.chelseaogbonnia.Bookshelf;
+package com.codedifferently.lesson16.chelseaogbonnia.bookshelf;
 
 import java.util.ArrayList;
 import java.util.Collections;

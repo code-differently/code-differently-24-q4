@@ -1,4 +1,4 @@
-package com.codedifferently.lesson16.chelseaogbonnia.Bookshelf;
+package com.codedifferently.lesson16.chelseaogbonnia.bookshelf;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
