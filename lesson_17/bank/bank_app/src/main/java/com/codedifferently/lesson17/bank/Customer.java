@@ -17,6 +17,7 @@ public class Customer {
    *
    * @param id The ID of the customer.
    * @param name The name of the customer.
+   * @param isBusiness Indicates whether the customer is a business (true) or an individual (false).
    */
   public Customer(UUID id, String name, boolean isBusiness) {
     this.id = id;
