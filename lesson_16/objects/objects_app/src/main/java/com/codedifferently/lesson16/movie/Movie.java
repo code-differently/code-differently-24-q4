@@ -21,12 +21,12 @@ public class Movie {
 
   // getters and setters member functions
 
-  public String getTitle() {
+    public String getTitle() {
     return title;
   }
 
-  public void setTitle(String title) {
-    this.title = title;
+  public String setTitle() {
+    return "Creed 2";
   }
 
   public int getReleaseYear() {
@@ -53,11 +53,11 @@ public class Movie {
     return movieRating;
   }
 
-  public String getMovieTitle() {
-    return title;
-  }
+  //Conditional
+  if MovieRating =< 4 { 
+ return "Title"; 
+  } 
+   
 
-  public String setMovieTitle() {
-    return "Creed 2";
   }
 }

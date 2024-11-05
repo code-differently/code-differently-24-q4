@@ -1,7 +1,6 @@
 package com.codedifferently.lesson16.movie;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -16,7 +15,7 @@ public class MovieTest {
   @Test
   void testGetMovieTitle() {
     // act
-    String title = movie.getMovieTitle();
+    String title = movie.getTitle();
     // assert
     assertEquals("Creed", title);
   }
@@ -25,7 +24,7 @@ public class MovieTest {
   void testSetMovieTitle() {
     // arrange
     // act
-    String title = movie.setMovieTitle();
+    String title = movie.setTitle();
     // assert
     assertEquals("Creed 2", title);
   }
