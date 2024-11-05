@@ -1,11 +1,10 @@
 package com.codedifferently.lesson17.bank;
 
+import com.codedifferently.lesson17.bank.exceptions.AccountNotFoundException;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
 import java.util.UUID;
-
-import com.codedifferently.lesson17.bank.exceptions.AccountNotFoundException;
 
 /** Represents a bank ATM. */
 public class BankAtm {
@@ -60,7 +59,8 @@ public class BankAtm {
   public void depositFunds(String accountNumber, double amount) {
     CheckingAccount account = getAccountOrThrow(accountNumber);
     account.deposit(amount);
-    auditLog.logTransaction("Deposited to account: " + accountNumber, accountNumber, amount, "Deposit");
+    auditLog.logTransaction(
+        "Deposited to account: " + accountNumber, accountNumber, amount, "Deposit");
   }
 
   /**
@@ -73,7 +73,10 @@ public class BankAtm {
     CheckingAccount account = getAccountOrThrow(accountNumber);
     check.depositFunds(account);
     auditLog.logTransaction(
-        "Deposited check to account: " + accountNumber, accountNumber, check.getAmount(), "Check Deposit");
+        "Deposited check to account: " + accountNumber,
+        accountNumber,
+        check.getAmount(),
+        "Check Deposit");
   }
 
   /**
@@ -85,7 +88,8 @@ public class BankAtm {
   public void withdrawFunds(String accountNumber, double amount) {
     CheckingAccount account = getAccountOrThrow(accountNumber);
     account.withdraw(amount);
-    auditLog.logTransaction("Withdrew from account: " + accountNumber, accountNumber, amount, "Withdrawal");
+    auditLog.logTransaction(
+        "Withdrew from account: " + accountNumber, accountNumber, amount, "Withdrawal");
   }
 
   /**
