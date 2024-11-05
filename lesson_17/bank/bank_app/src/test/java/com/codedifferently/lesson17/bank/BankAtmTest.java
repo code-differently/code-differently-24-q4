@@ -33,6 +33,7 @@ class BankAtmTest {
     customer2.addAccount(account2);
     classUnderTest.addAccount(account1);
     classUnderTest.addAccount(account2);
+    bankAtm = new BankAtm();
   }
 
   @Test

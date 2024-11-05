@@ -18,6 +18,7 @@ public class BusinessCheckingAccountTest {
     owners = new HashSet<>();
     owners.add(new Customer(UUID.randomUUID(), "John Doe", false));
     owners.add(new Customer(UUID.randomUUID(), "Jane Smith", false));
+    owners.add(new Customer(UUID.randomUUID(), "Don Juan DeMarco", true));
     new BusinessCheckingAccount("123456789", owners, 100.0);
   }
 
