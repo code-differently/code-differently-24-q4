@@ -16,10 +16,6 @@ public class BusinessCheckingAccount extends CheckingAccount{
     public BusinessCheckingAccount(String accountNumber, Set<Customer> owners, String businessName, double initialBalance) {
         super(accountNumber, owners, initialBalance);
         this.businessName = businessName;
-
-        if (owners.stream().noneMatch(owner -> owner.isBusiness())) {
-            throw new IllegalArgumentException("At least one owner must be a business.");
-        }
     }   
 
     public String getBusinessName() {

@@ -5,6 +5,7 @@ import java.util.UUID;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatExceptionOfType;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -47,6 +48,20 @@ class BankAtmTest {
     Set<CheckingAccount> accounts = classUnderTest.findAccountsByCustomerId(customer3.getId());
     assertThat(accounts).containsOnly(account3);
   }
+
+  @Test
+  void testAddBusinessAccountWithNoBusinessOwner() {
+    // Arrange
+    Customer regularCustomer = new Customer(UUID.randomUUID(), "Bob's Bakery", false);  
+    CheckingAccount businessAccount = new BusinessCheckingAccount("666666666", Set.of(regularCustomer), "name", 500.0);
+
+    // Act & Assert
+    IllegalArgumentException thrown = assertThrows(IllegalArgumentException.class, () -> {
+        classUnderTest.addAccount(businessAccount);
+    });
+
+    assertThat(thrown).hasMessageContaining("At least one owning account must be a business account.");
+}
 
   @Test
   void testFindAccountsByCustomerId() {
