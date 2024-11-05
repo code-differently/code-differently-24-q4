@@ -54,6 +54,18 @@ public class Check {
     voidCheck();
   }
 
+  public String getCheckNumber() {
+    return checkNumber;
+  }
+
+  public double getAmount() {
+    return amount;
+  }
+
+  public CheckingAccount getAccount() {
+    return account;
+  }
+
   @Override
   public int hashCode() {
     return checkNumber.hashCode();

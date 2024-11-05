@@ -103,6 +103,10 @@ public class CheckingAccount {
     return !isActive;
   }
 
+  public boolean getIsActive() {
+    return isActive;
+  }
+
   @Override
   public int hashCode() {
     return accountNumber.hashCode();
