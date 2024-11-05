@@ -1,11 +1,10 @@
 package com.codedifferently.lesson17.bank;
 
+import com.codedifferently.lesson17.bank.exceptions.AccountNotFoundException;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
 import java.util.UUID;
-
-import com.codedifferently.lesson17.bank.exceptions.AccountNotFoundException;
 
 /** Represents a bank ATM. */
 public class BankAtm {
@@ -21,14 +20,15 @@ public class BankAtm {
    */
   public void addAccount(CheckingAccount account) {
     if (account instanceof BusinessCheckingAccount) {
-      boolean hasBusinessAccount = account.getOwners().stream()
-        .anyMatch(owner -> owner.isBusiness());
+      boolean hasBusinessAccount =
+          account.getOwners().stream().anyMatch(owner -> owner.isBusiness());
 
-        if(!hasBusinessAccount) {
-          throw new IllegalArgumentException("At least one owning account must be a business account.");
-        }
-    }      
-    
+      if (!hasBusinessAccount) {
+        throw new IllegalArgumentException(
+            "At least one owning account must be a business account.");
+      }
+    }
+
     accountByNumber.put(account.getAccountNumber(), account);
     account
         .getOwners()
@@ -37,7 +37,6 @@ public class BankAtm {
               customerById.put(owner.getId(), owner);
             });
   }
-
 
   /**
    * Finds all accounts owned by a customer.
@@ -72,7 +71,8 @@ public class BankAtm {
   public void depositFunds(String accountNumber, Check check) {
     CheckingAccount account = getAccountOrThrow(accountNumber);
     check.depositFunds(account);
-    auditLog.logTransaction("Deposited check to account: " + accountNumber, check.getAmount(), "Check Deposit");
+    auditLog.logTransaction(
+        "Deposited check to account: " + accountNumber, check.getAmount(), "Check Deposit");
   }
 
   /**

@@ -1,16 +1,15 @@
 package com.codedifferently.lesson17.bank;
 
-import java.util.Set;
-import java.util.UUID;
-
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatExceptionOfType;
 import static org.junit.jupiter.api.Assertions.assertThrows;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
 
 import com.codedifferently.lesson17.bank.exceptions.AccountNotFoundException;
 import com.codedifferently.lesson17.bank.exceptions.CheckVoidedException;
+import java.util.Set;
+import java.util.UUID;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
 class BankAtmTest {
 
@@ -52,16 +51,21 @@ class BankAtmTest {
   @Test
   void testAddBusinessAccountWithNoBusinessOwner() {
     // Arrange
-    Customer regularCustomer = new Customer(UUID.randomUUID(), "Bob's Bakery", false);  
-    CheckingAccount businessAccount = new BusinessCheckingAccount("666666666", Set.of(regularCustomer), "name", 500.0);
+    Customer regularCustomer = new Customer(UUID.randomUUID(), "Bob's Bakery", false);
+    CheckingAccount businessAccount =
+        new BusinessCheckingAccount("666666666", Set.of(regularCustomer), "name", 500.0);
 
     // Act & Assert
-    IllegalArgumentException thrown = assertThrows(IllegalArgumentException.class, () -> {
-        classUnderTest.addAccount(businessAccount);
-    });
+    IllegalArgumentException thrown =
+        assertThrows(
+            IllegalArgumentException.class,
+            () -> {
+              classUnderTest.addAccount(businessAccount);
+            });
 
-    assertThat(thrown).hasMessageContaining("At least one owning account must be a business account.");
-}
+    assertThat(thrown)
+        .hasMessageContaining("At least one owning account must be a business account.");
+  }
 
   @Test
   void testFindAccountsByCustomerId() {
@@ -124,15 +128,15 @@ class BankAtmTest {
         .withMessage("Account not found");
   }
 
-  @Test 
+  @Test
   void testGetBusinessName() {
     // Arrange
     Customer businessOwner = new Customer(UUID.randomUUID(), "Business Owner", true);
     Set<Customer> owners = Set.of(businessOwner);
-    BusinessCheckingAccount businessAccount = new BusinessCheckingAccount("123456789", owners, "Business Inc.", 1000.0);
+    BusinessCheckingAccount businessAccount =
+        new BusinessCheckingAccount("123456789", owners, "Business Inc.", 1000.0);
 
-    //Act & Assert 
+    // Act & Assert
     assertThat(businessAccount.getBusinessName());
   }
-
 }

@@ -56,7 +56,7 @@ public class Check {
 
   public double getAmount() {
     return amount;
-  }  
+  }
 
   @Override
   public int hashCode() {
