@@ -12,7 +12,7 @@ public class MoneyOrder {
 
         sourceAccount.withdraw(amount);
         
-        auditLog.logTransaction(sourceAccount.getAccountNumber(), -amount, "MoneyOrder");
+        auditLog.logTransaction(sourceAccount.getAccountNumber(), "MoneyOrder created", -amount, "MoneyOrder");
     }
 
     public CheckingAccount getSourceAccount() {

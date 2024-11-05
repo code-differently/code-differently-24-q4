@@ -10,9 +10,13 @@ public class AuditLog {
         logEntries = new ArrayList<>();
     }
 
-    public void logTransaction(String message, double amount, String type) {
-        String logEntry = String.format("Transaction: %s | Amount: %.2f | Type: %s", message, amount, type);
+    public void logTransaction(String accountNumber, String message, double amount, String type) {
+        String logEntry = String.format("Account: %s | Transaction: %s | Amount: %.2f | Type: %s", accountNumber, message, amount, type);
         logEntries.add(logEntry);
         System.out.println(logEntry);
+    }
+
+    public List<String> getLogEntries() {
+        return logEntries;
     }
 }
