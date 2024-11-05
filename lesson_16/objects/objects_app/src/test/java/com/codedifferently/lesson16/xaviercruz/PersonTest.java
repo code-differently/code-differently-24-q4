@@ -1,10 +1,10 @@
 package com.codedifferently.lesson16.xaviercruz;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertThrows;
-
 import java.util.ArrayList;
 import java.util.Arrays;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -145,11 +145,5 @@ public class PersonTest {
         () -> {
           person2.addToTraits(traits);
         });
-  }
-
-  @Test
-  public void testGetTraits_PersonStringArray() {
-    Person person2 = new Person(null, 0, null, new String[] {"test"}, null);
-    assertEquals(new ArrayList<>(Arrays.asList("test")), person2.getTraits());
   }
 }

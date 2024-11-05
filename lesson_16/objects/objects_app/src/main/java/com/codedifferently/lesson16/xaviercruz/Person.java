@@ -20,14 +20,6 @@ public class Person {
     this.eyeColor = eyeColor;
   }
 
-  public Person(String name, int age, Position position, String[] traits, Color eyeColor) {
-    this.name = name;
-    this.age = age;
-    this.position = position;
-    this.traits = Arrays.asList(traits);
-    this.eyeColor = eyeColor;
-  }
-
   public void changeName(String name) {
     this.name = name;
   }
