@@ -1,9 +1,9 @@
 package com.codedifferently.lesson16.amiyahjones;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import org.junit.jupiter.api.Test;
 
 import com.codedifferently.lesson16.amiyahjones.JobReadinessProgram.Level;
+import org.junit.jupiter.api.Test;
 
 public class JobReadinessProgramTest {
 
