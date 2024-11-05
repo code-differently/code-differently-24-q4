@@ -28,7 +28,10 @@ public class HeadPhonesTest {
     assertFalse(headphones.isPoweredOn(), "HeadPhones should be off by default.");
     assertTrue(headphones.isWireless(), "HeadPhones should be wireless by default.");
     assertArrayEquals(new String[] {"Beats"}, new String[] {"Beats"});
-    assertEquals(BoostMode.BASS_BOOST, headphones.getCurrentBoostMode(), "BASS_BOOST should be the default setting.");
+    assertEquals(
+        BoostMode.BASS_BOOST,
+        headphones.getCurrentMode(),
+        "BASS_BOOST should be the default setting.");
   }
 
   @Test
@@ -118,17 +121,29 @@ public class HeadPhonesTest {
         .hasMessage("Headphones Wireless Connection Not Found.");
   }
 
-  @Test 
+  @Test
   public void testBoostMode() {
-    assertEquals(BoostMode.BASS_BOOST, headphones.getCurrentBoostMode(), "BASS_BOOST should be the default setting.");
-    
-    headphones.nextBoostMode();
-    assertEquals(BoostMode.VOCAL_BOOST, headphones.getCurrentBoostMode(), "The next Boost setting should be VOCAL.");
+    assertEquals(
+        BoostMode.BASS_BOOST,
+        headphones.getCurrentMode(),
+        "BASS_BOOST should be the default setting.");
 
     headphones.nextBoostMode();
-    assertEquals(BoostMode.TREBLE_BOOST, headphones.getCurrentBoostMode(), "The next Boost setting should be TREBLE.");
+    assertEquals(
+        BoostMode.VOCAL_BOOST,
+        headphones.getCurrentMode(),
+        "The next Boost setting should be VOCAL.");
 
     headphones.nextBoostMode();
-    assertEquals(BoostMode.BASS_BOOST, headphones.getCurrentBoostMode(), "BoostMode cycle should return to BASS_BOOST.");
+    assertEquals(
+        BoostMode.TREBLE_BOOST,
+        headphones.getCurrentMode(),
+        "The next Boost setting should be TREBLE.");
+
+    headphones.nextBoostMode();
+    assertEquals(
+        BoostMode.BASS_BOOST,
+        headphones.getCurrentMode(),
+        "BoostMode cycle should return to BASS_BOOST.");
   }
 }

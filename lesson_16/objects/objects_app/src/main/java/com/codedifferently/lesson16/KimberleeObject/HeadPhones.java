@@ -3,8 +3,6 @@ package com.codedifferently.lesson16.KimberleeObject;
 import java.util.Arrays;
 
 public class HeadPhones {
-  @SuppressWarnings("unused")
-  private static final Object PREFERRED_BRANDS = null;
 
   private int volume = 0;
   private boolean isPoweredOn = false;
@@ -12,6 +10,9 @@ public class HeadPhones {
   private boolean isWireless = true;
   private String brands = "Beats";
   private boolean isConnectedToBluetooth = false;
+  private BoostMode currentMode;
+  private BoostMode[] modes = BoostMode.values();
+  private int currentModeIndex = 0;
 
   public enum HeadPhoneColor {
     RED,
@@ -35,6 +36,10 @@ public class HeadPhones {
     BASS_BOOST,
     VOCAL_BOOST,
     TREBLE_BOOST;
+  }
+
+  public void headPhones() {
+    this.currentMode = BoostMode.BASS_BOOST;
   }
 
   public int getVolume(int i) {
@@ -112,5 +117,14 @@ public class HeadPhones {
     if (!isConnectedToBluetooth) {
       throw new ConnectionNotFoundException("Headphones Wireless Connection Not Found.");
     }
+  }
+
+  public void nextBoostMode() {
+    currentModeIndex = (currentModeIndex + 1) % modes.length;
+    currentMode = modes[currentModeIndex];
+  }
+
+  public BoostMode getCurrentMode() {
+    return currentMode;
   }
 }
