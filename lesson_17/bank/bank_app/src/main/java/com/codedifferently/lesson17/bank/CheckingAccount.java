@@ -9,7 +9,7 @@ public class CheckingAccount {
   private final Set<Customer> owners;
   private final String accountNumber;
   private double balance;
-  private boolean isActive;
+  public boolean isActive;
 
   /**
    * Creates a new checking account.

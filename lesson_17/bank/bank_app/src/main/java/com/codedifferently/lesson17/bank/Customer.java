@@ -20,8 +20,9 @@ public class Customer {
    *
    * @param id The ID of the customer.
    * @param name The name of the customer.
+   * @param b
    */
-  public Customer(UUID id, String name) {
+  public Customer(UUID id, String name, boolean b) {
     this.id = id;
     this.name = name;
   }
@@ -82,5 +83,9 @@ public class Customer {
   @Override
   public String toString() {
     return "Customer{" + "id=" + id + ", name='" + name + '\'' + '}';
+  }
+
+  public static String getEmail() {
+    return Customer.getEmail();
   }
 }
