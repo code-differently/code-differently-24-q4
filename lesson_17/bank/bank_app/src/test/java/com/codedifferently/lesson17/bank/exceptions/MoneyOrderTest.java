@@ -2,11 +2,11 @@ package com.codedifferently.lesson17.bank.exceptions;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatExceptionOfType;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
 import com.codedifferently.lesson17.bank.Check;
 import com.codedifferently.lesson17.bank.CheckingAccount;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
 
 class MoneyOrderTest<account2> {
 
@@ -67,6 +67,11 @@ class MoneyOrderTest<account2> {
 
   @Test
   void testToString() {
+    // Arrange
+    CheckingAccount account = new CheckingAccount("123456789", null, 0);
+    MoneyOrder classUnderTest = new MoneyOrder("123456789", 50.0, account);
+    // Act
+    String result = classUnderTest.toString();
     // Assert
     assertThat(classUnderTest.toString())
         .isEqualTo("MoneyOrder{checkNumber='123456789', amount=50.0, account=123456789}");

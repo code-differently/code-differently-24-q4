@@ -1,11 +1,13 @@
 package com.codedifferently.lesson17.bank.exceptions;
 
 import com.codedifferently.lesson17.bank.Check;
-import com.codedifferently.lesson17.bank.CheckingAccount;
 
 public class MoneyOrder extends Check {
 
-  public MoneyOrder(String checkNumber, double amount, CheckingAccount account) {
+  public MoneyOrder(
+      String checkNumber,
+      double amount,
+      com.codedifferently.lesson17.bank.CheckingAccount account) {
     super(checkNumber, amount, account);
     if (amount < 0) {
       throw new IllegalArgumentException("MoneyOrder amount must be positive");
@@ -13,7 +15,6 @@ public class MoneyOrder extends Check {
     account.withdraw(amount);
   }
 
-  @Override
   /**
    * Deposits the check into an account.
    *
@@ -21,12 +22,34 @@ public class MoneyOrder extends Check {
    */
   public void depositFunds(CheckingAccount toAccount) {
     if (getIsVoided()) {
-      throw new CheckVoidedException("MoneyOrder is voided");
+      throw new UnsupportedOperationException("MoneyOrder is voided");
     }
     toAccount.withdraw(getAmount());
     ((CheckingAccount) getAccount()).withdraw(getAmount());
-    toAccount.deposit(getAmount());
+    ((CheckingAccount) toAccount).deposit(getAmount());
     voidCheck();
+  }
+
+  public class CheckingAccount {
+    private String accountNumber;
+
+    public CheckingAccount(String accountNumber) {
+      this.accountNumber = accountNumber;
+    }
+
+    public void withdraw(double amount) {
+      // TODO Auto-generated method stub
+      throw new UnsupportedOperationException("Unimplemented method 'withdraw'");
+    }
+
+    public void deposit(double amount) {
+      // TODO Auto-generated method stub
+      throw new UnsupportedOperationException("Unimplemented method 'deposit'");
+    }
+
+    public String getAccountNumber() {
+      return this.accountNumber;
+    }
   }
 
   @Override
