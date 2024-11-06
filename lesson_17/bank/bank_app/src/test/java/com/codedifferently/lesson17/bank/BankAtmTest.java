@@ -107,4 +107,31 @@ class BankAtmTest {
         .isThrownBy(() -> classUnderTest.withdrawFunds(nonExistingAccountNumber, 50.0))
         .withMessage("Account not found");
   }
+
+  @Test
+  void testAddBusinessCheckingAccount_WithBusinessOwner() {
+    // Arrange
+    Customer businessCustomer = new Customer(UUID.randomUUID(), "TechCorp", CustomerType.BUSINESS);
+    Set<Customer> owners = Set.of(businessCustomer);
+
+    // Act
+    BusinessCheckingAccount businessAccount =
+        new BusinessCheckingAccount("BUS123456", owners, 500.0);
+
+    // Assert
+    assertThat(businessAccount.getOwners()).contains(businessCustomer);
+  }
+
+  @Test
+  void testAddBusinessCheckingAccount_WithoutBusinessOwner() {
+    // Arrange
+    Customer individualCustomer =
+        new Customer(UUID.randomUUID(), "John Doe", CustomerType.INDIVIDUAL);
+    Set<Customer> owners = Set.of(individualCustomer);
+
+    // Act & Assert
+    assertThatExceptionOfType(IllegalArgumentException.class)
+        .isThrownBy(() -> new BusinessCheckingAccount("BUS987654", owners, 1000.0))
+        .withMessage("A BusinessCheckingAccount must have at least one business owner.");
+  }
 }

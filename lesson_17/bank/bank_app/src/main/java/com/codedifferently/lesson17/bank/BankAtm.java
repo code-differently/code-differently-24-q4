@@ -18,13 +18,21 @@ public class BankAtm {
    * @param account The account to add.
    */
   public void addAccount(CheckingAccount account) {
+    if (account instanceof BusinessCheckingAccount) {
+      Set<Customer> owners = account.getOwners();
+
+      // Ensure at least one owner is a business
+      if (owners.stream().noneMatch(Customer::isBusiness)) {
+        throw new IllegalArgumentException(
+            "A BusinessCheckingAccount must have at least one business owner.");
+      }
+    }
+
+    // Add the account to accountByNumber
     accountByNumber.put(account.getAccountNumber(), account);
-    account
-        .getOwners()
-        .forEach(
-            owner -> {
-              customerById.put(owner.getId(), owner);
-            });
+
+    // Add each owner to customerById
+    account.getOwners().forEach(owner -> customerById.put(owner.getId(), owner));
   }
 
   /**
