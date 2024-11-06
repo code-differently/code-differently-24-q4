@@ -23,9 +23,9 @@ class BankAtmTest {
   @BeforeEach
   void setUp() {
     classUnderTest = new BankAtm();
-    customer1 = new Customer(UUID.randomUUID(), "John Doe");
-    customer2 = new Customer(UUID.randomUUID(), "Jane Smith");
-    customer3 = new Customer(UUID.randomUUID(), "Jane Smith's Business");
+    customer1 = new Customer(UUID.randomUUID(), "John Doe", false);
+    customer2 = new Customer(UUID.randomUUID(), "Jane Smith", false);
+    customer3 = new Customer(UUID.randomUUID(), "Jane Smith's Business", true);
     account1 = new CheckingAccount("123456789", Set.of(customer1), 100.0);
     account2 = new CheckingAccount("987654321", Set.of(customer1, customer2), 200.0);
     account3 = new CheckingAccount("123456777", Set.of(customer2), 40000);
@@ -39,7 +39,7 @@ class BankAtmTest {
   @Test
   void testAddAccount() {
     // Arrange
-    Customer customer3 = new Customer(UUID.randomUUID(), "Alice Johnson");
+    Customer customer3 = new Customer(UUID.randomUUID(), "Alice Johnson", false);
     CheckingAccount account3 = new CheckingAccount("555555555", Set.of(customer3), 300.0);
     customer3.addAccount(account3);
 
