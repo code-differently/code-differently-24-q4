@@ -68,7 +68,7 @@ class MoneyOrderTest<account2> {
   @Test
   void testToString() {
     // Arrange
-    CheckingAccount account = new CheckingAccount("123456789", null, 0);
+    CheckingAccount account = new CheckingAccount("123456789", null, 50.0);
     MoneyOrder classUnderTest = new MoneyOrder("123456789", 50.0, account);
     // Act
     String result = classUnderTest.toString();

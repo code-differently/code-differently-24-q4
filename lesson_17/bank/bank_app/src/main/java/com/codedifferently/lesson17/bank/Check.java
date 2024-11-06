@@ -1,6 +1,7 @@
 package com.codedifferently.lesson17.bank;
 
 import com.codedifferently.lesson17.bank.exceptions.CheckVoidedException;
+import com.codedifferently.lesson17.bank.exceptions.SavingsAccount;
 
 /** Represents a check. */
 public class Check {
@@ -20,6 +21,9 @@ public class Check {
   public Check(String checkNumber, double amount, CheckingAccount account) {
     if (amount < 0) {
       throw new IllegalArgumentException("Check amount must be positive");
+    }
+    if (account instanceof SavingsAccount) {
+      throw new UnsupportedOperationException("Cannot issue checks from a savings account.");
     }
     this.checkNumber = checkNumber;
     this.amount = amount;
@@ -47,7 +51,7 @@ public class Check {
    */
   public void depositFunds(CheckingAccount toAccount) {
     if (isVoided) {
-      throw new CheckVoidedException("Check is voided");
+      throw new CheckVoidedException("MoneyOrder is voided");
     }
     account.withdraw(amount);
     toAccount.deposit(amount);
