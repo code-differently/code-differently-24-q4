@@ -16,8 +16,13 @@ public class Check {
    * @param checkNumber The check number.
    * @param amount The amount of the check.
    * @param account The account the check is drawn on.
+   * @throws IllegalArgumentException if the amount is negative or the account is not a
+   *     `CheckingAccount` instance.
    */
   public Check(String checkNumber, double amount, CheckingAccount account) {
+    if ((account instanceof SavingsAccount)) {
+      throw new IllegalArgumentException("Only checking accounts can make checks");
+    }
     if (amount < 0) {
       throw new IllegalArgumentException("Check amount must be positive");
     }

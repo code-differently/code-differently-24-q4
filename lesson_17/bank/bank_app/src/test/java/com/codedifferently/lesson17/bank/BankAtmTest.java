@@ -15,21 +15,26 @@ class BankAtmTest {
   private BankAtm classUnderTest;
   private CheckingAccount account1;
   private CheckingAccount account2;
+  private BusinessCheckingAccount account3;
   private Customer customer1;
   private Customer customer2;
+  private Customer customer3;
 
   @BeforeEach
   void setUp() {
     classUnderTest = new BankAtm();
     customer1 = new Customer(UUID.randomUUID(), "John Doe");
     customer2 = new Customer(UUID.randomUUID(), "Jane Smith");
+    customer3 = new Customer(UUID.randomUUID(), "Doodle-Bob INC.");
     account1 = new CheckingAccount("123456789", Set.of(customer1), 100.0);
     account2 = new CheckingAccount("987654321", Set.of(customer1, customer2), 200.0);
+    account3 = new BusinessCheckingAccount("102938475", Set.of(customer3), 10000.0);
     customer1.addAccount(account1);
     customer1.addAccount(account2);
     customer2.addAccount(account2);
     classUnderTest.addAccount(account1);
     classUnderTest.addAccount(account2);
+    classUnderTest.addAccount(account3);
   }
 
   @Test
@@ -106,5 +111,12 @@ class BankAtmTest {
     assertThatExceptionOfType(AccountNotFoundException.class)
         .isThrownBy(() -> classUnderTest.withdrawFunds(nonExistingAccountNumber, 50.0))
         .withMessage("Account not found");
+  }
+
+  @Test
+  void testWithdrawFunds_BusinessAccountBalanceBelowMinimum() {
+    assertThatExceptionOfType(IllegalArgumentException.class)
+        .isThrownBy(() -> classUnderTest.withdrawFunds(account3.getAccountNumber(), 200.0))
+        .withMessage("Business checking account balance must remain greater than $10,000");
   }
 }

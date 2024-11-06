@@ -1,12 +1,12 @@
 package com.codedifferently.lesson17.bank;
 
-import java.util.HashSet;
-import java.util.Set;
-import java.util.UUID;
-
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
+
+import java.util.HashSet;
+import java.util.Set;
+import java.util.UUID;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -45,30 +45,35 @@ public class BusinessCheckingAccountTest {
   }
 
   @Test
-public void testBusinessCheckingAccount_WithoutBusinessOwner() {
+  public void testBusinessCheckingAccount_WithoutBusinessOwner() {
     UUID individualId = UUID.randomUUID();
-    Customer individualOwner = new Customer(individualId, "John Doe"); // Example customer without business designation
+    Customer individualOwner =
+        new Customer(individualId, "John Doe"); // Example customer without business designation
 
     owners.add(individualOwner); // Add the individual owner to the set
 
-    assertThatThrownBy(() -> {
-        new BusinessCheckingAccount("12345", owners, 15000);
-    })
-    .isInstanceOf(IllegalArgumentException.class)
-    .hasMessageContaining("A business checking account must have at least one business owner.");
-}
+    assertThatThrownBy(
+            () -> {
+              new BusinessCheckingAccount("12345", owners, 15000);
+            })
+        .isInstanceOf(IllegalArgumentException.class)
+        .hasMessageContaining("A business checking account must have at least one business owner.");
+  }
 
-@Test
-public void testBusinessCheckingAccount_BelowMinimumBalance() {
+  @Test
+  public void testBusinessCheckingAccount_BelowMinimumBalance() {
     UUID businessId = UUID.randomUUID();
-    Customer businessOwner = new Customer(businessId, "ABC LLC"); // Create a customer with a valid business name
+    Customer businessOwner =
+        new Customer(businessId, "ABC LLC"); // Create a customer with a valid business name
 
     owners.add(businessOwner); // Add the business owner to the set
 
-    assertThatThrownBy(() -> {
-        new BusinessCheckingAccount("12345", owners, 5000); // Attempt to create with a balance below 10,000
-    })
-    .isInstanceOf(IllegalArgumentException.class)
-    .hasMessageContaining("Business accounts require a minimum balance of $10,000.");
-}
+    assertThatThrownBy(
+            () -> {
+              new BusinessCheckingAccount(
+                  "12345", owners, 5000); // Attempt to create with a balance below 10,000
+            })
+        .isInstanceOf(IllegalArgumentException.class)
+        .hasMessageContaining("Business accounts require a minimum balance of $10,000.");
+  }
 }

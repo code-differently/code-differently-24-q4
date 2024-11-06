@@ -58,6 +58,9 @@ public class BankAtm {
    */
   public void depositFunds(String accountNumber, Check check) {
     CheckingAccount account = getAccountOrThrow(accountNumber);
+    if ((account instanceof SavingsAccount)) {
+      throw new IllegalArgumentException("Only checking accounts can make checks");
+    }
     check.depositFunds(account);
   }
 
@@ -69,6 +72,12 @@ public class BankAtm {
    */
   public void withdrawFunds(String accountNumber, double amount) {
     CheckingAccount account = getAccountOrThrow(accountNumber);
+    if ((account instanceof BusinessCheckingAccount)) {
+      if (account.getBalance() - amount < 10000) {
+        throw new IllegalArgumentException(
+            "Business checking account balance must remain greater than $10,000");
+      }
+    }
     account.withdraw(amount);
   }
 

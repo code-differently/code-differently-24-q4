@@ -2,6 +2,8 @@ package com.codedifferently.lesson17.bank;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatExceptionOfType;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import com.codedifferently.lesson17.bank.exceptions.CheckVoidedException;
 import org.junit.jupiter.api.BeforeEach;
@@ -47,6 +49,18 @@ class CheckTest {
     assertThatExceptionOfType(IllegalArgumentException.class)
         .isThrownBy(() -> new Check("123456789", -50.0, account1))
         .withMessage("Check amount must be positive");
+  }
+
+  @Test
+  void testConstructor_CantCreateCheckWithSavingsAccount() {
+    SavingsAccount savingsAccount = new SavingsAccount("12345", null, 500.0);
+    IllegalArgumentException exception =
+        assertThrows(
+            IllegalArgumentException.class,
+            () -> {
+              new Check("123", 100, savingsAccount);
+            });
+    assertEquals("Only checking accounts can make checks", exception.getMessage());
   }
 
   @Test
