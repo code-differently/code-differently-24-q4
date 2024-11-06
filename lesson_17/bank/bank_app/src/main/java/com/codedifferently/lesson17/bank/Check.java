@@ -17,7 +17,7 @@ public class Check {
    * @param amount The amount of the check.
    * @param account The account the check is drawn on.
    * @throws IllegalArgumentException if the amount is negative or the account is not a
-   *     `CheckingAccount` instance.
+   *     `CheckingAccount` or `BusinessCheckingAccount` instance.
    */
   public Check(String checkNumber, double amount, CheckingAccount account) {
     if ((account instanceof SavingsAccount)) {
