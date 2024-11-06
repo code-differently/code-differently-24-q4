@@ -1,11 +1,10 @@
 package com.codedifferently.lesson17.bank;
 
+import com.codedifferently.lesson17.bank.exceptions.AccountNotFoundException;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
 import java.util.UUID;
-
-import com.codedifferently.lesson17.bank.exceptions.AccountNotFoundException;
 
 /** Represents a bank ATM. */
 public class BankAtm {
@@ -70,9 +69,8 @@ public class BankAtm {
    *
    * @param accountNumber The unique identifier of the account.
    * @param amount The amount to withdraw from the account.
-   *
-   * @throws IllegalArgumentException if the account is not found or if the withdrawal
-   * would result in a balance below $10,000 for a BusinessCheckingAccount.
+   * @throws IllegalArgumentException if the account is not found or if the withdrawal would result
+   *     in a balance below $10,000 for a BusinessCheckingAccount.
    */
   public void withdrawFunds(String accountNumber, double amount) {
     CheckingAccount account = getAccountOrThrow(accountNumber);
