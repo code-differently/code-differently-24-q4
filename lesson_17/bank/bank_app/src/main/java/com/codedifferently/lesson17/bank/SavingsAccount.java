@@ -3,7 +3,7 @@ package com.codedifferently.lesson17.bank;
 import java.util.Set;
 
 /** Represents a checking account. */
-public class SavingsAccount extends BankAccount{
+public class SavingsAccount extends BankAccount {
 
   /**
    * Creates a new checking account.
@@ -16,6 +16,10 @@ public class SavingsAccount extends BankAccount{
     super(accountNumber, owners, initialBalance);
   }
 
+   public void writeCheck(double amount) {
+    throw new UnsupportedOperationException("Cannot write checks against savings accounts.");
+  }
+
   @Override
   public int hashCode() {
     return accountNumber.hashCode();
@@ -23,7 +27,7 @@ public class SavingsAccount extends BankAccount{
 
   @Override
   public boolean equals(Object obj) {
-    if (obj instanceof CheckingAccount other) {
+    if (obj instanceof SavingsAccount other) {
       return accountNumber.equals(other.accountNumber);
     }
     return false;
@@ -31,7 +35,7 @@ public class SavingsAccount extends BankAccount{
 
   @Override
   public String toString() {
-    return "CheckingAccount{"
+    return "SavingsAccount{"
         + "accountNumber='"
         + accountNumber
         + '\''

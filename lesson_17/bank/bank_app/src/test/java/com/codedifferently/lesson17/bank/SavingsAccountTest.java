@@ -3,16 +3,15 @@ package com.codedifferently.lesson17.bank;
 import static org.assertj.core.api.Assertions.assertThatExceptionOfType;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
+import com.codedifferently.lesson17.bank.exceptions.InsufficientFundsException;
 import java.util.HashSet;
 import java.util.Set;
 import java.util.UUID;
-
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-
-import com.codedifferently.lesson17.bank.exceptions.InsufficientFundsException;
 
 public class SavingsAccountTest {
   private SavingsAccount classUnderTest;
@@ -103,5 +102,22 @@ public class SavingsAccountTest {
   void toStringTest() {
     String expected = "SavingsAccount{accountNumber='123456789', balance=100.0, isActive=true}";
     assertEquals(expected, classUnderTest.toString());
+  }
+
+   @Test
+  void testWriteCheck() {
+    // Arrange
+    SavingsAccount account = new SavingsAccount("12345678", null, 1000.00);
+
+    // Act 
+    UnsupportedOperationException thrown =
+        assertThrows(
+            UnsupportedOperationException.class,
+            () -> {
+              account.writeCheck(100);
+            });
+
+    // Assert
+    assertEquals("Cannot write checks against savings accounts.", thrown.getMessage());
   }
 }

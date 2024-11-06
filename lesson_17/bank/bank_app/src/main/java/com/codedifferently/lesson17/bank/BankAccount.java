@@ -4,7 +4,7 @@ import com.codedifferently.lesson17.bank.exceptions.InsufficientFundsException;
 import java.util.Set;
 
 public abstract class BankAccount {
-  protected  final Set<Customer> owners;
+  protected final Set<Customer> owners;
   protected final String accountNumber;
   protected double balance;
   protected boolean isActive;
