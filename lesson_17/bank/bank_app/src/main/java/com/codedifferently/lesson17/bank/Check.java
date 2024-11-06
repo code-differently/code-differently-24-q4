@@ -67,6 +67,18 @@ public class Check {
     return false;
   }
 
+  public String getCheckNumber() {
+    return checkNumber;
+  }
+
+  public double getAmount() {
+    return amount;
+  }
+
+  public CheckingAccount newAccount() {
+    return account;
+  }
+
   @Override
   public String toString() {
     return "Check{"

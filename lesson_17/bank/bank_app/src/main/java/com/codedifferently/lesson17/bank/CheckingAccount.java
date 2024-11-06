@@ -25,6 +25,10 @@ public class CheckingAccount {
     isActive = true;
   }
 
+  public boolean getIsActive() {
+    return isActive;
+  }
+
   /**
    * Gets the account number.
    *
