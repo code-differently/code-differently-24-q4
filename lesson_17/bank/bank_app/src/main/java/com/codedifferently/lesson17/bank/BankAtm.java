@@ -10,7 +10,7 @@ import java.util.UUID;
 public class BankAtm {
 
   private final Map<UUID, Customer> customerById = new HashMap<>();
-  private final Map<String, CheckingAccount> accountByNumber = new HashMap<>();
+  final Map<String, CheckingAccount> accountByNumber = new HashMap<>();
 
   /**
    * Adds a checking account to the bank.
@@ -25,6 +25,14 @@ public class BankAtm {
             owner -> {
               customerById.put(owner.getId(), owner);
             });
+    // Check if the account is a BusinessCheckingAccount and ensure it has a business owner
+    if (account instanceof BusinessCheckingAccount) {
+      BusinessCheckingAccount businessAccount = (BusinessCheckingAccount) account;
+      if (!businessAccount.hasBusinessOwner(account.getOwners())) {
+        throw new IllegalArgumentException(
+            "BusinessCheckingAccount must have at least one business owner.");
+      }
+    }
   }
 
   /**
@@ -58,6 +66,9 @@ public class BankAtm {
    */
   public void depositFunds(String accountNumber, Check check) {
     CheckingAccount account = getAccountOrThrow(accountNumber);
+    if (account instanceof SavingsAccount) {
+      throw new UnsupportedOperationException("Cannot deposit checks into a Savings Account.");
+    }
     check.depositFunds(account);
   }
 
