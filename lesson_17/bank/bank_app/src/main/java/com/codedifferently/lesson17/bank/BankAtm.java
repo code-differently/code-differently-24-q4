@@ -45,7 +45,7 @@ public class BankAtm {
    * @param accountNumber The account number.
    * @param amount The amount to deposit.
    */
-  public void depositFunds(String accountNumber, double amount) {gi
+  public void depositFunds(String accountNumber, double amount) {
     BankAccount account = getAccountOrThrow(accountNumber);
     account.deposit(amount);
   }
