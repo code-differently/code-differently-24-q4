@@ -10,9 +10,8 @@ public class MoneyOrder {
 
     account.withdraw(amount);
   }
-  
+
   public String getAmount() {
     return "$" + amount + " Taken from: " + account;
   }
 }
-

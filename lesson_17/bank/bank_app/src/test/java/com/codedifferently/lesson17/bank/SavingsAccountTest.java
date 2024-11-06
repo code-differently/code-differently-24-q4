@@ -104,12 +104,12 @@ public class SavingsAccountTest {
     assertEquals(expected, classUnderTest.toString());
   }
 
-   @Test
+  @Test
   void testWriteCheck() {
     // Arrange
     SavingsAccount account = new SavingsAccount("12345678", null, 1000.00);
 
-    // Act 
+    // Act
     UnsupportedOperationException thrown =
         assertThrows(
             UnsupportedOperationException.class,

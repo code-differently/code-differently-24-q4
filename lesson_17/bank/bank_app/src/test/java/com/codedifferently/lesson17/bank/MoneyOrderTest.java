@@ -17,16 +17,15 @@ public class MoneyOrderTest {
 
   @Test
   public void testMoneyOrderCreation() {
-    //Arrange
+    // Arrange
     double expectedAccountAmmount = 499.00;
-    
+
     // Act
     MoneyOrder moneyOrder = new MoneyOrder(account, 500.0);
 
     // Assert
     assertEquals(expectedAccountAmmount, account.balance);
   }
-
 
   @Test
   public void testMoneyOrderGetAmmount() {

@@ -16,7 +16,7 @@ public class SavingsAccount extends BankAccount {
     super(accountNumber, owners, initialBalance);
   }
 
-   public void writeCheck(double amount) {
+  public void writeCheck(double amount) {
     throw new UnsupportedOperationException("Cannot write checks against savings accounts.");
   }
 
