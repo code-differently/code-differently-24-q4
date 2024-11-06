@@ -7,6 +7,10 @@ import java.util.UUID;
 /** Represents a customer of the bank. */
 public class Customer {
 
+  public static <T> boolean isBusiness(T t) {
+    throw new UnsupportedOperationException("Not supported yet.");
+  }
+
   private final UUID id;
   private final String name;
   private final Set<CheckingAccount> accounts = new HashSet<>();
@@ -56,6 +60,10 @@ public class Customer {
    */
   public Set<CheckingAccount> getAccounts() {
     return accounts;
+  }
+
+  public boolean isBusiness() {
+    return false;
   }
 
   @Override

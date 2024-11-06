@@ -33,7 +33,7 @@ public class BankAtm {
    * @param customerId The ID of the customer.
    * @return The unique set of accounts owned by the customer.
    */
-  public Set<CheckingAccount> findAccountsByCustomerId(UUID customerId) {
+  public Set<CheckingAccount> findAccountsByCustomerId(UUID customerId, UUID businessId) {
     return customerById.containsKey(customerId)
         ? customerById.get(customerId).getAccounts()
         : Set.of();
