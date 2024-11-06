@@ -9,6 +9,7 @@ public class Customer {
 
   private final UUID id;
   private final String name;
+  private final CustomerType type;
   private final Set<CheckingAccount> accounts = new HashSet<>();
 
   /**
@@ -17,9 +18,10 @@ public class Customer {
    * @param id The ID of the customer.
    * @param name The name of the customer.
    */
-  public Customer(UUID id, String name) {
+  public Customer(UUID id, String name, CustomerType type) {
     this.id = id;
     this.name = name;
+    this.type = type;
   }
 
   /**
@@ -56,6 +58,11 @@ public class Customer {
    */
   public Set<CheckingAccount> getAccounts() {
     return accounts;
+  }
+
+  // make sure if the custumer is using a business account
+  public boolean isBusiness() {
+    return type == CustomerType.BUSINESS;
   }
 
   @Override

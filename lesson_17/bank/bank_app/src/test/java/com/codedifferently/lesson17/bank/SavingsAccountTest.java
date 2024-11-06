@@ -12,9 +12,9 @@ import java.util.UUID;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-class CheckingAccountTest {
+public class SavingsAccountTest {
 
-  private CheckingAccount classUnderTest;
+  private SavingsAccount classUnderTest;
   private Set<Customer> owners;
 
   @BeforeEach
@@ -22,7 +22,7 @@ class CheckingAccountTest {
     owners = new HashSet<>();
     owners.add(new Customer(UUID.randomUUID(), "John Doe", CustomerType.INDIVIDUAL));
     owners.add(new Customer(UUID.randomUUID(), "Jane Smith", CustomerType.INDIVIDUAL));
-    classUnderTest = new CheckingAccount("123456789", owners, 100.0);
+    classUnderTest = new SavingsAccount("123456789", owners, 100.0);
   }
 
   @Test
@@ -88,19 +88,19 @@ class CheckingAccountTest {
 
   @Test
   void equals() {
-    CheckingAccount otherAccount = new CheckingAccount("123456789", owners, 200.0);
+    SavingsAccount otherAccount = new SavingsAccount("123456789", owners, 200.0);
     assertEquals(classUnderTest, otherAccount);
   }
 
   @Test
   void hashCodeTest() {
-    CheckingAccount otherAccount = new CheckingAccount("123456789", owners, 200.0);
+    SavingsAccount otherAccount = new SavingsAccount("123456789", owners, 200.0);
     assertEquals(classUnderTest.hashCode(), otherAccount.hashCode());
   }
 
   @Test
   void toStringTest() {
-    String expected = "CheckingAccount{accountNumber='123456789', balance=100.0, isActive=true}";
+    String expected = "SavingsAccount{accountNumber='123456789', balance=100.0, isActive=true}";
     assertEquals(expected, classUnderTest.toString());
   }
 }
