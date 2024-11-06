@@ -12,8 +12,12 @@ import java.util.HashMap;
  */
 public class AuditLog {
 
-    // Method to add a value to an existing ArrayList or create a new one if accountNumber doesn't exist
-    public void addToMap(HashMap<String, ArrayList<Double>> accountNumberByValueLog, String accountNumber, Double value) {
-        accountNumberByValueLog.computeIfAbsent(accountNumber, k -> new ArrayList<>()).add(value);
-    }
-}    
+  // Method to add a value to an existing ArrayList or create a new one if accountNumber doesn't
+  // exist
+  public void addToMap(
+      HashMap<String, ArrayList<Double>> accountNumberByValueLog,
+      String accountNumber,
+      Double value) {
+    accountNumberByValueLog.computeIfAbsent(accountNumber, k -> new ArrayList<>()).add(value);
+  }
+}

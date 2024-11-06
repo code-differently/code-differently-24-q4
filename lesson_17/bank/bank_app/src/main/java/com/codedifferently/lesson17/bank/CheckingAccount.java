@@ -3,9 +3,9 @@ package com.codedifferently.lesson17.bank;
 import java.util.Set;
 
 /** Represents a checking account. */
-public class CheckingAccount extends BankAccount{
+public class CheckingAccount extends BankAccount {
 
-   //private boolean isActive;
+  // private boolean isActive;
 
   /**
    * Creates a new checking account.
@@ -15,7 +15,7 @@ public class CheckingAccount extends BankAccount{
    * @param initialBalance The initial balance of the account.
    */
   public CheckingAccount(String accountNumber, Set<Customer> owners, double balance) {
-    super(accountNumber, owners,  balance);
-    //isActive = true;
+    super(accountNumber, owners, balance);
+    // isActive = true;
   }
 }

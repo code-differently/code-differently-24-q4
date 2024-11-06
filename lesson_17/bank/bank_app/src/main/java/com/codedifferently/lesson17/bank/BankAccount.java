@@ -1,11 +1,9 @@
 package com.codedifferently.lesson17.bank;
 
+import com.codedifferently.lesson17.bank.exceptions.InsufficientFundsException;
 import java.util.Set;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
-import com.codedifferently.lesson17.bank.exceptions.InsufficientFundsException;
 
 /** Represents a checking account. */
 public class BankAccount {
@@ -15,7 +13,6 @@ public class BankAccount {
   private double balance;
   private boolean isActive;
   private static final Logger logger = LoggerFactory.getLogger(SavingAccount.class);
-
 
   /**
    * Creates a new checking account.
@@ -82,7 +79,7 @@ public class BankAccount {
       throw new IllegalStateException("Withdrawal amount must be positive");
     }
     if (balance < amount) {
-      logger.info("Account does not have enough funds for withdrawal"); 
+      logger.info("Account does not have enough funds for withdrawal");
       throw new InsufficientFundsException("Account does not have enough funds for withdrawal");
     }
     balance -= amount;
@@ -100,7 +97,7 @@ public class BankAccount {
   /** Closes the account. */
   public void closeAccount() throws IllegalStateException {
     if (balance > 0) {
-      logger.info("Cannot close account with a positive balance");  
+      logger.info("Cannot close account with a positive balance");
       throw new IllegalStateException("Cannot close account with a positive balance");
     }
     isActive = false;
