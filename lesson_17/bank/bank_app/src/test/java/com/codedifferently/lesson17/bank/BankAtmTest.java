@@ -92,7 +92,7 @@ class BankAtmTest {
 
     assertThatExceptionOfType(CheckVoidedException.class)
         .isThrownBy(() -> classUnderTest.depositFunds("987654321", check))
-        .withMessage("Check is voided");
+        .withMessage("MoneyOrder is voided");
   }
 
   @Test
