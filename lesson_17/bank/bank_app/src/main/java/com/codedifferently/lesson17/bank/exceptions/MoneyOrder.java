@@ -37,12 +37,12 @@ public class MoneyOrder extends Check {
       this.accountNumber = accountNumber;
     }
 
-    public void withdraw(double amount) {
+    private void withdraw(double amount) {
       // TODO Auto-generated method stub
       throw new UnsupportedOperationException("Unimplemented method 'withdraw'");
     }
 
-    public void deposit(double amount) {
+    private void deposit(double amount) {
       // TODO Auto-generated method stub
       throw new UnsupportedOperationException("Unimplemented method 'deposit'");
     }
