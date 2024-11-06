@@ -38,6 +38,9 @@ class MoneyOrderTest<account2> {
 
     // Act & Assert
     assertThatExceptionOfType(CheckVoidedException.class)
+        .isThrownBy(() -> classUnderTest.depositFunds(account1))
+        .withMessage("MoneyOrder is voided");
+    assertThatExceptionOfType(CheckVoidedException.class)
         .isThrownBy(() -> classUnderTest.depositFunds(account2))
         .withMessage("MoneyOrder is voided");
   }

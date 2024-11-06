@@ -23,7 +23,8 @@ public class MoneyOrder extends Check {
     if (getIsVoided()) {
       throw new CheckVoidedException("MoneyOrder is voided");
     }
-    // getAccount().withdraw(getAmount());
+    toAccount.withdraw(getAmount());
+    ((CheckingAccount) getAccount()).withdraw(getAmount());
     toAccount.deposit(getAmount());
     voidCheck();
   }
