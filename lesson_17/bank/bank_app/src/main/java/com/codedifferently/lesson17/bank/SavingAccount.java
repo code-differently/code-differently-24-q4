@@ -7,7 +7,7 @@ import java.util.Set;
 public class SavingAccount {
 
   private final Set<Customer> owners;
-  private final String accountNumber;
+  final String accountNumber;
   private double balance;
   private boolean isActive;
 
