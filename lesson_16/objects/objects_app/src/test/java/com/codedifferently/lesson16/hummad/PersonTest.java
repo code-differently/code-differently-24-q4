@@ -1,4 +1,4 @@
-package com.codedifferently.lesson16.hummadtanweer;
+package com.codedifferently.lesson16.hummad;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
@@ -7,7 +7,7 @@ import static org.junit.jupiter.api.Assertions.fail;
 
 import com.codedifferently.lesson16.HummadTanweer.Person.Gender;
 import com.codedifferently.lesson16.HummadTanweer.Person.HobbyLimitExceededException;
-import com.codedifferently.lesson16.hummadtanweer.Person;
+import com.codedifferently.lesson16.hummad.Person;
 
 import org.junit.jupiter.api.Test;
 
