@@ -1,4 +1,4 @@
-package com.codedifferently.lesson16.ShawnDunsmore;
+package com.codedifferently.lesson16.shawndunsmore;
 
 public enum BuyType {
   BONUS_BUY,

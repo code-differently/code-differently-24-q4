@@ -1,4 +1,4 @@
-package com.codedifferently.lesson16.ShawnDunsmore;
+package com.codedifferently.lesson16.shawndunsmore;
 
 import java.util.ArrayList;
 import java.util.Collections;

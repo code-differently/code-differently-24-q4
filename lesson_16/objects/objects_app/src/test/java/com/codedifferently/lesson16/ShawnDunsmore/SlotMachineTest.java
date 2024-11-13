@@ -1,10 +1,11 @@
-package com.codedifferently.lesson16.ShawnDunsmore;
+package com.codedifferently.lesson16.shawndunsmore;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import java.util.ArrayList;
 import java.util.Collections;
+
 import org.junit.jupiter.api.Test;
 
 public class SlotMachineTest {
