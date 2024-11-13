@@ -5,7 +5,6 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import java.util.ArrayList;
 import java.util.Collections;
-
 import org.junit.jupiter.api.Test;
 
 public class SlotMachineTest {

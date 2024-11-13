@@ -6,4 +6,3 @@ public class InvalidPayAmountException extends Exception {
     super(message);
   }
 }
-
