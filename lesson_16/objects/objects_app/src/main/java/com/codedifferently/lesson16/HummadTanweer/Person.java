@@ -1,4 +1,4 @@
-package com.codedifferently.lesson16.HummadTanweer;
+package com.codedifferently.lesson16.hummadtanweer;
 
 import java.util.ArrayList;
 
