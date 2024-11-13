@@ -1,6 +1,5 @@
-package com.codedifferently.lesson16;
+package com.codedifferently.lesson16.gumball;
 
-import com.codedifferently.lesson16.gumball.Colors;
 import java.util.HashMap;
 import java.util.Random;
 
