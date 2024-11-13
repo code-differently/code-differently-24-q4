@@ -3,16 +3,43 @@ body {
     line-height: 24px;
 }
 
+/* Nav-bar */
+
+
 /* Hero section */
 .hero-section {
-    background-image: url("hero.jpg");
-    background-repeat: no-repeat; 
+    background: linear-gradient(
+      rgba(0, 0, 0, 0.239), 
+      rgba(0, 0, 0, 0.239)),
+   url("hero.jpg") no-repeat center center; 
     background-size: cover;
     color: white;
 }
 
 .hero-content {
     padding: 20px;
+}
+
+.hero-title .highlight{
+    font-style: normal;
+    background-image: linear-gradient(rgb(255, 128, 0), rgb(255, 128, 0));
+    background-repeat: no-repeat;
+    background-position: 0 100%;
+    background-size: 100% 7px;
+    padding-bottom: 0;
+
+}
+
+.hero-text {
+    background: rgb(43, 60, 146);
+    padding: 10px;
+    font-weight: lighter;
+    font-family: 'Poppins';
+}
+
+.hero-text span {
+    color: rgb(255, 128, 0);
+    font-weight: bold;
 }
 
 /* Programs section */
