@@ -1,0 +1,58 @@
+
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
+}
+
+
+.header-logo img {
+height: 50px;
+    width: 151.087px;
+}
+
+
+.header-top-menu {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+
+.header-top-menu li a {
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 16px;
+    transition: color 0.3s ease;
+}
+
+.header-top-menu li a:hover {
+    color:orange;  
+}
+
+
+.header-cta .sign-up-button {
+    -webkit-text-fill-color: rgb(255, 255, 255);
+    padding: 10px 20px;
+    background-color: orange;
+    color: #000000;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.header-cta .sign-up-button:hover {
+    background-color: orange; 
+}
+
+
+
