@@ -5,8 +5,8 @@ import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.junit.jupiter.api.Assertions.fail;
 
-import com.codedifferently.lesson16.HummadTanweer.Person.Gender;
-import com.codedifferently.lesson16.HummadTanweer.Person.HobbyLimitExceededException;
+import com.codedifferently.lesson16.hummadtanweer.Person.Gender;
+import com.codedifferently.lesson16.hummadtanweer.Person.HobbyLimitExceededException;
 import org.junit.jupiter.api.Test;
 
 public class PersonTest {
