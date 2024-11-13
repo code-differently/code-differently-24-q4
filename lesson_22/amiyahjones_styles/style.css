@@ -4,7 +4,34 @@ body {
 }
 
 /* Nav-bar */
+.header {
+    background-color: white;
+    box-shadow: 3px 3px 5px rgba(232, 232, 232, 0.239);
+}
 
+.header-logo img {
+    width: 150px;
+}
+
+.header ul {
+    width: 100%;
+    list-style: none;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.header li {
+    height: 50px;
+}
+
+.header-top-menu li a {
+    height: 100%;
+    padding: 0 30px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+}
 
 /* Hero section */
 .hero-section {
