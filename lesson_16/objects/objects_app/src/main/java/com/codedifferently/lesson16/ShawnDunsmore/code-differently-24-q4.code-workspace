@@ -1,0 +1,15 @@
+{
+	"folders": [
+		{
+			"path": "../../../../../../../../../.."
+		},
+		{
+			"path": "../../../../../../../../.."
+		}
+	],
+	"settings": {
+		"java.configuration.updateBuildConfiguration": "automatic",
+		"java.compile.nullAnalysis.mode": "automatic",
+		"liveServer.settings.multiRootWorkspaceName": "code-differently-24-q4"
+	}
+}
