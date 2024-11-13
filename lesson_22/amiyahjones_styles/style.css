@@ -1,0 +1,83 @@
+body {
+    font-family: 'Montserrat', 'Poppins';
+    line-height: 24px;
+}
+
+/* Hero section */
+.hero-section {
+    background-image: url("hero.jpg");
+    background-repeat: no-repeat; 
+    background-size: cover;
+    color: white;
+}
+
+.hero-content {
+    padding: 20px;
+}
+
+/* Programs section */
+.programs-section {
+    padding: 50px;
+    font-size: 17px; 
+    color: #444;
+    display: flexbox;
+}
+
+.programs-section h2 {
+    font-weight: 900;
+    margin-left: 39px;
+}
+
+.programs-section h2 em {
+    font-style: normal;
+    background-image: linear-gradient(rgb(255, 128, 0), rgb(255, 128, 0));
+    background-repeat: no-repeat;
+    background-position: 0 100%;
+    background-size: 100% 7px;
+    padding-bottom: 0;
+}
+
+.programs-section li {
+    list-style: none;
+}
+
+.programs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.programs li h3 {
+    margin-bottom: 40px;
+
+    font-size: small;
+}
+
+.programs li p {
+    font-weight: lighter;
+    font-family: 'Poppins'; 
+    color: #676767;
+    font-size: small;
+    font-weight: 400;
+}
+
+.program {
+    flex: 1 1 45%;
+    box-sizing: border-box;
+}
+
+@media (max-width: 1070px) {
+    .program {
+        flex: 1 1 100%; 
+    }
+}
+
+/* Footer */
+footer {
+   font-family: 'Poppins'; 
+   text-align: center;
+   font-size: 14px;
+   padding: 50px;
+   margin-bottom: 10px;
+}
+
