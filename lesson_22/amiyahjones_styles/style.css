@@ -66,7 +66,6 @@ body {
 
 /* Hero section */
 .hero-section {
-    padding-top: 200px;
     background-size: cover;
     color: white;
 }
@@ -102,37 +101,48 @@ body {
 }
 
 /* Programs section */
+.programs {
+   display: grid;
+    grid-template-columns: 1fr 1fr;
+    /* Two columns */
+    gap: 20px; 
+}
+
 .programs-section {
-    padding: 150px;
+    padding: 160px;
     margin-left: 70px;
     font-size: 25px; 
     color: #444;
-    display: flexbox;
 }
 
 .programs-section h2 {
     font-weight: 900;
-    margin-left: 39px;
-    margin-bottom: 10px;
+    margin-bottom: 70px;
 }
 
 .programs-section h2 em {
     font-style: normal;
-    background-image: linear-gradient(rgb(255, 128, 0), rgb(255, 128, 0));
-    background-repeat: no-repeat;
-    background-position: 0 100%;
-    background-size: 100% 7px;
-    padding-bottom: 0;
+    position: relative;
 }
+
+.programs-section h2 .highlight {
+    position: relative;
+}
+.programs-section h2 .highlight::after {
+    content: '';
+    display: block;
+    width: 103%;
+    height: 7px;
+    background-color: rgb(255, 119, 0);
+    position: absolute;
+    bottom: -2px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
 
 .programs-section li {
     list-style: none;
-}
-
-.programs {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
 }
 
 .programs li h3 {
@@ -148,10 +158,6 @@ body {
     font-weight: 400;
 }
 
-.program {
-    flex: 1 1 45%;
-    box-sizing: border-box;
-}
 
 @media (max-width: 1070px) {
     .program {
