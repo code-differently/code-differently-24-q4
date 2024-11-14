@@ -8,9 +8,6 @@
 body {
     line-height: 24px;
 }
-/* before or after elemet for the underline with  */
-
-/* text alignment  */
 
 /* Nav-bar */
 .header {
@@ -145,6 +142,7 @@ body {
 .programs-section h2 .highlight {
     position: relative;
 }
+
 .programs-section h2 .highlight::after {
     content: '';
     display: block;
