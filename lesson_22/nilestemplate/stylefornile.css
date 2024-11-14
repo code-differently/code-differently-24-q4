@@ -1,0 +1,29 @@
+#header-outer #search{
+  position:relative
+}
+#header-outer .row .col.span_3, 
+#header-outer .row .col.span_9{
+  width:auto
+}
+#header-outer .row .col.span_9{
+  float:right
+}
+#header-outer[data-full-width="true"] header >.container,
+body[data-slide-out-widget-area-style="simple"] #header-outer[data-full-width="true"] #mobile-menu {
+  width:100%;
+  max-width:100%;
+  padding:0 28px
+}
+.slide-out-widget-area-toggle a .close-wrap{
+  -webkit-font-smoothing: subpixel-antialiased;
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  position: absolute;
+}
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 700;
+  src: url(https://fonts.gstatic.com/s/montserrat/v29/JTUSjIg1_i6t8kCHKm459WRhyyTh89ZNpQ.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
