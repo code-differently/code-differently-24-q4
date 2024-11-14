@@ -1,50 +1,82 @@
-body {
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
     font-family: 'Montserrat', 'Poppins';
+}
+
+body {
     line-height: 24px;
 }
+/* before or after elemet for the underline with  */
+
+/* text alignment  */
 
 /* Nav-bar */
 .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed; 
+    padding: 16px 32px;
     background-color: white;
-    box-shadow: 3px 3px 5px rgba(232, 232, 232, 0.239);
+    position: sticky;
+    top: 0;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
 }
 
 .header-logo img {
-    width: 150px;
+  height: 70px;
 }
 
-.header ul {
-    width: 100%;
+.header-top-menu {
+    display: flex;
     list-style: none;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
 }
 
-.header li {
-    height: 50px;
+ .header-top-menu li{
+    margin: 0 15px;
 }
 
-.header-top-menu li a {
-    height: 100%;
-    padding: 0 30px;
+.header-top-menu a {
+    color:  #444;
     text-decoration: none;
-    display: flex;
-    align-items: center;
+    font-family: 'Poppins'; 
+    font-weight: bold;
+}
+
+.header-top-menu li:first-child {
+    text-transform: uppercase;
+}
+
+.header-cta .sign-up-button {
+    background-color: rgb(255, 128, 0);
+    color: white;
+    padding: 8px 16px;
+    border-radius: 4px;
+    text-decoration: none; 
+    font-weight: 500; 
+    font-family: 'Poppins'; 
+}
+
+.header-cta .sign-up-button:hover {
+   background-color: rgb(251, 148, 44);
+   transition-duration: 0.5s;
 }
 
 /* Hero section */
 .hero-section {
-    background: linear-gradient(
-      rgba(0, 0, 0, 0.239), 
-      rgba(0, 0, 0, 0.239)),
-   url("hero.jpg") no-repeat center center; 
+    padding-top: 200px;
     background-size: cover;
     color: white;
 }
 
 .hero-content {
-    padding: 20px;
+    padding-top: 200px;
+    background: linear-gradient(
+      rgba(0, 0, 0, 0.239), 
+      rgba(0, 0, 0, 0.239)),
+   url("hero.jpg") no-repeat center center; 
 }
 
 .hero-title .highlight{
@@ -71,8 +103,9 @@ body {
 
 /* Programs section */
 .programs-section {
-    padding: 50px;
-    font-size: 17px; 
+    padding: 150px;
+    margin-left: 70px;
+    font-size: 25px; 
     color: #444;
     display: flexbox;
 }
@@ -80,6 +113,7 @@ body {
 .programs-section h2 {
     font-weight: 900;
     margin-left: 39px;
+    margin-bottom: 10px;
 }
 
 .programs-section h2 em {
@@ -103,8 +137,7 @@ body {
 
 .programs li h3 {
     margin-bottom: 40px;
-
-    font-size: small;
+    font-size: 22px;
 }
 
 .programs li p {
@@ -128,9 +161,10 @@ body {
 
 /* Footer */
 footer {
+   color: #444;
    font-family: 'Poppins'; 
    text-align: center;
-   font-size: 14px;
+   font-size: 13px;
    padding: 50px;
    margin-bottom: 10px;
 }
