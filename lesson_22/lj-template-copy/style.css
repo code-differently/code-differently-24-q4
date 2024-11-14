@@ -1,0 +1,37 @@
+/*Header Styling*/
+.header {
+    font-size: 16px;
+    font-family: Poppins;
+    font-weight: 600;
+    display: flex;
+    justify-content: space-between;
+}
+
+.header-logo img {
+    width: 227px;
+    height: auto;
+}
+
+.header .header-top-menu {
+    list-style-type: none;
+    padding-left: 0;
+    display: flex;
+
+}
+
+.header .header-top-menu li {
+    margin: 0 10px;
+}
+
+.header .header-top-menu li a{
+    text-decoration: none;
+    color: #3c3c3c;
+}
+
+.header .header-cta {
+    display: flex;
+}
+
+.header .header-cta .sign-up-button {
+    text-decoration: none;
+}
