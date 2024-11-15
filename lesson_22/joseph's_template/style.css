@@ -21,14 +21,34 @@ body > header{
     align-items: center;
     justify-content: space-between;
     background-color: #ffffff;
-    height:150px;
-    transition: all 0.2s ease;
-    position:fixed;
-    z-index: 1;
+    height:200px;
+    position:sticky;
     width: 100%;
+    transform-origin: top; 
+    z-index: 1000;
+    transition: transform 0.3s ease;
+    transform: scale(1);
 }
+
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+  body> header{
+  clip-path: inset(100% - var(--scroll-position));
+  transform: calc(var(--scroll-position));
+}
+}
+
+
 body > header > div.header-logo > a > img{
-    width:150px;
+    width:275px;
+    padding: 0 20px
+}
+body > header > div.header-logo{
+    margin: 0;
+    margin-bottom: 70px;
+    margin-left: 10px;
 }
 body > header > div.header-cta > a{
     color: #3c3c3c !important;
@@ -48,6 +68,7 @@ body > header > ul{
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    margin-bottom: 70px
 }
 body > header > ul > *{
     margin: 10px;
@@ -86,6 +107,7 @@ body > header > div.header-cta{
     flex-direction: column;
     justify-content: center;
     width:max-content;
+    margin-bottom: 70px
 }
 body > header > div.header-cta::after{
   content: "";
@@ -105,7 +127,7 @@ body > header > div.header-cta:hover::after {
 /* top middle (hero section)*/
 body > div > div > article > section.hero-section{
     display:flex;
-    background-image: url(hero.jpg);
+    background-image: linear-gradient( rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3) ), url(hero.jpg);
     background-size: cover; 
     background-attachment: fixed; 
     background-position: center;
@@ -118,18 +140,29 @@ body > div > div > article > section.hero-section{
     position: relative;
     min-width:100vw;
     z-index: 0;   
+    background-position-y: 90px;
+}
+body > div > div > article > section.hero-section 
+> div.hero-content{
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 150px;
 }
 body > div > div > article > section.hero-section 
 > div.hero-content > div{
     background-color: #243e90;
     max-width:65%;
-    font-size: 20px;
     margin-left: 0;
     padding:40px;
     text-align: left;
     padding-left: 150px;
     padding-top: 30px;
     padding-bottom: 30px;
+    font-family: Poppins;
+    font-size: 18px;
+    line-height: 24px;
+    font-weight: 400;
+    
 }
 
 body > div > div > article > section.hero-section 
@@ -142,12 +175,13 @@ body > div > div > article > section.hero-section >
 div.hero-content > h2{
     margin-left:0;
     max-width:fit-content;
-    width:650px;
-    font-size: 42.5px;
-    line-height: 40px;
+    width:925px;
+    font-size: 55.5px;
+    line-height: 50px;
     font-family: Montserrat;
-    font-weight: 800;
+    font-weight:750;
     padding-bottom: 30px;
+    padding-right: 130px;
 }
 
 body > div > div > article > section.hero-section > div.hero-content > 
@@ -177,24 +211,28 @@ body > div > div > article > section.programs-section > ul{
     display: grid;
     grid-row-start: auto;
     gap: 10px;
-    grid-template-columns: 20% 20% 20% 20%;
+    grid-template-columns: 45% 45% 45% 45%;
     grid-template-rows: 20% 20% 20% 20%;
     align-self: center;
     justify-content: center;
     list-style-type: none;
-}
-body > div > div > article > section.programs-section > ul > li:nth-child(1){
-    grid-column-start: 1;
-}
-body > div > div > article > section.programs-section > ul > li:nth-child(2){
-    grid-column-start: 2;
 
 }
-body > div > div > article > section.programs-section > ul > li:nth-child(3){
+body > div > div > article > section.programs-section > ul > li:nth-child(1){
+    grid-column-start: 2;
+    padding-bottom:100px;
+}
+body > div > div > article > section.programs-section > ul > li:nth-child(2){
     grid-column-start: 3;
+    padding-bottom:100px;
+}
+body > div > div > article > section.programs-section > ul > li:nth-child(3){
+    grid-row-start: 3;
+    grid-column-start: 2;
 }
 body > div > div > article > section.programs-section > ul > li:nth-child(4){
-    grid-column-start: 4
+    grid-row-start: 3;
+    grid-column-start: 3;
 }
 
 body > div > div > article > section.programs-section > h2{
