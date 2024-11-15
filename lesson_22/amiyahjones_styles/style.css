@@ -134,7 +134,11 @@ body {
     margin-bottom: 70px;
 }
 
-.programs-section h2 em {
+.programs-section h2 .highlight{
+    font-style: normal;
+}
+
+/* .programs-section h2 em {
     font-style: normal;
     position: relative;
 }
@@ -153,8 +157,7 @@ body {
     bottom: -2px;
     left: 50%;
     transform: translateX(-50%);
-}
-
+} */
 
 .programs-section li {
     list-style: none;
