@@ -29,7 +29,7 @@ public class GumBallMachine {
     this.colors = colorArray[randIndex]; // Set a random color
   }
 
-  public int dispenseGumBallCount() {
+  public int getGumBallCount() {
     return this.gumBallCount;
   }
 

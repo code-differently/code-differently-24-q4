@@ -18,9 +18,9 @@ public class GumballMachineTest {
 
   @Test
   void testGumBallCount_afterDispense() throws invalidCoinInsertedException {
-    int initialCount = testGumBallMachine.dispenseGumBallCount();
+    int initialCount = testGumBallMachine.getGumBallCount();
     testGumBallMachine.dispenseGumBall(0.25); // Dispense a gumball
-    assertEquals(initialCount - 1, testGumBallMachine.dispenseGumBallCount());
+    assertEquals(initialCount - 1, testGumBallMachine.getGumBallCount());
   }
 
   @Test
@@ -41,7 +41,6 @@ public class GumballMachineTest {
         previousColor, newColor, "The color should have changed after multiple attempts");
   }
 
-  
   @Test
   void testGetGumBall_whenMachineIsEmpty() throws invalidCoinInsertedException {
     for (int i = 0; i < 10; i++) {
