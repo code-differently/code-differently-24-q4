@@ -1,0 +1,248 @@
+/*everything or parent of everything (body or all elements)*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    display:block;
+    align-items: center;
+    justify-content: center;
+    font-family: Poppins;
+    font-size: 18px;
+    line-height: 24px;
+    font-weight: 400;
+}
+/*top of page (header) */
+body > header{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #ffffff;
+    height:150px;
+    transition: all 0.2s ease;
+    position:fixed;
+    z-index: 1;
+    width: 100%;
+}
+body > header > div.header-logo > a > img{
+    width:150px;
+}
+body > header > div.header-cta > a{
+    color: #3c3c3c !important;
+    text-decoration: none;
+    font-size: 20px !important;
+    font-family: Poppins !important;
+    line-height: 16px;
+    font-weight: 600;
+    padding: 0 10px 0 10px;
+    display: block;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+body > header > ul{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+body > header > ul > *{
+    margin: 10px;
+    list-style-type: none;
+}
+body > header > ul > *::after {
+  content: "";
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 2px;
+  background-color: #f47d26;
+  transform: scaleX(0);
+  transition: transform 0.3s ease-in;
+  transform-origin: left;
+}
+
+body > header > ul > *:hover::after {
+  transform: scaleX(1);
+}
+body > header > ul > * > a{
+    color: #3c3c3c !important;
+    text-decoration: none;
+    font-size: 20px !important;
+    font-family: Poppins !important;
+    line-height: 16px;
+    font-weight: 600;
+    padding: 0 10px 0 10px;
+    display: block;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+body > header > div.header-cta{
+    display: flex; 
+    flex-direction: column;
+    justify-content: center;
+    width:max-content;
+}
+body > header > div.header-cta::after{
+  content: "";
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 2px;
+  background-color: #f47d26;
+  transform: scaleX(0);
+  transition: transform 0.3s ease-in;
+  transform-origin: left;
+}
+body > header > div.header-cta:hover::after {
+  transform: scaleX(1);
+}
+
+/* top middle (hero section)*/
+body > div > div > article > section.hero-section{
+    display:flex;
+    background-image: url(hero.jpg);
+    background-size: cover; 
+    background-attachment: fixed; 
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh; 
+    align-items: center;
+    justify-content: center;
+    color: white; 
+    text-align: center;
+    position: relative;
+    min-width:100vw;
+    z-index: 0;   
+}
+body > div > div > article > section.hero-section 
+> div.hero-content > div{
+    background-color: #243e90;
+    max-width:65%;
+    font-size: 20px;
+    margin-left: 0;
+    padding:40px;
+    text-align: left;
+    padding-left: 150px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+body > div > div > article > section.hero-section 
+> div.hero-content > div > span{
+    color: #f47d26;
+    font-weight: 600;
+}
+
+body > div > div > article > section.hero-section > 
+div.hero-content > h2{
+    margin-left:0;
+    max-width:fit-content;
+    width:650px;
+    font-size: 42.5px;
+    line-height: 40px;
+    font-family: Montserrat;
+    font-weight: 800;
+    padding-bottom: 30px;
+}
+
+body > div > div > article > section.hero-section > div.hero-content > 
+h2 > em{
+    /* display: inline-block; */
+    position: relative;
+}
+body > div > div > article > section.hero-section > div.hero-content 
+> h2 > em::after{
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 10%;
+  width: 100%;
+  height: 10px; 
+  background-color: #f47d26; 
+  z-index: -1;
+}
+
+
+/*  bottom-middle (programs section)*/
+
+body > div > div > article > section.programs-section{
+    padding: 50px
+}
+body > div > div > article > section.programs-section > ul{
+    display: grid;
+    grid-row-start: auto;
+    gap: 10px;
+    grid-template-columns: 20% 20% 20% 20%;
+    grid-template-rows: 20% 20% 20% 20%;
+    align-self: center;
+    justify-content: center;
+    list-style-type: none;
+}
+body > div > div > article > section.programs-section > ul > li:nth-child(1){
+    grid-column-start: 1;
+}
+body > div > div > article > section.programs-section > ul > li:nth-child(2){
+    grid-column-start: 2;
+
+}
+body > div > div > article > section.programs-section > ul > li:nth-child(3){
+    grid-column-start: 3;
+}
+body > div > div > article > section.programs-section > ul > li:nth-child(4){
+    grid-column-start: 4
+}
+
+body > div > div > article > section.programs-section > h2{
+    display: flex;
+    font-weight: bold;
+    font-family: Montserrat;
+    font-weight: 900;
+    font-size: 25.5px !important;
+    line-height: 31.5px !important;
+    padding-bottom: 10px;
+    color: #444444
+
+}
+body > div > div > article > section.programs-section > h2 > em{
+    padding-left: 10px;
+    position: relative;
+    font-style: inherit;
+}
+body > div > div > article > section.programs-section > h2 > em::after{
+    content: "";
+  position: absolute;
+  left: 7;
+  bottom: 10%;
+  width: 100%;
+  height: 7px; 
+  background-color: #f47d26; 
+  z-index: -1;
+  
+}
+
+body > div > div > article > section.programs-section > ul > * > p{
+    font-weight: 400;
+    color: #676767;
+}
+
+
+
+body > div > div > article > section.programs-section > ul > * > h3{
+        font-size: 18.7px;
+        line-height: 27.2px;
+       color: #444444;
+       padding-bottom: 25px;
+        
+}
+
+
+/* footer (bottom of the page)*/
+body > footer {
+    display:flex;
+    justify-content: center;
+}
