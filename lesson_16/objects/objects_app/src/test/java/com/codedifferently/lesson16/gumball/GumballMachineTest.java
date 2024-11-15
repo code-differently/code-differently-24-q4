@@ -18,9 +18,9 @@ public class GumballMachineTest {
 
   @Test
   void testGumBallCount_afterDispense() throws invalidCoinInsertedException {
-    int initialCount = testGumBallMachine.getGumBallCount();
-    testGumBallMachine.getGumBall(0.25); // Dispense a gumball
-    assertEquals(initialCount - 1, testGumBallMachine.getGumBallCount());
+    int initialCount = testGumBallMachine.dispenseGumBallCount();
+    testGumBallMachine.dispenseGumBall(0.25); // Dispense a gumball
+    assertEquals(initialCount - 1, testGumBallMachine.dispenseGumBallCount());
   }
 
   @Test
@@ -41,22 +41,16 @@ public class GumballMachineTest {
         previousColor, newColor, "The color should have changed after multiple attempts");
   }
 
-  @Test
-  void testGetGumBall_whenValidQuarter() throws invalidCoinInsertedException {
-    int previousCount = testGumBallMachine.getGumBallCount();
-    testGumBallMachine.getGumBall(0.25);
-    assertEquals(previousCount - 1, testGumBallMachine.getGumBallCount());
-  }
-
+  
   @Test
   void testGetGumBall_whenMachineIsEmpty() throws invalidCoinInsertedException {
     for (int i = 0; i < 10; i++) {
-      testGumBallMachine.getGumBall(0.25); // Dispense all gumballs
+      testGumBallMachine.dispenseGumBall(0.25); // Dispense all gumballs
     }
     assertThrows(
         invalidCoinInsertedException.class,
         () -> {
-          testGumBallMachine.getGumBall(0.25); // Try to dispense from an empty machine
+          testGumBallMachine.dispenseGumBall(0.25); // Try to dispense from an empty machine
         });
   }
 
@@ -65,7 +59,7 @@ public class GumballMachineTest {
     assertThrows(
         invalidCoinInsertedException.class,
         () -> {
-          testGumBallMachine.getGumBall(0.01); // Try to insert an invalid coin
+          testGumBallMachine.dispenseGumBall(0.01); // Try to insert an invalid coin
         });
   }
 

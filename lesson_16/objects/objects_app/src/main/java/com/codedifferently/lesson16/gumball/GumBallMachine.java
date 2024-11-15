@@ -29,11 +29,11 @@ public class GumBallMachine {
     this.colors = colorArray[randIndex]; // Set a random color
   }
 
-  public int getGumBallCount() {
+  public int dispenseGumBallCount() {
     return this.gumBallCount;
   }
 
-  public void getGumBall(double quarter) throws invalidCoinInsertedException {
+  public void dispenseGumBall(double quarter) throws invalidCoinInsertedException {
     if (quarter != 0.25) {
       throw new invalidCoinInsertedException("You need a quarter!");
     }
