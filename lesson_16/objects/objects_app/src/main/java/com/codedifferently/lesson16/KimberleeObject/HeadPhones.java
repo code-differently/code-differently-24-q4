@@ -9,9 +9,9 @@ public class HeadPhones {
   private HeadPhoneColor headPhoneColor = HeadPhoneColor.BLACK;
   private boolean isWireless = true;
   private String brands = "Beats";
-          boolean isPreferredBrand = BrandUtils.isPreferredBrand(brands);
+  boolean isPreferredBrand = BrandUtils.isPreferredBrand(brands);
   private boolean isConnectedToBluetooth = false;
-  
+
   public enum BoostMode {
     BASS_BOOST,
     VOCAL_BOOST,
@@ -54,8 +54,6 @@ public class HeadPhones {
     brands[3] = "SkullCandy";
     brands[4] = "Juicy";
   }
-
-  
 
   public int getVolume() {
     return volume;
