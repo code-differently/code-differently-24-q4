@@ -3,6 +3,14 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    vertical-align: baseline;
+}
+
 body, ul, li, a {
     margin: 0;
     padding: 0;
@@ -14,6 +22,10 @@ body {
     font-family: 'Poppins', sans-serif;
     margin: 0;
     padding: 0;
+}
+
+body:hover {
+  animation: bounce 2s infinite; 
 }
 
 header {
@@ -60,7 +72,7 @@ header {
 
 .sign-up-button {
     color: white;
-    background-color: orange;
+    background-color: darkorange;
     font-weight: 600;
     font-size: 16px;
     padding: 10px 15px;
@@ -70,7 +82,7 @@ header {
 
 .header-top-menu li a:hover, 
 .sign-up-button:hover {
-    background-color: orange;
+    background-color: darkorange;
     color: white;
 }
 
@@ -136,7 +148,7 @@ header {
     font-size: 46px; 
     font-weight: 700;
     margin-bottom: 20px;
-    width: 800px;
+    width: 1000px;
 }
 
 .hero-text {
@@ -146,20 +158,134 @@ header {
     background-color: midnightblue;
     color: white;
     padding: 10px 70px;
-    width: 800px;
+    width: 1000px;
     margin-left: 0;
     position: relative;
     z-index: 2;
 }
 
 .hero-text span {
-    color: orange;
+    color: darkorange;
 }
 
 .highlight {
     font-weight: bold;
     text-decoration: underline;
-    text-decoration-color: orange;
+    text-decoration-color: darkorange;
     text-decoration-thickness: 8px;
+}
+
+.programs-section {
+    margin-left: 40px;
+}
+
+.programs-section .highlight {
+    text-decoration: underline; 
+    text-decoration-color: darkorange; 
+    text-decoration-thickness: 8px;
+}
+
+.programs-section h2 {
+    font-weight: bold; 
+    font-size: 30px;
+    color: #444444;
+}
+
+.programs-section ul {
+    margin-left: 20px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    list-style: none;
+    padding: 0;
+}
+
+.program {
+    padding: 20px;
+    border: 1px solid transparent;
+}
+
+.programs li:nth-child(1)::after {
+    content: "Info"; 
+    display: inline-block; 
+    background-color: white;
+    color: black;
+    padding: 10px 15px;
+    border: 2px solid black;
+    border-radius: 5px;
+    margin-top: 10px;
+    cursor: pointer;
+    text-align: center;
+    font-size: 16px;
+}
+
+.programs li:nth-child(2)::after {
+    content: "Info"; 
+    display: inline-block;
+    background-color: white;
+    color: black;
+    border: 2px solid black;
+    padding: 10px 15px;
+    border-radius: 5px;
+    margin-right: 10px; 
+    cursor: pointer;
+    text-align: center;
+    font-size: 16px;
+}
+
+.programs .program:nth-child(3)::after {
+    content: "Support Us"; 
+    display: inline-block;
+    background-color: white;
+    color: black;
+    border: 2px solid black;
+    padding: 10px 15px;
+    border-radius: 5px;
+    margin-left: 10px; 
+    cursor: pointer;
+    text-align: center;
+    font-size: 16px;
+}
+
+.programs li:nth-child(4)::after {
+    content: "Learn More"; 
+    display: inline-block;
+    background-color: white;
+    color: black;
+    border: 2px solid black;
+    padding: 10px 15px;
+    border-radius: 5px;
+    margin-left: 10px; 
+    cursor: pointer;
+    text-align: center;
+    font-size: 16px;
+}
+
+.programs li:nth-child(1):hover::after {
+    background-color: darkorange;
+}
+
+.programs li:nth-child(2):hover::after {
+    background-color: darkorange;
+}
+
+.programs li:nth-child(3):hover::after {
+    background-color: darkorange;
+}
+
+.programs li:nth-child(4):hover::after {
+    background-color: darkorange;
+}
+
+.programs li {
+    position: relative;
+}
+
+.footer {
+    border-top: 2px solid darkorange;
+    text-align: center;
+    color: black;
+    margin: 20px;
+    padding: 40px;
 }
 
