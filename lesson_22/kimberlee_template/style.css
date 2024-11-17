@@ -219,18 +219,42 @@ header {
     font-size: 16px;
 }
 
-.programs li:nth-child(2)::after {
-    content: "Info"; 
+.programs li:nth-child(2) {
+    position: relative;
+    padding-bottom: 80px;
+}
+
+.programs li:nth-child(2)::before {
+    content: "Info";
     display: inline-block;
-    background-color: white;
-    color: black;
-    border: 2px solid black;
+    position: absolute;
+    left: 20px;
+    bottom: 20px;
     padding: 10px 15px;
-    border-radius: 5px;
-    margin-right: 10px; 
-    cursor: pointer;
     text-align: center;
     font-size: 16px;
+    background-color: white;
+    border: 2px solid black;
+    border-radius: 5px;
+    color: black;
+    cursor: pointer;
+}
+
+.programs li:nth-child(2)::after {
+    content: "FAQ";
+    display: inline-block;
+    justify-content: space-between;
+    position: absolute;
+    left: 100px;
+    bottom: 20px;
+    padding: 10px 15px;
+    text-align: center;
+    font-size: 16px;
+    background-color: white;
+    border: 2px solid black;
+    border-radius: 5px;
+    color: black;
+    cursor: pointer;
 }
 
 .programs .program:nth-child(3)::after {
@@ -265,7 +289,8 @@ header {
     background-color: darkorange;
 }
 
-.programs li:nth-child(2):hover::after {
+.programs li:nth-child(2):hover::after,
+.programs li:nth-child(2):hover::before {
     background-color: darkorange;
 }
 
