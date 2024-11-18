@@ -35,6 +35,12 @@ body {
     margin: 0 15px;
 }
 
+.header-top-menu li:first-child {
+    text-decoration: underline;
+    text-decoration-color: #f47d26;
+    text-underline-offset: 8px;
+}
+
 .header-top-menu a {
     color:  #444;
     text-decoration: none;
@@ -87,10 +93,9 @@ body {
 
 .hero-content {
     padding-top: 200px;
-    /* position: relative; */
-    /* padding-top: 180px; */
-    padding-right: 20px;
+    padding-right: 250px;
     text-align: left;
+    line-height: 5px;
 }
 
 .hero-title {
@@ -189,6 +194,26 @@ body {
     font-size: 18px;
     font-weight: lighter;
     margin-bottom: 25px;
+}
+
+.hero-content {
+    padding-top: 200px;
+    padding-right: 0;
+    text-align: left;
+    line-height: 5px;
+}
+
+.hero-text {
+    padding: 15px;
+    left: 0;
+}
+
+.header-top-menu {
+    display: none;
+}
+
+.header-cta {
+    margin-left: auto;
 }
 }
 
