@@ -169,6 +169,7 @@ a {
 
 .programs-section h2 .highlight{
     font-weight: 1000;
+    font-size: larger;
     margin-bottom: 1px;
 }
 
@@ -179,7 +180,7 @@ a {
 .programs {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 30px;
+    gap: 15px;
 }
 
 .programs {
@@ -189,9 +190,9 @@ a {
 
 .program {
     list-style-type: none; /* Also ensures .program items don't have bullets */
+    position: relative; /* Ensure the program items are positioned relative */
+    padding-bottom: 40px; /* Give some space for the buttons */
 }
-
-
 
 .program {
     background-color: #fff;
@@ -210,6 +211,182 @@ a {
     font-size: 16px;
     line-height: 1.6;
     color: #555;
+    margin-bottom: 50px;
+}
+
+/* Info Button (1000 Kids Coding) */
+.program:nth-child(1)::after {
+    content: 'Info';
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    background-color: #ff7f32;
+    color: white;
+    padding: 8px 16px;
+    margin-right: 10px;
+    text-align: center;
+    border-radius: 5px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.program:nth-child(1)::after:hover {
+    background-color: #ff9d60;
+    transform: scale(1.05);
+}
+
+/* Return Ready Program - Buttons Styling */
+.program:nth-child(2) {
+    position: relative; /* Ensure the program container has position relative */
+    padding-bottom: 60px; /* Give space for the buttons */
+}
+
+/* Info Button (for Return Ready) */
+.program:nth-child(2) .info-btn::after {
+    content: 'Info';
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    background-color: #007BFF;
+    color: white;
+    padding: 8px 16px;
+    margin-right: 10px;
+    text-align: center;
+    border-radius: 5px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    z-index: 2; /* Ensure the button is on top */
+}
+
+.program:nth-child(2) .info-btn::after:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
+
+/* FAQ Button */
+.program:nth-child(2) .faq-btn::after {
+    content: 'FAQ';
+    position: absolute;
+    bottom: 10px;
+    left: 90px; /* Position this button to the right of the "Info" button */
+    background-color: #28a745;
+    color: white;
+    padding: 8px 16px;
+    margin-right: 10px;
+    text-align: center;
+    border-radius: 5px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    z-index: 2; /* Ensure the button is on top */
+}
+
+.program:nth-child(2) .faq-btn::after:hover {
+    background-color: #218838;
+    transform: scale(1.05);
+}
+
+/* Register Your Interest Button */
+.program:nth-child(2) .register-btn::after {
+    content: 'Register Your Interest';
+    position: absolute;
+    bottom: 10px;
+    left: 180px; /* Position this button to the right of the FAQ button */
+    background-color: #17a2b8;
+    color: white;
+    padding: 8px 16px;
+    margin-right: 10px;
+    text-align: center;
+    border-radius: 5px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    z-index: 2; /* Ensure the button is on top */
+}
+
+.program:nth-child(2) .register-btn::after:hover {
+    background-color: #138496;
+    transform: scale(1.05);
+}
+
+/* Support Us Button (Pipeline DevShops) */
+.program:nth-child(3)::after {
+    content: 'Support Us';
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    background-color: #6c757d;
+    color: white;
+    padding: 8px 16px;
+    margin-right: 10px;
+    text-align: center;
+    border-radius: 5px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.program:nth-child(3)::after:hover {
+    background-color: #5a6268;
+    transform: scale(1.05);
+}
+
+/* Learn More Button (Platform Programs) */
+.program:nth-child(4)::after {
+    content: 'Learn More';
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    background-color: #007bff;
+    color: white;
+    padding: 8px 16px;
+    margin-right: 10px;
+    text-align: center;
+    border-radius: 5px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.program:nth-child(4)::after:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
+
+/* Layout Adjustments for Buttons */
+.program:nth-child(2)::after,
+.program:nth-child(3)::after,
+.program:nth-child(4)::after {
+    left: 0;
+}
+
+/* Make Buttons More Compact */
+.program:nth-child(2)::after,
+.program:nth-child(3)::after,
+.program:nth-child(4)::after {
+    padding: 8px 16px;
+    margin-right: 10px;
+}
+
+.program:nth-child(2)::after:hover,
+.program:nth-child(3)::after:hover,
+.program:nth-child(4)::after:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
 }
 
 .programs-section .program:hover {
