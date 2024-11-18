@@ -25,7 +25,7 @@ body {
 
 .header .logo img {
     width: 250px;
-    /* width: 150px; */
+    height: auto; 
 }
 
 .nav ul {
@@ -50,7 +50,8 @@ body {
 
 /* Hero Section */
 .hero {
-    background-image: url('hero-image.jpg');
+    background-image: url('hero.jpg');
+    background-attachment: fixed;
     background-size: cover;
     background-position: center;
     color: white;
@@ -166,12 +167,10 @@ body {
     display: box;
     font-size: 40pt;
      padding: 2rem 0;
-    /*margin-left: 3rem;*/
     text-align: left;
     width: 1100px;
     line-height: 42pt;
 }
-
 
 .hero-title{
     background-color: #243e90 !important;
@@ -184,12 +183,15 @@ body {
 }
 
 .thick {
-  text-decoration-line: underline;
-  text-decoration-style: solid;
-  text-decoration-color: #f47d26;;
-  text-decoration-thickness: 10px;
+   text-decoration-skip-ink: none; 
+   text-decoration-line: underline; 
+   text-decoration-style: solid; 
+   text-decoration-color: #f47d26;
+   text-decoration-thickness: 12px;
+   text-underline-offset: -6px;   
 }
 
-.text{
-    vertical-align:-6px;
-}
+
+
+
+
