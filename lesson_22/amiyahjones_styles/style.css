@@ -14,7 +14,7 @@ body {
     text-decoration-skip-ink: none;
     text-decoration: underline;
     text-decoration-color: #f47d26;
-    text-decoration-thickness: 9px;
+    text-decoration-thickness: 10px;
     text-underline-offset: -4px;
 }
 
@@ -79,7 +79,7 @@ body {
 /* Hero section */
 
 .hero-section {
-    margin-top: 40px;
+    position: relative;
     display: flex;
     background-image: linear-gradient(rgba(0, 0, 0, 0.239),
             rgba(0, 0, 0, 0.239)),
@@ -96,6 +96,7 @@ body {
     min-width: 10%;
     z-index: 0;
     background-position-y: 90px;
+    padding-top: 70px;
 }
 
 .hero-content {
@@ -171,6 +172,16 @@ body {
     font-weight: 400;
 }
 
+/* Footer */
+footer {
+    color: #444;
+    font-family: 'Poppins';
+    text-align: center;
+    font-size: 13px;
+    padding: 50px;
+    margin-bottom: 10px;
+}
+
 @media (min-width: 30em) and (max-width: 50em) {
     .programs li p {
         left: 0;
@@ -222,13 +233,4 @@ body {
     }
 }
 
-/* Footer */
-footer {
-    color: #444;
-    font-family: 'Poppins';
-    text-align: center;
-    font-size: 13px;
-    padding: 50px;
-    margin-bottom: 10px;
-}
 
