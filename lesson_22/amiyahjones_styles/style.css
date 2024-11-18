@@ -209,6 +209,10 @@ footer {
 }
 
 @media (width <=1250px) {
+    .hero-section {
+        min-width: 300px;
+    }
+
     .programs {
         grid-template-columns: 1fr;
     }
@@ -231,6 +235,10 @@ footer {
         margin-bottom: 25px;
     }
 
+    .programs li p {
+        margin-right: 70px;
+    }
+
     .hero-content {
         padding-top: 200px;
         padding-right: 0;
@@ -245,7 +253,15 @@ footer {
 
     .header-top-menu {
         display: none;
+        justify-content: space-between;
+        left: 0;
     }
+
+    .header-logo img {
+        height: 50px;
+        margin-left: 0;
+    }
+
 
     .header-cta {
         margin-left: auto;
