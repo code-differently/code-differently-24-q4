@@ -4,7 +4,11 @@
     padding: 0;
     box-sizing: border-box;
 }
-
+#main{
+    width: fit-content;
+    height: fit-content;    
+    box-shadow: 100px 100px;
+}
 body{
     display:block;
     align-items: center;
@@ -22,7 +26,7 @@ body > header{
     justify-content: space-between;
     background-color: #ffffff;
     height:200px;
-    position:sticky;
+    position:fixed;
     width: 100%;
     transform-origin: top; 
     z-index: 1000;
@@ -126,6 +130,7 @@ body > header > div.header-cta:hover::after {
 
 /* top middle (hero section)*/
 body > div > div > article > section.hero-section{
+    padding-top: 350px;
     display:flex;
     background-image: linear-gradient( rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3) ), url(hero.jpg);
     background-size: cover; 
@@ -262,6 +267,111 @@ body > div > div > article > section.programs-section > h2 > em::after{
   z-index: -1;
   
 }
+body > div > div > article > section.programs-section > ul > li:nth-child(1)::after{
+    content: "Info";
+    text-align: center;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    padding-top: 10px;
+    width:50px;
+    height:20px;
+    border-color: rgba(0, 0, 0, 0.75); 
+    border: 2px solid;
+    padding: 10px;
+    font-size: 12px;
+    box-shadow: 0 20px 38px rgba(0, 0, 0, 0.16) !important;
+    border-radius: 4px !important;
+    -webkit-border-radius: 4px !important;
+    -webkit-transition: opacity .45s cubic-bezier(0.25, 1, 0.33, 1), transform .45s cubic-bezier(0.25, 1, 0.33, 1), border-color .45s cubic-bezier(0.25, 1, 0.33, 1), color .45s cubic-bezier(0.25, 1, 0.33, 1), background-color .45s cubic-bezier(0.25, 1, 0.33, 1), box-shadow .45s cubic-bezier(0.25, 1, 0.33, 1);
+    transition: opacity .45s cubic-bezier(0.25, 1, 0.33, 1), transform .45s cubic-bezier(0.25, 1, 0.33, 1), border-color .45s cubic-bezier(0.25, 1, 0.33, 1), color .45s cubic-bezier(0.25, 1, 0.33, 1), background-color .45s cubic-bezier(0.25, 1, 0.33, 1), box-shadow .45s cubic-bezier(0.25, 1, 0.33, 1);
+}
+body > div > div > article > section.programs-section > ul > li:nth-child(2)::after{
+    content: "Info";
+    text-align: center;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    padding-top: 10px;
+    width:50px;
+    height:20px;
+    border-color: rgba(0, 0, 0, 0.75); 
+    border: 2px solid;
+    padding: 10px;
+    font-size: 12px;
+    box-shadow: 0 20px 38px rgba(0, 0, 0, 0.16) !important;
+    border-radius: 4px !important;
+    -webkit-border-radius: 4px !important;
+    -webkit-transition: opacity .45s cubic-bezier(0.25, 1, 0.33, 1), transform .45s cubic-bezier(0.25, 1, 0.33, 1), border-color .45s cubic-bezier(0.25, 1, 0.33, 1), color .45s cubic-bezier(0.25, 1, 0.33, 1), background-color .45s cubic-bezier(0.25, 1, 0.33, 1), box-shadow .45s cubic-bezier(0.25, 1, 0.33, 1);
+    transition: opacity .45s cubic-bezier(0.25, 1, 0.33, 1), transform .45s cubic-bezier(0.25, 1, 0.33, 1), border-color .45s cubic-bezier(0.25, 1, 0.33, 1), color .45s cubic-bezier(0.25, 1, 0.33, 1), background-color .45s cubic-bezier(0.25, 1, 0.33, 1), box-shadow .45s cubic-bezier(0.25, 1, 0.33, 1);
+}
+body > div > div > article > section.programs-section > ul > li:nth-child(2)::before{
+    content: "FAQ";
+    text-align: center;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    padding-top: 10px;
+    width:50px;
+    height:20px;
+    border-color: rgba(0, 0, 0, 0.75); 
+    border: 2px solid;
+    padding: 10px;
+    font-size: 12px;
+    box-shadow: 0 20px 38px rgba(0, 0, 0, 0.16) !important;
+    border-radius: 4px !important;
+    -webkit-border-radius: 4px !important;
+    -webkit-transition: opacity .45s cubic-bezier(0.25, 1, 0.33, 1), transform .45s cubic-bezier(0.25, 1, 0.33, 1), border-color .45s cubic-bezier(0.25, 1, 0.33, 1), color .45s cubic-bezier(0.25, 1, 0.33, 1), background-color .45s cubic-bezier(0.25, 1, 0.33, 1), box-shadow .45s cubic-bezier(0.25, 1, 0.33, 1);
+    transition: opacity .45s cubic-bezier(0.25, 1, 0.33, 1), transform .45s cubic-bezier(0.25, 1, 0.33, 1), border-color .45s cubic-bezier(0.25, 1, 0.33, 1), color .45s cubic-bezier(0.25, 1, 0.33, 1), background-color .45s cubic-bezier(0.25, 1, 0.33, 1), box-shadow .45s cubic-bezier(0.25, 1, 0.33, 1);
+}
+body > div > div > article > section.programs-section > ul > li:nth-child(3)::after{
+    content: "Support Us";
+    text-align: center;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    padding-top: 10px;
+    width:fit-content;
+    height:20px;
+    border-color: rgba(0, 0, 0, 0.75); 
+    border: 2px solid;
+    padding: 10px;
+    font-size: 12px;
+    box-shadow: 0 20px 38px rgba(0, 0, 0, 0.16) !important;
+    border-radius: 4px !important;
+    -webkit-border-radius: 4px !important;
+    -webkit-transition: opacity .45s cubic-bezier(0.25, 1, 0.33, 1), transform .45s cubic-bezier(0.25, 1, 0.33, 1), border-color .45s cubic-bezier(0.25, 1, 0.33, 1), color .45s cubic-bezier(0.25, 1, 0.33, 1), background-color .45s cubic-bezier(0.25, 1, 0.33, 1), box-shadow .45s cubic-bezier(0.25, 1, 0.33, 1);
+    transition: opacity .45s cubic-bezier(0.25, 1, 0.33, 1), transform .45s cubic-bezier(0.25, 1, 0.33, 1), border-color .45s cubic-bezier(0.25, 1, 0.33, 1), color .45s cubic-bezier(0.25, 1, 0.33, 1), background-color .45s cubic-bezier(0.25, 1, 0.33, 1), box-shadow .45s cubic-bezier(0.25, 1, 0.33, 1);
+}
+
+body > div > div > article > section.programs-section > ul > li:nth-child(4)::after{
+    content: "Learn More";
+    text-align: center;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    padding-top: 10px;
+    width:fit-content;
+    height:20px;
+    border-color: rgba(0, 0, 0, 0.75); 
+    border: 2px solid;
+    padding: 10px;
+    font-size: 12px;
+    box-shadow: 0 20px 38px rgba(0, 0, 0, 0.16) !important;
+    border-radius: 4px !important;
+    -webkit-border-radius: 4px !important;
+    -webkit-transition: opacity .45s cubic-bezier(0.25, 1, 0.33, 1), transform .45s cubic-bezier(0.25, 1, 0.33, 1), border-color .45s cubic-bezier(0.25, 1, 0.33, 1), color .45s cubic-bezier(0.25, 1, 0.33, 1), background-color .45s cubic-bezier(0.25, 1, 0.33, 1), box-shadow .45s cubic-bezier(0.25, 1, 0.33, 1);
+    transition: opacity .45s cubic-bezier(0.25, 1, 0.33, 1), transform .45s cubic-bezier(0.25, 1, 0.33, 1), border-color .45s cubic-bezier(0.25, 1, 0.33, 1), color .45s cubic-bezier(0.25, 1, 0.33, 1), background-color .45s cubic-bezier(0.25, 1, 0.33, 1), box-shadow .45s cubic-bezier(0.25, 1, 0.33, 1);
+}
+
+
+
+ body > div > div > article > section.programs-section > ul > *:hover::after{
+    margin-right: 10px; 
+    background-color: rgb(244, 125, 38); 
+    visibility: visible;
+} 
+
 
 body > div > div > article > section.programs-section > ul > * > p{
     font-weight: 400;
@@ -283,4 +393,6 @@ body > div > div > article > section.programs-section > ul > * > h3{
 body > footer {
     display:flex;
     justify-content: center;
+    font-size: 14px;
+    z-index: -3;
 }
