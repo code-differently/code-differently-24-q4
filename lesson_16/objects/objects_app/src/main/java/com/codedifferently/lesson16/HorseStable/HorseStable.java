@@ -1,4 +1,4 @@
-package com.codedifferently.lesson16.HorseStable;
+package com.codedifferently.lesson16.horseStable;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -64,11 +64,17 @@ public class HorseStable {
     horses.add(horseName);
   }
 
-  public void displayHorses() {
-    if (horses.isEmpty()) {
-      System.out.println("No horses in the stable.");
-      return;
+  public void removeHorse(String horseName) {
+    if (!horses.contains(horseName)) {
+      throw new IllegalArgumentException("Horse not found in the stable.");
     }
-    System.out.println("There are " + horses.size() + " horses in " + name + ".");
+    horses.remove(horseName);
+  }
+
+  public String displayHorses() {
+    if (horses.isEmpty()) {
+      return "No horses in the stable.";
+    }
+    return "There are " + horses.size() + " horses in " + name + ".";
   }
 }
