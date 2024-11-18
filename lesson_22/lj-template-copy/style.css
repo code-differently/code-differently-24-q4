@@ -40,10 +40,13 @@ body {
 .header .header-top-menu li {
     margin: 0 10px;
     width: 100%;
+    padding-bottom: 2px;
     text-align: center;
 }
 
 .header-top-menu li:hover, .header-top-menu li:active {
+    padding-top: 2px;
+    padding-bottom: 0;
     border-bottom-style: solid;
     border-bottom-color: #f47d26;
 }
