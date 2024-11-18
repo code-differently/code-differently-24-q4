@@ -1,4 +1,4 @@
- .header-logo img[src="logo.png"] {
+.header-logo img[src="logo.png"] {
     width: 220px;
     height: 70px;
 }
@@ -55,6 +55,8 @@ a {
 .header-top-menu {
     display: flex;
     list-style: none;
+    flex-wrap: wrap;
+    gap: 20px;
 }
 
 .header-top-menu li {
@@ -95,7 +97,7 @@ a {
     background-position: center;
     height: 500px;
     display: flex;
-    justify-content: center;
+    justify-content: left;
     align-items: center;
 }
 
@@ -112,23 +114,45 @@ a {
     position: relative;
     text-align: left;
     color: white;
-    max-width: 800px;
+    max-width: 700px;
+}
+
+.hero-content span{
+    color: #ff7f32;
 }
 
 .hero-title {
     font-size: 36px;
     font-weight: 800;
-    margin-bottom: 20px;
-}
-
-.hero-title em {
-    color: #ff7f32;
+    margin-bottom: 5px;
 }
 
 .hero-text {
-    font-size: 18px;
+    font-size: 21px;
     font-weight: 400;
     line-height: 1.8;
+    background: rgb(33, 44, 165);
+}
+
+.highlight {
+    font-style: normal;
+    font-weight: 700; /* Keep the text bold */
+    position: relative; /* Needed for positioning the pseudo-element */
+    display: inline-block; /* Ensures the pseudo-element wraps just the text */
+    z-index: 1;
+}
+
+.highlight::before {
+    content: ''; /* Create an empty pseudo-element */
+    position: absolute;
+    top: 74%; /* Vertically center the line relative to the text */
+    left: -1.5;
+    width: 103%;
+    height: .30em; /* Thickness of the line */
+    background-color: #ff7f32; /* Orange color */
+    transform: translateY(-50%); /* Fine-tune the centering of the line */
+    pointer-events: none; /* Ensure the line does not interfere with clicks or interaction */
+    z-index: -1; /* Place the line behind the text */
 }
 
 /* Programs Section */
@@ -138,14 +162,18 @@ a {
     background-color: #ffffff;
 }
 
-.programs-section h2 {
-    font-size: 25px;
-    font-weight: 700;
-    margin-bottom: 30px;
+.programs-section h2{
+    font-weight: 1000;
+    margin-bottom: 1px;
+}
+
+.programs-section h2 .highlight{
+    font-weight: 1000;
+    margin-bottom: 1px;
 }
 
 .programs-section .highlight {
-    color: #ff7f32;
+    font-weight: 700; /* Optional: Make the highlighted text bold to match the surrounding text style */
 }
 
 .programs {
@@ -153,6 +181,17 @@ a {
     grid-template-columns: repeat(2, 1fr);
     gap: 30px;
 }
+
+.programs {
+    list-style-type: none; /* Removes bullets from all li elements inside .programs */
+    padding-left: 0; /* Removes default padding */
+}
+
+.program {
+    list-style-type: none; /* Also ensures .program items don't have bullets */
+}
+
+
 
 .program {
     background-color: #fff;
@@ -164,7 +203,7 @@ a {
 .program h3 {
     font-size: 22px;
     font-weight: 700;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
 }
 
 .program p {
@@ -179,8 +218,8 @@ a {
 
 /* Footer */
 .footer {
-    background-color: #0a1f2c;
-    color: white;
+    background-color: white;
+    color: black;
     text-align: center;
     padding: 20px;
     font-size: 14px;
@@ -198,6 +237,12 @@ a {
         margin-top: 20px;
         flex-direction: row;
         align-items: flex-start;
+        justify-content: center; /* Center items horizontally */
+        gap: 10px; /* Reduce gap for smaller screens */
+    }
+
+    .header-top-menu li a {
+        font-size: 14px; /* Reduce font size for smaller screens */
     }
 
     .header-top-menu li {
