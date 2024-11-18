@@ -134,7 +134,7 @@ body > div > div > article > section.hero-section{
     display:flex;
     background-image: linear-gradient( rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3) ), url(hero.jpg);
     background-size: cover; 
-    background-attachment: fixed; 
+    background-attachment: absolute; 
     background-position: center;
     background-repeat: no-repeat;
     height: 100vh; 
@@ -152,6 +152,7 @@ body > div > div > article > section.hero-section
     display: flex;
     flex-direction: column;
     padding-bottom: 150px;
+    position: sticky;
 }
 body > div > div > article > section.hero-section 
 > div.hero-content > div{
@@ -201,7 +202,7 @@ body > div > div > article > section.hero-section > div.hero-content
   left: 0;
   bottom: 10%;
   width: 100%;
-  height: 10px; 
+  height: 15px; 
   background-color: #f47d26; 
   z-index: -1;
 }
@@ -257,7 +258,7 @@ body > div > div > article > section.programs-section > h2 > em{
     font-style: inherit;
 }
 body > div > div > article > section.programs-section > h2 > em::after{
-    content: "";
+  content: "";
   position: absolute;
   left: 7;
   bottom: 10%;
@@ -370,7 +371,24 @@ body > div > div > article > section.programs-section > ul > li:nth-child(4)::af
     margin-right: 10px; 
     background-color: rgb(244, 125, 38); 
     visibility: visible;
+    transform:translateY(-2px);
+    border-color:rgb(244, 125, 38) ;
+    color: white;
+    border-radius: 4px !important;
+    opacity: 1 !important;
+
 } 
+body > div > div > article > section.programs-section > ul > *:hover::before{
+    margin-right: 10px; 
+    background-color: rgb(244, 125, 38); 
+    visibility: visible;
+    transform:translateY(-2px);
+    color: white;
+    border-color:rgb(244, 125, 38);
+    border-radius: 4px !important;
+    opacity: 1 !important;
+} 
+
 
 
 body > div > div > article > section.programs-section > ul > * > p{
