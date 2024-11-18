@@ -145,23 +145,26 @@ header {
 }
 
 .hero-title {
-    font-size: 46px; 
+    font-size: 37.8px; 
     font-weight: 700;
-    margin-bottom: 20px;
-    width: 1000px;
+    margin: 0px 0px 7px;
+    width: 755px;
+    line-height: 42px;
 }
 
 .hero-text {
-    font-size: 24px;
+    font-size: 18px;
     line-height: 30px;
     font-weight: 400;
     background-color: midnightblue;
     color: white;
     padding: 10px 70px;
-    width: 1000px;
-    margin-left: 0;
+    width: 755px;
+    top: 20px;
+    left: 0;
     position: relative;
     z-index: 2;
+    opacity: 1;
 }
 
 .hero-text span {
@@ -170,9 +173,14 @@ header {
 
 .highlight {
     font-weight: bold;
-    text-decoration: underline;
-    text-decoration-color: darkorange;
-    text-decoration-thickness: 8px;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 90%, darkorange 10%);
+    border-bottom: 0px solid rgba(0, 0, 0, 0);
+    padding-bottom: 5px;
+    padding-top: 50px;
+    background-position: 0 105%;
+    background-size: 100% 200%;
+    
+    
 }
 
 .programs-section {
