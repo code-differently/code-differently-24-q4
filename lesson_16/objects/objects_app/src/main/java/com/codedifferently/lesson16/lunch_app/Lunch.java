@@ -1,4 +1,4 @@
-package com.codedifferently.lesson16.lunch;
+package com.codedifferently.lesson16.lunch_app;
 
 import java.util.ArrayList;
 
