@@ -1,6 +1,10 @@
 body{
     margin: 0;
 }
+body > header > ul > li:nth-child(1) > a, body > header > ul > li:nth-child(2) > a, body > header > ul > li:nth-child(3) > a, body > header > div.header-cta > a{
+    text-decoration: none;
+    color: #3c3c3c;
+}
 img{
 height: 75px;
 width: auto;
@@ -10,6 +14,7 @@ margin-right: 37px;
 .header{
     padding-left: 28px;
     padding-right: 28px;
+    text-decoration: none;
 }
 .header-top-menu{
     margin-top: 28px;
@@ -17,11 +22,13 @@ margin-right: 37px;
     margin-left: 336px;
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    gap: 200px;
     position: relative;
     top: -60px;
     font-family: Poppins; 
     font-weight: 600;
+    color: #3c3c3c;
+    text-decoration: none;
 }
 .header-cta{
     font-family: Poppins;
@@ -35,19 +42,54 @@ p{
     font-size: 18px;
 }
 .highlight{
-    border-bottom: 20px #f47d26 solid;
-    bottom: -10px;
+    position: relative;
+    display:inline-block;
+    font-style: normal;
+    z-index: 2;
+}
+body > div > div > article > section.hero-section > div.hero-content > h2 > em::after{
+    content: '';
+    left: 0;
+    position:absolute;
+    bottom: 5px;
+    width: 100%;
+    height: 15px;
+    background-color: #f47d26; 
+    z-index: -1;
+}
+body > div > div > article > section.programs-section > h2 > em::after{
+    content: '';
+    left: 0;
+    position:absolute;
+    bottom: 4px;
+    width: 100%;
+    height: 9px;
+    background-color: #f47d26; 
+    z-index: -1;
+}
+body > div > div > article > section.programs-section > h2{
+    font-weight: 900;
+    color: #444;
+    font-size: 34px;
+    margin-left: 110px;
 }
 span{
     color: #f47d26;
+    font-weight: 600;
 }
 .hero-text{
     font-family: Poppins;
     font-size: 20px;
+    font-weight: 200;
+    line-height: 24px;
     color: white;
     width: auto;
-    margin-left: 150px;
-    margin-right: 570px;
+    margin-right: 500px;
+    background-color: #243e90;
+    padding-left: 150px;
+    padding-top: 22px;
+    padding-bottom: 22px;
+    padding-right: 70px;
 }
 .hero-title{
     font-size: 54px;
@@ -71,4 +113,27 @@ body > header > div.header-cta > a{
     position: relative;
     bottom: 102px;
     display: flex;
+    margin-right: 150px;
+}
+body > div > div > article > section.programs-section > ul > li:nth-child(1){
+    width: 609px;
+}
+body > div > div > article > section.programs-section > ul > li:nth-child(2){
+    width: 609px;
+    margin-left: auto;
+    position: relative;
+    top: -168px;
+}
+body > div > div > article > section.programs-section > ul > li:nth-child(3){
+    width: 609px;
+    margin: 0;
+}
+body > div > div > article > section.programs-section > ul > li:nth-child(4){
+    width: 609px;
+    position: relative;
+    top: -141px;
+    margin-left: auto;
+}
+.footer{
+    text-align: center;
 }
