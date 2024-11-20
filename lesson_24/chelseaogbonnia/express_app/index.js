@@ -36,5 +36,5 @@ app.post("/submit", (req, res) => {
 
 // Start the server
 app.listen(port, () => {
-    console.log(`Listening at http://localhost:${port}`);  // Fixed log message to use http://
+    console.log(`Listening at http://localhost:${port}`);  
 });
