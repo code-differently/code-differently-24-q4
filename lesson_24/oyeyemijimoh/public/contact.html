@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Contact Form</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>Contact Form</h1>
+    <p>Please fill out this form with the required information</p>
+    <form method="POST" action='/contact.html'>
+      <fieldset>
+        <label for="firstname">First Name: 
+            <input id="firstname" name="firstname" type="text" placeholder="First name..." required />
+        </label>
+        </br>
+        <label for="lastname">Last Name: 
+            <input id="lastname" name="lastname" type="text" placeholder="Last name..." required />
+        </label>
+        </br>
+        <label for="email">Email Address: 
+            <input id="email" name="email" type="email" placeholder="Email..." required />
+        </label>
+      </fieldset>
+
+      <input type="submit" value="Submit" />
+    </form>
+  </body>
+</html>
