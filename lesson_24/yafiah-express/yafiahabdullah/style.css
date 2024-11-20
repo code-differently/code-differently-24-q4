@@ -23,14 +23,14 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    position: fixed; /* Ensures it stays at the top */
-    top: 0; /* Anchors it to the top of the viewport */
-    left: 0; /* Ensures it spans the full width */
+    position: fixed; 
+    top: 0; 
+    left: 0; 
     width: 100%;
     padding: 14px 30px;
-    background-color: white; /* Background to prevent transparency over content */
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1); /* Subtle shadow for elevation */
-    z-index: 1000; /* High z-index to ensure it stays above other elements */
+    background-color: white; 
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1); 
+    z-index: 1000; 
 }
 
 .header-logo img {
