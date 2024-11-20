@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Contact Form</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+            }
+            .form-group {
+                margin-bottom: 15px;
+
+            }
+            input[type="text"] {
+                padding: 8px;
+                width: 100%;
+                box-sizing: border-box;
+            }
+            label {
+                font-weight: bold;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Contact Us</h1>
+    <form id="Contact-form" action="submit_form.php" method="POST">
+        <div class="form-group">
+            <label for="fname">First Name:</label><br>
+            <input type="text" id="fname" name="lname" placeholder="Last Name" required><br><br>
+        </div>
+        <div class="form-group">
+            <label for="phone-number">Last Name:</label><br>
+            <input type="text" id="lname" name="lname" placeholder="Last Name" required><br><br>
+        </div>
+        <div class="form-group">
+            <label for="phone-number">Phone Number:</label><br>
+            <input type="text" id="phone-number" name="phone-number" placeholder="Phone Number(optional)" required><br><br>
+        </div>
+        <div class="form-group">
+            <label for="email">Email</label><br>
+            <input type="text" id="phone-number" name="phone-number" placeholder="Phone Number" required><br><br>
+        </div>
+
+        <div class="form-group">
+            <button type="submit">Submit</button>
+        </div>
+    </form>
+    </body>
+    </html>
+                     
