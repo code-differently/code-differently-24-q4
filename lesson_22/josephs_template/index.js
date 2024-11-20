@@ -1,21 +1,17 @@
-const morgan = require("morgan"); // Get morgan
-const path = require("path"); // Get path
-var debug = require('debug')('myapp:server'); // Get debug logger
+const morgan = require("morgan"); 
+const path = require("path"); 
+var debug = require('debug')('myapp:server'); 
 const bodyParser = require('body-parser');
-const express = require("express") // Get express
+const express = require("express")
 
-const PORT = process.env.PORT || 5500; // Setup port
-const app = express() // Create express app
+const PORT = process.env.PORT || 5500;
+const app = express() 
 
-app.use(morgan("dev")); // Setup morgan middleware
-app.use(express.static(path.join(__dirname, "public"))); // Setup static files
+app.use(morgan("dev")); 
+app.use(express.static(path.join(__dirname, "public")));
 app.use(bodyParser.urlencoded({ extended: true}));
 
 
-// app.listen('/pageWStuff.html', (req, res) =>{
-//     console.log("gi");
-//     req.send(`<div>this is more text</div>`);
-// });
 app.post('/signUp.html', (req, res) =>{
     res.status(200).send(`
         <title>Sign Up Page</title>
@@ -128,7 +124,6 @@ app.post('/signUp2.html', (req, res) => {
         </style>
         `);
 })
-// Start the server
 
 app.listen(PORT, () => {
     console.log(PORT);
