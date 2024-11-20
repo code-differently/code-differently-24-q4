@@ -14,7 +14,7 @@ app.listen(PORT, ()=>{
 });
 
 
-app.post('/contact.html',(req,res)=>{
+app.post('/confirmation.html',(req,res)=>{
     const q = req.body;
     const firstname = q.firstname;
     const lastname = q.lastname;

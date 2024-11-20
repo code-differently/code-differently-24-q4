@@ -11,6 +11,7 @@
   "description": "",
   "dependencies": {
     "express": "^4.21.1",
-    "morgan": "^1.10.0"
+    "morgan": "^1.10.0",
+    "nodemon": "^3.1.7"
   }
 }
