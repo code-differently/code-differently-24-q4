@@ -13,7 +13,7 @@ app.use(express.static(path.join(__dirname, 'express_app')));
 
 // Serve the contact form at the root
 app.get("/", (req, res) => {
-    res.sendFile(path.join(__dirname, 'express_app', 'contact.html'));  // Updated path to contact.html
+    res.sendFile(path.join(__dirname, 'contact.html'));  
 });
 
 // Handle form submission
