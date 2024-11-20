@@ -54,7 +54,18 @@ body > header > div.header-logo{
     margin-bottom: 70px;
     margin-left: 10px;
 }
-body > header > div.header-cta > a{
+/* body > header > div.header-cta > a{
+    
+} */
+body > header > form{
+    display: flex;
+    margin-bottom: 70px;
+    width: fit-content;
+}
+body > header > form > div > button{
+    background: none; 
+    border: none; 
+    cursor: pointer;
     color: #3c3c3c !important;
     text-decoration: none;
     font-size: 20px !important;
@@ -66,7 +77,6 @@ body > header > div.header-cta > a{
     margin-left: 10px;
     margin-right: 10px;
 }
-
 body > header > ul{
     display: flex;
     flex-direction: row;
@@ -113,18 +123,20 @@ body > header > div.header-cta{
     width:max-content;
     margin-bottom: 70px
 }
-body > header > div.header-cta::after{
+
+body > header > form > div > button::after{
   content: "";
   position: relative;
   display: block;
-  width: 100%;
+  width: 110%;
   height: 2px;
   background-color: #f47d26;
   transform: scaleX(0);
   transition: transform 0.3s ease-in;
   transform-origin: left;
 }
-body > header > div.header-cta:hover::after {
+
+body > header > form > div > button:hover::after {
   transform: scaleX(1);
 }
 
