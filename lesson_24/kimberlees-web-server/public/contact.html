@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Contact Page</title>
+        <link rel="stylesheet" href="styles.css">
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="stylesheet" id="redux-google-fonts-salient_redux-css" href="https://fonts.googleapis.com/css?family=Poppins%3A600%2C400%7CMontserrat%3A800%2C900%2C700&amp;ver=1597678827" type="text/css" media="all">
+    </head>
+
+    <header>
+
+    </header>
+
+    <body>
+        <h2>Contact Form</h2>
+        <form action="#" method="post">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+    
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+    
+            <label for="phone">Phone Number:</label>
+            <input type="tel" id="phone" name="phone" pattern="[0-9]{10}" placeholder="1234567890">
+    
+            <label for="heard-about">How did you hear about us?</label>
+            <select id="heard-about" name="heard-about">
+                <option value="choose-one">Choose One</option>
+                <option value="friend">Friend</option>
+                <option value="social-media">Social Media</option>
+                <option value="search-engine">Search Engine</option>
+                <option value="other">Other</option>
+            </select>
+    
+            <label for="coding-experience">Coding Experience:</label>
+            <select id="coding-experience" name="coding-experience">
+                <option value="choose-one">Choose One</option>
+                <option value="beginner">Beginner</option>
+                <option value="intermediate">Intermediate</option>
+                <option value="advanced">Advanced</option>
+            </select>
+    
+            <label for="age">Age:</label>
+            <input type="number" id="age" name="age" min="0">
+    
+            <label for="questions">Any Questions?</label>
+            <textarea id="questions" name="questions" rows="4" placeholder="Type your questions here..."></textarea>
+    
+            <button type="submit">Submit</button>
+        </form>
+    </body>
+</html>
