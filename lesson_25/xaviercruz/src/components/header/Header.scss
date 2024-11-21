@@ -37,4 +37,16 @@
     background-color: #f47d26;
     padding: 10px 20px;
   }
+
+  .add-button {
+    border: none;
+    border-radius: 10px;
+    color: white;
+    background-color: #f47d26;
+    padding: 10px 20px;
+  }
+
+  .add-button:hover {
+    cursor: pointer;
+  }
 }

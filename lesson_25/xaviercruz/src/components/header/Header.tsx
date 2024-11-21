@@ -1,8 +1,14 @@
 import './Header.scss';
 import logoImg from '@/assets/logo.png';
 import React from 'react';
+import {To, useNavigate} from 'react-router-dom';
 
 export const Header: React.FC = () => {
+  let navigate = useNavigate();
+  const routeChange = (path: To) => {
+    navigate(path);
+  };
+
   return (
     <header className="header">
       <div className="header-logo">
@@ -12,7 +18,7 @@ export const Header: React.FC = () => {
       </div>
       <ul className="header-top-menu">
         <li>
-          <a href="#">Home</a>
+          <a href="/">Home</a>
         </li>
         <li>
           <a href="#">About</a>
@@ -20,6 +26,12 @@ export const Header: React.FC = () => {
         <li>
           <a href="#">Contact</a>
         </li>
+        <button
+          onClick={() => routeChange('/addProgram')}
+          className="add-button"
+        >
+          Add a Program
+        </button>
       </ul>
       <div className="header-cta">
         <a className="sign-up-button" href="#">

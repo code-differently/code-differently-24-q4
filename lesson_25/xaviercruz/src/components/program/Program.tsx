@@ -1,3 +1,5 @@
+import './Program.scss';
+
 interface ProgramProps {
   name: string;
   description: string;
@@ -5,9 +7,9 @@ interface ProgramProps {
 
 export const Program: React.FC<ProgramProps> = props => {
   return (
-    <li className="program">
-      <h3>${props.name}</h3>
-      <p>${props.description}</p>
-    </li>
+    <>
+      <h3>{props.name}</h3>
+      <p>{props.description}</p>
+    </>
   );
 };
