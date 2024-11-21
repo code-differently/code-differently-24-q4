@@ -11,6 +11,9 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 public class BoxerTest {
+  public enum testStyle {
+    BASIC
+  }
 
   Boxer boxer;
 
@@ -82,7 +85,7 @@ public class BoxerTest {
   @Test
   void testRollSkillSet_testingBasicIsNotWhatIsRolled() {
     boxer.rollSkillSet();
-    assertNotEquals(boxer.getSkillSet(), "BASIC");
+    assertNotEquals(boxer.getSkillSet(), testStyle.BASIC);
   }
 
   @Test
