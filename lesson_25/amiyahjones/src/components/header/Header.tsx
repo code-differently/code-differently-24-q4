@@ -20,6 +20,9 @@ export const Header: React.FC = () => {
         <li>
           <a href="#">Contact</a>
         </li>
+        <li>
+          <a href="#">Program Setup</a>
+        </li>
       </ul>
       <div className="header-cta">
         <a className="sign-up-button" href="#">
