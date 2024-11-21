@@ -1,3 +1,4 @@
+import './Program.scss'
 
 export default function Program({title, description}: {title: string; description: string}) {
   return (
