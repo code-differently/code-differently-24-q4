@@ -26,7 +26,7 @@ const programs = [
   },
 ];
 
-export default function ProgramList() {
+export const ProgramList: React.FC = () =>{
     return (
         <section className="programs-section">
         <h2>

@@ -1,4 +1,3 @@
-import React from 'react';
 
 export default function Program({title, description}: {title: string; description: string}) {
   return (
