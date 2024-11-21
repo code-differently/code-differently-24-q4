@@ -1,7 +1,7 @@
-import './Header.scss';
 import logoImg from '@/assets/logo.png';
 import React from 'react';
 import { Link } from 'react-router-dom';
+import './Header.scss';
 
 export const Header: React.FC = () => {
   return (
