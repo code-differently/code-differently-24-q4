@@ -42,7 +42,15 @@ You can run the server using the usual `./gradlew run` command from the `api/jav
 curl http://localhost:3001/items | json_pp
 ```
 
-Alternatively, you can test the API using the tool [Postman][postman-link]. I recommend installing this tool to make it easier to test things.
+The project also includes an OpenAPI user interface (Swagger) for navigating the API. Just visit http://localhost:3001/swagger-ui.html to access it.
+
+Alternatively, you can also test the API using the tool [Postman][postman-link]. I recommend installing this tool to make it easier to test things.
+
+#### Debugging the API
+
+Remember that you can debug the API by visiting the main function in [Lesson26.java][main-file] and clicking `Debug main`. You'll be able to set breakpoints in your code to see what's happening and fix issues.
+
+![Debugging the API](./debug.png)
 
 ## Additional resources
 
@@ -51,3 +59,4 @@ Alternatively, you can test the API using the tool [Postman][postman-link]. I re
 [controller-file]: ./api/java/api_app/src/main/java/com/codedifferently/lesson26/web/MediaItemsController.java
 [controller-test-file]: ./api/java/api_app/src/test/java/com/codedifferently/lesson26/web/MediaItemsControllerTest.java
 [postman-link]: https://www.postman.com/downloads/
+[main-file]: ./api/java/api_app/src/main/java/com/codedifferently/lesson26/Lesson26.java
