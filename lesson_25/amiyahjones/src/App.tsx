@@ -10,7 +10,7 @@ function App() {
     <>
       <Header />
       <Routes>
-        <Route path='' element={<CreateProgram/>} />
+        <Route path='/new' element={<CreateProgram/>} />
       </Routes>
       <div className="main">
         <div className="content">
