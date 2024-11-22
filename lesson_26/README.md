@@ -39,7 +39,7 @@ We are continuing to build atop the foundation of our library app. For this assi
 You can run the server using the usual `./gradlew run` command from the `api/java` directory. If you want to test that the server is running correctly, you can use `curl` like so:
 
 ```bash
-curl http://localhost:5000/items | json_pp
+curl http://localhost:3001/items | json_pp
 ```
 
 Alternatively, you can test the API using the tool [Postman][postman-link]. I recommend installing this tool to make it easier to test things.
