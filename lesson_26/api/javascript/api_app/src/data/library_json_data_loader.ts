@@ -1,6 +1,6 @@
 import { Injectable } from "@nestjs/common";
-import { LibraryDataModel } from "src/models/library_data_model";
-import LibraryJsonData from '../../resources/data.json';
+import * as LibraryJsonData from '../../resources/data.json';
+import { LibraryDataModel } from "../models/library_data_model";
 import { LibraryDataLoader } from "./library_data_loader";
 
 @Injectable()

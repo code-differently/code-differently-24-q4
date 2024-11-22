@@ -36,7 +36,7 @@ We are continuing to build atop the foundation of our library app. For this assi
 
 #### Running the API
 
-You can run the server using the usual `./gradlew run` command. If you want to test that the server is running correctly, you can use `curl` like so:
+You can run the server using the usual `./gradlew run` command from the `api/java` directory. If you want to test that the server is running correctly, you can use `curl` like so:
 
 ```bash
 curl http://localhost:5000/items | json_pp
@@ -47,3 +47,7 @@ Alternatively, you can test the API using the tool [Postman][postman-link]. I re
 ## Additional resources
 
 * [gRPC vs REST: Comparing API Styles in Practice (Article)](https://dev.to/anthonydmays/grpc-vs-rest-comparing-api-styles-in-practice-4bl): This article explains why the stuff most people call REST isn't actually.
+
+[controller-file]: ./api/java/api_app/src/main/java/com/codedifferently/lesson26/web/MediaItemsController.java
+[controller-test-file]: ./api/java/api_app/src/test/java/com/codedifferently/lesson26/web/MediaItemsControllerTest.java
+[postman-link]: https://www.postman.com/downloads/

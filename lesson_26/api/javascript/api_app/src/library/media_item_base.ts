@@ -1,6 +1,7 @@
 import { Library } from './library';
 import { MediaItem } from './media_item';
 import { MediaType } from './media_type';
+import { SearchCriteria } from './search/search_criteria';
 
 export abstract class MediaItemBase implements MediaItem {
     private library: Library | null = null;
@@ -42,6 +43,19 @@ export abstract class MediaItemBase implements MediaItem {
 
     protected matchesAuthor(author: string): boolean {
         return false;
+    }
+
+    matches(query: SearchCriteria): boolean {
+        if (query.id && this.getId() !== query.id) {
+            return false;
+        }
+        if (query.title && !this.getTitle().toLowerCase().includes(query.title.toLowerCase())) {
+            return false;
+        }
+        if (query.type && !this.getType().includes(query.type.toLowerCase())) {
+            return false;
+        }
+        return !query.author || this.matchesAuthor(query.author);
     }
 
     toString(): string {

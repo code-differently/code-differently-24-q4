@@ -1,2 +1,3 @@
 export { DataModule } from './data.module';
-export { LibraryDataLoader } from './library_data_loader';
+export { LIBRARY_DATA_LOADER_PROVIDER, LibraryDataLoader } from './library_data_loader';
+

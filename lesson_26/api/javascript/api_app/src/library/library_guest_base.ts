@@ -1,11 +1,11 @@
-import crypto from 'crypto';
+import { randomUUID } from 'crypto';
 import { Library } from './library';
 import { LibraryGuest } from './library_guest';
 import { MediaItem } from './media_item';
 
 export class LibraryGuestBase implements LibraryGuest {
     private library: Library | null = null;
-    private readonly id: string = crypto.randomUUID();
+    private readonly id: string = randomUUID();
     private readonly name: string;
     private readonly email: string;
 

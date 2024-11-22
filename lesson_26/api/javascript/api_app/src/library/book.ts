@@ -29,6 +29,18 @@ export class Book extends MediaItemBase {
         return this.numberOfPages;
     }
 
+    protected matchesAuthor(authorQuery: string): boolean {
+        if (!authorQuery) {
+            return true;
+        }
+        for (const author of this.getAuthors()) {
+            if (author.toLowerCase().includes(authorQuery.toLowerCase())) {
+                return true;
+            }
+        }
+        return false;
+    }
+
     toString(): string {
         return `Book{id='${this.getId()}', title='${this.getTitle()}'}`;
     }

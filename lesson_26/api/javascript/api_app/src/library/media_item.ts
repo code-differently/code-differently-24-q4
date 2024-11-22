@@ -1,8 +1,9 @@
 import { Library } from './library';
 import { MediaType } from './media_type';
+import { Searchable } from './search/searchable';
 
 /** Represents a media item. */
-export interface MediaItem {
+export interface MediaItem extends Searchable {
     /**
      * Get the type of the media item.
      *

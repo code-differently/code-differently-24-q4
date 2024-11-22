@@ -1,16 +1,23 @@
+import { Injectable, Logger } from '@nestjs/common';
 import { Librarian } from './librarian';
 import { LibraryGuest } from './library_guest';
 import { MediaItem } from './media_item';
+import { CatalogSearcher } from './search/catalog_searcher';
+import { SearchCriteria } from './search/search_criteria';
 
+@Injectable()
 export class LibraryService {
-    private itemsById: Map<string, MediaItem> = new Map();
-    private checkedOutItemIds: Set<string> = new Set();
-    private checkedOutItemsByGuest: Map<string, Set<MediaItem>> = new Map();
-    private guestsById: Map<string, LibraryGuest> = new Map();
-    private id: string;
+    private readonly itemsById: Map<string, MediaItem> = new Map();
+    private readonly checkedOutItemIds: Set<string> = new Set();
+    private readonly checkedOutItemsByGuest: Map<string, Set<MediaItem>> = new Map();
+    private readonly guestsById: Map<string, LibraryGuest> = new Map();
+    private readonly id: string;
+    private readonly searcher: CatalogSearcher<MediaItem>;
+    private readonly logger: Logger = new Logger(LibraryService.name);
 
     constructor(id: string) {
         this.id = id;
+        this.searcher = new CatalogSearcher(this.itemsById.values());
     }
 
     getId(): string {
@@ -121,6 +128,16 @@ export class LibraryService {
 
     getCheckedOutByGuest(guest: LibraryGuest): Set<MediaItem> {
         return this.checkedOutItemsByGuest.get(guest.getId()) || new Set();
+    }
+
+    /**
+     * Search the library for items matching the given query.
+     *
+     * @param query The query to search for.
+     * @return The items matching the query.
+     */
+    search(query: SearchCriteria): ReadonlySet<MediaItem> {
+        return new Set(this.searcher.search(query));
     }
 
     toString(): string {
