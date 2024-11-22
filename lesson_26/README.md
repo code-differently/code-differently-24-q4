@@ -52,6 +52,11 @@ Remember that you can debug the API by visiting the main function in [Lesson26.j
 
 ![Debugging the API](./debug.png)
 
+
+#### TypeScript API
+
+This project also includes a fully functioning TypeScript version of the Java project. You can visit `api/javascript/api_app` to execute it using `npm start` and view the OpenAPI documentation at http://localhost:3000/api (note that it runs on port 3000).
+
 ## Additional resources
 
 * [gRPC vs REST: Comparing API Styles in Practice (Article)](https://dev.to/anthonydmays/grpc-vs-rest-comparing-api-styles-in-practice-4bl): This article explains why the stuff most people call REST isn't actually.
