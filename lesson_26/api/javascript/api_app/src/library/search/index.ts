@@ -1,2 +1,2 @@
-export { SearchCriteria } from "./search_criteria";
-export { Searchable } from "./searchable";
+export { SearchCriteria } from './search_criteria';
+export { Searchable } from './searchable';

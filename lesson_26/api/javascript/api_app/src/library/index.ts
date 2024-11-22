@@ -9,4 +9,3 @@ export { MediaItem } from './media_item';
 export { MediaType } from './media_type';
 export { Newspaper } from './newspaper';
 export { Patron } from './patron';
-

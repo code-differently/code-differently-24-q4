@@ -1,4 +1,4 @@
-import { MediaItemResponse } from "./media_item_response";
+import { MediaItemResponse } from './media_item_response';
 
 export interface CreateMediaItemResponse {
   item?: MediaItemResponse;

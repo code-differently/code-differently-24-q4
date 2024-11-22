@@ -4,7 +4,6 @@ import com.codedifferently.lesson26.library.Book;
 import com.codedifferently.lesson26.library.Dvd;
 import com.codedifferently.lesson26.library.Magazine;
 import com.codedifferently.lesson26.library.MediaItem;
-import com.codedifferently.lesson26.library.MediaType;
 import com.codedifferently.lesson26.library.Newspaper;
 import jakarta.validation.constraints.NotBlank;
 import java.util.List;
@@ -19,8 +18,9 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Builder
 public class MediaItemRequest {
+
   private UUID id;
-  private MediaType type;
+  private String type;
   private String isbn;
 
   @NotBlank(message = "Title is required")
@@ -33,17 +33,17 @@ public class MediaItemRequest {
 
   public static MediaItem asMediaItem(MediaItemRequest request) {
     var id = request.id != null ? request.id : UUID.randomUUID();
-    switch (request.type) {
-      case BOOK -> {
+    switch (request.type.toUpperCase()) {
+      case "book" -> {
         return new Book(id, request.title, request.isbn, List.of(request.authors), request.pages);
       }
-      case DVD -> {
+      case "dvd" -> {
         return new Dvd(id, request.title);
       }
-      case MAGAZINE -> {
+      case "magazine" -> {
         return new Magazine(id, request.title);
       }
-      case NEWSPAPER -> {
+      case "newspaper" -> {
         return new Newspaper(id, request.title);
       }
       default -> throw new IllegalArgumentException("Unknown media item type: " + request.type);

@@ -3,7 +3,7 @@ import { LibraryModule } from '../library';
 import { MediaItemsController } from './media_items.controller';
 
 @Module({
-    imports: [LibraryModule],
-    controllers: [MediaItemsController],
+  imports: [LibraryModule],
+  controllers: [MediaItemsController],
 })
 export class WebModule {}
