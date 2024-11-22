@@ -1,0 +1,56 @@
+img { 
+    padding: 20px;
+    width: 230px;
+}
+p { 
+    color: rgb(92, 92, 92);
+    font-family: Poppins;
+}
+body { 
+    font-family: Poppins;   
+} 
+.hero-section {
+    background-image: url("hero.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-width: fit-content;
+    height: 1000px; 
+    padding-top: 250px;
+    align-items: center;
+    justify-content: center;
+}
+.hero-content { 
+    margin-right: -50px;
+    margin-left: 
+}
+.hero-title { 
+    color: white;
+    text-align: left;
+    top: 200px;
+    font-size: 50px;
+    margin-right: -50px;
+}
+.hero-text { 
+    background-color: rgb(20, 42, 150);
+    padding: 3%;
+    font-weight:200;
+    font-size: 30px;
+    color: white;
+    margin-right: 40px;
+}
+.hero-text span{ 
+    color: rgb(250, 135, 3);
+}
+
+.highlight {
+    font-style: normal;
+    text-decoration: underline;
+    text-decoration-color: rgb(250, 135, 3);
+    text-underline-offset: -5px;
+    text-decoration-skip-ink: none;
+    text-decoration-thickness: 20px;
+}
+.programs-section h2 { 
+    font-size: 60px;
+    /* font-weight: ; */

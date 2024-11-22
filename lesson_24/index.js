@@ -1,17 +1,18 @@
-const express = require("express")
-const app = express()
-const port = 3000 
-const cors = require("cors")
+const express = require("express");
+const morgan = require("morgan"); 
+const path = require("path");
+var debug = require('debug')('myapp:server');
 
-app.use(express.urlencoded({extended: true}))
-app.use(express.json())
-app.use(cors())
+const app = express(); 
 
-app.get("/", cors(), async (req, res) => { 
-    res.send("This is working")
-})
+app.use(morgan("dev"));
+app.use(express.static(path.join(__dirname, "zion_template_copy")));
 
-app.listen(port, () => { 
-    console.log(`Listening at http://localhost:${port}`)
+const PORT = process.env.PORT || 33049; 
 
+app.use(express.urlencoded({expected: true}));
+
+
+app.listen(PORT, () => { 
+    debug(`Server listening on http://localhost:${PORT}`);
 })
