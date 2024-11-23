@@ -6,7 +6,6 @@ import com.codedifferently.lesson26.library.Magazine;
 import com.codedifferently.lesson26.library.MediaItem;
 import com.codedifferently.lesson26.library.Newspaper;
 import com.fasterxml.jackson.annotation.JsonProperty;
-
 import jakarta.validation.constraints.NotBlank;
 import java.util.List;
 import java.util.UUID;
@@ -22,19 +21,26 @@ import lombok.NoArgsConstructor;
 public class MediaItemRequest {
   @JsonProperty("id")
   private UUID id;
+
   @JsonProperty("type")
   private String type;
+
   @JsonProperty("isbn")
   private String isbn;
+
   @JsonProperty("title")
   @NotBlank(message = "Title is required")
   private String title;
+
   @JsonProperty("authors")
   private String[] authors;
+
   @JsonProperty("edition")
   private String edition;
+
   @JsonProperty("pages")
   private int pages;
+
   @JsonProperty("runtime")
   private int runtime;
 
