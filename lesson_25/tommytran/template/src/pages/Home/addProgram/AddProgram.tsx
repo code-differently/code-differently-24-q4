@@ -1,3 +1,4 @@
+import './AddProgram.scss';
 import React, {useState} from 'react';
 import {useNavigate, useOutletContext} from 'react-router-dom';
 
