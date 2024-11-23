@@ -5,13 +5,22 @@ import com.codedifferently.lesson26.library.Library;
 import com.codedifferently.lesson26.library.MediaItem;
 import com.codedifferently.lesson26.library.search.SearchCriteria;
 
-import io.swagger.v3.oas.annotations.parameters.RequestBody;
+import jakarta.validation.Valid;
+
+import org.springframework.web.bind.annotation.RequestBody;
+
 
 import java.io.IOException;
 import java.util.List;
 import java.util.Set;
+import java.util.UUID;
+
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -34,21 +43,53 @@ public class MediaItemsController {
     return response;
   }
 
-  @GetMapping("/items:id")
-  public MediaItemResponse getItemById(){
-    return null;
+  @GetMapping("/items/{id}")
+  public ResponseEntity<MediaItemResponse> getItemById(@PathVariable("id") UUID id) {
+    String stringId = id.toString();
+    SearchCriteria searchCriteria = SearchCriteria.builder().id(stringId).build();
+
+    Set<MediaItem> foundItems = library.search(searchCriteria);
+
+    if (foundItems.isEmpty()) {
+        return ResponseEntity.notFound().build();
+    }
+
+    MediaItem item = foundItems.iterator().next();
+    MediaItemResponse response = MediaItemResponse.from(item);
+
+    return ResponseEntity.ok(response);
   }
 
   @PostMapping("/items")
-  public CreateMediaItemResponse createMediaItem(@RequestBody MediaItemRequest itemRequest) {
+  public CreateMediaItemResponse createMediaItem(@RequestBody @Valid CreateMediaItemRequest request) throws MethodArgumentNotValidException {
+
+    MediaItemRequest itemRequest = request.getItem();
 
 
-    var request = CreateMediaItemRequest.builder().item(itemRequest).build();
+    System.out.println(request);
 
-    var item = MediaItemRequest.asMediaItem(request.getItem());
+
+    var item = MediaItemRequest.asMediaItem(itemRequest);
 
     library.addMediaItem(item, librarian);
 
-    return null;
+    var response = CreateMediaItemResponse.builder().item(getItemById(item.getId()).getBody()).build();
+
+    return response;
+  }
+
+  @DeleteMapping("/items/{id}")
+  public ResponseEntity<Void> deleteItem(@PathVariable("id") UUID id){
+
+
+    if(getItemById(id).getBody() == null) {
+      return ResponseEntity.notFound().build();
+    }
+
+    library.removeMediaItem(id, librarian);
+
+
+    return ResponseEntity.noContent().build();
+
   }
 }
