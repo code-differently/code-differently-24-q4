@@ -1,4 +1,5 @@
 import './Home.scss';
+import ProgramsList from './ProgramsList';
 import React from 'react';
 
 export const Home: React.FC = () => {
@@ -20,9 +21,7 @@ export const Home: React.FC = () => {
         </div>
       </section>
       <section className="programs-section">
-        <h2>
-          Our <em className="highlight">Programs</em>
-        </h2>
+        <ProgramsList />
       </section>
     </article>
   );
