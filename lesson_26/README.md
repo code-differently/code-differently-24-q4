@@ -39,10 +39,23 @@ We are continuing to build atop the foundation of our library app. For this assi
 You can run the server using the usual `./gradlew run` command from the `api/java` directory. If you want to test that the server is running correctly, you can use `curl` like so:
 
 ```bash
-curl http://localhost:5000/items | json_pp
+curl http://localhost:3001/items | json_pp
 ```
 
-Alternatively, you can test the API using the tool [Postman][postman-link]. I recommend installing this tool to make it easier to test things.
+The project also includes an OpenAPI user interface (Swagger) for navigating the API. Just visit http://localhost:3001/swagger-ui.html to access it.
+
+Alternatively, you can also test the API using the tool [Postman][postman-link]. I recommend installing this tool to make it easier to test things.
+
+#### Debugging the API
+
+Remember that you can debug the API by visiting the main function in [Lesson26.java][main-file] and clicking `Debug main`. You'll be able to set breakpoints in your code to see what's happening and fix issues.
+
+![Debugging the API](./debug.png)
+
+
+#### TypeScript API
+
+This project also includes a fully functioning TypeScript version of the Java project. You can visit `api/javascript/api_app` to execute it using `npm start` and view the OpenAPI documentation at http://localhost:3000/api (note that it runs on port 3000).
 
 ## Additional resources
 
@@ -51,3 +64,4 @@ Alternatively, you can test the API using the tool [Postman][postman-link]. I re
 [controller-file]: ./api/java/api_app/src/main/java/com/codedifferently/lesson26/web/MediaItemsController.java
 [controller-test-file]: ./api/java/api_app/src/test/java/com/codedifferently/lesson26/web/MediaItemsControllerTest.java
 [postman-link]: https://www.postman.com/downloads/
+[main-file]: ./api/java/api_app/src/main/java/com/codedifferently/lesson26/Lesson26.java
