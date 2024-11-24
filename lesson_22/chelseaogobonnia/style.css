@@ -1,0 +1,259 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    font-family: 'Poppins', sans-serif;
+    background-color: #fff;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    flex-wrap: nowrap;
+    overflow-x: hidden;
+}
+
+/* Logo - align to the left */
+.header-logo {
+    display: flex;
+    align-items: center;
+}
+
+.header-logo img {
+    height: 50px;
+    width: auto;
+}
+
+/* Menu - center items */
+.header-top-menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* Menu items */
+.header-top-menu li {
+    margin: 0 15px;
+}
+
+.header-top-menu li a {
+    font-size: 18px;
+    text-decoration: none;
+    color: #333;
+    padding: 5px 10px;
+    transition: color 0.3s ease;
+}
+
+.header-top-menu li a:hover {
+    color: #007bff;
+}
+
+/* Align the 'Contact Us' link to the right */
+.header-top-menu li:last-child {
+    margin-left: auto;
+}
+
+/* Call-to-action button - Sign Up */
+.header-cta {
+    text-align: center;
+    margin-top: 10px;
+    margin-left: auto;
+}
+
+.sign-up-button {
+    background-color: #ff7f00;
+    color: #fff;
+    padding: 12px 30px;
+    text-decoration: none;
+    font-size: 16px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    display: inline-block;
+}
+
+.sign-up-button:hover {
+    background-color: #ffa500;
+}
+
+/* Hero Section Styles */
+.hero-section {
+    position: relative;
+    background-image: url('hero.jpg');
+    background-size: cover;
+    background-position: center;
+    padding: 100px 0 100px 0;
+    color: rgb(238, 238, 238);
+    text-align: left;
+    margin-left: 0;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    padding-left: 0;
+    color: rgb(238, 238, 238);
+    width: 100%;
+}
+
+.hero-title {
+    font-size: 48px;
+    line-height: 1.4;
+    margin-bottom: 0;
+}
+
+/* Create a thick orange box (like an underline) behind 'diversity in tech' */
+.hero-title .highlight {
+    display: inline-block;
+    color: rgb(238, 238, 238);
+    position: relative;
+    padding-bottom: 6px;
+    z-index: 2;
+    font-style: normal;
+    width: 40%;
+    max-width: 40%;
+}
+
+.hero-title .highlight::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 16px;
+    background-color: #ff7f00;
+    z-index: 1;
+    width: 70%;
+    max-width: 70%;
+}
+
+/* Adjusting the blue rectangle to the new color and full width */
+.hero-text {
+    background-color: rgba(36,62,144);
+    color: rgb(238, 238, 238);
+    padding: 20px 40px;
+    width: 70%;
+    max-width: 70%;
+    margin-top: 20px;
+    text-align: left;
+    box-sizing: border-box;
+}
+
+.hero-text span {
+    color: #ff7f00;
+    font-weight: bold;
+}
+
+.hero-section h2, .hero-section .hero-text {
+    margin-bottom: 20px;
+    margin-left: 0;
+    padding-left: 0;
+}
+
+/* Programs Section */
+.programs-section {
+    padding: 50px 20px;
+    background-color: #fff;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.programs-section h2 {
+    font-size: 36px;
+    line-height: 1.4;
+    color: rgb(68, 68, 68);
+    margin-bottom: 30px;
+    text-align: left;
+}
+
+.programs-section h2 .highlight {
+    display: inline-block;
+    position: relative;
+    padding-bottom: 6px;
+    font-style: normal;
+    color: rgb(68, 68, 68);
+}
+
+.programs-section h2 .highlight::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 8px;
+    background-color: #ff7f00;
+}
+
+/* Programs List Layout */
+.programs {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    align-items: stretch;
+}
+
+.program {
+    padding: 20px;
+    border-radius: 10px;
+    min-height: 00px;
+}
+
+.program h3 {
+    font-size: 24px;
+    color: #444;
+    margin-bottom: 10px;
+}
+
+.program p {
+    color: #676767;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.program + .program {
+    margin-top: 30px;
+}
+
+/* Add more space around the program grid */
+.programs-container {
+    padding: 30px;
+    border-radius: 10px;
+}
+
+/* Footer Styles */
+.footer {
+    color: #000000;
+    text-align: center;
+    padding: 20px 0;
+    font-size: 16px;
+    position: relative;
+    z-index: 10;
+}
+
+/* Footer link styling (if I plan to add links later) */
+.footer a {
+    color: #CCCCCC;
+    text-decoration: none;
+}
+
+.footer a:hover {
+    color: #FF7F00;
+}
