@@ -1,6 +1,7 @@
 import './Home.scss';
 import ProgramList from './ProgramList';
 import React from 'react';
+import {Link} from 'react-router-dom';
 
 export const Home: React.FC = () => {
   return (
@@ -25,7 +26,13 @@ export const Home: React.FC = () => {
           Our <em className="highlight">Programs</em>
         </h2>
         <ProgramList />
+        <button>
+          <Link to="http://localhost:5173/program-submission">
+            Add New Program
+          </Link>
+        </button>
       </section>
     </article>
   );
 };
+export default Home;
