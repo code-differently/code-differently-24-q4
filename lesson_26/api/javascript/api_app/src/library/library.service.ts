@@ -18,7 +18,7 @@ export class LibraryService {
 
   constructor(id: string) {
     this.id = id;
-    this.searcher = new CatalogSearcher(this.itemsById.values());
+    this.searcher = new CatalogSearcher(this.itemsById);
   }
 
   getId(): string {
