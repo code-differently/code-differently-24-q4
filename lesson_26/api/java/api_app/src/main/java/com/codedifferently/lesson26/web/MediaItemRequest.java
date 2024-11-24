@@ -33,7 +33,7 @@ public class MediaItemRequest {
 
   public static MediaItem asMediaItem(MediaItemRequest request) {
     var id = request.id != null ? request.id : UUID.randomUUID();
-    switch (request.type.toUpperCase()) {
+    switch (request.type.toLowerCase()) {
       case "book" -> {
         return new Book(id, request.title, request.isbn, List.of(request.authors), request.pages);
       }

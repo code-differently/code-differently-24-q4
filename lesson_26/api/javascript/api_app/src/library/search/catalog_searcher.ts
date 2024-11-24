@@ -2,13 +2,13 @@ import { SearchCriteria } from './search_criteria';
 import { Searchable } from './searchable';
 
 export class CatalogSearcher<T extends Searchable> {
-  private catalog: Iterable<T>;
+  private catalog: ReadonlyMap<string, T>;
 
-  constructor(catalog: Iterable<T>) {
+  constructor(catalog: ReadonlyMap<string, T>) {
     this.catalog = catalog;
   }
 
   search(query: SearchCriteria): T[] {
-    return [...this.catalog].filter((item) => item.matches(query));
+    return [...this.catalog.values()].filter((item) => item.matches(query));
   }
 }

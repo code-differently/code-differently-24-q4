@@ -1,0 +1,75 @@
+<html>
+<head>
+    <title>Contact Page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" id="redux-google-fonts-salient_redux-css" href="https://fonts.googleapis.com/css?family=Poppins%3A600%2C400%7CMontserrat%3A800%2C900%2C700&amp;ver=1597678827" type="text/css" media="all">
+    <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Poppins%3A600%2C400%7CMontserrat%3A800%2C900%2C700&#038;ver=1597678827' type='text/css' media='all' />
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <header class="header">
+        <div class="header-logo">
+            <a href="index.html">
+                <img src="logo.png" alt="Code Differently Logo" />
+            </a>
+        </div>
+        <ul class="header-top-menu">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html">About</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+        <div class="header-cta">
+            <a class="sign-up-button" href="#">Sign Up</a>
+        </div>
+    </header>
+        <form class="main" id="contactForm" action="/contact_result.html">
+            <input type="text" id="first-name" placeholder="FIRST NAME *" required><br>
+            <input type="text" id="last-name" placeholder="LAST NAME *" required><br>
+            <input type="text" id="phone" placeholder="PHONE *" required><br>
+            <input type="text" id="email" placeholder="EMAIL *" required><br>
+            <select id="dropdown" required>
+                <option value="">PROGRAM OF INTEREST*</option>
+                <option value="option1">1000 Kids Coding</option>
+                <option value="option2">Pipeline DevShop</option>
+                <option value="option3">Return Ready</option>
+                <option value="option4">Stay Ready</option>
+                <option value="option5">Platform Programs</option>
+                <option value="option6">Partner With Us</option>
+                <option value="option7">Learn With Us</option>
+                <option value="option8">Donate/Volunteer</option>
+            </select><br>
+            <input type="text" id="message" placeholder="MESSAGE"><br>
+            <div class="controls">
+                <button id="sendBtn" type="submit">Send</button>
+            </div>
+        </form>
+    <footer class="footer">
+        &copy; 2024 Code Differently
+    </footer>
+    <script>
+        // Select the form and add a submit event listener
+        document.getElementById("contactForm").addEventListener("submit", function(event) {
+            event.preventDefault(); // Prevent the form from submitting normally
+
+            // Get the form field values
+            var firstName = document.getElementById("first-name").value;
+            var lastName = document.getElementById("last-name").value;
+            var phoneNum = document.getElementById("phone").value;
+            var email = document.getElementById("email").value;
+            var programInterest = document.getElementById("dropdown").options[document.getElementById("dropdown").selectedIndex].text;
+            var message = document.getElementById("message").value;
+
+            // Build a query string with the form data
+            var queryString = "?firstName=" + encodeURIComponent(firstName) + 
+                              "&lastName=" + encodeURIComponent(lastName) + 
+                              "&phoneNum=" + encodeURIComponent(phoneNum) + 
+                              "&email=" + encodeURIComponent(email) + 
+                              "&programInterest=" + encodeURIComponent(programInterest) + 
+                              "&message=" + encodeURIComponent(message);
+            
+            // Redirect to the contact_result.html page with the data in the URL
+            window.location.href = "contact_result.html" + queryString;
+        });
+    </script>
+</body>
+</html>
