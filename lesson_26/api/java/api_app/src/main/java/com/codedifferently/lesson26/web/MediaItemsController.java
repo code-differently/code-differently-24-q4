@@ -5,6 +5,7 @@ import com.codedifferently.lesson26.library.Library;
 import com.codedifferently.lesson26.library.MediaItem;
 import com.codedifferently.lesson26.library.search.SearchCriteria;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 import java.util.Set;
@@ -65,33 +66,47 @@ public class MediaItemsController {
   }
 
   @PostMapping()
-  public ResponseEntity<?> postItems(@RequestBody(required = true) MediaItemRequest request) {
-    MediaItem newMediaItem = MediaItemRequest.asMediaItem(request);
-
-    if (newMediaItem.getTitle() == null
-        || newMediaItem.getType() == null
-        || request.getType() == null) {
-
-      return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(request);
+  public ResponseEntity<?> postItems(@RequestBody CreateMediaItemRequest requestBody) {
+    List<String> errorsList = new ArrayList<>();
+    MediaItemRequest request = requestBody.getItem();
+    if (requestBody.getItem() == null) {
+      errorsList.add("Cannot enter null");
+    } else {
+      if ((request.getTitle() == null || request.getTitle().isBlank())
+          && (request.getType() == null || request.getType().isBlank())) {
+        errorsList.add("title and type cannot be null or blank");
+      } else {
+        if (request.getTitle() == null || request.getTitle().isBlank()) {
+          errorsList.add("title cannot be null or blank");
+        } else {
+          if (request.getType() == null || request.getType().isBlank()) {
+            errorsList.add("type cannot be null or blank");
+          }
+        }
+      }
     }
-
+    if (!errorsList.isEmpty()) {
+      return ResponseEntity.status(HttpStatus.BAD_REQUEST)
+          .body(
+              new Object() {
+                public final List<String> errors = errorsList;
+              });
+    }
+    MediaItem newMediaItem = MediaItemRequest.asMediaItem(request);
     library.addMediaItem(newMediaItem, librarian);
-
-    return ResponseEntity.status(HttpStatus.CREATED).body(request);
+    return ResponseEntity.ok(requestBody);
   }
 
   @DeleteMapping(value = "/{id}")
   public ResponseEntity<Void> deleteItem(@PathVariable("id") UUID id) {
-    Set<MediaItem> test1 = library.search(SearchCriteria.builder().id(id.toString()).build());
-
+    Set<MediaItem> test1 = library.search(SearchCriteria.builder().build());
     Set<MediaItem> item = library.search(SearchCriteria.builder().id(id.toString()).build());
     if (item.isEmpty()) {
-      ResponseEntity.notFound().build();
-    } else if (!test1.contains(item.iterator().next())) {
-      ResponseEntity.notFound().build();
+      return ResponseEntity.notFound().build();
+    } else if (!test1.contains(item.iterator().next()) || item.iterator().next() == null) {
+      return ResponseEntity.notFound().build();
     }
     library.removeMediaItem(id, librarian);
-    // Set<MediaItem> libraryAltercation = library.search(SearchCriteria.builder().build());
     return ResponseEntity.noContent().build();
   }
 }
