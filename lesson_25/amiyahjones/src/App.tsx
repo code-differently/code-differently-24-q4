@@ -9,9 +9,7 @@ function App() {
   return (
     <>
       <Header />
-      <Routes>
         <Route path='/new' element={<CreateProgram/>} />
-      </Routes>
       <div className="main">
         <div className="content">
           <Outlet />
