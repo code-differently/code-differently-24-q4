@@ -1,9 +1,9 @@
+import { Outlet, Route } from 'react-router-dom';
 import './App.scss';
-import {Outlet, Route, Routes} from 'react-router-dom';
 
-import {Footer} from './components/footer';
-import {Header} from './components/header';
-import { CreateProgram } from './pages/Add-program/CreateProgram';
+import { Footer } from './components/footer';
+import { Header } from './components/header';
+import { CreateProgram } from './pages/create-program/CreateProgram';
 
 function App() {
   return (
