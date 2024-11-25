@@ -14,6 +14,5 @@ import lombok.NoArgsConstructor;
 @Builder
 public class CreateMediaItemRequest {
   @NotNull(message = "item is required") @Valid
-  @JsonProperty("item")
   private MediaItemRequest item;
 }

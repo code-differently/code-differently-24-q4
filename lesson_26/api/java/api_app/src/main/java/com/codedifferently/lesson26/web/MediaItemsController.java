@@ -7,6 +7,7 @@ import com.codedifferently.lesson26.library.search.SearchCriteria;
 import jakarta.validation.Valid;
 import java.io.IOException;
 import java.util.List;
+import java.util.Optional;
 import java.util.Set;
 import java.util.UUID;
 import org.springframework.http.ResponseEntity;
@@ -61,8 +62,6 @@ public class MediaItemsController {
 
     MediaItemRequest itemRequest = request.getItem();
 
-    System.out.println(request);
-
     var item = MediaItemRequest.asMediaItem(itemRequest);
 
     library.addMediaItem(item, librarian);
@@ -76,7 +75,13 @@ public class MediaItemsController {
   @DeleteMapping("/items/{id}")
   public ResponseEntity<Void> deleteItem(@PathVariable("id") UUID id) {
 
-    if (getItemById(id).getBody() == null) {
+    SearchCriteria query = new SearchCriteria();
+  Set<MediaItem> items = library.search(query);
+  Optional<MediaItem> item = items.stream()
+                                .filter(mediaItem -> mediaItem.getId().equals(id))
+                                .findFirst();
+
+    if (item.isEmpty()) {
       return ResponseEntity.notFound().build();
     }
 

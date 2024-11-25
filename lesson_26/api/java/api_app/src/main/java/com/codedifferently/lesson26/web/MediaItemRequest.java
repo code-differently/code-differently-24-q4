@@ -19,29 +19,21 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Builder
 public class MediaItemRequest {
-  @JsonProperty("id")
   private UUID id;
 
-  @JsonProperty("type")
   private String type;
 
-  @JsonProperty("isbn")
   private String isbn;
 
-  @JsonProperty("title")
   @NotBlank(message = "Title is required")
   private String title;
 
-  @JsonProperty("authors")
   private String[] authors;
 
-  @JsonProperty("edition")
   private String edition;
 
-  @JsonProperty("pages")
   private int pages;
 
-  @JsonProperty("runtime")
   private int runtime;
 
   public static MediaItem asMediaItem(MediaItemRequest request) {
