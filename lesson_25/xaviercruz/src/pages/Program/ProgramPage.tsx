@@ -21,10 +21,19 @@ export const ProgramPage: React.FC = () => {
       return;
     }
 
-    // Navigate with the new program data
-    navigate('/', {
-      state: {newProgram: formData},
-    });
+    const storedPrograms = localStorage.getItem('programs');
+    const programs = storedPrograms ? JSON.parse(storedPrograms) : [];
+
+    const isDuplicate = programs.some(
+      (program: FormData) => program.name === formData.name
+    );
+
+    if (!isDuplicate) {
+      const updatedPrograms = [...programs, formData];
+      localStorage.setItem('programs', JSON.stringify(updatedPrograms));
+    }
+
+    navigate('/');
   };
 
   const handleChange = (
