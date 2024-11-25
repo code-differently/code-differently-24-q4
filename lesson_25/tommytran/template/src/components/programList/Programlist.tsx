@@ -1,5 +1,7 @@
-import Program from './Program';
+import './ProgramList.scss';
 import React from 'react';
+
+import Program from '../program/Program';
 
 interface Program {
   id: number;

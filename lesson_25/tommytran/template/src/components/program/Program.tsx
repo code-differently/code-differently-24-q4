@@ -1,3 +1,4 @@
+import './Program.scss';
 import React from 'react';
 
 interface ProgramProps {
