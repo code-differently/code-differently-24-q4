@@ -5,7 +5,6 @@ import com.codedifferently.lesson26.library.Dvd;
 import com.codedifferently.lesson26.library.Magazine;
 import com.codedifferently.lesson26.library.MediaItem;
 import com.codedifferently.lesson26.library.Newspaper;
-import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.validation.constraints.NotBlank;
 import java.util.List;
 import java.util.UUID;

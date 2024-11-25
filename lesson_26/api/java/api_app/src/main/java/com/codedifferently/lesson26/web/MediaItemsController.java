@@ -76,10 +76,9 @@ public class MediaItemsController {
   public ResponseEntity<Void> deleteItem(@PathVariable("id") UUID id) {
 
     SearchCriteria query = new SearchCriteria();
-  Set<MediaItem> items = library.search(query);
-  Optional<MediaItem> item = items.stream()
-                                .filter(mediaItem -> mediaItem.getId().equals(id))
-                                .findFirst();
+    Set<MediaItem> items = library.search(query);
+    Optional<MediaItem> item =
+        items.stream().filter(mediaItem -> mediaItem.getId().equals(id)).findFirst();
 
     if (item.isEmpty()) {
       return ResponseEntity.notFound().build();
