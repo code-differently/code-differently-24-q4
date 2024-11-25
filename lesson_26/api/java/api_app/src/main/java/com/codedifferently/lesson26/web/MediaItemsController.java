@@ -63,7 +63,7 @@ public class MediaItemsController {
             .filter(item -> item.getId().equals(id))
             .toList();
     if (itemToDelete.isEmpty()) {
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
+      return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
     }
 
     if (!itemToDelete.isEmpty()) {
@@ -76,14 +76,14 @@ public class MediaItemsController {
 
   @PostMapping("/items")
   public ResponseEntity<?> addsItem(@RequestBody CreateMediaItemRequest mediaItemRequest) {
-    if (null == mediaItemRequest.getItem() || null == mediaItemRequest) { 
+    if (null == mediaItemRequest.getItem() || null == mediaItemRequest) {
       return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
     }
     MediaItem mediaItem = MediaItemRequest.asMediaItem(mediaItemRequest.getItem());
     if (null == mediaItem || null == mediaItem.getTitle()) {
       return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
     }
-    
+
     library.addMediaItem(mediaItem, librarian);
     return ResponseEntity.status(HttpStatus.OK).body(mediaItemRequest);
   }
