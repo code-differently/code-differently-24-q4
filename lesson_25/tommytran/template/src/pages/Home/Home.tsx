@@ -2,7 +2,7 @@ import './Home.scss';
 import React from 'react';
 import {useOutletContext} from 'react-router-dom';
 
-import ProgramList from '../../components/programList/Programlist';
+import ProgramList from '../../components/programList/ProgramList';
 
 export const Home: React.FC = () => {
   const {program} = useOutletContext<{
