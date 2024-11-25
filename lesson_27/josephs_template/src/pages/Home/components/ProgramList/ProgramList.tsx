@@ -1,10 +1,10 @@
 import './ProgramList.scss';
 import axios from 'axios';
-import React, {PropsWithChildren, useEffect, useState} from 'react';
+import React, {useEffect, useState} from 'react';
 
 import {Program} from '../Program/Program';
 
-interface OtherProps extends PropsWithChildren {
+interface OtherProps {
   id: string;
   title: string;
   description: string;
@@ -28,7 +28,7 @@ export const ProgramList: React.FC = () => {
   }, []);
   return (
     <>
-      <ul className='programs'>
+      <ul className="programs">
         {dataList.map(({id, title, description}) => (
           <Program key={id} title={title} description={description} />
         ))}
