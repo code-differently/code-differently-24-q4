@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Program from '../program/program.tsx';
+import Program from '../program/program';
 
 interface ProgramListProps {
   programs: {id: number; title: string; description: string}[];

@@ -1,6 +1,7 @@
 import './Home.scss';
 import ProgramList from './program-list/programlist.tsx';
 import React from 'react';
+import './program-list/programlist.scss';
 
 const programsData = [
   {
