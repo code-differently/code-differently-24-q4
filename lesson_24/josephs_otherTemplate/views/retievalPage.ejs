@@ -1,0 +1,51 @@
+
+       <!DOCTYPE html>
+        <html lang="en">
+        <head>
+        </head>
+        <body>
+
+       <title>Retrieval Page</title>
+        <div style="display: flex; justify-content: center; ">
+            <form action="/signUp" method="POST">
+                <br>
+                <button>
+                    Return back to page
+                </button>
+            </form>
+        </div>
+        <div style="display: flex; flex-direction: column; padding:0px" >
+            <h1>You have submitted good job <br/>
+            The information you put in: <br/><%=nameInput%><br/> <%=emailValue%></h1>
+        </div>
+        <style>
+            h1{
+                text-align: center;
+                background-color: gray;
+            }
+            body{
+                background-color: #353935;
+            }
+
+            button{
+                display: grid;
+                grid-auto-flow: column;
+                grid-gap: .5em;
+                padding: 1em 1.5em;
+                border-radius: 9em;
+                background: linear-gradient(to left, #333, #333 50%, #eee 100%, #333 85%);
+                font: 700 1.5em / 1.25 ubuntu, sans-serif;
+                text-transform: uppercase;
+            }
+                
+            button:hover{
+                cursor: pointer;
+            }
+        </style>
+
+        
+            
+        
+            
+        </body>
+        </html>
