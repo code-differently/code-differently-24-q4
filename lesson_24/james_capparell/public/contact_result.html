@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" id="redux-google-fonts-salient_redux-css" href="https://fonts.googleapis.com/css?family=Poppins%3A600%2C400%7CMontserrat%3A800%2C900%2C700&amp;ver=1597678827" type="text/css" media="all">
+    <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Poppins%3A600%2C400%7CMontserrat%3A800%2C900%2C700&#038;ver=1597678827' type='text/css' media='all' />
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>Contact Result</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="header">
+        <h1>Thank You for Your Submission</h1>
+    </header>
+
+    <div class="contact-details">
+        <h2>Your Submitted Information:</h2>
+        <p><strong>First Name:</strong> <span id="first-name-result"></span></p>
+        <p><strong>Last Name:</strong> <span id="last-name-result"></span></p>
+        <p><strong>Phone:</strong> <span id="phone-result"></span></p>
+        <p><strong>Email:</strong> <span id="email-result"></span></p>
+        <p><strong>Program of Interest:</strong> <span id="program-interest-result"></span></p>
+        <p><strong>Message:</strong> <span id="message-result"></span></p>
+    </div>
+
+    <footer class="footer">
+        &copy; 2024 Code Differently
+    </footer>
+
+    <script>
+        // Function to get query parameter value by name
+        function getQueryParam(name) {
+            var urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(name);
+        }
+
+        // Display the query data on the page
+        document.getElementById("first-name-result").textContent = getQueryParam("firstName");
+        document.getElementById("last-name-result").textContent = getQueryParam("lastName");
+        document.getElementById("phone-result").textContent = getQueryParam("phoneNum");
+        document.getElementById("email-result").textContent = getQueryParam("email");
+        document.getElementById("program-interest-result").textContent = getQueryParam("programInterest");
+        document.getElementById("message-result").textContent = getQueryParam("message");
+
+            // Log the data to the console (browser terminal)
+            console.log("First Name: " + getQueryParam("firstName"));
+            console.log("Last Name: " + getQueryParam("lastName"));
+            console.log("Phone: " + getQueryParam("phoneNum"));
+            console.log("Email: " + getQueryParam("email"));
+            console.log("Program of Interest: " + getQueryParam("programInterest"));
+            console.log("Message: " + getQueryParam("message"));
+    </script>
+</body>
+</html>
