@@ -1,0 +1,64 @@
+<title>Sign Up Page</title>
+        <div>
+            <div id="grid">
+                <div id="holder">
+                <form action="/retrieval" method="POST">
+                    <input name="nameInput" id="myInput" type="text" placeholder="Enter Full Name" required>
+                    <input name="emailInput" type="email" placeholder="Email Address" required>
+                        <button>
+                            Submit Form
+                        </button>
+                        </form>
+                        <form action="/index.html" method="GET">
+                        <button>
+                            Back to main page
+                        </button>
+                </form>
+                </div>
+            </div>
+        </div>
+
+        <style>
+            body {
+                background-color: #353935;
+            }
+            form{
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+            }
+
+            #grid{
+                display: grid;
+                grid-template-columns: 33.3% 33.3% 33.3%;
+                grid-template-rows: 50% 50% 50%;
+            }
+
+            #holder{
+                grid-column-start: 2;
+                grid-row-start: 2;
+            }
+                
+            input{
+                text-align: center;
+                padding: 1em 1.5em;
+                border-radius: 9em;
+                background: linear-gradient(to left, #333, #333 50%, #eee 100%, #333 85%);
+                font: 700 1.5em / 1.25 ubuntu, sans-serif;
+                text-transform: uppercase;
+                margin: 10px;
+            }
+            button:hover{
+                cursor: pointer;
+            }
+
+            button{
+                text-align: center;
+                padding: 1em 1.5em;
+                border-radius: 9em;
+                background: linear-gradient(to left, #333, #333 50%, #eee 100%, #333 85%);
+                font: 700 1.5em / 1.25 ubuntu, sans-serif;
+                text-transform: uppercase;
+            }
+        </style>

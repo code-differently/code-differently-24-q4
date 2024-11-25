@@ -1,0 +1,70 @@
+img{
+height: 75px;
+width: auto;
+margin-top: 28px;
+margin-right: 37px;
+margin-left: 28px;
+}
+h2{
+    text-align: center;
+    position: relative;
+    bottom: 205px;
+}
+body > h2 > a{
+    text-decoration: none;
+    color: black;
+    font-family: 'Montserrat', sans-serif;
+}
+body{
+    margin: 0;
+}
+h1{
+    text-align: center;
+    position: relative;
+    bottom: 35px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 50px;
+    padding-bottom: 12px;
+}
+fieldset{
+    border: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+p{
+    position: relative;
+    bottom: 75px;
+}
+p, #name-label, #email-label, #number-label{
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    font-size: 20px;
+}
+form{
+  text-align: center;
+  margin-left: 360px;
+  margin-right: 360px;
+  position: relative;
+  bottom: 75px;
+  background-color: rgb(208, 105, 32);
+}
+button{
+    padding: 10px 45px;
+    border-radius: 30px;
+    font-size: 15px;
+}
+.Group-Pic{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+body > div.Group-Pic > img{
+    width: 368px;
+    height: 245px;
+}
+body > div.FSinfo > img{
+    width: 368px;
+    height: 245px;
+}
