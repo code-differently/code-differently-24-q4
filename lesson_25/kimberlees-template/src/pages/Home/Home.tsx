@@ -30,10 +30,10 @@ export const Home: React.FC = () => {
       </section>
       <section className="programs-section">
         <ProgramList programs={programsData} />
-        <h2>
+        {/*<h2>
           Our <em className="highlight">Programs</em>
         </h2>
-        {/*<ul className="programs">
+        <ul className="programs">
           <li className="program">
             <h3>Swine Short Loin</h3>
             <p>
