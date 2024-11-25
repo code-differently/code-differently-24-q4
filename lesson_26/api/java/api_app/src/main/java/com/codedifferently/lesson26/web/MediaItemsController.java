@@ -1,10 +1,14 @@
 package com.codedifferently.lesson26.web;
 
+import com.codedifferently.lesson26.library.Librarian;
+import com.codedifferently.lesson26.library.Library;
+import com.codedifferently.lesson26.library.MediaItem;
+import com.codedifferently.lesson26.library.search.SearchCriteria;
+import jakarta.validation.Valid;
 import java.io.IOException;
 import java.util.List;
 import java.util.Set;
 import java.util.UUID;
-
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -13,13 +17,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
-
-import com.codedifferently.lesson26.library.Librarian;
-import com.codedifferently.lesson26.library.Library;
-import com.codedifferently.lesson26.library.MediaItem;
-import com.codedifferently.lesson26.library.search.SearchCriteria;
-
-import jakarta.validation.Valid;
 
 @RestController
 @CrossOrigin
@@ -41,12 +38,12 @@ public class MediaItemsController {
   }
 
   @GetMapping("/items/{id}")
-  public ResponseEntity<MediaItemResponse> getItemById(@PathVariable("id") UUID id){
+  public ResponseEntity<MediaItemResponse> getItemById(@PathVariable("id") UUID id) {
     SearchCriteria searchCriteria = SearchCriteria.builder().id(id.toString()).build();
 
     Set<MediaItem> foundItem = library.search(searchCriteria);
 
-    if (foundItem.isEmpty()){
+    if (foundItem.isEmpty()) {
       return ResponseEntity.notFound().build();
     }
 
@@ -57,12 +54,12 @@ public class MediaItemsController {
   }
 
   @DeleteMapping("/items/{id}")
-  public ResponseEntity<Void> deleteItem(@PathVariable("id") UUID id){
+  public ResponseEntity<Void> deleteItem(@PathVariable("id") UUID id) {
     SearchCriteria searchCriteria = SearchCriteria.builder().id(id.toString()).build();
 
     Set<MediaItem> foundItem = library.search(searchCriteria);
 
-    if (foundItem.isEmpty()){
+    if (foundItem.isEmpty()) {
       return ResponseEntity.notFound().build();
     }
 
@@ -73,9 +70,8 @@ public class MediaItemsController {
     return ResponseEntity.noContent().build();
   }
 
-
   @PostMapping("/items")
-  public CreateMediaItemResponse addsItem(@Valid @RequestBody CreateMediaItemRequest request){
+  public CreateMediaItemResponse addsItem(@Valid @RequestBody CreateMediaItemRequest request) {
 
     MediaItemRequest itemRequest = request.getItem();
 
@@ -83,9 +79,9 @@ public class MediaItemsController {
 
     library.addMediaItem(item, librarian);
 
-    CreateMediaItemResponse response = CreateMediaItemResponse.builder().item(getItemById(item.getId()).getBody()).build();
+    CreateMediaItemResponse response =
+        CreateMediaItemResponse.builder().item(getItemById(item.getId()).getBody()).build();
 
     return response;
-
   }
 }
