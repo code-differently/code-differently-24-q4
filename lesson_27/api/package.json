@@ -1,0 +1,28 @@
+{
+  "name": "codedifferently-web",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "build:deps": "cd ../types && npm install && npm run build",
+    "build": "npm run build:deps && npx tsc",
+    "start": "npm run build:deps && node dist/server.js",
+    "dev": "npm run build:deps && nodemon src/server.ts --quiet"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@trivago/prettier-plugin-sort-imports": "^4.3.0",
+    "nodemon": "^3.1.0",
+    "prettier": "3.2.5",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^5.4.4"
+  },
+  "dependencies": {
+    "@types/cors": "^2.8.17",
+    "@types/express": "^4.17.21",
+    "@types/node": "^20.12.5",
+    "cors": "^2.8.5",
+    "express": "^4.19.2"
+  }
+}
