@@ -6,6 +6,7 @@ import com.codedifferently.lesson26.library.MediaItem;
 import com.codedifferently.lesson26.library.search.SearchCriteria;
 import java.io.IOException;
 import java.util.List;
+import java.util.Optional;
 import java.util.Set;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -29,4 +30,35 @@ public class MediaItemsController {
     var response = GetMediaItemsResponse.builder().items(responseItems).build();
     return response;
   }
+
+    // GET a single item by its ID
+    @GetMapping("/items/{id}")
+    public MediaItemResponse getItem(@PathVariable String id) {
+        Optional<MediaItem> item = library.search(SearchCriteria.builder().id(id).build()).stream().findFirst();
+        if (item.isPresent()) {
+            return MediaItemResponse.from(item.get());
+        } else {
+            throw new ItemNotFoundException(id);
+        }
+    }
+
+    // POST a new item to /items
+    @PostMapping("/items")
+    public MediaItemResponse addItem(@RequestBody AddMediaItemRequest request) {
+        MediaItem newItem = request.toMediaItem();
+        library.addItem(newItem); // Assuming the library has an addItem method
+        return MediaItemResponse.from(newItem);
+    }
+
+    // DELETE an item by its ID
+    @DeleteMapping("/items/{id}")
+    @ResponseStatus(HttpStatus.NO_CONTENT) // No content when successfully deleted
+    public void deleteItem(@PathVariable String id) {
+        Set<MediaItem> items = library.search(SearchCriteria.builder().id(id).build());
+        if (items.isEmpty()) {
+            throw new ItemNotFoundException(id);
+        }
+        MediaItem itemToDelete = items.iterator().next();
+        library.removeItem(itemToDelete); // Assuming the library has a removeItem method
+    }
 }
