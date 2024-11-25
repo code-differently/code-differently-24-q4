@@ -11,6 +11,12 @@ import java.util.Set;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.ResponseStatus;
+import org.springframework.http.HttpStatus;
 
 @RestController
 @CrossOrigin
@@ -38,15 +44,16 @@ public class MediaItemsController {
         if (item.isPresent()) {
             return MediaItemResponse.from(item.get());
         } else {
-            throw new ItemNotFoundException(id);
+            throw new IllegalArgumentException("Unknown media item ID: " + id);
         }
     }
 
     // POST a new item to /items
     @PostMapping("/items")
-    public MediaItemResponse addItem(@RequestBody AddMediaItemRequest request) {
-        MediaItem newItem = request.toMediaItem();
-        library.addItem(newItem); // Assuming the library has an addItem method
+    public MediaItemResponse addItem(@RequestBody CreateMediaItemRequest request) {
+        MediaItemRequest mediaItemRequest = request.getItem();
+        MediaItem newItem = MediaItemRequest.asMediaItem(mediaItemRequest);
+        library.addMediaItem(newItem, librarian); // Assuming the library has an addItem method
         return MediaItemResponse.from(newItem);
     }
 
@@ -56,9 +63,9 @@ public class MediaItemsController {
     public void deleteItem(@PathVariable String id) {
         Set<MediaItem> items = library.search(SearchCriteria.builder().id(id).build());
         if (items.isEmpty()) {
-            throw new ItemNotFoundException(id);
+            throw new IllegalArgumentException("This ID does not exsist to delete! ID: " + id);
         }
         MediaItem itemToDelete = items.iterator().next();
-        library.removeItem(itemToDelete); // Assuming the library has a removeItem method
+        library.removeMediaItem(itemToDelete, librarian); // Assuming the library has a removeItem method
     }
 }
