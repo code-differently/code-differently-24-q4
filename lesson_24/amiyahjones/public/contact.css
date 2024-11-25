@@ -1,0 +1,159 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', 'Poppins';
+    scroll-behavior: smooth;
+}
+
+body {
+    line-height: 24px;
+}
+
+
+/* Nav-bar */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    padding: 16px 52px;
+    background-color: white;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    z-index: 10;
+}
+
+.header-logo img {
+    height: 70px;
+}
+
+.header-top-menu {
+    display: flex;
+    list-style: none;
+}
+
+.header-top-menu li {
+    margin: 0 15px;
+}
+
+.header-top-menu li:last-child {
+    text-decoration: underline;
+    text-decoration-color: #f47d26;
+    text-underline-offset: 8px;
+}
+
+.header-top-menu a {
+    color: #444;
+    text-decoration: none;
+    font-family: 'Poppins';
+    font-weight: bold;
+}
+
+.header-top-menu li:first-child {
+    text-transform: uppercase;
+}
+
+.header-cta .sign-up-button {
+    background-color: rgb(255, 128, 0);
+    color: white;
+    padding: 8px 16px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: 500;
+    font-family: 'Poppins';
+}
+
+.header-cta .sign-up-button:hover {
+    background-color: rgb(251, 148, 44);
+    transition-duration: 0.5s;
+}
+
+.container {
+    margin-top: 20px;
+    padding: 50%;
+}
+
+/* Contact form container */
+.contact-form {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 0px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 600px; 
+    margin: 5% auto;
+    padding: 40px; 
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+}
+
+label {
+    font-weight: bold;
+    color: #333;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    box-sizing: border-box;
+    background-color: #c9c9c9;
+}
+
+textarea {
+    resize: vertical;
+}
+
+.input-group {
+    display: flex;
+    gap: 15px;
+    width: 100%;
+}
+
+.input-group input {
+    flex: 1;
+    max-width: 45%; /* Make the input fields smaller */
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+textarea:focus {
+    outline: none;
+    border: 2px solid #f47d26;
+}
+
+button {
+    padding: 12px;
+    background-color: #f47d26;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    width: 100%;
+}
+
+button:hover {
+    background-color: #f88431;
+}
+
