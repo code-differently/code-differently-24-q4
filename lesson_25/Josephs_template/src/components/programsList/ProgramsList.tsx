@@ -2,9 +2,9 @@ import './ProgramsList.scss';
 import React from 'react';
 
 import {useProgramContext} from '../../contexts/ProgramContext';
-import {Programs} from '../programs/Programs';
+import { Programs } from '../programs/Programs';
 
-const ProgramsList: React.FC = () => {
+export const ProgramsList: React.FC = () => {
   const {programs} = useProgramContext();
   return (
     <>
@@ -20,4 +20,3 @@ const ProgramsList: React.FC = () => {
     </>
   );
 };
-export default ProgramsList;

@@ -2,7 +2,7 @@ import './Home.scss';
 import React from 'react';
 import {Link} from 'react-router-dom';
 
-import ProgramsList from '@/components/programsList/ProgramsList';
+import {ProgramsList} from '@/components/programsList';
 
 export const Home: React.FC = () => {
   return (

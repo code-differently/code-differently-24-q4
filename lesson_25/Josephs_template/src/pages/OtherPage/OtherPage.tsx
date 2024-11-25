@@ -1,6 +1,7 @@
 import { useProgramContext } from "@/contexts/ProgramContext";
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import './OtherPage.scss'
 
 export const OtherPage = () => {
   const [title, setTitle] = useState('');
