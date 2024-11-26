@@ -4,6 +4,7 @@ import com.codedifferently.lesson26.library.Librarian;
 import com.codedifferently.lesson26.library.Library;
 import com.codedifferently.lesson26.library.MediaItem;
 import com.codedifferently.lesson26.library.search.SearchCriteria;
+import jakarta.validation.Valid;
 import java.io.IOException;
 import java.util.List;
 import java.util.Set;
@@ -38,20 +39,16 @@ public class MediaItemsController {
   }
 
   @GetMapping("/items/{id}")
-  public ResponseEntity<String> getItem(@PathVariable UUID id) {
-    Set<MediaItem> items = library.search(SearchCriteria.builder().build());
+  public ResponseEntity<MediaItemResponse> getItem(@PathVariable UUID id) {
+    String enteredId = id.toString();
+    Set<MediaItem> items = library.search(SearchCriteria.builder().id(enteredId).build());
 
-    List<MediaItemResponse> responseItem =
-        items.stream()
-            .map(MediaItemResponse::from) // Transform the original objects
-            .filter(item -> item.getId().equals(id))
-            .toList();
-    if (responseItem.size() == 0) {
+    if (items.isEmpty()) {
       return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
     }
-    if (responseItem.size() >= 1)
-      return ResponseEntity.status(HttpStatus.OK).body("media item found");
-    else return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
+    MediaItem item = items.iterator().next();
+    MediaItemResponse response = MediaItemResponse.from(item);
+    return ResponseEntity.ok(response);
   }
 
   @DeleteMapping("/items/{id}")
@@ -65,26 +62,19 @@ public class MediaItemsController {
     if (itemToDelete.isEmpty()) {
       return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
     }
-
-    if (!itemToDelete.isEmpty()) {
-      library.removeMediaItem(id, librarian);
-      return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
-    }
-
+    library.removeMediaItem(id, librarian);
     return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
   }
 
   @PostMapping("/items")
-  public ResponseEntity<?> addsItem(@RequestBody CreateMediaItemRequest mediaItemRequest) {
-    if (null == mediaItemRequest.getItem() || null == mediaItemRequest) {
-      return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
-    }
-    MediaItem mediaItem = MediaItemRequest.asMediaItem(mediaItemRequest.getItem());
-    if (null == mediaItem || null == mediaItem.getTitle()) {
-      return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
-    }
+  public CreateMediaItemResponse addsItem(
+      @Valid @RequestBody CreateMediaItemRequest mediaItemRequest) {
 
+    MediaItem mediaItem = MediaItemRequest.asMediaItem(mediaItemRequest.getItem());
     library.addMediaItem(mediaItem, librarian);
-    return ResponseEntity.status(HttpStatus.OK).body(mediaItemRequest);
+    var response =
+        CreateMediaItemResponse.builder().item(getItem(mediaItem.getId()).getBody()).build();
+
+    return response;
   }
 }
