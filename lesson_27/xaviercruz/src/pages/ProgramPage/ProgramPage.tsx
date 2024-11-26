@@ -61,14 +61,16 @@ export const ProgramPage: React.FC = () => {
           onChange={handleChange}
           required
         />
-        <input
-          placeholder="Description"
-          aria-label="Description"
-          type="text"
+        <label htmlFor="Description">Description</label>
+        <textarea
+          rows={3}
+          cols={85}
+          minLength={100}
           name="description"
-          value={formData.description}
-          onChange={handleChange}
+          title="Description"
+          className="textarea"
           required
+          style={{resize: 'none'}}
         />
       </p>
       <p>
