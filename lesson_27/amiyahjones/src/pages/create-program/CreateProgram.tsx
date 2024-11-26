@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import {useNavigate} from 'react-router-dom';
+import './CreateProgram.scss';
 
 interface ProgramData {
   title: string;
@@ -9,23 +10,17 @@ interface ProgramData {
 export const CreateProgram: React.FC = () => {
   const [title, setTitle] = useState('');
   const [description, setDescription] = useState('');
-
   const navigate = useNavigate();
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    const newProgram: ProgramData = {
-      title,
-      description,
-    };
+    const newProgram: ProgramData = {title, description};
 
     try {
       const response = await fetch('http://localhost:4000/programs', {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
+        headers: {'Content-Type': 'application/json'},
         body: JSON.stringify(newProgram),
       });
 
@@ -33,10 +28,9 @@ export const CreateProgram: React.FC = () => {
         throw new Error('Failed to add new program');
       }
 
-      const responseData = await response.json();
-      console.log('New program added:', responseData);
+      console.log('New program added:', await response.json());
 
-      navigate('/');
+      navigate('/'); // Navigate back to the Home page
     } catch (error) {
       console.error('Error adding program:', error);
       alert('There was an error adding the program. Please try again.');
