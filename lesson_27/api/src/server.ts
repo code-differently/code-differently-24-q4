@@ -1,9 +1,9 @@
 import cors from 'cors';
+import { randomUUID } from 'crypto';
+import express, { Express, Request, Response } from 'express';
 import fs from 'fs';
-import express, {Express, Request, Response} from 'express';
+import { Program } from '../../types';
 import programs from './data/programs.json';
-import { randomUUID, UUID } from 'crypto';
-import {Program} from '../../types';
 
 const PROGRAMS_FILE = './data/programs.json';
 const UUID_PATTERN = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-5][0-9a-f]{3}-[089ab][0-9a-f]{3}-[0-9a-f]{12}$/i
@@ -42,9 +42,13 @@ app.get('/programs', async (req: Request, res: Response<Program[]>) => {
 app.post('/programs', async (req: Request<Partial<Program>>, res: Response) => {
   const newProgram = req.body;
   programs.push({id: randomUUID(), ...newProgram});
-  fs.writeFile(PROGRAMS_FILE, JSON.stringify(programs, null, 2), (err) => {
-    if (err) return console.log(err);
+  fs.writeFile(PROGRAMS_FILE, JSON.stringify(programs, null, 2), (err: unknown) => {
+    if (err) {
+      res.status(500).send({ error: 'Failed to write to file.' });
+      return;
+    }
     console.log(`Updated ${PROGRAMS_FILE}`);
+    res.status(201).send();
   });
 });
 
