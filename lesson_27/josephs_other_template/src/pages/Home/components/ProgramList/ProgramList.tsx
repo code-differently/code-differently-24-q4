@@ -19,11 +19,11 @@ export function ProgramList() {
         setData(data);
         console.log(data);
       } catch (error) {
-        console.error('Error fetching data:', error); // Handle any errors
+        console.error('Error fetching data:', error);
       }
     };
 
-    fetchData(); // Ensure this is called to fetch the data
+    fetchData(); 
   }, []);
 
   return (
@@ -33,7 +33,7 @@ export function ProgramList() {
          <Program key={id} title={title} description={description} />
        ))
      ) : (
-       <li>No programs available.</li> // Use block comments in JSX
+       <li>No programs available.</li> 
      )}
     </ul>
   );
