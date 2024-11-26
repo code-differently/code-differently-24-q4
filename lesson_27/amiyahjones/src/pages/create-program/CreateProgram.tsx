@@ -21,7 +21,6 @@ export const CreateProgram: React.FC = () => {
     };
 
     try {
-      // Send a POST request to the API to add the new program
       const response = await fetch('http://localhost:4000/programs', {
         method: 'POST',
         headers: {
@@ -34,11 +33,9 @@ export const CreateProgram: React.FC = () => {
         throw new Error('Failed to add new program');
       }
 
-      // Optionally, handle the response if needed
       const responseData = await response.json();
       console.log('New program added:', responseData);
 
-      // Navigate back to the Home page (or another page)
       navigate('/');
     } catch (error) {
       console.error('Error adding program:', error);

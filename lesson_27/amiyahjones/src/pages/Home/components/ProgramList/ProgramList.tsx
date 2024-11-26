@@ -6,52 +6,44 @@ import React, { useEffect, useState } from 'react';
 import { Program } from '../Program';
 
 
-interface ProgramData {
-  id: string;
-  title: string;
-  description: string;
-}
-
-
 export const ProgramList: React.FC = () => {
-  const [programs, setPrograms] = useState<ProgramData[]>([]);
-  const [loading, setLoading] = useState<boolean>(true);
+  const [programs, setPrograms] = useState<{ id: number; title: string; description: string }[] | null>(null);
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
     const fetchPrograms = async () => {
       try {
-        const response = await fetch('http://localhost:3000/programs');
+        const response = await fetch(
+          '/src/programs.json'
+        ); 
         if (!response.ok) {
-          throw new Error('Failed to fetch programs');
+          throw new Error(`HTTP Error: ${response.status}`);
         }
         const data = await response.json();
         setPrograms(data);
-      }
-      catch (error: any) {
-        setError('Error fetching data: ' + error.message);
-      } finally {
-        setLoading(false);
+      } catch (err: any) {
+        console.error('Fetch error:', err);
+        setError(err.message);
       }
     };
 
     fetchPrograms();
   }, []);
 
-  if (loading) {
-    return <div>Loading programs...</div>;
+  if (error) {
+    return <p>Error loading programs: {error}</p>;
   }
 
-  if (error) {
-    return <div>Error: {error}</div>;
+  if (programs === null) {
+    return <p>Loading programs...</p>;
   }
 
   return (
-    <ul className='programs'>
+    <ul className="programs">
       {programs.map((program) => (
-      <Program key={program.id} title={program.title}>
-        <p>{program.description}</p>
-      </Program>
+        <Program key={program.id} title={program.title}>
+          <p>{program.description}</p>
+        </Program>
       ))}
     </ul>
   );
