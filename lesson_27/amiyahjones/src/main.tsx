@@ -1,11 +1,15 @@
 import App from './App.tsx';
-import {Home} from './pages/Home/Home.tsx';
-import {QueryClient, QueryClientProvider} from '@tanstack/react-query';
+import { Home } from './pages/Home/Home.tsx';
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import {RouterProvider, createBrowserRouter} from 'react-router-dom';
+import { RouterProvider, createBrowserRouter } from 'react-router-dom';
+
+
 
 import './index.scss';
+import { CreateProgram } from './pages/create-program/CreateProgram.tsx';
+
 
 const queryClient = new QueryClient();
 
@@ -17,6 +21,10 @@ const router = createBrowserRouter([
       {
         path: '/',
         element: <Home />,
+      },
+      {
+        path: '/CreateProgram',
+        element: <CreateProgram />,
       },
     ],
   },
