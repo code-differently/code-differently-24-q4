@@ -7,7 +7,7 @@ export const ProgramList: React.FC = () => {
   const [programs, setPrograms] = useState<{id: number; title: string; description: string}[] | null>(null);
 
   useEffect(() => {
-    fetch('http://localhost:8000/programs')
+    fetch('http://localhost:4000/programs')
       .then(res => {
         if (!res.ok) {
           throw new Error('Failed to fetch programs');
