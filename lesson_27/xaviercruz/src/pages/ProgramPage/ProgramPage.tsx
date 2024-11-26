@@ -68,6 +68,8 @@ export const ProgramPage: React.FC = () => {
           minLength={100}
           name="description"
           title="Description"
+          value={formData.description}
+          onChange={handleChange}
           className="textarea"
           required
           style={{resize: 'none'}}
