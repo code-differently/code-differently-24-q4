@@ -10,7 +10,8 @@
     "start": "npm run build:deps && tsx src/index.ts",
     "dev": "npm run build:deps && tsx src/index.ts",
     "test": "jest",
-    "test:watch": "jest --watch"
+    "test:watch": "jest --watch",
+    "fix": "prettier --write ."
   },
   "author": "",
   "license": "ISC",
