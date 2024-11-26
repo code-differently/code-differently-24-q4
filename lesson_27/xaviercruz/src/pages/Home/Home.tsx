@@ -1,6 +1,7 @@
-import { ProgramList } from './components/ProgramList';
 import './Home.scss';
 import React from 'react';
+
+import {ProgramList} from './components/ProgramList';
 
 export const Home: React.FC = () => {
   return (
@@ -24,9 +25,7 @@ export const Home: React.FC = () => {
         <h2>
           Our <em className="highlight">Programs</em>
         </h2>
-        <ul className="programs">
-          <ProgramList />
-        </ul>
+        <ProgramList />
       </section>
     </article>
   );
