@@ -1,0 +1,37 @@
+{
+  "name": "my-app",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "build:deps": "cd ../types && npm install && npm run build",
+    "dev": "npm run build:deps && vite",
+    "build": "npm run build:deps && tsc && vite build",
+    "lint": "eslint . --report-unused-disable-directives --max-warnings 0",
+    "fix": "prettier --write .",
+    "preview": "npm run build:deps && vite preview"
+  },
+  "dependencies": {
+    "@tanstack/react-query": "^5.29.2",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.22.3"
+  },
+  "devDependencies": {
+    "@stylistic/eslint-plugin": "^1.7.2",
+    "@trivago/prettier-plugin-sort-imports": "^4.3.0",
+    "@types/react": "^18.2.66",
+    "@types/react-dom": "^18.2.22",
+    "@typescript-eslint/eslint-plugin": "^7.2.0",
+    "@typescript-eslint/parser": "^7.2.0",
+    "@vitejs/plugin-react": "^4.2.1",
+    "eslint": "^8.57.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-react-refresh": "^0.4.6",
+    "prettier": "3.2.5",
+    "sass": "^1.75.0",
+    "typescript": "^5.2.2",
+    "vite": "^5.2.0"
+  }
+}
