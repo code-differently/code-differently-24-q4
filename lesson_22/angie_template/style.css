@@ -1,0 +1,95 @@
+body > header > div.header-logo > a > img{
+    width: 150px; 
+  height: auto;
+}
+body > header{
+    display: flex;
+   align-items: center; 
+    justify-content: space-between;
+}
+body > header > div.header-cta{
+    display: flex;
+}
+body > header > ul{
+     display: flex;
+    flex-direction: row;
+    align-items: center;
+     justify-content: space-between;    
+}
+body > header > div.header-logo{
+     display: flex;
+}
+ body > header > ul > li:nth-child(1){
+    display: flex;
+    padding: 0 30;
+}
+body > header > ul > li:nth-child(2){
+    display: flex;
+    padding: 0 30;
+}
+body > header > ul > li:nth-child(3){
+    display: flex;
+    padding: 0 30;
+}
+body > div{
+    display: flex;
+}
+body > footer{
+    display:flex;
+    justify-content: center;
+}
+body > div > div > article > section.hero-section > div.hero-content > h2{
+     color: white;
+     font-size: 40px;
+
+}  
+body > div > div > article > section.hero-section{
+    background-image: url("hero.jpg");
+    height: 1000px;;
+}
+body > div > div > article > section.hero-section > div.hero-content{
+     display: flex;
+     flex-direction: column;
+     width: 900px;
+}
+body > div > div > article > section.hero-section > div.hero-content > div{
+    color: white;
+    background-color: blue;
+    font-size: 25px;
+
+}
+body > div > div > article > section.hero-section > div.hero-content > div > span{
+    color: orange;
+}
+body > div > div > article > section.hero-section > div.hero-content > h2 > em{
+    text-decoration: underline orange 20px;
+}
+body > div > div > article > section.programs-section > ul{
+    display: grid;
+    grid-template-columns: 60% 60%;
+    grid-template-rows: 50% 50%;
+}
+body > div > div > article > section.programs-section > h2 > em{
+    text-decoration: underline orange 12px;
+}
+body > div > div > article > section.programs-section > h2{
+    font-size: 30px;
+}
+body > header > ul > * > a {
+    text-decoration:none;
+    font-family: poppins;
+    font-weight: 550;
+    color: black;
+}
+body > header > div.header-cta > a{
+    text-decoration:none;
+    font-family: poppins;
+    font-weight: 550;
+    color: black;
+}
+
+body > div > div > article > section.hero-section > div.hero-content > h2{
+    font-size: 50px;
+    font-weight: 800;
+    font-family: montserrat;
+}
