@@ -44,7 +44,6 @@ app.get('/programs', async (req: Request, res: Response<Program[]>) => {
 app.post('/programs', async (req: Request<Partial<Program>>, res: Response) => {
   const newProgram = req.body;
   programs.push({id: randomUUID(), ...newProgram});
-  console.log(programs);
   fs.writeFile(PROGRAMS_FILE, JSON.stringify(programs, null, 2), err => {
     if (err) return console.log(err);
     console.log(`Updated ${PROGRAMS_FILE}`);
