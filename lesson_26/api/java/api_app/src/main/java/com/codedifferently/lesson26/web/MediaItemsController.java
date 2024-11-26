@@ -4,6 +4,7 @@ import com.codedifferently.lesson26.library.Librarian;
 import com.codedifferently.lesson26.library.Library;
 import com.codedifferently.lesson26.library.MediaItem;
 import com.codedifferently.lesson26.library.search.SearchCriteria;
+
 import java.io.IOException;
 import java.util.List;
 import java.util.Optional;
@@ -11,12 +12,14 @@ import java.util.Set;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.server.ResponseStatusException;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.http.HttpStatus;
+import org.springframework.validation.annotation.Validated;
 
 @RestController
 @CrossOrigin
@@ -44,16 +47,17 @@ public class MediaItemsController {
         if (item.isPresent()) {
             return MediaItemResponse.from(item.get());
         } else {
-            throw new IllegalArgumentException("Unknown media item ID: " + id);
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Unknown media item ID: " + id);
         }
     }
 
     // POST a new item to /items
     @PostMapping("/items")
-    public MediaItemResponse addItem(@RequestBody CreateMediaItemRequest request) {
+    public MediaItemResponse addItem(@RequestBody @Validated CreateMediaItemRequest request) {
+        // Validate the request body and ensure fields are not empty
         MediaItemRequest mediaItemRequest = request.getItem();
         MediaItem newItem = MediaItemRequest.asMediaItem(mediaItemRequest);
-        library.addMediaItem(newItem, librarian); // Assuming the library has an addItem method
+        library.addMediaItem(newItem, librarian);
         return MediaItemResponse.from(newItem);
     }
 
@@ -63,9 +67,10 @@ public class MediaItemsController {
     public void deleteItem(@PathVariable String id) {
         Set<MediaItem> items = library.search(SearchCriteria.builder().id(id).build());
         if (items.isEmpty()) {
-            throw new IllegalArgumentException("This ID does not exsist to delete! ID: " + id);
+            // Return 404 Not Found if item doesn't exist
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Item not found for deletion: " + id);
         }
         MediaItem itemToDelete = items.iterator().next();
-        library.removeMediaItem(itemToDelete, librarian); // Assuming the library has a removeItem method
+        library.removeMediaItem(itemToDelete, librarian);
     }
 }
