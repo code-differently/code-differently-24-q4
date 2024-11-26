@@ -1,5 +1,5 @@
-import {Db} from './db';
-import {createServer} from './server';
+import {Db} from './db.js';
+import {createServer} from './server.js';
 import {Express} from 'express';
 import request from 'supertest';
 
