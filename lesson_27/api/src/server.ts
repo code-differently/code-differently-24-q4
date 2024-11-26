@@ -3,6 +3,7 @@ import cors from 'cors';
 import {randomUUID} from 'crypto';
 import express, {Express, Request, Response} from 'express';
 import fs from 'fs';
+import path from 'path';
 
 import {Program} from '../../types';
 
