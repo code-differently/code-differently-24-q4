@@ -30,7 +30,7 @@ export const CreateProgram: React.FC = () => {
 
       console.log('New program added:', await response.json());
 
-      navigate('/'); // Navigate back to the Home page
+      navigate('/'); 
     } catch (error) {
       console.error('Error adding program:', error);
       alert('There was an error adding the program. Please try again.');
