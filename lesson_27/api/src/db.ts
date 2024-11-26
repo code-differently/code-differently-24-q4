@@ -1,8 +1,7 @@
+import {Program} from '@code-differently/types';
 import {randomUUID} from 'crypto';
-import {Low} from 'lowdb/lib';
+import {Low} from 'lowdb';
 import {JSONFilePreset} from 'lowdb/node';
-
-import {Program} from '../../types';
 
 export interface Db {
   getPrograms: () => Promise<Program[]>;
