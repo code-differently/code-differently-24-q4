@@ -1,17 +1,13 @@
-import programs from './data/programs.json';
+import {Db} from './db.js';
 import cors from 'cors';
-import {randomUUID} from 'crypto';
 import express, {Express, Request, Response} from 'express';
-import fs from 'fs';
-import path from 'path';
 
 import {Program} from '../../types';
 
-const PROGRAMS_FILE = path.resolve(__dirname, './data/programs.json');
 const UUID_PATTERN =
   /^[0-9a-f]{8}-[0-9a-f]{4}-[0-5][0-9a-f]{3}-[089ab][0-9a-f]{3}-[0-9a-f]{12}$/i;
 
-export const createServer = (): Express => {
+export const createServer = (db: Db): Express => {
   const app: Express = express();
 
   app.use(express.static('public'));
@@ -24,7 +20,7 @@ export const createServer = (): Express => {
       res.status(400).send();
       return;
     }
-    const program = programs.find(p => p.id === req.params.id);
+    const program = await db.getProgram(req.params.id);
 
     if (!program) {
       res.status(404).send();
@@ -40,6 +36,7 @@ export const createServer = (): Express => {
 
   app.get('/programs', async (req: Request, res: Response<Program[]>) => {
     // Send the raw data back to the client as JSON.
+    const programs = await db.getPrograms();
     res.status(200).send(programs);
   });
 
@@ -47,19 +44,14 @@ export const createServer = (): Express => {
     '/programs',
     async (req: Request<Partial<Program>>, res: Response) => {
       const newProgram = req.body;
-      programs.push({id: randomUUID(), ...newProgram});
-      fs.writeFile(
-        PROGRAMS_FILE,
-        JSON.stringify(programs, null, 2),
-        (err: unknown) => {
-          if (err) {
-            res.status(500).send({error: 'Failed to write to file.'});
-            return;
-          }
-          console.log(`Updated ${PROGRAMS_FILE}`);
-          res.status(201).send();
-        }
-      );
+      try {
+        db.addProgram(newProgram as Program);
+      } catch (error: unknown) {
+        res.status(500).send({error: 'Failed to add program.'});
+        return;
+      }
+      console.log('Added new program');
+      res.status(201).send();
     }
   );
 
