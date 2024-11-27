@@ -43,3 +43,45 @@ export async function POST(request: Request) {
     return new Response('Internal Server Error', { status: 500 });
   }
 }
+
+// Delete a todo
+export async function DELETE(request: Request) {
+  const { userId } = await auth();
+
+  if (!userId) {
+    return new Response('Unauthorized', { status: 401 });
+  }
+
+  const { id } = await request.json();
+
+  try {
+    const todos = (await redis.get(`todos:${userId}`)) as Array<{ id: number }>;
+    const updatedTodos = todos.filter((todo) => todo.id !== id);
+    await redis.set(`todos:${userId}`, updatedTodos);
+    return NextResponse.json(updatedTodos);
+  } catch (error) {
+    console.error('Error deleting todo:', error);
+    return new Response('Internal Server Error', { status: 500 });
+  }
+}
+
+// Update a todo
+export async function PATCH(request: Request) {
+  const { userId } = await auth();
+
+  if (!userId) {
+    return new Response('Unauthorized', { status: 401 });
+  }
+
+  const todo = await request.json();
+
+  try {
+    const todos = (await redis.get(`todos:${userId}`)) as Array<{ id: number }>;
+    const updatedTodos = todos.map((t) => (t.id === todo.id ? todo : t));
+    await redis.set(`todos:${userId}`, updatedTodos);
+    return NextResponse.json(updatedTodos);
+  } catch (error) {
+    console.error('Error updating todo:', error);
+    return new Response('Internal Server Error', { status: 500 });
+  }
+}

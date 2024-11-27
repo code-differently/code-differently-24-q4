@@ -14,20 +14,21 @@ export const TodoApp: React.FC = () => {
   const [newTodo, setNewTodo] = useState('');
 
   useEffect(() => {
-    const fetchTodos = async () => {
-      const response = await fetch('/api/todos');
-      const data = await response.json();
-      setTodos(data);
-    };
     fetchTodos();
   }, []);
+
+  const fetchTodos = async () => {
+    const response = await fetch('/api/todos');
+    const data = await response.json();
+    setTodos(data);
+  };
 
   const addTodo = async (e: React.FormEvent) => {
     e.preventDefault();
     if (newTodo.trim() !== '') {
       const todo: Todo = { id: Date.now(), text: newTodo, completed: false };
       await fetch('/api/todos', { method: 'POST', body: JSON.stringify(todo) });
-      setTodos([...todos, { id: Date.now(), text: newTodo, completed: false }]);
+      await fetchTodos();
       setNewTodo('');
     }
   };
@@ -40,8 +41,12 @@ export const TodoApp: React.FC = () => {
     );
   };
 
-  const deleteTodo = (id: number) => {
-    setTodos(todos.filter((todo) => todo.id !== id));
+  const deleteTodo = async (id: number) => {
+    await fetch('/api/todos', {
+      method: 'DELETE',
+      body: JSON.stringify({ id }),
+    });
+    fetchTodos();
   };
 
   return (
