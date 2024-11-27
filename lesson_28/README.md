@@ -14,7 +14,6 @@ Please review the following resources before lecture:
 ## Homework
 
 - [ ] Complete [Loading the Library, Part II](#loading-the-library-part-ii) assignment.
-- [ ] Do pre-work for [lesson 29](/lesson_29/).
 
 
 ### Loading The Library, Part II
