@@ -1,5 +1,4 @@
 import {Program} from '@code-differently/types';
-import {useMutation} from '@tanstack/react-query';
 import React, {useState} from 'react';
 
 const addProgram = async (newProgram: Program): Promise<Program> => {
@@ -8,24 +7,38 @@ const addProgram = async (newProgram: Program): Promise<Program> => {
     headers: {
       'Content-Type': 'application/json',
     },
-    body: JSON.stringify(newProgram), // Sending title and description
+    body: JSON.stringify(newProgram),
   });
 
   if (!res.ok) {
     throw new Error('Failed to add program');
   }
 
-  return res.json(); // Return the new program data after it's added
+  return res.json();
 };
 
 const AddProgramPage: React.FC = () => {
   const [title, setTitle] = useState('');
   const [description, setDescription] = useState('');
-  const mutation = useMutation<Program, Error, Program>(addProgram);
+  const [isLoading, setIsLoading] = useState(false);
+  const [isError, setIsError] = useState(false);
+  const [isSuccess, setIsSuccess] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    mutation.mutate({title, description}); // No need to include id
+    setIsLoading(true);
+    setIsError(false);
+    setIsSuccess(false);
+
+    try {
+      await addProgram({id: '', title, description});
+      setIsSuccess(true);
+    } catch (error) {
+      setIsError(true);
+      console.error('Error adding program:', error);
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   return (
@@ -45,13 +58,13 @@ const AddProgramPage: React.FC = () => {
           placeholder="Program Description"
           required
         />
-        <button type="submit" disabled={mutation.isLoading}>
-          {mutation.isLoading ? 'Adding...' : 'Add Program'}
+        <button type="submit" disabled={isLoading}>
+          {isLoading ? 'Adding...' : 'Add Program'}
         </button>
       </form>
 
-      {mutation.isError && <p>Error adding program</p>}
-      {mutation.isSuccess && <p>Program added successfully!</p>}
+      {isError && <p>Error adding program</p>}
+      {isSuccess && <p>Program added successfully!</p>}
     </div>
   );
 };

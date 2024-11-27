@@ -1,8 +1,9 @@
 import './ProgramList.scss';
+import {Program} from '@code-differently/types';
 import {useQuery} from '@tanstack/react-query';
 import React from 'react';
 
-const fetchPrograms = async () => {
+const fetchPrograms = async (): Promise<Program[]> => {
   const res = await fetch('http://localhost:4000/programs');
   if (!res.ok) {
     throw new Error('Failed to fetch programs');
@@ -11,10 +12,10 @@ const fetchPrograms = async () => {
 };
 
 export const ProgramList: React.FC = () => {
-  const {data, error, isLoading} = useQuery<Program[], Error>(
-    ['programs'],
-    fetchPrograms
-  );
+  const {data, error, isLoading} = useQuery<Program[], Error>({
+    queryKey: ['programs'],
+    queryFn: fetchPrograms,
+  });
 
   if (isLoading) {
     return <p>Loading...</p>;
@@ -26,7 +27,7 @@ export const ProgramList: React.FC = () => {
 
   return (
     <ul className="programs">
-      {data?.map(program => (
+      {(data ?? []).map(program => (
         <li key={program.id}>
           <h3>{program.title}</h3>
           <p>{program.description}</p>
