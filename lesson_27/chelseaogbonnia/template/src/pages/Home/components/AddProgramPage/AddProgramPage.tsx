@@ -2,7 +2,7 @@ import {Program} from '@code-differently/types';
 import React, {useState} from 'react';
 
 const addProgram = async (newProgram: Program): Promise<Program> => {
-  const res = await fetch('http://localhost:4000/programs', {
+  const res = await fetch('http://localhost:5173/programs', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
