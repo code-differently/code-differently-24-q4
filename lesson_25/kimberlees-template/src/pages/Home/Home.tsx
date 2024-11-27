@@ -1,7 +1,8 @@
 import './Home.scss';
+import './program-list/programlist.scss';
 import ProgramList from './program-list/programlist.tsx';
 import React from 'react';
-import './program-list/programlist.scss';
+import {useNavigate} from 'react-router-dom';
 
 const programsData = [
   {
@@ -31,6 +32,12 @@ const programsData = [
 ];
 
 export const Home: React.FC = () => {
+  const navigate = useNavigate(); 
+
+  const handleAddProgramClick = () => {
+    navigate('/create-program'); 
+  };
+
   return (
     <article>
       <section className="hero-section">
@@ -41,8 +48,8 @@ export const Home: React.FC = () => {
             <em className="highlight">diversity in tech.</em>
           </h2>
           <div className="hero-text">
-            <span>Code Differently</span> provides hands on training and
-            education through coding classes that gives participants the
+            <span>Code Differently</span> provides hands-on training and
+            education through coding classes that give participants the
             technical and cognitive skills they need to excel in
             technology-driven workplaces.
           </div>
@@ -50,8 +57,16 @@ export const Home: React.FC = () => {
       </section>
       <section className="programs-section">
         <ProgramList programs={programsData} />
+        <button
+          type="button"
+          className="add-button"
+          onClick={handleAddProgramClick} 
+        >
+          Add Program
+        </button>
       </section>
     </article>
   );
 };
+
 export default Home;
