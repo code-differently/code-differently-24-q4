@@ -1,7 +1,7 @@
 'use client';
 
 import { PlusIcon, TrashIcon } from 'lucide-react';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 interface Todo {
   id: number;
@@ -13,9 +13,20 @@ export const TodoApp: React.FC = () => {
   const [todos, setTodos] = useState<Todo[]>([]);
   const [newTodo, setNewTodo] = useState('');
 
-  const addTodo = (e: React.FormEvent) => {
+  useEffect(() => {
+    const fetchTodos = async () => {
+      const response = await fetch('/api/todos');
+      const data = await response.json();
+      setTodos(data);
+    };
+    fetchTodos();
+  }, []);
+
+  const addTodo = async (e: React.FormEvent) => {
     e.preventDefault();
     if (newTodo.trim() !== '') {
+      const todo: Todo = { id: Date.now(), text: newTodo, completed: false };
+      await fetch('/api/todos', { method: 'POST', body: JSON.stringify(todo) });
       setTodos([...todos, { id: Date.now(), text: newTodo, completed: false }]);
       setNewTodo('');
     }
@@ -24,8 +35,8 @@ export const TodoApp: React.FC = () => {
   const toggleTodo = (id: number) => {
     setTodos(
       todos.map((todo) =>
-        todo.id === id ? { ...todo, completed: !todo.completed } : todo
-      )
+        todo.id === id ? { ...todo, completed: !todo.completed } : todo,
+      ),
     );
   };
 

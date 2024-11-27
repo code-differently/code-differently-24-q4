@@ -148,3 +148,5 @@ dist
 __pycache__/
 venv/
 pip-log.txt
+.vercel
+.env*.local
