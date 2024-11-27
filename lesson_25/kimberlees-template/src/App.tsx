@@ -1,10 +1,11 @@
 import './App.scss';
 import {Outlet} from 'react-router-dom';
 
+
 import {Footer} from './components/footer';
 import {Header} from './components/header';
 
-function App() {
+const App: React.FC = () => {
   return (
     <>
       <Header />
@@ -16,6 +17,6 @@ function App() {
       <Footer />
     </>
   );
-}
+};
 
 export default App;

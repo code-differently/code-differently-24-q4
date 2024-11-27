@@ -1,1 +1,3 @@
-export {programlist} from '../program-list/programlist';
+import CreateProgram from './CreateProgram';
+
+export default CreateProgram;
