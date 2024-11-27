@@ -1,4 +1,6 @@
 import React from 'react';
+import '../program/program.scss';
+
 
 interface ProgramProps {
     title: string;

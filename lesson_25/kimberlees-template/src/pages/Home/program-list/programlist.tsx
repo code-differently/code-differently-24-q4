@@ -1,5 +1,5 @@
 import React from 'react';
-
+import '../program-list/programlist.scss';
 import Program from '../program/program';
 
 interface ProgramListProps {
