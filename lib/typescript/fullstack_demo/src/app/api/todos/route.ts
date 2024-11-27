@@ -1,11 +1,8 @@
+import { createTodoRepository } from '@/repositories';
 import { auth } from '@clerk/nextjs/server';
-import { Redis } from '@upstash/redis';
 import { NextResponse } from 'next/server';
 
-const redis = new Redis({
-  url: process.env.KV_REST_API_URL,
-  token: process.env.KV_REST_API_TOKEN,
-});
+const todoRepository = createTodoRepository();
 
 /**
  * Retrieve all todos by user
@@ -20,7 +17,7 @@ export async function GET() {
   }
 
   try {
-    const todos = await redis.get(`todos:${userId}`);
+    const todos = await todoRepository.getAll(userId);
     return NextResponse.json(todos || []);
   } catch (error) {
     console.error('Error fetching todos:', error);
@@ -44,10 +41,8 @@ export async function POST(request: Request) {
   const todo = await request.json();
 
   try {
-    const todos = (await redis.get(`todos:${userId}`)) as [];
-    const updatedTodos = [...(todos || []), { ...todo, id: Date.now() }];
-    await redis.set(`todos:${userId}`, updatedTodos);
-    return NextResponse.json(updatedTodos);
+    const id = await todoRepository.create(todo, userId);
+    return NextResponse.json(id);
   } catch (error) {
     console.error('Error creating todo:', error);
     return new Response('Internal Server Error', { status: 500 });

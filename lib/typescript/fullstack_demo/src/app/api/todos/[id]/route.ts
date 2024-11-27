@@ -1,11 +1,8 @@
+import { createTodoRepository } from '@/repositories';
 import { auth } from '@clerk/nextjs/server';
-import { Redis } from '@upstash/redis';
 import { NextResponse } from 'next/server';
 
-const redis = new Redis({
-  url: process.env.KV_REST_API_URL,
-  token: process.env.KV_REST_API_TOKEN,
-});
+const todoRepository = createTodoRepository();
 
 /**
  * Delete a todo for a user
@@ -27,10 +24,8 @@ export async function DELETE(
   const { id } = await params;
 
   try {
-    const todos = (await redis.get(`todos:${userId}`)) as Array<{ id: number }>;
-    const updatedTodos = todos.filter((todo) => todo.id != Number(id));
-    await redis.set(`todos:${userId}`, updatedTodos);
-    return NextResponse.json(updatedTodos);
+    await todoRepository.delete(Number(id), userId);
+    return new Response('No content', { status: 200 });
   } catch (error) {
     console.error('Error deleting todo:', error);
     return new Response('Internal Server Error', { status: 500 });
@@ -53,10 +48,8 @@ export async function PATCH(request: Request) {
   const todo = await request.json();
 
   try {
-    const todos = (await redis.get(`todos:${userId}`)) as Array<{ id: number }>;
-    const updatedTodos = todos.map((t) => (t.id === todo.id ? todo : t));
-    await redis.set(`todos:${userId}`, updatedTodos);
-    return NextResponse.json(updatedTodos);
+    const updatedTodo = await todoRepository.patch(todo, userId);
+    return NextResponse.json(updatedTodo);
   } catch (error) {
     console.error('Error updating todo:', error);
     return new Response('Internal Server Error', { status: 500 });
