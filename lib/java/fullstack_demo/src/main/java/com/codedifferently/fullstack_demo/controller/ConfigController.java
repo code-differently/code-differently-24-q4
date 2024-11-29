@@ -18,12 +18,15 @@ public class ConfigController {
     @Value("${app.env}")
     private String environment;
 
+    @Value("${app.clerk.perishableKey}")
+    private String clerkPerishableKey;
+
     @GetMapping("/api/config")
     public Map<String, String> getConfig(Model model) {
         return Map.of(
                 "API_URL", apiUrl,
                 "ENV", environment,
-                "CLERK_PERISHABLE_KEY", "pk_test_c3VyZS1hcmFjaG5pZC0xOC5jbGVyay5hY2NvdW50cy5kZXYk"
+                "CLERK_PERISHABLE_KEY", clerkPerishableKey
         );
     }
 }

@@ -4,4 +4,7 @@ spring:
 app:
   api:
     url: http://localhost:8080
+  clerk:
+    perishableKey: ${CLERK_PERISHABLE_KEY}
+    secretKey: ${CLERK_SECRET_KEY}
   env: dev
