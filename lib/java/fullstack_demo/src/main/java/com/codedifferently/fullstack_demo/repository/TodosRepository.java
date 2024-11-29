@@ -14,7 +14,7 @@ import redis.clients.jedis.Jedis;
 @Service
 public class TodosRepository {
 
-    private Jedis jedis;
+    private final Jedis jedis;
 
     public TodosRepository(
             @Value("${app.redis.host}") String host,
