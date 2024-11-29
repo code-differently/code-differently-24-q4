@@ -10,7 +10,7 @@ public class WebConfiguration implements WebMvcConfigurer {
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
         registry.addResourceHandler("/**")
-                .addResourceLocations("classpath:/static/")
-                .addResourceLocations("classpath:/react-static/");
+                .addResourceLocations("classpath:/react-static/")
+                .addResourceLocations("classpath:/static/");
     }
 }

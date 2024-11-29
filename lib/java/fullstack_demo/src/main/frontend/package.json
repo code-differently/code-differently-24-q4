@@ -7,8 +7,7 @@
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
-    "preview": "vite preview",
-    "deploy:java": "vite build && mkdir ../resources/react-static && cp -r dist/* ../resources/react-static"
+    "preview": "vite preview"
   },
   "dependencies": {
     "@clerk/clerk-react": "^5.17.1",

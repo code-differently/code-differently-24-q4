@@ -38,3 +38,26 @@ dependencies {
 tasks.withType<Test> {
 	useJUnitPlatform()
 }
+
+// Define Node.js tasks
+val npmInstall by tasks.registering(Exec::class) {
+    workingDir = file("src/main/frontend")
+    commandLine("npm", "install")
+}
+
+val npmBuild by tasks.registering(Exec::class) {
+    dependsOn(npmInstall)
+    workingDir = file("src/main/frontend")
+    commandLine("npm", "run", "build")
+}
+
+val copyReactBuild by tasks.registering(Copy::class) {
+    dependsOn(npmBuild)
+    from("src/main/frontend/dist")
+    into("src/main/resources/react-static")
+}
+
+// Hook into the Gradle build lifecycle
+tasks.named("processResources") {
+    dependsOn(copyReactBuild)
+}
