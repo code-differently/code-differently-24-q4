@@ -23,11 +23,16 @@ public class TodosController {
 
     @GetMapping()
     public ResponseEntity<Todo[]> getAll(@RequestHeader("Authorization") String authHeader) {
-        var token = authHeader.split(" ")[1];
-        var userId = clerkService.getUserId(token);
+        String userId = this.getUserIdFromRequest(authHeader);
         if (userId == null) {
             return ResponseEntity.status(HttpStatus.UNAUTHORIZED).build();
         }
         return ResponseEntity.ok(this.todosRepository.getAll(userId));
+    }
+
+    private String getUserIdFromRequest(String authHeader) {
+        var token = authHeader.split(" ")[1];
+        var userId = clerkService.getUserId(token);
+        return userId;
     }
 }
