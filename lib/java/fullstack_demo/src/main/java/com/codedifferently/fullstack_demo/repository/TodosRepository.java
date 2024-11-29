@@ -1,5 +1,8 @@
 package com.codedifferently.fullstack_demo.repository;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
@@ -22,8 +25,38 @@ public class TodosRepository {
         this.jedis.auth(password);
     }
 
-    public Todo[] getAll(String userId) {
+    public List<Todo> getAll(String userId) {
         String json = this.jedis.get("todos:" + userId);
-        return new Gson().fromJson(json, Todo[].class);
+        return List.of(new Gson().fromJson(json, Todo[].class));
+    }
+
+    public long create(String userId, Todo todo) {
+        List<Todo> todos = new ArrayList(this.getAll(userId));
+
+        todo.setId(System.currentTimeMillis());
+        todos.add(todo);
+
+        this.jedis.set("todos:" + userId, new Gson().toJson(todos));
+        return todo.getId();
+    }
+
+    public void patch(String userId, Todo todo) {
+        List<Todo> todos = new ArrayList(this.getAll(userId));
+
+        List<Todo> updatedTodos = todos.stream()
+                .map(t -> t.getId() == todo.getId() ? todo : t)
+                .toList();
+
+        this.jedis.set("todos:" + userId, new Gson().toJson(updatedTodos));
+    }
+
+    public void delete(String userId, long id) {
+        List<Todo> todos = this.getAll(userId);
+
+        List<Todo> updatedTodos = todos.stream()
+                .filter(t -> t.getId() != id)
+                .toList();
+
+        this.jedis.set("todos:" + userId, new Gson().toJson(updatedTodos));
     }
 }

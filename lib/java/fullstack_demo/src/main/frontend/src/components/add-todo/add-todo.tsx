@@ -1,19 +1,30 @@
 import { Todo } from '@/models';
+import { useAuth } from '@clerk/clerk-react';
 import { PlusIcon } from 'lucide-react';
 import { useState } from 'react';
+
+const API_HOST = import.meta.env.VITE_API_HOST || '';
 
 export type AddTodoProps = {
   onAdd?: (todo: Todo) => void;
 };
 
 export const AddTodo: React.FC<AddTodoProps> = ({ onAdd }) => {
+  const { getToken } = useAuth();
   const [newTodo, setNewTodo] = useState('');
 
   const addTodo = async (e: React.FormEvent) => {
     e.preventDefault();
     if (newTodo.trim() !== '') {
       const todo: Todo = { id: Date.now(), text: newTodo, completed: false };
-      await fetch('/api/todos', { method: 'POST', body: JSON.stringify(todo) });
+      await fetch(`${API_HOST}/api/todos`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Authorization: `Bearer ${await getToken()}`,
+        },
+        body: JSON.stringify(todo),
+      });
       setNewTodo('');
       if (onAdd) {
         onAdd(todo);

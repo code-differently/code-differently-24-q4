@@ -1,5 +1,8 @@
 import { Todo } from '@/models';
+import { useAuth } from '@clerk/clerk-react';
 import { TodoComponent } from './todo';
+
+const API_HOST = import.meta.env.VITE_API_HOST || '';
 
 export type TodoProps = {
   todos: Todo[];
@@ -7,12 +10,18 @@ export type TodoProps = {
 };
 
 export const TodoList: React.FC<TodoProps> = ({ todos, onChange }) => {
+  const { getToken } = useAuth();
+
   const toggleTodo = async (id: number) => {
     const todo = todos.find((todo) => todo.id === id);
     if (!todo) return;
     todo.completed = !todo.completed;
-    await fetch(`/api/todos/${id}`, {
+    await fetch(`${API_HOST}/api/todos/${id}`, {
       method: 'PATCH',
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${await getToken()}`,
+      },
       body: JSON.stringify(todo),
     });
     if (onChange) {
@@ -21,8 +30,11 @@ export const TodoList: React.FC<TodoProps> = ({ todos, onChange }) => {
   };
 
   const deleteTodo = async (id: number) => {
-    await fetch(`/api/todos/${id}`, {
+    await fetch(`${API_HOST}/api/todos/${id}`, {
       method: 'DELETE',
+      headers: {
+        Authorization: `Bearer ${await getToken()}`,
+      },
     });
     if (onChange) {
       onChange(id);
