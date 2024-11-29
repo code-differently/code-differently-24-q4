@@ -4,9 +4,7 @@ import {QueryClient, QueryClientProvider} from '@tanstack/react-query';
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import {RouterProvider, createBrowserRouter} from 'react-router-dom';
-import {Link} from 'react-router-dom';
 import { CreateProgram } from './pages/CreateProgram';
-
 import './index.scss';
 
 const queryClient = new QueryClient();

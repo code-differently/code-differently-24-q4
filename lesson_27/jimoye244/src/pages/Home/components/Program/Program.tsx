@@ -6,8 +6,10 @@ export interface ProgramProps extends PropsWithChildren {
 }
 
 export const Program: React.FC<ProgramProps> = ({title, children}: ProgramProps) => {
-    return (<li className="program">
+    return (
+    <li className="program">
         <h3>{title}</h3>
         {children}
-      </li>);
+    </li>
+  );
 };
