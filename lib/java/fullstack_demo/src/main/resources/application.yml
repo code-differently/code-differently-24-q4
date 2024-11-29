@@ -1,3 +1,7 @@
 spring:
   application:
     name: fullstack_demo
+app:
+  api:
+    url: http://localhost:8080
+  env: dev
