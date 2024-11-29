@@ -6,6 +6,8 @@ import { useEffect, useState } from 'react';
 import { AddTodo } from '../add-todo';
 import { TodoList } from '../todo-list';
 
+const API_HOST = import.meta.env.VITE_API_HOST || '';
+
 export const TodoApp: React.FC = () => {
   const { getToken } = useAuth();
   const [todos, setTodos] = useState<Todo[]>([]);
@@ -15,7 +17,7 @@ export const TodoApp: React.FC = () => {
   }, []);
 
   const fetchTodos = async () => {
-    const response = await fetch('/api/todos', {
+    const response = await fetch(`${API_HOST}/api/todos`, {
       headers: {
         Authorization: `Bearer ${await getToken()}`,
       },
