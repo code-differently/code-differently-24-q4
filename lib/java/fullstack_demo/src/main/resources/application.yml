@@ -1,10 +1,16 @@
 spring:
   application:
     name: fullstack_demo
+  config:
+      import: optional:file:.env[.properties]
 app:
   api:
     url: http://localhost:8080
   clerk:
     perishableKey: ${CLERK_PERISHABLE_KEY}
     secretKey: ${CLERK_SECRET_KEY}
+  redis:
+    host: ${REDIS_HOST}
+    port: ${REDIS_PORT}
+    password: ${REDIS_PASSWORD}
   env: dev

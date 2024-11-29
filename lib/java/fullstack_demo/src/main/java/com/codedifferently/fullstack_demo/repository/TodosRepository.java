@@ -1,5 +1,6 @@
 package com.codedifferently.fullstack_demo.repository;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 import com.codedifferently.fullstack_demo.model.Todo;
@@ -12,9 +13,13 @@ public class TodosRepository {
 
     private Jedis jedis;
 
-    public TodosRepository() {
-        this.jedis = new Jedis("adapted-akita-43692.upstash.io", 6379, true);
-        this.jedis.auth("AaqsAAIjcDEwOWI0NjM1YWNlOTQ0YmZmOTAwYTczOTcxMmNiMWM2Y3AxMA");
+    public TodosRepository(
+            @Value("${app.redis.host}") String host,
+            @Value("${app.redis.port}") int port,
+            @Value("${app.redis.password}") String password
+    ) {
+        this.jedis = new Jedis(host, port, true);
+        this.jedis.auth(password);
     }
 
     public Todo[] getAll(String userId) {
