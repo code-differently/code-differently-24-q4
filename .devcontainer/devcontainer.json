@@ -18,7 +18,8 @@
 		"ghcr.io/warrenbuckley/codespace-features/sqlite:1": {},
 		"ghcr.io/devcontainers/features/github-cli:1": {},
 		"ghcr.io/devcontainers-extra/features/vercel-cli:1": {},
-		"ghcr.io/audacioustux/devcontainers/flyctl:1": {}
+		"ghcr.io/audacioustux/devcontainers/flyctl:1": {},
+		"ghcr.io/itsmechlark/features/redis-server:1": {}
 	},
 	"portsAttributes": {
 	  "80": {
