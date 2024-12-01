@@ -59,19 +59,18 @@ public class MediaItemsController {
   @GetMapping("/items/:{id}")
   public GetMediaItemsResponse getItemById(@PathVariable("id") String id) {
     Set<MediaItem> item = library.search(SearchCriteria.builder().id(id).build());
-    MediaItemResponse responseItemById = item.stream().map(MediaItemResponse::from).toList().findFirst().orElseThrow();
+    List<MediaItemResponse> responseItemById = item.stream().map(MediaItemResponse::from).toList();
+    MediaItemResponse findItem = responseItemById.stream().findFirst().orElseThrow();
     var response = GetMediaItemsResponse.builder().item(responseItemById).build();
     return response;
   }
 
   @DeleteMapping("/items/:{id}") 
   public MediaItemResponse deleteItemById(@PathVariable("id") String id) {
-    Set<MediaItem> itemToDelete = library.search(SearchCriteria.builder().id(id).build());
-    //MediaItemRequest deleteItem = CreateMediaItemRequest.builder().build();
-    CreateMediaItemRequest createDeleteRequest = CreateMediaItemRequest.builder().deleteItem(itemToDelete).build();
+    MediaItem itemToDelete = library.search(SearchCriteria.builder().id(id).build()).stream().findFirst().orElseThrow();
 
-    library.delete(createDeleteRequest.getItem());
+    library.delete(itemToDelete);
 
-    return MediaItemResponse.from(createDeleteRequest.getItem());
+    return MediaItemResponse.from(itemToDelete);
   }
 }
