@@ -9,10 +9,10 @@ app:
   clerk:
     perishableKey: ${CLERK_PERISHABLE_KEY}
     secretKey: ${CLERK_SECRET_KEY}
-  repository:
-    type: redis
-    redis:
-      host: ${REDIS_HOST}
-      port: ${REDIS_PORT}
-      password: ${REDIS_PASSWORD}
+#  repository:
+#    type: redis
+#    redis:
+#      host: ${REDIS_HOST}
+#      port: ${REDIS_PORT}
+#      password: ${REDIS_PASSWORD}
   env: dev
