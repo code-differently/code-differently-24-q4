@@ -23,15 +23,10 @@ export const ProgramList: React.FC = () => {
       });
   }, []);
 
-  
-  if (programs === null) {
-    return <p>Loading programs...</p>;
-  }
-
- 
   return (
     <ul className="programs">
-      {programs.map(program => (
+      {programs === null && <p>Loading programs...</p>}
+      {programs && programs.map(program => (
         <Program key={program.id} title={program.title}>
           <p>{program.description}</p>
         </Program>
