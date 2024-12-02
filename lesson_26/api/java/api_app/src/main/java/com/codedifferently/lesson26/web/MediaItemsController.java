@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 
 @RestController
 @CrossOrigin
@@ -35,41 +36,28 @@ public class MediaItemsController {
   }
 
   @PostMapping("/items")
-  public MediaItemResponse postItem() {
-    //UUID id = UUID.randomUUID();
-    MediaItemRequest newItem = CreateMediaItemRequest.builder()
-          .id(UUID.randomUUID())
-          .type("Book")
-          .isbn("13")
-          .title("The Fall of the House of Usher")
-          .authors(new String[] {"Edgar Allan Poe"})
-          .edition("1st Edition")
-          .pages(25)
-          .build();
-
-    CreateMediaItemRequest createRequest = CreateMediaItemRequest.builder()
-          .item(newItem)
-          .build();
-
+  public MediaItemResponse addItemById(@RequestBody CreateMediaItemRequest createRequest) {
+    if (createRequest.getItem().getId() == null) {
+      createRequest.getItem().setId(UUID.randomUUID());
+    }
+    
       library.add(createRequest.getItem());
     
     return  MediaItemResponse.from(createRequest.getItem());
   }
 
   @GetMapping("/items/:{id}")
-  public GetMediaItemsResponse getItemById(@PathVariable("id") String id) {
-    Set<MediaItem> item = library.search(SearchCriteria.builder().id(id).build());
-    List<MediaItemResponse> responseItemById = item.stream().map(MediaItemResponse::from).toList();
-    MediaItemResponse findItem = responseItemById.stream().findFirst().orElseThrow();
-    var response = GetMediaItemsResponse.builder().item(responseItemById).build();
-    return response;
+  public MediaItemResponse getItemById(@PathVariable("id") UUID id) {
+    MediaItem item = library.search(SearchCriteria.builder().id(id.toString()).build()).stream().findFirst().orElseThrow();
+   
+    return MediaItemResponse.from(item);
   }
 
   @DeleteMapping("/items/:{id}") 
-  public MediaItemResponse deleteItemById(@PathVariable("id") String id) {
-    MediaItem itemToDelete = library.search(SearchCriteria.builder().id(id).build()).stream().findFirst().orElseThrow();
-
-    library.delete(itemToDelete);
+  public MediaItemResponse deleteItemById(@PathVariable("id") UUID id) {
+    MediaItem itemToDelete = library.search(SearchCriteria.builder().id(id.toString()).build()).stream().findFirst().orElseThrow();
+    Librarian librarian = library.getLibrarians().stream().findFirst().orElseThrow();
+    library.removeMediaItem(itemToDelete, librarian);
 
     return MediaItemResponse.from(itemToDelete);
   }
