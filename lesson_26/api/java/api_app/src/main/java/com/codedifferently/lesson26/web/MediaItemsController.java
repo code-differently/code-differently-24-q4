@@ -52,5 +52,4 @@ public class MediaItemsController {
     MediaItem item = items.iterator().next();
     library.removeMediaItem(item, librarian);
   }
-  
 }
