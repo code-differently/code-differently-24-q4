@@ -18,7 +18,7 @@ export const ProgramList: React.FC = () => {
   useEffect(() => {
     const fetchPrograms = async () => {
       try {
-        const response = await fetch('http://localhost:5173/programs'); // Replace with your actual API endpoint
+        const response = await fetch('http://localhost:4000/programs'); // Replace with your actual API endpoint
         if (!response.ok) {
           throw new Error('Failed to fetch programs');
         }
