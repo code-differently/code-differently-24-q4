@@ -7,8 +7,14 @@ import com.codedifferently.lesson26.library.search.SearchCriteria;
 import java.io.IOException;
 import java.util.List;
 import java.util.Set;
+import java.util.UUID;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
@@ -28,5 +34,34 @@ public class MediaItemsController {
     List<MediaItemResponse> responseItems = items.stream().map(MediaItemResponse::from).toList();
     var response = GetMediaItemsResponse.builder().items(responseItems).build();
     return response;
+  }
+
+  @GetMapping("/items/{id}")
+  public MediaItemResponse getItemById(@PathVariable("id") String id) {
+    Set<MediaItem> items = library.search(SearchCriteria.builder().id(id).build());
+    MediaItemResponse response =
+        items.stream().map(MediaItemResponse::from).findFirst().orElseThrow();
+    return response;
+  }
+
+  @PostMapping("/items")
+  public CreateMediaItemResponse postItems(@RequestBody CreateMediaItemRequest requestItem) {
+    MediaItemRequest itemMediaItemRequest = requestItem.getItem();
+    MediaItem item = MediaItemRequest.asMediaItem(itemMediaItemRequest);
+    library.addMediaItem(item, librarian);
+    MediaItemResponse itemResponse = MediaItemResponse.from(item);
+    return CreateMediaItemResponse.builder().item(itemResponse).build();
+  }
+
+  @DeleteMapping("/items/{id}")
+  public ResponseEntity<Void> deleteItem(@PathVariable("id") UUID id) {
+    SearchCriteria searchCriteria = SearchCriteria.builder().id(id.toString()).build();
+    Set<MediaItem> foundItem = library.search(searchCriteria);
+    if (foundItem.isEmpty()) {
+      return ResponseEntity.notFound().build();
+    }
+    MediaItem item = foundItem.iterator().next();
+    library.removeMediaItem(item, librarian);
+    return ResponseEntity.noContent().build();
   }
 }
