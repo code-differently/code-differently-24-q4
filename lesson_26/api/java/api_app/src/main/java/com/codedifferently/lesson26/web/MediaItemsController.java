@@ -1,13 +1,11 @@
 package com.codedifferently.lesson26.web;
 
-import com.codedifferently.lesson26.library.Librarian;
-import com.codedifferently.lesson26.library.Library;
-import com.codedifferently.lesson26.library.MediaItem;
-import com.codedifferently.lesson26.library.search.SearchCriteria;
 import java.io.IOException;
 import java.util.List;
+import java.util.Optional;
 import java.util.Set;
 import java.util.UUID;
+
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -16,6 +14,13 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
+
+import com.codedifferently.lesson26.library.Librarian;
+import com.codedifferently.lesson26.library.Library;
+import com.codedifferently.lesson26.library.MediaItem;
+import com.codedifferently.lesson26.library.search.SearchCriteria;
+
+import jakarta.validation.Valid;
 
 @RestController
 @CrossOrigin
@@ -37,15 +42,20 @@ public class MediaItemsController {
   }
 
   @GetMapping("/items/{id}")
-  public MediaItemResponse getItemById(@PathVariable("id") String id) {
+  public ResponseEntity<MediaItemResponse> getItemById(@PathVariable("id") String id) {
     Set<MediaItem> items = library.search(SearchCriteria.builder().id(id).build());
-    MediaItemResponse response =
-        items.stream().map(MediaItemResponse::from).findFirst().orElseThrow();
-    return response;
+    Optional<MediaItemResponse> response =
+        items.stream().map(MediaItemResponse::from).findFirst();
+
+      if (response.isPresent()){
+        return ResponseEntity.ok(response.get());
+      }
+
+    return ResponseEntity.notFound().build();
   }
 
   @PostMapping("/items")
-  public CreateMediaItemResponse postItems(@RequestBody CreateMediaItemRequest requestItem) {
+  public CreateMediaItemResponse postItems(@Valid @RequestBody CreateMediaItemRequest requestItem) {
     MediaItemRequest itemMediaItemRequest = requestItem.getItem();
     MediaItem item = MediaItemRequest.asMediaItem(itemMediaItemRequest);
     library.addMediaItem(item, librarian);
