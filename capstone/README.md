@@ -10,9 +10,8 @@ Your project submission must include the following elements:
 * Each team member must contribute *at least one* submitted pull request containing working code and tests. See [Lesson 15][lesson-15] for a refresh.
 * Write unit tests achieving 70% code coverage (using JaCoCo for Java or Jest for Typescript).
 * Must have a working front-end that interacts with a back-end web service to retrieve and persist data.
-* Your app must be publicly accessible.
+* Your app must be publicly accessible. It is recommended that you use [Vercel](https://vercel.com) or [Fly.io](https://fly.io) to deploy your apps.
 * The system must incorporate one third-party API.
-* All code must be kept in a public GitHub repository.
 * Your repo must include a README with the following elements:
     * The team
     * Screenshot
@@ -76,6 +75,7 @@ To ensure the timely completion of your project, you will need to complete the f
 
 Here are some links to tools and templates that can help you work together effectively.
 
+* [v0 (chatbot for generating UI and web applications)](https://v0.dev)
 * [A Short Guide to Effective Daily Standups (Nave)](https://getnave.com/blog/short-guide-daily-standups/)
 * [Team Meeting Notes template (Google Docs)](https://docs.google.com/document/d/1rL-Zm2w0hABuGkIMSPzmXcJHDQxmIeA-mlipt8kDA9E/edit)
 * [Crafting Effective User Stories: A Guide to Good and Bad Versions (Visual Paradigm)](https://guides.visual-paradigm.com/crafting-effective-user-stories-a-guide-to-good-and-bad-versions/)
