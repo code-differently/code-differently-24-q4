@@ -75,6 +75,8 @@ To ensure the timely completion of your project, you will need to complete the f
 
 Here are some links to tools and templates that can help you work together effectively.
 
+* [TODO App (fullstack NextJS app in TypeScript)](/lib/typescript/fullstack_demo)
+* [TODO App (fullstack React + Java Spring app in TypeScript/Java)](/lib/java/fullstack_demo)
 * [v0 (chatbot for generating UI and web applications)](https://v0.dev)
 * [A Short Guide to Effective Daily Standups (Nave)](https://getnave.com/blog/short-guide-daily-standups/)
 * [Team Meeting Notes template (Google Docs)](https://docs.google.com/document/d/1rL-Zm2w0hABuGkIMSPzmXcJHDQxmIeA-mlipt8kDA9E/edit)
