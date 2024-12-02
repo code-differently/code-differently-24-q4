@@ -1,10 +1,15 @@
 package com.codedifferently.lesson26.web;
 
+import com.codedifferently.lesson26.library.Librarian;
+import com.codedifferently.lesson26.library.Library;
+import com.codedifferently.lesson26.library.MediaItem;
+import com.codedifferently.lesson26.library.exceptions.MediaItemCheckedOutException;
+import com.codedifferently.lesson26.library.search.SearchCriteria;
+import jakarta.validation.Valid;
 import java.io.IOException;
 import java.util.List;
 import java.util.Set;
 import java.util.UUID;
-
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -14,15 +19,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
-
-import com.codedifferently.lesson26.library.Librarian;
-import com.codedifferently.lesson26.library.Library;
-import com.codedifferently.lesson26.library.MediaItem;
-import com.codedifferently.lesson26.library.exceptions.MediaItemCheckedOutException;
-import com.codedifferently.lesson26.library.search.SearchCriteria;
-
-import jakarta.validation.Valid;
-
 
 @RestController
 @CrossOrigin
@@ -43,7 +39,6 @@ public class MediaItemsController {
     return response;
   }
 
-
   @GetMapping("/items/{id}")
   public ResponseEntity<MediaItemResponse> getItem(@PathVariable UUID id) {
     SearchCriteria criteria = SearchCriteria.builder().id(id.toString()).build();
@@ -58,7 +53,7 @@ public class MediaItemsController {
   }
 
   @PostMapping("/items")
-    public CreateMediaItemResponse addsItem(@Valid @RequestBody CreateMediaItemRequest request) {
+  public CreateMediaItemResponse addsItem(@Valid @RequestBody CreateMediaItemRequest request) {
     MediaItemRequest itemRequest = request.getItem();
     MediaItem item = MediaItemRequest.asMediaItem(itemRequest);
     library.addMediaItem(item, librarian);
@@ -67,7 +62,8 @@ public class MediaItemsController {
         CreateMediaItemResponse.builder().item(getItem(item.getId()).getBody()).build();
 
     return response;
-    }
+  }
+
   @DeleteMapping("/items/{id}")
   public ResponseEntity<Void> deleteItem(@PathVariable String id) {
     SearchCriteria criteria = SearchCriteria.builder().id(id).build();
