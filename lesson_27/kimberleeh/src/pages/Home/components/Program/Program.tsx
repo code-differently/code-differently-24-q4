@@ -1,7 +1,8 @@
 import './Program.scss';
-import React, {PropsWithChildren} from 'react';
+import React, {Key, PropsWithChildren} from 'react';
 
 export interface ProgramProps extends PropsWithChildren {
+  id: Key | null | undefined;
   title: string;
 }
 

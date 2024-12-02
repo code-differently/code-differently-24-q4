@@ -1,21 +1,38 @@
 import './App.scss';
-import {Outlet} from 'react-router-dom';
 
-import {Footer} from './components/footer';
-import {Header} from './components/header';
+import { Link, Outlet } from 'react-router-dom';
+
+
 
 function App() {
   return (
     <>
-      <Header />
+      <nav className="navbar">
+        <Link to="/">Home</Link>
+        <Link to="/add-program">Add Program</Link>
+      </nav>
+
+    
       <div className="main">
         <div className="content">
           <Outlet />
         </div>
       </div>
-      <Footer />
+
+      
+      <footer className="footer">
+        <p>© 2024 Your App Name</p>
+      </footer>
     </>
   );
 }
 
 export default App;
+
+
+
+
+
+
+
+     
