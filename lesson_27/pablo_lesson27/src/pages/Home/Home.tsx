@@ -1,6 +1,7 @@
-import { ProgramList } from './components/ProgramList';
 import './Home.scss';
 import React from 'react';
+
+import {ProgramList} from './components/ProgramList';
 
 export const Home: React.FC = () => {
   return (
