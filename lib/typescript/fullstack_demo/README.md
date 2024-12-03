@@ -1,36 +1,41 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Full-stack App Demo
 
-## Getting Started
+## Purpose
 
-First, run the development server:
+This project demonstrates a fully working task management app built using NextJS and TypeScript. The app is deployed live on Vercel at https://code-differently-24-q4.vercel.app/
+
+## Running the app
+
+To run the app, copy the [.env.example](./.env.example) file as `.env` and setup the Clerk keys by setting up an account at https://clerk.dev. Once done, you can start up the local dev server with the following commands: 
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Architecture
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+The app is built using the React library running on the NextJS framework. The homepage is located at [src/app/page.tsx](./src/app/page.tsx) and contains the main `TodoApp` component.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+The `TodoApp` component and sub-components uses `fetch` to get data from the backend API which is located at [src/app/api/todos/route.ts](./src/app/api/todos/route.ts).
 
-## Learn More
+The backend API gets a repository instance from [src/repositories/index.ts](./src/repositories/index.ts), using an environment variable to choose between a JSON repository implementation or a Redis version. For more on the repository pattern, [see this article on Medium](https://medium.com/@pererikbergman/repository-design-pattern-e28c0f3e4a30).
 
-To learn more about Next.js, take a look at the following resources:
+## Connecting to Redis
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+By default, the app is configured to store data on the web server in a JSON file (./src/repositories/db.json). You can connect it to a Redis database by creating one on Vercel (called Upstash KV). Then, set the `DB_TYPE` to `redis` in the `.env` file and configure the additional config keys listed in `.env.example.redis`.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Deploying live
 
-## Deploy on Vercel
+To deploy this app, sign up for an account on Vercel and create a project pointing to your fork of this repo. You'll need to configure the environment variables you setup in your local `.env` file using the Vercel UI.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Tools
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Here are a list of tools used to compile this demo. You can read the official documentation to learn how various aspects of the demo function.
+
+* NextJS (https://nextjs.org)
+* Vercel (https://vercel.com)
+* Clerk (https://clerk.dev)
+* React (https://react.dev)
+* LowDB (https://github.com/typicode/lowdb)
+* Upstash Redis (https://upstash.com/docs/redis/overall/getstarted)

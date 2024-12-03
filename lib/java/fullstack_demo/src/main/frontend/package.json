@@ -4,10 +4,10 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
+    "dev": "NODE_ENV=development vite",
     "build": "tsc -b && NODE_ENV=production vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "NODE_ENV=production vite preview"
   },
   "dependencies": {
     "@clerk/clerk-react": "^5.17.1",
