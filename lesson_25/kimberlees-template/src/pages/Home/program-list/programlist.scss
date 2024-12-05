@@ -1,0 +1,13 @@
+@media screen and (max-width: 1080px) {
+  .program {
+    min-width: 100%;
+  }
+}
+
+.programs-section {
+  padding: 100px;
+  display: flex;
+  flex-direction: column;
+  max-width: 1280px;
+  margin: auto;
+}
