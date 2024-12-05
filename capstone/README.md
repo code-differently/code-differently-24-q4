@@ -2,12 +2,16 @@
 
 For the next two weeks, you and your team will ideate and implement a working software system. You will have the opportunity to apply the skills that you have learned to solve an interesting problem or contribute a meaningful tool that improves our lives.
 
+### Changelog
+- 12/4 @anthonydmays Updated technical requirement for number of PRs submitted per teammate.
+- 12/2 @anthonydmays Published initial version
+
 ### Technical Requirements
 
 Your project submission must include the following elements:
 
 * All work must be submitted in your team's assigned GitHub repository. Your team must track issues, bugs, pull requests, and features. See [Lesson 05][lesson-05] for a refresh.
-* Each team member must contribute *at least one* submitted pull request containing working code and tests. See [Lesson 15][lesson-15] for a refresh.
+* Each team member must contribute *at least two* submitted pull requests containing working code and tests. See [Lesson 15][lesson-15] for a refresh.
 * Write unit tests achieving 70% code coverage (using JaCoCo for Java or Jest for Typescript).
 * Must have a working front-end that interacts with a back-end web service to retrieve and persist data.
 * Your app must be publicly accessible. It is recommended that you use [Vercel](https://vercel.com) or [Fly.io](https://fly.io) to deploy your apps.
