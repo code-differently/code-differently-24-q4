@@ -1,0 +1,1 @@
+export {OtherPage} from './OtherPage';
