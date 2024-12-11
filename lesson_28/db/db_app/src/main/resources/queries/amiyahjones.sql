@@ -8,15 +8,20 @@ GROUP BY
 
 -- returns the sum of total pages checked out by guests.
 SELECT 
-SUM(pages) AS total_pages
+  SUM(media_items.pages) AS total_pages
 FROM 
-guests;
+  media_items
+  inner join checked_out_items ch on media_items.id = ch.item_id
+WHERE
+  media_items.pages IS NOT NULL;
 
 -- shows all 5 guests 
 -- and any corresponding records in the checked_out_items table
 SELECT 
-  guests.id , guests.name , ch.item_id , ch.checkout_date
+  guests.name , 
+  ch.email,
+  ch.item_id , 
+  ch.due_date
 FROM 
-guests 
-INNER JOIN checked_out_items ch ON 
-;
+  guests 
+inner join checked_out_items ch on guests.email = ch.email;
