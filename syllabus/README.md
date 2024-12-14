@@ -88,7 +88,7 @@ Regular course work and homework assignments will be provided throughout lessons
                 <b>Course introduction and tools tutorial</b><br>
                 <b>Developer Workflow</b>
                 <ul>
-                    <li><a href="/lesson_00/README.md">Lesson 0 - Git Fundamentals</a></li>
+                    <li><a href="/lesson_00">Lesson 0 - Git Fundamentals</a></li>
                     <li><a href="/lesson_01">Lesson 1 - IDE Fundamentals</a></li>
                     <li><a href="/lesson_02">Lesson 2 - Navigating the Terminal</a></li>
                 </ul>
