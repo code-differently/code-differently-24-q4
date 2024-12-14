@@ -6,7 +6,7 @@ This project demonstrates a fully working task management app built using NextJS
 
 ## Running the app
 
-To run the app, copy the [.env.example](./.env.example) file as `.env` and setup the Clerk keys by setting up an account at https://clerk.dev. Once done, you can start up the local dev server with the following commands: 
+To run the app, copy the [.env.example](./.env.example) file as `.env` and setup the Clerk keys by setting up an account at https://clerk.dev. Once done, you can start up the local dev server with the following commands:
 
 ```bash
 npm install
@@ -33,9 +33,9 @@ To deploy this app, sign up for an account on Vercel and create a project pointi
 
 Here are a list of tools used to compile this demo. You can read the official documentation to learn how various aspects of the demo function.
 
-* NextJS (https://nextjs.org)
-* Vercel (https://vercel.com)
-* Clerk (https://clerk.dev)
-* React (https://react.dev)
-* LowDB (https://github.com/typicode/lowdb)
-* Upstash Redis (https://upstash.com/docs/redis/overall/getstarted)
+- NextJS (https://nextjs.org)
+- Vercel (https://vercel.com)
+- Clerk (https://clerk.dev)
+- React (https://react.dev)
+- LowDB (https://github.com/typicode/lowdb)
+- Upstash Redis (https://upstash.com/docs/redis/overall/getstarted)
