@@ -9,6 +9,7 @@ app:
   clerk:
     perishableKey: ${CLERK_PERISHABLE_KEY}
     secretKey: ${CLERK_SECRET_KEY}
+# UNCOMMENT THE FOLLOWING BLOCK TO ENABLE REDIS
 #  repository:
 #    type: redis
 #    redis:
