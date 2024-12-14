@@ -9,10 +9,13 @@ on:
 
 jobs:
   build:
-
+    environment: build
     runs-on: ubuntu-latest
     permissions:
       contents: read
+
+    env:
+      NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=${{ secrets.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY }}
 
     steps:
     - uses: actions/checkout@v4
@@ -24,4 +27,6 @@ jobs:
 
     - name: Build Fullstack Demo with Node.js
       working-directory: ./lib/typescript/fullstack_demo
-      run: npm ci
+      run: |
+        npm ci
+        npm run build
