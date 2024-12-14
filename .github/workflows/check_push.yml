@@ -141,3 +141,11 @@ jobs:
     - name: Build Lesson 17 with Java
       working-directory: ./lesson_17/bank
       run: ./gradlew check
+
+    - name: Build Fullstack Demo with Java
+      working-directory: ./lib/java/fullstack-demo
+      run: ./gradlew check
+
+    - name: Build Fullstack Demo with Node.js
+      working-directory: ./lib/typescript/fullstack-demo
+      run: npm ci
