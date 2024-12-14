@@ -15,10 +15,6 @@ jobs:
       contents: read
       pull-requests: write
 
-    env:
-      CLERK_PERISHABLE_KEY: 12345
-      CLERK_SECRET_KEY: 12345
-
     steps:
     - uses: actions/checkout@v4
 
@@ -30,4 +26,7 @@ jobs:
 
     - name: Build Fullstack Demo with Java
       working-directory: ./lib/java/fullstack_demo
+      env:
+        CLERK_PERISHABLE_KEY: 12345
+        CLERK_SECRET_KEY: 12345
       run: ./gradlew check

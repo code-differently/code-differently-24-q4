@@ -30,10 +30,6 @@ jobs:
     permissions:
       contents: read
 
-    env:
-      CLERK_PERISHABLE_KEY: 12345
-      NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY: ${{ secrets.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY }}
-
     steps:
     - uses: actions/checkout@v4
     - name: Set up JDK
@@ -159,10 +155,14 @@ jobs:
 
     - name: Build Fullstack Demo with Java
       working-directory: ./lib/java/fullstack_demo
+      env:
+        CLERK_PERISHABLE_KEY: 12345
       run: ./gradlew check
 
     - name: Build Fullstack Demo with Node.js
       working-directory: ./lib/typescript/fullstack_demo
+      env:
+        NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY: ${{ secrets.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY }}
       run: |
         npm ci
         npm run build
