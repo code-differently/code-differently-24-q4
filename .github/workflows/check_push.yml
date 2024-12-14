@@ -156,6 +156,7 @@ jobs:
       working-directory: ./lib/java/fullstack_demo
       env:
         CLERK_PERISHABLE_KEY: 12345
+        CLERK_SECRET_KEY: 12345
       run: ./gradlew check
 
     - name: Build Fullstack Demo with Node.js
