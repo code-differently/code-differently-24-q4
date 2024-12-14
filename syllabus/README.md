@@ -88,9 +88,9 @@ Regular course work and homework assignments will be provided throughout lessons
                 <b>Course introduction and tools tutorial</b><br>
                 <b>Developer Workflow</b>
                 <ul>
-                    <li>Git Fundamentals</li>
-                    <li>IDE Fundamentals</li>
-                    <li>Navigating the Terminal</li>
+                    <li><a href="/lesson_00">Lesson 0 - Git Fundamentals</a></li>
+                    <li><a href="/lesson_01">Lesson 1 - IDE Fundamentals</a></li>
+                    <li><a href="/lesson_02">Lesson 2 - Navigating the Terminal</a></li>
                 </ul>
             </td>
         </tr>
@@ -99,9 +99,9 @@ Regular course work and homework assignments will be provided throughout lessons
             <td>
                 <b>Software Engineering Foundations</b>
                 <ul>
-                    <li>How Computers Work</li>
-                    <li>How To Be A Great Software Engineer</li>
-                    <li>Software Development Lifecycle</li>
+                    <li><a href="/lesson_03">Lesson 3 - How Computers Work</a></li>
+                    <li><a href="/lesson_04">Lesson 4 - How To Be A Great Software Engineer</a></li>
+                    <li><a href="/lesson_05">Lesson 5 - Software Development Lifecycle</a></li>
                 </ul>
             </td>
         </tr>
@@ -110,9 +110,9 @@ Regular course work and homework assignments will be provided throughout lessons
             <td>
                 <b>Programming Languages, Week 1</b>
                 <ul>
-                    <li>Statements and Variables</li>
-                    <li>Control Flow</li>
-                    <li>Functions</li>
+                    <li><a href="/lesson_06">Lesson 6 - Statements and Variables</a></li>
+                    <li><a href="/lesson_07">Lesson 7 - Control Flow</a></li>
+                    <li><a href="/lesson_08">Lesson 8 - Functions</a></li>
                 </ul>
             </td>
         </tr>
@@ -121,9 +121,9 @@ Regular course work and homework assignments will be provided throughout lessons
             <td>
                 <b>Programming Languages, Week 2</b>
                 <ul>
-                    <li>Data Types</li>
-                    <li>Libraries and APIs</li>
-                    <li>Data Structures: Strings & Arrays</li>
+                    <li><a href="/lesson_09">Lesson 9 - Data Types</a></li>
+                    <li><a href="/lesson_10">Lesson 10 - Libraries</a></li>
+                    <li><a href="/lesson_11">Lesson 11 - Data Structures: Strings & Arrays</a></li>
                 </ul>
             </td>
         </tr>
@@ -132,9 +132,9 @@ Regular course work and homework assignments will be provided throughout lessons
             <td>
                 <b>Programming Languages, Week 3</b>
                 <ul>
-                    <li>Data Structures: Stacks, Queues, Linked Lists</li>
-                    <li>Data Structures: Maps & Sets</li>
-                    <li>Exceptions and Error Handling</li>
+                    <li><a href="/lesson_12">Lesson 12 - Data Structures: Stacks, Queues, and Linked Lists</a></li>
+                    <li><a href="/lesson_13">Lesson 13 - Data Structures: Maps & Sets</a></li>
+                    <li><a href="/lesson_14">Lesson 14 - Exceptions and Error Handling</a></li>
                 </ul>
             </td>
         </tr>
@@ -143,9 +143,9 @@ Regular course work and homework assignments will be provided throughout lessons
             <td>
                 <b>Software Design</b>
                 <ul>
-                    <li>Test Driven Development</li>
-                    <li>OOP Principles, Part I</li>
-                    <li>OOP Principles, Part II</li>
+                    <li><a href="/lesson_15">Lesson 15 - Test Driven Development</a></li>
+                    <li><a href="/lesson_16">Lesson 16 - OOP Principles, Part I</a></li>
+                    <li><a href="/lesson_17">Lesson 17 - OOP Principles, Part II</a></li>
                 </ul>
             </td>
         </tr>
@@ -153,6 +153,9 @@ Regular course work and homework assignments will be provided throughout lessons
             <td align="center" style="vertical-align: top">07</td>
             <td>
                 <b>Software Design - Project Week</b>
+                <ul>
+                    <li><a href="/project_oop/README.md">Project OOP</a></li>
+                </ul>
             </td>
         </tr>
         <tr>
@@ -160,9 +163,9 @@ Regular course work and homework assignments will be provided throughout lessons
             <td>
                 <b>Frontend Programming, Week 1</b>
                 <ul>
-                    <li>Computer Languages</li>
-                    <li>Web FE: Intro to HTML, CSS, & JS</li>
-                    <li>Web FE: JavaScript Deep Dive</li>
+                    <li><a href="/lesson_21"> Lesson 21 - Computer Languages</a></li>
+                    <li><a href="/lesson_22">Lesson 22 - Building Applications</a></li>
+                    <li><a href="/lesson_23">Lesson 23 - Intro to HTML, CSS, and JS</a></li>
                 </ul>
             </td>
         </tr>
@@ -171,9 +174,9 @@ Regular course work and homework assignments will be provided throughout lessons
             <td>
                 <b>Frontend Programming, Week 2</b>
                 <ul>
-                    <li>Introduction to React</li>
-                    <li>Web APIs Using Rest</li>
-                    <li>Web FE: Integrating with the Backend</li>
+                    <li><a href="/lesson_24">Lesson 24 - JavaScript Deep Dive</a></li>
+                    <li><a href="/lesson_25">Lesson 25 - Intro to React</a></li>
+                    <li><a href="/lesson_26">Lesson 26 - Web APIs using REST</a></li>
                 </ul>
             </td>
         </tr>
@@ -182,8 +185,9 @@ Regular course work and homework assignments will be provided throughout lessons
             <td>
                 <b>Capstone Project, Week 1</b>
                 <ul>
-                    <li>Introduction to Databases</li>
-                    <li>Capstone Project</li>
+                    <li><a href="/capstone/README.md">Capstone Project</a></li>
+                    <li><a href="/lesson_27">Lesson 27 - Integrating with Backend APIs</a></li>
+                    <li><a href="/lesson_28">Lesson 28 - Intro to Databases</a></li>
                 </ul>
             </td>
         </tr>
@@ -191,12 +195,18 @@ Regular course work and homework assignments will be provided throughout lessons
             <td align="center" style="vertical-align: top">11</td>
             <td>
                 <b>Capstone Project, Week 2</b>
+                <ul>
+                    <li><a href="/capstone/README.md">Capstone Project</a></li>
+                </ul>
             </td>
         </tr>
         <tr>
             <td align="center" style="vertical-align: top">12</td>
             <td>
                 <b>Capstone Project, Week 3</b>
+                <ul>
+                    <li><a href="/capstone/README.md">Capstone Project</a></li>
+                </ul>
             </td>
         </tr>
     </tbody>
