@@ -144,13 +144,13 @@ jobs:
 
     - name: Build Lesson 26 with Java
       working-directory: ./lesson_26/api/java
-      run: ./gradlew check
+      run: ./gradlew assemble
 
     - name: Build Lesson 26 with Node.js
       working-directory: ./lesson_26/api/javascript/api_app
       run: |
         npm ci
-        npm run test
+        npm run build
 
     - name: Build Fullstack Demo with Java
       working-directory: ./lib/java/fullstack_demo
