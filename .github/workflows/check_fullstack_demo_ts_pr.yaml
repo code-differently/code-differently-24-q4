@@ -13,7 +13,6 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: read
-    environment: build
 
     steps:
     - uses: actions/checkout@v4

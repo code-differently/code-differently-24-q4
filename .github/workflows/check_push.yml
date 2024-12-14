@@ -25,7 +25,6 @@ on:
       - "lesson_26/api/**"
 jobs:
   build:
-    environment: build
     runs-on: ubuntu-latest
     permissions:
       contents: read
