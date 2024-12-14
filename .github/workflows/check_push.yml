@@ -143,9 +143,9 @@ jobs:
       run: ./gradlew check
 
     - name: Build Fullstack Demo with Java
-      working-directory: ./lib/java/fullstack-demo
+      working-directory: ./lib/java/fullstack_demo
       run: ./gradlew check
 
     - name: Build Fullstack Demo with Node.js
-      working-directory: ./lib/typescript/fullstack-demo
+      working-directory: ./lib/typescript/fullstack_demo
       run: npm ci
