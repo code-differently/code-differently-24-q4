@@ -5,7 +5,7 @@ plugins {
     jacoco
     id("io.freefair.lombok") version "8.10.2"
     id("com.diffplug.spotless") version "6.25.0"
-	  id("org.springframework.boot") version "3.2.2"
+	  id("org.springframework.boot") version "3.4.0"
     id("com.adarshr.test-logger") version "4.0.0"
 }
 
