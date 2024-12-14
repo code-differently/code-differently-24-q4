@@ -22,7 +22,7 @@ jobs:
         node-version: '20.x'
 
     - name: Build Shared Lib with Node.js
-      working-directory: ./lib/typescript/codedifferently-instructional
+      working-directory: ./lib/javascript/codedifferently-instructional
       run: npm ci
 
     - name: Build Lesson 06 with Node.js
