@@ -26,7 +26,7 @@ dependencies {
     // This dependency is used by the application.
     implementation("com.codedifferently.instructional:instructional-lib")
     implementation("com.google.guava:guava:31.1-jre")
-    implementation("com.google.code.gson:gson:2.10.1")
+    implementation("com.google.code.gson:gson:2.11.0")
     implementation("org.projectlombok:lombok:1.18.30")
     implementation("org.springframework.boot:spring-boot-starter")
 }

@@ -29,7 +29,7 @@ dependencies {
     // This dependency is used by the application.
     implementation("com.fasterxml.jackson.core:jackson-databind:2.13.0")
     implementation("com.fasterxml.jackson.dataformat:jackson-dataformat-yaml:2.13.0")
-    implementation("com.google.code.gson:gson:2.10.1")
+    implementation("com.google.code.gson:gson:2.11.0")
     implementation("com.google.guava:guava:31.1-jre")
     implementation("commons-cli:commons-cli:1.6.0")
     implementation("org.projectlombok:lombok:1.18.30")
