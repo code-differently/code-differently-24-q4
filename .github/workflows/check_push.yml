@@ -4,6 +4,7 @@ on:
   push:
     branches: [ "main" ]
     paths:
+      - ".github/workflows/check_push.yml"
       - "lib/**"
       - "lesson_02/quiz/**"
       - "lesson_03/quiz/**"
@@ -21,6 +22,9 @@ on:
       - "lesson_15/tdd/**"
       - "lesson_16/objects/**"
       - "lesson_17/bank/**"
+      - "lesson_26/api/**"
+env:
+  CLERK_PERISHABLE_KEY: 12345
 
 jobs:
   build:
@@ -141,6 +145,16 @@ jobs:
     - name: Build Lesson 17 with Java
       working-directory: ./lesson_17/bank
       run: ./gradlew check
+
+    - name: Build Lesson 26 with Java
+      working-directory: ./lesson_26/api/java
+      run: ./gradlew check
+
+    - name: Build Lesson 26 with Node.js
+      working-directory: ./lesson_26/api/javascript/api_app
+      run: |
+        npm ci
+        npm run test
 
     - name: Build Fullstack Demo with Java
       working-directory: ./lib/java/fullstack_demo
