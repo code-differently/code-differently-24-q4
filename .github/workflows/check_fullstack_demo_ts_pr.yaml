@@ -1,0 +1,31 @@
+name: Check Fullstack Demo TS Pull Request
+
+on:
+  pull_request:
+    branches: [ "main" ]
+    paths:
+      - ".github/workflows/check_fullstack_demo_ts_pr.yaml"
+      - "lib/typescript/fullstack_demo/**"
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: Use Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '20.x'
+
+    - name: Build Fullstack Demo with Node.js
+      working-directory: ./lib/typescript/fullstack_demo
+      env:
+        NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY: ${{ secrets.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY }}
+      run: |
+        npm ci
+        npm run build
