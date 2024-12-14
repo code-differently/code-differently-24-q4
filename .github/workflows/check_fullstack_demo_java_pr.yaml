@@ -4,6 +4,7 @@ on:
   pull_request:
     branches: [ "main" ]
     paths:
+      - ".github/workflows/check_fullstack_demo_java_pr.yaml"
       - "lib/java/fullstack_demo/**"
 
 env:

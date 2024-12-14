@@ -4,6 +4,7 @@ on:
   pull_request:
     branches: [ "main" ]
     paths:
+      - ".github/workflows/check_fullstack_demo_ts_pr.yaml"
       - "lib/typescript/fullstack_demo/**"
 
 jobs:
