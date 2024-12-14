@@ -24,7 +24,7 @@ For this assignment, you will complete a quiz by modifying a TypeScript applicat
 3. Navigate to the [quiz][lesson-2-quiz-dir] directory and install the required dependencies.
 ```bash
 cd lesson_02/quiz
-npm install --prefix ../../lib/typescript/codedifferently-instructional
+npm install --prefix ../../lib/javascript/codedifferently-instructional
 npm install
 npm start
 ```

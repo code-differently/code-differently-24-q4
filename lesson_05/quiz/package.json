@@ -31,6 +31,6 @@
     "typescript-eslint": "^8.7.0"
   },
   "dependencies": {
-    "codedifferently-instructional": "file:../../lib/typescript/codedifferently-instructional"
+    "codedifferently-instructional": "file:../../lib/javascript/codedifferently-instructional"
   }
 }

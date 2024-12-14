@@ -5,7 +5,7 @@ on:
     branches: [ "main" ]
     paths:
       - ".github/workflows/check_fullstack_demo_ts_pr.yaml"
-      - "lib/typescript/fullstack_demo/**"
+      - "lib/javascript/fullstack_demo/**"
 
 jobs:
   build:
@@ -23,7 +23,7 @@ jobs:
         node-version: '20.x'
 
     - name: Build Fullstack Demo with Node.js
-      working-directory: ./lib/typescript/fullstack_demo
+      working-directory: ./lib/javascript/fullstack_demo
       env:
         NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY: ${{ secrets.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY }}
       run: |

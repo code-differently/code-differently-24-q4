@@ -27,7 +27,7 @@ Now's your chance to quiz the instructor! In this assignment, you will modify th
 1. Navigate to the [quiz][quiz-folder] directory and install the required dependencies.
 ```bash
 cd lesson_03/quiz
-npm install --prefix ../../lib/typescript/codedifferently-instructional
+npm install --prefix ../../lib/javascript/codedifferently-instructional
 npm install
 npm start
 ```
