@@ -9,13 +9,15 @@ on:
 
 jobs:
   build:
-    environment: build
+
     runs-on: ubuntu-latest
     permissions:
       contents: read
 
+    environment: build
+
     env:
-      NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=${{ secrets.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY }}
+      NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY: ${{ secrets.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY }}
 
     steps:
     - uses: actions/checkout@v4
