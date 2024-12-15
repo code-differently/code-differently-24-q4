@@ -1,4 +1,4 @@
-# Lesson 09: Data Types
+# Lesson 09: Data Types ([Slides](https://codedifferently.github.io/code-differently-24-q4/slides/#lesson_09))
 
 ## Pre-work
 

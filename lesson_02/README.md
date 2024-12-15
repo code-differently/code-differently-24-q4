@@ -1,4 +1,4 @@
-# Lesson 02: Developer Workflow: Navigating the Terminal
+# Lesson 02: Developer Workflow: Navigating the Terminal ([Slides](https://codedifferently.github.io/code-differently-24-q4/slides/#lesson_02))
 
 ## Pre-work
 

@@ -1,4 +1,4 @@
-# Lesson 06: Statements and Variables
+# Lesson 06: Statements and Variables ([Slides](https://codedifferently.github.io/code-differently-24-q4/slides/#lesson_06))
 
 ## Pre-work
 
