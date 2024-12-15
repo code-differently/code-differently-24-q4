@@ -1,4 +1,4 @@
-# Lesson 07: Control Flow
+# Lesson 07: Control Flow ([Slides](../slides/#lesson_07))
 
 ## Pre-work
 

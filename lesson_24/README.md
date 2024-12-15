@@ -1,4 +1,4 @@
-# Lesson 24: JavaScript Deep Dive
+# Lesson 24: JavaScript Deep Dive ([Slides](../slides/#lesson_24))
 
 ## Pre-work
 

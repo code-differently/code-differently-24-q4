@@ -1,4 +1,4 @@
-# Lesson 04: How to Be A Great Software Engineer
+# Lesson 04: How to Be A Great Software Engineer ([Slides](../slides/#lesson_04))
 
 ## Pre-work
 

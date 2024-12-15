@@ -1,4 +1,4 @@
-# Lesson 23: Web FE: Intro to HTML, CSS, & JS
+# Lesson 23: Web FE: Intro to HTML, CSS, & JS ([Slides](../slides/#lesson_23))
 
 ## Pre-work
 

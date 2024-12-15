@@ -1,4 +1,4 @@
-# Lesson 27: Integrating with Backend APIs
+# Lesson 27: Integrating with Backend APIs ([Slides](../slides/#lesson_27))
 
 ## Pre-work
 

@@ -1,4 +1,4 @@
-# Lesson 10: Libraries and APIs
+# Lesson 10: Libraries and APIs ([Slides](../slides/#lesson_10))
 
 ## Pre-work
 

@@ -1,4 +1,4 @@
-# Lesson 06: Statements and Variables
+# Lesson 06: Statements and Variables ([Slides](../slides/#lesson_06))
 
 ## Pre-work
 

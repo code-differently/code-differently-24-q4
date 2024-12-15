@@ -1,4 +1,4 @@
-# Lesson 26: Web APIs using REST
+# Lesson 26: Web APIs using REST ([Slides](../slides/#lesson_26))
 
 ## Pre-work
 

@@ -1,4 +1,4 @@
-# Lesson 28: Introduction to Databases
+# Lesson 28: Introduction to Databases ([Slides](../slides/#lesson_28))
 
 ## Pre-work
 

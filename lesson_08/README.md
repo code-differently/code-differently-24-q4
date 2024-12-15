@@ -1,4 +1,4 @@
-# Lesson 08: Functions
+# Lesson 08: Functions ([Slides](../slides/#lesson_08))
 
 ## Pre-work
 

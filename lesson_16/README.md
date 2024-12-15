@@ -1,4 +1,4 @@
-# Lesson 16: OOP Principles, Part I
+# Lesson 16: OOP Principles, Part I ([Slides](../slides/#lesson_16))
 
 ## Pre-work
 

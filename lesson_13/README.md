@@ -1,4 +1,4 @@
-# Lesson 13: Data Structures: Maps and Sets
+# Lesson 13: Data Structures: Maps and Sets ([Slides](../slides/#lesson_13))
 
 ## Pre-work
 

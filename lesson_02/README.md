@@ -1,4 +1,4 @@
-# Lesson 02: Developer Workflow: Navigating the Terminal
+# Lesson 02: Developer Workflow: Navigating the Terminal ([Slides](../slides/#lesson_02))
 
 ## Pre-work
 

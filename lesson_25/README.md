@@ -1,4 +1,4 @@
-# Lesson 25: Intro to React
+# Lesson 25: Intro to React ([Slides](../slides/#lesson_25))
 
 ## Pre-work
 

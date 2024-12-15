@@ -1,4 +1,4 @@
-# Lesson 03: How Computers Work
+# Lesson 03: How Computers Work ([Slides](../slides/#lesson_03))
 
 ## Pre-work
 

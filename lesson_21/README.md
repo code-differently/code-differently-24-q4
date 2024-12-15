@@ -1,4 +1,4 @@
-# Lesson 21: Computer Languages
+# Lesson 21: Computer Languages ([Slides](../slides/#lesson_21))
 
 ## Pre-work
 

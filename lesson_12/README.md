@@ -1,4 +1,4 @@
-# Lesson 12: Data Structures: Stacks, Queue, Linked Lists
+# Lesson 12: Data Structures: Stacks, Queue, Linked Lists ([Slides](../slides/#lesson_12))
 
 ## Pre-work
 

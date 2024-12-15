@@ -1,4 +1,4 @@
-# Lesson 11: Data Structures: Strings, Array, ArrayList
+# Lesson 11: Data Structures: Strings, Array, ArrayList ([Slides](../slides/#lesson_11))
 
 ## Pre-work
 

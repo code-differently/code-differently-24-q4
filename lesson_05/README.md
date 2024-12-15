@@ -1,4 +1,4 @@
-# Lesson 05: Software Development Life Cycle
+# Lesson 05: Software Development Life Cycle ([Slides](../slides/#lesson_05))
 
 ## Pre-work
 

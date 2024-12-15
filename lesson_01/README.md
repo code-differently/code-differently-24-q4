@@ -1,4 +1,4 @@
-# Lesson 01 - Developer Workflow: IDE Fundamentals
+# Lesson 01 - Developer Workflow: IDE Fundamentals ([Slides](../slides/#lesson_01))
 
 ## Pre-work
 

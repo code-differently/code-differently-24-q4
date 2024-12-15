@@ -1,4 +1,6 @@
-# Lesson 00 - Developer Workflow: Git Fundamentals
+# Lesson 00 - Developer Workflow: Git Fundamentals ([Slides](../slides/#lesson_00))
+
+## Slides
 
 ## Pre-work
 

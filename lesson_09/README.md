@@ -1,4 +1,4 @@
-# Lesson 09: Data Types
+# Lesson 09: Data Types ([Slides](../slides/#lesson_09))
 
 ## Pre-work
 
