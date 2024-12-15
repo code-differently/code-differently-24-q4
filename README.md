@@ -4,7 +4,7 @@
 [![Check Push](https://github.com/code-differently/code-differently-24-q4/actions/workflows/check_push.yml/badge.svg)](https://github.com/code-differently/code-differently-24-q4/actions/workflows/check_push.yml)
 
 ### Purpose
-Main project repo for the Code Differently 2024 Q4 cohort. Read the [syllabus](/syllabus/) for more information about the class. Use the lesson folders to find and submit homework assignments.
+Main project repo for the Code Differently 2024 Q4 cohort. Read the [syllabus](syllabus/) for more information about the class. Use the lesson folders to find and submit homework assignments.
 
 ### Preview
 1. Install VS Code and Docker. You can references the [instructions here][dev-container-instructions], if needed.
