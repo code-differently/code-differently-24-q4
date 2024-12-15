@@ -1,4 +1,4 @@
-# Lesson 22: Building Applications ([Slides](https://codedifferently.github.io/code-differently-24-q4/slides/#lesson_22))
+# Lesson 22: Building Applications ([Slides](https://code-differently.github.io/code-differently-24-q4/slides/#/lesson_22))
 
 ## Pre-work
 
