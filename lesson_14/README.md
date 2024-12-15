@@ -1,4 +1,4 @@
-# Lesson 14: Exception and Error Handling ([Slides](https://codedifferently.github.io/code-differently-24-q4/slides/#lesson_14))
+# Lesson 14: Exception and Error Handling ([Slides](https://code-differently.github.io/code-differently-24-q4/slides/#/lesson_14))
 
 ## Pre-work
 

@@ -1,4 +1,4 @@
-# Lesson 11: Data Structures: Strings, Array, ArrayList ([Slides](https://codedifferently.github.io/code-differently-24-q4/slides/#lesson_11))
+# Lesson 11: Data Structures: Strings, Array, ArrayList ([Slides](https://code-differently.github.io/code-differently-24-q4/slides/#/lesson_11))
 
 ## Pre-work
 
