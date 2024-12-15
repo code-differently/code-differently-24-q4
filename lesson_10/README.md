@@ -1,4 +1,4 @@
-# Lesson 10: Libraries and APIs ([Slides](../slides/#lesson_10))
+# Lesson 10: Libraries and APIs ([Slides](https://codedifferently.github.io/code-differently-24-q4/slides/#lesson_10))
 
 ## Pre-work
 

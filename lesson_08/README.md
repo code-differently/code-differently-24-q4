@@ -1,4 +1,4 @@
-# Lesson 08: Functions ([Slides](../slides/#lesson_08))
+# Lesson 08: Functions ([Slides](https://codedifferently.github.io/code-differently-24-q4/slides/#lesson_08))
 
 ## Pre-work
 

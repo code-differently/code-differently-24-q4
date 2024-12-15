@@ -1,4 +1,4 @@
-# Lesson 00 - Developer Workflow: Git Fundamentals ([Slides](../slides/#lesson_00))
+# Lesson 00 - Developer Workflow: Git Fundamentals ([Slides](https://codedifferently.github.io/code-differently-24-q4/slides/#lesson_00))
 
 ## Slides
 

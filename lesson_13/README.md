@@ -1,4 +1,4 @@
-# Lesson 13: Data Structures: Maps and Sets ([Slides](../slides/#lesson_13))
+# Lesson 13: Data Structures: Maps and Sets ([Slides](https://codedifferently.github.io/code-differently-24-q4/slides/#lesson_13))
 
 ## Pre-work
 

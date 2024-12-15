@@ -1,4 +1,4 @@
-# Lesson 26: Web APIs using REST ([Slides](../slides/#lesson_26))
+# Lesson 26: Web APIs using REST ([Slides](https://codedifferently.github.io/code-differently-24-q4/slides/#lesson_26))
 
 ## Pre-work
 

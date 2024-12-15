@@ -1,4 +1,4 @@
-# Lesson 12: Data Structures: Stacks, Queue, Linked Lists ([Slides](../slides/#lesson_12))
+# Lesson 12: Data Structures: Stacks, Queue, Linked Lists ([Slides](https://codedifferently.github.io/code-differently-24-q4/slides/#lesson_12))
 
 ## Pre-work
 

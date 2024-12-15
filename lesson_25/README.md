@@ -1,4 +1,4 @@
-# Lesson 25: Intro to React ([Slides](../slides/#lesson_25))
+# Lesson 25: Intro to React ([Slides](https://codedifferently.github.io/code-differently-24-q4/slides/#lesson_25))
 
 ## Pre-work
 

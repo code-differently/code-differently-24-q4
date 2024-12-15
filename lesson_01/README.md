@@ -1,4 +1,4 @@
-# Lesson 01 - Developer Workflow: IDE Fundamentals ([Slides](../slides/#lesson_01))
+# Lesson 01 - Developer Workflow: IDE Fundamentals ([Slides](https://codedifferently.github.io/code-differently-24-q4/slides/#lesson_01))
 
 ## Pre-work
 
