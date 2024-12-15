@@ -24,6 +24,7 @@ $mainFontWeight: 700;
 $linkColor: #e7ad52;
 $linkColorHover: lighten( $linkColor, 20% );
 $headingFont: 'Lato', 'Open Sans', sans-serif;
+$headingFontWeight: 700;
 $headingTextShadow: none;
 $headingLetterSpacing: -0.03em;
 $headingTextTransform: none;
@@ -38,16 +39,32 @@ $headingLetterSpacing: .02em;
 // Change text colors against light slide backgrounds
 @include light-bg-text-color(#222);
 
-.reveal p {
-    font-weight: 700;
-    letter-spacing: .02em;
-}
-
-.reveal em {
-    color: #6d9eeb;
-}
-
 .reveal {
+     p {
+        font-weight: 700;
+        letter-spacing: .02em;
+    }
+
+    em {
+        color: #6d9eeb;
+    }
+
+    .slides {
+        section {
+            li {
+                font-weight: 700;
+            }
+        }
+    }
+
+    .ml-bullet-slide {
+        text-align: left;
+
+        h3 {
+            font-size: 1.5em;
+        }
+    }
+
     .ml-title-slide {
         text-align: left;
 
