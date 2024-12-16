@@ -23,7 +23,8 @@ function App() {
         if (deckRef.current) return;
 
         deckRef.current = new Reveal(deckDivRef.current, {
-            transition: "none",
+            transition: 'none',
+            slideNumber: 'c',
             // other config options
             plugins: [
                 RevealMarkdown,
