@@ -28,8 +28,9 @@ section.has-light-background, section.has-light-background h1, section.has-light
   text-align: left;
 }
 .reveal .ml-title-slide h1 {
-  font-size: 2em;
+  font-size: 1.75em;
   font-weight: 700;
+  line-height: 1.1em;
 }
 .reveal .ml-title-slide h2 {
   font-weight: 700;

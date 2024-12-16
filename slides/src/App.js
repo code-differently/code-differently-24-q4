@@ -6,7 +6,7 @@ import RevealHighlight from "../plugin/highlight/highlight.esm.js";
 import RevealMarkdown from "../plugin/markdown/markdown.esm.js";
 import RevealNotes from "../plugin/notes/notes.esm.js";
 import RevealSearch from "../plugin/search/search.esm.js";
-import Slides from "./Slides.js";
+import { Slides } from "./Slides/index.js";
 
 const html = htm.bind(createElement);
 
@@ -23,7 +23,7 @@ function App() {
         if (deckRef.current) return;
 
         deckRef.current = new Reveal(deckDivRef.current, {
-            transition: "slide",
+            transition: "none",
             // other config options
             plugins: [
                 RevealMarkdown,
