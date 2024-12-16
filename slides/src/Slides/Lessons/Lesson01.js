@@ -1,6 +1,6 @@
 import htm from "htm";
 import { createElement } from "react";
-import { Lesson } from "../Layouts/index.js";
+import { DemoSlide, Lesson, QuestionsSlide } from "../Layouts/index.js";
 
 const html = htm.bind(createElement);
 
@@ -24,7 +24,7 @@ function Lesson01() {
                 <p>What is an <em>IDE</em>?</p>
             </section>
             <section>
-                <p>An <em>Integrated Development Environment (IDE)</em> is software used to manage the developer workflow from writing and testing code to deploying.</p>
+                <p>An <em><i>Integrated Development Environment (IDE)</i></em> is software used to manage the developer workflow from writing and testing code to deploying.</p>
             </section>
             <section class="ml-bullet-slide">
                 <h3>Why we use <em>IDEs</em></h3>
@@ -70,12 +70,8 @@ function Lesson01() {
             <section>
                 <p>We're also leveraging <em>Dev Containers</em>, a feature that lets us work from the same <i>pre-configured</i> environment.</p>
             </section>
-            <section>
-                <p><i>Demo</i></p>
-            </section>
-            <section>
-                <p>Questions<em>?</em></p>
-            </section>
+            <${DemoSlide} />
+            <${QuestionsSlide} />
         <//>`;
 }
 

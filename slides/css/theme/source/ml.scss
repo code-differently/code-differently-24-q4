@@ -39,6 +39,14 @@ $headingLetterSpacing: .02em;
 // Change text colors against light slide backgrounds
 @include light-bg-text-color(#222);
 
+
+// Theme template ------------------------------
+@import "../template/theme";
+// ---------------------------------------------
+
+
+// Custom styles -------------------------------
+
 .reveal {
      p {
         font-weight: 700;
@@ -47,6 +55,7 @@ $headingLetterSpacing: .02em;
 
     em {
         color: #6d9eeb;
+        font-style: normal;
     }
 
     i {
@@ -125,8 +134,3 @@ $headingLetterSpacing: .02em;
     border-radius: 50%;
     object-fit: cover;
 }
-
-
-// Theme template ------------------------------
-@import "../template/theme";
-// ---------------------------------------------

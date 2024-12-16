@@ -1,4 +1,6 @@
+import DemoSlide from "./DemoSlide.js";
 import Lesson from "./Lesson.js";
+import QuestionsSlide from "./QuestionsSlide.js";
 import TitleSlide from "./TitleSlide.js";
 
-export { Lesson, TitleSlide };
+export { DemoSlide, Lesson, QuestionsSlide, TitleSlide };

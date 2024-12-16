@@ -8,73 +8,6 @@ section.has-light-background, section.has-light-background h1, section.has-light
   color: #222;
 }
 
-.reveal p {
-  font-weight: 700;
-  letter-spacing: 0.02em;
-}
-.reveal em {
-  color: #6d9eeb;
-}
-.reveal i {
-  font-style: italic;
-}
-.reveal .slides section li {
-  font-weight: 700;
-}
-.reveal .ml-bullet-slide {
-  text-align: left;
-}
-.reveal .ml-bullet-slide h3 {
-  font-size: 1.5em;
-}
-.reveal .ml-title-slide {
-  text-align: left;
-}
-.reveal .ml-title-slide h1 {
-  font-size: 1.75em;
-  font-weight: 700;
-  line-height: 1.1em;
-}
-.reveal .ml-title-slide h2 {
-  font-weight: 700;
-  font-style: italic;
-}
-.reveal .ml-title-slide .about {
-  display: flex;
-  gap: 40px;
-  margin-top: 20px;
-}
-.reveal .ml-title-slide .about .info {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-.reveal .ml-title-slide .about .info p {
-  font-size: 0.75em;
-  font-weight: normal;
-  font-style: italic;
-  margin: 0;
-}
-.reveal .ml-title-slide .socials {
-  display: flex;
-  gap: 12px;
-  align-items: center;
-}
-.reveal .ml-title-slide .socials .logo {
-  height: 40px;
-  object-fit: cover;
-}
-.reveal .ml-title-slide .socials em {
-  font-style: normal;
-}
-
-.avatar {
-  width: 150px;
-  height: 150px;
-  border-radius: 50%;
-  object-fit: cover;
-}
-
 /*********************************************
  * GLOBAL STYLES
  *********************************************/
@@ -423,4 +356,71 @@ section.has-light-background, section.has-light-background h1, section.has-light
   .backgrounds {
     background-color: var(--r-background-color);
   }
+}
+.reveal p {
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+.reveal em {
+  color: #6d9eeb;
+  font-style: normal;
+}
+.reveal i {
+  font-style: italic;
+}
+.reveal .slides section li {
+  font-weight: 700;
+}
+.reveal .ml-bullet-slide {
+  text-align: left;
+}
+.reveal .ml-bullet-slide h3 {
+  font-size: 1.5em;
+}
+.reveal .ml-title-slide {
+  text-align: left;
+}
+.reveal .ml-title-slide h1 {
+  font-size: 1.75em;
+  font-weight: 700;
+  line-height: 1.1em;
+}
+.reveal .ml-title-slide h2 {
+  font-weight: 700;
+  font-style: italic;
+}
+.reveal .ml-title-slide .about {
+  display: flex;
+  gap: 40px;
+  margin-top: 20px;
+}
+.reveal .ml-title-slide .about .info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.reveal .ml-title-slide .about .info p {
+  font-size: 0.75em;
+  font-weight: normal;
+  font-style: italic;
+  margin: 0;
+}
+.reveal .ml-title-slide .socials {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+.reveal .ml-title-slide .socials .logo {
+  height: 40px;
+  object-fit: cover;
+}
+.reveal .ml-title-slide .socials em {
+  font-style: normal;
+}
+
+.avatar {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
 }
