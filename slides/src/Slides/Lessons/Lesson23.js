@@ -6,7 +6,7 @@ const html = htm.bind(createElement);
 
 function Lesson23() {
     return html`
-        <${Lesson} title="Intro to HTML, CSS, and JS" lessonId="lesson_23" subtitle="Lesson 23">
+        <${Lesson} title="Intro to HTML, CSS, and JS" lessonId="lesson_23" subtitle="Lesson 23" titleFontSize="1.3em">
             <section>
                 <img class="r-stretch" src="images/24q4-slides/Slide740.png" alt="Slide 740" />
             </section>

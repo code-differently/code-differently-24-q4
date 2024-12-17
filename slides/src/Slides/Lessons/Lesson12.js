@@ -6,7 +6,7 @@ const html = htm.bind(createElement);
 
 function Lesson12() {
     return html`
-        <${Lesson} title="Data Structures: Stacks & Queues" lessonId="lesson_12" subtitle="Lesson 12">
+        <${Lesson} title="Data Structures: Stacks & Queues" lessonId="lesson_12" subtitle="Lesson 12" titleFontSize="1.08em">
             <section>
                 <img class="r-stretch" src="images/24q4-slides/Slide376.png" alt="Slide 376" />
             </section>

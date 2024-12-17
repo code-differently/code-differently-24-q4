@@ -6,7 +6,7 @@ const html = htm.bind(createElement);
 
 function Lesson15() {
     return html`
-        <${Lesson} title="Test-Driven Development" lessonId="lesson_15" subtitle="Lesson 15">
+        <${Lesson} title="Test-Driven Development" lessonId="lesson_15" subtitle="Lesson 15" titleFontSize="1.4em">
             <section>
                 <img class="r-stretch" src="images/24q4-slides/Slide494.png" alt="Slide 494" />
             </section>

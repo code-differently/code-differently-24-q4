@@ -6,7 +6,7 @@ const html = htm.bind(createElement);
 
 function Lesson13() {
     return html`
-        <${Lesson} title="Data Structures: Maps & Sets" lessonId="lesson_13" subtitle="Lesson 13">
+        <${Lesson} title="Data Structures: Maps & Sets" lessonId="lesson_13" subtitle="Lesson 13" titleFontSize="1.2em">
             <section>
                 <img class="r-stretch" src="images/24q4-slides/Slide414.png" alt="Slide 414" />
             </section>
