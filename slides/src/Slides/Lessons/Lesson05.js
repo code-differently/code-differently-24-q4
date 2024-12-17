@@ -1,6 +1,6 @@
 import htm from "htm";
 import { createElement } from "react";
-import { Lesson } from "../Layouts/index.js";
+import { Lesson, QuestionsSlide } from "../Layouts/index.js";
 
 const html = htm.bind(createElement);
 
@@ -8,46 +8,59 @@ function Lesson05() {
     return html`
         <${Lesson} title="Software Dev Life Cycle" lessonId="lesson_05" subtitle="Lesson 5">
             <section>
-                <img class="r-stretch" src="images/24q4-slides/Slide108.png" alt="Slide 108" />
+                <p>The <em><i>software development lifecycle (SDLC)</i></em> is the process by which software progresses from ideation to reality.</p>
             </section>
             <section>
-                <img class="r-stretch" src="images/24q4-slides/Slide109.png" alt="Slide 109" />
+                <p>Let's start with <em>Waterfall</em></p>
+            </section>
+            <section class="ml-bullet-slide">
+                <h3>Waterfall</h3>
+                <ul>
+                    <li class="fragment">Functional requirements</li>
+                    <li class="fragment">Design</li>
+                    <li class="fragment">Implementation</li>
+                    <li class="fragment">Testing/QA</li>
+                    <li class="fragment">Deployment</li>
+                </ul>
             </section>
             <section>
-                <img class="r-stretch" src="images/24q4-slides/Slide110.png" alt="Slide 110" />
+                <p>Functional requirements are about defining what the <em>user</em> wants</p>
             </section>
             <section>
-                <img class="r-stretch" src="images/24q4-slides/Slide111.png" alt="Slide 111" />
+                <p>Design is about <em>how we build</em> what users want</p>
             </section>
             <section>
-                <img class="r-stretch" src="images/24q4-slides/Slide112.png" alt="Slide 112" />
+                <p>Implementation is when we <em>build it</em></p>
             </section>
             <section>
-                <img class="r-stretch" src="images/24q4-slides/Slide113.png" alt="Slide 113" />
+                <p>Testing/QA is how we <em>make sure</em> we built what users want</p>
             </section>
             <section>
-                <img class="r-stretch" src="images/24q4-slides/Slide114.png" alt="Slide 114" />
+                <p>Deployment is how we put what we built <em>into the hands</em> of our users (without breaking stuff)</p>
             </section>
             <section>
-                <img class="r-stretch" src="images/24q4-slides/Slide115.png" alt="Slide 115" />
+                <img class="r-stretch" src="images/waterfalls.gif" alt="Chasing waterfalls" />
             </section>
             <section>
-                <img class="r-stretch" src="images/24q4-slides/Slide116.png" alt="Slide 116" />
+                <p>Waterfall sounds great, but had some <em>problems…</em></p>
+            </section>
+            <section class="ml-bullet-slide">
+                <h3>Problems with Waterfall</h3>
+                <ul>
+                    <li class="fragment">Users don't know what they want</li>
+                    <li class="fragment">It's hard to execute each step completely for a software system</li>
+                    <li class="fragment">Everything is always delivered late</li>
+                    <li class="fragment">By the time you deliver it, users already hate it</li>
+                </ul>
             </section>
             <section>
-                <img class="r-stretch" src="images/24q4-slides/Slide117.png" alt="Slide 117" />
-            </section>
-            <section>
-                <img class="r-stretch" src="images/24q4-slides/Slide118.png" alt="Slide 118" />
-            </section>
-            <section>
-                <img class="r-stretch" src="images/24q4-slides/Slide119.png" alt="Slide 119" />
+                <p>But what if just deliver <em>parts of the system</em> at a time and adjust as we go?</p>
             </section>
             <section>
                 <img class="r-stretch" src="images/24q4-slides/Slide120.png" alt="Slide 120" />
             </section>
             <section>
-                <img class="r-stretch" src="images/24q4-slides/Slide121.png" alt="Slide 121" />
+                <p>A <em>day in the life</em> of a software engineer (in screenshots)</p>
             </section>
             <section>
                 <img class="r-stretch" src="images/24q4-slides/Slide122.png" alt="Slide 122" />
@@ -101,11 +114,9 @@ function Lesson05() {
                 <img class="r-stretch" src="images/24q4-slides/Slide138.png" alt="Slide 138" />
             </section>
             <section>
-                <img class="r-stretch" src="images/24q4-slides/Slide139.png" alt="Slide 139" />
+                <p><i>Phew!</i></p>
             </section>
-            <section>
-                <img class="r-stretch" src="images/24q4-slides/Slide140.png" alt="Slide 140" />
-            </section>
+            <${QuestionsSlide}/>
         <//>`;
 }
 
