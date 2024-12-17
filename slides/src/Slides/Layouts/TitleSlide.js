@@ -19,7 +19,7 @@ function TitleSlide({title, slideId, subtitle, titleFontSize}) {
         <div class="socials">
             <img class="logo" src="images/twitter-logo.png" alt="Twitter logo" />
             <img class="logo" src="images/linkedin-logo.png" alt="Twitter logo" />
-            <img class="logo facebook-logo" src="images/facebook-logo.png" alt="Twitter logo" />
+            <img class="logo facebook-logo" src="images/facebook-logo.png" alt="Twitter logo" style=${{width: "43px", height: "67px"}} />
             <p>anthonydmays<em>[.com]</em></p>
         </div>
     </section>`;
