@@ -142,6 +142,19 @@ $headingLetterSpacing: .02em;
             }
         }
     }
+
+    .ml-code-slide {
+        text-align: left;
+
+        .badge {
+            display: inline-block;
+            position: absolute;
+            right: 0;
+            color: #e06666;
+            border: 4px solid;
+            padding: 8px 42px;
+        } 
+    }
 }
 
 .avatar {
@@ -149,4 +162,9 @@ $headingLetterSpacing: .02em;
     height: 150px;
     border-radius: 50%;
     object-fit: cover;
+}
+
+table.chart td,
+table.chart th {
+    text-align: center;
 }
