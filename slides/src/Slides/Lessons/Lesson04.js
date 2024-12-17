@@ -112,12 +112,12 @@ function Lesson04() {
             <section class="ml-bullet-slide">
                 <h3>How SWE's communicate</h3>
                 <ul>
-                    <li>Code</li>
-                    <li>Emails</li>
-                    <li>Design docs</li>
-                    <li>Bug reports</li>
-                    <li>Presentations</li>
-                    <li>Memes</li>
+                    <li class="fragment">Code</li>
+                    <li class="fragment">Emails</li>
+                    <li class="fragment">Design docs</li>
+                    <li class="fragment">Bug reports</li>
+                    <li class="fragment">Presentations</li>
+                    <li class="fragment">Memes</li>
                 </ul>
             </section>
             <section class="ml-bullet-slide">

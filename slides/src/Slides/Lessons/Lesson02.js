@@ -54,39 +54,39 @@ function Lesson02() {
             </section>
             <section class="ml-bullet-slide">
                 <h3>Navigating files & directories</h3>
-                <p class="fragment"><em>pwd</em> - print working directory</p>
-                <p class="fragment"><em>ls</em> - list files in directory</p>
-                <p class="fragment"><em>cd</em> - change directories</p>
+                <p class="fragment"><em><i>pwd</i></em> - print working directory</p>
+                <p class="fragment"><em><i>ls</i></em> - list files in directory</p>
+                <p class="fragment"><em><i>cd</i></em> - change directories</p>
             </section>
             <section class="ml-bullet-slide">
                 <h3>Adding and removing files & dirs</h3>
-                <p class="fragment"><em>touch</em> - make a new file</p>
-                <p class="fragment"><em>mkdir</em> - make a new directory</p>
-                <p class="fragment"><em>mv</em> - moves a file or directory</p>
-                <p class="fragment"><em>cp</em> - copy a file or directory</p>
-                <p class="fragment"><em>rm</em> - remove a file or directory</p>
+                <p class="fragment"><em><i>touch</i></em> - make a new file</p>
+                <p class="fragment"><em><i>mkdir</i></em> - make a new directory</p>
+                <p class="fragment"><em><i>mv</i></em> - moves a file or directory</p>
+                <p class="fragment"><em><i>cp</i></em> - copy a file or directory</p>
+                <p class="fragment"><em><i>rm</i></em> - remove a file or directory</p>
             </section>
             <section class="ml-bullet-slide">
                 <h3>Finding stuff</h3>
-                <p class="fragment"><em>find</em> - find files matching a pattern</p>
-                <p class="fragment"><em>grep</em> - find files based on content</p>
+                <p class="fragment"><em><i>find</i></em> - find files matching a pattern</p>
+                <p class="fragment"><em><i>grep</i></em> - find files based on content</p>
             </section>
             <section class="ml-bullet-slide">
                 <h3>Actin all powerful and stuff</h3>
-                <p class="fragment"><em>sudo</em> - run something as admin</p>
-                <p class="fragment"><em>chmod</em> - change permissions on file/dir</p>
+                <p class="fragment"><em><i>sudo</i></em> - run something as admin</p>
+                <p class="fragment"><em><i>chmod</i></em> - change permissions on file/dir</p>
             </section>
             <section class="ml-bullet-slide">
                 <h3>Viewing and editing files</h3>
-                <p class="fragment"><em>cat</em> - dump contents of a file</p>
-                <p class="fragment"><em>tail</em> - view the last several lines of a file</p>
-                <p class="fragment"><em>nano</em> - lightweight file editor</p>
+                <p class="fragment"><em><i>cat</i></em> - dump contents of a file</p>
+                <p class="fragment"><em><i>tail</i></em> - view the last several lines of a file</p>
+                <p class="fragment"><em><i>nano</i></em> - lightweight file editor</p>
             </section>
             <section class="ml-bullet-slide">
                 <h3>Special operators</h3>
-                <p class="fragment"><em>&&</em> - chain commands together</p>
-                <p class="fragment"><em>|</em> - (pipe) feed output of one to another</p>
-                <p class="fragment"><em>&</em> - run command in the background</p>
+                <p class="fragment"><em><i>&&</i></em> - chain commands together</p>
+                <p class="fragment"><em><i>|</i></em> - (pipe) feed output of one to another</p>
+                <p class="fragment"><em><i>&</i></em> - run command in the background</p>
             </section>
             <${QuestionsSlide} />
         <//>`;
