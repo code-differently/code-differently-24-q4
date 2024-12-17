@@ -20,7 +20,7 @@ $backgroundColor: #212121;
 
 $blockMargin: 36px;
 $mainFont: 'Lato', 'Open Sans', sans-serif;
-$mainFontSize: 45px;
+$mainFontSize: 56px;
 $mainFontWeight: 700;
 $linkColor: #e7ad52;
 $linkColorHover: lighten( $linkColor, 20% );
@@ -98,7 +98,7 @@ $headingLetterSpacing: .02em;
         text-align: left;
 
         h1 {
-            font-size: 1.75em;
+            font-size: 1.5em;
             font-weight: 700;
             line-height: 1.1em;
         }
@@ -145,6 +145,10 @@ $headingLetterSpacing: .02em;
 
     .ml-code-slide {
         text-align: left;
+
+        code {
+            overflow: visible;
+        }
 
         .badge {
             display: inline-block;

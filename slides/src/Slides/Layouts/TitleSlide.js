@@ -3,10 +3,10 @@ import { createElement } from "react";
 
 const html = htm.bind(createElement);
 
-function TitleSlide({title, slideId, subtitle}) {
+function TitleSlide({title, slideId, subtitle, titleFontSize}) {
   return html`
     <section id="${slideId}" class="ml-title-slide">
-        <h1>${title}</h1>
+        <h1 style=${{"font-size": titleFontSize}}>${title}</h1>
         <h2>${subtitle}</h2>
         <div class="about">
             <img class="avatar" src="images/instructor.jpg" alt="Instructor" />

@@ -6,7 +6,7 @@ const html = htm.bind(createElement);
 
 function Lesson06() {
     return html`
-        <${Lesson} title="Statements and Variables" lessonId="lesson_06" subtitle="Lesson 6">
+        <${Lesson} title="Statements and Variables" lessonId="lesson_06" subtitle="Lesson 6" titleFontSize="1.4em">
             <section>
                 <p>It's time to talk about <em>writing code</em></p>
             </section>

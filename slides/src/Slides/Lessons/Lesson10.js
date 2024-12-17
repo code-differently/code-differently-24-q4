@@ -1,6 +1,6 @@
 import htm from "htm";
 import { createElement } from "react";
-import { Lesson } from "../Layouts/index.js";
+import { CodeSlide, Lesson, QuestionsSlide } from "../Layouts/index.js";
 
 const html = htm.bind(createElement);
 
@@ -8,80 +8,154 @@ function Lesson10() {
     return html`
         <${Lesson} title="Libraries" lessonId="lesson_10" subtitle="Lesson 10">
             <section>
-                <img class="r-stretch" src="images/24q4-slides/Slide294.png" alt="Slide 294" />
+                <p>Developers <i>almost never</i> write every single line of code needed to build an application.</p>
             </section>
             <section>
-                <img class="r-stretch" src="images/24q4-slides/Slide295.png" alt="Slide 295" />
+                <p>We <i>liberally</i> borrow and use <em>pre-existing</em> tools and frameworks to build more complex systems</p>
             </section>
             <section>
-                <img class="r-stretch" src="images/24q4-slides/Slide296.png" alt="Slide 296" />
+                <p>This is why we rely on <em>libraries</em>.</p>
             </section>
             <section>
-                <img class="r-stretch" src="images/24q4-slides/Slide297.png" alt="Slide 297" />
+                <p>A library contains <em>data types</em> and <em>functions</em> for a programming language that let us leverage code that already solves our problems.</p>
             </section>
             <section>
-                <img class="r-stretch" src="images/24q4-slides/Slide298.png" alt="Slide 298" />
+                <p>Node itself provides a standard library that we can use for the most common stuff.</p>
             </section>
             <section>
-                <img class="r-stretch" src="images/24q4-slides/Slide299.png" alt="Slide 299" />
+                <p>Node applications organizes <i>all code</i>, including its library of data types, into <em>modules</em>.</p>
             </section>
             <section>
-                <img class="r-stretch" src="images/24q4-slides/Slide300.png" alt="Slide 300" />
+                <p>Here are some common modules used in Node</p>
+            </section>
+            <section class="ml-bullet-slide">
+                <h3>Core Node library modules</h3>
+                <ul>
+                    <li class="fragment"><em><i>http</i></em> - Stuff for starting web servers.</li>
+                    <li class="fragment"><em><i>util</i></em> - A bunch of useful functions for general programming</li>
+                    <li class="fragment"><em><i>fs</i></em> - Functions for interacting with data outside of our application (files, directories, etc).</li>
+                </ul>
             </section>
             <section>
-                <img class="r-stretch" src="images/24q4-slides/Slide301.png" alt="Slide 301" />
+                <p>Java has the same concept as modules, but they're called <em>packages</em>.</p>
+            </section>
+            <section class="ml-bullet-slide">
+                <h3>Core Java library packages</h3>
+                <ul>
+                    <li class="fragment"><em><i>java.util</i></em> - A bunch of data types and collections.</li>
+                    <li class="fragment"><em><i>java.math</i></em> - Data types and functions for doing mathematics</li>
+                    <li class="fragment"><em><i>java.io</i></em> - Stuff for interacting with data outside of our application (user input and output, files, etc).</li>
+                </ul>
+            </section>
+            <section class="ml-bullet-slide">
+                <h3>Core Java library packages</h3>
+                <ul>
+                    <li class="fragment"><em><i>java.time</i></em> - Stuff for dealing with dates and times.</li>
+                    <li class="fragment"><em><i>java.security</i></em> - Stuff that helps keeps us safe from h4ck3rz.</li>
+                </ul>
             </section>
             <section>
-                <img class="r-stretch" src="images/24q4-slides/Slide302.png" alt="Slide 302" />
+                <p>To use something from a package in Java, you have to use an <em><i>import</i></em> statement.</p>
+            </section>
+            <${CodeSlide} lang="java" badge="Java" fontSize=".45em" lineNumbers="1|3-4|6|8,10,15">
+package com.codedifferently; // Declare our package
+
+import java.time.Instant;    // Import some stuff we want to use
+import java.util.Date;
+
+public class Person {        // This class is PUBLIC outside our package
+   private String name;
+   private Date birthDate;   // Use the imported Date class
+
+   public Person(String name, Date birthDate) {
+       this.name = name;
+       if (birthDate != null) {
+           this.birthDate = birthDate;
+       } else {
+           this.birthDate = Date.from(Instant.now());
+       }
+   }
+}
+            <//>
+            <section>
+                <p><span style=${{"color": "red"}}>IMPORTANT!</span><br />We only have to import stuff that's <i>NOT</i> in our package.</p>
             </section>
             <section>
-                <img class="r-stretch" src="images/24q4-slides/Slide303.png" alt="Slide 303" />
+                <p>Here's a similar example in TypeScript…</p>
+            </section>
+            <${CodeSlide} lang="typescript" badge="TypeScript" fontSize=".45em" lineNumbers="1|6-7,12">
+export class Person { // Public outside of the file module.
+
+   private name: string;
+   private birthDate: Date;
+
+   // Date is globally available and doesn't need importing.
+   constructor(name: string, birthDate: Date) {
+       this.name = name;
+       if (birthDate != null) {
+           this.birthDate = birthDate;
+       } else {
+           this.birthDate = new Date();
+       }
+   }
+}
+            <//>
+            <section>
+                <p>We can also <em>import</em> stuff built by other developers. For that, we use special tools that let us add <em>dependencies</em> to their packages or modules.</p>
             </section>
             <section>
-                <img class="r-stretch" src="images/24q4-slides/Slide304.png" alt="Slide 304" />
+                <p>For this class, we use <em>NPM</em> in TypeScript and <em>Gradle</em> in Java for managing external dependencies...</p>
+            </section>
+            <${CodeSlide} lang="json" fontSize=".45em">
+// package.json
+
+{
+ ...
+ "devDependencies": {
+   "ts-node-dev": "^2.0.0",
+   "typescript": "^5.3.3",
+   "nodemon": "^3.0.3"
+ },
+ "dependencies": {
+   "react": "^18.2.0",
+ }
+}
+
+            <//>
+            <${CodeSlide} lang="kotlin" fontSize=".45em">
+// build.gradle.kts file, this is NOT Java. 👌🏾
+
+dependencies {
+   // Use JUnit Jupiter for writing unit test code.
+   testImplementation("org.junit.jupiter:junit-jupiter:5.9.1")
+
+   // Include some packages from Google's Guava library.
+   implementation("com.google.guava:guava:31.1-jre")
+}
+            <//>
+            <section>
+                <p>Here are a few super important Java libraries you should know…</p>
+            </section>
+            <section class="ml-bullet-slide">
+                <h3>A few popular Java libraries</h3>
+                <ul>
+                    <li class="fragment"><em><i>JUnit</i></em> - A library for creating unit tests</li>
+                    <li class="fragment"><em><i>Spring</i></em> - A framework for building professional, complex Java applications</li>
+                    <li class="fragment"><em><i>Lombok</i></em> - A great library that automatically generates code for you.</li>
+                </ul>
             </section>
             <section>
-                <img class="r-stretch" src="images/24q4-slides/Slide305.png" alt="Slide 305" />
+                <p>And, of course, here are some for TypeScript/JS</p>
             </section>
-            <section>
-                <img class="r-stretch" src="images/24q4-slides/Slide306.png" alt="Slide 306" />
+            <section class="ml-bullet-slide">
+                <h3>A few popular JS/TS libraries</h3>
+                <ul>
+                    <li class="fragment"><em><i>Jest</i></em> - A library for creating unit tests</li>
+                    <li class="fragment"><em><i>NextJS</i></em> - A framework for building professional, complex web applications</li>
+                    <li class="fragment"><em><i>React</i></em> - A library for building web components (think custom HTML tags).</li>
+                </ul>
             </section>
-            <section>
-                <img class="r-stretch" src="images/24q4-slides/Slide307.png" alt="Slide 307" />
-            </section>
-            <section>
-                <img class="r-stretch" src="images/24q4-slides/Slide308.png" alt="Slide 308" />
-            </section>
-            <section>
-                <img class="r-stretch" src="images/24q4-slides/Slide309.png" alt="Slide 309" />
-            </section>
-            <section>
-                <img class="r-stretch" src="images/24q4-slides/Slide310.png" alt="Slide 310" />
-            </section>
-            <section>
-                <img class="r-stretch" src="images/24q4-slides/Slide311.png" alt="Slide 311" />
-            </section>
-            <section>
-                <img class="r-stretch" src="images/24q4-slides/Slide312.png" alt="Slide 312" />
-            </section>
-            <section>
-                <img class="r-stretch" src="images/24q4-slides/Slide313.png" alt="Slide 313" />
-            </section>
-            <section>
-                <img class="r-stretch" src="images/24q4-slides/Slide314.png" alt="Slide 314" />
-            </section>
-            <section>
-                <img class="r-stretch" src="images/24q4-slides/Slide315.png" alt="Slide 315" />
-            </section>
-            <section>
-                <img class="r-stretch" src="images/24q4-slides/Slide316.png" alt="Slide 316" />
-            </section>
-            <section>
-                <img class="r-stretch" src="images/24q4-slides/Slide317.png" alt="Slide 317" />
-            </section>
-            <section>
-                <img class="r-stretch" src="images/24q4-slides/Slide318.png" alt="Slide 318" />
-            </section>
+            <${QuestionsSlide}/>
         <//>`;
 }
 
