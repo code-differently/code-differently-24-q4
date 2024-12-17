@@ -8,7 +8,7 @@ function Lesson00() {
     return html`
         <${Lesson} title="Git Fundamentals" subtitle="Lesson 0" lessonId="lesson_00">
             <section class="ml-bullet-slide">
-                <h3>What we're doing</h3>
+                <h3 class="big-title">What we're doing</h3>
                 <ul>
                     <li class="fragment">Why we need version control</li>
                     <li class="fragment">What is Git and GitHub?</li>
@@ -20,7 +20,7 @@ function Lesson00() {
                 <p>Why we need <em>version control</em></p>
             </section>
             <section class="ml-bullet-slide">
-                <h3>Why we need <em>version control</em></h3>
+                <h3 class="big-title">Why we need <em>version control</em></h3>
                 <ul>
                     <li class="fragment">Track changes over time</li>
                     <li class="fragment">Collaborate with others</li>
@@ -47,7 +47,7 @@ function Lesson00() {
                 <p><em>Forks</em> are just branched copies of other user's repos that you own and modify</p>
             </section>
             <section class="ml-bullet-slide">
-                <h3>Why we <em>branch</em></h3>
+                <h3 class="big-title">Why we <em>branch</em></h3>
                 <ul>
                     <li class="fragment">Work on features or fixes without impacting work happening in other places</li>
                     <li class="fragment">Run tests or deployments</li>
@@ -58,7 +58,7 @@ function Lesson00() {
                 <p>Learning the <em>basic workflow</em></p>
             </section>
             <section class="ml-bullet-slide">
-                <h3>The <em>basic workflow</em></h3>
+                <h3 class="big-title">The <em>basic workflow</em></h3>
                 <ol>
                     <li class="fragment">Pull the latest changes from other devs</li>
                     <li class="fragment">Change some more stuff</li>

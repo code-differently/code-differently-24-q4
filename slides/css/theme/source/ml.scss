@@ -72,10 +72,12 @@ $headingLetterSpacing: .02em;
 
     .ml-bullet-slide {
         text-align: left;
+    }
 
-        h3 {
-            font-size: 1.5em;
-        }
+    h1.big-title,
+    h2.big-title,
+    h3.big-title {
+        font-size: 1.5em;
     }
 
     .ml-title-slide {

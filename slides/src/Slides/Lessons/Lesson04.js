@@ -1,6 +1,6 @@
 import htm from "htm";
 import { createElement } from "react";
-import { Lesson } from "../Layouts/index.js";
+import { Lesson, QuestionsSlide } from "../Layouts/index.js";
 
 const html = htm.bind(createElement);
 
@@ -8,71 +8,132 @@ function Lesson04() {
     return html`
         <${Lesson} title="How to be a Great SWE" lessonId="lesson_04" subtitle="Lesson 4">
             <section>
-                <img class="r-stretch" src="images/24q4-slides/Slide85.png" alt="Slide 85" />
+                <p>There are <em>5 things</em> you need to be a great engineer</p>
             </section>
             <section>
-                <img class="r-stretch" src="images/24q4-slides/Slide86.png" alt="Slide 86" />
+                <p>1. Stay curious. Ask the <em><i>dumb questions</i></em></p>
+            </section>
+            <section class="ml-bullet-slide">
+                <h3>How to be curious</h3>
+                <ul>
+                    <li class="fragment">Be humble</li>
+                    <li class="fragment">Don't stop at how, ask <em>why</em></li>
+                    <li class="fragment">Think about the <em>"what if's…"</em></li>
+                    <li class="fragment">Get <em>specific</em> and <i>drill deep</i> on something. There's always more to learn.</li>
+                </ul>
             </section>
             <section>
-                <img class="r-stretch" src="images/24q4-slides/Slide87.png" alt="Slide 87" />
+                <p>Speaking of learning…</p>
             </section>
             <section>
-                <img class="r-stretch" src="images/24q4-slides/Slide88.png" alt="Slide 88" />
+                <p>2. Learn <em>how to learn</em></p>
+            </section>
+            <section class="ml-bullet-slide">
+                <h3>Ways to learn</h3>
+                <ul>
+                    <li class="fragment"><em><i>Topic-oriented learning</i></em> (YouTube, Books, Courses, Tutorials, MDN, Java docs)</li>
+                    <li class="fragment"><em><i>Question-based learning</i> </em>(Stack Overflow, Quora, Google search, ChatGPT, Gemini)</li>
+                    <li class="fragment"><em><i>Simulation-based learning</i></em> (tutorials, build it yourself)</li>
+                </ul>
+            </section>
+            <section class="ml-bullet-slide">
+                <h3>What kind of learner are you?</h3>
+                <ul>
+                    <li class="fragment"><em><i>Kinesthetic</i></em> (requires physical activity)</li>
+                    <li class="fragment"><em><i>Visual</i></em> (needs to watch something)</li>
+                    <li class="fragment"><em><i>Auditory</i></em> (needs to hear it)</li>
+                    <li class="fragment"><em><i>Read/write</i></em> (note takers and book readers)</li>
+                </ul>
             </section>
             <section>
-                <img class="r-stretch" src="images/24q4-slides/Slide89.png" alt="Slide 89" />
+                <p>You should do them <em><i>all</i></em></p>
             </section>
             <section>
-                <img class="r-stretch" src="images/24q4-slides/Slide90.png" alt="Slide 90" />
+                <p>3. <em>Read and write</em> tons of code.<br/>Code every day.</p>
+            </section>
+            <section class="ml-bullet-slide">
+                <h3>Ways to get your reps in</h3>
+                <ol>
+                    <li class="fragment">Tutorials</li>
+                    <li class="fragment">Code memorization exercises</li>
+                    <li class="fragment">Personal projects</li>
+                    <li class="fragment">Get a job</li>
+                    <li class="fragment">Volunteer</li>
+                </ol>
             </section>
             <section>
-                <img class="r-stretch" src="images/24q4-slides/Slide91.png" alt="Slide 91" />
+                <p>4. Practice <em>effective</em> problem-solving skills</p>
             </section>
             <section>
-                <img class="r-stretch" src="images/24q4-slides/Slide92.png" alt="Slide 92" />
+                <p>This requires <i>discipline</i>, <i>rigor</i>, and <i>tenacity</i>.</p>
+            </section>
+            <section class="ml-bullet-slide">
+                <h3>The Six Steps</h3>
+                <ol>
+                    <li class="fragment">Repeat the question out loud</li>
+                    <li class="fragment">Clarify assumptions and ask questions</li>
+                    <li class="fragment">Work through examples</li>
+                    <li class="fragment">Brainstorm multiple solutions</li>
+                    <li class="fragment">Implement</li>
+                    <li class="fragment">Test</li>
+                </ol>
+            </section>
+            <section class="ml-bullet-slide">
+                <h3>REACTO</h3>
+                <ul>
+                    <li>R: <em>Repeat</em> the question</li>
+                    <li>E: Work through <em>examples</em></li>
+                    <li>A: State an <em>approach</em></li>
+                    <li>C: Implement (<em>code</em>)</li>
+                    <li>T: <em>Test</em></li>
+                    <li>O: <em>Optimize</em></li>
+                </ul>
+            </section>
+            <section class="ml-bullet-slide">
+                <h3>UMPIRE</h3>
+                <ul>
+                    <li>U - <em>Understand</em> the question</li>
+                    <li>M - <em>Match</em> to other known problems</li>
+                    <li>P - <em>Plan</em> a solution</li>
+                    <li>I - <em>Implement</em></li>
+                    <li>R - <em>Review</em> the code (test)</li>
+                    <li>E - <em>Evaluate</em> the performance</li>
+                </ul>
             </section>
             <section>
-                <img class="r-stretch" src="images/24q4-slides/Slide93.png" alt="Slide 93" />
+                <p>5. <em>(Over)</em>communicate</p>
             </section>
             <section>
-                <img class="r-stretch" src="images/24q4-slides/Slide94.png" alt="Slide 94" />
+                <p>To over-communicate, you must first learn how to <em>communicate well</em>.</p>
             </section>
             <section>
-                <img class="r-stretch" src="images/24q4-slides/Slide95.png" alt="Slide 95" />
+                <p>Once you know how to communicate well, do it <em><i>frequently</i></em>.</p>
+            </section>
+            <section class="ml-bullet-slide">
+                <h3>How SWE's communicate</h3>
+                <ul>
+                    <li>Code</li>
+                    <li>Emails</li>
+                    <li>Design docs</li>
+                    <li>Bug reports</li>
+                    <li>Presentations</li>
+                    <li>Memes</li>
+                </ul>
+            </section>
+            <section class="ml-bullet-slide">
+                <h3>Let's review</h3>
+                <ul>
+                    <li>Be curious</li>
+                    <li>Learn how to learn</li>
+                    <li>Code constantly</li>
+                    <li>Be a tenacious problem solver</li>
+                    <li>Over-communicate</li>
+                </ul>
             </section>
             <section>
-                <img class="r-stretch" src="images/24q4-slides/Slide96.png" alt="Slide 96" />
+                <p>Let's learn together…</p>
             </section>
-            <section>
-                <img class="r-stretch" src="images/24q4-slides/Slide97.png" alt="Slide 97" />
-            </section>
-            <section>
-                <img class="r-stretch" src="images/24q4-slides/Slide98.png" alt="Slide 98" />
-            </section>
-            <section>
-                <img class="r-stretch" src="images/24q4-slides/Slide99.png" alt="Slide 99" />
-            </section>
-            <section>
-                <img class="r-stretch" src="images/24q4-slides/Slide100.png" alt="Slide 100" />
-            </section>
-            <section>
-                <img class="r-stretch" src="images/24q4-slides/Slide101.png" alt="Slide 101" />
-            </section>
-            <section>
-                <img class="r-stretch" src="images/24q4-slides/Slide102.png" alt="Slide 102" />
-            </section>
-            <section>
-                <img class="r-stretch" src="images/24q4-slides/Slide103.png" alt="Slide 103" />
-            </section>
-            <section>
-                <img class="r-stretch" src="images/24q4-slides/Slide104.png" alt="Slide 104" />
-            </section>
-            <section>
-                <img class="r-stretch" src="images/24q4-slides/Slide105.png" alt="Slide 105" />
-            </section>
-            <section>
-                <img class="r-stretch" src="images/24q4-slides/Slide106.png" alt="Slide 106" />
-            </section>
+            <${QuestionsSlide}/>
         <//>`;
 }
 
