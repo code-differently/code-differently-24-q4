@@ -41,7 +41,7 @@ function Lesson10() {
             </section>
             <section class="ml-bullet-slide">
                 <h3>Core Java library packages</h3>
-                <ul>
+                <ul style=${{"font-size": ".9em"}}>
                     <li class="fragment"><em><i>java.util</i></em> - A bunch of data types and collections.</li>
                     <li class="fragment"><em><i>java.math</i></em> - Data types and functions for doing mathematics</li>
                     <li class="fragment"><em><i>java.io</i></em> - Stuff for interacting with data outside of our application (user input and output, files, etc).</li>
@@ -57,7 +57,7 @@ function Lesson10() {
             <section>
                 <p>To use something from a package in Java, you have to use an <em><i>import</i></em> statement.</p>
             </section>
-            <${CodeSlide} lang="java" badge="Java" fontSize=".45em" lineNumbers="1|3-4|6|8,10,15">
+            <${CodeSlide} lang="java" badge="Java" fontSize=".37em" lineNumbers="1|3-4|6|8,10,15">
 package com.codedifferently; // Declare our package
 
 import java.time.Instant;    // Import some stuff we want to use
@@ -83,7 +83,7 @@ public class Person {        // This class is PUBLIC outside our package
             <section>
                 <p>Here's a similar example in TypeScript…</p>
             </section>
-            <${CodeSlide} lang="typescript" badge="TypeScript" fontSize=".45em" lineNumbers="1|6-7,12">
+            <${CodeSlide} lang="typescript" badge="TypeScript" fontSize=".37em" lineNumbers="1|6-7,12">
 export class Person { // Public outside of the file module.
 
    private name: string;
@@ -106,7 +106,7 @@ export class Person { // Public outside of the file module.
             <section>
                 <p>For this class, we use <em>NPM</em> in TypeScript and <em>Gradle</em> in Java for managing external dependencies...</p>
             </section>
-            <${CodeSlide} lang="json" fontSize=".45em">
+            <${CodeSlide} lang="json" fontSize=".37em">
 // package.json
 
 {
@@ -122,7 +122,7 @@ export class Person { // Public outside of the file module.
 }
 
             <//>
-            <${CodeSlide} lang="kotlin" fontSize=".45em">
+            <${CodeSlide} lang="kotlin" fontSize=".37em">
 // build.gradle.kts file, this is NOT Java. 👌🏾
 
 dependencies {
@@ -138,7 +138,7 @@ dependencies {
             </section>
             <section class="ml-bullet-slide">
                 <h3>A few popular Java libraries</h3>
-                <ul>
+                <ul style=${{"font-size": ".9em"}}>
                     <li class="fragment"><em><i>JUnit</i></em> - A library for creating unit tests</li>
                     <li class="fragment"><em><i>Spring</i></em> - A framework for building professional, complex Java applications</li>
                     <li class="fragment"><em><i>Lombok</i></em> - A great library that automatically generates code for you.</li>
@@ -149,7 +149,7 @@ dependencies {
             </section>
             <section class="ml-bullet-slide">
                 <h3>A few popular JS/TS libraries</h3>
-                <ul>
+                <ul style=${{"font-size": ".9em"}}>
                     <li class="fragment"><em><i>Jest</i></em> - A library for creating unit tests</li>
                     <li class="fragment"><em><i>NextJS</i></em> - A framework for building professional, complex web applications</li>
                     <li class="fragment"><em><i>React</i></em> - A library for building web components (think custom HTML tags).</li>

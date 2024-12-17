@@ -21,7 +21,7 @@ function Lesson06() {
             </section>
             <section class="ml-bullet-slide">
                 <h3>Types of statements</h3>
-                <ul>
+                <ul style=${{"font-size": ".8em"}}>
                     <li class="fragment"><em><i>Declaration</i></em> (making a new variable, function, data type)</li>
                     <li class="fragment"><em><i>Function</i></em> call (run or execute a function)</li>
                     <li class="fragment"><em><i>Expression</i></em> (storing something)</li>
@@ -32,7 +32,7 @@ function Lesson06() {
             </section>
             <section class="ml-bullet-slide">
                 <h3>Types of statements</h3>
-                <ul>
+                <ul style=${{"font-size": ".8em"}}>
                     <li><em><i>Declaration</i></em> (making a new variable, function, data type)</li>
                     <li><em><i>Function</i></em> call (run or execute a function)</li>
                     <li><em><i>Expression</i></em> (storing something)</li>

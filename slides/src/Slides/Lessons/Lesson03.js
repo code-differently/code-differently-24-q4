@@ -48,7 +48,7 @@ function Lesson03() {
             </section>
             <section class="ml-bullet-slide">
                 <h3>The desk analogy</h3>
-                <ul>
+                <ul style=${{"font-size": ".9em"}}>
                     <li class="fragment">Desk as the motherboard</li>
                     <li class="fragment">Draws are like the hard drives</li>
                     <li class="fragment">Desktop, paper, sticky notes models RAM</li>
@@ -62,7 +62,7 @@ function Lesson03() {
             </section>
             <section class="ml-bullet-slide">
                 <h3>The body analogy</h3>
-                <ul>
+                <ul style=${{"font-size": ".9em"}}>
                     <li class="fragment">Central nervous system is the motherboard</li>
                     <li class="fragment">Brain's long term memory is the hard drive</li>
                     <li class="fragment">Brain's short term memory is the RAM</li>

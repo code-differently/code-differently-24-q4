@@ -30,7 +30,7 @@ function Lesson04() {
             </section>
             <section class="ml-bullet-slide">
                 <h3>Ways to learn</h3>
-                <ul>
+                <ul style=${{"font-size": ".9em"}}>
                     <li class="fragment"><em><i>Topic-oriented learning</i></em> (YouTube, Books, Courses, Tutorials, MDN, Java docs)</li>
                     <li class="fragment"><em><i>Question-based learning</i> </em>(Stack Overflow, Quora, Google search, ChatGPT, Gemini)</li>
                     <li class="fragment"><em><i>Simulation-based learning</i></em> (tutorials, build it yourself)</li>
@@ -69,7 +69,7 @@ function Lesson04() {
             </section>
             <section class="ml-bullet-slide">
                 <h3>The Six Steps</h3>
-                <ol>
+                <ol style=${{"font-size": ".9em"}}>
                     <li class="fragment">Repeat the question out loud</li>
                     <li class="fragment">Clarify assumptions and ask questions</li>
                     <li class="fragment">Work through examples</li>

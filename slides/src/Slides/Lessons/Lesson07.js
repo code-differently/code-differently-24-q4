@@ -1,10 +1,11 @@
 import htm from "htm";
 import { createElement } from "react";
-import { Lesson, QuestionsSlide } from "../Layouts/index.js";
+import { CodeSlide, Lesson, QuestionsSlide } from "../Layouts/index.js";
 
 const html = htm.bind(createElement);
 
 function Lesson07() {
+    const codeStyle = {"text-align": "center", "font-size": "1.5em", "overflow": "visible"};
     return html`
         <${Lesson} title="Control Flow" lessonId="lesson_07" subtitle="Lesson 7">
             <section>
@@ -44,23 +45,23 @@ false // This is a FALSE expression
             </section>
             <section>
                 <p>How do you say this?</p>
-                <pre><code style=${{"text-align": "center", "font-size": "1.5em"}}>!(val ${'>'} 0 && val ${'<'} 10)</code></pre>
+                <pre><code style=${{...codeStyle}}>!(val ${'>'} 0 && val ${'<'} 10)</code></pre>
             </section>
             <section>
                 <p>Is it NOT true that <em>val</em> is greater than 0 AND that <em>val</em> is less than 10?</p>
-                <pre><code style=${{"text-align": "center", "font-size": "1.5em"}}>!(val ${'>'} 0 && val ${'<'} 10)</code></pre>
+                <pre><code style=${{...codeStyle}}>!(val ${'>'} 0 && val ${'<'} 10)</code></pre>
             </section>
             <section>
                 <p>Can we simplify?</p>
-                <pre><code style=${{"text-align": "center", "font-size": "1.5em"}}>!(val ${'>'} 0 && val ${'<'} 10)</code></pre>
+                <pre><code style=${{...codeStyle}}>!(val ${'>'} 0 && val ${'<'} 10)</code></pre>
             </section>
             <section>
                 <p>Yup. Flip the <em>operators</em></p>
             </section>
             <section>
-                <pre><code style=${{"text-align": "center", "font-size": "1.5em"}}>!(val ${'>'} 0 && val ${'<'} 10)</code></pre>
+                <pre><code style=${{...codeStyle}}>!(val ${'>'} 0 && val ${'<'} 10)</code></pre>
                 <p>is equivalent to</p>
-                <pre><code style=${{"text-align": "center", "font-size": "1.5em"}}>!(val ${'<='} 0 || val ${'>='} 10)</code></pre>
+                <pre><code style=${{...codeStyle}}>!(val ${'<='} 0 || val ${'>='} 10)</code></pre>
             </section>
             <section>
                 <p>Now let's talk about <em>control flow</em></p>
@@ -72,10 +73,7 @@ false // This is a FALSE expression
             <section>
                 <img class="r-stretch" src="images/24q4-slides/Slide179.png" alt="Slide 179" />
             </section>
-            <section class="ml-bullet-slide">
-                <h3>The <em>if..else</em> statement</h3>
-                <pre>
-                    <code data-trim data-noescape class="language-typescript">
+            <${CodeSlide} title=${html`The <em>if..else</em> statement`} lang="typescript">
 if (student.getSchoolName() === "Code Differently") {
      console.log("You winnin!");
      student.setEmployed(true);
@@ -83,13 +81,8 @@ if (student.getSchoolName() === "Code Differently") {
 } else {
      console.log("Too bad!");
 }
-                    </code>
-                </pre>
-            </section>
-            <section class="ml-bullet-slide">
-                <h3>The <em>if..else</em> statement</h3>
-                <pre>
-                    <code data-trim data-noescape class="language-typescript">
+            <//>
+            <${CodeSlide} title=${html`The <em>if..else</em> statement`} lang="typescript" fontSize=".4em">
 if (pivotValue === target) {
      return pivotIndex;
 } else if (pivotValue ${'<'} target) {
@@ -98,13 +91,8 @@ if (pivotValue === target) {
      // How does pivotValue relate to target here???
      return binarySearch(arr, 0, pivot - 1, target);
 }
-                    </code>
-                </pre>
-            </section>
-            <section class="ml-bullet-slide">
-                <h3>The <em>if..else</em> statement</h3>
-                <pre>
-                    <code data-trim data-noescape class="language-typescript">
+            <//>
+            <${CodeSlide} title=${html`The <em>if..else</em> statement`} lang="typescript" fontSize=".4em">
 if (pivotValue === target) {
      return pivotIndex;
 } else if (pivotValue ${'<'} target) {
@@ -113,9 +101,7 @@ if (pivotValue === target) {
      // pivotValue is GREATER THAN target
      return binarySearch(arr, 0, pivot - 1, target);
 }
-                    </code>
-                </pre>
-            </section>
+            <//>
             <section class="ml-bullet-slide">
                 <h3>The <em>for</em> statement</h3>
                 <ul>
@@ -148,10 +134,7 @@ if (pivotValue === target) {
             <section>
                 <img class="r-stretch" src="images/24q4-slides/Slide191.png" alt="Slide 191" />
             </section>
-            <section class="ml-bullet-slide">
-                <h3>The <em>if..else</em> statement</h3>
-                <pre>
-                    <code data-trim data-noescape class="language-typescript">
+            <${CodeSlide} title=${html`The <em>for</em> statement`} lang="typescript">
 for (let i = 0; i ${'<'} 10; i++) {
      console.log("Hello for index " + i);
 }
@@ -162,69 +145,42 @@ console.log("Done!");
 // ...
 // Hello for index 9
 // Done!
-                    </code>
-                </pre>
-            </section>
+            <//>
             <section>
                 <p>We really like using for loops with <em>arrays</em></p>
             </section>
-            <section class="ml-bullet-slide">
-                <h3>The <em>for</em> statement</h3>
-                <pre>
-                    <code data-trim data-noescape class="language-typescript">
+            <${CodeSlide} title=${html`The <em>for</em> statement`} lang="typescript" fontSize=".6em">
 const evenNumbers = [2, 4, 6, 8, 10];
 for (let i = 0; i ${'<'} evenNumbers.length; i++) {
   console.log(evenNumbers[i]);
 }
-                    </code>
-                </pre>
-            </section>
-            <section class="ml-bullet-slide">
-                <h3>The <em>for</em> statement</h3>
-                <pre>
-                    <code data-trim data-noescape class="language-typescript">
+            <//>
+            <${CodeSlide} title=${html`The <em>for</em> statement`} lang="typescript" fontSize=".6em">
 for (;;) {
      // Will run until the computer gets tired
      me.love(myNeighbor);
 }
-                    </code>
-                </pre>
-            </section>
+            <//>
             <section>
                 <img class="r-stretch" src="images/24q4-slides/Slide196.png" alt="Slide 196" />
             </section>
-            <section class="ml-bullet-slide">
-                <h3>The <em>while</em> statement</h3>
-                <pre>
-                    <code data-trim data-noescape class="language-typescript">
+            <${CodeSlide} title=${html`The <em>while</em> statement`} lang="typescript" fontSize=".6em">
 while (account.hasFunds()) {
      account.withdraw(1, Currency.USD);
 }
-                    </code>
-                </pre>
-            </section>
-            <section class="ml-bullet-slide">
-                <h3>The <em>while</em> statement</h3>
-                <pre>
-                    <code data-trim data-noescape class="language-typescript">
+            <//>
+            <${CodeSlide} title=${html`The <em>while</em> statement`} lang="typescript" fontSize=".6em">
 while (true) {
      // Will run until the computer gets tired
      me.love(myNeighbor);
 }
-                    </code>
-                </pre>
-            </section>
-            <section class="ml-bullet-slide">
-                <h3>The <em>while</em> statement</h3>
-                <pre>
-                    <code data-trim data-noescape class="language-typescript">
+            <//>
+            <${CodeSlide} title=${html`The <em>while</em> statement`} lang="typescript" fontSize=".6em">
 while (false) {
      // Will never run
      me.punch(randomStranger);
 }
-                    </code>
-                </pre>
-            </section>
+            <//>
             <section class="ml-bullet-slide">
                 <h3>The <em>break</em> keyword</h3>
                 <ul>
@@ -232,10 +188,7 @@ while (false) {
                     <li class="fragment">When it comes to loops, it's your safe word</li>
                 </ul>
             </section>
-            <section class="ml-bullet-slide">
-                <h3>The <em>break</em> keyword</h3>
-                <pre>
-                    <code data-trim data-noescape class="language-typescript">
+            <${CodeSlide} title=${html`The <em>break</em> keyword`} lang="typescript" fontSize=".58em">
 while (true) {
      // Will run until the computer gets tired...
      me.studyAt(university);
@@ -243,19 +196,14 @@ while (true) {
      // ...just kidding, get me out of here
      break;
 }
-                    </code>
-                </pre>
-            </section>
+            <//>
             <section class="ml-bullet-slide">
                 <h3>The <em>continue</em> keyword</h3>
                 <ul>
                     <li>Use it when you need to skip doing work for certain conditions</li>
                 </ul>
             </section>
-            <section class="ml-bullet-slide">
-                <h3>The <em>continue</em> keyword</h3>
-                <pre style=${{"font-size": "0.5em"}}>
-                    <code data-trim data-noescape class="language-typescript">
+            <${CodeSlide} title=${html`The <em>continue</em> keyword`} lang="typescript" fontSize=".40em">
 for (let i = 0; i ${'<'} 10; i++) {
    if (i % 2 === 0) {
       continue; // will jump to the incrementation step for even values
@@ -270,9 +218,7 @@ console.log("Done!");
 // Hello for index 7
 // Hello for index 9
 // Done!
-                    </code>
-                </pre>
-            </section>
+            <//>
             <${QuestionsSlide} />
         <//>`;
 }

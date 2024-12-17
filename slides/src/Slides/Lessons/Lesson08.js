@@ -1,6 +1,6 @@
 import htm from "htm";
 import { createElement } from "react";
-import { Lesson, QuestionsSlide } from "../Layouts/index.js";
+import { CodeSlide, Lesson, QuestionsSlide } from "../Layouts/index.js";
 
 const html = htm.bind(createElement);
 
@@ -25,18 +25,13 @@ function Lesson08() {
             <section>
                 <p>Every Java application needs at least one <em>specific method</em> in at least one class</p>
             </section>
-            <section class="ml-bullet-slide">
-                <h3>The <em>main</em> method</h3>
-                <pre>
-                    <code data-trim data-noescape class="language-java">
+            <${CodeSlide} title=${html`The <em>main</em> method`} lang="java" fontSize=".6em">
 public class MyProgram {
   public static void main(String[] args) {
      // let's get it started 
   }
 }
-                    </code>
-                </pre>
-            </section>
+            <//>
             <section>
                 <p>But why <em>should</em> you use functions?</p>
             </section>
@@ -58,15 +53,11 @@ public class MyProgram {
             <section>
                 <p>f(x,y) = x + y</p>
             </section>
-            <section>
-                <pre style=${{"width": "80%"}}>
-                    <code data-trim data-noescape class="language-java">
+            <${CodeSlide} lang="java" fontSize=".6em">
 public static double add(double x, double y) {
   return x + y;
 }
-                    </code>
-                </pre>
-            </section>
+            <//>
             <section>
                 <p>Functions can return either a <em>single result</em> or <em><i>void</i></em> (nothing)</p>
             </section>
@@ -76,23 +67,17 @@ public static double add(double x, double y) {
             <section>
                 <p>Functions can call other functions</p>
             </section>
-            <section>
-                <pre>
-                    <code data-trim data-noescape class="language-java">
+            <${CodeSlide} lang="java">
 public boolean doVacation(Family family) throws Exception {
     family.setVacationLocation("Disney World");
     boolean wasMagicMade = maybeMakeMagic(family);
     return wasMagicMade && isHappy(family);
 }
-                    </code>
-                </pre>
-            </section>
+            <//>
             <section>
                 <p>And functions can <i>call themselves</i>.<br />This is called <em><i>recursion</i></em></p>
             </section>
-            <section>
-                <pre>
-                    <code data-trim data-noescape class="language-java">
+            <${CodeSlide} lang="java" fontSize=".6em">
 public static void beHappy() {
     dontWorry();
     System.out.println("Be happy");
@@ -102,26 +87,20 @@ public static void beHappy() {
 public static void dontWorry() {
     System.out.println("Don't worry");
 }
-                    </code>
-                </pre>
-            </section>
-            <section>
-                <pre>
-                    <code data-trim data-noescape class="language-java">
+            <//>
+            <${CodeSlide} lang="java" fontSize=".6em">
 public static void beHappy(int times) {
-       if (times ${'<'} 1) {
-         return; // stop when times get sad :(
-       }
-       dontWorry();
-       beHappy(times--);
+    if (times ${'<'} 1) {
+        return; // stop when times get sad :(
+    }
+    dontWorry();
+    beHappy(times--);
 }
 
 public static void dontWorry() {
     System.out.println("Doing something");
 }
-                    </code>
-                </pre>
-            </section>
+            <//>
             <section>
                 <pre style=${{"font-family": "'Courier New', Courier, monospace", "font-weight": "700", "box-shadow": "none"}}>
                     <span>beHappy(<em>10</em>)<br /></span>

@@ -54,11 +54,11 @@ function Lesson02() {
             </section>
             <section class="ml-bullet-slide">
                 <h3>Navigating files & directories</h3>
-                <p class="fragment"><em><i>pwd</i></em> - print working directory</p>
+                <li class="fragment"><em><i>pwd</i></em> - print working directory</p>
                 <p class="fragment"><em><i>ls</i></em> - list files in directory</p>
                 <p class="fragment"><em><i>cd</i></em> - change directories</p>
             </section>
-            <section class="ml-bullet-slide">
+            <section class="ml-bullet-slide" style=${{ "font-size": ".9em" }}>
                 <h3>Adding and removing files & dirs</h3>
                 <p class="fragment"><em><i>touch</i></em> - make a new file</p>
                 <p class="fragment"><em><i>mkdir</i></em> - make a new directory</p>

@@ -388,7 +388,7 @@ section.has-light-background, section.has-light-background h1, section.has-light
 .reveal h1.big-title,
 .reveal h2.big-title,
 .reveal h3.big-title {
-  font-size: 1.5em;
+  font-size: 1.2em;
 }
 .reveal .ml-title-slide {
   text-align: left;
@@ -435,6 +435,9 @@ section.has-light-background, section.has-light-background h1, section.has-light
 }
 .reveal .ml-code-slide {
   text-align: left;
+}
+.reveal .ml-code-slide pre {
+  font-size: 0.45em;
 }
 .reveal .ml-code-slide code {
   overflow: visible;

@@ -91,7 +91,7 @@ $headingLetterSpacing: .02em;
     h1.big-title,
     h2.big-title,
     h3.big-title {
-        font-size: 1.5em;
+        font-size: 1.2em;
     }
 
     .ml-title-slide {
@@ -149,6 +149,10 @@ $headingLetterSpacing: .02em;
 
     .ml-code-slide {
         text-align: left;
+
+        pre {
+            font-size: .45em;
+        }
 
         code {
             overflow: visible;

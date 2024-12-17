@@ -49,7 +49,7 @@ function Lesson09() {
                 <p>8 bits = <em>1 byte</em></p>
             </section>
             <section>
-                <table class="chart">
+                <table class="chart" style=${{"font-size": ".8em"}}>
                     <tr>
                         <th>Decimal (Base 10)</th>
                         <th>Binary (Base 2)</th>
@@ -91,7 +91,7 @@ function Lesson09() {
             </section>
             <section class="ml-bullet-slide">
                 <h3>Number types (no decimals)</h3>
-                <table class="chart" style=${{"table-layout": "fixed", "width": "100%", "font-size": ".5em"}}>
+                <table class="chart" style=${{"table-layout": "fixed", "width": "100%", "font-size": ".4em"}}>
                     <tr>
                         <th>Type</th>
                         <th>Size</th>
@@ -116,7 +116,7 @@ function Lesson09() {
             </section>
             <section class="ml-bullet-slide">
                 <h3>Number types (with decimals)</h3>
-                <table class="chart" style=${{"table-layout": "fixed", "width": "100%", "font-size": ".5em"}}>
+                <table class="chart" style=${{"table-layout": "fixed", "width": "100%", "font-size": ".4em"}}>
                     <tr>
                         <th>Type</th>
                         <th>Size</th>
@@ -156,7 +156,7 @@ const imaginaryNetWorth: number = 99999999999999.99;
                 <p>In <em>Java</em>, if no value is given, a numeric variable <i>defaults</i> to 0.</p>
             </section>
             <section>
-                The <em>boolean</em> type represents things that are either <em>true</em> or <em>false</em>.
+                <p>The <em>boolean</em> type represents things that are either <em>true</em> or <em>false</em>.</p>
             </section>
             <${CodeSlide} title=${html`Declaring boolean variables`} lang="java" badge="Java">
 boolean doesBlackCrack = false;
@@ -301,7 +301,7 @@ String name = instructor.name; // Error: won't let you compile
             </section>
             <section class="ml-bullet-slide">
                 <h3>Every object inherits these methods</h3>
-                <ul>
+                <ul style=${{"font-size": ".8em"}}>
                     <li class="fragment"><em><i>toString()</i></em> - Gets a string representation of the object</li>
                     <li class="fragment"><em><i>hashCode()</i></em> - Get a unique int value for the instance</li>
                     <li class="fragment"><em><i>equals(Object obj)</i></em> - Returns whether or not this object is equal to another instance (uses hashCode() to figure it out)</li>

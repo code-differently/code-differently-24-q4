@@ -59,7 +59,7 @@ function Lesson00() {
             </section>
             <section class="ml-bullet-slide">
                 <h3 class="big-title">The <em>basic workflow</em></h3>
-                <ol>
+                <ol style=${{"font-size": ".9em"}}>
                     <li class="fragment">Pull the latest changes from other devs</li>
                     <li class="fragment">Change some more stuff</li>
                     <li class="fragment">Commit to git locally</li>
