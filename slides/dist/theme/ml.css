@@ -16,7 +16,7 @@ section.has-light-background, section.has-light-background h1, section.has-light
   --r-main-font: Lato, Open Sans, sans-serif;
   --r-main-font-size: 45px;
   --r-main-color: #eee;
-  --r-block-margin: 20px;
+  --r-block-margin: 36px;
   --r-heading-margin: 0 0 20px 0;
   --r-heading-font: Lato, Open Sans, sans-serif;
   --r-heading-color: #eee;
@@ -368,6 +368,17 @@ section.has-light-background, section.has-light-background h1, section.has-light
 .reveal i {
   font-style: italic;
 }
+.reveal pre.code-wrapper {
+  box-shadow: none;
+  line-height: 1.3em;
+  width: auto;
+}
+.reveal code {
+  font-family: "Courier New", Courier, monospace;
+  font-weight: 700;
+  background: none;
+  border: initial;
+}
 .reveal .slides section li {
   font-weight: 700;
 }
@@ -402,7 +413,7 @@ section.has-light-background, section.has-light-background h1, section.has-light
   justify-content: center;
 }
 .reveal .ml-title-slide .about .info p {
-  font-size: 0.75em;
+  font-size: 0.5em;
   font-weight: normal;
   font-style: italic;
   margin: 0;

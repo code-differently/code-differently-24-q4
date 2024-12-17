@@ -11,7 +11,7 @@ function TitleSlide({title, slideId, subtitle}) {
         <div class="about">
             <img class="avatar" src="images/instructor.jpg" alt="Instructor" />
             <div class="info">
-                <p><strong>Anthony D. Mays</strong></p>
+                <p style=${{"font-size": ".6em", "font-style": "normal"}}>Anthony D. Mays</p>
                 <p>Founder & Career Coach | <em>Morgan Latimer Consulting</em></p>
                 <p>Ex-Google Software Engineer</p>
             </div>
