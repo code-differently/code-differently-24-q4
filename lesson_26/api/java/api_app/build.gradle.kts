@@ -3,7 +3,7 @@ plugins {
     application
     eclipse
     id("com.diffplug.spotless") version "6.25.0"
-	  id("org.springframework.boot") version "3.2.2"
+	  id("org.springframework.boot") version "3.4.0"
     id("com.adarshr.test-logger") version "4.0.0"
     id("io.freefair.lombok") version "8.6"
 }
@@ -18,16 +18,16 @@ repositories {
 dependencies {
     // Use JUnit Jupiter for testing.
     testImplementation("com.codedifferently.instructional:instructional-lib")
-    testImplementation("org.junit.jupiter:junit-jupiter:5.9.1")
+    testImplementation("org.junit.jupiter:junit-jupiter:5.11.3")
     testImplementation("org.springframework.boot:spring-boot-starter-test")
-    testImplementation("org.assertj:assertj-core:3.25.1")
+    testImplementation("org.assertj:assertj-core:3.26.3")
     testImplementation("at.favre.lib:bcrypt:0.10.2")
     testImplementation("org.springframework.boot:spring-boot-starter-test")
 
     // This dependency is used by the application.
     implementation("com.codedifferently.instructional:instructional-lib")
-    implementation("com.google.guava:guava:31.1-jre")
-    implementation("com.google.code.gson:gson:2.10.1")
+    implementation("com.google.guava:guava:33.3.1-jre")
+    implementation("com.google.code.gson:gson:2.11.0")
     implementation("commons-cli:commons-cli:1.6.0")
     implementation("org.springdoc:springdoc-openapi-starter-webmvc-ui:2.6.0")
     implementation("org.springframework.boot:spring-boot-starter")

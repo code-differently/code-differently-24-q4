@@ -7,6 +7,7 @@ import com.codedifferently.lesson26.library.search.SearchCriteria;
 import java.io.IOException;
 import java.util.List;
 import java.util.Set;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -14,6 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @CrossOrigin
 public class MediaItemsController {
+
   private final Library library;
   private final Librarian librarian;
 
@@ -23,10 +25,10 @@ public class MediaItemsController {
   }
 
   @GetMapping("/items")
-  public GetMediaItemsResponse getItems() {
+  public ResponseEntity<GetMediaItemsResponse> getItems() {
     Set<MediaItem> items = library.search(SearchCriteria.builder().build());
     List<MediaItemResponse> responseItems = items.stream().map(MediaItemResponse::from).toList();
     var response = GetMediaItemsResponse.builder().items(responseItems).build();
-    return response;
+    return ResponseEntity.ok(response);
   }
 }

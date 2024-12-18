@@ -1,0 +1,32 @@
+name: Check Fullstack Demo Java Pull Request
+
+on:
+  pull_request:
+    branches: [ "main" ]
+    paths:
+      - ".github/workflows/check_fullstack_demo_java_pr.yaml"
+      - "lib/java/fullstack_demo/**"
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pull-requests: write
+
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: Set up JDK
+      uses: actions/setup-java@v4
+      with:
+        java-version: '21'
+        distribution: 'temurin'
+
+    - name: Build Fullstack Demo with Java
+      working-directory: ./lib/java/fullstack_demo
+      env:
+        CLERK_PERISHABLE_KEY: 12345
+        CLERK_SECRET_KEY: 12345
+      run: ./gradlew check

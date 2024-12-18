@@ -1,4 +1,6 @@
-# Lesson 00 - Developer Workflow: Git Fundamentals
+# Lesson 00 - Developer Workflow: Git Fundamentals ([Slides](https://code-differently.github.io/code-differently-24-q4/slides/#/lesson_00))
+
+## Slides
 
 ## Pre-work
 

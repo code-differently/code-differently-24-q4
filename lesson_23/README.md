@@ -1,4 +1,4 @@
-# Lesson 23: Web FE: Intro to HTML, CSS, & JS
+# Lesson 23: Web FE: Intro to HTML, CSS, & JS ([Slides](https://code-differently.github.io/code-differently-24-q4/slides/#/lesson_23))
 
 ## Pre-work
 

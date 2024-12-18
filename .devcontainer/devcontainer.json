@@ -6,7 +6,7 @@
 		"ghcr.io/devcontainers/features/java:1": {
 			"installGradle": true,
 			"installMaven": true,
-			"version": "17",
+			"version": "21",
 			"jdkDistro": "ms",
 			"gradleVersion": "latest",
 			"mavenVersion": "latest"
@@ -40,7 +40,8 @@
 				"mechatroner.rainbow-csv",
 				"alexcvzz.vscode-sqlite",
 				"Orta.vscode-jest",
-				"firsttris.vscode-jest-runner"
+				"firsttris.vscode-jest-runner",
+				"bierner.lit-html"
 			],
             "settings": {
                 "terminal.integrated.defaultProfile.linux": "zsh",

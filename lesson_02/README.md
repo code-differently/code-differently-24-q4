@@ -1,4 +1,4 @@
-# Lesson 02: Developer Workflow: Navigating the Terminal
+# Lesson 02: Developer Workflow: Navigating the Terminal ([Slides](https://code-differently.github.io/code-differently-24-q4/slides/#/lesson_02))
 
 ## Pre-work
 
@@ -24,7 +24,7 @@ For this assignment, you will complete a quiz by modifying a TypeScript applicat
 3. Navigate to the [quiz][lesson-2-quiz-dir] directory and install the required dependencies.
 ```bash
 cd lesson_02/quiz
-npm install --prefix ../../lib/typescript/codedifferently-instructional
+npm install --prefix ../../lib/javascript/codedifferently-instructional
 npm install
 npm start
 ```

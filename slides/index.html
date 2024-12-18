@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>24Q4 Software Engineering</title>
+		<link rel="stylesheet" href="index.css">
+	</head>
+	<body>
+
+		<div id="app"></div>
+
+		<script async src="https://ga.jspm.io/npm:es-module-shims@1.10.1/dist/es-module-shims.js"></script>
+
+		<!--
+			JSPM Generator Import Map
+			Edit URL: https://generator.jspm.io/#U2NhYGCVD80rySzJSU1hyCjJdTDWM9QzZChKTUwu0U3Jz3UwtNQz0DPAENBPzslMzSuBiCMUlaUm5uhlFTuYAvmmAKitt3JeAA
+		-->
+		<script type="importmap">
+		{
+			"imports": {
+				"htm": "https://ga.jspm.io/npm:htm@3.1.1/dist/htm.module.js",
+				"react": "https://ga.jspm.io/npm:react@19.0.0/index.js",
+				"react-dom": "https://ga.jspm.io/npm:react-dom@19.0.0/index.js",
+				"react-dom/client": "https://ga.jspm.io/npm:react-dom@19.0.0/client.js"
+			},
+			"scopes": {
+				"https://ga.jspm.io/": {
+					"process": "https://ga.jspm.io/npm:@jspm/core@2.1.0/nodelibs/browser/process-production.js",
+					"scheduler": "https://ga.jspm.io/npm:scheduler@0.25.0/index.js"
+				}
+			}
+		}
+		</script>
+
+		<script type="module">
+			import htm from "htm";
+			import React from "react";
+			import {createRoot} from "react-dom/client";
+			import App from "./src/App.js";
+
+			const html = htm.bind(React.createElement);
+
+			const root = createRoot(document.getElementById("app"));
+			root.render(html`<${App} />`);
+		</script>
+	</body>
+</html>

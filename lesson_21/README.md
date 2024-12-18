@@ -1,4 +1,4 @@
-# Lesson 21: Computer Languages
+# Lesson 21: Computer Languages ([Slides](https://code-differently.github.io/code-differently-24-q4/slides/#/lesson_21))
 
 ## Pre-work
 

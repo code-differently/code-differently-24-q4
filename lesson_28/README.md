@@ -1,4 +1,4 @@
-# Lesson 28: Introduction to Databases
+# Lesson 28: Introduction to Databases ([Slides](https://code-differently.github.io/code-differently-24-q4/slides/#/lesson_28))
 
 ## Pre-work
 

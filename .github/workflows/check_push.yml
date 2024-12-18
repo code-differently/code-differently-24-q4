@@ -4,6 +4,7 @@ on:
   push:
     branches: [ "main" ]
     paths:
+      - ".github/workflows/check_push.yml"
       - "lib/**"
       - "lesson_02/quiz/**"
       - "lesson_03/quiz/**"
@@ -21,26 +22,27 @@ on:
       - "lesson_15/tdd/**"
       - "lesson_16/objects/**"
       - "lesson_17/bank/**"
-
+      - "lesson_26/api/**"
 jobs:
   build:
-
     runs-on: ubuntu-latest
     permissions:
       contents: read
 
     steps:
     - uses: actions/checkout@v4
-    - name: Set up JDK 17
+    - name: Set up JDK
       uses: actions/setup-java@v4
       with:
-        java-version: '17'
+        java-version: '21'
         distribution: 'temurin'
 
     # Configure Gradle for optimal use in GiHub Actions, including caching of downloaded dependencies.
     # See: https://github.com/gradle/actions/blob/main/setup-gradle/README.md
     - name: Setup Gradle
-      uses: gradle/actions/setup-gradle@417ae3ccd767c252f5661f1ace9f835f9654f2b5 # v3.1.0
+      uses: gradle/actions/setup-gradle@v4
+      with:
+        gradle-version: "8.11.1"
 
     - name: Use Node.js
       uses: actions/setup-node@v4
@@ -52,7 +54,7 @@ jobs:
       run: ./gradlew check
 
     - name: Build Shared Lib with Node.js
-      working-directory: ./lib/typescript/codedifferently-instructional
+      working-directory: ./lib/javascript/codedifferently-instructional
       run: |
         npm ci
         npm run test
@@ -139,3 +141,28 @@ jobs:
     - name: Build Lesson 17 with Java
       working-directory: ./lesson_17/bank
       run: ./gradlew check
+
+    - name: Build Lesson 26 with Java
+      working-directory: ./lesson_26/api/java
+      run: ./gradlew assemble
+
+    - name: Build Lesson 26 with Node.js
+      working-directory: ./lesson_26/api/javascript/api_app
+      run: |
+        npm ci
+        npm run build
+
+    - name: Build Fullstack Demo with Java
+      working-directory: ./lib/java/fullstack_demo
+      env:
+        CLERK_PERISHABLE_KEY: 12345
+        CLERK_SECRET_KEY: 12345
+      run: ./gradlew check
+
+    - name: Build Fullstack Demo with Node.js
+      working-directory: ./lib/javascript/fullstack_demo
+      env:
+        NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY: ${{ secrets.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY }}
+      run: |
+        npm ci
+        npm run build

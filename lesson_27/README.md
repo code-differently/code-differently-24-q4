@@ -1,4 +1,4 @@
-# Lesson 27: Integrating with Backend APIs
+# Lesson 27: Integrating with Backend APIs ([Slides](https://code-differently.github.io/code-differently-24-q4/slides/#/lesson_27))
 
 ## Pre-work
 

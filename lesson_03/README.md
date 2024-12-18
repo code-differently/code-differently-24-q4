@@ -1,4 +1,4 @@
-# Lesson 03: How Computers Work
+# Lesson 03: How Computers Work ([Slides](https://code-differently.github.io/code-differently-24-q4/slides/#/lesson_03))
 
 ## Pre-work
 
@@ -27,7 +27,7 @@ Now's your chance to quiz the instructor! In this assignment, you will modify th
 1. Navigate to the [quiz][quiz-folder] directory and install the required dependencies.
 ```bash
 cd lesson_03/quiz
-npm install --prefix ../../lib/typescript/codedifferently-instructional
+npm install --prefix ../../lib/javascript/codedifferently-instructional
 npm install
 npm start
 ```

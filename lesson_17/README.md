@@ -1,4 +1,4 @@
-# Lesson 17: OOP Principles, Part II
+# Lesson 17: OOP Principles, Part II ([Slides](https://code-differently.github.io/code-differently-24-q4/slides/#/lesson_17))
 
 ## Pre-work
 

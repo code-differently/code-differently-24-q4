@@ -1,4 +1,4 @@
-# Lesson 24: JavaScript Deep Dive
+# Lesson 24: JavaScript Deep Dive ([Slides](https://code-differently.github.io/code-differently-24-q4/slides/#/lesson_24))
 
 ## Pre-work
 
