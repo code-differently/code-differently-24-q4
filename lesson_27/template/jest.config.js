@@ -1,6 +1,6 @@
 /** @type {import('ts-jest').JestConfigWithTsJest} **/
 export default {
-  testEnvironment: 'jsdom',
+  testEnvironment: 'jest-fixed-jsdom',
   transform: {
     '^.+.tsx?$': ['ts-jest', {useESM: true}],
   },
