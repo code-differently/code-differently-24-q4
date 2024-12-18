@@ -1,6 +1,6 @@
 import './Header.scss';
 import logoImg from '@/assets/logo.png';
-import React from 'react';
+import * as React from 'react';
 
 export const Header: React.FC = () => {
   return (
