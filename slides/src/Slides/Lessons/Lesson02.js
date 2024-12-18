@@ -54,7 +54,7 @@ function Lesson02() {
             </section>
             <section class="ml-bullet-slide">
                 <h3>Navigating files & directories</h3>
-                <li class="fragment"><em><i>pwd</i></em> - print working directory</p>
+                <p class="fragment"><em><i>pwd</i></em> - print working directory</p>
                 <p class="fragment"><em><i>ls</i></em> - list files in directory</p>
                 <p class="fragment"><em><i>cd</i></em> - change directories</p>
             </section>

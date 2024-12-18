@@ -105,8 +105,8 @@ if (pivotValue === target) {
             <section class="ml-bullet-slide">
                 <h3>The <em>for</em> statement</h3>
                 <ul>
-                    <li>Used to run code a certain number of times</li>
-                    <li>Usually used when going through (iterating) a collection of elements</li>
+                    <li class="fragment">Used to run code a certain number of times</li>
+                    <li class="fragment">Usually used when going through (iterating) a collection of elements</li>
 
                 </ul>
             </section>

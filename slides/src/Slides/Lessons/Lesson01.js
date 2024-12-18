@@ -58,9 +58,9 @@ function Lesson01() {
             <section class="ml-bullet-slide">
                 <h3>How to <em>choose</em> one</h3>
                 <ul>
-                    <li style=${{'text-decoration': 'line-through'}}>Language support</li>
-                    <li style=${{'text-decoration': 'line-through'}}>Extensibility</li>
-                    <li style=${{'text-decoration': 'line-through'}}>Refactoring support</li>
+                    <li style=${{'text-decoration': 'line-through', 'opacity': '.3'}}>Language support</li>
+                    <li style=${{'text-decoration': 'line-through', 'opacity': '.3'}}>Refactoring support</li>
+                    <li style=${{'text-decoration': 'line-through', 'opacity': '.3'}}>Extensibility</li>
                     <li>Whatever your boss tells you to use</li>
                 </ul>
             </section>
