@@ -443,6 +443,20 @@ console.log(val2); // 2
 console.log(rest); // [3, 4, 5, 6]
 `}
             <//>
+            <${CodeSlide} lang="typescript" badge="TypeScript" lineNumbers="2,4-5">
+${`
+const array = [1, 2, 3, 4, 5];
+const newArray = [...array, 6]; // Spread operator
+
+// This is called "destructuring".
+const [val1, val2, ...rest] = newArray; 
+
+console.log(newArray); // [1, 2, 3, 4, 5, 6]
+console.log(val1); // 1
+console.log(val2); // 2
+console.log(rest); // [3, 4, 5, 6]
+`}
+            <//>
             <${QuestionsSlide}/>
         <//>`;
 }
