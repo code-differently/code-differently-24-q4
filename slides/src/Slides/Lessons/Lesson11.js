@@ -6,7 +6,7 @@ const html = htm.bind(createElement);
 
 function Lesson11() {
     return html`
-        <${Lesson} title="Data Structures: Strings & Arrays" lessonId="lesson_11" subtitle="Lesson 11" titleFontSize="1.1em">
+        <${Lesson} title="Data Structures: Strings & Arrays" lessonId="lesson_11" subtitle="Lesson 11" titleFontSize="1.08em">
             <section>
                 <p>A <em><i>data structure</i></em> is just a way to organize data for certain purposes.</p>
             </section>

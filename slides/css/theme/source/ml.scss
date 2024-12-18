@@ -169,6 +169,17 @@ $headingLetterSpacing: .02em;
             padding: 8px 42px;
         } 
     }
+
+    .ml-columns-slide {
+        .columns {
+            display: flex;
+            text-align: left;
+
+            & > * {
+                flex: 1;
+            }
+        }
+    }
 }
 
 .avatar {
