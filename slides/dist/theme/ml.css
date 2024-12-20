@@ -459,6 +459,14 @@ section.has-light-background, section.has-light-background h1, section.has-light
 .reveal .ml-columns-slide .columns > * {
   flex: 1;
 }
+.reveal .fragment.em,
+.reveal .fragment.current-visible {
+  color: inherit;
+}
+.reveal .fragment.em.current-fragment,
+.reveal .fragment.current-visible.current-fragment {
+  color: #6d9eeb;
+}
 
 .avatar {
   width: 150px;

@@ -180,6 +180,15 @@ $headingLetterSpacing: .02em;
             }
         }
     }
+
+    .fragment.em,
+    .fragment.current-visible {
+        color: inherit;
+
+        &.current-fragment {
+            color: #6d9eeb;
+        }
+    }
 }
 
 .avatar {

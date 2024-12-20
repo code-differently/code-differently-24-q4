@@ -39,6 +39,7 @@ function Slides() {
         <${lessons.Lesson26} />
         <${lessons.Lesson27} />
         <${lessons.Lesson28} />
+        <${lessons.Supplemental1} />
     </div>`;
 }
 
