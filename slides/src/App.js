@@ -6,6 +6,7 @@ import RevealHighlight from "../plugin/highlight/highlight.esm.js";
 import RevealMarkdown from "../plugin/markdown/markdown.esm.js";
 import RevealNotes from "../plugin/notes/notes.esm.js";
 import RevealSearch from "../plugin/search/search.esm.js";
+import RevealZoom from "../plugin/zoom/zoom.esm.js";
 import { Slides } from "./Slides/index.js";
 
 const html = htm.bind(createElement);
@@ -32,7 +33,8 @@ function App() {
                 RevealMarkdown,
                 RevealHighlight,
                 RevealNotes,
-                RevealSearch
+                RevealSearch,
+                RevealZoom
             ]
         });
 
