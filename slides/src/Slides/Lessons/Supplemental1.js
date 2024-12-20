@@ -40,7 +40,7 @@ function Supplemental1() {
                 <p>Not everyone wants to write <em>HTML</em> and <em>CSS</em> to run websites and applications</p>
             </section>
             <section>
-                <p>A <em><i>Content Management System (CMS)</i></em> is a software system that allows users to publish content (articles and web pages) without code</p>
+                <p>A <em><i>Content Management System (CMS)</i></em> is a software system that allows users to publish content (web pages, blogs, articles) without code</p>
             </section>
             <section class="ml-bullet-slide">
                 <h3>Use cases</h3>
