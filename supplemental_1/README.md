@@ -19,3 +19,4 @@ Please review the following resources before lecture:
 - [ ] Install and deploy your own WordPress website
 - [ ] Create a custom theme with modified CSS [using a tutorial](https://www.youtube.com/watch?v=-h7gOJbIpmo)
 - [ ] Create a simple plugin [using a tutorial](https://www.dreamhost.com/blog/how-to-create-your-first-wordpress-plugin/)
+- [ ] Use Next.js to create a React frontend to a WordPress system with a [starter template](https://github.com/9d8dev/next-wp)
