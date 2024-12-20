@@ -1,6 +1,6 @@
 import htm from "htm";
 import { createElement } from "react";
-import { Lesson } from "../Layouts/index.js";
+import { CodeSlide, Lesson, QuestionsSlide } from "../Layouts/index.js";
 
 const html = htm.bind(createElement);
 
@@ -8,104 +8,114 @@ function Lesson08() {
     return html`
         <${Lesson} title="Functions" lessonId="lesson_08" subtitle="Lesson 8">
             <section>
-                <img class="r-stretch" src="images/24q4-slides/Slide207.png" alt="Slide 207" />
+                <p>Let's review</p>
             </section>
             <section>
-                <img class="r-stretch" src="images/24q4-slides/Slide208.png" alt="Slide 208" />
+                <p>The <em><i>function signature</i></em> identifies the inputs and outputs of a method</p>
             </section>
             <section>
-                <img class="r-stretch" src="images/24q4-slides/Slide209.png" alt="Slide 209" />
+                <img class="r-stretch" src="images/24q4-slides/Slide155.png" alt="Slide 155" />
             </section>
             <section>
-                <img class="r-stretch" src="images/24q4-slides/Slide210.png" alt="Slide 210" />
+                <img class="r-stretch" src="images/24q4-slides/Slide156.png" alt="Slide 156" />
             </section>
             <section>
-                <img class="r-stretch" src="images/24q4-slides/Slide211.png" alt="Slide 211" />
+                <p>Functions always occur in a <em><i>class</i></em> <span class="fragment">(we'll talk about <em>classes</em> in a later class, and do it with class)</span></p>
             </section>
             <section>
-                <img class="r-stretch" src="images/24q4-slides/Slide212.png" alt="Slide 212" />
+                <p>Every Java application needs at least one <em>specific method</em> in at least one class</p>
+            </section>
+            <${CodeSlide} title=${html`The <em>main</em> method`} lang="java" fontSize=".6em">
+public class MyProgram {
+  public static void main(String[] args) {
+     // let's get it started 
+  }
+}
+            <//>
+            <section>
+                <p>But why <em>should</em> you use functions?</p>
+            </section>
+            <section class="ml-bullet-slide">
+                <h3>Why functions exist</h3>
+                <ul>
+                    <li class="fragment">Run statements only when called</li>
+                    <li class="fragment">Group statements that work together to accomplish a goal</li>
+                    <li class="fragment">Perform calculations</li>
+                    <li class="fragment">Reuse logic while just changing the data</li>
+                </ul>
             </section>
             <section>
-                <img class="r-stretch" src="images/24q4-slides/Slide213.png" alt="Slide 213" />
+                <p><span style=${{"color": "red"}}>IMPORTANT!</span><br />Be <em>DRY</em>. Don't repeat yourself</p>
             </section>
             <section>
-                <img class="r-stretch" src="images/24q4-slides/Slide214.png" alt="Slide 214" />
+                <p>Like in mathematics, functions can take parameters</p>
             </section>
             <section>
-                <img class="r-stretch" src="images/24q4-slides/Slide215.png" alt="Slide 215" />
+                <p>f(x,y) = x + y</p>
             </section>
+            <${CodeSlide} lang="java" fontSize=".6em">
+public static double add(double x, double y) {
+  return x + y;
+}
+            <//>
             <section>
-                <img class="r-stretch" src="images/24q4-slides/Slide216.png" alt="Slide 216" />
-            </section>
-            <section>
-                <img class="r-stretch" src="images/24q4-slides/Slide217.png" alt="Slide 217" />
-            </section>
-            <section>
-                <img class="r-stretch" src="images/24q4-slides/Slide218.png" alt="Slide 218" />
-            </section>
-            <section>
-                <img class="r-stretch" src="images/24q4-slides/Slide219.png" alt="Slide 219" />
-            </section>
-            <section>
-                <img class="r-stretch" src="images/24q4-slides/Slide220.png" alt="Slide 220" />
-            </section>
-            <section>
-                <img class="r-stretch" src="images/24q4-slides/Slide221.png" alt="Slide 221" />
+                <p>Functions can return either a <em>single result</em> or <em><i>void</i></em> (nothing)</p>
             </section>
             <section>
                 <img class="r-stretch" src="images/24q4-slides/Slide222.png" alt="Slide 222" />
             </section>
             <section>
-                <img class="r-stretch" src="images/24q4-slides/Slide223.png" alt="Slide 223" />
+                <p>Functions can call other functions</p>
+            </section>
+            <${CodeSlide} lang="java">
+public boolean doVacation(Family family) throws Exception {
+    family.setVacationLocation("Disney World");
+    boolean wasMagicMade = maybeMakeMagic(family);
+    return wasMagicMade && isHappy(family);
+}
+            <//>
+            <section>
+                <p>And functions can <i>call themselves</i>.<br />This is called <em><i>recursion</i></em></p>
+            </section>
+            <${CodeSlide} lang="java" fontSize=".6em">
+public static void beHappy() {
+    dontWorry();
+    System.out.println("Be happy");
+    beHappy(); // this is the RECURSIVE call 
+}
+
+public static void dontWorry() {
+    System.out.println("Don't worry");
+}
+            <//>
+            <${CodeSlide} lang="java" fontSize=".6em">
+public static void beHappy(int times) {
+    if (times ${'<'} 1) {
+        return; // stop when times get sad :(
+    }
+    dontWorry();
+    beHappy(times--);
+}
+
+public static void dontWorry() {
+    System.out.println("Doing something");
+}
+            <//>
+            <section>
+                <pre style=${{"font-family": "'Courier New', Courier, monospace", "font-weight": "700", "box-shadow": "none"}}>
+                    <span>beHappy(<em>10</em>)<br /></span>
+                    ${Array.from({length: 10}).map((_, i) => 
+                        html`<span class="fragment">${'->'.padStart(2 * (i+1), ' ')} beHappy(<em>${9 - i}</em>)<br /></span>`)}
+                </pre>
             </section>
             <section>
-                <img class="r-stretch" src="images/24q4-slides/Slide224.png" alt="Slide 224" />
+                <pre style=${{"font-family": "'Courier New', Courier, monospace", "font-weight": "700", "box-shadow": "none"}}>
+                    <span>beHappy(<em>10</em>) <span style=${{"color": "green"}} class="fragment" data-fragment-index=10>// return</span><br /></span>
+                    ${Array.from({length: 10}).map((_, i) => 
+                        html`<span class="fragment fade-out" data-fragment-index=${10 - i}>${'->'.padStart(2 * (i+1), ' ')} beHappy(<em>${9 - i}</em>) <span style=${{"color": "green"}} class="fragment" data-fragment-index=${9 - i}>// return</span><br /></span>`)}
+                </pre>
             </section>
-            <section>
-                <img class="r-stretch" src="images/24q4-slides/Slide225.png" alt="Slide 225" />
-            </section>
-            <section>
-                <img class="r-stretch" src="images/24q4-slides/Slide226.png" alt="Slide 226" />
-            </section>
-            <section>
-                <img class="r-stretch" src="images/24q4-slides/Slide227.png" alt="Slide 227" />
-            </section>
-            <section>
-                <img class="r-stretch" src="images/24q4-slides/Slide228.png" alt="Slide 228" />
-            </section>
-            <section>
-                <img class="r-stretch" src="images/24q4-slides/Slide229.png" alt="Slide 229" />
-            </section>
-            <section>
-                <img class="r-stretch" src="images/24q4-slides/Slide230.png" alt="Slide 230" />
-            </section>
-            <section>
-                <img class="r-stretch" src="images/24q4-slides/Slide231.png" alt="Slide 231" />
-            </section>
-            <section>
-                <img class="r-stretch" src="images/24q4-slides/Slide232.png" alt="Slide 232" />
-            </section>
-            <section>
-                <img class="r-stretch" src="images/24q4-slides/Slide233.png" alt="Slide 233" />
-            </section>
-            <section>
-                <img class="r-stretch" src="images/24q4-slides/Slide234.png" alt="Slide 234" />
-            </section>
-            <section>
-                <img class="r-stretch" src="images/24q4-slides/Slide235.png" alt="Slide 235" />
-            </section>
-            <section>
-                <img class="r-stretch" src="images/24q4-slides/Slide236.png" alt="Slide 236" />
-            </section>
-            <section>
-                <img class="r-stretch" src="images/24q4-slides/Slide237.png" alt="Slide 237" />
-            </section>
-            <section>
-                <img class="r-stretch" src="images/24q4-slides/Slide238.png" alt="Slide 238" />
-            </section>
-            <section>
-                <img class="r-stretch" src="images/24q4-slides/Slide239.png" alt="Slide 239" />
-            </section>
+            <${QuestionsSlide}/>
         <//>`;
 }
 

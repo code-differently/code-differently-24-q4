@@ -1,7 +1,7 @@
 @import url("dist/reset.css");
 @import url("dist/reveal.css");
 @import url("dist/theme/ml.css");
-@import url("plugin/highlight/monokai.css");
+@import url("plugin/highlight/vs2015.css");
 
 #app {
     display: flex;

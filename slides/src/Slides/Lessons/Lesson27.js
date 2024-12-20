@@ -6,7 +6,7 @@ const html = htm.bind(createElement);
 
 function Lesson27() {
     return html`
-        <${Lesson} title="Integrating with Backend APIs" lessonId="lesson_27" subtitle="Lesson 27">
+        <${Lesson} title="Integrating with Backend APIs" lessonId="lesson_27" subtitle="Lesson 27" titleFontSize="1.2em">
             <section>
                 <img class="r-stretch" src="images/24q4-slides/Slide864.png" alt="Slide 864" />
             </section>
