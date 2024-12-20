@@ -171,6 +171,8 @@ $headingLetterSpacing: .02em;
     }
 
     .ml-columns-slide {
+        text-align: left;
+
         .columns {
             display: flex;
             text-align: left;
@@ -189,6 +191,19 @@ $headingLetterSpacing: .02em;
             color: #6d9eeb;
         }
     }
+
+    .fragment.strikethrough,
+    .fragment.current-visible {
+        text-decoration: inherit;
+
+        &.current-fragment {
+            text-decoration: line-through;
+        }
+    }
+
+    .opaque {
+        opacity: .5;
+    }
 }
 
 .avatar {
@@ -204,5 +219,5 @@ table.chart th {
 }
 
 span.important {
-    color: #ff0100;
+    color: #e06666;
 }
