@@ -471,3 +471,7 @@ table.chart td,
 table.chart th {
   text-align: center;
 }
+
+span.important {
+  color: #ff0100;
+}
