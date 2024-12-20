@@ -1,0 +1,94 @@
+.header {
+
+}
+.main {
+
+}
+.header-logo {
+     position: absolute; /* Fixes the logo in place when scrolling */
+    top: 10px;
+    left: 10px;
+
+}
+img {
+    width:150px;
+}
+.header-top-menu {
+    list-style: none;
+    background-color: #fff;
+    padding: 0;
+    margin: 0 auto; /* Centers the menu horizontally */
+    width: 75% auto; /* Makes the width based on the content */
+    display: flex; /* Align items horizontally */
+    max-width: 100px;
+
+}
+.header-top-menu li {
+            margin: 0 15px;
+        }
+.header-cta {
+
+}
+.body {
+    
+}
+.content {
+
+}
+.hero-section {
+
+}
+.hero-overlay {
+
+}
+.hero-content {
+margin: 0;
+padding: 0;
+height: 100%; /* Ensure the body takes the full height */
+width:100% auto;
+background-image: url('hero.jpg'); /* Path to the image */
+background-size: 100% auto; /* Makes sure the image covers the full width and height */
+background-position: left left; /* Left the image */
+background-repeat: no-repeat; /* Prevents the image from repeating */
+}
+.hero-title {
+background-color: rgba(100,100,255,0.5);
+font-family: 'Arial', sans-serif;
+font-size: 52px;
+color: white;
+width: 60%;
+position:absolute;
+
+}
+
+.hero-text {
+left:50;
+top:50%;
+list-style: none;
+background-color: purple;
+padding: 0;
+margin: 0 0; /* Centers the menu horizontally */
+max-width: 700px;
+text-wrap: 50%;
+font:60px;
+position:absolute;
+font-size: 22px;
+color: white;
+}
+.programs-section {
+
+}
+.highlight {
+    text-decoration: underline;
+    text-decoration-color: red;
+    text-decoration-thickness: 4px;
+}
+.programs {
+
+}
+.program {
+
+}
+.footer {
+
+}
