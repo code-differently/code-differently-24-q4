@@ -1,6 +1,6 @@
 import htm from "htm";
 import { createElement } from "react";
-import { Lesson } from "../Layouts/index.js";
+import { CodeSlide, Lesson, QuestionsSlide } from "../Layouts/index.js";
 
 const html = htm.bind(createElement);
 
@@ -8,149 +8,309 @@ function Lesson21() {
     return html`
         <${Lesson} title="Computer Languages" lessonId="lesson_21" subtitle="Lesson 21">
             <section>
-                <img class="r-stretch" src="images/24q4-slides/Slide658.png" alt="Slide 658" />
+                <p>We're going to explore a few new <em>languages</em></p>
             </section>
             <section>
-                <img class="r-stretch" src="images/24q4-slides/Slide659.png" alt="Slide 659" />
+                <p>But before we do, let's discuss how we classify languages</p>
+            </section>
+            <section class="ml-bullet-slide">
+                <h3>Types of languages</h3>
+                <ul>
+                    <li class="fragment">Programming</li>
+                    <li class="fragment">Markup</li>
+                    <li class="fragment">Data</li>
+                    <li class="fragment">Query</li>
+                </ul>
+            </section>
+            <section class="ml-bullet-slide">
+                <h3>Types of languages</h3>
+                <ul>
+                    <li><em>Programming</em></li>
+                    <li>Markup</li>
+                    <li>Data</li>
+                    <li>Query</li>
+                </ul>
             </section>
             <section>
-                <img class="r-stretch" src="images/24q4-slides/Slide660.png" alt="Slide 660" />
+                <p><em>Programming languages</em> are used to instruct the computer <i>how</i> to do something (imperative)</p>
             </section>
             <section>
-                <img class="r-stretch" src="images/24q4-slides/Slide661.png" alt="Slide 661" />
+                <p>There are three popular <em>paradigms</em> of programming languages: <i>object oriented</i>, <i>scripting</i>, and <i>functional</i></p>
             </section>
             <section>
-                <img class="r-stretch" src="images/24q4-slides/Slide662.png" alt="Slide 662" />
+                <p><em>Object-oriented programming</em> languages primary use OOP principles for organizing code</p>
+            </section>
+            <section class="ml-bullet-slide">
+                <h3>Object-oriented languages</h3>
+                <ul>
+                    <li class="fragment">Java</li>
+                    <li class="fragment">C#</li>
+                    <li class="fragment">C++</li>
+                    <li class="fragment">Python</li>
+                    <li class="fragment">Rust</li>
+                </ul>
+            </section>
+            <section class="ml-bullet-slide">
+                <h3>Pros of OOP</h3>
+                <ul>
+                    <li class="fragment">Great for representing complex, real-world concepts</li>
+                    <li class="fragment">Can be used by large teams and organizations effectively</li>
+                    <li class="fragment">Optimal for code reuse and common patterns</li>
+                </ul>
+            </section>
+            <section class="ml-bullet-slide">
+                <h3>Cons of OOP</h3>
+                <ul>
+                    <li class="fragment">TONS of boilerplate</li>
+                    <li class="fragment">Most OOP languages need to be compiled before they can be executed</li>
+                    <li class="fragment">Typically only used on the backend</li>
+                </ul>
             </section>
             <section>
-                <img class="r-stretch" src="images/24q4-slides/Slide663.png" alt="Slide 663" />
+                <p><em>Scripting languages</em> are designed for automating tasks and are typically lighter than OOP languages</p>
             </section>
             <section>
-                <img class="r-stretch" src="images/24q4-slides/Slide664.png" alt="Slide 664" />
+                <p>They often don't need to be compiled before being run. Instead, they are <em>interpreted</em> line-by-line</p>
             </section>
             <section>
-                <img class="r-stretch" src="images/24q4-slides/Slide665.png" alt="Slide 665" />
+                <p>Scripting languages are way more chill, featuring conveniences like dynamic typing, weak typing, and first-class functions</p>
+            </section>
+            <section class="ml-bullet-slide">
+                <h3>Scripting languages</h3>
+                <ul>
+                    <li class="fragment">JavaScript</li>
+                    <li class="fragment">Python</li>
+                    <li class="fragment">Bash</li>
+                    <li class="fragment">Powershell</li>
+                </ul>
+            </section>
+            <section data-background-image="images/jackie-chan-meme.gif" data-background-size="contain" data-background-opacity="0.5">
+                <p>Isn't Python an OOP language?</p>
             </section>
             <section>
-                <img class="r-stretch" src="images/24q4-slides/Slide666.png" alt="Slide 666" />
+                <p>Some languages are multi-paradigm, and can be used as OOP, scripting, or functional languages</p>
+            </section>
+            <section class="ml-bullet-slide">
+                <h3>Pros of Scripting Languages</h3>
+                <ul>
+                    <li class="fragment">Less boilerplate</li>
+                    <li class="fragment">Can usually run code anywhere quickly</li>
+                    <li class="fragment">Useful for automating anything</li>
+                </ul>
+            </section>
+            <section class="ml-bullet-slide">
+                <h3>Cons of Scripting Languages</h3>
+                <ul>
+                    <li class="fragment">Since many are weakly typed, it can be harder to catch some bugs</li>
+                    <li class="fragment">Harder to use in large teams</li>
+                    <li class="fragment">Typically slower to execute than OOP languages</li>
+                </ul>
             </section>
             <section>
-                <img class="r-stretch" src="images/24q4-slides/Slide667.png" alt="Slide 667" />
+                <p>Lastly, there are <em>functional</em> programming languages, called so because they rely on functions to describe the world</p>
             </section>
             <section>
-                <img class="r-stretch" src="images/24q4-slides/Slide668.png" alt="Slide 668" />
+                <p>Usually, functions are first-class citizens that can be used like any other data type, and functions are often composed of other functions</p>
+            </section>
+            <section class="ml-bullet-slide">
+                <h3>Functional languages</h3>
+                <ul>
+                    <li class="fragment">Lisp</li>
+                    <li class="fragment">Scheme</li>
+                    <li class="fragment">Closure</li>
+                    <li class="fragment">JavaScript</li>
+                    <li class="fragment">Python</li>
+                </ul>
+            </section>
+            <section class="ml-bullet-slide">
+                <h3>Pros of functional languages</h3>
+                <ul>
+                    <li>Often chill like scripting languages</li>
+                    <li>Prizes immutability and pure functions, which can minimize bugs and simplify logic</li>
+                    <li>Great for math applications and AI</li>
+                </ul>
+            </section>
+            <section class="ml-bullet-slide">
+                <h3>Cons of functional languages</h3>
+                <ul>
+                    <li>Higher learning curve than OOP and scripting languages</li>
+                </ul>
+            </section>
+            <section class="ml-bullet-slide">
+                <h3>Types of languages</h3>
+                <ul>
+                    <li><em>Programming</em></li>
+                    <li>Markup</li>
+                    <li>Data</li>
+                    <li>Query</li>
+                </ul>
+            </section>
+            <section class="ml-bullet-slide">
+                <h3>Types of languages</h3>
+                <ul>
+                    <li>Programming</li>
+                    <li><em>Markup</em></li>
+                    <li>Data</li>
+                    <li>Query</li>
+                </ul>
             </section>
             <section>
-                <img class="r-stretch" src="images/24q4-slides/Slide669.png" alt="Slide 669" />
+                <p>Instead of describing how to do something, <em>markup languages</em> describe <i>what</i> to do and let's the computer do the rest (declarative)</p>
             </section>
             <section>
-                <img class="r-stretch" src="images/24q4-slides/Slide670.png" alt="Slide 670" />
+                <p>These languages are great for specifying user interface elements and styling</p>
+            </section>
+            <section class="ml-bullet-slide">
+                <h3>Markup languages</h3>
+                <ul>
+                    <li>HTML (HyperText Markup Language)</li>
+                    <li>CSS (Cascading Style Sheets)</li>
+                </ul>
+            </section>
+            <${CodeSlide} title="HTML" lang="html" fontSize=".7em">
+${`
+<table border="1">
+    <tr>
+        <td>6.38</td>
+        <td>Conagra Brands</td>
+        <td><b>David's Original</b></td>
+        <td>5.25</td>
+        <td>OZ</td>
+    </tr>
+</table>
+`}
+            <//>
+            <${CodeSlide} title="CSS" lang="css" fontSize=".7em">
+${`
+td {
+    font-style: italic;
+    text-align: center;
+    padding: 0 10px;
+}
+`}
+            <//>
+            <section class="ml-bullet-slide">
+                <h3>Types of languages</h3>
+                <ul>
+                    <li>Programming</li>
+                    <li><em>Markup</em></li>
+                    <li>Data</li>
+                    <li>Query</li>
+                </ul>
+            </section>
+            <section class="ml-bullet-slide">
+                <h3>Types of languages</h3>
+                <ul>
+                    <li>Programming</li>
+                    <li>Markup</li>
+                    <li><em>Data</em></li>
+                    <li>Query</li>
+                </ul>
             </section>
             <section>
-                <img class="r-stretch" src="images/24q4-slides/Slide671.png" alt="Slide 671" />
+                <p><em>Data languages</em> are useful for describing data in a structured way. They are also tend to be declarative</p>
             </section>
             <section>
-                <img class="r-stretch" src="images/24q4-slides/Slide672.png" alt="Slide 672" />
+                <p>These languages annotate data to provide more semantic meaning</p>
             </section>
             <section>
-                <img class="r-stretch" src="images/24q4-slides/Slide673.png" alt="Slide 673" />
+                <p>
+                    <pre>
+$6.38
+Conagra Brands
+David's Original
+5.25
+OZ
+                    </pre>
+                </p>
+            </section>
+            <${CodeSlide} title="XML" lang="xml" fontSize=".7em">
+${`
+<product>
+    <price>6.38</price>
+    <supplier>Conagra Brands</supplier>
+    <name>David's Original<name>
+    <weight>5.25</weight>
+    <units>OZ</units>
+<product>
+`}
+            <//>
+            <${CodeSlide} title="JSON" lang="json" fontSize=".7em">
+${`
+{
+    "type": "product",
+    "price": "$6.38"
+    "supplier": "Conagra Brands"
+    "name": "David's Original"
+    "weight": 5.25
+    "units": "OZ"
+}
+`}
+            <//>
+            <${CodeSlide} title="YAML" lang="yaml" fontSize=".7em">
+${`
+- product:
+  price: $6.38
+  supplier: Conagra Brands
+  name: David's Original
+  weight: 5.25
+  units: OZ
+`}
+            <//>
+            <section class="ml-bullet-slide">
+                <h3>Types of languages</h3>
+                <ul>
+                    <li>Programming</li>
+                    <li>Markup</li>
+                    <li><em>Data</em></li>
+                    <li>Query</li>
+                </ul>
+            </section>
+            <section class="ml-bullet-slide">
+                <h3>Types of languages</h3>
+                <ul>
+                    <li>Programming</li>
+                    <li>Markup</li>
+                    <li>Data</li>
+                    <li><em>Query</em></li>
+                </ul>
             </section>
             <section>
-                <img class="r-stretch" src="images/24q4-slides/Slide674.png" alt="Slide 674" />
+                <p>As with data languages, <em>query languages</em> are useful for working with data and both often work hand-in-hand</p>
             </section>
             <section>
-                <img class="r-stretch" src="images/24q4-slides/Slide675.png" alt="Slide 675" />
+                <p>These languages are almost always used with database applications for retrieving or updating data</p>
             </section>
-            <section>
-                <img class="r-stretch" src="images/24q4-slides/Slide676.png" alt="Slide 676" />
+            <section class="ml-bullet-slide">
+                <h3>Query languages</h3>
+                <ul>
+                    <li class="fragment">SQL (Structured Query Language)</li>
+                    <li class="fragment">XPath (XML Path Language)</li>
+                    <li class="fragment">NoSQL</li>
+                </ul>
             </section>
-            <section>
-                <img class="r-stretch" src="images/24q4-slides/Slide677.png" alt="Slide 677" />
-            </section>
-            <section>
-                <img class="r-stretch" src="images/24q4-slides/Slide678.png" alt="Slide 678" />
-            </section>
-            <section>
-                <img class="r-stretch" src="images/24q4-slides/Slide679.png" alt="Slide 679" />
-            </section>
-            <section>
-                <img class="r-stretch" src="images/24q4-slides/Slide680.png" alt="Slide 680" />
-            </section>
-            <section>
-                <img class="r-stretch" src="images/24q4-slides/Slide681.png" alt="Slide 681" />
-            </section>
-            <section>
-                <img class="r-stretch" src="images/24q4-slides/Slide682.png" alt="Slide 682" />
-            </section>
-            <section>
-                <img class="r-stretch" src="images/24q4-slides/Slide683.png" alt="Slide 683" />
-            </section>
-            <section>
-                <img class="r-stretch" src="images/24q4-slides/Slide684.png" alt="Slide 684" />
-            </section>
-            <section>
-                <img class="r-stretch" src="images/24q4-slides/Slide685.png" alt="Slide 685" />
-            </section>
-            <section>
-                <img class="r-stretch" src="images/24q4-slides/Slide686.png" alt="Slide 686" />
-            </section>
-            <section>
-                <img class="r-stretch" src="images/24q4-slides/Slide687.png" alt="Slide 687" />
-            </section>
-            <section>
-                <img class="r-stretch" src="images/24q4-slides/Slide688.png" alt="Slide 688" />
-            </section>
-            <section>
-                <img class="r-stretch" src="images/24q4-slides/Slide689.png" alt="Slide 689" />
-            </section>
-            <section>
-                <img class="r-stretch" src="images/24q4-slides/Slide690.png" alt="Slide 690" />
-            </section>
-            <section>
-                <img class="r-stretch" src="images/24q4-slides/Slide691.png" alt="Slide 691" />
-            </section>
-            <section>
-                <img class="r-stretch" src="images/24q4-slides/Slide692.png" alt="Slide 692" />
-            </section>
-            <section>
-                <img class="r-stretch" src="images/24q4-slides/Slide693.png" alt="Slide 693" />
-            </section>
-            <section>
-                <img class="r-stretch" src="images/24q4-slides/Slide694.png" alt="Slide 694" />
-            </section>
-            <section>
-                <img class="r-stretch" src="images/24q4-slides/Slide695.png" alt="Slide 695" />
-            </section>
-            <section>
-                <img class="r-stretch" src="images/24q4-slides/Slide696.png" alt="Slide 696" />
-            </section>
-            <section>
-                <img class="r-stretch" src="images/24q4-slides/Slide697.png" alt="Slide 697" />
-            </section>
-            <section>
-                <img class="r-stretch" src="images/24q4-slides/Slide698.png" alt="Slide 698" />
-            </section>
-            <section>
-                <img class="r-stretch" src="images/24q4-slides/Slide699.png" alt="Slide 699" />
-            </section>
-            <section>
-                <img class="r-stretch" src="images/24q4-slides/Slide700.png" alt="Slide 700" />
-            </section>
-            <section>
-                <img class="r-stretch" src="images/24q4-slides/Slide701.png" alt="Slide 701" />
-            </section>
-            <section>
-                <img class="r-stretch" src="images/24q4-slides/Slide702.png" alt="Slide 702" />
-            </section>
-            <section>
-                <img class="r-stretch" src="images/24q4-slides/Slide703.png" alt="Slide 703" />
-            </section>
-            <section>
-                <img class="r-stretch" src="images/24q4-slides/Slide704.png" alt="Slide 704" />
-            </section>
-            <section>
-                <img class="r-stretch" src="images/24q4-slides/Slide705.png" alt="Slide 705" />
-            </section>
+            <${CodeSlide} title="SQL" lang="sql" fontSize=".7em">
+${`
+SELECT
+    price,
+    supplier,
+    name,
+    weight,
+    units
+FROM Products;
+`}
+            <//>
+            <${CodeSlide} title="SQL" lang="sql" fontSize=".7em">
+${`
+UPDATE 
+    Products
+SET 
+    price = "$0.99"
+WHERE 
+    name = "David's Original";
+`}
+            <//>
+            <${QuestionsSlide} />
         <//>`;
 }
 
