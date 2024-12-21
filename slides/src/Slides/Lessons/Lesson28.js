@@ -94,9 +94,6 @@ function Lesson28() {
             <section>
                 <img class="r-stretch" src="images/24q4-slides/Slide911.png" alt="Slide 911" />
             </section>
-            <section>
-                <img class="r-stretch" src="images/24q4-slides/Slide912.png" alt="Slide 912" />
-            </section>
         <//>`;
 }
 
