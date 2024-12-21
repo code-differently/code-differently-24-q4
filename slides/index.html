@@ -41,8 +41,13 @@
 			import App from "./src/App.js";
 
 			const html = htm.bind(React.createElement);
+			const appEl = document.getElementById("app");
 
-			const root = createRoot(document.getElementById("app"));
+			// Determine if print-pdf mode is enabled and style the app element accordingly
+			const isPrintMode = window.location.search.match(/print-pdf/gi);
+			appEl.style.height = isPrintMode ? "auto" : "100vh";
+
+			const root = createRoot(appEl);
 			root.render(html`<${App} />`);
 		</script>
 	</body>
