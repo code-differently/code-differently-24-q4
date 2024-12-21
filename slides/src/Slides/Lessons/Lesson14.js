@@ -10,7 +10,7 @@ function Lesson14() {
             <section>
                 <p>Let's <em>review</em></p>
             </section>
-            <section>
+            <section style=${{ "text-align": "left" }}>
                 <p>A <em>computer</em> is a machine that <i>transforms</i> <em>input</em> data to <em>output</em> data using <i>automatically executed</i>, pre-programmed <em>instructions</em>.</p>
             </section>
             <section>
