@@ -1,6 +1,6 @@
 import htm from "htm";
 import { createElement } from "react";
-import { DemoSlide, Lesson, QuestionsSlide } from "../Layouts/index.js";
+import { DemoSlide, Lesson } from "../Layouts/index.js";
 
 const html = htm.bind(createElement);
 
@@ -150,7 +150,6 @@ function Lesson22() {
                 <p>Usually, each environment will need it's own configuration as we <em>deploy</em> our application code to that environment</p>
             </section>
             <${DemoSlide} />
-            <${QuestionsSlide} />
         <//>`;
 }
 

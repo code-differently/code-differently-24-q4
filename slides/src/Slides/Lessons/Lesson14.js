@@ -1,6 +1,6 @@
 import htm from "htm";
 import { createElement } from "react";
-import { CodeSlide, Lesson, QuestionsSlide } from "../Layouts/index.js";
+import { CodeSlide, Lesson } from "../Layouts/index.js";
 
 const html = htm.bind(createElement);
 
@@ -234,7 +234,6 @@ public class App {
             <section>
                 <p>Use exceptions <em><i>exceptionally</i></em>. Most times, you can avoid throwing exceptions</p>
             </section>
-            <${QuestionsSlide} />
         <//>`;
 }
 
