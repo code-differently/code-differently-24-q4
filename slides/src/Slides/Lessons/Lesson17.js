@@ -1,6 +1,6 @@
 import htm from "htm";
 import { createElement } from "react";
-import { CodeSlide, Lesson, QuestionsSlide } from "../Layouts/index.js";
+import { CodeSlide, Lesson } from "../Layouts/index.js";
 
 const html = htm.bind(createElement);
 
@@ -541,7 +541,6 @@ public class App {
                     Ex: Make Car builders give it the engine instead of making them get cars with an Engine already in it).</li>
                 </ol>
             </section>
-            <${QuestionsSlide} />
         <//>`;
 }
 

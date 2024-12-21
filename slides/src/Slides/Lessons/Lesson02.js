@@ -1,6 +1,6 @@
 import htm from "htm";
 import { createElement } from "react";
-import { Lesson, QuestionsSlide } from "../Layouts/index.js";
+import { Lesson } from "../Layouts/index.js";
 
 const html = htm.bind(createElement);
 
@@ -88,7 +88,6 @@ function Lesson02() {
                 <p class="fragment"><em><i>|</i></em> - (pipe) feed output of one to another</p>
                 <p class="fragment"><em><i>&</i></em> - run command in the background</p>
             </section>
-            <${QuestionsSlide} />
         <//>`;
 }
 

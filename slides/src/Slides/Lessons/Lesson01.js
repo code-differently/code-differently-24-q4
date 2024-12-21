@@ -1,6 +1,6 @@
 import htm from "htm";
 import { createElement } from "react";
-import { DemoSlide, Lesson, QuestionsSlide } from "../Layouts/index.js";
+import { DemoSlide, Lesson } from "../Layouts/index.js";
 
 const html = htm.bind(createElement);
 
@@ -71,7 +71,6 @@ function Lesson01() {
                 <p>We're also leveraging <em>Dev Containers</em>, a feature that lets us work from the same <i>pre-configured</i> environment.</p>
             </section>
             <${DemoSlide} />
-            <${QuestionsSlide} />
         <//>`;
 }
 
