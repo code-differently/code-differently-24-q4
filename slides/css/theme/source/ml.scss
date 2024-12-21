@@ -85,6 +85,7 @@ $headingLetterSpacing: .02em;
     }
 
     .ml-bullet-slide {
+        height: 100%;
         text-align: left;
     }
 
@@ -183,6 +184,25 @@ $headingLetterSpacing: .02em;
         }
     }
 
+    .background-image {
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        height: 100%;
+        text-align: center;
+        align-content: center;
+        position: relative;
+    }
+
+    .background-image > * {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        top: 0;
+        left: 0;
+        align-content: center;
+    }
+
     .fragment.em,
     .fragment.current-visible {
         color: inherit;
@@ -198,6 +218,15 @@ $headingLetterSpacing: .02em;
 
         &.current-fragment {
             text-decoration: line-through;
+        }
+    }
+
+    .fragment.background-fade {
+        opacity: 0;
+
+        &.visible {
+            opacity: 1;
+            background: rgba(0, 0, 0, 0.5);
         }
     }
 
