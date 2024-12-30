@@ -1,18 +1,18 @@
 .header {
-background-color: violet;
-padding: 0.5%;
+background-color: white;
+padding: 0;
 position: fixed;
 z-index: 1;
-width: 1410px;
+width: 1420px;
 }
 .main {
 
 }
 .header-logo {
-     position: absolute; /* Fixes the logo in place when scrolling */
+    position: absolute; /* Fixes the logo in place when scrolling */
     top: 15px;
-    left: 15px;
-    background-color: violet;
+    left: 5px;
+    background-color: white;
     
 
 }
@@ -23,7 +23,7 @@ img {
 .header-top-menu {
     list-style: none;
     height: 75px;
-    background-color: transparent;
+    background-color: white;
     padding: 0;
     margin: 0 auto; /* Centers the menu horizontally */
     width: 100% auto; /* Makes the width based on the content */
@@ -33,7 +33,7 @@ img {
 
 }
 .header-top-menu li {
-            margin-top: 15px;
+            margin-top: 5px;
             margin-left: 50px;
             width: 25px;
             text-align: center;
