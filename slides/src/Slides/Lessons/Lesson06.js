@@ -1,17 +1,17 @@
 import htm from "htm";
 import { createElement } from "react";
-import { Lesson } from "../Layouts/index.js";
+import { Lesson, QuestionsSlide } from "../Layouts/index.js";
 
 const html = htm.bind(createElement);
 
 function Lesson06() {
     return html`
-        <${Lesson} title="Statements and Variables" lessonId="lesson_06" subtitle="Lesson 6">
+        <${Lesson} title="Statements and Variables" lessonId="lesson_06" subtitle="Lesson 6" titleFontSize="1.4em">
             <section>
-                <img class="r-stretch" src="images/24q4-slides/Slide142.png" alt="Slide 142" />
+                <p>It's time to talk about <em>writing code</em></p>
             </section>
             <section>
-                <img class="r-stretch" src="images/24q4-slides/Slide143.png" alt="Slide 143" />
+                <p>We write code from top to bottom, one <em>statement</em> at a time</p>
             </section>
             <section>
                 <img class="r-stretch" src="images/24q4-slides/Slide144.png" alt="Slide 144" />
@@ -19,11 +19,27 @@ function Lesson06() {
             <section>
                 <img class="r-stretch" src="images/24q4-slides/Slide145.png" alt="Slide 145" />
             </section>
-            <section>
-                <img class="r-stretch" src="images/24q4-slides/Slide146.png" alt="Slide 146" />
+            <section class="ml-bullet-slide">
+                <h3>Types of statements</h3>
+                <ul style=${{"font-size": ".8em"}}>
+                    <li class="fragment"><em><i>Declaration</i></em> (making a new variable, function, data type)</li>
+                    <li class="fragment"><em><i>Function</i></em> call (run or execute a function)</li>
+                    <li class="fragment"><em><i>Expression</i></em> (storing something)</li>
+                    <li class="fragment"><em><i>Control flow</i></em> (determine what code runs when)</li>
+                    <li class="fragment"><em><i>Return</i></em> (return a result from a function)</li>
+                    <li class="fragment"><em><i>Import</i></em> (bring data types from other places)</li>
+                </ul>
             </section>
-            <section>
-                <img class="r-stretch" src="images/24q4-slides/Slide147.png" alt="Slide 147" />
+            <section class="ml-bullet-slide">
+                <h3>Types of statements</h3>
+                <ul style=${{"font-size": ".8em"}}>
+                    <li><em><i>Declaration</i></em> (making a new variable, function, data type)</li>
+                    <li><em><i>Function</i></em> call (run or execute a function)</li>
+                    <li><em><i>Expression</i></em> (storing something)</li>
+                    <li style=${{"opacity": ".3"}}><em><i>Control flow</i></em> (determine what code runs when)</li>
+                    <li style=${{"opacity": ".3"}}><em><i>Return</i></em> (return a result from a function)</li>
+                    <li style=${{"opacity": ".3"}}><em><i>Import</i></em> (bring data types from other places)</li>
+                </ul>
             </section>
             <section>
                 <img class="r-stretch" src="images/24q4-slides/Slide148.png" alt="Slide 148" />
@@ -44,7 +60,7 @@ function Lesson06() {
                 <img class="r-stretch" src="images/24q4-slides/Slide153.png" alt="Slide 153" />
             </section>
             <section>
-                <img class="r-stretch" src="images/24q4-slides/Slide154.png" alt="Slide 154" />
+                <p>The <em><i>function signature</i></em> identifies the inputs and outputs of a method</p>
             </section>
             <section>
                 <img class="r-stretch" src="images/24q4-slides/Slide155.png" alt="Slide 155" />
@@ -56,7 +72,7 @@ function Lesson06() {
                 <img class="r-stretch" src="images/24q4-slides/Slide157.png" alt="Slide 157" />
             </section>
             <section>
-                <img class="r-stretch" src="images/24q4-slides/Slide158.png" alt="Slide 158" />
+                <p>Express yourself</p>
             </section>
             <section>
                 <img class="r-stretch" src="images/24q4-slides/Slide159.png" alt="Slide 159" />
@@ -67,9 +83,7 @@ function Lesson06() {
             <section>
                 <img class="r-stretch" src="images/24q4-slides/Slide161.png" alt="Slide 161" />
             </section>
-            <section>
-                <img class="r-stretch" src="images/24q4-slides/Slide162.png" alt="Slide 162" />
-            </section>
+            <${QuestionsSlide}/>
         <//>`;
 }
 

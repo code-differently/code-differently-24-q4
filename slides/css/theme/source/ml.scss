@@ -18,8 +18,9 @@
 // Override theme settings (see ../template/settings.scss)
 $backgroundColor: #212121;
 
+$blockMargin: 36px;
 $mainFont: 'Lato', 'Open Sans', sans-serif;
-$mainFontSize: 45px;
+$mainFontSize: 56px;
 $mainFontWeight: 700;
 $linkColor: #e7ad52;
 $linkColorHover: lighten( $linkColor, 20% );
@@ -39,6 +40,14 @@ $headingLetterSpacing: .02em;
 // Change text colors against light slide backgrounds
 @include light-bg-text-color(#222);
 
+
+// Theme template ------------------------------
+@import "../template/theme";
+// ---------------------------------------------
+
+
+// Custom styles -------------------------------
+
 .reveal {
      p {
         font-weight: 700;
@@ -47,6 +56,24 @@ $headingLetterSpacing: .02em;
 
     em {
         color: #6d9eeb;
+        font-style: normal;
+    }
+
+    i {
+        font-style: italic;
+    }
+
+    pre.code-wrapper {
+        box-shadow: none;
+        line-height: 1.3em;
+        width: auto;
+    }
+
+    code {
+        font-family: 'Courier New', Courier, monospace;
+        font-weight: 700;
+        background: none;
+        border: initial;
     }
 
     .slides {
@@ -59,17 +86,19 @@ $headingLetterSpacing: .02em;
 
     .ml-bullet-slide {
         text-align: left;
+    }
 
-        h3 {
-            font-size: 1.5em;
-        }
+    h1.big-title,
+    h2.big-title,
+    h3.big-title {
+        font-size: 1.2em;
     }
 
     .ml-title-slide {
         text-align: left;
 
         h1 {
-            font-size: 1.75em;
+            font-size: 1.5em;
             font-weight: 700;
             line-height: 1.1em;
         }
@@ -90,7 +119,7 @@ $headingLetterSpacing: .02em;
                 justify-content: center;
 
                 p {
-                    font-size: .75em;
+                    font-size: .5em;
                     font-weight: normal;
                     font-style: italic;
                     margin: 0;
@@ -111,6 +140,53 @@ $headingLetterSpacing: .02em;
             em {
                 font-style: normal;
             }
+
+            p {
+                font-weight: normal;
+            }
+        }
+    }
+
+    .ml-code-slide {
+        text-align: left;
+
+        pre {
+            font-size: .45em;
+        }
+
+        code {
+            overflow: visible;
+        }
+
+        .badge {
+            display: inline-block;
+            position: absolute;
+            font-size: .5em;
+            font-weight: 700;
+            right: 0;
+            color: #e06666;
+            border: 4px solid;
+            padding: 8px 42px;
+        } 
+    }
+
+    .ml-columns-slide {
+        .columns {
+            display: flex;
+            text-align: left;
+
+            & > * {
+                flex: 1;
+            }
+        }
+    }
+
+    .fragment.em,
+    .fragment.current-visible {
+        color: inherit;
+
+        &.current-fragment {
+            color: #6d9eeb;
         }
     }
 }
@@ -122,7 +198,11 @@ $headingLetterSpacing: .02em;
     object-fit: cover;
 }
 
+table.chart td,
+table.chart th {
+    text-align: center;
+}
 
-// Theme template ------------------------------
-@import "../template/theme";
-// ---------------------------------------------
+span.important {
+    color: #ff0100;
+}
