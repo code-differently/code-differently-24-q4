@@ -60,7 +60,7 @@ background-image: url('hero.jpg'); /* Path to the image */
 background-size: 100% auto; /* Makes sure the image covers the full width and height */
 background-position: left; /* Left the image */
 background-repeat: no-repeat; /* Prevents the image from repeating */
-z-index: 2;
+z-index: 3;
 }
 .hero-section {
 
@@ -105,9 +105,17 @@ color: white;
     color: red;
 }
 .programs-section {
-
+background-color: #fff;
+z-index: 2;
 }
-.highlight {
+.programs-section li {
+    width: 500px;
+    display: inline-block;
+    margin-right: 20px;
+    padding: 10px;
+    border-radius: 5px;
+}
+.hero-title .highlight {
     text-decoration: underline;
     text-decoration-color: red;
     text-decoration-thickness: 4px;
