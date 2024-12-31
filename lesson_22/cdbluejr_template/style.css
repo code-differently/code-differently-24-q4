@@ -38,13 +38,14 @@ img {
             width: 25px;
             text-align: center;
             font-size: 22;
-
+            font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;
             
         }
 .header-cta {
     margin-left: 300px;
     font-size: 22;
-
+    font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;
+            
 }
 
 sign-up-botton {
@@ -102,7 +103,7 @@ font-size: 25px;
 color: white;
 }
 .hero-text span {
-    color: red;
+    color: #f47d26;
 }
 .programs-section {
 background-color: #fff;
@@ -117,13 +118,16 @@ z-index: 2;
 }
 .hero-title .highlight {
     text-decoration: underline;
-    text-decoration-color: red;
+    text-decoration-color: #f47d26;
     text-decoration-thickness: 4px;
 }
 .programs {
 
 }
 .program {
+
+font-family:'Poppins', sans-serif !important;
+font-size:14px !important;
 
 }
 .footer {
