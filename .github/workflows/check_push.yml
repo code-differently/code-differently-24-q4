@@ -159,10 +159,10 @@ jobs:
         CLERK_SECRET_KEY: 12345
       run: ./gradlew check
 
-    - name: Build Fullstack Demo with Node.js
+    - name: Test Fullstack Demo with Node.js
       working-directory: ./lib/javascript/fullstack_demo
       env:
         NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY: ${{ secrets.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY }}
       run: |
         npm ci
-        npm run build
+        npm run test
