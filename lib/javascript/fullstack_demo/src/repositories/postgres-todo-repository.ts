@@ -27,7 +27,7 @@ export class PostgresTodoRepository implements TodoRepository {
 
   async patch(todo: Partial<Todo>, userId: string): Promise<Todo | undefined> {
     const dbTodo = await client.todos.update({
-      where: { id: todo.id },
+      where: { id: todo.id, user_id: userId },
       data: {
         text: todo.text,
         completed: todo.completed,
@@ -43,6 +43,6 @@ export class PostgresTodoRepository implements TodoRepository {
   }
 
   async delete(id: number, userId: string): Promise<void> {
-    await client.todos.delete({ where: { id } });
+    await client.todos.delete({ where: { id, user_id: userId } });
   }
 }
