@@ -8,7 +8,8 @@
     "start": "next start",
     "lint": "next lint",
     "fix": "prettier . --write",
-    "test": "vitest"
+    "test": "vitest",
+    "postinstall": "prisma generate"
   },
   "dependencies": {
     "@clerk/nextjs": "^6.9.2",
