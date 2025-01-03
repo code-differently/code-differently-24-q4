@@ -13,7 +13,9 @@ export const TodoApp: React.FC = () => {
   }, []);
 
   const fetchTodos = async () => {
-    const response = await fetch('/api/todos');
+    const response = await fetch(
+      new URL('/api/todos', process.env.NEXT_PUBLIC_API_URL),
+    );
     const data = await response.json();
     setTodos(data);
   };
