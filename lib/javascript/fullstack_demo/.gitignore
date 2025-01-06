@@ -45,3 +45,7 @@ next-env.d.ts
 
 # database
 db.json
+
+# Cypress
+/cypress/snapshots/actual
+/cypress/snapshots/diff
