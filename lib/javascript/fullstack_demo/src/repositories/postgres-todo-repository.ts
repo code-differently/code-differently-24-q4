@@ -2,11 +2,14 @@ import { Todo } from '@/models';
 import { PrismaClient } from '@prisma/client';
 import { TodoRepository } from './todo-repository';
 
-const client = new PrismaClient();
-
 export class PostgresTodoRepository implements TodoRepository {
+  constructor(private readonly client: PrismaClient) {}
+
   async getAll(userId: string): Promise<Todo[]> {
-    const dbTodos = await client.todos.findMany({ where: { user_id: userId } });
+    const dbTodos = await this.client.todos.findMany({
+      where: { user_id: userId },
+      orderBy: { id: 'asc' },
+    });
     return dbTodos.map((todo) => ({
       id: Number(todo.id),
       text: todo.text,
@@ -15,7 +18,7 @@ export class PostgresTodoRepository implements TodoRepository {
   }
 
   async create(todo: Todo, userId: string): Promise<number> {
-    const dbTodo = await client.todos.create({
+    const dbTodo = await this.client.todos.create({
       data: {
         text: todo.text,
         completed: todo.completed,
@@ -26,7 +29,7 @@ export class PostgresTodoRepository implements TodoRepository {
   }
 
   async patch(todo: Partial<Todo>, userId: string): Promise<Todo | undefined> {
-    const dbTodo = await client.todos.update({
+    const dbTodo = await this.client.todos.update({
       where: { id: todo.id, user_id: userId },
       data: {
         text: todo.text,
@@ -43,6 +46,6 @@ export class PostgresTodoRepository implements TodoRepository {
   }
 
   async delete(id: number, userId: string): Promise<void> {
-    await client.todos.delete({ where: { id, user_id: userId } });
+    await this.client.todos.delete({ where: { id, user_id: userId } });
   }
 }
