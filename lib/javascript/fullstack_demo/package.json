@@ -8,7 +8,8 @@
     "start": "next start",
     "lint": "next lint",
     "fix": "prettier . --write",
-    "test": "vitest run --coverage",
+    "test": "vitest",
+    "test:coverage": "vitest run --coverage",
     "postinstall": "prisma generate",
     "cy:open": "cypress open"
   },
