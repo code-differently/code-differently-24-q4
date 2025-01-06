@@ -9,5 +9,8 @@ export default defineConfig({
     environment: 'jsdom',
     setupFiles: ['./setupVitest.mjs'],
     env: loadEnv('test', process.cwd(), ''),
+    coverage: {
+      provider: 'istanbul',
+    },
   },
 });
