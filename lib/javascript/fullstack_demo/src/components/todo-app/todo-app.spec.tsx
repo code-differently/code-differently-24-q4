@@ -6,6 +6,10 @@ import { TodoApp } from './todo-app';
 describe('TodoApp', () => {
   beforeEach(() => {
     fetchMock.resetMocks();
+  });
+
+  test('initializes correctly', async () => {
+    // Arrange
     fetchMock.mockResponseIf(
       new URL('/api/todos', process.env.NEXT_PUBLIC_API_URL).toString(),
       JSON.stringify([
@@ -13,9 +17,7 @@ describe('TodoApp', () => {
         { id: 2, text: 'Todo 2', completed: true },
       ] as Todo[]),
     );
-  });
 
-  test('initializes correctly', async () => {
     // Act
     render(<TodoApp />);
 
