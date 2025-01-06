@@ -29,3 +29,9 @@ jobs:
       run: |
         npm ci
         npm run test
+    
+    - name: Run Cypress component tests
+      uses: cypress-io/github-action@v6
+      with:
+        working-directory: ./lib/javascript/fullstack_demo
+        component: true
