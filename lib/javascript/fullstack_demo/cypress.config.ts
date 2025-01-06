@@ -14,6 +14,11 @@ export default defineConfig({
     screenshotsFolder: './cypress/snapshots/actual',
     setupNodeEvents(on, config) {
       configureVisualRegression(on);
+      config.env = {
+        ...process.env,
+        ...config.env,
+      };
+      return config;
     },
   },
 });
