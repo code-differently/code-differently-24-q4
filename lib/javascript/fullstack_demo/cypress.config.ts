@@ -9,6 +9,7 @@ export default defineConfig({
     },
     env: {
       visualRegressionType: 'regression',
+      NEXT_PUBLIC_API_URL: 'http://localhost',
     },
     screenshotsFolder: './cypress/snapshots/actual',
     setupNodeEvents(on, config) {
