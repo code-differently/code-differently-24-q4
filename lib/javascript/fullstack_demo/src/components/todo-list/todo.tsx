@@ -16,7 +16,7 @@ export const TodoComponent: React.FC<TodoProps> = ({
   const onDeleteFn = onDelete || (() => {});
 
   return (
-    <li key={todo.id} className="flex items-center space-x-3">
+    <li key={todo.id} className="todo flex items-center space-x-3">
       <input
         type="checkbox"
         checked={todo.completed}

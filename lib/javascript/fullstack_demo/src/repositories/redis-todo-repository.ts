@@ -3,10 +3,7 @@ import { Redis } from '@upstash/redis';
 import { TodoRepository } from './todo-repository';
 
 export class RedisTodoRepository implements TodoRepository {
-  private readonly redis = new Redis({
-    url: process.env.KV_REST_API_URL,
-    token: process.env.KV_REST_API_TOKEN,
-  });
+  constructor(private readonly redis: Redis) {}
 
   async getAll(userId: string): Promise<Todo[]> {
     const todos = (await this.redis.get(`todos:${userId}`)) as Todo[];

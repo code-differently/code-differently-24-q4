@@ -33,6 +33,8 @@ yarn-error.log*
 .env*
 !.env.example
 !.env.example.*
+!.env.test
+!.env.test.*
 
 # vercel
 .vercel
@@ -43,3 +45,7 @@ next-env.d.ts
 
 # database
 db.json
+
+# Cypress
+/cypress/snapshots/actual
+/cypress/snapshots/diff
