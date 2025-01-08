@@ -4,6 +4,7 @@ import { TodoApp } from './todo-app';
 describe('<TodoApp />', () => {
   it('renders', () => {
     // Arrange
+    cy.viewport(550, 550);
     cy.intercept('GET', '/api/todos', {
       body: [
         { id: 1, text: 'Todo 1', completed: false },
