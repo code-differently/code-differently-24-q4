@@ -3,9 +3,9 @@ import { createElement } from "react";
 
 const html = htm.bind(createElement);
 
-function CodeBlock({lang, fontSize, lineNumbers, children}) {
+function CodeBlock({lang, fontSize, textAlign, lineNumbers, children}) {
     return html`
-        <pre style=${{"font-size": fontSize}}>
+        <pre style=${{"font-size": fontSize, "text-align": textAlign}}>
             <code data-trim data-noescape data-line-numbers=${lineNumbers} class="language-${lang}">
                 <script type="text/template">
 ${children}
