@@ -3,10 +3,10 @@ import { createElement } from "react";
 
 const html = htm.bind(createElement);
 
-function CodeBlock({lang, fontSize, textAlign, lineNumbers, children}) {
+function CodeBlock({lang, fontSize, style, lineNumbers, children}) {
     return html`
-        <pre style=${{"font-size": fontSize, "text-align": textAlign}}>
-            <code data-trim data-noescape data-line-numbers=${lineNumbers} class="language-${lang}">
+        <pre style=${{"font-size": fontSize}}>
+            <code data-trim data-noescape data-line-numbers=${lineNumbers} class="language-${lang}" style=${style}>
                 <script type="text/template">
 ${children}
                 </script>
