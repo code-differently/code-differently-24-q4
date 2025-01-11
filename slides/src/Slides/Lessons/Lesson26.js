@@ -1,6 +1,6 @@
 import htm from "htm";
 import { createElement } from "react";
-import { Lesson } from "../Layouts/index.js";
+import { CodeSlide, DemoSlide, Lesson, QuestionsSlide } from "../Layouts/index.js";
 
 const html = htm.bind(createElement);
 
@@ -32,7 +32,7 @@ function Lesson26() {
                 <p>This style of API is known as a <em>REST</em><span style=${{color: "red", "font-weight": "bold"}}>*</span> (Representational State Transfer)</p>
             </section>
             <section>
-                <img class="r-stretch" src="images/24q4-slides/Slide842.png" alt="Slide 842" />
+                <img class="r-stretch" src="images/not-funny-red-bird.gif" alt="Slide 842" />
             </section>
             <section>
                 <p><span style=${{color: "red", "font-weight": "bold"}}>Note:</span> Not really, hahahah. It’s really REST-like RPC, but that’s beyond the scope of this course</p>
@@ -61,44 +61,107 @@ function Lesson26() {
                 <p>We might then support the following operations…</p>
             </section>
             <section>
-                <img class="r-stretch" src="images/24q4-slides/Slide849.png" alt="Slide 849" />
+                <table style=${{fontSize: ".7em"}}>
+                    <tr>
+                        <th>Path</th>
+                        <th>HTTP Method</th>
+                        <th>What it does</th>
+                    </tr>
+                    <tr>
+                        <td>/api/books</td>
+                        <td>GET</td>
+                        <td>Get all books</td>
+                    </tr>
+                    <tr>
+                        <td>/api/books</td>
+                        <td>POST</td>
+                        <td>Create a new book</td>
+                    </tr>
+                </table>
             </section>
             <section>
-                <img class="r-stretch" src="images/24q4-slides/Slide850.png" alt="Slide 850" />
+                <p>But what if we want to access a specific book?</p>
             </section>
             <section>
-                <img class="r-stretch" src="images/24q4-slides/Slide851.png" alt="Slide 851" />
+                <p>
+                    We can add another path segment to the URL for the ID, like so:<br />
+                    <i>/api/books/<em>{book id}</em></i>
+                </p>
             </section>
             <section>
-                <img class="r-stretch" src="images/24q4-slides/Slide852.png" alt="Slide 852" />
+                <p>We can now support book specific operations…</p>
             </section>
             <section>
-                <img class="r-stretch" src="images/24q4-slides/Slide853.png" alt="Slide 853" />
+                <table style=${{fontSize: ".6em"}}>
+                    <tr>
+                        <th>Path</th>
+                        <th>HTTP Method</th>
+                        <th style=${{"width": "300px"}}>What it does</th>
+                    </tr>
+                    <tr>
+                        <td>/api/books/{book id}</td>
+                        <td>GET</td>
+                        <td>Retrieve a specific book</td>
+                    </tr>
+                    <tr>
+                        <td>/api/books/{book id}</td>
+                        <td>POST</td>
+                        <td>Update an existing book with the given ID</td>
+                    </tr>
+                    <tr>
+                        <td>/api/books/{book id}</td>
+                        <td>DELETE</td>
+                        <td>Remove the specific book</td>
+                    </tr>
+                </table>
             </section>
             <section>
-                <img class="r-stretch" src="images/24q4-slides/Slide854.png" alt="Slide 854" />
+                <p>Now that we know where our books are and acceptable operations, we need to figure out how to <em>represent</em> a book or a list of books</p>
             </section>
             <section>
-                <img class="r-stretch" src="images/24q4-slides/Slide855.png" alt="Slide 855" />
+                <p>Fortunately, we have <em>JSON</em></p>
+            </section>
+            <${CodeSlide} lang="json">
+${`
+{
+   "type": "book",
+   "id": "e27a4e0d-9664-420d-955e-c0e295d0ce02",
+   "title": "To Kill a Mockingbird",
+   "isbn": "978-0061120084",
+   "authors": [
+       "Harper Lee"
+   ],
+   "pages": 336
+}
+`}
+            <//>
+            <section>
+                <p>And here are a list of books…</p>
+            </section>
+            <${CodeSlide} lang="json" fontSize="0.45em">
+${`
+[
+       {
+           "type": "book",
+           "id": "e27a4e0d-9664-420d-955e-c0e295d0ce02",
+           "title": "To Kill a Mockingbird"
+       },
+       {
+           "type": "book",
+           "id": "17dd5d20-98f5-4a26-be09-449fea88a3c3",
+           "title": "1984",
+       }
+]
+`}
+            <//>
+            <section>
+                <p>We can use languages that we’ve learned so far (Java or JavaScript) in order to implement our API</p>
             </section>
             <section>
-                <img class="r-stretch" src="images/24q4-slides/Slide856.png" alt="Slide 856" />
+                <p>For this lesson, we’ll use <em>Java</em></p>
             </section>
-            <section>
-                <img class="r-stretch" src="images/24q4-slides/Slide857.png" alt="Slide 857" />
-            </section>
-            <section>
-                <img class="r-stretch" src="images/24q4-slides/Slide858.png" alt="Slide 858" />
-            </section>
-            <section>
-                <img class="r-stretch" src="images/24q4-slides/Slide859.png" alt="Slide 859" />
-            </section>
-            <section>
-                <img class="r-stretch" src="images/24q4-slides/Slide860.png" alt="Slide 860" />
-            </section>
-            <section>
-                <img class="r-stretch" src="images/24q4-slides/Slide861.png" alt="Slide 861" />
-            </section>
+            <${DemoSlide} />
+            <${QuestionsSlide} />
         <//>`;
 }
 
