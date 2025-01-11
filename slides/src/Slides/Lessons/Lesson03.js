@@ -1,6 +1,6 @@
 import htm from "htm";
 import { createElement } from "react";
-import { DemoSlide, Lesson, QuestionsSlide } from "../Layouts/index.js";
+import { DemoSlide, Lesson } from "../Layouts/index.js";
 
 const html = htm.bind(createElement);
 
@@ -71,7 +71,6 @@ function Lesson03() {
                 </ul>
             </section>
             <${DemoSlide} />
-            <${QuestionsSlide} />
         <//>`;
 }
 

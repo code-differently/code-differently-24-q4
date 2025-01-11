@@ -85,6 +85,7 @@ $headingLetterSpacing: .02em;
     }
 
     .ml-bullet-slide {
+        height: 100%;
         text-align: left;
     }
 
@@ -171,6 +172,8 @@ $headingLetterSpacing: .02em;
     }
 
     .ml-columns-slide {
+        text-align: left;
+
         .columns {
             display: flex;
             text-align: left;
@@ -181,6 +184,25 @@ $headingLetterSpacing: .02em;
         }
     }
 
+    .background-image {
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        height: 100%;
+        text-align: center;
+        align-content: center;
+        position: relative;
+    }
+
+    .background-image > * {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        top: 0;
+        left: 0;
+        align-content: center;
+    }
+
     .fragment.em,
     .fragment.current-visible {
         color: inherit;
@@ -188,6 +210,28 @@ $headingLetterSpacing: .02em;
         &.current-fragment {
             color: #6d9eeb;
         }
+    }
+
+    .fragment.strikethrough,
+    .fragment.current-visible {
+        text-decoration: inherit;
+
+        &.current-fragment {
+            text-decoration: line-through;
+        }
+    }
+
+    .fragment.background-fade {
+        opacity: 0;
+
+        &.visible {
+            opacity: 1;
+            background: rgba(0, 0, 0, 0.5);
+        }
+    }
+
+    .opaque {
+        opacity: .5;
     }
 }
 
@@ -204,5 +248,5 @@ table.chart th {
 }
 
 span.important {
-    color: #ff0100;
+    color: #e06666;
 }

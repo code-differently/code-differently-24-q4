@@ -1,6 +1,6 @@
 import htm from "htm";
 import { createElement } from "react";
-import { CodeSlide, Lesson, QuestionsSlide } from "../Layouts/index.js";
+import { CodeSlide, Lesson } from "../Layouts/index.js";
 
 const html = htm.bind(createElement);
 
@@ -138,7 +138,6 @@ class AppTest {
             <section>
                 <p>Some duplication may be preferred in unit tests if it makes the tests more clear and less complicated.</p>
             </section>
-            <${QuestionsSlide} />
         <//>`;
 }
 

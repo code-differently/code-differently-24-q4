@@ -1,6 +1,6 @@
 import htm from "htm";
 import { createElement } from "react";
-import { CodeSlide, Lesson, QuestionsSlide } from "../Layouts/index.js";
+import { CodeSlide, Lesson } from "../Layouts/index.js";
 
 const html = htm.bind(createElement);
 
@@ -10,7 +10,7 @@ function Lesson14() {
             <section>
                 <p>Let's <em>review</em></p>
             </section>
-            <section>
+            <section style=${{ "text-align": "left" }}>
                 <p>A <em>computer</em> is a machine that <i>transforms</i> <em>input</em> data to <em>output</em> data using <i>automatically executed</i>, pre-programmed <em>instructions</em>.</p>
             </section>
             <section>
@@ -234,7 +234,6 @@ public class App {
             <section>
                 <p>Use exceptions <em><i>exceptionally</i></em>. Most times, you can avoid throwing exceptions</p>
             </section>
-            <${QuestionsSlide} />
         <//>`;
 }
 
