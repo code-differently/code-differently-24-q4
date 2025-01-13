@@ -383,6 +383,7 @@ section.has-light-background, section.has-light-background h1, section.has-light
   font-weight: 700;
 }
 .reveal .ml-bullet-slide {
+  height: 100%;
   text-align: left;
 }
 .reveal h1.big-title,
@@ -452,12 +453,32 @@ section.has-light-background, section.has-light-background h1, section.has-light
   border: 4px solid;
   padding: 8px 42px;
 }
+.reveal .ml-columns-slide {
+  text-align: left;
+}
 .reveal .ml-columns-slide .columns {
   display: flex;
   text-align: left;
 }
 .reveal .ml-columns-slide .columns > * {
   flex: 1;
+}
+.reveal .background-image {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100%;
+  text-align: center;
+  align-content: center;
+  position: relative;
+}
+.reveal .background-image > * {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  align-content: center;
 }
 .reveal .fragment.em,
 .reveal .fragment.current-visible {
@@ -466,6 +487,24 @@ section.has-light-background, section.has-light-background h1, section.has-light
 .reveal .fragment.em.current-fragment,
 .reveal .fragment.current-visible.current-fragment {
   color: #6d9eeb;
+}
+.reveal .fragment.strikethrough,
+.reveal .fragment.current-visible {
+  text-decoration: inherit;
+}
+.reveal .fragment.strikethrough.current-fragment,
+.reveal .fragment.current-visible.current-fragment {
+  text-decoration: line-through;
+}
+.reveal .fragment.background-fade {
+  opacity: 0;
+}
+.reveal .fragment.background-fade.visible {
+  opacity: 1;
+  background: rgba(0, 0, 0, 0.5);
+}
+.reveal .opaque {
+  opacity: 0.5;
 }
 
 .avatar {
@@ -481,5 +520,5 @@ table.chart th {
 }
 
 span.important {
-  color: #ff0100;
+  color: #e06666;
 }

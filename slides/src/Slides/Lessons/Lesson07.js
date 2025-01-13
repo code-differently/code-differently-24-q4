@@ -1,6 +1,6 @@
 import htm from "htm";
 import { createElement } from "react";
-import { CodeSlide, Lesson, QuestionsSlide } from "../Layouts/index.js";
+import { CodeSlide, Lesson } from "../Layouts/index.js";
 
 const html = htm.bind(createElement);
 
@@ -219,7 +219,6 @@ console.log("Done!");
 // Hello for index 9
 // Done!
             <//>
-            <${QuestionsSlide} />
         <//>`;
 }
 

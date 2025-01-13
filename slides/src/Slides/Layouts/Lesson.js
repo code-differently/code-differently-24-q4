@@ -1,6 +1,7 @@
 
 import htm from "htm";
 import { createElement } from "react";
+import QuestionsSlide from "./QuestionsSlide.js";
 import TitleSlide from "./TitleSlide.js";
 
 const html = htm.bind(createElement);
@@ -15,6 +16,7 @@ function Lesson({ title, subtitle, lessonId, children, titleFontSize }) {
                 titleFontSize=${titleFontSize}
             />
             ${children}
+            <${QuestionsSlide} />
         </section>`;
 }
 

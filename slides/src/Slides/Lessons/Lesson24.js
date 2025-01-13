@@ -1,6 +1,6 @@
 import htm from "htm";
 import { createElement } from "react";
-import { Lesson } from "../Layouts/index.js";
+import { CodeSlide, DemoSlide, Lesson, QuestionsSlide } from "../Layouts/index.js";
 
 const html = htm.bind(createElement);
 
@@ -8,10 +8,10 @@ function Lesson24() {
     return html`
         <${Lesson} title="JavaScript Deep Dive" lessonId="lesson_24" subtitle="Lesson 24">
             <section>
-                <img class="r-stretch" src="images/24q4-slides/Slide777.png" alt="Slide 777" />
+                <p>Let's build a <em>web application</em></p>
             </section>
             <section>
-                <img class="r-stretch" src="images/24q4-slides/Slide778.png" alt="Slide 778" />
+                <p>Its purpose is to allow users to search for stuff. Here's how it will look:</p>
             </section>
             <section>
                 <img class="r-stretch" src="images/24q4-slides/Slide779.png" alt="Slide 779" />
@@ -20,19 +20,19 @@ function Lesson24() {
                 <img class="r-stretch" src="images/24q4-slides/Slide780.png" alt="Slide 780" />
             </section>
             <section>
-                <img class="r-stretch" src="images/24q4-slides/Slide781.png" alt="Slide 781" />
+                <p>Let's get more technical…</p>
             </section>
             <section>
                 <img class="r-stretch" src="images/24q4-slides/Slide782.png" alt="Slide 782" />
             </section>
             <section>
-                <img class="r-stretch" src="images/24q4-slides/Slide783.png" alt="Slide 783" />
+                <p>A <em>web server</em> is a program that "serves" content to users on the web</p>
             </section>
             <section>
-                <img class="r-stretch" src="images/24q4-slides/Slide784.png" alt="Slide 784" />
+                <p>We're going to use <em>NodeJS</em> to run JavaScript on the backend (where the web server is)</p>
             </section>
             <section>
-                <img class="r-stretch" src="images/24q4-slides/Slide785.png" alt="Slide 785" />
+                <p>We'll also use the <em>Express</em> framework to do the heavy lifting of serving our HTML, CSS, and JS</p>
             </section>
             <section>
                 <img class="r-stretch" src="images/24q4-slides/Slide786.png" alt="Slide 786" />
@@ -62,22 +62,36 @@ function Lesson24() {
                 <img class="r-stretch" src="images/24q4-slides/Slide794.png" alt="Slide 794" />
             </section>
             <section>
-                <img class="r-stretch" src="images/24q4-slides/Slide795.png" alt="Slide 795" />
+                <p>We're going to start with the web server</p>
             </section>
             <section>
-                <img class="r-stretch" src="images/24q4-slides/Slide796.png" alt="Slide 796" />
+                <p>We have many choices for building our web server….</p>
+            </section>
+            <section class="ml-bullet-slide">
+                <h3>Web server choices</h3>
+                <ul>
+                    <li class="fragment">Java + Vaadin or Thymeleaf</li>
+                    <li class="fragment">C# + ASP.NET Core</li>
+                    <li class="fragment">JavaScript + Node</li>
+                    <li class="fragment">Ruby + Rails</li>
+                    <li class="fragment">PHP + Laravel</li>
+                </ul>
+            </section>
+            <section class="ml-bullet-slide">
+                <h3>Web server choices</h3>
+                <ul>
+                    <li>Java + Vaadin or Thymeleaf</li>
+                    <li>C# + ASP.NET Core</li>
+                    <li><em>JavaScript + Node</em></li>
+                    <li>Ruby + Rails</li>
+                    <li>PHP + Laravel</li>
+                </ul>
             </section>
             <section>
-                <img class="r-stretch" src="images/24q4-slides/Slide797.png" alt="Slide 797" />
+                <p>Let's get started</p>
             </section>
             <section>
-                <img class="r-stretch" src="images/24q4-slides/Slide798.png" alt="Slide 798" />
-            </section>
-            <section>
-                <img class="r-stretch" src="images/24q4-slides/Slide799.png" alt="Slide 799" />
-            </section>
-            <section>
-                <img class="r-stretch" src="images/24q4-slides/Slide800.png" alt="Slide 800" />
+                <img class="r-stretch" src="images/24q4-slides/Slide801.png" alt="Slide 800" />
             </section>
             <section>
                 <img class="r-stretch" src="images/24q4-slides/Slide801.png" alt="Slide 801" />
@@ -88,12 +102,27 @@ function Lesson24() {
             <section>
                 <img class="r-stretch" src="images/24q4-slides/Slide803.png" alt="Slide 803" />
             </section>
-            <section>
-                <img class="r-stretch" src="images/24q4-slides/Slide804.png" alt="Slide 804" />
-            </section>
-            <section>
-                <img class="r-stretch" src="images/24q4-slides/Slide805.png" alt="Slide 805" />
-            </section>
+            <${DemoSlide} />
+            <${CodeSlide} lang="javascript" lineNumbers="true" fontSize=".35em" badge="index.js">
+${`
+const express = require("express"); // Get express
+const morgan = require("morgan"); // Get morgan
+const path = require("path"); // Get path
+var debug = require('debug')('myapp:server'); // Get debug logger
+
+const app = express(); // Create express app
+
+app.use(morgan("dev")); // Setup morgan middleware
+app.use(express.static(path.join(__dirname, "public"))); // Setup static files
+
+const PORT = process.env.PORT || 3000; // Setup port
+
+// Start the server
+app.listen(PORT, () => {
+ debug(\`Server listening on http://localhost:\${PORT}\`);
+});
+`}
+            <//>
             <section>
                 <img class="r-stretch" src="images/24q4-slides/Slide806.png" alt="Slide 806" />
             </section>
@@ -103,18 +132,12 @@ function Lesson24() {
             <section>
                 <img class="r-stretch" src="images/24q4-slides/Slide808.png" alt="Slide 808" />
             </section>
-            <section>
-                <img class="r-stretch" src="images/24q4-slides/Slide809.png" alt="Slide 809" />
-            </section>
+            <${DemoSlide} />
             <section>
                 <img class="r-stretch" src="images/24q4-slides/Slide810.png" alt="Slide 810" />
             </section>
-            <section>
-                <img class="r-stretch" src="images/24q4-slides/Slide811.png" alt="Slide 811" />
-            </section>
-            <section>
-                <img class="r-stretch" src="images/24q4-slides/Slide812.png" alt="Slide 812" />
-            </section>
+            <${DemoSlide} />
+            <${QuestionsSlide} />
         <//>`;
 }
 
