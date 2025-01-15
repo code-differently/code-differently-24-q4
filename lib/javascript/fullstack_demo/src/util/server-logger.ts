@@ -9,7 +9,7 @@ export class WinstonLogger implements Logger {
 
   constructor() {
     this.winstonLogger = winston.createLogger({
-      level: 'info',
+      level: 'debug',
       format: combine(
         format((info) => {
           const headerList = headers();
@@ -20,28 +20,28 @@ export class WinstonLogger implements Logger {
         json(),
       ),
       transports: [
-        new winston.transports.Console(),
+        new winston.transports.Console({ level: 'info' }),
         new winston.transports.File({ filename: 'debug.log', level: 'debug' }),
       ],
     });
   }
 
-  async log(level: LogLevel, message: string, ...vars: unknown[]) {
+  async log(level: LogLevel, message: string, vars: {}) {
     const { userId } = await auth();
     this.winstonLogger.log(level.toLowerCase(), message, { ...vars, userId });
   }
 
-  async debug(format: string, ...vars: unknown[]) {
+  async debug(format: string, vars: {}) {
     const { userId } = await auth();
     this.winstonLogger.debug(format, { ...vars, userId });
   }
 
-  async info(format: string, ...vars: unknown[]) {
+  async info(format: string, vars: {}) {
     const { userId } = await auth();
     this.winstonLogger.info(format, { ...vars, userId });
   }
 
-  async error(format: string, ...vars: unknown[]) {
+  async error(format: string, vars: {}) {
     const { userId } = await auth();
     this.winstonLogger.error(format, { ...vars, userId });
   }
