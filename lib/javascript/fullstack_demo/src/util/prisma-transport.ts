@@ -8,19 +8,23 @@ export class PrismaTransport extends Transport {
     super(opts);
   }
 
-  log(info: any, callback: () => void): void {
+  async log(info: any, callback: () => void): Promise<void> {
     setImmediate(() => {
       this.emit('logged', info);
     });
 
-    this.client.logs.create({
-      data: {
-        level: info.level,
-        message: info.message,
-        meta: info.vars,
-        timestamp: info.timestamp,
-      },
-    });
+    try {
+      await this.client.logs.create({
+        data: {
+          level: info.level,
+          message: info.message,
+          meta: info,
+          timestamp: info.timestamp,
+        },
+      });
+    } catch (ex) {
+      console.error('Failed to log to Prisma', ex);
+    }
 
     callback();
   }

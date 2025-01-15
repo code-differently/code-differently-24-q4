@@ -25,5 +25,5 @@ model Logs {
   level     String   @db.VarChar
   message   String   @default("") @db.VarChar
   timestamp DateTime @db.Timestamp(6)
-  meta      Json?    @db.Json
+  meta      Json?
 }
