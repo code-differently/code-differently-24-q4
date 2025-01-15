@@ -1,4 +1,5 @@
 import { Log } from '@/models';
+import { LogEvent } from './events';
 import { Logger, LogLevel } from './logger';
 
 const FLUSH_AFTER_SIZE = 15;
@@ -13,7 +14,7 @@ class ClientLogger implements Logger {
     setInterval(() => this.flush(), FLUSH_INTERVAL_MS);
   }
 
-  log(level: LogLevel, message: string, vars?: {}): void {
+  log(level: LogLevel, message: string, vars = {}): void {
     vars = { ...this.getDefaultVars(), ...(vars || {}) };
     this.buffer.push({ level, message, vars });
     if (this.buffer.length >= FLUSH_AFTER_SIZE && !this.flushing) {
@@ -75,14 +76,17 @@ class ClientLogger implements Logger {
     return new Promise((resolve) => setTimeout(resolve, ms));
   }
 
-  debug(format: string, vars?: {}): void {
+  debug(format: string, vars = {}): void {
     this.log('debug', format, vars);
   }
-  info(format: string, vars?: {}): void {
+  info(format: string, vars = {}): void {
     this.log('info', format, vars);
   }
-  error(format: string, vars?: {}): void {
+  error(format: string, vars = {}): void {
     this.log('error', format, vars);
+  }
+  event(eventId: LogEvent, vars = {}): void {
+    this.log('info', '', { ...vars, eventId });
   }
 }
 
