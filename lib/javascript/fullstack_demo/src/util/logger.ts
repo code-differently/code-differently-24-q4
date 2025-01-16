@@ -1,4 +1,4 @@
-import { LogEvent } from './events';
+import { LogEvent } from '@/models';
 
 export interface Logger {
   log(level: LogLevel, message: string, vars?: {}): void;

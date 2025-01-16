@@ -1,7 +1,7 @@
+import { LogEvent } from '@/models';
 import { auth } from '@clerk/nextjs/server';
 import { headers } from 'next/headers';
 import winston, { format } from 'winston';
-import { LogEvent } from './events';
 import { Logger, LogLevel } from './logger';
 import { PrismaTransport } from './prisma-transport';
 const { combine, timestamp, json } = format;

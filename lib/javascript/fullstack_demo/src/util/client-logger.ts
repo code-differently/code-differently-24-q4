@@ -1,5 +1,4 @@
-import { Log } from '@/models';
-import { LogEvent } from './events';
+import { Log, LogEvent } from '@/models';
 import { Logger, LogLevel } from './logger';
 
 const FLUSH_AFTER_SIZE = 15;

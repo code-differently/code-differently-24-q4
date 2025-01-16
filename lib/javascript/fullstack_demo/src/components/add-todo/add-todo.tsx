@@ -1,4 +1,5 @@
-import { Todo } from '@/models';
+import { LogEvent, Todo } from '@/models';
+import { logger } from '@/util/client-logger';
 import { PlusIcon } from 'lucide-react';
 import { useState } from 'react';
 
@@ -14,6 +15,7 @@ export const AddTodo: React.FC<AddTodoProps> = ({ onAdd }) => {
     if (newTodo.trim() !== '') {
       const todo: Todo = { id: Date.now(), text: newTodo, completed: false };
       await fetch('/api/todos', { method: 'POST', body: JSON.stringify(todo) });
+      logger.event(LogEvent.TODO_ADD, { id: todo.id });
       setNewTodo('');
       if (onAdd) {
         onAdd(todo);
