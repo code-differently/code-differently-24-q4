@@ -16,6 +16,7 @@ export class WinstonLogger implements Logger {
         format((info) => {
           const headerList = headers();
           info.correlationId = headerList.get('x-correlation-id');
+          info.environment = process.env.NODE_ENV;
           return info;
         })(),
         timestamp(),
