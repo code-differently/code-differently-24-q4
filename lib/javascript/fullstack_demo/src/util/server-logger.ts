@@ -2,14 +2,26 @@ import { LogEvent } from '@/models';
 import { auth } from '@clerk/nextjs/server';
 import { headers } from 'next/headers';
 import winston, { format } from 'winston';
+import Transport from 'winston-transport';
 import { Logger, LogLevel } from './logger';
 import { PrismaTransport } from './prisma-transport';
+import { RedisTransport } from './redis-transport';
 const { combine, timestamp, json } = format;
 
 export class WinstonLogger implements Logger {
   private readonly winstonLogger: winston.Logger;
 
   constructor() {
+    const transports: Transport[] = [
+      new winston.transports.Console({ level: 'info' }),
+    ];
+
+    if (process.env.LOGGING_DB_TYPE?.toUpperCase() === 'POSTGRES') {
+      transports.push(new PrismaTransport({ level: 'debug' }));
+    } else if (process.env.LOGGING_DB_TYPE?.toUpperCase() === 'REDIS') {
+      transports.push(new RedisTransport({ level: 'debug' }));
+    }
+
     this.winstonLogger = winston.createLogger({
       level: 'debug',
       format: combine(
@@ -22,10 +34,7 @@ export class WinstonLogger implements Logger {
         timestamp(),
         json(),
       ),
-      transports: [
-        new winston.transports.Console({ level: 'info' }),
-        new PrismaTransport({ level: 'debug' }),
-      ],
+      transports,
     });
   }
 
