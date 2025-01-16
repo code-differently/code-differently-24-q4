@@ -1,4 +1,5 @@
-import { Todo } from '@/models';
+import { LogEvent, Todo } from '@/models';
+import { logger } from '@/util/client-logger';
 import { TodoComponent } from './todo';
 
 export type TodoProps = {
@@ -8,6 +9,7 @@ export type TodoProps = {
 
 export const TodoList: React.FC<TodoProps> = ({ todos, onChange }) => {
   const toggleTodo = async (id: number) => {
+    logger.event(LogEvent.TODO_TOGGLE, { id });
     const todo = todos.find((todo) => todo.id === id);
     if (!todo) return;
     todo.completed = !todo.completed;
@@ -15,15 +17,18 @@ export const TodoList: React.FC<TodoProps> = ({ todos, onChange }) => {
       method: 'PATCH',
       body: JSON.stringify(todo),
     });
+    logger.event(LogEvent.TODO_TOGGLE, { id });
     if (onChange) {
       onChange(todo.id);
     }
   };
 
   const deleteTodo = async (id: number) => {
+    logger.event(LogEvent.TODO_DELETE, { id });
     await fetch(`/api/todos/${id}`, {
       method: 'DELETE',
     });
+    logger.event(LogEvent.TODO_DELETE, { id });
     if (onChange) {
       onChange(id);
     }
