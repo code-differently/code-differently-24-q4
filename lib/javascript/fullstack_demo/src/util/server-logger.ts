@@ -24,7 +24,6 @@ export class WinstonLogger implements Logger {
       ),
       transports: [
         new winston.transports.Console({ level: 'info' }),
-        new winston.transports.File({ filename: 'debug.log', level: 'debug' }),
         new PrismaTransport({ level: 'debug' }),
       ],
     });
